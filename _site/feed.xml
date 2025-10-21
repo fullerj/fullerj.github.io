@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-21T11:34:23-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Empirical Defense</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+</subtitle><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-21T11:33:34-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
+<strong>Authors</strong>: <u>Jonathan Fuller</u>*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio<br />
+<strong>Acceptance Rate</strong>: 13.8%</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Detects and flags manipulated dead drops across seven popular web apps before attackers weaponize them.</li>
+  <li>Automates layered de-manipulation, surfacing 57.1% more active C2 endpoints than signature-based tools.</li>
+  <li>Delivers takedown intelligence that helped providers remove 13 hidden drop locations during evaluation.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/ccs25.pdf">PDF</a></li>
+  <li><a href="https://github.com/CyFI-Lab-Public/VADER">Source code</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Dead Drop Resolver (DDR) malware evades traditional Command and Control (C&amp;C) server takedowns by dynamically resolving C&amp;C addresses hosted on popular web applications, such as Dropbox and Pastebin. These addresses are often manipulated (i.e., encoded or encrypted), rendering existing detection techniques largely ineffective. To tackle this challenge, we introduce VADER, a malware forensics system specifically designed for the proactive detection of dead drops. Analyzing a dataset of 100k malware samples collected in the wild, VADER identified 8,906 DDR malware samples from 110 families that leverage 273 dead drops across seven web applications. Additionally, it proactively uncovered 57.1% more dead drops spanning 11 web applications. Case studies revealed that over 40% of DDR malware samples employ sophisticated, layered de-manipulation algorithms, highlighting the prevalence and complexity of this evasion technique. Beyond detection, VADER enabled proactive remediation by discovering 13 previously unknown dead drops from a single DDR malware sample. This approach empowers web application providers to systematically scan their platforms, enabling the early detection and mitigation of dead drops.</p>
+
+<h2 id="artifact-badges">Artifact Badges</h2>
+
+<ul>
+  <li>Available</li>
+  <li>Functional</li>
+  <li>Reproduced</li>
+</ul>
+
+<h2 id="media-coverage">Media Coverage</h2>
+
+<ul>
+  <li><a href="https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters">Deeptempo AI - Malware’s Quiet Rendezvous</a></li>
+  <li><a href="hhttps://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">Georgia Tech Research - Hiding in Plain Sight</a></li>
+  <li><a href="hhttps://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">The Hacker News - Weekly Recap</a></li>
+</ul>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">fuller2025vader</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation}</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Fuller, Jonathan and Yao, Mingxuan and Agarwal, Saumya and Barua, Srimanta and Hirani, Taleb and Sikder, Amit K. and Saltaformaggio, Brendan}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 32nd ACM Conference on Computer and Communications Security (CCS)}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
+  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Taipei, Taiwan}</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="malware" /><category term="command-and-control" /><category term="dead drops" /><category term="web-security" /><summary type="html"><![CDATA[Proactive detection and remediation of Dead Drop Resolver malware on web applications, accepted to ACM CCS 2025 (13.8% acceptance rate).]]></summary></entry><entry><title type="html">Operationalizing Zero Trust: CECOM SEC and West Point Collaborate</title><link href="http://localhost:4000/publications/operationalizing-zero-trust/" rel="alternate" type="text/html" title="Operationalizing Zero Trust: CECOM SEC and West Point Collaborate" /><published>2025-09-11T00:00:00-04:00</published><updated>2025-10-21T11:10:55-04:00</updated><id>http://localhost:4000/publications/operationalizing-zero-trust</id><content type="html" xml:base="http://localhost:4000/publications/operationalizing-zero-trust/"><![CDATA[<p><strong>Venue</strong>: U.S. Army<br />
+<strong>Authors</strong>: F. Shah, <u>Jonathan Fuller</u><br />
+<strong>Date</strong>: September 11, 2025</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Details the first practical evaluation of the SEC-developed mapping between Zero Trust principles and the DoD Risk Management Framework.</li>
+  <li>Shares insights from the joint U.S. Army CECOM Software Engineering Center and West Point collaboration on adoption challenges.</li>
+  <li>Captures feedback loops needed to operationalize Zero Trust across Army systems and accreditation processes.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://www.army.mil/article/288418">Official article</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>The Communications-Electronics Command Software Engineering Center and the U.S. Military Academy at West Point partnered to test the feasibility of the SEC-developed mapping between Zero Trust and the Department of Defense Risk Management Framework. This effort marked the first practical exercise to gather feedback on the mapping’s application and to identify adjustments needed to operationalize Zero Trust within Army environments.</p>
+
+<h2 id="media-coverage">Media Coverage</h2>
+
+<ul>
+  <li><a href="https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point">Army Operationalizes Zero Trust</a></li>
+</ul>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="zero-trust" /><category term="DoW" /><category term="risk-management" /><summary type="html"><![CDATA[Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.]]></summary></entry><entry><title type="html">Invited Tutorial: Counteracting Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/" rel="alternate" type="text/html" title="Invited Tutorial: Counteracting Web Application Abuse in Malware" /><published>2023-09-18T00:00:00-04:00</published><updated>2025-10-21T11:31:15-04:00</updated><id>http://localhost:4000/publications/secdev-tutorial-marsea</id><content type="html" xml:base="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 2023 IEEE Secure Development Conference (SecDev) — Invited Tutorial<br />
+<strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Distills forensic best practices for identifying and containing Web App-Engaged malware across popular web platforms.</li>
+  <li>Showcases the Marsea pipeline, enabling responders to document proof-of-abuse and coordinate takedowns with service providers.</li>
+  <li>Features a 90-minute mix of tool walkthroughs and labs, giving participants practical experience handling WAE incidents end-to-end.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="">PDF</a></li>
+  <li><a href="https://github.com/CyFI-Lab-Public/MARSEA">Source code</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Web applications offer a broad range of functionalities that are exploited by malware to serve as alternatives to traditional attacker-controlled servers. To effectively combat these Web App-Engaged (WAE) malware, prompt coordination between incident responders and web application providers is crucial. Any delay in this collaboration can allow WAE malware to flourish, posing serious security risks to the compromised web applications.</p>
+
+<p>Our tutorial is designed to enlighten attendees on the best practices for forensic analysis of malware, while also helping to assess the scope of infection caused by WAE malware. Additionally, we will discuss the essential “proof-of-abuse” documentation required to facilitate groundbreaking collaboration between incident responders and service providers.</p>
+
+<p>To enhance the security awareness of incident responders and to streamline forensic analysis for quicker response times, we are offering a 90-minute tutorial. This educational session will address the unique challenges posed by WAE malware and explore specialized remediation techniques available through web application platforms. We will also unveil a recently-developed forensic tool designed specifically for handling WAE malware. The tutorial will be a hybrid experience, featuring both a walkthrough of this innovative tool and a hands-on exercise, enabling participants to use the tool for analyzing WAE malware effectively.</p>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">yao2023secdevtutorial</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Invited Tutorial: Counteracting Web Application Abuse in Malware}</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Yao, Mingxuan and Fuller, Jonathan and Pai Sridhar, Ranjita and Agarwal, Saumya and Sikder, Amit K. and Saltaformaggio, Brendan}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the IEEE Secure Development Conference (SecDev)}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
+  <span class="na">note</span>      <span class="p">=</span> <span class="s">{Invited Tutorial}</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev 2023 tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry><entry><title type="html">Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/marsea-web-application-abuse/" rel="alternate" type="text/html" title="Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware" /><published>2023-08-09T00:00:00-04:00</published><updated>2025-10-21T11:29:53-04:00</updated><id>http://localhost:4000/publications/marsea</id><content type="html" xml:base="http://localhost:4000/publications/marsea-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023<br />
+<strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio<br />
+<strong>Acceptance Rate</strong>: 29.2%</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Identifies 893 web-application-engaged malware specimens across 97 families abusing 29 popular web applications.</li>
+  <li>Measures a 226% surge in WAE malware since 2020 while observing a 13.7% drop in reliance on attacker-controlled servers.</li>
+  <li>Delivers the Marsea pipeline, enabling responders and providers to remove over 50% of malicious web content encountered.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/sec23yao.pdf">PDF</a></li>
+  <li><a href="https://www.usenix.org/system/files/sec23_slides_yao-mingxuan.pdf">Slides</a></li>
+  <li><a href="https://www.youtube.com/watch?v=o0SWc0cwqy4">Talk recording</a></li>
+  <li><a href="https://github.com/CyFI-Lab-Public/MARSEA">Source code</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Web applications provide a wide array of utilities that are abused by malware as a replacement for traditional attacker-controlled servers. Thwarting these Web App-Engaged (WAE) malware requires rapid collaboration between incident responders and web app providers. Unfortunately, our research found that delays in this collaboration allow WAE malware to thrive. We developed Marsea, an automated malware analysis pipeline that studies WAE malware and enables rapid remediation. Given 10K malware samples, Marsea revealed 893 WAE malware in 97 families abusing 29 web apps. Our research uncovered a 226% increase in the number of WAE malware since 2020 and that malware authors are beginning to reduce their reliance on attacker-controlled servers. In fact, we found a 13.7% decrease in WAE malware relying on attacker-controlled servers. To date, we have used Marsea to collaborate with the web app providers to take down 50% of the malicious web app content.</p>
+
+<h2 id="artifact-badges">Artifact Badges</h2>
+
+<ul>
+  <li>Available</li>
+  <li>Functional</li>
+</ul>
+
+<h2 id="honors">Honors</h2>
+
+<ul>
+  <li>Invited tutorial at the 2023 IEEE Secure Development Conference (SecDev).</li>
+</ul>
+
+<h2 id="media-coverage">Media Coverage</h2>
+
+<ul>
+  <li><a href="https://research.gatech.edu/playing-hide-and-seek-new-breed-malware-threatening-millions-users">Georgia Tech - Playing Hide and seek with Malware</a></li>
+  <li><a href="https://techxplore.com/news/2023-09-playing-malware-threatening-millions-users.html">TechXPlore - New Breed of Malware</a></li>
+  <li><a href="https://www.techtimes.com/articles/296248/20230912/researchers-find-new-breed-malware-hiding-dropbox-discord.htm">TechTimes - Malware Hiding in Dropbox, Discord</a></li>
+  <li><a href="https://www.ilsoftware.it/web-app-engaged-i-malware-che-si-nascondono-in-dropbox-e-discord/">ILSoftware - Wep-App Engagnge Malware</a></li>
+</ul>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">yao2023marsea</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware}</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Yao, Meng and Fuller, Jonathan and Pai Kasturi, Ranjita and Agarwal, Saumya and Sikder, Amit K. and Saltaformaggio, Brendan}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 32nd USENIX Security Symposium (USENIX Security)}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
+  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Anaheim, CA}</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="malware" /><category term="web-applications" /><category term="incident-response" /><summary type="html"><![CDATA[Large-scale analysis of web-application-engaged malware and the Marsea remediation pipeline, accepted to USENIX Security 2023 (29.2% acceptance rate).]]></summary></entry><entry><title type="html">Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration</title><link href="http://localhost:4000/publications/the-byte-c2-infiltration/" rel="alternate" type="text/html" title="Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration" /><published>2023-05-01T00:00:00-04:00</published><updated>2025-10-21T11:20:19-04:00</updated><id>http://localhost:4000/publications/the-byte-infiltration</id><content type="html" xml:base="http://localhost:4000/publications/the-byte-c2-infiltration/"><![CDATA[<p><strong>Venue</strong>: The Byte<br />
+<strong>Author</strong>: <u>Jonathan Fuller</u><br />
+<strong>Date</strong>: May 1, 2023</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Explores how malware communication protocol weaknesses enable covert infiltration of command-and-control infrastructure.</li>
+  <li>Shares operational guidance for cyber operators confronting adversary C2 networks in the field.</li>
+  <li>Bridges research findings with practitioner insights for the 780th Military Intelligence Brigade (Cyber).</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/thebyte.pdf">PDF</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure.</p>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="command-and-control" /><category term="forensics" /><summary type="html"><![CDATA[Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.]]></summary></entry><entry><title type="html">Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces</title><link href="http://localhost:4000/publications/yoda-malicious-wordpress-plugins/" rel="alternate" type="text/html" title="Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces" /><published>2022-04-10T00:00:00-04:00</published><updated>2025-10-21T11:29:41-04:00</updated><id>http://localhost:4000/publications/yoda</id><content type="html" xml:base="http://localhost:4000/publications/yoda-malicious-wordpress-plugins/"><![CDATA[<p><strong>Conference</strong>: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022<br />
+<strong>Authors</strong>: R. Pai Kasturi, <u>Jonathan Fuller</u>, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio<br />
+<strong>Acceptance Rate</strong>: 18.1%</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Analyzes 400K production web servers dating back to 2012 to uncover malicious plugin campaigns.</li>
+  <li>Introduces YODA, an automated framework that identifies and traces malicious plugin origins across marketplaces, piracy sites, and post-deployment compromises.</li>
+  <li>Documents $41.5K spent on malicious marketplace plugins, $228K in lost revenue from pirated plugins, and $834K in post-deployment compromises, with 94% of malicious plugins still active.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/sec22.pdf">PDF</a></li>
+  <li><a href="https://youtu.be/16FmkoX_ZMY">Talk recording</a></li>
+  <li><a href="https://youtu.be/TUATgmVKdf8">Demo</a></li>
+  <li><a href="https://github.com/CyFI-Lab-Public/YODA">Source code</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Modern websites owe most of their aesthetics and functionalities to Content Management Systems (CMS) plugins, which are bought and sold on widely popular marketplaces. Driven by economic incentives, attackers abuse the trust in this economy: selling malware on legitimate marketplaces, pirating popular plugins, and infecting plugins post-deployment. This research studied the evolution of CMS plugins in over 400K production webservers dating back to 2012. We developed YODA, an automated framework to detect malicious plugins and track down their origin. YODA uncovered 47,337 malicious plugins on 24,931 unique websites. Among these, $41.5K had been spent on 3,685 malicious plugins sold on legitimate plugin marketplaces. Pirated plugins cheated developers out of $228K in revenues. Post-deployment attacks infected $834K worth of previously benign plugins with malware. Lastly, YODA informs our remediation efforts, as over 94% of these malicious plugins are still active today.</p>
+
+<h2 id="honors">Honors</h2>
+
+<ul>
+  <li>
+    <p>CSAW’22 Applied Research Competition Award Finalist</p>
+  </li>
+  <li>
+    <p>Invited for a USENIX ;login: Magazine article</p>
+  </li>
+</ul>
+
+<h2 id="media-coverage">Media Coverage</h2>
+
+<ul>
+  <li>
+    <p><a href="https://cacm.acm.org/news/locking-down-secure-open-source-software/">Locking Down Secure Open Source Software</a></p>
+  </li>
+  <li>
+    <p><a href="https://thehackernews.com/2022/06/yoda-tool-found-47000-malicious.html">YODA Tool Found ~47,000 Malicious WordPress Plugins Installed in Over 24,000 Sites</a></p>
+  </li>
+  <li>
+    <p><a href="https://siliconangle.com/2022/08/29/researchers-find-malicious-plugins-25000-wordpress-sites/">Researchers find malicious plugins on 25,000 WordPress sites</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.cc.gatech.edu/news/eight-year-study-shows-dark-side-wordpress-plugins">Eight-Year Study Shows the Dark Side of WordPress Plugins</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.usenix.org/publications/loginonline/mistrust-plugins-you-must-large-scale-study-malicious-plugins-wordpress">USENIX ;login: Mistrust Plugins You Must</a></p>
+  </li>
+</ul>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">kasturi2022yoda</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces}</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Pai Kasturi, Ranjita and Fuller, Jonathan and Sun, Yiting and Chabklo, Omar and Rodriguez, Andres and Park, Jeman and Saltaformaggio, Brendan}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 31st USENIX Security Symposium (USENIX Security)}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2022}</span><span class="p">,</span>
+  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Boston, MA}</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="malware" /><category term="wordpress" /><category term="content-management" /><summary type="html"><![CDATA[Measurement study of malicious WordPress plugins and the YODA detection pipeline, accepted to USENIX Security 2022 (18.1% acceptance rate).]]></summary></entry><entry><title type="html">C3PO: Large-Scale Study of Covert Monitoring of C&amp;amp;C Servers via Over-Permissioned Protocol Infiltration</title><link href="http://localhost:4000/publications/c3po-covert-cc-monitoring/" rel="alternate" type="text/html" title="C3PO: Large-Scale Study of Covert Monitoring of C&amp;amp;C Servers via Over-Permissioned Protocol Infiltration" /><published>2021-11-17T00:00:00-05:00</published><updated>2025-10-21T11:29:17-04:00</updated><id>http://localhost:4000/publications/c3po</id><content type="html" xml:base="http://localhost:4000/publications/c3po-covert-cc-monitoring/"><![CDATA[<p><strong>Conference</strong>: 28th ACM Conference on Computer and Communications Security (CCS), Seoul, South Korea, 2021<br />
+<strong>Authors</strong>: <u>Jonathan Fuller</u>, R. Pai Kasturi, A. K. Sikder, H. Xu, B. Arik, V. Verma, E. Asdar, B. Saltaformaggio<br />
+<strong>Acceptance Rate</strong>: 22.3%</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Discovers that 62,202 malware samples (nearly one in three) expose over-permissioned protocol access for covert monitoring.</li>
+  <li>Maps 443,905 potential C&amp;C monitoring primitives spanning 15 years of malware evolution.</li>
+  <li>Provides automated detection and infiltration tooling that empowers responders to monitor C&amp;C operations without tipping off botmasters.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/ccs21.pdf">PDF</a></li>
+  <li><a href="https://www.youtube.com/watch?v=PWfm0oGqHfg">Talk recording</a></li>
+  <li><a href="https://github.com/CyFI-Lab-Public/C3PO">Source code</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Current techniques to monitor botnets towards disruption or takedown are likely to result in inaccurate data gathered about the botnet or be detected by C&amp;C orchestrators. Seeking a covert and scalable solution, we look to an evolving pattern in modern malware that integrates standardized over-permissioned protocols, exposing privileged access to C&amp;C servers. We implement techniques to detect and exploit these protocols from over-permissioned bots toward covert C&amp;C server monitoring. Our empirical study of 200k malware captured since 2006 revealed 62,202 over-permissioned bots (nearly 1 in 3) and 443,905 C&amp;C monitoring capabilities, with a steady increase of over-permissioned protocol use over the last 15 years. Due to their ubiquity, we conclude that even though over-permissioned protocols allow for C&amp;C server infiltration, the efficiency and ease of use they provide continue to make them prevalent in the malware operational landscape. This paper presents C3PO, a pipeline that enables our study and empowers incident responders to automatically identify over-permissioned protocols, infiltration vectors to spoof bot-to-C&amp;C communication, and C&amp;C monitoring capabilities that guide covert monitoring post infiltration. Our findings suggest the over-permissioned protocol weakness provides a scalable approach to covertly monitor C&amp;C servers, which is a fundamental enabler of botnet disruptions and takedowns.</p>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">fuller2021c3po</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{C3PO: Large-Scale Study of Covert Monitoring of C\textbackslash{}&amp;C Servers via Over-Permissioned Protocol Infiltration}</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Fuller, Jonathan and Pai Kasturi, Ranjita and Sikder, Amit K. and Xu, Haichuan and Arik, Berat and Verma, Vivek and Asdar, Ehsan and Saltaformaggio, Brendan}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 28th ACM Conference on Computer and Communications Security (CCS)}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2021}</span><span class="p">,</span>
+  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Seoul, South Korea}</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="botnets" /><category term="command-and-control" /><category term="over-premissioned" /><summary type="html"><![CDATA[Empirical study revealing covert monitoring opportunities in over-permissioned malware protocols, accepted to ACM CCS 2021 (22.3% acceptance rate).]]></summary></entry><entry><title type="html">Misuse-Based Detection of Z-Wave Network Attacks</title><link href="http://localhost:4000/publications/misuse-detection-zwave-attacks/" rel="alternate" type="text/html" title="Misuse-Based Detection of Z-Wave Network Attacks" /><published>2017-01-15T00:00:00-05:00</published><updated>2025-10-21T11:29:09-04:00</updated><id>http://localhost:4000/publications/misuse-zwave</id><content type="html" xml:base="http://localhost:4000/publications/misuse-detection-zwave-attacks/"><![CDATA[<p><strong>Journal</strong>: Computers &amp; Security, Volume 64, January 2017, Pages 44–58<br />
+<strong>Authors</strong>: <u>Jonathan Fuller</u>, B. Ramsey, M. Rice, J. Pecarina</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Addresses the lack of defensive tooling for proprietary Z-Wave networks by extending a misuse-based intrusion detection system (MBIDS).</li>
+  <li>Benchmarks baseline and extended MBIDS implementations, demonstrating a mean misuse detection rate of 99%.</li>
+  <li>Provides actionable guidance for defenders of wireless sensor networks deployed in critical infrastructure, smart metering, and home automation.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/cose17.pdf">PDF</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Wireless Sensor Networks (WSNs) are becoming ubiquitous, providing low-cost, low-power, and low-complexity systems in which communication and control are tightly integrated. Although much security research into WSNs has been accomplished, researchers struggle to conduct thorough analyses of closed-source proprietary protocols. Of the numerous available and underanalyzed proprietary protocols, those based on the ITU-T G.9959 recommendation specifying narrow-band sub-GHz communications have recently experienced significant growth. The Z-Wave protocol is the most common implementation of this recommendation. Z-Wave developers are required to sign nondisclosure and confidentiality agreements, limiting the availability of tools to perform open source research. Given recently demonstrated attacks against Z-Wave networks, defensive countermeasures are needed. This work extends an existing implementation of a Z-Wave Misuse-Based Intrusion Detection System (MBIDS). A side-by-side comparison is performed through experimentation to measure misuse detection accuracy of the baseline and extended MBIDS implementations. Experiment results determine the extended MBIDS achieves a mean misuse detection rate of 99%, significantly improving the security posture in MBIDS-monitored Z-Wave networks.</p>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">fuller2017misusezwave</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">{Misuse-Based Detection of Z-Wave Network Attacks}</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">{Fuller, Jonathan and Ramsey, Benjamin and Rice, Mason and Pecarina, John}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Computers &amp; Security}</span><span class="p">,</span>
+  <span class="na">volume</span>  <span class="p">=</span> <span class="s">{64}</span><span class="p">,</span>
+  <span class="na">pages</span>   <span class="p">=</span> <span class="s">{44--58}</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">{January}</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">{2017}</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="intrusion-detection" /><category term="wireless-security" /><category term="z-wave" /><summary type="html"><![CDATA[Extends Z-Wave misuse-based intrusion detection to achieve 99% detection accuracy against emerging wireless sensor attacks.]]></summary></entry><entry><title type="html">Efficacy of Physical Layer Preamble Manipulation for IEEE 802.11a/ac</title><link href="http://localhost:4000/publications/physical-layer-preamble-manipulation-80211ac/" rel="alternate" type="text/html" title="Efficacy of Physical Layer Preamble Manipulation for IEEE 802.11a/ac" /><published>2016-04-01T00:00:00-04:00</published><updated>2025-10-21T11:28:56-04:00</updated><id>http://localhost:4000/publications/physical-layer-preamble</id><content type="html" xml:base="http://localhost:4000/publications/physical-layer-preamble-manipulation-80211ac/"><![CDATA[<p><strong>Journal</strong>: IET Electronics Letters, Volume 52, Issue 8, April 2016, Pages 669–671<br />
+<strong>Authors</strong>: B. Ramsey, <u>Jonathan Fuller</u>, C. Badenhop</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Extends preamble manipulation research to higher-bandwidth IEEE 802.11a/ac radios in the 5 GHz spectrum.</li>
+  <li>Fingerprints six commodity transceiver designs with &gt;99% accuracy using fewer than 20 packets.</li>
+  <li>Provides a practical method for selective packet obfuscation and transceiver discrimination based on physical layer behavior.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/iet16.pdf">PDF</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Wireless physical layer manipulation is a recently discovered technique for selective packet obfuscation. This process exploits the unique and proprietary nature of transceiver designs rather than manufacturing imperfections. To date, preamble manipulation has only successfully been demonstrated on low data rate transceivers operating in the 2.4 GHz band. This Letter investigates the effectiveness of preamble manipulation on common 5 GHz IEEE 802.11a and IEEE 802.11ac wireless transceivers for the first time. Herein it is demonstrated that the preamble short training sequence length can be manipulated to discern among the six transceiver designs under test with greater than 99% accuracy using fewer than 20 packets.</p>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">ramsey2016preamblem</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">{Efficacy of Physical Layer Preamble Manipulation for IEEE 802.11a/ac}</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">{Ramsey, Benjamin and Fuller, Jonathan and Badenhop, Christopher}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{IET Electronics Letters}</span><span class="p">,</span>
+  <span class="na">volume</span>  <span class="p">=</span> <span class="s">{52}</span><span class="p">,</span>
+  <span class="na">number</span>  <span class="p">=</span> <span class="s">{8}</span><span class="p">,</span>
+  <span class="na">pages</span>   <span class="p">=</span> <span class="s">{669--671}</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">{April}</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">{2016}</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="wireless-security" /><category term="ieee-80211" /><category term="fingerprinting" /><summary type="html"><![CDATA[Demonstrates 5 GHz preamble manipulation that fingerprints commodity 802.11a/ac transceivers with over 99% accuracy using fewer than 20 packets.]]></summary></entry><entry><title type="html">Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks</title><link href="http://localhost:4000/publications/wireless-intrusion-detection-g9959-covert-channels/" rel="alternate" type="text/html" title="Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks" /><published>2016-03-01T00:00:00-05:00</published><updated>2025-10-21T11:28:39-04:00</updated><id>http://localhost:4000/publications/cyber-warfare-covert-zwave</id><content type="html" xml:base="http://localhost:4000/publications/wireless-intrusion-detection-g9959-covert-channels/"><![CDATA[<p><strong>Conference</strong>: 11th International Conference on Cyber Warfare and Security (ICCWS), 2016<br />
+<strong>Authors</strong>: <u>Jonathan Fuller</u>, B. Ramsey, J. Pecarina, M. Rice</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Reveals a covert channel technique for injecting manipulated packets into ITU-T G.9959/Z-Wave wireless sensor networks.</li>
+  <li>Demonstrates full compromise after WLAN access by embedding hidden instructions inside Z-Wave MAC frames.</li>
+  <li>Develops a USRP-backed misuse-based intrusion detection system (MBIDS) achieving 92% mean accuracy against the covert channel attacks.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/iccws16.pdf">PDF</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>We introduce herein an information hiding technique for injecting manipulated packets into wireless sensor networks (WSNs). We exhibit how an attacker can apply information hiding as a type of covert channel attack over radio frequency transmissions into the WSN. The feasibility of our injection method is demonstrated through an attack on the most common implementation of the ITU-T G.9959 recommendation, commercially known as Z-Wave. More specifically, we illustrate that after accessing a Z-Wave gateway controller through compromising the WLAN backbone, the attacker has the ability to install malware. The malware scans incoming Z-Wave packets for information hidden in Media Access Control (MAC) frames received by the Z-Wave controller. Upon identification of hidden information, a Reverse Secure Shell is initiated through the WLAN back to the attacker. The outcomes of this attack include control of the Z-Wave network and access to the networked devices on the target WLAN from any Internet connected device. Given this new application of information hiding techniques to Z-Wave networks, we recognize the need for countermeasures. We therefore offer an effective Misuse-based Intrusion Detection System (MBIDS) capable of distinguishing between manipulated and correctly formed packets. A Universal Software Radio Peripheral (USRP) Software-Defined Radio (SDR) is used in conjunction with a packet monitoring tool capturing incoming transmissions and inspecting them for any violations of the ITU-T G.9959 MAC specification. We then analytically and experimentally estimate the efficacy of the USRP as a packet capture device in a realistic test setup, and then evaluate the total efficiency of our MBIDS solution. By employing the MBIDS in the Z-Wave network, we show the MBIDS is capable of detecting packet manipulation attacks with 92% mean accuracy.</p>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">fuller2016g9959covert</span><span class="p">,</span>
+  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks}</span><span class="p">,</span>
+  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Fuller, Jonathan and Ramsey, Benjamin and Pecarina, John and Rice, Mason}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 11th International Conference on Cyber Warfare and Security (ICCWS)}</span><span class="p">,</span>
+  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2016}</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="intrusion-detection" /><category term="covert-channels" /><summary type="html"><![CDATA[Shows how covert channels over ITU-T G.9959 wireless links enable Z-Wave compromise and introduces an MBIDS countermeasure with 92% accuracy.]]></summary></entry></feed>

@@ -1,0 +1,44 @@
+current directory: /Users/jon/Repositories/empirical.github.io/vendor/bundle/ruby/3.2.0/gems/duktape-2.7.0.0/ext/duktape
+/Users/jon/.rbenv/versions/3.2.3/bin/ruby extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+current directory: /Users/jon/Repositories/empirical.github.io/vendor/bundle/ruby/3.2.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20251020-40162-6q2qfj sitelibdir\=./.gem.20251020-40162-6q2qfj clean
+
+current directory: /Users/jon/Repositories/empirical.github.io/vendor/bundle/ruby/3.2.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20251020-40162-6q2qfj sitelibdir\=./.gem.20251020-40162-6q2qfj
+compiling duktape.c
+duk_bi_cbor.c:64:73: warning: function 'duk__cbor_encode_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+   64 | DUK_LOCAL void duk__cbor_encode_error(duk_cbor_encode_context *enc_ctx) {
+      |                                                                         ^
+duk_bi_cbor.c:695:73: warning: function 'duk__cbor_decode_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  695 | DUK_LOCAL void duk__cbor_decode_error(duk_cbor_decode_context *dec_ctx) {
+      |                                                                         ^
+duk_bi_date.c:311:34: warning: implicit conversion loses integer precision: 'unsigned long' to 'duk_uint_fast32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+  311 |                         match_val = (1UL << part_idx) + (1UL << (sep_idx + 9)); /* match against rule part/sep bits */
+      |                                   ~ ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+duk_bi_json.c:195:69: warning: function 'duk__json_dec_syntax_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  195 | DUK_LOCAL void duk__json_dec_syntax_error(duk_json_dec_ctx *js_ctx) {
+      |                                                                     ^
+duk_js_compiler.c:5628:13: warning: variable 'num_stmts' set but not used [-Wunused-but-set-variable]
+ 5628 |                 duk_int_t num_stmts;
+      |                           ^
+5 warnings generated.
+compiling duktape_ext.c
+duktape_ext.c:300:1: warning: function 'raise_ctx_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  300 | {
+      | ^
+duktape_ext.c:625:1: warning: function 'error_handler' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+  625 | {
+      | ^
+2 warnings generated.
+linking shared-object duktape_ext.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/jon/Repositories/empirical.github.io/vendor/bundle/ruby/3.2.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20251020-40162-6q2qfj sitelibdir\=./.gem.20251020-40162-6q2qfj install
+/usr/bin/install -c -m 0755 duktape_ext.bundle ./.gem.20251020-40162-6q2qfj
+
+current directory: /Users/jon/Repositories/empirical.github.io/vendor/bundle/ruby/3.2.0/gems/duktape-2.7.0.0/ext/duktape
+make DESTDIR\= sitearchdir\=./.gem.20251020-40162-6q2qfj sitelibdir\=./.gem.20251020-40162-6q2qfj clean
