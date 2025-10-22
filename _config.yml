@@ -33,16 +33,17 @@ tagline:               Bridging Research, Education, and Cyber Defense
 # A list of keywords for your blog
 keywords:
   - Jonathan Fuller
-  - EmpiricalDefense
+  - Empirical Defense
   - cybersecurity leadership
-  - malware research
+  - cybersecurity research
   - digital forensics
   - cyber education
+  - security and privacy
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:   
+logo: /assets/img/logo.jpg
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
@@ -98,7 +99,7 @@ theme: jekyll-theme-hydejack
 # ----------------------------------------------------------------------------------------
  
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar/bold.jpg
+accent_image:          /assets/img/sidebar/ed.jpg
 accent_color:          rgb(79,177,186)
 
 # This is used for the `theme-color` meta tag,

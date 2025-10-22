@@ -71,6 +71,7 @@ Key paths and how they are used:
 | Search data | `assets/search-data.json` | Liquid template that emits the JSON index consumed by the navbar search overlay. |
 | Styling | `_sass/my-style.scss`, `_sass/home.scss` | Custom SCSS for cards, dark mode tweaks, homepage spacing, etc. |
 | Branding | `assets/img/…` | Logos for institutions, certifications, and the accent image (`accent_image` in `_config.yml`). |
+| Favicons | `assets/icons/` | Provide `favicon.ico` and optional PWA sizes; set `favicon:` in `_config.yml` if you change the filename. |
 | Layout overrides | `_layouts/blog.html`, `_layouts/publication.html`, `_includes/components/post-blog.html`, `_includes/components/post-list-item.html` | Custom templates that remove dates from blog entries and restore publication metadata (venue badges). |
 
 ---
@@ -82,6 +83,15 @@ Key paths and how they are used:
 - The overlay uses the generated `assets/search-data.json` file. It includes posts, pages, and collection documents unless front matter sets `search_exclude: true`.
 - Regenerate the site (via `bundle exec jekyll build` or `bundle exec jekyll serve`) whenever you add or update content so the search index stays current.
 - To remove specific items from search results, add `search_exclude: true` to the page or post front matter.
+
+### Favicons
+- Place your custom icons in `assets/icons/`. At minimum provide a square `favicon.ico` (PNG inside the ICO container) and rebuild so `_site/assets/icons/` picks up the new file.
+- Optional sizes (e.g., `icon-192x192.png`) are used for PWA/touch support. Replace the defaults with matching artwork if you want consistent branding.
+- If you rename the favicon, point `_config.yml` at it:  
+  ```yaml
+  favicon: /assets/icons/favicon.ico?v=20250124
+  ```
+  Adding a query string is a handy way to bust browser caches after an update.
 
 ### Publications
 - Store PDFs in `assets/papers/` and link with absolute paths (e.g., `/assets/papers/ccs25.pdf`).
