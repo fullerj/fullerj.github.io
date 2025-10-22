@@ -1,67 +1,101 @@
 # EmpiricalDefense Website
 
-EmpiricalDefense is a Jekyll-powered site. The instructions below walk through the exact setup that works on macOS with `rbenv`, so you can build and preview the site locally before deploying it to your domain.
+EmpiricalDefense is a personal brand site built with Jekyll and the Hydejack theme. The repository tracks the content, configuration, and styling used on <https://empiricaldefense.com> (local preview available at <http://localhost:4000/> when running the development server).
 
-## macOS Prerequisites
+---
 
-- Install the Xcode Command Line Tools if you haven't already: `xcode-select --install`
-- Install Homebrew from <https://brew.sh/> (optional but recommended)
-- Install `rbenv` and the Ruby build tools:
-  ```bash
-  brew update
-  brew install rbenv ruby-build
-  ```
-- Add `rbenv` to your shell once, then restart the terminal:
-  ```bash
-  echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
-  exec zsh
-  ```
+## Requirements
 
-## Local Setup
+These steps mirror the working macOS setup. Adapt as needed for Linux or Windows:
 
-From the repository root (`/Users/jon/Repositories/empirical.github.io`):
-
-1. Install and select the project Ruby (the version can be updated later if needed):
+1. Install Xcode Command Line Tools (if missing):
    ```bash
-   rbenv install 3.2.3
-   rbenv local 3.2.3
-   rbenv rehash
-   ruby -v
+   xcode-select --install
    ```
-2. Install the Bundler version locked in `Gemfile.lock`:
+2. Optionally install Homebrew (<https://brew.sh/>) to simplify package management.
+3. Install `rbenv` and Ruby build tooling:
    ```bash
-   gem install bundler:2.2.3
-   rbenv rehash
+   brew install rbenv ruby-build
    ```
-3. Keep gems inside the project and install dependencies:
+4. Initialise `rbenv` for zsh (run once, then restart your shell):
    ```bash
-   bundle config set --local path 'vendor/bundle'
-   bundle _2.2.3_ install
+   echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
+   exec zsh
    ```
-4. Start the development server:
-   ```bash
-   bundle exec jekyll serve
-   ```
-5. Open <http://localhost:4000/> in your browser to preview EmpiricalDefense. The server rebuilds automatically when you edit project files.
 
-## Content Structure
+---
 
-- Blog posts live in `blog/_posts/` and render via the main `Blog` navigation entry.
-- Publications are grouped under the `Publications` sidebar link and sourced from `publications/_posts/`.
-  * Each publication uses standard Jekyll front matter plus optional fields such as `conference`, `authors`, `acceptance_rate`, `pdf_url`, `slides_url`, `code_url`, `dataset_url`, `talk_url`, and `media_links`.
-  * Copy `publications/_posts/2025-10-13-vader.md` as a template for new entries, replacing the placeholder resource links and BibTeX block.
-  * Add a short `venue` string (e.g., `ACM CCS`) to prepend bracketed labels like `[ACM CCS]` on the publications index.
-- Store self-hosted paper PDFs under `assets/papers/` and reference them with paths like `/assets/papers/my-paper.pdf` from publication front matter.
-- Teaching continues to use the grouped-list layout via `_featured_categories/teaching.md` with entries in `teaching/_posts/` (`categories: [teaching]` for each file).
-- Talks are curated on a single page (`talks.md`) which renders items from `_data/talks.yml`; add or edit YAML objects there to update the page.
-- Featured category configuration lives in `_featured_categories/`. `Publications` is configured with the `list` layout so posts are grouped by year automatically.
-- Global author metadata is stored in `_data/authors.yml`, while social links (including a Google Scholar stub) are managed in `_data/social.yml`.
+## First-time Setup
 
-## Next Steps
+From the project root (`/Users/jon/Repositories/empirical.github.io`):
 
-- Update site metadata in `_config.yml`, the navigation menu, and content pages (`index.html`, `about.md`, etc.) to match EmpiricalDefense branding.
-- Replace placeholder publication resources (PDF, code, dataset, media coverage) with live links as they become available.
-- When you are satisfied locally, deploy the generated `_site/` folder or connect the repository to your hosting platform (e.g., GitHub Pages) and point your domain to it.
-- For DNS configuration with a custom domain, create the appropriate `CNAME` or `A` records once hosting is ready.
+```bash
+# Install and select the Ruby version used by the site
+rbenv install 3.2.3
+rbenv local 3.2.3
+rbenv rehash
+ruby -v
 
-Feel free to expand this README with deployment-specific notes or additional tooling as EmpiricalDefense evolves.
+# Install the Bundler version locked in Gemfile.lock
+gem install bundler:2.2.3
+rbenv rehash
+
+# Install gems locally in vendor/bundle
+bundle config set --local path 'vendor/bundle'
+bundle _2.2.3_ install
+
+# Run the development server
+bundle exec jekyll serve
+```
+
+Navigate to <http://localhost:4000/> to preview the site. Jekyll rebuilds automatically when files change.
+
+---
+
+## Project Structure
+
+Key paths and how they are used:
+
+| Area | Location | Notes |
+| --- | --- | --- |
+| Homepage | `index.html` | Uses the `about` layout and renders the full content of `about.md`. Any updates to About automatically appear on the landing page. |
+| About | `about.md` | Primary biography plus education, certifications, highlights, and table of contents. |
+| Service | `service.md` | Volunteer, reviewer, and outreach activities. Linked from the sidebar navigation. |
+| Blog | `blog/_posts/` | Markdown files with `categories: [posts]` appear on `/blog/` and in “Recent Insights.” |
+| Publications | `publications/_posts/` | Each publication entry includes optional metadata (`conference`, `pdf_url`, etc.). Use `2025-10-13-vader.md` as a template. |
+| Teaching | `teaching/_posts/` | Teaching history. Cards feed the Teaching page, and education details live on the About page. |
+| Talks | `_data/talks.yml` | YAML list of talks rendered by `talks.md`. Entries support title, event, location, date, and optional description/resources. |
+| Search | `search.md`, `search.json`, `assets/js/simple-jekyll-search.min.js` | Implements client-side search against posts via Simple-Jekyll-Search. |
+| Navigation | `_config.yml` (`menu:`) | Sidebar links (Blog, Publications, Talks, Teaching, Service, About). |
+| Styling | `_sass/my-style.scss`, `_sass/home.scss` | Custom SCSS for cards, dark mode tweaks, homepage spacing, etc. |
+| Branding | `assets/img/…` | Logos for institutions, certifications, and the accent image (`accent_image` in `_config.yml`). |
+
+---
+
+## Content Guidelines
+
+### Publications
+- Store PDFs in `assets/papers/` and link with absolute paths (e.g., `/assets/papers/ccs25.pdf`).
+- Include `venue` to add a bracketed label on the index (e.g., `[ACM CCS]`).
+- Optional arrays: `media_links`, `artifact_badges`, `tags`.
+
+### Teaching & Education
+- Teaching posts (`teaching/_posts/*.md`) appear under `/teaching/` and feed the About-page highlights.
+- Education cards on About are hard-coded with logos and details. Update the HTML fragment in `about.md` when degrees change.
+
+### Service
+- Service content is written directly in `service.md`. Add new volunteer or committee roles by editing the appropriate sections.
+
+### Search
+- `search.json` is populated at build time using Liquid. Rebuild the site to refresh the index after adding posts.
+- The `/search/` page uses Simple-Jekyll-Search to query the JSON index in the browser.
+
+---
+
+## Deployment Notes
+
+- The `_site/` folder is generated by `bundle exec jekyll build` or `jekyll serve`. Deploy that directory (or activate GitHub Pages / Netlify) to publish updates.
+- Update DNS records (CNAME or A records) once hosting is configured for your custom domain.
+- Remove or adjust pagination settings in `_config.yml` if you are not using Hydejack’s blog pagination (currently disabled).
+
+Feel free to extend this README with host-specific instructions, automation scripts, or content workflows as EmpiricalDefense grows.

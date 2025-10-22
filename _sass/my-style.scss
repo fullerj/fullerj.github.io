@@ -215,6 +215,21 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .education-card,
+  .certification-card {
+    background-color: rgba(28, 36, 48, 0.85);
+    border-color: rgba(210, 220, 230, 0.18);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+  }
+
+  .education-card__institution,
+  .certification-card__issuer,
+  .education-card__detail {
+    color: rgba(235, 240, 245, 0.85);
+  }
+}
+
 body.dark-mode .education-card,
 body.dark-mode .certification-card {
   background-color: rgba(28, 36, 48, 0.85);
