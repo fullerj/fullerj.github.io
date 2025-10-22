@@ -19,7 +19,7 @@
     "collection": "posts",
     "date": "2025-10-18T00:00:00-04:00",
     "excerpt": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a",
-    "content": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call Spycraft 2.0, where adversaries conceal command instructions within legitimate web services?\n\nThis observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C intermediaries, defenders must learn to detect these manipulations hidden within normal traffic. Our research, presented at BSidesNYC 0x05, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.\n\n\n\nDead Drop Resolvers: The Modern Dead Drop\n\nAt the core of Spycraft 2.0 is the Dead Drop Resolver (DDR), a digital v"
+    "content": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call Spycraft 2.0, where adversaries conceal command instructions within legitimate web services?\n\nThis observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at BSidesNYC 0x05, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.\n\n\n\nDead Drop Resolvers: The Modern Dead Drop\n\nAt the core of Spycraft 2.0 is the Dead Drop Resolver (DDR), a digital version of Cold War tradecraft. I"
   },
 
   
@@ -306,7 +306,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-22T15:26:36-04:00",
+    "date": "2025-10-22T16:44:08-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -323,7 +323,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-22T15:26:36-04:00",
+    "date": "2025-10-22T16:44:08-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -340,7 +340,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-22T15:26:36-04:00",
+    "date": "2025-10-22T16:44:08-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },

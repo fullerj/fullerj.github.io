@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-22T15:26:36-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-22T16:44:08-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
 </subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-18T00:00:00-04:00</published><updated>2025-10-22T09:32:07-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
 
-<p>This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C intermediaries, defenders must learn to detect these manipulations hidden within normal traffic. Our research, presented at <strong>BSidesNYC 0x05</strong>, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.</p>
+<p>This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at <strong>BSidesNYC 0x05</strong>, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.</p>
 
 <hr />
 
@@ -37,7 +37,7 @@
 
 <h2 id="framework-from-localization-to-recipe-extraction">Framework: From Localization to Recipe Extraction</h2>
 
-<p>We developed a systematic framework inspired by our research prototype <strong>VADER</strong> (<em>proactiVe deAd Drop rEsolver Remediation</em>). The framework analyzes malware binaries to uncover DDR behavior and derive reusable decoding recipes in three structured phases:</p>
+<p>We developed a systematic framework inspired by our research prototype <strong>VADER</strong> (<em>proactiVe deAd Drop rEsolver Remediation</em>). VADER analyzes malware binaries to uncover DDR behavior and derive reusable decoding recipes in three structured phases:</p>
 
 <ol>
   <li>
@@ -50,30 +50,30 @@ Once the relevant regions are identified, execution is paused around them to ext
   </li>
   <li>
     <p><strong>Symbolic recipe identification.</strong><br />
-From these symbolic states, mathematical expressions (λ) are extracted to describe each transformation applied to the fetched data. These expressions are compared against a reference library of known algorithms (e.g., Base64, XOR, Base16, rotation) to recover the complete decoding sequence used by the malware.</p>
+From these symbolic states, mathematical expressions (λ) are extracted to describe each transformation applied to the fetched data. These expressions are compared against a reference library of known algorithms (e.g., Base64, XOR, Base16, character rotation, etc.) to recover the complete decoding sequence used by the malware.</p>
   </li>
 </ol>
 
 <p><img src="/assets/blogs/spycraft/symbex.jpg" alt="Symbolic Expression Matching" class="img-framed" width="50%" /></p>
 
-<p class="figcaption">Symbolic Expression Matching. The framework (1) injects symbolic data (λ) into the malware to localize DDR decoding logic and (2) generate a symbolic expression (Mλ). Reference decoder algorithms (e.g., Base16, XOR) are then symbolically executed using the same constraints to (3) produce comparable expressions (B16λ, XORλ). The framework first (4) performs structural matching between expressions, and if differences remain, uses a symbolic solver to evaluate their concrete outputs under identical constraints. A high ratio of matched paths (5) confirms that the malware routine and reference decoder are functionally equivalent.</p>
+<p class="figcaption">VADER (1) injects symbolic data (λ) into the malware to localize DDR decoding logic and (2) generate a symbolic expression (Mλ). Reference decoder algorithms (e.g., Base16, XOR) are then symbolically executed using the same constraints to (3) produce comparable expressions (B16λ, XORλ). VADER first (4) performs structural matching between expressions, and if differences remain, uses a symbolic solver to evaluate their concrete outputs under identical constraints. A high ratio of matched paths (5) confirms that the malware routine and reference decoder are functionally equivalent.</p>
 
-<p>This symbolic approach scales across malware families and isolates decoder logic with precision. Each specimen can be profiled automatically, the corresponding de-manipulation recipe extracted, and that recipe reused to locate dead drops before operators deploy them.</p>
+<p>This symbolic approach scales across malware families and isolates decoder logic with precision. Each specimen can be profiled automatically, the corresponding de-manipulation recipe extracted, and that recipe reused to locate dead drops before operators deploy malware.</p>
 
 <h3 id="mudrop-case-study-proactive-dead-drop-discovery">Mudrop Case Study: Proactive Dead Drop Discovery</h3>
 
-<p>The Mudrop case demonstrates how the framework transitions defenders from reactive response to proactive discovery. Once the symbolic de-manipulation recipe was recovered, we scanned WordPress posts, applied the recipe to decode them automatically, and identified three previously unknown dead drops prepared for use by the operator.</p>
+<p>The Mudrop case demonstrates how VADER transitions defenders from reactive response to proactive discovery. Once the symbolic de-manipulation recipe was recovered, we scanned WordPress posts, applied the recipe to decode them automatically, and identified three previously unknown dead drops prepared for use by the operator.</p>
 
 <p class="figcaption"><img src="/assets/blogs/spycraft/mudrop.png" alt="Mudrop Proactive Discovery Placeholder" class="img-framed" width="70%" />
-To overcome this challenge, the framework scans accessible WordPress posts or messages, decodes them using the de-manipulation recipe from Mudrop (Table 1, Row 4), and extracts IPs or URLs via a regular expression. It then checks these against blocklists (e.g., VirusTotal, URLHaus) to classify web app accounts as dead drops for remediation. As Table 1 shows, the framework proactively discovered three previously unknown WordPress dead drops-selfcut (Proactive Discovery 1), brainbot02 (Proactive Discovery 2), and suck4 (Proactive Discovery 3)-demonstrating its ability to detect varied content beyond direct matches.</p>
+To overcome this challenge, VADER scans accessible WordPress posts or messages, decodes them using the de-manipulation recipe from Mudrop (Row 4), and extracts IPs or URLs via a regular expression. It then checks these against blocklists (e.g., VirusTotal, URLHaus) to classify web app accounts as dead drops for remediation. As this table shows, VADER proactively discovered three previously unknown WordPress dead drops-selfcut (Proactive Discovery 1), brainbot02 (Proactive Discovery 2), and suck4 (Proactive Discovery 3)-demonstrating its ability to detect varied content beyond direct matches.</p>
 
-<p>The concolic method generalizes across malware families. Even when two samples implement the same decoder differently (e.g., one as string operations, another as arithmetic transformations), symbolic comparison detects their shared logic. For complex, multi-stage decoders (e.g., Base16 followed by XOR and rotation), concolic execution and stepwise concretization reveal algorithmic boundaries, producing recipes accurate enough for automated detection.</p>
+<p>The method generalizes across malware families. Even when two samples implement the same decoder differently (e.g., one as string operations, another as arithmetic transformations), symbolic comparison detects their shared logic. For complex, multi-stage decoders (e.g., Base16 followed by XOR and rotation), concolic execution and stepwise concretization reveal algorithmic boundaries, producing recipes accurate enough for automated detection.</p>
 
 <hr />
 
 <h2 id="operational-impact">Operational Impact</h2>
 
-<p>We applied the framework to large-scale malware analysis and live web data collection with measurable results:</p>
+<p>We applied VADER to large-scale malware analysis and live web data collection with measurable results:</p>
 
 <ul>
   <li>Analyzed <strong>100,000</strong> Windows samples from <strong>2012–2022</strong>, identifying <strong>8,906</strong> DDR specimens.</li>

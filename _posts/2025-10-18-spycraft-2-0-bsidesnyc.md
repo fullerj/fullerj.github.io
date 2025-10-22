@@ -22,7 +22,7 @@ image:
 
 During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&C) destination, but to **X.com**. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call **Spycraft 2.0**, where adversaries conceal command instructions within legitimate web services? 
 
-This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&C intermediaries, defenders must learn to detect these manipulations hidden within normal traffic. Our research, presented at **BSidesNYC 0x05**, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.
+This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&C rendezvous points, defenders must learn to detect and stop them. Our research, presented at **BSidesNYC 0x05**, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.
 
 ---
 
@@ -57,7 +57,7 @@ This insight formed the basis for a proactive remediation method. Instead of rea
 
 ## Framework: From Localization to Recipe Extraction
 
-We developed a systematic framework inspired by our research prototype **VADER** (*proactiVe deAd Drop rEsolver Remediation*). The framework analyzes malware binaries to uncover DDR behavior and derive reusable decoding recipes in three structured phases:
+We developed a systematic framework inspired by our research prototype **VADER** (*proactiVe deAd Drop rEsolver Remediation*). VADER analyzes malware binaries to uncover DDR behavior and derive reusable decoding recipes in three structured phases:
 
 1. **DDR logic localization.**  
    The malware is instrumented to monitor data flow from web fetches to C&C communications. When content retrieved from a public web service later initiates a C&C connection, those execution paths are isolated to confirm DDR functionality.
@@ -66,30 +66,30 @@ We developed a systematic framework inspired by our research prototype **VADER**
    Once the relevant regions are identified, execution is paused around them to extract precise input and output boundaries. These boundaries define where the malware begins and ends its de-manipulation routines, enabling accurate symbolic state capture.
 
 3. **Symbolic recipe identification.**  
-   From these symbolic states, mathematical expressions (λ) are extracted to describe each transformation applied to the fetched data. These expressions are compared against a reference library of known algorithms (e.g., Base64, XOR, Base16, rotation) to recover the complete decoding sequence used by the malware.
+   From these symbolic states, mathematical expressions (λ) are extracted to describe each transformation applied to the fetched data. These expressions are compared against a reference library of known algorithms (e.g., Base64, XOR, Base16, character rotation, etc.) to recover the complete decoding sequence used by the malware.
 
 ![Symbolic Expression Matching](/assets/blogs/spycraft/symbex.jpg){: .img-framed width="50%" }
 
-Symbolic Expression Matching. The framework (1) injects symbolic data (λ) into the malware to localize DDR decoding logic and (2) generate a symbolic expression (Mλ). Reference decoder algorithms (e.g., Base16, XOR) are then symbolically executed using the same constraints to (3) produce comparable expressions (B16λ, XORλ). The framework first (4) performs structural matching between expressions, and if differences remain, uses a symbolic solver to evaluate their concrete outputs under identical constraints. A high ratio of matched paths (5) confirms that the malware routine and reference decoder are functionally equivalent.
+VADER (1) injects symbolic data (λ) into the malware to localize DDR decoding logic and (2) generate a symbolic expression (Mλ). Reference decoder algorithms (e.g., Base16, XOR) are then symbolically executed using the same constraints to (3) produce comparable expressions (B16λ, XORλ). VADER first (4) performs structural matching between expressions, and if differences remain, uses a symbolic solver to evaluate their concrete outputs under identical constraints. A high ratio of matched paths (5) confirms that the malware routine and reference decoder are functionally equivalent.
 {:.figcaption}
 
-This symbolic approach scales across malware families and isolates decoder logic with precision. Each specimen can be profiled automatically, the corresponding de-manipulation recipe extracted, and that recipe reused to locate dead drops before operators deploy them.
+This symbolic approach scales across malware families and isolates decoder logic with precision. Each specimen can be profiled automatically, the corresponding de-manipulation recipe extracted, and that recipe reused to locate dead drops before operators deploy malware.
 
 ### Mudrop Case Study: Proactive Dead Drop Discovery
 
-The Mudrop case demonstrates how the framework transitions defenders from reactive response to proactive discovery. Once the symbolic de-manipulation recipe was recovered, we scanned WordPress posts, applied the recipe to decode them automatically, and identified three previously unknown dead drops prepared for use by the operator.
+The Mudrop case demonstrates how VADER transitions defenders from reactive response to proactive discovery. Once the symbolic de-manipulation recipe was recovered, we scanned WordPress posts, applied the recipe to decode them automatically, and identified three previously unknown dead drops prepared for use by the operator.
 
 ![Mudrop Proactive Discovery Placeholder](/assets/blogs/spycraft/mudrop.png){: .img-framed width="70%"}
-To overcome this challenge, the framework scans accessible WordPress posts or messages, decodes them using the de-manipulation recipe from Mudrop (Table 1, Row 4), and extracts IPs or URLs via a regular expression. It then checks these against blocklists (e.g., VirusTotal, URLHaus) to classify web app accounts as dead drops for remediation. As Table 1 shows, the framework proactively discovered three previously unknown WordPress dead drops-selfcut (Proactive Discovery 1), brainbot02 (Proactive Discovery 2), and suck4 (Proactive Discovery 3)-demonstrating its ability to detect varied content beyond direct matches.
+To overcome this challenge, VADER scans accessible WordPress posts or messages, decodes them using the de-manipulation recipe from Mudrop (Row 4), and extracts IPs or URLs via a regular expression. It then checks these against blocklists (e.g., VirusTotal, URLHaus) to classify web app accounts as dead drops for remediation. As this table shows, VADER proactively discovered three previously unknown WordPress dead drops-selfcut (Proactive Discovery 1), brainbot02 (Proactive Discovery 2), and suck4 (Proactive Discovery 3)-demonstrating its ability to detect varied content beyond direct matches.
 {:.figcaption}
 
-The concolic method generalizes across malware families. Even when two samples implement the same decoder differently (e.g., one as string operations, another as arithmetic transformations), symbolic comparison detects their shared logic. For complex, multi-stage decoders (e.g., Base16 followed by XOR and rotation), concolic execution and stepwise concretization reveal algorithmic boundaries, producing recipes accurate enough for automated detection.
+The method generalizes across malware families. Even when two samples implement the same decoder differently (e.g., one as string operations, another as arithmetic transformations), symbolic comparison detects their shared logic. For complex, multi-stage decoders (e.g., Base16 followed by XOR and rotation), concolic execution and stepwise concretization reveal algorithmic boundaries, producing recipes accurate enough for automated detection.
 
 ---
 
 ## Operational Impact
 
-We applied the framework to large-scale malware analysis and live web data collection with measurable results:
+We applied VADER to large-scale malware analysis and live web data collection with measurable results:
 
 - Analyzed **100,000** Windows samples from **2012–2022**, identifying **8,906** DDR specimens.  
 - Discovered **11** web applications abused for DDR content. **Pastebin** accounted for **68%**, while **blockchain explorers** represented **25%** (23 transaction IDs, 14 wallet IDs).  
