@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /assets/search-data.json
+---
+{% assign searchable_docs = site.posts %}
+{% for collection in site.collections %}
+  {% if collection.label != "posts" and collection.output %}
+    {% assign searchable_docs = searchable_docs | concat: collection.docs %}
+  {% endif %}
+{% endfor %}
+{% assign searchable_docs = searchable_docs | concat: site.pages %}
+{% assign searchable_docs = searchable_docs | where_exp: "doc", "doc.search_exclude != true" %}
+{% assign searchable_docs = searchable_docs | where_exp: "doc", "doc.title" %}
+[
+{% for doc in searchable_docs %}
+  {% assign doc_title = doc.title | strip %}
+  {% assign doc_url = doc.url | relative_url %}
+  {% assign doc_collection = doc.collection | default: "pages" %}
+  {% assign raw_excerpt = doc.excerpt | default: doc.content %}
+  {% assign excerpt = raw_excerpt | strip_html | replace: "\n", " " | replace: "\r", " " | replace: "\t", " " | strip %}
+  {% assign excerpt = excerpt | truncate: 220, "" %}
+  {% assign raw_content = doc.content | strip_html | replace: "\n", " " | replace: "\r", " " | replace: "\t", " " | strip %}
+  {% assign content = raw_content | truncate: 1000, "" %}
+  {
+    "title": {{ doc_title | jsonify }},
+    "url": {{ doc_url | jsonify }},
+    "collection": {{ doc_collection | jsonify }},
+    "date": {% if doc.date %}{{ doc.date | date_to_xmlschema | jsonify }}{% else %}null{% endif %},
+    "excerpt": {{ excerpt | jsonify }},
+    "content": {{ content | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

@@ -68,6 +68,7 @@ Key paths and how they are used:
 | Education | `_data/education.yml` | Structured list of degrees used to render the Education cards on About (logo, institution, location, advisor, thesis/dissertation). |
 | Certifications | `_data/certifications.yml` | Central store for certification badges displayed on About, keeping logos/titles consistent. |
 | Navigation | `_config.yml` (`menu:`) | Sidebar links (Blog, Publications, Talks, Teaching, Service, About). |
+| Search data | `assets/search-data.json` | Liquid template that emits the JSON index consumed by the navbar search overlay. |
 | Styling | `_sass/my-style.scss`, `_sass/home.scss` | Custom SCSS for cards, dark mode tweaks, homepage spacing, etc. |
 | Branding | `assets/img/…` | Logos for institutions, certifications, and the accent image (`accent_image` in `_config.yml`). |
 | Layout overrides | `_layouts/blog.html`, `_layouts/publication.html`, `_includes/components/post-blog.html`, `_includes/components/post-list-item.html` | Custom templates that remove dates from blog entries and restore publication metadata (venue badges). |
@@ -75,6 +76,12 @@ Key paths and how they are used:
 ---
 
 ## Content Guidelines
+
+### Search Overlay
+- Click the magnifying-glass icon in the top nav to open the inline search dialog. Results update live as you type and stay within the current page.
+- The overlay uses the generated `assets/search-data.json` file. It includes posts, pages, and collection documents unless front matter sets `search_exclude: true`.
+- Regenerate the site (via `bundle exec jekyll build` or `bundle exec jekyll serve`) whenever you add or update content so the search index stays current.
+- To remove specific items from search results, add `search_exclude: true` to the page or post front matter.
 
 ### Publications
 - Store PDFs in `assets/papers/` and link with absolute paths (e.g., `/assets/papers/ccs25.pdf`).

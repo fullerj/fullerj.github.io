@@ -95,7 +95,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2025-10-22T11:46:29-04:00',
+    INDEX_KEY: 'index--2025-10-22T15:26:36-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -200,7 +200,59 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         <span class="sr-only">Navigation</span>
         <span class="icon-menu"></span>
       </a>
+      <button
+        id="_nav-search-toggle"
+        class="nav-btn no-hover"
+        type="button"
+        aria-expanded="false"
+        aria-controls="_nav-search-panel"
+        data-search-toggle
+      >
+        <span class="sr-only">Search</span>
+        <span class="icon-search"></span>
+      </button>
       <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<div
+  id="_nav-search-panel"
+  class="nav-search-panel"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="_nav-search-toggle"
+  hidden
+  data-search-panel
+>
+  <div class="nav-search-surface">
+    <div class="search-pane" data-search-container>
+      <div class="nav-search-header">
+        <label class="sr-only" for="_nav-search-input">
+          Search
+        </label>
+        <input
+          id="_nav-search-input"
+          class="search-pane__input nav-search-input"
+          type="search"
+          placeholder="Type something…"
+          autocomplete="off"
+          data-search-input
+        />
+        <button
+          type="button"
+          class="nav-btn nav-search-close"
+          data-search-close
+        >
+          <span class="sr-only">Close</span>
+          <span class="icon-cross"></span>
+        </button>
+      </div>
+      <p class="nav-search-status" data-search-status hidden></p>
+      <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
+      <p class="search-result--empty nav-search-empty" data-search-empty hidden>
+        No results found for
+        <span data-search-query></span>.
+      </p>
     </div>
   </div>
 </div>
@@ -267,7 +319,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 
 
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/tall1.png)"></div>
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar/edu.jpg)"></div>
 
     <div class="sidebar-sticky">
   <div class="sidebar-about">

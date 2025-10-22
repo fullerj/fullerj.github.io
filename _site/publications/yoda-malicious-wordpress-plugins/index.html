@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2025-10-22T11:46:29-04:00',
+    INDEX_KEY: 'index--2025-10-22T15:26:36-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -223,7 +223,59 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         <span class="sr-only">Navigation</span>
         <span class="icon-menu"></span>
       </a>
+      <button
+        id="_nav-search-toggle"
+        class="nav-btn no-hover"
+        type="button"
+        aria-expanded="false"
+        aria-controls="_nav-search-panel"
+        data-search-toggle
+      >
+        <span class="sr-only">Search</span>
+        <span class="icon-search"></span>
+      </button>
       <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<div
+  id="_nav-search-panel"
+  class="nav-search-panel"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="_nav-search-toggle"
+  hidden
+  data-search-panel
+>
+  <div class="nav-search-surface">
+    <div class="search-pane" data-search-container>
+      <div class="nav-search-header">
+        <label class="sr-only" for="_nav-search-input">
+          Search
+        </label>
+        <input
+          id="_nav-search-input"
+          class="search-pane__input nav-search-input"
+          type="search"
+          placeholder="Type something…"
+          autocomplete="off"
+          data-search-input
+        />
+        <button
+          type="button"
+          class="nav-btn nav-search-close"
+          data-search-close
+        >
+          <span class="sr-only">Close</span>
+          <span class="icon-cross"></span>
+        </button>
+      </div>
+      <p class="nav-search-status" data-search-status hidden></p>
+      <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
+      <p class="search-result--empty nav-search-empty" data-search-empty hidden>
+        No results found for
+        <span data-search-query></span>.
+      </p>
     </div>
   </div>
 </div>
@@ -520,7 +572,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 
 
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/tall1.png)"></div>
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar/edu.jpg)"></div>
 
     <div class="sidebar-sticky">
   <div class="sidebar-about">
@@ -776,6 +828,503 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
 
 
+
+<script>
+(function () {
+  'use strict';
+
+  var SEARCH_DATA_URL = '/assets/search-data.json';
+  var searchState = {
+    docs: null,
+    promise: null,
+    error: null,
+  };
+  var activeBindings = null;
+
+  function ensureSearchData() {
+    if (searchState.docs) {
+      return Promise.resolve(searchState.docs);
+    }
+    if (searchState.promise) {
+      return searchState.promise;
+    }
+    searchState.promise = fetch(SEARCH_DATA_URL, { credentials: 'same-origin' })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Search data request failed with status ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function (raw) {
+        if (!Array.isArray(raw)) {
+          throw new Error('Search data is not an array.');
+        }
+        searchState.docs = raw.map(function (doc) {
+          var title = (doc.title || '').toString();
+          var excerpt = (doc.excerpt || '').toString();
+          var content = (doc.content || '').toString();
+          var enriched = {
+            title: title,
+            excerpt: excerpt,
+            content: content,
+            url: doc.url,
+            collection: doc.collection,
+            date: doc.date,
+            tags: doc.tags,
+          };
+          enriched.titleLower = title.toLowerCase();
+          enriched.excerptLower = excerpt.toLowerCase();
+          enriched._text = (title + ' ' + excerpt + ' ' + content).toLowerCase();
+          return enriched;
+        });
+        searchState.error = null;
+        return searchState.docs;
+      })
+      .catch(function (error) {
+        searchState.error = error;
+        searchState.promise = null;
+        throw error;
+      });
+
+    return searchState.promise;
+  }
+
+  function performSearch(query) {
+    if (!searchState.docs) {
+      return [];
+    }
+    var terms = query
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(Boolean);
+
+    if (!terms.length) {
+      return [];
+    }
+
+    var results = [];
+    for (var i = 0; i < searchState.docs.length; i++) {
+      var doc = searchState.docs[i];
+      var score = 0;
+      var missingTerm = false;
+      for (var j = 0; j < terms.length; j++) {
+        var term = terms[j];
+        if (!doc._text.includes(term)) {
+          missingTerm = true;
+          break;
+        }
+
+        if (doc.titleLower.includes(term)) {
+          score += 6;
+        }
+        if (doc.excerptLower && doc.excerptLower.includes(term)) {
+          score += 3;
+        }
+        score += 1;
+      }
+
+      if (!missingTerm) {
+        results.push({
+          doc: doc,
+          score: score,
+          firstMatch: doc._text.indexOf(terms[0]),
+        });
+      }
+    }
+
+    results.sort(function (a, b) {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      return a.firstMatch - b.firstMatch;
+    });
+
+    var sliced = results.slice(0, 20);
+    var mapped = [];
+    for (var k = 0; k < sliced.length; k++) {
+      mapped.push(sliced[k].doc);
+    }
+    return mapped;
+  }
+
+  function formatCollectionLabel(label) {
+    if (!label || label === 'pages') {
+      return '';
+    }
+    return label
+      .toString()
+      .replace(/[_-]+/g, ' ')
+      .replace(/\b\w/g, function (letter) {
+        return letter.toUpperCase();
+      });
+  }
+
+  function detachBindings() {
+    if (activeBindings && typeof activeBindings.destroy === 'function') {
+      activeBindings.destroy();
+    }
+    activeBindings = null;
+  }
+
+  function bindSearchUI() {
+    detachBindings();
+
+    var toggle = document.querySelector('[data-search-toggle]');
+    var panel = document.querySelector('[data-search-panel]');
+    if (!toggle || !panel) {
+      return;
+    }
+
+    var input = panel.querySelector('[data-search-input]');
+    var closeButton = panel.querySelector('[data-search-close]');
+    var resultsList = panel.querySelector('[data-search-results]');
+    var statusEl = panel.querySelector('[data-search-status]');
+    var emptyEl = panel.querySelector('[data-search-empty]');
+    var queryLabel = emptyEl ? emptyEl.querySelector('[data-search-query]') : null;
+    if (!input || !resultsList) {
+      return;
+    }
+
+    var isOpen = false;
+    var resizeListenerAttached = false;
+
+    function positionPanel() {
+      if (!isOpen) {
+        return;
+      }
+      var surface = panel.querySelector('.nav-search-surface') || panel;
+      if (!surface) {
+        return;
+      }
+
+      var viewportWidth = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      var viewportHeight = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
+      var padding = 16;
+      var surfaceWidth = surface.offsetWidth;
+      var surfaceHeight = surface.offsetHeight;
+      var toggleRect = toggle.getBoundingClientRect();
+
+      var left = toggleRect.right - surfaceWidth;
+      left = Math.max(padding, Math.min(left, viewportWidth - surfaceWidth - padding));
+
+      var top = toggleRect.bottom + 12;
+      top = Math.max(padding, Math.min(top, viewportHeight - surfaceHeight - padding));
+
+      panel.style.left = left + 'px';
+      panel.style.right = 'auto';
+      panel.style.top = top + 'px';
+    }
+
+    function attachResizeListener() {
+      if (resizeListenerAttached) {
+        return;
+      }
+      window.addEventListener('resize', positionPanel);
+      resizeListenerAttached = true;
+    }
+
+    function detachResizeListener() {
+      if (!resizeListenerAttached) {
+        return;
+      }
+      window.removeEventListener('resize', positionPanel);
+      resizeListenerAttached = false;
+    }
+
+    function setStatus(message, show) {
+      if (!statusEl) {
+        return;
+      }
+      var text = message || '';
+      statusEl.textContent = text;
+      statusEl.hidden = !text || show === false;
+      positionPanel();
+    }
+
+    function clearStatus() {
+      setStatus('', false);
+    }
+
+    function showEmpty(query) {
+      if (!emptyEl) {
+        return;
+      }
+      if (queryLabel) {
+        queryLabel.textContent = query ? '“' + query + '”' : '';
+      }
+      emptyEl.hidden = !query;
+      positionPanel();
+    }
+
+    function hideEmpty() {
+      if (emptyEl) {
+        emptyEl.hidden = true;
+      }
+      if (queryLabel) {
+        queryLabel.textContent = '';
+      }
+    }
+
+    function clearResults() {
+      resultsList.innerHTML = '';
+      hideEmpty();
+      clearStatus();
+      positionPanel();
+    }
+
+    function renderResults(items, query) {
+      resultsList.innerHTML = '';
+      if (!items.length) {
+        showEmpty(query);
+        setStatus('No results for “' + query + '”.', true);
+        positionPanel();
+        return;
+      }
+
+      hideEmpty();
+      var fragment = document.createDocumentFragment();
+      for (var index = 0; index < items.length; index++) {
+        var doc = items[index];
+        var listItem = document.createElement('li');
+        listItem.className = 'search-result';
+        listItem.setAttribute('role', 'listitem');
+
+        var link = document.createElement('a');
+        link.className = 'search-result__link';
+        link.href = doc.url;
+        link.textContent = doc.title || doc.url || 'Untitled';
+        listItem.appendChild(link);
+
+        var metaParts = [];
+        var collectionLabel = formatCollectionLabel(doc.collection);
+        if (collectionLabel) {
+          metaParts.push(collectionLabel);
+        }
+        if (doc.date) {
+          var date = new Date(doc.date);
+          if (!isNaN(date.getTime())) {
+            metaParts.push(
+              date.toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })
+            );
+          }
+        }
+
+        if (metaParts.length) {
+          var meta = document.createElement('span');
+          meta.className = 'search-result__meta';
+          meta.textContent = metaParts.join(' • ');
+          listItem.appendChild(meta);
+        }
+
+        if (doc.excerpt) {
+          var excerpt = document.createElement('p');
+          excerpt.className = 'search-result__excerpt';
+          excerpt.textContent = doc.excerpt;
+          listItem.appendChild(excerpt);
+        }
+
+        fragment.appendChild(listItem);
+      }
+
+      resultsList.appendChild(fragment);
+      setStatus(
+        'Showing ' + items.length + ' result' + (items.length === 1 ? '' : 's') + '.',
+        true
+      );
+      positionPanel();
+    }
+
+    function handleQueryChange() {
+      var query = input.value.trim();
+      if (!query) {
+        clearResults();
+        setStatus('Start typing to search.', true);
+        return;
+      }
+
+      ensureSearchData()
+        .then(function () {
+          var matches = performSearch(query);
+          renderResults(matches, query);
+        })
+        .catch(function () {
+          setStatus('Search is temporarily unavailable. Please try again later.', true);
+        });
+    }
+
+    function handleEscape(event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closePanel({ focusToggle: true });
+      }
+    }
+
+    function handleDocumentClick(event) {
+      if (!isOpen) {
+        return;
+      }
+      if (
+        !panel.contains(event.target) &&
+        event.target !== toggle &&
+        !toggle.contains(event.target)
+      ) {
+        closePanel({ focusToggle: false });
+      }
+    }
+
+    function openPanel() {
+      if (isOpen) {
+        return;
+      }
+      isOpen = true;
+      panel.removeAttribute('hidden');
+      panel.style.left = '';
+      panel.style.right = '';
+      panel.style.top = '';
+      toggle.setAttribute('aria-expanded', 'true');
+
+      if (!input.value.trim()) {
+        setStatus('Start typing to search.', true);
+      }
+
+      if (!searchState.docs && !searchState.promise) {
+        setStatus('Loading search index…', true);
+      }
+
+      ensureSearchData()
+        .then(function () {
+          if (input.value.trim()) {
+            handleQueryChange();
+          } else {
+            setStatus('Start typing to search.', true);
+          }
+        })
+        .catch(function () {
+          setStatus('Search is temporarily unavailable. Please try again later.', true);
+        });
+
+      positionPanel();
+      attachResizeListener();
+      requestAnimationFrame(function () {
+        positionPanel();
+        input.focus({ preventScroll: true });
+      });
+
+      document.addEventListener('keydown', handleEscape, true);
+      document.addEventListener('mousedown', handleDocumentClick, true);
+    }
+
+    function closePanel(options) {
+      if (!isOpen) {
+        return;
+      }
+      var opts = options || {};
+      isOpen = false;
+      panel.setAttribute('hidden', '');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('keydown', handleEscape, true);
+      document.removeEventListener('mousedown', handleDocumentClick, true);
+      detachResizeListener();
+      panel.style.left = '';
+      panel.style.right = '';
+      panel.style.top = '';
+
+      if (opts.resetQuery) {
+        input.value = '';
+        clearResults();
+      }
+
+      if (opts.focusToggle !== false) {
+        toggle.focus();
+      }
+    }
+
+    function destroy() {
+      document.removeEventListener('keydown', handleEscape, true);
+      document.removeEventListener('mousedown', handleDocumentClick, true);
+      detachResizeListener();
+      toggle.removeEventListener('click', onToggle);
+      input.removeEventListener('input', handleQueryChange);
+      input.removeEventListener('keydown', handleInputEnter);
+      if (closeButton) {
+        closeButton.removeEventListener('click', onClose);
+      }
+      resultsList.removeEventListener('click', onResultClick);
+      closePanel({ focusToggle: false });
+    }
+
+    function onToggle(event) {
+      event.preventDefault();
+      if (isOpen) {
+        closePanel({ focusToggle: false });
+      } else {
+        openPanel();
+      }
+    }
+
+    function onClose(event) {
+      event.preventDefault();
+      closePanel({ focusToggle: true });
+    }
+
+    function handleInputEnter(event) {
+      if (event.key === 'Enter') {
+        var firstLink = resultsList.querySelector('a');
+        if (firstLink) {
+          event.preventDefault();
+          firstLink.click();
+        }
+      }
+    }
+
+    function onResultClick(event) {
+      var anchor = event.target.closest('a');
+      if (!anchor) {
+        return;
+      }
+      closePanel({ focusToggle: false });
+    }
+
+    toggle.addEventListener('click', onToggle);
+    input.addEventListener('input', handleQueryChange);
+    input.addEventListener('keydown', handleInputEnter);
+    if (closeButton) {
+      closeButton.addEventListener('click', onClose);
+    }
+    resultsList.addEventListener('click', onResultClick);
+
+    activeBindings = {
+      destroy: destroy,
+      close: closePanel,
+    };
+  }
+
+  var pushState = document.getElementById('_pushState');
+  if (pushState) {
+    pushState.addEventListener('hy-push-state-after', function () {
+      bindSearchUI();
+    });
+    pushState.addEventListener('hy-push-state-start', function () {
+      if (activeBindings && typeof activeBindings.close === 'function') {
+        activeBindings.close({ focusToggle: false, resetQuery: false });
+      }
+    });
+  }
+
+  bindSearchUI();
+})();
+</script>
 
 
 

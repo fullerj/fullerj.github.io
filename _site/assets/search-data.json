@@ -1,0 +1,790 @@
+
+
+
+
+
+[
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "From Anomalous Traffic to Spycraft 2.0",
+    "url": "/blog/spycraft-2-0/",
+    "collection": "posts",
+    "date": "2025-10-18T00:00:00-04:00",
+    "excerpt": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a",
+    "content": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call Spycraft 2.0, where adversaries conceal command instructions within legitimate web services?\n\nThis observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C intermediaries, defenders must learn to detect these manipulations hidden within normal traffic. Our research, presented at BSidesNYC 0x05, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.\n\n\n\nDead Drop Resolvers: The Modern Dead Drop\n\nAt the core of Spycraft 2.0 is the Dead Drop Resolver (DDR), a digital v"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation",
+    "url": "/publications/vader-dead-drop-resolver/",
+    "collection": "posts",
+    "date": "2025-10-13T00:00:00-04:00",
+    "excerpt": "Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\nAuthors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 13",
+    "content": "Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\nAuthors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 13.8%\n\nHighlights\n\n\n  Detects and flags manipulated dead drops across seven popular web apps before attackers weaponize them.\n  Automates layered de-manipulation, surfacing 57.1% more active C2 endpoints than signature-based tools.\n  Delivers takedown intelligence that helped providers remove 13 hidden drop locations during evaluation.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nDead Drop Resolver (DDR) malware evades traditional Command and Control (C&amp;C) server takedowns by dynamically resolving C&amp;C addresses hosted on popular web applications, such as Dropbox and Pastebin. These addresses are often manipulated (i.e., encoded or encrypted), rendering existing detection techniques largely ineffective. To tackle this challenge, we introduce VADER, a malware foren"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Operationalizing Zero Trust: CECOM SEC and West Point Collaborate",
+    "url": "/publications/operationalizing-zero-trust/",
+    "collection": "posts",
+    "date": "2025-09-11T00:00:00-04:00",
+    "excerpt": "Venue: U.S. Army\nAuthors: F. Shah, Jonathan Fuller\nDate: September 11, 2025",
+    "content": "Venue: U.S. Army\nAuthors: F. Shah, Jonathan Fuller\nDate: September 11, 2025\n\nHighlights\n\n\n  Details the first practical evaluation of the SEC-developed mapping between Zero Trust principles and the DoD Risk Management Framework.\n  Shares insights from the joint U.S. Army CECOM Software Engineering Center and West Point collaboration on adoption challenges.\n  Captures feedback loops needed to operationalize Zero Trust across Army systems and accreditation processes.\n\n\nResources\n\n\n  Official article\n\n\nAbstract\n\nThe Communications-Electronics Command Software Engineering Center and the U.S. Military Academy at West Point partnered to test the feasibility of the SEC-developed mapping between Zero Trust and the Department of Defense Risk Management Framework. This effort marked the first practical exercise to gather feedback on the mapping’s application and to identify adjustments needed to operationalize Zero Trust within Army environments.\n\nMedia Coverage\n\n\n  Army Operationalizes Zero Tru"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "CS483 Digital Forensics",
+    "url": "/teaching/2025-01-15-cs483-digital-forensics/",
+    "collection": "posts",
+    "date": "2025-01-15T00:00:00-05:00",
+    "excerpt": "CS483 Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer archi",
+    "content": "CS483 Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.\n\nInstitution: United States Military Academy\nDepartment: Department of Electrical Engineering and Computer Science\nLocation: West Point, NY\nRole: Course Director\nTerm: Spring 2025\n\nThe course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.\n\nLearning Objectives\n\nUpon successful completion, students are able to:\n\n\n  Apply a scientific methodology to the acquisition and analysis of digital evidence.\n  Use multiple software tools to acquire and analyze digital evi"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "CS483: Digital Forensics",
+    "url": "/teaching/2024-01-15-cs483-digital-forensics/",
+    "collection": "posts",
+    "date": "2024-01-15T00:00:00-05:00",
+    "excerpt": "CS483 Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture,",
+    "content": "CS483 Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.\n\nInstitution: United States Military Academy\nDepartment: Department of Electrical Engineering and Computer Science\nLocation: West Point, NY\nRole: Course Director\nTerm: Spring 2024\n\nThroughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "COP 630 Cyber Law and Digital Forensics",
+    "url": "/teaching/2023-10-01-cyber-law-digital-forensics/",
+    "collection": "posts",
+    "date": "2023-10-01T00:00:00-04:00",
+    "excerpt": "COP 630 Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis wit",
+    "content": "COP 630 Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.\n\nInstitution: University of Maryland Global Campus\nDepartment: School of Cybersecurity and Information Technology\nLocation: Virtual\nRole: Course Instructor\nTerm: Fall 2023\nCredits: 6\n\nStudents explore three interlocking modules:\n\n\n  Legal Frameworks. Study U.S. statutory and case law, international norms, and rules of engagement that shape cyber operations.\n  Operational Compliance. Design and defend a cyber-offense campaign that remains compliant with U.S. regulations and policy constraints.\n  Applied Digital Forensics. Use industry tools to acquire and analyse evidence from network captures, storage media, and RAM across common operating systems and devices.\n\n\nThroughout the term, learners execute labs in a vi"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Invited Tutorial: Counteracting Web Application Abuse in Malware",
+    "url": "/publications/secdev-tutorial-web-application-abuse/",
+    "collection": "posts",
+    "date": "2023-09-18T00:00:00-04:00",
+    "excerpt": "Conference: 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\nAuthors: M. Yao, Jonathan Fuller, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio",
+    "content": "Conference: 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\nAuthors: M. Yao, Jonathan Fuller, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio\n\nHighlights\n\n\n  Distills forensic best practices for identifying and containing Web App-Engaged malware across popular web platforms.\n  Showcases the Marsea pipeline, enabling responders to document proof-of-abuse and coordinate takedowns with service providers.\n  Features a 90-minute mix of tool walkthroughs and labs, giving participants practical experience handling WAE incidents end-to-end.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nWeb applications offer a broad range of functionalities that are exploited by malware to serve as alternatives to traditional attacker-controlled servers. To effectively combat these Web App-Engaged (WAE) malware, prompt coordination between incident responders and web application providers is crucial. Any delay in this collaboration can allow WAE malware to flourish, posing seriou"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware",
+    "url": "/publications/marsea-web-application-abuse/",
+    "collection": "posts",
+    "date": "2023-08-09T00:00:00-04:00",
+    "excerpt": "Conference: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023\nAuthors: M. Yao, Jonathan Fuller, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 29.2%",
+    "content": "Conference: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023\nAuthors: M. Yao, Jonathan Fuller, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 29.2%\n\nHighlights\n\n\n  Identifies 893 web-application-engaged malware specimens across 97 families abusing 29 popular web applications.\n  Measures a 226% surge in WAE malware since 2020 while observing a 13.7% drop in reliance on attacker-controlled servers.\n  Delivers the Marsea pipeline, enabling responders and providers to remove over 50% of malicious web content encountered.\n\n\nResources\n\n\n  PDF\n  Slides\n  Talk recording\n  Source code\n\n\nAbstract\n\nWeb applications provide a wide array of utilities that are abused by malware as a replacement for traditional attacker-controlled servers. Thwarting these Web App-Engaged (WAE) malware requires rapid collaboration between incident responders and web app providers. Unfortunately, our research found that delays in this collaboration allow WAE malware to t"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration",
+    "url": "/publications/the-byte-c2-infiltration/",
+    "collection": "posts",
+    "date": "2023-05-01T00:00:00-04:00",
+    "excerpt": "Venue: The Byte\nAuthor: Jonathan Fuller\nDate: May 1, 2023",
+    "content": "Venue: The Byte\nAuthor: Jonathan Fuller\nDate: May 1, 2023\n\nHighlights\n\n\n  Explores how malware communication protocol weaknesses enable covert infiltration of command-and-control infrastructure.\n  Shares operational guidance for cyber operators confronting adversary C2 networks in the field.\n  Bridges research findings with practitioner insights for the 780th Military Intelligence Brigade (Cyber).\n\n\nResources\n\n\n  PDF\n\n\nAbstract\n\nThis article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces",
+    "url": "/publications/yoda-malicious-wordpress-plugins/",
+    "collection": "posts",
+    "date": "2022-04-10T00:00:00-04:00",
+    "excerpt": "Conference: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022\nAuthors: R. Pai Kasturi, Jonathan Fuller, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio\nAcceptance Rate: 18.1%",
+    "content": "Conference: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022\nAuthors: R. Pai Kasturi, Jonathan Fuller, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio\nAcceptance Rate: 18.1%\n\nHighlights\n\n\n  Analyzes 400K production web servers dating back to 2012 to uncover malicious plugin campaigns.\n  Introduces YODA, an automated framework that identifies and traces malicious plugin origins across marketplaces, piracy sites, and post-deployment compromises.\n  Documents $41.5K spent on malicious marketplace plugins, $228K in lost revenue from pirated plugins, and $834K in post-deployment compromises, with 94% of malicious plugins still active.\n\n\nResources\n\n\n  PDF\n  Talk recording\n  Demo\n  Source code\n\n\nAbstract\n\nModern websites owe most of their aesthetics and functionalities to Content Management Systems (CMS) plugins, which are bought and sold on widely popular marketplaces. Driven by economic incentives, attackers abuse the trust in this economy: selling malware on l"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "ECE 4117: Introduction to Malware Reverse Engineering",
+    "url": "/teaching/2022-04-01-ece4117-malware-reverse-engineering/",
+    "collection": "posts",
+    "date": "2022-04-01T00:00:00-04:00",
+    "excerpt": "ECE 4117 introduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emphasized disciplined analysis workf",
+    "content": "ECE 4117 introduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emphasized disciplined analysis workflows, tooling, and remediation strategies needed to combat advanced threats.\n\nInstitution: Georgia Institute of Technology\nDepartment: School of Electrical and Computer Engineering\nLocation: Atlanta, GA\nRole: Guest Lecturer\nTerm: Spring 2022\n\nAcross the session students performed immersive, hands-on exercises in malware analysis and explored applied software security topics including operating systems internals, debugging at multiple layers, and software protection countermeasures."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "C3PO: Large-Scale Study of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration",
+    "url": "/publications/c3po-covert-cc-monitoring/",
+    "collection": "posts",
+    "date": "2021-11-17T00:00:00-05:00",
+    "excerpt": "Conference: 28th ACM Conference on Computer and Communications Security (CCS), Seoul, South Korea, 2021\nAuthors: Jonathan Fuller, R. Pai Kasturi, A. K. Sikder, H. Xu, B. Arik, V. Verma, E. Asdar, B. Saltaformaggio\nAccept",
+    "content": "Conference: 28th ACM Conference on Computer and Communications Security (CCS), Seoul, South Korea, 2021\nAuthors: Jonathan Fuller, R. Pai Kasturi, A. K. Sikder, H. Xu, B. Arik, V. Verma, E. Asdar, B. Saltaformaggio\nAcceptance Rate: 22.3%\n\nHighlights\n\n\n  Discovers that 62,202 malware samples (nearly one in three) expose over-permissioned protocol access for covert monitoring.\n  Maps 443,905 potential C&amp;C monitoring primitives spanning 15 years of malware evolution.\n  Provides automated detection and infiltration tooling that empowers responders to monitor C&amp;C operations without tipping off botmasters.\n\n\nResources\n\n\n  PDF\n  Talk recording\n  Source code\n\n\nAbstract\n\nCurrent techniques to monitor botnets towards disruption or takedown are likely to result in inaccurate data gathered about the botnet or be detected by C&amp;C orchestrators. Seeking a covert and scalable solution, we look to an evolving pattern in modern malware that integrates standardized over-permissioned protocols,"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Misuse-Based Detection of Z-Wave Network Attacks",
+    "url": "/publications/misuse-detection-zwave-attacks/",
+    "collection": "posts",
+    "date": "2017-01-15T00:00:00-05:00",
+    "excerpt": "Journal: Computers &amp; Security, Volume 64, January 2017, Pages 44–58\nAuthors: Jonathan Fuller, B. Ramsey, M. Rice, J. Pecarina",
+    "content": "Journal: Computers &amp; Security, Volume 64, January 2017, Pages 44–58\nAuthors: Jonathan Fuller, B. Ramsey, M. Rice, J. Pecarina\n\nHighlights\n\n\n  Addresses the lack of defensive tooling for proprietary Z-Wave networks by extending a misuse-based intrusion detection system (MBIDS).\n  Benchmarks baseline and extended MBIDS implementations, demonstrating a mean misuse detection rate of 99%.\n  Provides actionable guidance for defenders of wireless sensor networks deployed in critical infrastructure, smart metering, and home automation.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nWireless Sensor Networks (WSNs) are becoming ubiquitous, providing low-cost, low-power, and low-complexity systems in which communication and control are tightly integrated. Although much security research into WSNs has been accomplished, researchers struggle to conduct thorough analyses of closed-source proprietary protocols. Of the numerous available and underanalyzed proprietary protocols, those based on the I"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Efficacy of Physical Layer Preamble Manipulation for IEEE 802.11a/ac",
+    "url": "/publications/physical-layer-preamble-manipulation-80211ac/",
+    "collection": "posts",
+    "date": "2016-04-01T00:00:00-04:00",
+    "excerpt": "Journal: IET Electronics Letters, Volume 52, Issue 8, April 2016, Pages 669–671\nAuthors: B. Ramsey, Jonathan Fuller, C. Badenhop",
+    "content": "Journal: IET Electronics Letters, Volume 52, Issue 8, April 2016, Pages 669–671\nAuthors: B. Ramsey, Jonathan Fuller, C. Badenhop\n\nHighlights\n\n\n  Extends preamble manipulation research to higher-bandwidth IEEE 802.11a/ac radios in the 5 GHz spectrum.\n  Fingerprints six commodity transceiver designs with &gt;99% accuracy using fewer than 20 packets.\n  Provides a practical method for selective packet obfuscation and transceiver discrimination based on physical layer behavior.\n\n\nResources\n\n\n  PDF\n\n\nAbstract\n\nWireless physical layer manipulation is a recently discovered technique for selective packet obfuscation. This process exploits the unique and proprietary nature of transceiver designs rather than manufacturing imperfections. To date, preamble manipulation has only successfully been demonstrated on low data rate transceivers operating in the 2.4 GHz band. This Letter investigates the effectiveness of preamble manipulation on common 5 GHz IEEE 802.11a and IEEE 802.11ac wireless transcei"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks",
+    "url": "/publications/wireless-intrusion-detection-g9959-covert-channels/",
+    "collection": "posts",
+    "date": "2016-03-01T00:00:00-05:00",
+    "excerpt": "Conference: 11th International Conference on Cyber Warfare and Security (ICCWS), 2016\nAuthors: Jonathan Fuller, B. Ramsey, J. Pecarina, M. Rice",
+    "content": "Conference: 11th International Conference on Cyber Warfare and Security (ICCWS), 2016\nAuthors: Jonathan Fuller, B. Ramsey, J. Pecarina, M. Rice\n\nHighlights\n\n\n  Reveals a covert channel technique for injecting manipulated packets into ITU-T G.9959/Z-Wave wireless sensor networks.\n  Demonstrates full compromise after WLAN access by embedding hidden instructions inside Z-Wave MAC frames.\n  Develops a USRP-backed misuse-based intrusion detection system (MBIDS) achieving 92% mean accuracy against the covert channel attacks.\n\n\nResources\n\n\n  PDF\n\n\nAbstract\n\nWe introduce herein an information hiding technique for injecting manipulated packets into wireless sensor networks (WSNs). We exhibit how an attacker can apply information hiding as a type of covert channel attack over radio frequency transmissions into the WSN. The feasibility of our injection method is demonstrated through an attack on the most common implementation of the ITU-T G.9959 recommendation, commercially known as Z-Wave. More "
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Rogue Z-Wave Controllers: A Persistent Attack Channel",
+    "url": "/publications/rogue-zwave-controllers/",
+    "collection": "posts",
+    "date": "2015-10-29T00:00:00-04:00",
+    "excerpt": "Conference: 2015 IEEE 40th Local Computer Networks Conference Workshops (LCN Workshops), Clearwater Beach, FL, 2015\nAuthors: Jonathan Fuller; B. Ramsey",
+    "content": "Conference: 2015 IEEE 40th Local Computer Networks Conference Workshops (LCN Workshops), Clearwater Beach, FL, 2015\nAuthors: Jonathan Fuller; B. Ramsey\n\nHighlights\n\n\n  Demonstrates a novel technique to inject rogue gateway controllers into Z-Wave wireless sensor networks.\n  Shows the injected controller can persistently communicate with vulnerable devices even without constant Internet connectivity.\n  Outlines mitigation strategies for infrastructure operators deploying Z-Wave in smart metering, home automation, and industrial environments.\n\n\nResources\n\n\n  PDF\n\n\nAbstract\n\nThe popularity of Wireless Sensor Networks (WSN) is increasing in critical infrastructure, smart metering, and home automation. Of the numerous protocols available, Z-Wave has significant potential for growth in WSNs. As a proprietary protocol, there are few research publications concerning Z-Wave, and thus little is known about the security implications of its use. Z-Wave networks use a gateway controller to manage a"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Evaluating ITU-T G.9959 Based Wireless Systems Used in Critical Infrastructure Assets",
+    "url": "/publications/evaluating-itu-t-g9959-critical-infrastructure/",
+    "collection": "posts",
+    "date": "2015-03-01T00:00:00-05:00",
+    "excerpt": "Book: Critical Infrastructure Protection IX (ICCIP 2015)\nAuthors: C. Badenhop, Jonathan Fuller, J. Hall, B. Ramsey, M. Rice",
+    "content": "Book: Critical Infrastructure Protection IX (ICCIP 2015)\nAuthors: C. Badenhop, Jonathan Fuller, J. Hall, B. Ramsey, M. Rice\n\nHighlights\n\n\n  Provides one of the first open-source software-defined radio (SDR) toolchains for inspecting ITU-T G.9959 wireless traffic.\n  Demonstrates passive reconnaissance techniques that work even when deployments enable encryption, exposing implementation variances.\n  Offers actionable observations for operators securing G.9959-based smart grid, building security, and safety sensor networks.\n\n\nResources\n\n\n  PDF\n\n\nAbstract\n\nITU-T G.9959 wireless connectivity is increasingly incorporated in the critical infrastructure. However, evaluating the robustness and security of commercially-available products based on this standard is challenging due to the closed-source nature of the transceiver and application designs. Given that ITU-T G.9959 transceivers are being used in smart grids, building security systems and safety sensors, the development of reliable, open-"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Blog Highlights",
+    "url": "/blog-highlights/",
+    "collection": "featured_categories",
+    "date": "2025-10-22T15:26:36-04:00",
+    "excerpt": "",
+    "content": ""
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Publications",
+    "url": "/publications/",
+    "collection": "featured_categories",
+    "date": "2025-10-22T15:26:36-04:00",
+    "excerpt": "",
+    "content": ""
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Teaching",
+    "url": "/teaching/",
+    "collection": "featured_categories",
+    "date": "2025-10-22T15:26:36-04:00",
+    "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
+    "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "CHANGELOG",
+    "url": "/CHANGELOG/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "v9.2.1\n  v9.2.0\n  v9.1.9\n  v9.1.8\n  v9.1.7\n  v9.1.6\n  v9.1.5\n  v9.1.4\n  v9.1.3    \n      Added\n      Fixes\n      Design\n    \n  \n  v9.1.2\n  v9.1.1\n  v9.1.0    \n      Added\n      Changed\n      Fixes\n    \n  \n  v9.0.5\n  v9.0",
+    "content": "v9.2.1\n  v9.2.0\n  v9.1.9\n  v9.1.8\n  v9.1.7\n  v9.1.6\n  v9.1.5\n  v9.1.4\n  v9.1.3    \n      Added\n      Fixes\n      Design\n    \n  \n  v9.1.2\n  v9.1.1\n  v9.1.0    \n      Added\n      Changed\n      Fixes\n    \n  \n  v9.0.5\n  v9.0.4\n  v9.0.3\n  v9.0.2\n  v9.0.1\n  v9.0.5\n  v9.0.4\n  v9.0.3\n  v9.0.2\n  v9.0.1\n  v9.0.0    \n      Major\n      Minor\n      Design\n      Fixes\n    \n  \n  v8.5.2\n  v8.5.1\n  v8.5.0    \n      Changed\n      Added\n      Fixed\n    \n  \n  v8.4.0\n  v8.3.0    \n      Added\n      Changed\n    \n  \n  v8.2.0\n  v8.1.1    \n      Fixes\n    \n  \n  v8.1.0    \n      Breaking\n      Changed\n      Added\n    \n  \n  v8.0.0    \n      Breaking\n      Changed\n      Added\n      Fixes\n    \n  \n  v7.5.1    \n      Changed\n    \n  \n  v7.5.0    \n      Added\n      Fixed\n      Other\n    \n  \n  v7.4.2    \n      Fixed\n    \n  \n  v7.4.1    \n      Fixed\n    \n  \n  v7.4.0    \n      Added\n      Fixed\n      Design\n      Other\n    \n  \n  v7.3.0    \n      Added\n      Fixed\n    \n  \n  v7.2.0    \n      Added\n      Design\n      Fixes\n "
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "LICENSE",
+    "url": "/LICENSE/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Preamble\n  TERMS AND CONDITIONS    \n      0. Definitions\n      1. Source Code\n      2. Basic Permissions\n      3. Protecting Users’ Legal Rights From Anti-Circumvention Law\n      4. Conveying Verbatim Copies\n      5. Con",
+    "content": "Preamble\n  TERMS AND CONDITIONS    \n      0. Definitions\n      1. Source Code\n      2. Basic Permissions\n      3. Protecting Users’ Legal Rights From Anti-Circumvention Law\n      4. Conveying Verbatim Copies\n      5. Conveying Modified Source Versions\n      6. Conveying Non-Source Forms\n      7. Additional Terms\n      8. Termination\n      9. Acceptance Not Required for Having Copies\n      10. Automatic Licensing of Downstream Recipients\n      11. Patents\n      12. No Surrender of Others’ Freedom\n      13. Use with the GNU Affero General Public License\n      14. Revised Versions of this License\n      15. Disclaimer of Warranty\n      16. Limitation of Liability\n      17. Interpretation of Sections 15 and 16\n    \n  \n\n\nGNU GENERAL PUBLIC LICENSE\n\nVersion 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\nhttp://fsf.org/\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\nPreamble\n\nThe GNU General Public Li"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "NOTICE",
+    "url": "/NOTICE/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Attributions\n  Licenses    \n      Hyde\n      hy-drawer\n      hy-push-state\n      RxJS\n      KaTeX\n      core-js\n      Web Animations\n      Modernizr\n      Compress HTML in Jekyll\n      The HTML5 Shiv\n      DOM4\n      loa",
+    "content": "Attributions\n  Licenses    \n      Hyde\n      hy-drawer\n      hy-push-state\n      RxJS\n      KaTeX\n      core-js\n      Web Animations\n      Modernizr\n      Compress HTML in Jekyll\n      The HTML5 Shiv\n      DOM4\n      loadCSS\n      Ratchet\n      Swipe\n      smoothState\n      Bootstrap\n      Atom One Light Syntax\n      Atom One Dark Syntax\n      MiniSearch\n      window.fetch polyfill\n      AbortController polyfill for abortable fetch()\n      ResizeObserver Polyfill\n      kv-storage polyfill\n      IntersectionObserver polyfill\n      Web Components Polyfills\n      lit-html\n    \n  \n\n\nCopyright (c) 2020 Florian Klampfer https://qwtel.com/\n\nThis program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied wa"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Documentation",
+    "url": "/docs/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Here you should be able to find everything you need to know to accomplish the most common tasks when blogging with Hydejack.\n\nWhile this manual tries to be beginner-friendly, as a user of Jekyll it is assumed that you ar",
+    "content": "Here you should be able to find everything you need to know to accomplish the most common tasks when blogging with Hydejack.\n\nWhile this manual tries to be beginner-friendly, as a user of Jekyll it is assumed that you are comfortable running shell commands and editing text files.\n\nGetting started\n\n  Install — How to install and run Hydejack.\n  Upgrade — You can skip this if you haven’t used Hydejack before.\n  Config — Once Jekyll is running you can start editing your config file.\n\n\nUsing Hydejack\n\n  Basics — How to add different types of content.\n  Writing — Producing markdown content for Hydejack.\n  Scripts — How to include 3rd party scripts on your site.\n  Build — How to build the static files for deployment.\n  Deploy — 🆕 How to deploy to a variety of popular providers.\n  Advanced — Guides for more advanced tasks.\n\n\nOther\n\n  LICENSE — The license of this project.\n  NOTICE — Parts of this program are provided under separate licenses.\n  CHANGELOG — Version history of Hydejack."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "About",
+    "url": "/about/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to",
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced Web Application Security Thro"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Advanced",
+    "url": "/docs/advanced/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This chapter covers advanced topics, such as offline support and custom JS builds. Codings skills are recommended.\n\n\n  Enabling offline support    \n      How offline storage works\n    \n  \n  Adding a custom social media i",
+    "content": "This chapter covers advanced topics, such as offline support and custom JS builds. Codings skills are recommended.\n\n\n  Enabling offline support    \n      How offline storage works\n    \n  \n  Adding a custom social media icon    \n      Creating the icon font\n      Adding the platform’s metadata\n    \n  \n  How CSS is organized in Hydejack\n\n\nEnabling offline support\nHydejack v8 introduces experimental “cache as you go” offline support. This is implemented via the Service Worker API, a new browser standard that is now supported in the latest versions of all major browsers. However, it is a very powerful feature and should be used with a lot of care.\n\nEnabling this feature requires that your content meets the following criteria:\n\n\n  Content doesn’t change between deploys (e.g. manually adding things to _site etc.)\n  All assets in assets are immutable, i.e. they never change (when changing a file in assets, it needs to have a new name and links need to point to the new file).\n  The site is mos"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Basics",
+    "url": "/docs/basics/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This chapter covers the basics of content creation with Hydejack.\n\n\n  Adding images\n  Adding an entry to the sidebar    \n      Adding a link to an external page to the sidebar\n    \n  \n  Adding a category or tag    \n     ",
+    "content": "This chapter covers the basics of content creation with Hydejack.\n\n\n  Adding images\n  Adding an entry to the sidebar    \n      Adding a link to an external page to the sidebar\n    \n  \n  Adding a category or tag    \n      Recap: Categories and tags in Jekyll\n      Categories and tags in Hydejack\n      Creating a new category or tag\n    \n  \n  Adding an about page\n  Adding a cover page\n  Adding related posts to a post\n  Customization    \n      Adding custom CSS\n      Adding custom HTML to the head\n      Adding custom HTML to the body\n    \n  \n  Adding a welcome page*\n  Projects*    \n      Adding a projects page\n      Adding a project\n      Organizing Projects\n    \n  \n  Adding a resume*    \n      Changing the layout\n      Skill level icons\n      Adding a specialized resume or multiple resumes\n      Downloads\n    \n  \n\n\nAdding images\nAdding good images is key to a engaging blog experience. You can provide an image attribute in in the front matter of posts, pages, and projects* that will be us"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Blog",
+    "url": "/blog/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n2025\n\n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        From Anomalous Traffic to Spycraft 2.0\n        \n          Turning dead drop resolver tradecraft a",
+    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n2025\n\n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        From Anomalous Traffic to Spycraft 2.0\n        \n          Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Build",
+    "url": "/docs/build/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This chapters shows how to prepare your Hydejack site for a production build and deployment on 3rd party hosting providers.\n\n\n  Building locally\n  Building locally with latent semantic analysis\n  GitHub Pages\n\n\nBuilding ",
+    "content": "This chapters shows how to prepare your Hydejack site for a production build and deployment on 3rd party hosting providers.\n\n\n  Building locally\n  Building locally with latent semantic analysis\n  GitHub Pages\n\n\nBuilding locally\nWhen building Hydejack it is important to set the environment variable JEKYLL_ENV to production.\nOtherwise the output will not be minified. Building itself happens via Jekyll’s build command.\n\n$ JEKYLL_ENV=production bundle exec jekyll build\n\n\nThis will generate the finished static files in _site,\nwhich can be deployed using the methods outlined in the Jekyll Documentation.\n\nBuilding locally with latent semantic analysis\nBy default, related posts are simply the most recent posts.\nHydejack modifies this a bit, by showing the most recent posts of the same category or tag.\nHowever, the results are still pretty “unrelated”.\nTo provide better results, Jekyll supports latent semantic analysis via classifier-reborn’s\nLatent Semantic Indexer\n\nTo use the LSI, you first h"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Config",
+    "url": "/docs/config/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Once Jekyll is running, you can start with basic configuration by adding various entries to _config.yml. \nBesides the documentation here, you can also read the annotated config file.\n\nWhen making changes to _config.yml, ",
+    "content": "Once Jekyll is running, you can start with basic configuration by adding various entries to _config.yml. \nBesides the documentation here, you can also read the annotated config file.\n\nWhen making changes to _config.yml, it is necessary to restart the Jekyll process for changes to take effect.\n\n\n  Setting url and baseurl    \n      GitHub Pages\n    \n  \n  Changing accent colors and sidebar images    \n      Theme color\n    \n  \n  Changing fonts    \n      Removing Google Fonts\n    \n  \n  Choosing a blog layout    \n      Using the blog layout in a subdirectory\n    \n  \n  Adding an author    \n      Adding an author’s picture\n      Adding social media icons\n      Adding an email, RSS icon or download icon\n    \n  \n  Enabling comments\n  Enabling Google Analytics    \n      Using a custom analytics provider\n    \n  \n  Changing built-in strings\n  Adding legal documents\n  Enabling math blocks\n  Adding custom Favicons and App Icons    \n      Changing the Favicon\n      Changing the App Icons\n    \n  \n  Add"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Deploy",
+    "url": "/docs/deploy/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This chapter was added in 2024 with my recommendations on how to deploy Hydejack based on recent developments in GitHub Pages and other changes in the world of static site deployment.\n\nNote that the Jekyll Documentation ",
+    "content": "This chapter was added in 2024 with my recommendations on how to deploy Hydejack based on recent developments in GitHub Pages and other changes in the world of static site deployment.\n\nNote that the Jekyll Documentation on Deployment remains the best, most up-to-date resource for all things Jekyll deployment. \nThese docs are my personal recipes with some extra steps that are mostly relevant to PRO Customers.\n\n\n  GitHub Actions\n  Private Repo for PRO Customers\n\n\nGitHub Actions\nYou can deploy to GitHub Pages from a custom GitHub Action. It allows you to fully customize the build pipeline, set specific versions for Ruby and Jekyll and use any Jekyll plugin you may wish.\n\nTo opt into the GitHub Actions pipelines, go to the repository’s settings, find the Pages tab and ensure that the Source to “GitHub Actions”:\n\n\n\nEnsure these settings are set to opt in the GitHub Actions pipeline.\n\nAs with the legacy GitHub Pages pipeline, deployments are triggered by pushing commits to a specific branch."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Jonathan Fuller",
+    "url": "/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to",
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced Web Application Security Thro"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Install",
+    "url": "/docs/install/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "How you install Hydejack depends on whether you start a new site, \nor change the theme of an existing site.\n\n\n  New sites\n  Existing sites    \n      PRO Customers\n      Troubleshooting\n    \n  \n  GitHub Pages\n  Running lo",
+    "content": "How you install Hydejack depends on whether you start a new site, \nor change the theme of an existing site.\n\n\n  New sites\n  Existing sites    \n      PRO Customers\n      Troubleshooting\n    \n  \n  GitHub Pages\n  Running locally\n\n\nNew sites\nFor new sites, the best way to get started with Hydejack is via the Starter Kit. \nIt comes with a documented config file and example content that gets you started quickly.\n\nIf you have a GitHub account, fork the Hydejack Starter Kit repository. \nOtherwise download the Starter Kit and unzip the contents somewhere on your machine.\n\nIf you bought the PRO Version of Hydejack, use the contents of the starter-kit folder instead.\n\nYou can now jump to running locally.\n\nExisting sites\nIf you have an existing site that you’d like to upgrade to Hydejack you can install the theme via bundler.\nAdd the following to your Gemfile:\n\n# file: `Gemfile`\ngem \"jekyll-theme-hydejack\"\n\n\nNext, in your config file, change the theme to Hydejack:\n\n# file: `_config.yml`\ntheme: jek"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Migration",
+    "url": "/docs/migration/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This documents shows how to upgrade Hydejack from previous versions (v5) in a step-by-step manner.\n\nUnfortunately, upgrading form v5 and earlier is not straightforward. A lot of patterns and names have changed, motivated",
+    "content": "This documents shows how to upgrade Hydejack from previous versions (v5) in a step-by-step manner.\n\nUnfortunately, upgrading form v5 and earlier is not straightforward. A lot of patterns and names have changed, motivated by a variety of reasons, including better integration with the rest of the Jekyll ecosystem and simplified workflows enabled by Jekyll Collections.\n\n\n  From v5    \n      Updating the folder structure\n      Updating the configuration\n      Restoring the tags\n      Restoring the sidebar entries\n      Restoring the RSS feed\n      Restoring the comments\n      Restoring the about page\n    \n  \n\n\nFrom v5\nUpdating the folder structure\nCopy the following folders and files from Hydejack v6 into your existing repository. Make sure you merge the folder contents.\n\n\n  _data/\n  _includes/\n  _layouts/\n  _sass/\n  assets/\n  index.html (index.md*)\n  Gemfile\n  Gemfile.lock\n\n\nNote that the public folder has been renamed to assets.\nYou’ll want to move your static assets there.\n\nUpdating the"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Scripts",
+    "url": "/docs/scripts/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "There are two ways of adding third party scripts.\nEmbedding is ideal for one-off scripts, e.g. widgets.js that is part of embedded tweets (see below).\nAdding global scripts is for scripts that should be loaded on every p",
+    "content": "There are two ways of adding third party scripts.\nEmbedding is ideal for one-off scripts, e.g. widgets.js that is part of embedded tweets (see below).\nAdding global scripts is for scripts that should be loaded on every page.\n\n\n  Embedding\n  Global scripts\n  Registering push state event listeners\n  If everything else fails\n\n\nEmbedding\nHydejack supports embedding third party scripts directly inside markdown content. This will work in most cases, except when a script can not be loaded on a page more than once (this will occur when a user navigates to the same page twice).\n\nExample:\n\n&lt;script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"&gt;&lt;/script&gt;\n&lt;blockquote class=\"twitter-tweet\" data-lang=\"en\"&gt;\n  &lt;p lang=\"en\" dir=\"ltr\"&gt;\n    The next version of Hydejack (v6.3.0) will allow embedding 3rd party scripts,\n    like the one that comes with this tweet for example.\n  &lt;/p&gt;\n  &amp;mdash; Florian Klampfer (@qwtel)\n  &lt;a href=\"https://twitter.com/qwtel/s"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Service",
+    "url": "/service/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "### Program Committee Membership\n\n- **USENIX Security Symposium** (2025–Present)\n- **Digital Forensics Research Workshop (DFRWS)** (2024)\n- **International Conference on Cyber Warfare and Security (ICCWS)** (2023–Present",
+    "content": "### Program Committee Membership\n\n- **USENIX Security Symposium** (2025–Present)\n- **Digital Forensics Research Workshop (DFRWS)** (2024)\n- **International Conference on Cyber Warfare and Security (ICCWS)** (2023–Present)\n- **European Conference on Cyber Warfare and Security (ECCWS)** (2023–2024)\n\n### Reviewer Engagements\n\n- **Computers & Security** (Elsevier) (2022–Present)\n- **Cyber Defense Review** (2024)"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Talks",
+    "url": "/talks/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% include components/talks-map.html %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk",
+    "content": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% include components/talks-map.html %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}  \n**Date:** {% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n\n{% if talk.description %}\n{{ talk.description }}\n{% endif %}\n\n{% if talk.resources %}\n**Resources:**{% for resource in talk.resources %}\n- [{{ resource.label }}]({{ resource.url }})\n{% endfor %}\n{% endif %}\n\n---\n{% endfor %}\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Upgrade",
+    "url": "/docs/upgrade/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This chapter shows how to upgrade Hydejack to a newer version. The method depends on how you've installed Hydejack.\n\n0. this unordered seed list will be replaced by toc as unordered list\n{:toc}\n\nBefore upgrading to v7+, ",
+    "content": "This chapter shows how to upgrade Hydejack to a newer version. The method depends on how you've installed Hydejack.\n\n0. this unordered seed list will be replaced by toc as unordered list\n{:toc}\n\nBefore upgrading to v7+, make sure you've read the [CHANGELOG](/CHANGELOG/){:.heading.flip-title},\nespecially the part about the [license change](/CHANGELOG/#license-change)!\n{:.note}\n\n## Free version\nUpgrading the free version of the theme is as easy as running\n\n```bash\nbundle update jekyll-theme-hydejack\n```\n\n## PRO Version\n\nIn v9, the structure of Hydejack PRO sites has changed. If you're looking to upgrade from v8 or earlier, \ncheck out [Installation for existing sites](/docs/install/#existing-sites) instead.\n{:.note}\n\nBuyers of the PRO version will find the files necessary for an upgrade in the `#jekyll-theme-hydejack` folder of the downloaded zip archive.\nTo upgrade, simply overwrite the existing theme folder in the root directory of your site with the new one, then run\n\n```bash\nbundle up"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Writing",
+    "url": "/docs/writing/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Hydejack offers a few additional features to markup your content.\nDon't worry, these are merely CSS classes added with kramdown's `{:...}` syntax,\nso that your content remains compatible with other Jekyll themes.\n\n1. thi",
+    "content": "Hydejack offers a few additional features to markup your content.\nDon't worry, these are merely CSS classes added with kramdown's `{:...}` syntax,\nso that your content remains compatible with other Jekyll themes.\n\n1. this list will be replaced by the table of contents\n{:toc}\n\nFor an introduction to markdown in general, see [Mastering Markdown][mm] and [kramdown Syntax][ksyn].\n{:.note}\n\n## A word on building speeds\nIf building speeds are a problem, try using the `--incremental` flag, e.g.\n\n    bundle exec jekyll serve --incremental\n\nFrom the [Jekyll docs](https://jekyllrb.com/docs/configuration/#build-command-options) (emphasis mine):\n\n> Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, *but may also break site generation in certain cases*.\n\nThe breakage occurs when you create new files or change filenames.\nAlso, changing the title, category, tags, etc."
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "CLI",
+    "url": "/assets/bower_components/katex/docs/cli.md.template",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "KaTeX installed [using Node.js package managers](node.md) comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\n```bash\nnpx ",
+    "content": "KaTeX installed [using Node.js package managers](node.md) comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\n```bash\nnpx katex\n```\n\n> Above uses the `npx` command to run the locally installed executable\nafter `npm install katex`.  You can also execute with the relative path:\n`./node_modules/.bin/katex`\n\n> To use the CLI from local Git clone, you need to build the project first.\nSee [Building from Source](node.md#building-from-source) for more details.\n\n## Options"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Apache License",
+    "url": "/licenses/Apache-2.0/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Version 2.0, January 2004\n\n\n\n## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n### 1. Definitions\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Section",
+    "content": "Version 2.0, January 2004\n\n\n\n## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n### 1. Definitions\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n\"control\" means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modificati"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "GNU GENERAL PUBLIC LICENSE",
+    "url": "/licenses/GPL-3.0/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Version 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\n\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\n## Preamble\n\nThe GNU Ge",
+    "content": "Version 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\n\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\n## Preamble\n\nThe GNU General Public License is a free, copyleft license for\nsoftware and other kinds of works.\n\nThe licenses for most software and other practical works are designed\nto take away your freedom to share and change the works. By contrast,\nthe GNU General Public License is intended to guarantee your freedom\nto share and change all versions of a program--to make sure it remains\nfree software for all its users. We, the Free Software Foundation, use\nthe GNU General Public License for most of our software; it applies\nalso to any other work released this way by its authors. You can apply\nit to your programs, too.\n\nWhen we speak of free software, we are referring to freedom, not\nprice. Our General Public Licenses are designed to make sure that you\nhave the freedom to distribute copies o"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "MIT License",
+    "url": "/licenses/MIT/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Copyright (c) \\ \\\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including",
+    "content": "Copyright (c) \\ \\\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR T"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "PRO License",
+    "url": "/licenses/PRO/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "* this list will be replaced by the table of contents\n{:toc .large-only}\n\n## License Summary\n* License concerns use of [Hydejack PRO][1]\n* License does not expire\n* Commercial use allowed\n* Can modify source code\n* Parts",
+    "content": "* this list will be replaced by the table of contents\n{:toc .large-only}\n\n## License Summary\n* License concerns use of [Hydejack PRO][1]\n* License does not expire\n* Commercial use allowed\n* Can modify source code\n* Parts of software are provided under [separate licenses](/NOTICE/#licenses)\n\n## Terms and Conditions\n### 1. Preamble\nThis Agreement governs the relationship between you (hereinafter: Licensee) and\nFlorian Klampfer qwtel.com (hereinafter: Licensor).\nThis Agreement sets the terms, rights, restrictions and obligations on using\nHydejack PRO (hereinafter: The Software)\ncreated and owned by Licensor, as detailed herein.\n\n### 2. License Grant\nLicensor hereby grants Licensee a Personal, Perpetual, Commercial, Royalty free,\nIncluding the rights to create derivative works, Non-exclusive license, all with accordance with\nthe terms set forth and other legal restrictions set forth in 3rd party software used while running Software.\n\n1.  **Limited:** Licensee may use Software for the purpo"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "W3C SOFTWARE NOTICE AND LICENSE",
+    "url": "/licenses/W3C-20150513/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "**Status**: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\n## License\n\nBy obtaining and/or copying this work, you (the licensee) agree that you",
+    "content": "**Status**: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\n## License\n\nBy obtaining and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions.\n\nPermission to copy, modify, and distribute this work, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the work or portions thereof, including modifications:\n\n* The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.\n* Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, the W3C Software and Document Short Notice should be included.\n* Notice of any changes or modifications, through a copyright statement on the new code or document such as \"This software or document includes material copied from or d"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Licenses",
+    "url": "/licenses/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "## Open Source\n* [Apache-2.0](/licenses/Apache-2.0/)\n* [GPL-3.0](/licenses/GPL-3.0/)\n* [MIT](/licenses/MIT/)\n* [W3C-20150513](/licenses/W3C-20150513/)\n\n## Custom\n* [PRO](/licenses/PRO/)",
+    "content": "## Open Source\n* [Apache-2.0](/licenses/Apache-2.0/)\n* [GPL-3.0](/licenses/GPL-3.0/)\n* [MIT](/licenses/MIT/)\n* [W3C-20150513](/licenses/W3C-20150513/)\n\n## Custom\n* [PRO](/licenses/PRO/)"
+  }
+
+]

@@ -27,7 +27,7 @@ These steps mirror the working macOS setup. Adapt as needed for Linux or Windows
 
 ## First-time Setup
 
-From the project root (`/Users/jon/Repositories/empirical.github.io`):
+From the project root (`fullerj.github.io`):
 
 ```bash
 # Install and select the Ruby version used by the site
@@ -68,6 +68,7 @@ Key paths and how they are used:
 | Education | `_data/education.yml` | Structured list of degrees used to render the Education cards on About (logo, institution, location, advisor, thesis/dissertation). |
 | Certifications | `_data/certifications.yml` | Central store for certification badges displayed on About, keeping logos/titles consistent. |
 | Navigation | `_config.yml` (`menu:`) | Sidebar links (Blog, Publications, Talks, Teaching, Service, About). |
+| Search data | `assets/search-data.json` | Liquid template that emits the JSON index consumed by the navbar search overlay. |
 | Styling | `_sass/my-style.scss`, `_sass/home.scss` | Custom SCSS for cards, dark mode tweaks, homepage spacing, etc. |
 | Branding | `assets/img/…` | Logos for institutions, certifications, and the accent image (`accent_image` in `_config.yml`). |
 | Layout overrides | `_layouts/blog.html`, `_layouts/publication.html`, `_includes/components/post-blog.html`, `_includes/components/post-list-item.html` | Custom templates that remove dates from blog entries and restore publication metadata (venue badges). |
@@ -75,6 +76,12 @@ Key paths and how they are used:
 ---
 
 ## Content Guidelines
+
+### Search Overlay
+- Click the magnifying-glass icon in the top nav to open the inline search dialog. Results update live as you type and stay within the current page.
+- The overlay uses the generated `assets/search-data.json` file. It includes posts, pages, and collection documents unless front matter sets `search_exclude: true`.
+- Regenerate the site (via `bundle exec jekyll build` or `bundle exec jekyll serve`) whenever you add or update content so the search index stays current.
+- To remove specific items from search results, add `search_exclude: true` to the page or post front matter.
 
 ### Publications
 - Store PDFs in `assets/papers/` and link with absolute paths (e.g., `/assets/papers/ccs25.pdf`).
@@ -117,5 +124,17 @@ Key paths and how they are used:
   bundle install
   bundle exec jekyll build
   ```
+- For GitHub Pages hosting, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** so the “Build & Deploy Jekyll (Hydejack)” workflow publishes the `_site` artifact instead of the legacy builder.
+- To manually re-run the workflow, open the repository on GitHub, choose **Actions → Build & Deploy Jekyll (Hydejack)**, then use the `⋯` menu on the latest run and select **Re-run all jobs** (or click **Run workflow** for a clean trigger).
+- Asset paths are case-sensitive on Linux runners; confirm the filenames in `_data` and template references match exactly (for example `GT.png` not `gt.png`) so logos like Georgia Tech render after deployment.
+- If GitHub Actions fails during `bundle install` with a platform error (exit status 16), regenerate the lockfile on your Mac so it includes both the local and CI platforms:
+  ```bash
+  bundle lock --add-platform x86_64-linux
+  bundle lock --add-platform arm64-darwin-23
+  git add Gemfile.lock
+  git commit -m "Add Linux and Apple Silicon platforms to Gemfile.lock"
+  git push
+  ```
+  The Linux platform is required for GitHub-hosted runners; the Apple Silicon entry keeps the site working locally.
 
 Feel free to extend this README with host-specific instructions, automation scripts, or content workflows as EmpiricalDefense grows.
