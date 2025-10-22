@@ -3,7 +3,7 @@
 # Change `author1` to your shortname.
 author1:
   name:              Jonathan Fuller
-  email:             info@empiricaldefense.com
+  email:             hello@empiricaldefense.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
