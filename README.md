@@ -27,7 +27,7 @@ These steps mirror the working macOS setup. Adapt as needed for Linux or Windows
 
 ## First-time Setup
 
-From the project root (`/Users/jon/Repositories/empirical.github.io`):
+From the project root (`fullerj.github.io`):
 
 ```bash
 # Install and select the Ruby version used by the site
@@ -117,6 +117,9 @@ Key paths and how they are used:
   bundle install
   bundle exec jekyll build
   ```
+- For GitHub Pages hosting, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** so the “Build & Deploy Jekyll (Hydejack)” workflow publishes the `_site` artifact instead of the legacy builder.
+- To manually re-run the workflow, open the repository on GitHub, choose **Actions → Build & Deploy Jekyll (Hydejack)**, then use the `⋯` menu on the latest run and select **Re-run all jobs** (or click **Run workflow** for a clean trigger).
+- Asset paths are case-sensitive on Linux runners; confirm the filenames in `_data` and template references match exactly (for example `GT.png` not `gt.png`) so logos like Georgia Tech render after deployment.
 - If GitHub Actions fails during `bundle install` with a platform error (exit status 16), regenerate the lockfile on your Mac so it includes both the local and CI platforms:
   ```bash
   bundle lock --add-platform x86_64-linux
