@@ -1,15 +1,17 @@
-name: Build & Deploy Jekyll (Hydejack)
+name: Build and Deploy Jekyll to GitHub Pages
 
 on:
   push:
-    branches: [ main ]       # adjust if your default branch is different
+    branches: [ main ]        # ← change if your default branch differs
   workflow_dispatch:
 
+# REQUIRED for Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Prevent overlapping deploys
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -22,33 +24,27 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2         # match your local Ruby
-          bundler-cache: false
+          ruby-version: '3.2'         # or your version
+          bundler-cache: true
 
-      - name: Install Bundler 2.2.3
-        run: gem install bundler -v 2.2.3
+      - name: Install dependencies
+        run: bundle install
 
-      - name: Install gems
-        run: bundle _2.2.3_ install --jobs 4 --retry 3
-
-      - name: Build site
-        run: JEKYLL_ENV=production bundle exec jekyll build
+      - name: Build Jekyll
+        run: JEKYLL_ENV=production bundle exec jekyll build --trace
+        # If you're publishing a prebuilt site (no Jekyll on Pages), keep .nojekyll INSIDE _site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site
+          path: _site                 # ← must point to your built output
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      name: github-pages             # ← required
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v3
+      - id: deployment
+        uses: actions/deploy-pages@v4  # ← upgrade to v4
