@@ -27,7 +27,7 @@ author1:
   social:
     # twitter:         <username>
     # github:          <username>
-    # email:           <mail@domain.tld>
+    # email:           hello@empiricaldefense.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
@@ -56,7 +56,7 @@ author1:
     # npm:             <username>
     # hackernews:      <username>
     # trello:          <firstnamelastname>
-      linkedin:        fullsec
+    linkedin:        fullsec
 
     # google-scholar:   https://scholar.google.com/citations?user=mZ_cDEYAAAAJ&hl=en
     # xing:            <firstname_lastname_counter>
