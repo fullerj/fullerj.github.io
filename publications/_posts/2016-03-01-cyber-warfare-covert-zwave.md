@@ -18,7 +18,7 @@ code_url:
 dataset_url: 
 talk_url: h
 media_links:
-  - title: "Cyber Defense Digest — Covert Channels in Z-Wave Networks"
+  - title: "Cyber Defense Digest: Covert Channels in Z-Wave Networks"
     url: https://example.com/media/cyber-defense-digest-zwave
 ---
 

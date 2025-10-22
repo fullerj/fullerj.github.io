@@ -3,7 +3,7 @@ layout: page
 title: Service
 permalink: /service/
 description: >
-  Community-focused volunteer efforts, professional service, and outreach.
+  Program committee work, peer review, and outreach initiatives that advance the cybersecurity community.
 ---
 
 
@@ -18,5 +18,4 @@ description: >
 
 - **Computers & Security** (Elsevier) (2022–Present)
 - **Cyber Defense Review** (2024)
-
 

@@ -10,7 +10,7 @@ tags:
   - malware
   - incident-response
   - tutorials
-conference: "2023 IEEE Secure Development Conference (SecDev) — Invited Tutorial"
+conference: "2023 IEEE Secure Development Conference (SecDev): Invited Tutorial"
 authors: "M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio"
 venue: "IEEE SecDev"
 pdf_url:
@@ -19,7 +19,7 @@ talk_url:
 code_url: https://github.com/CyFI-Lab-Public/MARSEA
 dataset_url: 
 media_links:
-  - title: "SecDev Conference Preview — Tackling Web App Abuse"
+  - title: "SecDev Conference Preview: Tackling Web App Abuse"
     url: https://example.com/media/secdev-tutorial-preview
 ---
 

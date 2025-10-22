@@ -28,6 +28,9 @@
   date: "2024-02-10"
   latitude: 33.4735
   longitude: -82.0105
+  resources:
+    - label: "Video"
+      url: "https://www.dvidshub.net/video/926082/avengercon-viii-hiding-plain-sight-tracking-malware-abusing-web-applications"
 
 - title: "Gearing Rapid Malware Forensics toward Botnet Monitoring and Takedown"
   event: "Cybersecurity Seminar, Naval Postgraduate School"
@@ -42,6 +45,9 @@
   date: "2023-02-20"
   latitude: 39.9612
   longitude: -82.9988
+  resources:
+    - label: "Video"
+      url: "https://icdt.osu.edu/events/2023/02/virtual-event-bot-reveals-its-master"
 
 - title: "Large-Scale Infiltration and Monitoring of C&C Servers"
   event: "ShmooCon"
@@ -49,6 +55,9 @@
   date: "2023-01-20"
   latitude: 38.9072
   longitude: -77.0369
+  resources:
+    - label: "Video"
+      url: "https://www.youtube.com/watch?v=nFhKCl6sA0E"
 
 - title: "Covert Infiltration and Monitoring of Command and Control Servers"
   event: "AvengerCon VII"
@@ -56,6 +65,9 @@
   date: "2022-11-05"
   latitude: 39.2037
   longitude: -76.861
+  resources:
+    - label: "Video"
+      url: "https://www.dvidshub.net/video/870227/avengercon-vii-covertly-infiltrating-and-monitoring-cc-servers"
 
 - title: "C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration"
   event: "28th ACM Conference on Computer and Communications Security (CCS)"
@@ -89,3 +101,6 @@
   date: "2015-09-25"
   latitude: 38.2527
   longitude: -85.7585
+  resources:
+    - label: "Video"
+      url: "https://www.youtube.com/watch?v=KQMGI-e8wtA"

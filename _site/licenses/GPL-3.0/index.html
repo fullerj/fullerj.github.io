@@ -39,14 +39,12 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
 <meta property="og:locale" content="en" />
 <meta name="description" content="Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller." />
 <meta property="og:description" content="Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller." />
-<link rel="canonical" href="http://localhost:4000/licenses/GPL-3.0/" />
-<meta property="og:url" content="http://localhost:4000/licenses/GPL-3.0/" />
 <meta property="og:site_name" content="Jonathan Fuller" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="GNU GENERAL PUBLIC LICENSE" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-20T15:32:51-04:00","description":"Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.","headline":"GNU GENERAL PUBLIC LICENSE","url":"http://localhost:4000/licenses/GPL-3.0/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-20T15:32:51-04:00","description":"Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.","headline":"GNU GENERAL PUBLIC LICENSE","url":"/licenses/GPL-3.0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -80,9 +78,9 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
 <meta name="generator" content="Hydejack v9.2.1" />
 
 
-<link rel="alternate" href="http://localhost:4000/licenses/GPL-3.0/" hreflang="en">
+<link rel="alternate" href="/licenses/GPL-3.0/" hreflang="en">
 
-<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jonathan Fuller" />
+<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Jonathan Fuller" />
 
 
 <link rel="shortcut icon"    href="/assets/icons/favicon.ico">
@@ -119,7 +117,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2025-10-22T05:07:44-04:00',
+    INDEX_KEY: 'index--2025-10-22T09:31:45-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -935,7 +933,7 @@ copy of the Program in return for a fee.</p>
 
 
 
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/logos/landscape.png)"></div>
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/tall1.png)"></div>
 
     <div class="sidebar-sticky">
   <div class="sidebar-about">
@@ -1110,6 +1108,85 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     }()
   });
 </script>
+
+
+
+
+
+
+
+
+<div id="definition-empiricaldefense"
+     class="definition-modal"
+     hidden
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="definition-title-empiricaldefense">
+  <div class="definition-modal__panel">
+    <button type="button"
+            class="definition-modal__close"
+            aria-label="Close EmpiricalDefense definition">×</button>
+    <h2 id="definition-title-empiricaldefense">EmpiricalDefense</h2>
+    <p><strong>Empirical Defense</strong> represents the philosophy that cybersecurity should be practiced as an evolving discipline, guided by evidence, grounded in research, and strengthened through shared knowledge.</p>
+
+<p>The platform explores how <strong>analysis</strong>, <strong>experimentation</strong>, and <strong>education</strong> intersect to advance the understanding and practice of cyber defense. Through this lens, Empirical Defense promotes data-informed approaches to problem-solving, resilience, and innovation in the face of evolving digital threats. It serves as a space for advancing discussion, sharing insight, and connecting rigorous research with real-world application.</p>
+
+<ul>
+  <li><strong>Research:</strong> Apply analytical rigor to uncover patterns, validate ideas, and advance the science of cyber defense.</li>
+  <li><strong>Education:</strong> Translate knowledge into practice to elevate understanding and capability across the cybersecurity community.</li>
+  <li><strong>Practice:</strong> Apply insights, experimentation, and reflection to refine methods and strengthen defensive capability.</li>
+</ul>
+
+<p><strong>Mission:</strong> Empirical Defense advances a future where cybersecurity is driven by analysis, guided by evidence, and sustained through continual learning.</p>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  function closeModal(modal) {
+    modal.setAttribute('hidden', '');
+  }
+
+  document.addEventListener('click', function(event) {
+    var trigger = event.target.closest('.definition-trigger');
+    if (trigger) {
+      var targetId = trigger.getAttribute('data-definition-target');
+      if (!targetId) return;
+      var modal = document.getElementById(targetId);
+      if (modal) {
+        modal.removeAttribute('hidden');
+        var closeBtn = modal.querySelector('.definition-modal__close');
+        if (closeBtn) {
+          closeBtn.focus();
+        }
+      }
+      return;
+    }
+
+    var closeBtn = event.target.closest('.definition-modal__close');
+    if (closeBtn) {
+      closeModal(closeBtn.closest('.definition-modal'));
+      return;
+    }
+
+    if (event.target.classList.contains('definition-modal')) {
+      closeModal(event.target);
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      document.querySelectorAll('.definition-modal').forEach(function(modal) {
+        if (!modal.hasAttribute('hidden')) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+})();
+</script>
+
 
 
 

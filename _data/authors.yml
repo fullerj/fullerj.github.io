@@ -8,10 +8,9 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Jonathan Fuller serves as the Chief Information Security Officer and an Academy Professor at the United States Military Academy at West Point, leading enterprise cybersecurity strategy and governance in a mission-critical environment.
+    Jonathan Fuller serves as the Chief Information Security Officer and an Assistant Professor at the United States Military Academy at West Point, where he leads enterprise cybersecurity strategy and governance in a mission-critical environment.
 
-    His work combines a Ph.D. in Electrical and Computer Engineering focused on cybersecurity with nearly two decades of Army experience in secure communications, cyber operations, and organizational leadership. This foundation supports Empirical Defense, a platform dedicated to evidence-based approaches that connect research, strategic governance, and education to strengthen resilience across complex digital ecosystems.
-
+    He holds a Ph.D. in Electrical and Computer Engineering with a focus on cybersecurity and brings nearly two decades of Army experience in secure communications, cyber operations, and organizational leadership. His professional and academic work inform <button type="button" class="definition-trigger" data-definition-target="definition-empiricaldefense">Empirical Defense</button>, a platform dedicated to advancing cybersecurity through research, education, and evidence-based practice.
   # This photo will be used in the about section
   picture:
     path:           /assets/img/headshot.png

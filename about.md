@@ -15,6 +15,8 @@ redirect_from:
 
 <!--more-->
 
+
+
 1. this toc will be replaced by a hydejack-generated toc
 {:toc}
 
@@ -107,7 +109,7 @@ redirect_from:
     {% endif %}
     <div class="education-card__body">
       <h3 class="education-card__degree">{{ edu.degree }}{% if edu.year %} <span class="education-card__year">{{ edu.year }}</span>{% endif %}</h3>
-      <p class="education-card__institution">{{ edu.institution }}{% if edu.location %} — {{ edu.location }}{% endif %}</p>
+      <p class="education-card__institution">{{ edu.institution }}{% if edu.location %} - {{ edu.location }}{% endif %}</p>
       {% if edu.advisor %}
       <p class="education-card__detail"><strong>Advisor:</strong> {{ edu.advisor }}</p>
       {% endif %}

@@ -1,22 +1,11 @@
 ---
 layout: page
-title: Empirical Defense Blog
+title: Blog
 description: >
-  Commentary and event recaps focused on evidence-driven cybersecurity leadership.
+  Analyses, talk recaps, and applied research updates.
 permalink: /blog/
 ---
 
-Empirical Defense represents the philosophy that cybersecurity leadership should be grounded in evidence, education, and continuous learning. The platform explores how research, strategic governance, and education intersect to advance the art and science of cyber defense.
-
-Through this lens, Empirical Defense promotes evidence-based approaches to leadership, resilience, and innovation in the evolving landscape of cyber threats. It serves as a space for advancing discussion, sharing insights, and connecting research with real-world security practice.
-
-### Pillars
-
-- **Research:** Ground decisions in data and analysis, not assumptions.
-- **Education:** Share knowledge to strengthen teams and communities.
-- **Leadership:** Convert insight into strategy, resilience, and measurable outcomes.
-
-> **Mission:** EmpiricalDefense advances a future where cybersecurity decisions are informed by data, guided by research, and executed through principled leadership.
 
 {% assign blog_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
 {% if blog_posts %}

@@ -1,0 +1,29 @@
+{% assign definition_id = include.id | default: 'definition' %}
+{% assign definition_slug = definition_id | slugify %}
+{% assign definition_label = include.label | default: definition_id %}
+{% assign definition_content = include.content | default: site.data.definitions[definition_id] %}
+
+{% unless include.show_trigger == false %}
+<span class="definition-trigger-wrapper">
+  <button type="button"
+          class="definition-trigger"
+          data-definition-target="definition-{{ definition_slug }}">
+    {{ definition_label }}
+  </button>
+</span>
+{% endunless %}
+
+<div id="definition-{{ definition_slug }}"
+     class="definition-modal"
+     hidden
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="definition-title-{{ definition_slug }}">
+  <div class="definition-modal__panel">
+    <button type="button"
+            class="definition-modal__close"
+            aria-label="Close {{ definition_label }} definition">×</button>
+    <h2 id="definition-title-{{ definition_slug }}">{{ definition_label }}</h2>
+    {{ definition_content | markdownify }}
+  </div>
+</div>

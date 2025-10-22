@@ -112,5 +112,10 @@ Key paths and how they are used:
 - Update DNS records (CNAME or A records) once hosting is configured for your custom domain.
 - Remove or adjust pagination settings in `_config.yml` if you are not using Hydejack’s blog pagination (currently disabled).
 - If you remove `vendor/bundle/` (for example via `git clean -fd`), reinstall dependencies with `bundle install` so required gems (e.g., `public_suffix`) are restored before serving the site.
+- After cleanups, run:
+  ```bash
+  bundle install
+  bundle exec jekyll build
+  ```
 
 Feel free to extend this README with host-specific instructions, automation scripts, or content workflows as EmpiricalDefense grows.

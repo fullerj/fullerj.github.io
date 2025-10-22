@@ -1,0 +1,44 @@
+<script>
+(function() {
+  function closeModal(modal) {
+    modal.setAttribute('hidden', '');
+  }
+
+  document.addEventListener('click', function(event) {
+    var trigger = event.target.closest('.definition-trigger');
+    if (trigger) {
+      var targetId = trigger.getAttribute('data-definition-target');
+      if (!targetId) return;
+      var modal = document.getElementById(targetId);
+      if (modal) {
+        modal.removeAttribute('hidden');
+        var closeBtn = modal.querySelector('.definition-modal__close');
+        if (closeBtn) {
+          closeBtn.focus();
+        }
+      }
+      return;
+    }
+
+    var closeBtn = event.target.closest('.definition-modal__close');
+    if (closeBtn) {
+      closeModal(closeBtn.closest('.definition-modal'));
+      return;
+    }
+
+    if (event.target.classList.contains('definition-modal')) {
+      closeModal(event.target);
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      document.querySelectorAll('.definition-modal').forEach(function(modal) {
+        if (!modal.hasAttribute('hidden')) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+})();
+</script>
