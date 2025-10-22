@@ -15,7 +15,7 @@ description: >
       <span class="teaching-logos__label">United States Military Academy</span>
     </li>
     <li class="teaching-logos__item">
-      <img src="{{ '/assets/img/logos/gt.png' | relative_url }}" alt="Georgia Institute of Technology" loading="lazy" width="160" height="160">
+      <img src="{{ '/assets/img/logos/GT.png' | relative_url }}" alt="Georgia Institute of Technology" loading="lazy" width="160" height="160">
       <span class="teaching-logos__label">Georgia Institute of Technology</span>
     </li>
     <li class="teaching-logos__item">

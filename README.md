@@ -117,5 +117,14 @@ Key paths and how they are used:
   bundle install
   bundle exec jekyll build
   ```
+- If GitHub Actions fails during `bundle install` with a platform error (exit status 16), regenerate the lockfile on your Mac so it includes both the local and CI platforms:
+  ```bash
+  bundle lock --add-platform x86_64-linux
+  bundle lock --add-platform arm64-darwin-23
+  git add Gemfile.lock
+  git commit -m "Add Linux and Apple Silicon platforms to Gemfile.lock"
+  git push
+  ```
+  The Linux platform is required for GitHub-hosted runners; the Apple Silicon entry keeps the site working locally.
 
 Feel free to extend this README with host-specific instructions, automation scripts, or content workflows as EmpiricalDefense grows.
