@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration"
 description: >
   Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.

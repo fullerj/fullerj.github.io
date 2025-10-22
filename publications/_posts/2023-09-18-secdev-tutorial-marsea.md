@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Invited Tutorial: Counteracting Web Application Abuse in Malware"
 description: >
   Hands-on SecDev 2023 tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.

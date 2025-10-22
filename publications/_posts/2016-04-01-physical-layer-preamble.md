@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Efficacy of Physical Layer Preamble Manipulation for IEEE 802.11a/ac"
 description: >
   Demonstrates 5 GHz preamble manipulation that fingerprints commodity 802.11a/ac transceivers with over 99% accuracy using fewer than 20 packets.

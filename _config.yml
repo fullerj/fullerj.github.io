@@ -25,14 +25,19 @@ title:                 Jonathan Fuller
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
 
 # A shorter description for the sidebar.
 tagline:               Bridging Research, Education, and Cyber Defense
 
 # A list of keywords for your blog
-keywords:              []
+keywords:
+  - Jonathan Fuller
+  - EmpiricalDefense
+  - cybersecurity leadership
+  - malware research
+  - digital forensics
+  - cyber education
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -59,15 +64,13 @@ menu:
     url:               /teaching/
 
 
+
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
   - title:             LICENSE
     url:               /LICENSE/
-  - title:             NOTICE
-    url:               /NOTICE/
-  - title:             CHANGELOG
-    url:               /CHANGELOG/
+
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2025. All rights reserved.
@@ -256,7 +259,7 @@ hydejack:
 
   # When using Google Analytics, set to `true` to display a cookie notice banner.
   # When enabled, no user-related data will be stored until the user gives consent.
-  cookies_banner:      false
+  cookies_banner:      true
 
   # Set to `true` if you would like to add a "Powered by Hydejack" link in the footer.
   # Note that this setting has no effect when using the free version.
@@ -265,10 +268,10 @@ hydejack:
   # Buyers of the PRO version can opt to hide all dates from the theme.
   # Frequent consumers of online content will know that nothing devalues a post like
   # seeing an old date. 
-  hide_dates:          false
+  hide_dates:          true
 
   # Similarly, showing last modified date can devalue a post if it is too far in the past.
-  hide_last_modified:  false
+  hide_last_modified:  true
 
   # Note that dark mode only works in the PRO version of Hydejack.
   dark_mode:
@@ -359,6 +362,14 @@ plugins:
 # Used for twitter cards
 # twitter:
 #   username:            <username>
+
+# Used on index and about sites
+social:
+  name:                Jonathan Fuller
+  links:
+    - https://www.linkedin.com/in/fullsec
+    - mailto:info@empiricaldefense.com
+    - https://scholar.google.com/citations?user=mZ_cDEYAAAAJ&hl=en
 
 # Used for facebook open graph
 # facebook:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Rogue Z-Wave Controllers: A Persistent Attack Channel"
 description: >
   Early warning on covert Z-Wave gateway compromises that enable persistent control over wireless sensor networks.

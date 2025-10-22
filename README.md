@@ -65,7 +65,8 @@ Key paths and how they are used:
 | Publications | `publications/_posts/` | Each publication entry includes optional metadata (`conference`, `pdf_url`, etc.). Use `2025-10-13-vader.md` as a template. |
 | Teaching | `teaching/_posts/` | Teaching history. Cards feed the Teaching page, and education details live on the About page. |
 | Talks | `_data/talks.yml` | YAML list of talks rendered by `talks.md`. Entries support title, event, location, date, and optional description/resources. |
-| Search | `search.md`, `search.json`, `assets/js/simple-jekyll-search.min.js` | Implements client-side search against posts via Simple-Jekyll-Search. |
+| Education | `_data/education.yml` | Structured list of degrees used to render the Education cards on About (logo, institution, location, advisor, thesis/dissertation). |
+| Certifications | `_data/certifications.yml` | Central store for certification badges displayed on About, keeping logos/titles consistent. |
 | Navigation | `_config.yml` (`menu:`) | Sidebar links (Blog, Publications, Talks, Teaching, Service, About). |
 | Styling | `_sass/my-style.scss`, `_sass/home.scss` | Custom SCSS for cards, dark mode tweaks, homepage spacing, etc. |
 | Branding | `assets/img/…` | Logos for institutions, certifications, and the accent image (`accent_image` in `_config.yml`). |
@@ -81,14 +82,10 @@ Key paths and how they are used:
 
 ### Teaching & Education
 - Teaching posts (`teaching/_posts/*.md`) appear under `/teaching/` and feed the About-page highlights.
-- Education cards on About are hard-coded with logos and details. Update the HTML fragment in `about.md` when degrees change.
+- Degrees and certifications are sourced from `_data/education.yml` and `_data/certifications.yml`. Update those data files to edit or add entries; the About page renders them automatically.
 
 ### Service
 - Service content is written directly in `service.md`. Add new volunteer or committee roles by editing the appropriate sections.
-
-### Search
-- `search.json` is populated at build time using Liquid. Rebuild the site to refresh the index after adding posts.
-- The `/search/` page uses Simple-Jekyll-Search to query the JSON index in the browser.
 
 ---
 

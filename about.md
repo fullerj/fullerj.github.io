@@ -2,8 +2,7 @@
 layout: about
 image: /assets/img/headshot.png
 description: >
-  A boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  Bridging research, education, and cyber defense.
 hide_description: true
 redirect_from:
   - /download/
@@ -19,87 +18,16 @@ redirect_from:
 1. this toc will be replaced by a hydejack-generated toc
 {:toc}
 
-## Education
-
-<div class="education-grid">
-  <article class="education-card">
-    <img src="{{ '/assets/img/logos/gt.png' | relative_url }}" alt="Georgia Institute of Technology" loading="lazy" class="education-card__logo">
-    <div class="education-card__body">
-      <h3 class="education-card__degree">Ph.D., Electrical and Computer Engineering <span class="education-card__year">2022</span></h3>
-      <p class="education-card__institution">Georgia Institute of Technology — Atlanta, GA</p>
-      <p class="education-card__detail"><strong>Advisor:</strong> Dr. Brendan Saltaformaggio</p>
-      <p class="education-card__detail"><strong>Dissertation:</strong> The Bot Reveals Its Master: Exposing and Infiltrating Botnet Command and Control Servers via Malware Logic Reuse</p>
-    </div>
-  </article>
-
-  <article class="education-card">
-    <img src="{{ '/assets/img/logos/afit.png' | relative_url }}" alt="Air Force Institute of Technology" loading="lazy" class="education-card__logo">
-    <div class="education-card__body">
-      <h3 class="education-card__degree">M.S., Computer Science <span class="education-card__year">2016</span></h3>
-      <p class="education-card__institution">Air Force Institute of Technology — Dayton, OH</p>
-      <p class="education-card__detail"><strong>Advisor:</strong> Dr. Benjamin Ramsey</p>
-      <p class="education-card__detail"><strong>Thesis:</strong> A Misuse-Based Intrusion Detection System for ITU-T G.9959 Wireless Networks</p>
-    </div>
-  </article>
-
-  <article class="education-card">
-    <img src="{{ '/assets/img/logos/uab.png' | relative_url }}" alt="University of Alabama at Birmingham" loading="lazy" class="education-card__logo">
-    <div class="education-card__body">
-      <h3 class="education-card__degree">B.S., Computer Science <span class="education-card__year">2007</span></h3>
-      <p class="education-card__institution">University of Alabama at Birmingham — Birmingham, AL</p>
-    </div>
-  </article>
-</div>
-
-## Professional Certifications <a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">(Credly)</a>
-
-<div class="certifications-grid">
-  <article class="certification-card">
-    <img src="{{ '/assets/img/certs/cissp.png' | relative_url }}" alt="(ISC)² CISSP" loading="lazy" class="certification-card__logo">
-    <div class="certification-card__body">
-      <h3 class="certification-card__title">Certified Information Systems Security Professional (CISSP)</h3>
-      <p class="certification-card__issuer">(ISC)²</p>
-    </div>
-  </article>
-
-  <article class="certification-card">
-    <img src="{{ '/assets/img/certs/grem.png' | relative_url }}" alt="GIAC GREM" loading="lazy" class="certification-card__logo">
-    <div class="certification-card__body">
-      <h3 class="certification-card__title">GIAC Reverse Engineering Malware (GREM)</h3>
-      <p class="certification-card__issuer">GIAC</p>
-    </div>
-  </article>
-
-  <article class="certification-card">
-    <img src="{{ '/assets/img/certs/gdsa.png' | relative_url }}" alt="GIAC GDSA" loading="lazy" class="certification-card__logo">
-    <div class="certification-card__body">
-      <h3 class="certification-card__title">GIAC Defensible Security Architecture (GDSA)</h3>
-      <p class="certification-card__issuer">GIAC</p>
-    </div>
-  </article>
-
-  <article class="certification-card">
-    <img src="{{ '/assets/img/certs/gcfa.png' | relative_url }}" alt="GIAC GCFA" loading="lazy" class="certification-card__logo">
-    <div class="certification-card__body">
-      <h3 class="certification-card__title">GIAC Certified Forensic Analyst (GCFA)</h3>
-      <p class="certification-card__issuer">GIAC</p>
-    </div>
-  </article>
-
-  <article class="certification-card">
-    <img src="{{ '/assets/img/certs/gsom.png' | relative_url }}" alt="GIAC GSOM" loading="lazy" class="certification-card__logo">
-    <div class="certification-card__body">
-      <h3 class="certification-card__title">GIAC Security Operations Manager (GSOM)</h3>
-      <p class="certification-card__issuer">GIAC</p>
-    </div>
-  </article>
-</div>
-
 ## Highlights
 
 ### Recent Insights
 
-{% assign recent_posts = site.categories.posts | sort: 'date' | reverse %}
+{% assign recent_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
+{% if recent_posts %}
+  {% assign recent_posts = recent_posts | sort: 'date' | reverse %}
+{% else %}
+  {% assign recent_posts = '' | split: '' %}
+{% endif %}
 {% if recent_posts and recent_posts.size > 0 %}
 <ul>
   {% for post in recent_posts limit:3 %}
@@ -116,7 +44,12 @@ redirect_from:
 
 ### Recent Publications
 
-{% assign recent_publications = site.categories.publications | sort: 'date' | reverse %}
+{% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
+{% if recent_publications %}
+  {% assign recent_publications = recent_publications | sort: 'date' | reverse %}
+{% else %}
+  {% assign recent_publications = '' | split: '' %}
+{% endif %}
 {% if recent_publications and recent_publications.size > 0 %}
 <ul>
   {% for pub in recent_publications limit:3 %}
@@ -163,3 +96,47 @@ redirect_from:
 {% else %}
 <p>Service highlights will appear here once they are published.</p>
 {% endif %}
+
+## Education
+
+<div class="education-grid">
+  {% for edu in site.data.education %}
+  <article class="education-card">
+    {% if edu.logo %}
+    <img src="{{ edu.logo | relative_url }}" alt="{{ edu.institution }}" loading="lazy" class="education-card__logo">
+    {% endif %}
+    <div class="education-card__body">
+      <h3 class="education-card__degree">{{ edu.degree }}{% if edu.year %} <span class="education-card__year">{{ edu.year }}</span>{% endif %}</h3>
+      <p class="education-card__institution">{{ edu.institution }}{% if edu.location %} — {{ edu.location }}{% endif %}</p>
+      {% if edu.advisor %}
+      <p class="education-card__detail"><strong>Advisor:</strong> {{ edu.advisor }}</p>
+      {% endif %}
+      {% if edu.dissertation %}
+      <p class="education-card__detail"><strong>Dissertation:</strong> {{ edu.dissertation }}</p>
+      {% endif %}
+      {% if edu.thesis %}
+      <p class="education-card__detail"><strong>Thesis:</strong> {{ edu.thesis }}</p>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+## Professional Certifications 
+<a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">Verify credentials on Credly</a>
+
+<div class="certifications-grid">
+  {% for cert in site.data.certifications %}
+  <article class="certification-card">
+    {% if cert.logo %}
+    <img src="{{ cert.logo | relative_url }}" alt="{{ cert.alt | default: cert.title }}" loading="lazy" class="certification-card__logo">
+    {% endif %}
+    <div class="certification-card__body">
+      <h3 class="certification-card__title">{{ cert.title }}</h3>
+      {% if cert.issuer %}
+      <p class="certification-card__issuer">{{ cert.issuer }}</p>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

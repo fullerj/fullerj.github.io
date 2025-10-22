@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Operationalizing Zero Trust: CECOM SEC and West Point Collaborate"
 description: >
   Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.

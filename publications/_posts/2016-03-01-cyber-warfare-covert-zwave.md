@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks"
 description: >
   Shows how covert channels over ITU-T G.9959 wireless links enable Z-Wave compromise and introduces an MBIDS countermeasure with 92% accuracy.

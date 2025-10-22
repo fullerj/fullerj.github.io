@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: publication
 title: "Misuse-Based Detection of Z-Wave Network Attacks"
 description: >
   Extends Z-Wave misuse-based intrusion detection to achieve 99% detection accuracy against emerging wireless sensor attacks.

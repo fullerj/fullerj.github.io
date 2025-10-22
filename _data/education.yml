@@ -1,0 +1,21 @@
+- degree: "Ph.D., Electrical and Computer Engineering"
+  year: 
+  institution: "Georgia Institute of Technology"
+  location: "Atlanta, GA"
+  logo: "/assets/img/logos/gt.png"
+  advisor: "Dr. Brendan Saltaformaggio"
+  dissertation: "The Bot Reveals Its Master: Exposing and Infiltrating Botnet Command and Control Servers via Malware Logic Reuse"
+
+- degree: "M.S., Computer Science"
+  year: 
+  institution: "Air Force Institute of Technology"
+  location: "Dayton, OH"
+  logo: "/assets/img/logos/afit.png"
+  advisor: "Dr. Benjamin Ramsey"
+  thesis: "A Misuse-Based Intrusion Detection System for ITU-T G.9959 Wireless Networks"
+
+- degree: "B.S., Computer Science"
+  year: 
+  institution: "University of Alabama at Birmingham"
+  location: "Birmingham, AL"
+  logo: "/assets/img/logos/uab.png"

@@ -1,0 +1,24 @@
+- title: "Certified Information Systems Security Professional (CISSP)"
+  issuer: "(ISC)²"
+  logo: "/assets/img/certs/cissp.png"
+  alt: "CISSP logo"
+
+- title: "GIAC Reverse Engineering Malware (GREM)"
+  issuer: "GIAC"
+  logo: "/assets/img/certs/grem.png"
+  alt: "GIAC GREM logo"
+
+- title: "GIAC Defensible Security Architecture (GDSA)"
+  issuer: "GIAC"
+  logo: "/assets/img/certs/gdsa.png"
+  alt: "GIAC GDSA logo"
+
+- title: "GIAC Certified Forensic Analyst (GCFA)"
+  issuer: "GIAC"
+  logo: "/assets/img/certs/gcfa.png"
+  alt: "GIAC GCFA logo"
+
+- title: "GIAC Security Operations Manager (GSOM)"
+  issuer: "GIAC"
+  logo: "/assets/img/certs/gsom.png"
+  alt: "GIAC GSOM logo"

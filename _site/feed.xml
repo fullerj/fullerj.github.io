@@ -1,85 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-21T22:29:31-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
-</subtitle><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">Spycraft 2.0: Weaponizing Malware’s Own Logic to Hunt the Invisible C&amp;amp;C Dead Drop</title><link href="http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/" rel="alternate" type="text/html" title="Spycraft 2.0: Weaponizing Malware’s Own Logic to Hunt the Invisible C&amp;amp;C Dead Drop" /><published>2025-10-18T00:00:00-04:00</published><updated>2025-10-21T22:07:32-04:00</updated><id>http://localhost:4000/posts/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/"><![CDATA[<p><strong>Introduction – Beheading the Hydra with Data</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-22T04:48:44-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-18T00:00:00-04:00</published><updated>2025-10-21T22:07:32-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a recent reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly raised a broader question—was this an isolated artifact, or evidence of <strong>Spycraft 2.0</strong>, where adversaries conceal C&amp;C instructions within legitimate web services? And if so, can defenders use the same behavior to identify and neutralize these threats before they activate?</p>
 
-<p>It was a privilege to present <strong>Spycraft 2.0: Hunting Dead Drops in Web Applications</strong> at BSidesNYC 0x05 this year. Our mission is anchored in a simple conviction: cybersecurity decisions must be informed by data, guided by research, and executed through principled leadership. Botnet takedowns have long felt like beheading a hydra—each head removed seems to regenerate. Full visibility into command-and-control (C&amp;C) infrastructure is rare, and the time investigations require lets adversaries pivot and persist. This talk tackled a fundamental question: <em>How can we disrupt botnets more effectively?</em> The answer lies in weaponizing the attacker’s own logic, turning covert mechanisms into proactive defense.</p>
+<p>This question became the foundation of our research presented at <strong>BSidesNYC 0x05</strong>, exploring how adversaries exploit trusted web platforms to hide in plain sight—and how defenders can invert that advantage through automated discovery.</p>
 
-<p><strong>Background: The Evolution of C&amp;C Evasion</strong></p>
+<hr />
 
-<p>Earlier research showcased how reusing credentials embedded in malware could infiltrate and monitor C&amp;C infrastructure. During our <strong>Covert Infiltration and Monitoring of Command-and-Control Servers</strong> study, for instance, we reused Detplock malware’s FTP credentials to observe its controllers. Predictably, adversaries adapted by embracing a stealthier tradecraft we call <strong>Spycraft 2.0</strong>—the use of <strong>Dead Drop Resolvers (DDRs)</strong>.</p>
+<h2 id="dead-drop-resolvers-the-modern-dead-drop">Dead Drop Resolvers: The Modern Dead Drop</h2>
 
-<p>DDRs offer three major advantages to attackers:</p>
+<p>Malware authors are increasingly turning to <strong>Dead Drop Resolvers (DDRs)</strong>—a digital evolution of the Cold War dead drop. Rather than leaving a physical message in a hidden location, operators encode C&amp;C addresses and post them to public web applications such as Pastebin, X.com, GitHub, or blockchain explorers. Once executed, the malware retrieves, decodes, and resolves the real C&amp;C endpoint from this “dead drop.”</p>
 
-<ol>
-  <li><strong>Hiding in plain sight.</strong> DDRs lean on popular web applications—Pastebin, blockchain explorers, and more—as temporary staging grounds for C&amp;C addresses. The traffic blends in with legitimate use.</li>
-  <li><strong>Unpredictable domains.</strong> With countless web apps available, adversaries gain anonymity and elasticity, hopping across seemingly random domains at will.</li>
-  <li><strong>Multi-layer masking.</strong> Multi-layer encoding and encryption keeps the operational C&amp;C address hidden behind obfuscation until the right recipe is executed.</li>
-</ol>
+<p>These DDRs inherit several defining traits from their physical counterparts:</p>
 
-<p>In practice, a DDR client pulls encoded data from a public dead drop, runs the embedded decoding routine (the “recipe”), and then phones home to the real C&amp;C server.</p>
+<ul>
+  <li><strong>Anonymity and elasticity:</strong> unlimited, disposable endpoints hosted on reputable platforms.</li>
+  <li><strong>Benign-looking traffic:</strong> HTTPS requests indistinguishable from legitimate user activity.</li>
+  <li><strong>Layered encodings:</strong> stacked transformations (Base64, XOR, rotation, etc.) that frustrate static inspection and delay analysis.</li>
+</ul>
+
+<p>Such traits make DDR-based activity extraordinarily resilient and difficult to detect. Our objective was to <strong>shift the advantage</strong>—to illuminate this blind spot and enable proactive remediation.</p>
 
 <p><img src="/assets/blogs/spycraft/ddr.jpg" alt="Illustrative dead drop resolver workflow" class="img-framed" width="70%" /></p>
 
-<p class="figcaption">Razy’s DDR workflow. 1: The malware author manipulates the C&amp;C server address and posts it on X.com as a dead drop. 2: Razy executes on the victim system and fetches the dead drop. 3: Razy resolves the dead drop content to connect to the C&amp;C server.</p>
+<p class="figcaption">Razy’s DDR workflow. 1) The operator hides a manipulated C&amp;C address on X.com. 2) Razy fetches the dead drop after infection. 3) Layered decoding reveals the live C&amp;C rendezvous point.</p>
 
-<p><strong>Research Summary: From Concolic Analysis to Proactive Disruption</strong></p>
+<hr />
 
-<p>We flipped the script by reversing the attacker’s flow of information. DDR samples must contain the exact logic needed to decode the C&amp;C endpoint. That logic becomes the defender’s advantage.</p>
+<h2 id="from-reactive-to-proactive-defense">From Reactive to Proactive Defense</h2>
 
-<p><strong>Methodology: Mapping the De-Manipulation Recipes</strong></p>
+<p>Traditional remediation focuses on taking down individual dead drops once they are reported. However, this reactive approach fails because DDR operators can simply re-encode new C&amp;C addresses using the same manipulation techniques, producing polymorphic variants faster than defenders can remove them.</p>
 
-<p>Rather than chase outbound connections, we follow the data: from fetched content to the decoded C&amp;C address. The DDR Malware Analysis Framework rests on three insights:</p>
+<p>Our analysis of DDR campaigns revealed a more scalable path forward. The crucial insight is that <strong>DDR malware must already contain the exact logic required to decode its own dead drops</strong>. By isolating and understanding that logic, defenders can derive reusable <em>recipes</em> that identify similarly encoded content anywhere on the web—before it is weaponized.</p>
 
-<ol>
-  <li><strong>DDR logic localization.</strong> We isolate the code paths that retrieve dead drop content and process it.</li>
-  <li><strong>Symbolic expression matching.</strong> The de-manipulation routines reduce to symbolic expressions. By combining concolic execution with expression matching, we identify the decoding recipe. Mudrop malware, for example, relied on Base16 decoding followed by four rotations to unmask its C&amp;C.</li>
-  <li><strong>Recipe scanning.</strong> Once identified, these recipes power proactive scans of network traffic and public web apps, surfacing previously unknown dead drops.</li>
-</ol>
+<p>To enable this proactive approach, we developed a framework for systematically uncovering and decoding DDR behavior embedded in malware.</p>
 
-<p class="figcaption"><img src="/assets/blogs/spycraft/symbex.jpg" alt="Symbolic Expression Matching" class="img-framed" width="50%" />
-Our framework injects symbolic data (𝜆) to localize mudrop malware decoding logic and generate a symbolic expression (𝑀𝜆). This expression drives decoding algorithms to produce reference expressions under identical constraints. Our framework then compares both expressions, first structurally and then concretely via a symbolic solver, to determine functional equivalence. A high ratio of matching paths confirms equivalence.</p>
+<hr />
 
-<p><strong>Findings: Prevalence and Preference</strong></p>
+<h2 id="framework-from-localization-to-recipe-extraction">Framework: From Localization to Recipe Extraction</h2>
 
-<p>Our analysis of 100,000 Windows samples (2012–2022) identified <strong>8,906</strong> DDR specimens.</p>
-
-<ul>
-  <li><strong>Pastebin</strong> hosted roughly <strong>68%</strong> of DDR malware.</li>
-  <li><strong>Blockchain explorers</strong> accounted for about <strong>25%</strong>.</li>
-  <li><strong>Five of 13</strong> dead drop services exposed crypto wallets; we uncovered <strong>23 transaction IDs</strong> and <strong>14 wallet IDs</strong> abused for covert signaling.</li>
-</ul>
-
-<p>Proactively applying the recipes to packet captures revealed <strong>72 additional dead drops</strong> across <strong>11</strong> web apps.</p>
-
-<ul>
-  <li><strong>Base64</strong> dominated, appearing in <strong>40%</strong> of proactively identified recipes.</li>
-  <li>Other recipes blended string parsing, XOR, character rotation, and Base16 encoding.</li>
-</ul>
-
-<p><strong>Real-World Impact</strong></p>
-
-<p>This methodology delivered tangible disruption:</p>
-
-<ul>
-  <li><strong>88%</strong> of proactively discovered dead drops were removed in coordination with providers.</li>
-  <li><strong>6,674</strong> malware samples were neutralized, driving a <strong>94.4%</strong> removal rate for the targeted families.</li>
-  <li>Recipe-driven detection increased network visibility by <strong>57%</strong>, giving defenders the lead for once.</li>
-</ul>
-
-<p><strong>Key Takeaways: Data, Research, and Principled Leadership</strong></p>
-
-<p>Malware logic reuse is a powerful defensive paradigm. Intelligence starts inside the adversary’s code. Three imperatives stood out:</p>
+<p>Our framework, inspired by the system described in our paper (<em>VADER: proactiVe deAd Drop rEsolver Remediation</em>), operates in three primary phases:</p>
 
 <ol>
-  <li><strong>Data-driven defense.</strong> Most DDR threats lean on predictable encoding recipes. Investing in tooling that derives those recipes boosts detection by 57%.</li>
-  <li><strong>Proactive remediation.</strong> By extracting the C&amp;C logic first, we pinpointed <strong>67 C&amp;C addresses</strong> before adversaries could pivot.</li>
-  <li><strong>Scalable responsibility.</strong> Empowering web application providers to identify and remove malicious dead drops early creates durable, layered defense.</li>
+  <li><strong>DDR logic localization.</strong> We instrument the binary and monitor data flow from network fetches that later seed outbound C&amp;C connections, confirming DDR behavior and isolating the responsible code regions.</li>
+  <li><strong>Boundary isolation.</strong> We suspend execution around those regions, delineating precise input/output (I/O) boundaries that define each de-manipulation step.</li>
+  <li><strong>Symbolic recipe identification.</strong> We extract symbolic expressions (λ) describing the transformations applied to the fetched data, then match them to a curated catalogue of decoder algorithms (e.g., Base64, XOR, rotation) to determine the exact decoding sequence.</li>
 </ol>
 
-<p><strong>Reflection and Forward Look</strong></p>
+<p><img src="/assets/blogs/spycraft/symbex.jpg" alt="Symbolic Expression Matching" class="img-framed" width="50%" /></p>
 
-<p>Sharing these findings with the community was energizing. Collaborative analysis of advanced tradecraft keeps collective defense moving forward. Dead Drop Resolvers represent a structural shift in C&amp;C architecture, and defenders must treat them as such.</p>
+<p class="figcaption">Symbolic taint tracking and expression matching recover de-manipulation recipes regardless of implementation details. Matching succeeds when structural and concrete checks align, confirming decoder equivalence.</p>
 
-<p>The full paper, <strong>Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</strong>, is now published. Explore the summary, PDF, and supporting resources on <a href="/publications/vader-dead-drop-resolver/">here</a>.</p>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead-drop-resolvers" /><category term="research" /><summary type="html"><![CDATA[Recap of the BSidesNYC 0x05 talk on turning dead drop resolver tradecraft against botnet operators.]]></summary></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-21T11:34:56-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
+<p>By analyzing symbolic expressions, our method recognizes functionally equivalent decoders—even when implemented differently across malware families. For multi-stage encodings (e.g., Base16 → XOR → rotation), concolic execution and output comparison reveal the correct algorithmic order, producing complete recipes ready for large-scale scanning.</p>
+
+<hr />
+
+<h2 id="operational-impact">Operational Impact</h2>
+
+<p>Applying our approach at scale yielded substantial results:</p>
+
+<ul>
+  <li>Analysed <strong>100K</strong> Windows samples (2012–2022), identifying <strong>8,906</strong> DDR specimens.</li>
+  <li>Discovered <strong>11</strong> web applications abused for DDR content—<strong>Pastebin</strong> accounted for <strong>68 %</strong>, while <strong>blockchain explorers</strong> represented <strong>25 %</strong> (23 transaction IDs, 14 wallet IDs).</li>
+  <li>Extracted <strong>7</strong> unique de-manipulation recipes, dominated by <strong>Base64</strong> (<strong>40 %</strong>) and combinations of string parsing, XOR, Base16, and rotation.</li>
+  <li>Collaborated with service providers to remove <strong>88 %</strong> of identified dead drops, disrupting <strong>6,674</strong> malware samples (<strong>94.4 %</strong> neutralization).</li>
+  <li>Improved visibility into DDR-related network traffic by <strong>57 %</strong> once recipe-based scanning was deployed.</li>
+</ul>
+
+<p>We also identified <strong>hybrid specimens</strong>—for instance, Twitter DDRs combined with domain-generation algorithms (DGAs)—demonstrating that traditional DGA defenses can complement DDR mitigation strategies.</p>
+
+<hr />
+
+<h2 id="looking-ahead">Looking Ahead</h2>
+
+<p>Dead Drop Resolvers will continue to evolve, but so can our defenses. By leveraging the adversary’s own decoding logic, defenders can shift from reactive cleanup to proactive disruption. Recipe-based scanning empowers web application providers and security teams to identify malicious content at scale—<em>before</em> it enables command-and-control communication.</p>
+
+<p>Our full paper, <strong><em>Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</em></strong>, details the technical foundations, symbolic analysis methods, and collaborative outcomes that made this possible. Together, these results mark a paradigm shift—from chasing malicious endpoints to dismantling the mechanisms that sustain them.</p>
+
+<ul>
+  <li><a href="/publications/vader-dead-drop-resolver/">Publication summary and PDF</a></li>
+</ul>
+
+<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, we can restore visibility and keep defenders ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead-drop-resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-21T22:33:17-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
 <strong>Authors</strong>: <u>Jonathan Fuller</u>*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio<br />
 <strong>Acceptance Rate</strong>: 13.8%</p>
 
@@ -216,7 +216,7 @@ Our framework injects symbolic data (𝜆) to localize mudrop malware decoding l
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
   <span class="na">note</span>      <span class="p">=</span> <span class="s">{Invited Tutorial}</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev 2023 tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry><entry><title type="html">Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/marsea-web-application-abuse/" rel="alternate" type="text/html" title="Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware" /><published>2023-08-09T00:00:00-04:00</published><updated>2025-10-21T11:34:56-04:00</updated><id>http://localhost:4000/publications/marsea</id><content type="html" xml:base="http://localhost:4000/publications/marsea-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023<br />
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>&lt;mail@domain.tld&gt;</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev 2023 tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry><entry><title type="html">Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/marsea-web-application-abuse/" rel="alternate" type="text/html" title="Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware" /><published>2023-08-09T00:00:00-04:00</published><updated>2025-10-21T22:33:17-04:00</updated><id>http://localhost:4000/publications/marsea</id><content type="html" xml:base="http://localhost:4000/publications/marsea-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023<br />
 <strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio<br />
 <strong>Acceptance Rate</strong>: 29.2%</p>
 
