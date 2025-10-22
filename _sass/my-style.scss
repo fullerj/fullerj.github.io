@@ -12,3 +12,252 @@
     margin: 1rem 0;
   }
 }
+
+.img-framed {
+  display: block;
+  max-width: 100%;
+  border: 2px solid rgba(25, 55, 71, 0.3);
+  border-radius: .5rem;
+  padding: .5rem;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(17, 30, 45, 0.12);
+  margin: 1.5rem auto;
+}
+.img-framed + .figcaption {
+  text-align: center;
+}
+
+.home-intro.content {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.home-highlights.content {
+  margin-top: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+
+.home-highlights.content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.talks-map-wrapper {
+  margin: 2rem 0 3rem;
+}
+
+.talks-map {
+  width: 100%;
+  min-height: 360px;
+  border-radius: .75rem;
+  border: 1px solid rgba(25, 55, 71, 0.18);
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(17, 30, 45, 0.14);
+}
+
+@media (min-width: 768px) {
+  .talks-map {
+    min-height: 420px;
+  }
+}
+
+.teaching-logos {
+  margin: 3rem 0 1rem;
+  text-align: center;
+}
+
+.teaching-logos__heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.teaching-logos__grid {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.teaching-logos__item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 200px;
+}
+
+.teaching-logos__item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 24px rgba(17, 30, 45, 0.2);
+  border: 1px solid rgba(25, 55, 71, 0.15);
+  background: #fff;
+}
+
+.teaching-logos__label {
+  font-size: 0.9rem;
+  color: var(--gray, #666);
+}
+
+.search-pane {
+  margin-top: 1rem;
+}
+
+.search-pane__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: inherit;
+}
+
+.search-pane__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid rgba(25, 55, 71, 0.2);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.search-pane__input:focus {
+  outline: none;
+  border-color: rgba(79, 177, 186, 0.7);
+  box-shadow: 0 4px 18px rgba(64, 155, 163, 0.25);
+}
+
+.search-pane__results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.search-result__link {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.search-result__meta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gray, #666);
+  margin-top: 0.3rem;
+}
+
+.search-result__excerpt {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+.search-result--empty {
+  color: var(--gray, #666);
+}
+
+.education-grid,
+.certifications-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .education-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+.education-card,
+.certification-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 1px solid rgba(25, 55, 71, 0.12);
+  border-radius: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 28px rgba(17, 30, 45, 0.12);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card__logo,
+.certification-card__logo {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(25, 55, 71, 0.12);
+  padding: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .education-card__logo,
+  .certification-card__logo {
+    filter: brightness(1.1) contrast(1.05);
+  }
+}
+
+body.dark-mode .education-card,
+body.dark-mode .certification-card {
+  background-color: rgba(28, 36, 48, 0.85);
+  border-color: rgba(210, 220, 230, 0.18);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+}
+
+body.dark-mode .education-card__institution,
+body.dark-mode .certification-card__issuer,
+body.dark-mode .education-card__detail {
+  color: rgba(235, 240, 245, 0.85);
+}
+
+body.light-mode .education-card,
+body.light-mode .certification-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(25, 55, 71, 0.12);
+  box-shadow: 0 12px 28px rgba(17, 30, 45, 0.12);
+}
+
+.education-card__degree,
+.certification-card__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  line-height: 1.35rem;
+}
+
+.education-card__year {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray, #666);
+}
+
+.education-card__institution,
+.certification-card__issuer,
+.education-card__detail {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: var(--gray, #666);
+}
+
+.about-cert-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}

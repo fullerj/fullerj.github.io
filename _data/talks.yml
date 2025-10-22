@@ -5,41 +5,57 @@
   event: "BSidesNYC 0x05"
   location: "New York City, NY"
   date: "2025-10-18"
+  latitude: 40.7128
+  longitude: -74.006
 
 - title: "Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation"
   event: "32nd ACM Conference on Computer and Communications Security (CCS)"
   location: "Taipei, Taiwan (Virtual)"
   date: "2025-10-13"
+  latitude: 25.033
+  longitude: 121.5654
 
 - title: "10th Published Authors’ Night"
   event: "U.S. Military Academy Preparatory School"
   location: "West Point, NY"
   date: "2024-09-15"
+  latitude: 41.3676
+  longitude: -73.955
 
 - title: "Hiding in Plain Sight: Tracking Malware Abusing Web Applications"
   event: "AvengerCon VIII"
   location: "Augusta, GA"
   date: "2024-02-10"
+  latitude: 33.4735
+  longitude: -82.0105
 
 - title: "Gearing Rapid Malware Forensics toward Botnet Monitoring and Takedown"
   event: "Cybersecurity Seminar, Naval Postgraduate School"
   location: "Monterey, CA"
   date: "2023-11-15"
+  latitude: 36.6002
+  longitude: -121.8947
 
 - title: "The Bot Reveals Its Master: Exposing and Infiltrating Command and Control Servers via Malware Logic Reuse"
   event: "Cybersecurity Seminar, The Ohio State University"
   location: "Columbus, OH (Virtual)"
   date: "2023-02-20"
+  latitude: 39.9612
+  longitude: -82.9988
 
 - title: "Large-Scale Infiltration and Monitoring of C&C Servers"
   event: "ShmooCon"
   location: "Washington, DC"
   date: "2023-01-20"
+  latitude: 38.9072
+  longitude: -77.0369
 
 - title: "Covert Infiltration and Monitoring of Command and Control Servers"
   event: "AvengerCon VII"
   location: "Columbia, MD"
   date: "2022-11-05"
+  latitude: 39.2037
+  longitude: -76.861
 
 - title: "C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration"
   event: "28th ACM Conference on Computer and Communications Security (CCS)"
@@ -50,18 +66,26 @@
   event: "Cybersecurity Lecture Series, Georgia Institute of Technology"
   location: "Atlanta, GA"
   date: "2021-10-15"
+  latitude: 33.749
+  longitude: -84.388
 
 - title: "Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks"
   event: "11th International Conference on Cyber Warfare and Security (ICCWS)"
   location: "Boston, MA"
   date: "2016-03-01"
+  latitude: 42.3601
+  longitude: -71.0589
 
 - title: "Rogue Z-Wave Controllers: A Persistent Attack Channel"
   event: "10th IEEE International Workshop on Practical Issues in Building Sensor Network Applications (SenseApp)"
   location: "Clearwater, FL"
   date: "2015-10-12"
+  latitude: 27.9659
+  longitude: -82.8001
 
 - title: "Stealthy and Persistent Access to Z-Wave Gateways"
   event: "DerbyCon 5.0 “Unity”"
   location: "Louisville, KY"
   date: "2015-09-25"
+  latitude: 38.2527
+  longitude: -85.7585

@@ -3,10 +3,12 @@ layout: page
 title: Talks
 permalink: /talks/
 description: >
-  Conference presentations, invited tutorials, and workshops delivered by EmpiricalDefense.
+  This section features a selection of conference presentations, invited talks, and panel discussions delivered at academic, professional, and public forums. 
 ---
 
 {% assign talks = site.data.talks | sort: "date" | reverse %}
+
+{% include components/talks-map.html %}
 
 {% if talks and talks.size > 0 %}
 {% for talk in talks %}

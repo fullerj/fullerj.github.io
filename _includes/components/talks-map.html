@@ -1,0 +1,110 @@
+<div class="talks-map-wrapper">
+  <div id="talks-map" class="talks-map" role="img" aria-label="Map of talk locations"></div>
+</div>
+
+<script type="module">
+  const talksWithCoords = {{ site.data.talks | where_exp: "item", "item.latitude and item.longitude" | jsonify }};
+
+  const ensureLeaflet = () => new Promise((resolve) => {
+    if (window.L) {
+      resolve(window.L);
+      return;
+    }
+
+    const existingScript = document.querySelector('script[data-leaflet]');
+    if (existingScript) {
+      existingScript.addEventListener('load', () => resolve(window.L), { once: true });
+      return;
+    }
+
+    const leafletCssId = 'leaflet-css';
+    if (!document.getElementById(leafletCssId)) {
+      const link = document.createElement('link');
+      link.id = leafletCssId;
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      link.integrity = 'sha512-sA+e2Fo7QHzG9kLB+VnYwhxSN6qlWnSYJ7M5XO3aX1lJzk4G51HwKaY4bh35Qc0DuzmniXn6w2Cwo3ArY6p24g==';
+      link.crossOrigin = '';
+      document.head.appendChild(link);
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha512-vGkQNUFrSO0pRDlGlV8zPQK4fA79N4uI5x6hNedbEr3FoZT3zh0+BTtPlkV48dqH0OUB9L2VZuW2xYcsbZL4wQ==';
+    script.crossOrigin = '';
+    script.dataset.leaflet = 'true';
+    script.addEventListener('load', () => resolve(window.L), { once: true });
+    document.head.appendChild(script);
+  });
+
+  const createMap = async () => {
+    const container = document.getElementById('talks-map');
+    if (!container || container.dataset.initialized === 'true' || talksWithCoords.length === 0) {
+      return;
+    }
+
+    const L = await ensureLeaflet();
+    if (!L) {
+      return;
+    }
+
+    container.dataset.initialized = 'true';
+
+    const map = L.map(container, {
+      scrollWheelZoom: false,
+      worldCopyJump: true,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 6,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    const bounds = [];
+
+    talksWithCoords.forEach((talk) => {
+      const marker = L.circleMarker([talk.latitude, talk.longitude], {
+        radius: 7,
+        color: '#1d5c6b',
+        weight: 2,
+        opacity: 0.9,
+        fillOpacity: 0.65,
+        fillColor: '#4fb1ba',
+      }).addTo(map);
+
+      const talkDate = talk.date ? new Date(talk.date).toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      }) : 'Date TBA';
+
+      const popupHtml = `
+        <strong>${talk.title}</strong><br/>
+        ${talk.event ? `${talk.event}<br/>` : ''}
+        ${talk.location || ''}<br/>
+        <small>${talkDate}</small>
+      `;
+
+      marker.bindPopup(popupHtml);
+      bounds.push(marker.getLatLng());
+    });
+
+    if (bounds.length > 1) {
+      map.fitBounds(bounds, { padding: [40, 40] });
+    } else if (bounds.length === 1) {
+      map.setView(bounds[0], 4);
+    } else {
+      map.setView([20, 0], 2);
+    }
+  };
+
+  const initTalkMap = () => {
+    if (!document.getElementById('talks-map')) {
+      return;
+    }
+    createMap();
+  };
+
+  document.addEventListener('DOMContentLoaded', initTalkMap, { once: true });
+  window.addEventListener('hy-push-state-load', initTalkMap);
+</script>

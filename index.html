@@ -1,11 +1,12 @@
 ---
-layout: blog
-title: Blog
+layout: about
+title: Jonathan Fuller
 description: >
-  The official Hydejack blog. Version updates, example content and how-to guides on how to blog with Jekyll.
-last_modified_at: 2018-08-03
-no_link_title: false 
-no_excerpt: false 
-hide_image: false
-cover: true
+  Bridging research, education, and cyber defense.
+permalink: /
 ---
+
+{% assign about_page = site.pages | where: "path", "about.md" | first %}
+{% if about_page %}
+  {{ about_page.content }}
+{% endif %}

@@ -20,7 +20,7 @@
 lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Empirical Defense
+title:                 Jonathan Fuller
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
@@ -49,16 +49,14 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             About
-    url:               /about/
   - title:             Blog
-    url:              /blog/
+    url:               /blog/
   - title:             Publications
     url:               /publications/
-  - title:             Teaching
-    url:               /teaching/
   - title:             Talks
     url:               /talks/
+  - title:             Teaching
+    url:               /teaching/
 
 
 # Add links to the footer.
@@ -151,6 +149,12 @@ defaults:
     values:
       layout:          plain
       sitemap:         false
+
+  # Preserve explicit titles on posts and disable heading-derived titles
+  - scope:
+      type:            posts
+    values:
+      titles_from_headings: false
 
   # # You can use the following to enable comments on all posts.
   # - scope:
@@ -330,7 +334,6 @@ plugins:
   - jekyll-default-layout
   - jekyll-feed
   - jekyll-optional-front-matter
-  - jekyll-paginate
   - jekyll-readme-index
   - jekyll-redirect-from
   - jekyll-relative-links

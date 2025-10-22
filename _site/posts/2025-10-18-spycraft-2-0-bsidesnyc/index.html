@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.2.1 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spycraft 2.0: Weaponizing Malware’s Own Logic to Hunt the Invisible C&amp;C Dead Drop | Jonathan Fuller</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Spycraft 2.0: Weaponizing Malware’s Own Logic to Hunt the Invisible C&amp;C Dead Drop" />
+<meta name="author" content="Jonathan Fuller" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Recap of the BSidesNYC 0x05 talk on turning dead drop resolver tradecraft against botnet operators." />
+<meta property="og:description" content="Recap of the BSidesNYC 0x05 talk on turning dead drop resolver tradecraft against botnet operators." />
+<link rel="canonical" href="http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/" />
+<meta property="og:url" content="http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/" />
+<meta property="og:site_name" content="Jonathan Fuller" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-18T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spycraft 2.0: Weaponizing Malware’s Own Logic to Hunt the Invisible C&amp;C Dead Drop" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-21T14:35:05-04:00","datePublished":"2025-10-18T00:00:00-04:00","description":"Recap of the BSidesNYC 0x05 talk on turning dead drop resolver tradecraft against botnet operators.","headline":"Spycraft 2.0: Weaponizing Malware’s Own Logic to Hunt the Invisible C&amp;C Dead Drop","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/headshot.png"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+
+
+
+  <meta name="color-scheme" content="dark light">
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jonathan Fuller">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Jonathan Fuller">
+
+<meta name="generator" content="Hydejack v9.2.1" />
+
+
+<link rel="alternate" href="http://localhost:4000/posts/2025-10-18-spycraft-2-0-bsidesnyc/" hreflang="en">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jonathan Fuller" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+
+
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+  
+  <link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.css" id="_katexPreload">
+  <noscript><link rel="stylesheet" href="/assets/bower_components/katex/dist/katex.min.css"></noscript>
+
+
+
+
+
+<script>((r,a)=>{function d(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=a.createElement("script"),e=(n.src=e,t&&d(n,"load",t,{once:!0}),a.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=a.createElement("script");function o(){r._loaded=!0,t&&d(n,"load",t,{once:!0});var e=a.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():d(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){d(a.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}})(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2025-10-21T22:06:21-04:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.2.1.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.5);--accent-color-highlight: rgba(79, 177, 186, 0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71);--dark-mode-body-bg: hsl(200.8695652174, 5.9895833333%, 17.5%);--dark-mode-border-color: hsl(200.8695652174, 5.9895833333%, 22.5%)}
+</style>
+
+
+<!--<![endif]-->
+
+
+<!-- Add HTML tags here to be included in the head. You can delete the below: -->
+<link rel="dns-prefetch" href="https://assets.gumroad.com">
+<script type="module">
+  const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
+
+  let p1, p2, io1, io2, embedCreated, overlayCreated;
+  document.querySelector('hy-push-state').addEventListener('load', () => {
+    io1 ||= new IntersectionObserver(async (entries) => {
+      if (entries.some(x => x.isIntersecting)) {
+        p1 = p1 || loadJS('https://gumroad.com/js/gumroad-embed.js');
+        await p1;
+        !embedCreated && await new Promise(function check1(res) {
+          if (typeof createGumroadEmbed !== 'undefined')  {
+            embedCreated = 1;
+            res(createGumroadEmbed());
+          }
+          else setTimeout(() => check1(res), 200);
+        });
+        await new Promise(function check2(res) {
+          if (typeof GumroadEmbed !== 'undefined') res(GumroadEmbed.reload());
+          else setTimeout(() => check2(res), 200);
+        });
+      }
+    }, { rootMargin: '1440px' });
+
+    io2 ||= new IntersectionObserver(async (entries) => {
+      if (entries.some(x => x.isIntersecting)) {
+        p2 = p2 || loadJS('https://gumroad.com/js/gumroad.js');
+        await p2;
+        !overlayCreated && await new Promise(function check(res) {
+          if (typeof createGumroadOverlay !== 'undefined') {
+            overlayCreated = 1;
+            res(createGumroadOverlay());
+          }
+          else setTimeout(() => check(res), 200);
+        });
+      }
+    }, { rootMargin: '300px' });
+
+    document.querySelectorAll('.gumroad-product-embed').forEach(el => io1.observe(el));
+    document.querySelectorAll('.gumroad-button').forEach(el => io2.observe(el));
+  });
+</script>
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  ((e,s)=>{var d="light-mode",a="dark-mode",o=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(o=o<=e._sunrise||o>=e._sunset?a:d)==a?d:a,s.body.classList.add(o),s.body.classList.remove(e))})(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <div class="nav-span"></div>
+      <a class="nav-btn no-hover" href="/search/">
+        <span class="sr-only">Search</span>
+        <span class="icon-search"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-post"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/posts/">posts</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>2025-10-18-spycraft-2-0-bsidesnyc</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-posts-spycraft-2-0-bsidesnyc" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        Spycraft 2.0: Weaponizing Malware's Own Logic to Hunt the Invisible C&C Dead Drop
+      
+    </h1>
+
+    <div class="post-date">
+      
+      <span class="ellipsis mr1">
+        <time datetime="2025-10-18T00:00:00-04:00">18 Oct 2025</time> in <a href="/blog-highlights/" class="flip-title">Blog Highlights</a> on <span>Talks</span>, <span>Malware</span>, <span>Command-and-control</span>, <span>Dead-drop-resolvers</span>, <span>Research</span>
+      </span>
+      
+        
+          
+          
+          
+            
+            
+            <span class="ellipsis" data-tippy-content="Last modified at: 21 Oct 2025">
+              <span class="sr-only">Last modified at:</span>
+              <span class="icon-history"></span>
+              <time datetime="2025-10-21T14:35:05-04:00">2025-10-21</time>
+            </span>
+          
+        
+      
+    </div>
+
+    
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      Recap of the BSidesNYC 0x05 talk on turning dead drop resolver tradecraft against botnet operators.
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <p><strong>Introduction – Beheading the Hydra with Data</strong></p>
+
+<p>It was a privilege to present <strong>Spycraft 2.0: Hunting Dead Drops in Web Applications</strong> at BSidesNYC 0x05 this year. Our mission is anchored in a simple conviction: cybersecurity decisions must be informed by data, guided by research, and executed through principled leadership. Botnet takedowns have long felt like beheading a hydra—each head removed seems to regenerate. Full visibility into command-and-control (C&amp;C) infrastructure is rare, and the time investigations require lets adversaries pivot and persist. This talk tackled a fundamental question: <em>How can we disrupt botnets more effectively?</em> The answer lies in weaponizing the attacker’s own logic, turning covert mechanisms into proactive defense.</p>
+
+<p><strong>Background: The Evolution of C&amp;C Evasion</strong></p>
+
+<p>Earlier research showcased how reusing credentials embedded in malware could infiltrate and monitor C&amp;C infrastructure. During our <strong>Covert Infiltration and Monitoring of Command-and-Control Servers</strong> study, for instance, we reused Detplock malware’s FTP credentials to observe its controllers. Predictably, adversaries adapted by embracing a stealthier tradecraft we call <strong>Spycraft 2.0</strong>—the use of <strong>Dead Drop Resolvers (DDRs)</strong>.</p>
+
+<p>DDRs offer three major advantages to attackers:</p>
+
+<ol>
+  <li><strong>Hiding in plain sight.</strong> DDRs lean on popular web applications—Pastebin, blockchain explorers, and more—as temporary staging grounds for C&amp;C addresses. The traffic blends in with legitimate use.</li>
+  <li><strong>Unpredictable domains.</strong> With countless web apps available, adversaries gain anonymity and elasticity, hopping across seemingly random domains at will.</li>
+  <li><strong>Multi-layer masking.</strong> Multi-layer encoding and encryption keeps the operational C&amp;C address hidden behind obfuscation until the right recipe is executed.</li>
+</ol>
+
+<p>In practice, a DDR client pulls encoded data from a public dead drop, runs the embedded decoding routine (the “recipe”), and then phones home to the real C&amp;C server.</p>
+
+<p><img src="/assets/blogs/spycraft/ddr.jpg" alt="Illustrative dead drop resolver workflow" class="img-framed" width="70%" /></p>
+
+<p class="figcaption">Razy’s DDR workflow. 1: The malware author manipulates the C&amp;C server address and posts it on X.com as a dead drop. 2: Razy executes on the victim system and fetches the dead drop. 3: Razy resolves the dead drop content to connect to the C&amp;C server.</p>
+
+<p><strong>Research Summary: From Concolic Analysis to Proactive Disruption</strong></p>
+
+<p>We flipped the script by reversing the attacker’s flow of information. DDR samples must contain the exact logic needed to decode the C&amp;C endpoint. That logic becomes the defender’s advantage.</p>
+
+<p><strong>Methodology: Mapping the De-Manipulation Recipes</strong></p>
+
+<p>Rather than chase outbound connections, we follow the data: from fetched content to the decoded C&amp;C address. The DDR Malware Analysis Framework rests on three insights:</p>
+
+<ol>
+  <li><strong>DDR logic localization.</strong> We isolate the code paths that retrieve dead drop content and process it.</li>
+  <li><strong>Symbolic expression matching.</strong> The de-manipulation routines reduce to symbolic expressions. By combining concolic execution with expression matching, we identify the decoding recipe. Mudrop malware, for example, relied on Base16 decoding followed by four rotations to unmask its C&amp;C.</li>
+  <li><strong>Recipe scanning.</strong> Once identified, these recipes power proactive scans of network traffic and public web apps, surfacing previously unknown dead drops.</li>
+</ol>
+
+<p class="figcaption"><img src="/assets/blogs/spycraft/symbex.jpg" alt="Symbolic Expression Matching" class="img-framed" width="50%" />
+Our framework injects symbolic data (𝜆) to localize mudrop malware decoding logic and generate a symbolic expression (𝑀𝜆). This expression drives decoding algorithms to produce reference expressions under identical constraints. Our framework then compares both expressions, first structurally and then concretely via a symbolic solver, to determine functional equivalence. A high ratio of matching paths confirms equivalence.</p>
+
+<p><strong>Findings: Prevalence and Preference</strong></p>
+
+<p>Our analysis of 100,000 Windows samples (2012–2022) identified <strong>8,906</strong> DDR specimens.</p>
+
+<ul>
+  <li><strong>Pastebin</strong> hosted roughly <strong>68%</strong> of DDR malware.</li>
+  <li><strong>Blockchain explorers</strong> accounted for about <strong>25%</strong>.</li>
+  <li><strong>Five of 13</strong> dead drop services exposed crypto wallets; we uncovered <strong>23 transaction IDs</strong> and <strong>14 wallet IDs</strong> abused for covert signaling.</li>
+</ul>
+
+<p>Proactively applying the recipes to packet captures revealed <strong>72 additional dead drops</strong> across <strong>11</strong> web apps.</p>
+
+<ul>
+  <li><strong>Base64</strong> dominated, appearing in <strong>40%</strong> of proactively identified recipes.</li>
+  <li>Other recipes blended string parsing, XOR, character rotation, and Base16 encoding.</li>
+</ul>
+
+<p><strong>Real-World Impact</strong></p>
+
+<p>This methodology delivered tangible disruption:</p>
+
+<ul>
+  <li><strong>88%</strong> of proactively discovered dead drops were removed in coordination with providers.</li>
+  <li><strong>6,674</strong> malware samples were neutralized, driving a <strong>94.4%</strong> removal rate for the targeted families.</li>
+  <li>Recipe-driven detection increased network visibility by <strong>57%</strong>, giving defenders the lead for once.</li>
+</ul>
+
+<p><strong>Key Takeaways: Data, Research, and Principled Leadership</strong></p>
+
+<p>Malware logic reuse is a powerful defensive paradigm. Intelligence starts inside the adversary’s code. Three imperatives stood out:</p>
+
+<ol>
+  <li><strong>Data-driven defense.</strong> Most DDR threats lean on predictable encoding recipes. Investing in tooling that derives those recipes boosts detection by 57%.</li>
+  <li><strong>Proactive remediation.</strong> By extracting the C&amp;C logic first, we pinpointed <strong>67 C&amp;C addresses</strong> before adversaries could pivot.</li>
+  <li><strong>Scalable responsibility.</strong> Empowering web application providers to identify and remove malicious dead drops early creates durable, layered defense.</li>
+</ol>
+
+<p><strong>Reflection and Forward Look</strong></p>
+
+<p>Sharing these findings with the community was energizing. Collaborative analysis of advanced tradecraft keeps collective defense moving forward. Dead Drop Resolvers represent a structural shift in C&amp;C architecture, and defenders must treat them as such.</p>
+
+<p>The full paper, <strong>Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</strong>, is now published. Explore the summary, PDF, and supporting resources on <a href="/publications/vader-dead-drop-resolver/">here</a>.</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="/assets/img/headshot.png"
+    srcset="/assets/img/headshot.png 1x,/assets/img/headshot.png 2x"
+    
+  
+  alt="Jonathan Fuller"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>Jonathan Fuller serves as the Chief Information Security Officer and an Academy Professor at the United States Military Academy at West Point, leading enterprise cybersecurity strategy and governance in a mission-critical environment.</p>
+
+<p>His work combines a Ph.D. in Electrical and Computer Engineering focused on cybersecurity with nearly two decades of Army experience in secure communications, cyber operations, and organizational leadership. This foundation supports Empirical Defense, a platform dedicated to evidence-based approaches that connect research, strategic governance, and education to strengthen resilience across complex digital ecosystems.</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/fullsec" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+  <aside class="related mb4" role="complementary">  <h2 class="hr-bottom">Related Posts</h2>  <ul class="related-posts">                  <li class="h4">  <a href="/publications/vader-dead-drop-resolver/" class="flip-title">    <span class="badge badge--outline">[ACM CCS]</span> <span>Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</span>  </a>  <time class="faded fine" datetime="2025-10-13T00:00:00-04:00">13 Oct 2025</time></li>                        <li class="h4">  <a href="/publications/operationalizing-zero-trust/" class="flip-title">    <span class="badge badge--outline">[U.S. Army]</span> <span>Operationalizing Zero Trust: CECOM SEC and West Point Collaborate</span>  </a>  <time class="faded fine" datetime="2025-09-11T00:00:00-04:00">11 Sep 2025</time></li>                        <li class="h4">  <a href="/teaching/2025-01-15-cs483-digital-forensics/" class="flip-title">    <span>CS483 Digital Forensics</span>  </a>  <time class="faded fine" datetime="2025-01-15T00:00:00-05:00">15 Jan 2025</time></li>            </ul></aside>
+
+  
+
+  
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2025. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/LICENSE/">LICENSE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/NOTICE/">NOTICE</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/CHANGELOG/">CHANGELOG</a>
+      
+    
+    </small></nav>
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.2.1</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/shield.png)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/headshot.png" class="avatar" alt="Jonathan Fuller" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Jonathan Fuller</h2></a>
+    
+    
+      <p class="">
+        Bridging Research, Education, and Cyber Defense
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_drawer--opened"
+          href="/blog/"
+          class="sidebar-nav-item "
+          
+        >
+          Blog
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/publications/"
+          class="sidebar-nav-item "
+          
+        >
+          Publications
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/talks/"
+          class="sidebar-nav-item "
+          
+        >
+          Talks
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/teaching/"
+          class="sidebar-nav-item "
+          
+        >
+          Teaching
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/fullsec" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>(()=>{var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())})();
+</script>
+  <script src="/assets/js/hydejack-9.2.1.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.2.1.js" nomodule defer></script>
+  
+
+  
+
+<!--<![endif]-->
+  <!--
+Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+-->
+<script>
+  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
+    function e(e){
+      (console.error?console.error:console.log).call(console,e)
+    }
+
+    function t(e){
+      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
+    }
+
+    function r(e,t){
+      var r=e.substr(t,2);return parseInt(r,16)
+    }
+
+    function n(e,n){
+      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
+        var l=r(e,a)^c;
+        o+=String.fromCharCode(l)
+      }
+      return t(o)
+    }
+
+    var o="/cdn-cgi/l/email-protection#",
+        c=".__cf_email__",
+        a="data-cfemail",
+        l=document.createElement("div");
+
+    !function(){
+      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
+        try{
+          var c=t[r],a=c.href.indexOf(o);
+          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
+        }catch(t){
+          e(t)
+        }
+    }(),
+    function(){
+      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
+        try{
+          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
+          o.parentNode.replaceChild(i,o)
+        }catch(t){
+          e(t)
+        }
+    }()
+  });
+</script>
+
+
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+</div>
+
+
+</body>
+</html>

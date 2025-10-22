@@ -13,155 +13,153 @@ redirect_from:
 
 <!--author-->
 
-## Hydejack
 
-A boutique Jekyll theme for hackers, nerds, and academics.  
-{:.lead}
+<!--more-->
 
-1. this list will be replaced by the toc
-{:toc .large-only}
+1. this toc will be replaced by a hydejack-generated toc
+{:toc}
 
-![Screenshot](/assets/img/blog/hydejack-9.jpg){:.lead width="1920" height="1080" loading="lazy"}
+## Education
 
-Hydejack's cover page on a variety of screen sizes.
-{:.figcaption}
+<div class="education-grid">
+  <article class="education-card">
+    <img src="{{ '/assets/img/logos/gt.png' | relative_url }}" alt="Georgia Institute of Technology" loading="lazy" class="education-card__logo">
+    <div class="education-card__body">
+      <h3 class="education-card__degree">Ph.D., Electrical and Computer Engineering <span class="education-card__year">2022</span></h3>
+      <p class="education-card__institution">Georgia Institute of Technology — Atlanta, GA</p>
+      <p class="education-card__detail"><strong>Advisor:</strong> Dr. Brendan Saltaformaggio</p>
+      <p class="education-card__detail"><strong>Dissertation:</strong> The Bot Reveals Its Master: Exposing and Infiltrating Botnet Command and Control Servers via Malware Logic Reuse</p>
+    </div>
+  </article>
 
+  <article class="education-card">
+    <img src="{{ '/assets/img/logos/afit.png' | relative_url }}" alt="Air Force Institute of Technology" loading="lazy" class="education-card__logo">
+    <div class="education-card__body">
+      <h3 class="education-card__degree">M.S., Computer Science <span class="education-card__year">2016</span></h3>
+      <p class="education-card__institution">Air Force Institute of Technology — Dayton, OH</p>
+      <p class="education-card__detail"><strong>Advisor:</strong> Dr. Benjamin Ramsey</p>
+      <p class="education-card__detail"><strong>Thesis:</strong> A Misuse-Based Intrusion Detection System for ITU-T G.9959 Wireless Networks</p>
+    </div>
+  </article>
 
-**Hydejack** is a boutique [Jekyll] theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress. 
+  <article class="education-card">
+    <img src="{{ '/assets/img/logos/uab.png' | relative_url }}" alt="University of Alabama at Birmingham" loading="lazy" class="education-card__logo">
+    <div class="education-card__body">
+      <h3 class="education-card__degree">B.S., Computer Science <span class="education-card__year">2007</span></h3>
+      <p class="education-card__institution">University of Alabama at Birmingham — Birmingham, AL</p>
+    </div>
+  </article>
+</div>
 
-It includes a blog that is suitable for both prose and technical documentation, a portfolio to showcase your projects, and a resume template that looks amazing on the web and in print.
+## Professional Certifications <a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">(Credly)</a>
 
-> Your complete presence on the web — A [blog], [portfolio], and [resume].
-{:.lead}
+<div class="certifications-grid">
+  <article class="certification-card">
+    <img src="{{ '/assets/img/certs/cissp.png' | relative_url }}" alt="(ISC)² CISSP" loading="lazy" class="certification-card__logo">
+    <div class="certification-card__body">
+      <h3 class="certification-card__title">Certified Information Systems Security Professional (CISSP)</h3>
+      <p class="certification-card__issuer">(ISC)²</p>
+    </div>
+  </article>
 
+  <article class="certification-card">
+    <img src="{{ '/assets/img/certs/grem.png' | relative_url }}" alt="GIAC GREM" loading="lazy" class="certification-card__logo">
+    <div class="certification-card__body">
+      <h3 class="certification-card__title">GIAC Reverse Engineering Malware (GREM)</h3>
+      <p class="certification-card__issuer">GIAC</p>
+    </div>
+  </article>
 
-## A Personal Site That Won't Disappear
+  <article class="certification-card">
+    <img src="{{ '/assets/img/certs/gdsa.png' | relative_url }}" alt="GIAC GDSA" loading="lazy" class="certification-card__logo">
+    <div class="certification-card__body">
+      <h3 class="certification-card__title">GIAC Defensible Security Architecture (GDSA)</h3>
+      <p class="certification-card__issuer">GIAC</p>
+    </div>
+  </article>
 
-**Hydejack** is 100% built on Open Source software, and is Open Source itself, save for parts of the PRO version. The PRO version is a one-time payment that gives you the right to use it forever.
+  <article class="certification-card">
+    <img src="{{ '/assets/img/certs/gcfa.png' | relative_url }}" alt="GIAC GCFA" loading="lazy" class="certification-card__logo">
+    <div class="certification-card__body">
+      <h3 class="certification-card__title">GIAC Certified Forensic Analyst (GCFA)</h3>
+      <p class="certification-card__issuer">GIAC</p>
+    </div>
+  </article>
 
-Hydejack is all static sites. _HTML_. All you need is a web server — any web server — to have a professional web presence that lasts a lifetime.
+  <article class="certification-card">
+    <img src="{{ '/assets/img/certs/gsom.png' | relative_url }}" alt="GIAC GSOM" loading="lazy" class="certification-card__logo">
+    <div class="certification-card__body">
+      <h3 class="certification-card__title">GIAC Security Operations Manager (GSOM)</h3>
+      <p class="certification-card__issuer">GIAC</p>
+    </div>
+  </article>
+</div>
 
+## Highlights
 
-## A Free Blogging Theme
-**Hydejack** started out as a free blogging theme for Jekyll — and continues to be so.
+### Recent Insights
 
-<!--posts-->
+{% assign recent_posts = site.categories.posts | sort: 'date' | reverse %}
+{% if recent_posts and recent_posts.size > 0 %}
+<ul>
+  {% for post in recent_posts limit:3 %}
+  <li>
+    <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong><br/>
+    <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+  </li>
+  {% endfor %}
+</ul>
+<p><a href="{{ '/blog/' | relative_url }}">Browse all blog posts</a></p>
+{% else %}
+<p>Posts will appear here once they are published.</p>
+{% endif %}
 
+### Recent Publications
 
-## An Impressive Portfolio
-A portfolio that's guaranteed to be impressive — no matter what you put into it.
+{% assign recent_publications = site.categories.publications | sort: 'date' | reverse %}
+{% if recent_publications and recent_publications.size > 0 %}
+<ul>
+  {% for pub in recent_publications limit:3 %}
+  <li>
+    <strong><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></strong><br/>
+    <small>{{ pub.date | date: "%B %-d, %Y" }}{% if pub.conference %} - {{ pub.conference }}{% endif %}</small>
+  </li>
+  {% endfor %}
+</ul>
+<p><a href="{{ '/publications/' | relative_url }}">View all publications</a></p>
+{% else %}
+<p>Publications will appear here once they are added to the site.</p>
+{% endif %}
 
-<!--projects-->
+### Recent Talks
 
+{% assign recent_talks = site.data.talks | sort: 'date' | reverse %}
+{% if recent_talks and recent_talks.size > 0 %}
+<ul>
+  {% for talk in recent_talks limit:3 %}
+  <li>
+    <strong>{{ talk.title }}</strong><br/>
+    <small>{{ talk.date | date: "%B %-d, %Y" }}{% if talk.event %} - {{ talk.event }}{% endif %}{% if talk.location %} - {{ talk.location }}{% endif %}</small>
+  </li>
+  {% endfor %}
+</ul>
+<p><a href="{{ '/talks/' | relative_url }}">Explore talks and events</a></p>
+{% else %}
+<p>Talks will appear here once they are added to the site.</p>
+{% endif %}
 
-## A Printable Resume
-Get a resume that's consistent across the board — whether it's on the web, mobile, print, or [PDF](/assets/Resume.pdf).
+### Recent Service
 
-[![Resume PDF](/assets/img/blog/resume.png){:.lead width="884" height="632" loading="lazy"}][resume]{:.no-hover.no-mark}
-
-Front and center page of a print resume generated by Hydejack.
-{:.figcaption}
-
-
-## Just Markdown
-Write all content with Markdown. __Hydejack__ gives you [additional CSS classes](docs/writing.md) to stylize your content, without losing compatibility with other Jekyll themes.
-
-
-## Just Markup
-**Hydejack** boasts a plethora of modern JavaScript, but make no mistake: It's still a _plain old web page_ at its core. It works without JavaScript and you can even view it in a text-based browser like `w3m`:
-
-![w3m Screenshot](/assets/img/blog/w3m.png){:.tail width="1920" height="1260" loading="lazy"}
-
-The Hydejack blog, as seen by the text browser `w3m`.
-{:.figcaption}
-
-
-## Syntax Highlighting
-**Hydejack** features syntax highlighting, powered by [Rouge].
-
-```html
-<!-- file: `_includes/my-body.html` -->
-<script type="module">
-  document.querySelector("hy-push-state").addEventListener("hy-push-state-load", () => {
-    const supportsCodeHighlights = false; // TBD!!
-  });
-</script>
-```
-
-Code blocks can have a filename and a caption.
-{:.figcaption}
-
-
-## Beautiful Math
-They say math is beautiful — and with **Hydejack**'s [math support][math] it's guaranteed to also look beautiful:
-
-$$
-\begin{aligned}
-  \phi(x,y) &= \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) \\[2em]
-            &= \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j)            \\[2em]
-            &= (x_1, \ldots, x_n)
-               \left(\begin{array}{ccc}
-                 \phi(e_1, e_1)  & \cdots & \phi(e_1, e_n) \\
-                 \vdots          & \ddots & \vdots         \\
-                 \phi(e_n, e_1)  & \cdots & \phi(e_n, e_n)
-               \end{array}\right)
-               \left(\begin{array}{c}
-                 y_1    \\
-                 \vdots \\
-                 y_n
-               \end{array}\right)
-\end{aligned}
-$$
-
-Hydejack uses KaTeX to efficiently render math.
-{:.figcaption}
-
-
-## Features
-
-{% include features.md %}
-
-
-## Download
-
-{% include table.md %}
-
-
-## Get It Now
-
-Use the the form below to purchase Hydejack PRO:
-
-<div class="gumroad-product-embed" data-gumroad-product-id="nuOluY"><a href="https://gumroad.com/l/nuOluY">Loading…</a></div>
-
-[jekyll]: https://jekyllrb.com
-
-[blog]: /
-[portfolio]: https://hydejack.com/examples/
-[resume]: https://hydejack.com/resume/
-[download]: https://hydejack.com/download/
-[welcome]: https://hydejack.com/
-[forms]: https://hydejack.com/forms-by-example/
-
-[features]: #features
-[news]: #build-an-audience
-[syntax]: #syntax-highlighting
-[latex]: #beautiful-math
-[dark]: https://hydejack.com/blog/hydejack/2018-09-01-introducing-dark-mode/
-[search]: https://hydejack.com/#_search-input
-[grid]: https://hydejack.com/blog/hydejack/
-
-[lic]: LICENSE.md
-[pro]: licenses/PRO.md
-[docs]: docs/README.md
-[ofln]: docs/advanced.md#enabling-offline-support
-[math]: docs/writing.md#adding-math
-
-[kit]: https://github.com/hydecorp/hydejack-starter-kit/releases
-[src]: https://github.com/hydecorp/hydejack
-[gem]: https://rubygems.org/gems/jekyll-theme-hydejack
-[buy]: https://gum.co/nuOluY
-
-[gpss]: https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fhydejack.com%2Fdocs%2F
-[rouge]: http://rouge.jneen.net
-[katex]: https://khan.github.io/KaTeX/
-[mathjax]: https://www.mathjax.org/
+{% assign service_posts = site.pages | where: 'url', '/service/' %}
+{% if service_posts and service_posts.size > 0 %}
+<ul>
+  {% assign service_page = service_posts.first %}
+  <li>
+    <strong><a href="{{ service_page.url | relative_url }}">Community & Professional Service Highlights</a></strong><br/>
+    <small>Volunteer outreach, mentoring, and reviewer engagements supporting the broader cybersecurity community.</small>
+  </li>
+</ul>
+<p><a href="{{ '/service/' | relative_url }}">Explore service and volunteer efforts</a></p>
+{% else %}
+<p>Service highlights will appear here once they are published.</p>
+{% endif %}
