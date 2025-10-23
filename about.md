@@ -85,7 +85,7 @@ redirect_from:
 
 ### Recent Media Coverage
 
-{% assign coverage_limit = 3 %}
+{% assign coverage_limit = 8 %}
 {% assign coverage_count = 0 %}
 {% assign coverage_items = "" %}
 
