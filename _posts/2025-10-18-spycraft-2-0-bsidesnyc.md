@@ -91,12 +91,11 @@ The method generalizes across malware families. Even when two samples implement 
 
 We applied VADER to large-scale malware analysis and live web data collection with measurable results:
 
-- Analyzed **100,000** Windows samples from **2012–2022**, identifying **8,906** DDR specimens.  
-- Discovered **11** web applications abused for DDR content. **Pastebin** accounted for **68%**, while **blockchain explorers** represented **25%** (23 transaction IDs, 14 wallet IDs).  
-- Extracted **7** unique de-manipulation recipes, dominated by **Base64** (**40%**) and hybrid sequences involving string parsing, XOR, Base16, and rotation.  
-- Collaborated with platform providers to remove **88%** of discovered dead drops, disrupting **6,674** malware samples and achieving a **94.4%** neutralization rate.  
-- Achieved a **57%** increase in DDR-related traffic visibility after integrating recipe-based detection.
-
+-   Analyzed **100,000** Windows samples from **2012--2022**, identifying **DDR malware** across **110 families**.
+-   Uncovered **273 dead drops** distributed over **7 web applications**. **Pastebin** accounted for **68%** of abuse, while **blockchain explorers** represented **25%** (including **23 transaction IDs** and **14 wallet IDs**).
+-   Extracted **7 unique de-manipulation recipes**, dominated by **Base64** (**40%**) and hybrid techniques combining **string parsing**, **XOR**, **Base16**, and **rotation**.
+-   Through coordinated remediation efforts, **VADER neutralized 94.4%** of identified dead drops, effectively disrupting **6,674 malware samples**.
+-   Integrating recipe-based detection improved DDR-related network visibility by **57.1%**, demonstrating VADER's proactive detection capability.
 ---
 
 ## Looking Ahead
