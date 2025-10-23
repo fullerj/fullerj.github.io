@@ -89,6 +89,7 @@ redirect_from:
 {% assign per_source_limit = 2 %}
 {% assign publication_coverage = '' | split: '' %}
 {% assign talk_coverage = '' | split: '' %}
+{% assign coverage_seen_urls = '' | split: '' %}
 
 {% if recent_publications %}
   {% for pub in recent_publications %}
@@ -100,20 +101,24 @@ redirect_from:
           {% break %}
         {% endif %}
         {% if media.title and media.title != '' and media.url and media.url != '' %}
-          {% assign coverage_date = media.date | default: pub.date %}
-          {% assign source_label = media.source %}
-          {% if source_label == nil or source_label == '' %}
-            {% assign normalized_url = media.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
-            {% assign source_label = normalized_url | split: '/' | first %}
-          {% endif %}
-          {% capture coverage_entry %}
+          {% assign media_url = media.url %}
+          {% unless coverage_seen_urls contains media_url %}
+            {% assign coverage_date = media.date | default: pub.date %}
+            {% assign source_label = media.source %}
+            {% if source_label == nil or source_label == '' %}
+              {% assign normalized_url = media.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
+              {% assign source_label = normalized_url | split: '/' | first %}
+            {% endif %}
+            {% capture coverage_entry %}
 <li>
   <strong><a href="{{ media.url }}">{{ media.title }}</a></strong><br/>
   <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }}{% endif %}{% if source_label %}{% if coverage_date %} — {% endif %}{{ source_label }}{% endif %}</small>
 </li>
-          {% endcapture %}
-          {% assign publication_coverage = publication_coverage | push: coverage_entry %}
-          {% assign source_slot_count = source_slot_count | plus: 1 %}
+            {% endcapture %}
+            {% assign publication_coverage = publication_coverage | push: coverage_entry %}
+            {% assign coverage_seen_urls = coverage_seen_urls | push: media_url %}
+            {% assign source_slot_count = source_slot_count | plus: 1 %}
+          {% endunless %}
         {% endif %}
       {% endfor %}
     {% endif %}
@@ -137,20 +142,24 @@ redirect_from:
           {% break %}
         {% endif %}
         {% if media.title and media.title != '' and media.url and media.url != '' %}
-          {% assign coverage_date = media.date | default: talk.date %}
-          {% assign source_label = media.source %}
-          {% if source_label == nil or source_label == '' %}
-            {% assign normalized_url = media.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
-            {% assign source_label = normalized_url | split: '/' | first %}
-          {% endif %}
-          {% capture coverage_entry %}
+          {% assign media_url = media.url %}
+          {% unless coverage_seen_urls contains media_url %}
+            {% assign coverage_date = media.date | default: talk.date %}
+            {% assign source_label = media.source %}
+            {% if source_label == nil or source_label == '' %}
+              {% assign normalized_url = media.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
+              {% assign source_label = normalized_url | split: '/' | first %}
+            {% endif %}
+            {% capture coverage_entry %}
 <li>
   <strong><a href="{{ media.url }}">{{ media.title }}</a></strong><br/>
   <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }}{% endif %}{% if source_label %}{% if coverage_date %} — {% endif %}{{ source_label }}{% endif %}</small>
 </li>
-          {% endcapture %}
-          {% assign talk_coverage = talk_coverage | push: coverage_entry %}
-          {% assign source_slot_count = source_slot_count | plus: 1 %}
+            {% endcapture %}
+            {% assign talk_coverage = talk_coverage | push: coverage_entry %}
+            {% assign coverage_seen_urls = coverage_seen_urls | push: media_url %}
+            {% assign source_slot_count = source_slot_count | plus: 1 %}
+          {% endunless %}
         {% endif %}
       {% endfor %}
     {% endif %}
