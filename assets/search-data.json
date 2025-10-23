@@ -17,9 +17,11 @@ permalink: /assets/search-data.json
   {% assign doc_url = doc.url | relative_url %}
   {% assign doc_collection = doc.collection | default: "pages" %}
   {% assign raw_excerpt = doc.excerpt | default: doc.content %}
-  {% assign excerpt = raw_excerpt | strip_html | replace: "\n", " " | replace: "\r", " " | replace: "\t", " " | strip %}
+  {% assign excerpt_html = raw_excerpt | markdownify %}
+  {% assign excerpt = excerpt_html | strip_html | replace: "\n", " " | replace: "\r", " " | replace: "\t", " " | strip %}
   {% assign excerpt = excerpt | truncate: 220, "" %}
-  {% assign raw_content = doc.content | strip_html | replace: "\n", " " | replace: "\r", " " | replace: "\t", " " | strip %}
+  {% assign raw_content_html = doc.content | markdownify %}
+  {% assign raw_content = raw_content_html | strip_html | replace: "\n", " " | replace: "\r", " " | replace: "\t", " " | strip %}
   {% assign content = raw_content | truncate: 1000, "" %}
   {
     "title": {{ doc_title | jsonify }},

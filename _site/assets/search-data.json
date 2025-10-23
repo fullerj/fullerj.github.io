@@ -13,6 +13,8 @@
   
   
   
+  
+  
   {
     "title": "From Anomalous Traffic to Spycraft 2.0",
     "url": "/blog/spycraft-2-0/",
@@ -22,6 +24,8 @@
     "content": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call Spycraft 2.0, where adversaries conceal command instructions within legitimate web services?\n\nThis observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at BSidesNYC 0x05, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.\n\n\n\nDead Drop Resolvers: The Modern Dead Drop\n\nAt the core of Spycraft 2.0 is the Dead Drop Resolver (DDR), a digital version of Cold War tradecraft. I"
   },
 
+  
+  
   
   
   
@@ -47,6 +51,8 @@
   
   
   
+  
+  
   {
     "title": "Operationalizing Zero Trust: CECOM SEC and West Point Collaborate",
     "url": "/publications/operationalizing-zero-trust/",
@@ -64,13 +70,15 @@
   
   
   
+  
+  
   {
-    "title": "CS483 Digital Forensics",
+    "title": "CS 483: Digital Forensics",
     "url": "/teaching/2025-01-15-cs483-digital-forensics/",
     "collection": "posts",
     "date": "2025-01-15T00:00:00-05:00",
-    "excerpt": "CS483 Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer archi",
-    "content": "CS483 Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.\n\nInstitution: United States Military Academy\nDepartment: Department of Electrical Engineering and Computer Science\nLocation: West Point, NY\nRole: Course Director\nTerm: Spring 2025\n\nThe course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.\n\nLearning Objectives\n\nUpon successful completion, students are able to:\n\n\n  Apply a scientific methodology to the acquisition and analysis of digital evidence.\n  Use multiple software tools to acquire and analyze digital evi"
+    "excerpt": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architectur",
+    "content": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.\n\nInstitution: United States Military Academy\nDepartment: Department of Electrical Engineering and Computer Science\nLocation: West Point, NY\nRole: Course Director\nTerm: Spring 2025\n\nThe course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.\n\nLearning Objectives\n\nUpon successful completion, students are able to:\n\n\n  Apply a scientific methodology to the acquisition and analysis of digital evidence.\n  Use multiple software tools to acquire and analyze digital evidence."
   },
 
   
@@ -81,15 +89,19 @@
   
   
   
+  
+  
   {
-    "title": "CS483: Digital Forensics",
+    "title": "CS 483: Digital Forensics",
     "url": "/teaching/2024-01-15-cs483-digital-forensics/",
     "collection": "posts",
     "date": "2024-01-15T00:00:00-05:00",
-    "excerpt": "CS483 Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture,",
-    "content": "CS483 Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.\n\nInstitution: United States Military Academy\nDepartment: Department of Electrical Engineering and Computer Science\nLocation: West Point, NY\nRole: Course Director\nTerm: Spring 2024\n\nThroughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity."
+    "excerpt": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and n",
+    "content": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.\n\nInstitution: United States Military Academy\nDepartment: Department of Electrical Engineering and Computer Science\nLocation: West Point, NY\nRole: Course Director\nTerm: Spring 2024\n\nThroughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity."
   },
 
+  
+  
   
   
   
@@ -99,14 +111,16 @@
   
   
   {
-    "title": "COP 630 Cyber Law and Digital Forensics",
+    "title": "COP 630: Cyber Law and Digital Forensics",
     "url": "/teaching/2023-10-01-cyber-law-digital-forensics/",
     "collection": "posts",
     "date": "2023-10-01T00:00:00-04:00",
-    "excerpt": "COP 630 Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis wit",
-    "content": "COP 630 Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.\n\nInstitution: University of Maryland Global Campus\nDepartment: School of Cybersecurity and Information Technology\nLocation: Virtual\nRole: Course Instructor\nTerm: Fall 2023\nCredits: 6\n\nStudents explore three interlocking modules:\n\n\n  Legal Frameworks. Study U.S. statutory and case law, international norms, and rules of engagement that shape cyber operations.\n  Operational Compliance. Design and defend a cyber-offense campaign that remains compliant with U.S. regulations and policy constraints.\n  Applied Digital Forensics. Use industry tools to acquire and analyse evidence from network captures, storage media, and RAM across common operating systems and devices.\n\n\nThroughout the term, learners execute labs in a vi"
+    "excerpt": "Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-",
+    "content": "Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.\n\nInstitution: University of Maryland Global Campus\nDepartment: School of Cybersecurity and Information Technology\nLocation: Virtual\nRole: Course Instructor\nTerm: Fall 2023\nCredits: 6\n\nStudents explore three interlocking modules:\n\n\n  Legal Frameworks. Study U.S. statutory and case law, international norms, and rules of engagement that shape cyber operations.\n  Operational Compliance. Design and defend a cyber-offense campaign that remains compliant with U.S. regulations and policy constraints.\n  Applied Digital Forensics. Use industry tools to acquire and analyse evidence from network captures, storage media, and RAM across common operating systems and devices.\n\n\nThroughout the term, learners execute labs in a virtualize"
   },
 
+  
+  
   
   
   
@@ -132,6 +146,8 @@
   
   
   
+  
+  
   {
     "title": "Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware",
     "url": "/publications/marsea-web-application-abuse/",
@@ -141,6 +157,8 @@
     "content": "Conference: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023\nAuthors: M. Yao, Jonathan Fuller, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 29.2%\n\nHighlights\n\n\n  Identifies 893 web-application-engaged malware specimens across 97 families abusing 29 popular web applications.\n  Measures a 226% surge in WAE malware since 2020 while observing a 13.7% drop in reliance on attacker-controlled servers.\n  Delivers the Marsea pipeline, enabling responders and providers to remove over 50% of malicious web content encountered.\n\n\nResources\n\n\n  PDF\n  Slides\n  Talk recording\n  Source code\n\n\nAbstract\n\nWeb applications provide a wide array of utilities that are abused by malware as a replacement for traditional attacker-controlled servers. Thwarting these Web App-Engaged (WAE) malware requires rapid collaboration between incident responders and web app providers. Unfortunately, our research found that delays in this collaboration allow WAE malware to t"
   },
 
+  
+  
   
   
   
@@ -166,6 +184,8 @@
   
   
   
+  
+  
   {
     "title": "Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces",
     "url": "/publications/yoda-malicious-wordpress-plugins/",
@@ -183,15 +203,19 @@
   
   
   
+  
+  
   {
     "title": "ECE 4117: Introduction to Malware Reverse Engineering",
     "url": "/teaching/2022-04-01-ece4117-malware-reverse-engineering/",
     "collection": "posts",
     "date": "2022-04-01T00:00:00-04:00",
-    "excerpt": "ECE 4117 introduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emphasized disciplined analysis workf",
-    "content": "ECE 4117 introduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emphasized disciplined analysis workflows, tooling, and remediation strategies needed to combat advanced threats.\n\nInstitution: Georgia Institute of Technology\nDepartment: School of Electrical and Computer Engineering\nLocation: Atlanta, GA\nRole: Guest Lecturer\nTerm: Spring 2022\n\nAcross the session students performed immersive, hands-on exercises in malware analysis and explored applied software security topics including operating systems internals, debugging at multiple layers, and software protection countermeasures."
+    "excerpt": "Introduction to Malware Reverse Engineering ntroduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emp",
+    "content": "Introduction to Malware Reverse Engineering ntroduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emphasized disciplined analysis workflows, tooling, and remediation strategies needed to combat advanced threats.\n\nInstitution: Georgia Institute of Technology\nDepartment: School of Electrical and Computer Engineering\nLocation: Atlanta, GA\nRole: Guest Lecturer\nTerm: Spring 2022\n\nAcross the session students performed immersive, hands-on exercises in malware analysis and explored applied software security topics including operating systems internals, debugging at multiple layers, and software protection countermeasures."
   },
 
+  
+  
   
   
   
@@ -217,6 +241,8 @@
   
   
   
+  
+  
   {
     "title": "Misuse-Based Detection of Z-Wave Network Attacks",
     "url": "/publications/misuse-detection-zwave-attacks/",
@@ -226,6 +252,8 @@
     "content": "Journal: Computers &amp; Security, Volume 64, January 2017, Pages 44–58\nAuthors: Jonathan Fuller, B. Ramsey, M. Rice, J. Pecarina\n\nHighlights\n\n\n  Addresses the lack of defensive tooling for proprietary Z-Wave networks by extending a misuse-based intrusion detection system (MBIDS).\n  Benchmarks baseline and extended MBIDS implementations, demonstrating a mean misuse detection rate of 99%.\n  Provides actionable guidance for defenders of wireless sensor networks deployed in critical infrastructure, smart metering, and home automation.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nWireless Sensor Networks (WSNs) are becoming ubiquitous, providing low-cost, low-power, and low-complexity systems in which communication and control are tightly integrated. Although much security research into WSNs has been accomplished, researchers struggle to conduct thorough analyses of closed-source proprietary protocols. Of the numerous available and underanalyzed proprietary protocols, those based on the I"
   },
 
+  
+  
   
   
   
@@ -251,6 +279,8 @@
   
   
   
+  
+  
   {
     "title": "Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks",
     "url": "/publications/wireless-intrusion-detection-g9959-covert-channels/",
@@ -260,6 +290,8 @@
     "content": "Conference: 11th International Conference on Cyber Warfare and Security (ICCWS), 2016\nAuthors: Jonathan Fuller, B. Ramsey, J. Pecarina, M. Rice\n\nHighlights\n\n\n  Reveals a covert channel technique for injecting manipulated packets into ITU-T G.9959/Z-Wave wireless sensor networks.\n  Demonstrates full compromise after WLAN access by embedding hidden instructions inside Z-Wave MAC frames.\n  Develops a USRP-backed misuse-based intrusion detection system (MBIDS) achieving 92% mean accuracy against the covert channel attacks.\n\n\nResources\n\n\n  PDF\n\n\nAbstract\n\nWe introduce herein an information hiding technique for injecting manipulated packets into wireless sensor networks (WSNs). We exhibit how an attacker can apply information hiding as a type of covert channel attack over radio frequency transmissions into the WSN. The feasibility of our injection method is demonstrated through an attack on the most common implementation of the ITU-T G.9959 recommendation, commercially known as Z-Wave. More "
   },
 
+  
+  
   
   
   
@@ -285,6 +317,8 @@
   
   
   
+  
+  
   {
     "title": "Evaluating ITU-T G.9959 Based Wireless Systems Used in Critical Infrastructure Assets",
     "url": "/publications/evaluating-itu-t-g9959-critical-infrastructure/",
@@ -302,15 +336,19 @@
   
   
   
+  
+  
   {
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-22T20:41:55-04:00",
+    "date": "2025-10-23T06:50:04-04:00",
     "excerpt": "",
     "content": ""
   },
 
+  
+  
   
   
   
@@ -323,7 +361,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-22T20:41:55-04:00",
+    "date": "2025-10-23T06:50:04-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -336,15 +374,19 @@
   
   
   
+  
+  
   {
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-22T20:41:55-04:00",
+    "date": "2025-10-23T06:50:04-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
 
+  
+  
   
   
   
@@ -370,6 +412,8 @@
   
   
   
+  
+  
   {
     "title": "LICENSE",
     "url": "/LICENSE/",
@@ -379,6 +423,8 @@
     "content": "Preamble\n  TERMS AND CONDITIONS    \n      0. Definitions\n      1. Source Code\n      2. Basic Permissions\n      3. Protecting Users’ Legal Rights From Anti-Circumvention Law\n      4. Conveying Verbatim Copies\n      5. Conveying Modified Source Versions\n      6. Conveying Non-Source Forms\n      7. Additional Terms\n      8. Termination\n      9. Acceptance Not Required for Having Copies\n      10. Automatic Licensing of Downstream Recipients\n      11. Patents\n      12. No Surrender of Others’ Freedom\n      13. Use with the GNU Affero General Public License\n      14. Revised Versions of this License\n      15. Disclaimer of Warranty\n      16. Limitation of Liability\n      17. Interpretation of Sections 15 and 16\n    \n  \n\n\nGNU GENERAL PUBLIC LICENSE\n\nVersion 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\nhttp://fsf.org/\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\nPreamble\n\nThe GNU General Public Li"
   },
 
+  
+  
   
   
   
@@ -404,6 +450,8 @@
   
   
   
+  
+  
   {
     "title": "About",
     "url": "/about/",
@@ -413,6 +461,8 @@
     "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced Web Application Security Thro"
   },
 
+  
+  
   
   
   
@@ -438,6 +488,8 @@
   
   
   
+  
+  
   {
     "title": "Jonathan Fuller",
     "url": "/",
@@ -455,15 +507,19 @@
   
   
   
+  
+  
   {
     "title": "Service",
     "url": "/service/",
     "collection": "pages",
     "date": null,
-    "excerpt": "### Program Committee Membership\n\n- **USENIX Security Symposium** (2025–Present)\n- **Digital Forensics Research Workshop (DFRWS)** (2024)\n- **International Conference on Cyber Warfare and Security (ICCWS)** (2023–Present",
-    "content": "### Program Committee Membership\n\n- **USENIX Security Symposium** (2025–Present)\n- **Digital Forensics Research Workshop (DFRWS)** (2024)\n- **International Conference on Cyber Warfare and Security (ICCWS)** (2023–Present)\n- **European Conference on Cyber Warfare and Security (ECCWS)** (2023–2024)\n\n### Reviewer Engagements\n\n- **Computers & Security** (Elsevier) (2022–Present)\n- **Cyber Defense Review** (2024)"
+    "excerpt": "Program Committee Membership\n\n\n  USENIX Security Symposium (2025–Present)\n  Digital Forensics Research Workshop (DFRWS) (2024)\n  International Conference on Cyber Warfare and Security (ICCWS) (2023–Present)\n  European Co",
+    "content": "Program Committee Membership\n\n\n  USENIX Security Symposium (2025–Present)\n  Digital Forensics Research Workshop (DFRWS) (2024)\n  International Conference on Cyber Warfare and Security (ICCWS) (2023–Present)\n  European Conference on Cyber Warfare and Security (ECCWS) (2023–2024)\n\n\nReviewer Engagements\n\n\n  Computers &amp; Security (Elsevier) (2022–Present)\n  Cyber Defense Review (2024)"
   },
 
+  
+  
   
   
   
@@ -477,10 +533,12 @@
     "url": "/talks/",
     "collection": "pages",
     "date": null,
-    "excerpt": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif",
-    "content": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}  \n**Date:** {% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n\n{% if talk.description %}\n{{ talk.description }}\n{% endif %}\n\n{% if talk.resources %}\n**Resources:**{% for resource in talk.resources %}\n- [{{ resource.label }}]({{ resource.url }})\n{% endfor %}\n{% endif %}\n\n---\n{% endfor %}\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
+    "excerpt": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n{% for talk in talks %}\n{{ talk.title }}\nEvent: {{ talk.event }}{% if talk.location %}, {{ talk.locatio",
+    "content": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n{% for talk in talks %}\n{{ talk.title }}\nEvent: {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}\nDate: {% if talk.date %}{{ talk.date | date: “%B %-d, %Y” }}{% else %}TBA{% endif %}\n\n{% if talk.description %}\n{{ talk.description }}\n{% endif %}\n\n{% if talk.resources %}\nResources:{% for resource in talk.resources %}\n\n  {{ resource.label }}\n{% endfor %}\n{% endif %}\n\n\n\n{% endfor %}\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
   },
 
+  
+  
   
   
   
@@ -494,10 +552,12 @@
     "url": "/assets/bower_components/katex/docs/cli.md.template",
     "collection": "pages",
     "date": null,
-    "excerpt": "KaTeX installed [using Node.js package managers](node.md) comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\n```bash\nnpx ",
-    "content": "KaTeX installed [using Node.js package managers](node.md) comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\n```bash\nnpx katex\n```\n\n> Above uses the `npx` command to run the locally installed executable\nafter `npm install katex`.  You can also execute with the relative path:\n`./node_modules/.bin/katex`\n\n> To use the CLI from local Git clone, you need to build the project first.\nSee [Building from Source](node.md#building-from-source) for more details.\n\n## Options"
+    "excerpt": "KaTeX installed using Node.js package managers comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\nnpx katex\n\n\n\n  Above us",
+    "content": "KaTeX installed using Node.js package managers comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\nnpx katex\n\n\n\n  Above uses the npx command to run the locally installed executable\nafter npm install katex.  You can also execute with the relative path:\n./node_modules/.bin/katex\n\n\n\n  To use the CLI from local Git clone, you need to build the project first.\nSee Building from Source for more details.\n\n\nOptions"
   },
 
+  
+  
   
   
   
@@ -511,10 +571,12 @@
     "url": "/licenses/Apache-2.0/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Version 2.0, January 2004\n\n\n\n## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n### 1. Definitions\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Section",
-    "content": "Version 2.0, January 2004\n\n\n\n## TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n### 1. Definitions\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n\"control\" means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modificati"
+    "excerpt": "Version 2.0, January 2004\n\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n1. Definitions\n\n“License” shall mean the terms and conditions for use, reproduction,\nand distributi",
+    "content": "Version 2.0, January 2004\n\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n1. Definitions\n\n“License” shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n“Licensor” shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n“Legal Entity” shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n“control” means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n“You” (or “Your”) shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n“Source” form shall mean the preferred fo"
   },
 
+  
+  
   
   
   
@@ -528,10 +590,12 @@
     "url": "/licenses/GPL-3.0/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Version 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\n\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\n## Preamble\n\nThe GNU Ge",
-    "content": "Version 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\n\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\n## Preamble\n\nThe GNU General Public License is a free, copyleft license for\nsoftware and other kinds of works.\n\nThe licenses for most software and other practical works are designed\nto take away your freedom to share and change the works. By contrast,\nthe GNU General Public License is intended to guarantee your freedom\nto share and change all versions of a program--to make sure it remains\nfree software for all its users. We, the Free Software Foundation, use\nthe GNU General Public License for most of our software; it applies\nalso to any other work released this way by its authors. You can apply\nit to your programs, too.\n\nWhen we speak of free software, we are referring to freedom, not\nprice. Our General Public Licenses are designed to make sure that you\nhave the freedom to distribute copies o"
+    "excerpt": "Version 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\nhttp://fsf.org/\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\nPreamble",
+    "content": "Version 3, 29 June 2007\n\nCopyright (C) 2007 Free Software Foundation, Inc.\nhttp://fsf.org/\n\nEveryone is permitted to copy and distribute verbatim copies of this\nlicense document, but changing it is not allowed.\n\nPreamble\n\nThe GNU General Public License is a free, copyleft license for\nsoftware and other kinds of works.\n\nThe licenses for most software and other practical works are designed\nto take away your freedom to share and change the works. By contrast,\nthe GNU General Public License is intended to guarantee your freedom\nto share and change all versions of a program–to make sure it remains\nfree software for all its users. We, the Free Software Foundation, use\nthe GNU General Public License for most of our software; it applies\nalso to any other work released this way by its authors. You can apply\nit to your programs, too.\n\nWhen we speak of free software, we are referring to freedom, not\nprice. Our General Public Licenses are designed to make sure that you\nhave the freedom to distribu"
   },
 
+  
+  
   
   
   
@@ -545,10 +609,12 @@
     "url": "/licenses/MIT/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Copyright (c) \\ \\\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including",
-    "content": "Copyright (c) \\ \\\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR T"
+    "excerpt": "Copyright (c) &lt;YEAR&gt; &lt;COPYRIGHT HOLDER&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the “Software”), to deal\nin the Softw",
+    "content": "Copyright (c) &lt;YEAR&gt; &lt;COPYRIGHT HOLDER&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the “Software”), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN"
   },
 
+  
+  
   
   
   
@@ -562,10 +628,12 @@
     "url": "/licenses/PRO/",
     "collection": "pages",
     "date": null,
-    "excerpt": "* this list will be replaced by the table of contents\n{:toc .large-only}\n\n## License Summary\n* License concerns use of [Hydejack PRO][1]\n* License does not expire\n* Commercial use allowed\n* Can modify source code\n* Parts",
-    "content": "* this list will be replaced by the table of contents\n{:toc .large-only}\n\n## License Summary\n* License concerns use of [Hydejack PRO][1]\n* License does not expire\n* Commercial use allowed\n* Can modify source code\n* Parts of software are provided under [separate licenses](/NOTICE/#licenses)\n\n## Terms and Conditions\n### 1. Preamble\nThis Agreement governs the relationship between you (hereinafter: Licensee) and\nFlorian Klampfer qwtel.com (hereinafter: Licensor).\nThis Agreement sets the terms, rights, restrictions and obligations on using\nHydejack PRO (hereinafter: The Software)\ncreated and owned by Licensor, as detailed herein.\n\n### 2. License Grant\nLicensor hereby grants Licensee a Personal, Perpetual, Commercial, Royalty free,\nIncluding the rights to create derivative works, Non-exclusive license, all with accordance with\nthe terms set forth and other legal restrictions set forth in 3rd party software used while running Software.\n\n1.  **Limited:** Licensee may use Software for the purpo"
+    "excerpt": "License Summary\n  Terms and Conditions    \n      1. Preamble\n      2. License Grant\n      3. Term &amp; Termination:\n      4. Payment\n      5. Upgrades, Updates and Fixes\n      6. Support\n      7. Liability\n      8. Warr",
+    "content": "License Summary\n  Terms and Conditions    \n      1. Preamble\n      2. License Grant\n      3. Term &amp; Termination:\n      4. Payment\n      5. Upgrades, Updates and Fixes\n      6. Support\n      7. Liability\n      8. Warranty\n      9. No Refunds\n      10. Indemnification\n      11. Governing Law, Jurisdiction\n    \n  \n\n\nLicense Summary\n\n  License concerns use of Hydejack PRO\n  License does not expire\n  Commercial use allowed\n  Can modify source code\n  Parts of software are provided under separate licenses\n\n\nTerms and Conditions\n1. Preamble\nThis Agreement governs the relationship between you (hereinafter: Licensee) and\nFlorian Klampfer qwtel.com (hereinafter: Licensor).\nThis Agreement sets the terms, rights, restrictions and obligations on using\nHydejack PRO (hereinafter: The Software)\ncreated and owned by Licensor, as detailed herein.\n\n2. License Grant\nLicensor hereby grants Licensee a Personal, Perpetual, Commercial, Royalty free,\nIncluding the rights to create derivative works, Non-excl"
   },
 
+  
+  
   
   
   
@@ -579,10 +647,12 @@
     "url": "/licenses/W3C-20150513/",
     "collection": "pages",
     "date": null,
-    "excerpt": "**Status**: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\n## License\n\nBy obtaining and/or copying this work, you (the licensee) agree that you",
-    "content": "**Status**: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\n## License\n\nBy obtaining and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions.\n\nPermission to copy, modify, and distribute this work, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the work or portions thereof, including modifications:\n\n* The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.\n* Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, the W3C Software and Document Short Notice should be included.\n* Notice of any changes or modifications, through a copyright statement on the new code or document such as \"This software or document includes material copied from or d"
+    "excerpt": "Status: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\nLicense\n\nBy obtaining and/or copying this work, you (the licensee) agree that you have r",
+    "content": "Status: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\nLicense\n\nBy obtaining and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions.\n\nPermission to copy, modify, and distribute this work, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the work or portions thereof, including modifications:\n\n\n  The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.\n  Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, the W3C Software and Document Short Notice should be included.\n  Notice of any changes or modifications, through a copyright statement on the new code or document such as “This software or document includes material copied from or derived"
   },
 
+  
+  
   
   
   
@@ -596,8 +666,8 @@
     "url": "/licenses/",
     "collection": "pages",
     "date": null,
-    "excerpt": "## Open Source\n* [Apache-2.0](/licenses/Apache-2.0/)\n* [GPL-3.0](/licenses/GPL-3.0/)\n* [MIT](/licenses/MIT/)\n* [W3C-20150513](/licenses/W3C-20150513/)\n\n## Custom\n* [PRO](/licenses/PRO/)",
-    "content": "## Open Source\n* [Apache-2.0](/licenses/Apache-2.0/)\n* [GPL-3.0](/licenses/GPL-3.0/)\n* [MIT](/licenses/MIT/)\n* [W3C-20150513](/licenses/W3C-20150513/)\n\n## Custom\n* [PRO](/licenses/PRO/)"
+    "excerpt": "Open Source\n\n  Apache-2.0\n  GPL-3.0\n  MIT\n  W3C-20150513\n\n\nCustom\n\n  PRO",
+    "content": "Open Source\n\n  Apache-2.0\n  GPL-3.0\n  MIT\n  W3C-20150513\n\n\nCustom\n\n  PRO"
   }
 
 ]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CS483 Digital Forensics"
+title: "CS 483: Digital Forensics"
 description: >
   Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.
 categories:
@@ -12,7 +12,7 @@ location: "West Point, NY"
 role: "Course Director"
 ---
 
-CS483 Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.
+Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.
 
 **Institution:** United States Military Academy  
 **Department:** Department of Electrical Engineering and Computer Science  
