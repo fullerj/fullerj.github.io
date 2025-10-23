@@ -10,6 +10,7 @@ tags:
   - wireless-security
   - ieee-80211
   - fingerprinting
+related_posts:
 journal: "IET Electronics Letters, Volume 52, Issue 8, April 2016, Pages 669–671"
 venue: IET Electronics Letters
 authors: "B. Ramsey, <u>Jonathan Fuller</u>, C. Badenhop"

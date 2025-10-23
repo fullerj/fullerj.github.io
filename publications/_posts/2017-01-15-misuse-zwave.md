@@ -10,6 +10,7 @@ tags:
   - intrusion-detection
   - wireless-security
   - z-wave
+related_posts:
 journal: "Computers & Security, Volume 64, January 2017, Pages 44–58"
 venue: "COSE"
 authors: "<u>Jonathan Fuller</u>, B. Ramsey, M. Rice, J. Pecarina"

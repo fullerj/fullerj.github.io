@@ -10,6 +10,7 @@ tags:
   - zero-trust
   - DoW
   - risk-management
+related_posts:
 authors: "F. Shah, <u>Jonathan Fuller</u>"
 date: 2025-09-11
 venue: "U.S. Army"

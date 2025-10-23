@@ -9,6 +9,7 @@ permalink: /publications/the-byte-c2-infiltration/
 tags:
   - command-and-control
   - forensics
+related_posts:
 authors: "<u>Jonathan Fuller</u>"
 venue: "The Byte"
 date: 2023-05-01

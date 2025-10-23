@@ -9,7 +9,7 @@ permalink: /publications/wireless-intrusion-detection-g9959-covert-channels/
 tags:
   - intrusion-detection
   - covert-channels
-
+related_posts:
 conference: "11th International Conference on Cyber Warfare and Security (ICCWS), 2016"
 authors: "<u>Jonathan Fuller</u>, B. Ramsey, J. Pecarina, M. Rice"
 venue: "ICCWS"

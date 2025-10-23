@@ -10,6 +10,7 @@ tags:
   - malware
   - incident-response
   - tutorials
+related_posts:
 conference: "2023 IEEE Secure Development Conference (SecDev): Invited Tutorial"
 authors: "M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio"
 venue: "IEEE SecDev"

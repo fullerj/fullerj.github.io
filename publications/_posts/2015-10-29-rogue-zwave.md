@@ -10,6 +10,7 @@ tags:
   - wireless-security
   - IoT
   - ZWave
+related_posts:
 conference: "2015 IEEE 40th Local Computer Networks Conference Workshops (LCN Workshops), Clearwater Beach, FL, 2015"
 authors: "<u>Jonathan Fuller</u>; B. Ramsey"
 venue: "IEEE LCN Workshops"
