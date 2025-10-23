@@ -51,7 +51,8 @@ keywords:
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
 logo: /assets/img/logo.jpg
-favicon: /assets/icons/favicon.ico
+favicon: /assets/icons/icon-128x128.png
+apple_touch_icon: /assets/icons/icon-192x192.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
@@ -77,8 +78,10 @@ menu:
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
-  - title:             LICENSE
-    url:               /LICENSE/
+  - title:             Privacy Policy
+    url:               /privacy/
+  - title:             Cookie Policy
+    url:               /cookies/
 
 
 # This text will appear in a `<small>` tag in the footer of every page.

@@ -83,6 +83,79 @@ redirect_from:
 <p>Talks will appear here once they are added to the site.</p>
 {% endif %}
 
+### Recent Media Coverage
+
+{% assign coverage_limit = 3 %}
+{% assign coverage_count = 0 %}
+{% assign coverage_items = "" %}
+
+{% if recent_publications %}
+  {% for pub in recent_publications %}
+    {% if coverage_count >= coverage_limit %}
+      {% break %}
+    {% endif %}
+    {% if pub.media_links %}
+      {% for media in pub.media_links %}
+        {% if coverage_count >= coverage_limit %}
+          {% break %}
+        {% endif %}
+        {% if media.title and media.title != "" and media.url and media.url != "" %}
+          {% assign coverage_date = media.date | default: pub.date %}
+          {% capture coverage_entry %}
+<li>
+  <strong><a href="{{ media.url }}">{{ media.title }}</a></strong><br/>
+  <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }} — {% endif %}{{ pub.title }}</small>
+</li>
+          {% endcapture %}
+          {% assign coverage_items = coverage_items | append: coverage_entry %}
+          {% assign coverage_count = coverage_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if coverage_count < coverage_limit and recent_talks %}
+  {% for talk in recent_talks %}
+    {% if coverage_count >= coverage_limit %}
+      {% break %}
+    {% endif %}
+    {% assign talk_media = talk.media_coverage %}
+    {% if talk_media == nil or talk_media == empty %}
+      {% assign talk_media = talk.media_links %}
+    {% endif %}
+    {% if talk_media == nil or talk_media == empty %}
+      {% assign talk_media = talk.media %}
+    {% endif %}
+    {% if talk_media %}
+      {% for media in talk_media %}
+        {% if coverage_count >= coverage_limit %}
+          {% break %}
+        {% endif %}
+        {% if media.title and media.title != "" and media.url and media.url != "" %}
+          {% assign coverage_date = media.date | default: talk.date %}
+          {% capture coverage_entry %}
+<li>
+  <strong><a href="{{ media.url }}">{{ media.title }}</a></strong><br/>
+  <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }} — {% endif %}{{ talk.title }}{% if talk.event %}, {{ talk.event }}{% endif %}</small>
+</li>
+          {% endcapture %}
+          {% assign coverage_items = coverage_items | append: coverage_entry %}
+          {% assign coverage_count = coverage_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if coverage_count > 0 %}
+<ul>
+{{ coverage_items }}
+</ul>
+{% else %}
+<p>Media highlights will appear here once coverage links are available.</p>
+{% endif %}
+
 ### Recent Service
 
 {% assign service_posts = site.pages | where: 'url', '/service/' %}

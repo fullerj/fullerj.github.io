@@ -342,7 +342,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-23T06:50:04-04:00",
+    "date": "2025-10-23T09:53:11-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -361,7 +361,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-23T06:50:04-04:00",
+    "date": "2025-10-23T09:53:11-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -380,7 +380,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-23T06:50:04-04:00",
+    "date": "2025-10-23T09:53:11-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
@@ -457,8 +457,8 @@
     "url": "/about/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced Web Application Security Thro"
+    "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n ",
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced W"
   },
 
   
@@ -491,12 +491,50 @@
   
   
   {
+    "title": "Cookie Policy",
+    "url": "/cookies/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Last Updated: October 23, 2025\n\n1. What Are Cookies?\nCookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.\n\n\n\n2. H",
+    "content": "Last Updated: October 23, 2025\n\n1. What Are Cookies?\nCookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.\n\n\n\n2. How We Use Cookies\nEmpiricalDefense.com does not use cookies for advertising, analytics, or user profiling.\nHowever, our service providers (Squarespace and Cloudflare) may set essential cookies for purposes such as:\n\n  Securing your connection (HTTPS and firewall protection)\n  Optimizing site performance and caching content\n  Balancing traffic loads between servers\n\n\nThese cookies are strictly necessary for the operation of the site.\n\n\n\n3. Managing Cookies\nYou can manage or delete cookies through your browser settings.\nMost browsers allow you to block cookies entirely or delete them when you close your browser.\n\nFor guidance, see:\n\n  Google Chrome Help: Manage Cookies\n  Mozilla Firefox: Enable and Disable Cookies\n  Apple Safari: Manage Cookies and Website Data\n\n\nIf you d"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
     "title": "Jonathan Fuller",
     "url": "/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced Web Application Security Thro"
+    "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n ",
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Recent Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n    October 18, 2025\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    October 13, 2025 - 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    September 11, 2025\n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    September 18, 2023 - 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial\n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    October 18, 2025 - BSidesNYC 0x05 - New York City, NY\n  \n  \n  \n    Enhanced W"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Privacy Policy",
+    "url": "/privacy/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "Last Updated: October 23, 2025\n\n1. Overview\nWelcome to Empirical Defense (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website Empirica",
+    "content": "Last Updated: October 23, 2025\n\n1. Overview\nWelcome to Empirical Defense (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website EmpiricalDefense.com.\n\nWe do not collect, store, or sell personal information. Our website exists to share insights, research, and commentary for educational and professional purposes.\n\n\n\n2. Information We Do Not Collect\nWe do not use contact forms, comment systems, or user accounts.\nWe do not collect personally identifiable information such as your name, email address, or phone number.\n\nIf you contact us directly via email (for example, at hello@empiricaldefense.com), any information you provide is used solely to respond to your inquiry.\n\n\n\n3. Website Analytics\nWe use Cloudflare Web Analytics to understand general trends in how visitors use our website.\nThis service collects aggregated, anonymous data — such as page views, referrers, and browser types — without using cookies o"
   },
 
   

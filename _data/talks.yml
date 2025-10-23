@@ -7,6 +7,10 @@
   date: "2025-10-18"
   latitude: 40.7128
   longitude: -74.006
+  media_coverage:
+    - title: "Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters"
+      url: "https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters"
+      date: "2025-10-22"
 
 - title: "Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation"
   event: "32nd ACM Conference on Computer and Communications Security (CCS)"

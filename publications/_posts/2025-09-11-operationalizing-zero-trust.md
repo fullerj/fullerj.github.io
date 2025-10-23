@@ -17,6 +17,7 @@ pdf_url: https://www.army.mil/article/288418
 media_links:
   - title: "Army Operationalizes Zero Trust"
     url: https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point
+    date: "2025-09-15"
 ---
 
 **Venue**: {{ page.venue }}  
