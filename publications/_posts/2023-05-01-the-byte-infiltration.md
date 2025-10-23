@@ -14,8 +14,7 @@ venue: "The Byte"
 date: 2023-05-01
 pdf_url: /assets/papers/thebyte23.pdf
 media_links:
-  - title: "The Byte: Exploiting Malware Communication Protocols"
-    url: /assets/papers/thebyte23.pdf
+
 ---
 
 **Venue**: {{ page.venue }}  
