@@ -72,7 +72,7 @@ Key paths and how they are used:
 | Styling | `_sass/my-style.scss`, `_sass/home.scss` | Custom SCSS for cards, dark mode tweaks, homepage spacing, etc. |
 | Branding | `assets/img/…` | Logos for institutions, certifications, and the accent image (`accent_image` in `_config.yml`). |
 | Favicons | `assets/icons/` | Provide `favicon.ico` and optional PWA sizes; set `favicon:` in `_config.yml` if you change the filename. |
-| Layout overrides | `_layouts/blog.html`, `_layouts/publication.html`, `_includes/components/post-blog.html`, `_includes/components/post-list-item.html` | Custom templates that remove dates from blog entries and restore publication metadata (venue badges). |
+| Layout overrides | `_layouts/blog.html`, `_layouts/publication.html`, `_includes/components/post-blog.html`, `_includes/components/post-list-item.html`, `_includes/components/related-posts.html` | Custom templates that remove dates from blog entries, restore publication metadata, and ensure related posts render only when explicitly listed in front matter. |
 
 ---
 
@@ -120,6 +120,7 @@ Key paths and how they are used:
   ---
   ```
 - The `/blog/` page (see `blog.md`) renders a card gallery grouped by year. Cards fall back to `/assets/img/logos/brand.png` if no `image` is provided.
+- Related posts appear only when a page sets `related_posts:` to an array of post paths or URLs. Leave the field empty (or omit it) to hide the related-posts block completely.
 
 ---
 
