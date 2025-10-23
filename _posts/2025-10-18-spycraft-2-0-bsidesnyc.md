@@ -39,7 +39,7 @@ DDR techniques are effective because they blend naturally with legitimate networ
 
 This design allows DDR-based malware to persist even when individual endpoints are removed. Once one dead drop is taken down, the adversary can generate another using the same encoding methods. Reactive takedown strategies fail to scale. Our objective was to target the *techniques* rather than the *endpoints*.
 
-![Illustrative dead drop resolver workflow](/assets/blogs/spycraft/ddr.jpg){: .img-framed width="80%" }
+![Illustrative dead drop resolver workflow](/assets/blogs/spycraft/ddr.png){: .img-framed width="80%" }
 
 Razy’s DDR workflow. (1) The operator hides a manipulated C&C address on X.com. (2) Razy fetches the dead drop after infection. (3) Layered decoding reveals the live C&C rendezvous point.
 {:.figcaption}
