@@ -17,8 +17,7 @@ pdf_url: /assets/papers/cose17.pdf
 code_url: https://github.com/fullerj/MBIDS
 dataset_url: 
 media_links:
-  - title: "Smart Home Watch: Detecting Z-Wave Intrusions"
-    url: https://example.com/media/misuse-zwave-smart-home-watch
+
 ---
 
 **Journal**: {{ page.journal }}  

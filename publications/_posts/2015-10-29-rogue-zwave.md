@@ -18,8 +18,7 @@ talk_url:
 code_url: 
 dataset_url: 
 media_links:
-  - title: "Industry IoT Watch: Rogue Controllers in Z-Wave Networks"
-    url: https://example.com/media/rogue-zwave-industry
+
 ---
 
 **Conference**: {{ page.conference }}  

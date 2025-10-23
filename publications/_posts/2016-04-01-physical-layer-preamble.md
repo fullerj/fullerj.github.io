@@ -17,8 +17,7 @@ pdf_url: /assets/papers/iet16.pdf
 code_url: 
 dataset_url: 
 media_links:
-  - title: "Wireless Insider: Fingerprinting 802.11ac at the Physical Layer"
-    url: https://example.com/media/preamble-manipulation-wireless-insider
+
 ---
 
 **Journal**: {{ page.journal }}  

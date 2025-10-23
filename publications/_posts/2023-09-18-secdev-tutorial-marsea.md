@@ -19,8 +19,7 @@ talk_url:
 code_url: https://github.com/CyFI-Lab-Public/MARSEA
 dataset_url: 
 media_links:
-  - title: "SecDev Conference Preview: Tackling Web App Abuse"
-    url: https://example.com/media/secdev-tutorial-preview
+
 ---
 
 **Conference**: {{ page.conference }}  

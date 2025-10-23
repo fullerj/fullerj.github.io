@@ -16,10 +16,9 @@ venue: "ICCWS"
 pdf_url: /assets/papers/iccws16.pdf
 code_url: 
 dataset_url: 
-talk_url: h
+talk_url: 
 media_links:
-  - title: "Cyber Defense Digest: Covert Channels in Z-Wave Networks"
-    url: https://example.com/media/cyber-defense-digest-zwave
+
 ---
 
 **Conference**: {{ page.conference }}  
