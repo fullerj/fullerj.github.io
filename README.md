@@ -89,9 +89,9 @@ Key paths and how they are used:
 - Optional sizes (e.g., `icon-192x192.png`) are used for PWA/touch support. Replace the defaults with matching artwork if you want consistent branding.
 - If you rename the favicon, point `_config.yml` at it:  
   ```yaml
-  favicon: /assets/icons/favicon.ico?v=20250124
+  favicon: /assets/icons/favicon.ico
   ```
-  Adding a query string is a handy way to bust browser caches after an update.
+  When you update the icon, do a hard refresh (or open the site in a private window) so the browser picks up the new asset.
 
 ### Publications
 - Store PDFs in `assets/papers/` and link with absolute paths (e.g., `/assets/papers/ccs25.pdf`).

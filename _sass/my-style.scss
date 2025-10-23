@@ -48,25 +48,6 @@
   margin-bottom: 1.5rem;
 }
 
-.talks-map-wrapper {
-  margin: 2rem 0 3rem;
-}
-
-.talks-map {
-  width: 100%;
-  min-height: 360px;
-  border-radius: .75rem;
-  border: 1px solid rgba(25, 55, 71, 0.18);
-  overflow: hidden;
-  box-shadow: 0 12px 28px rgba(17, 30, 45, 0.14);
-}
-
-@media (min-width: 768px) {
-  .talks-map {
-    min-height: 420px;
-  }
-}
-
 .teaching-logos {
   margin: 3rem 0 1rem;
   text-align: center;
@@ -336,6 +317,22 @@ body.light-mode .blog-archive-toc {
   list-style: none;
 }
 
+.blog-archive-toc ul li a {
+  color: rgba(25, 55, 71, 0.82);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+body.light-mode .blog-archive-toc ul li a {
+  color: rgba(25, 55, 71, 0.88);
+}
+
+.blog-archive-toc ul li a:hover,
+.blog-archive-toc ul li a:focus {
+  color: rgba(25, 55, 71, 1);
+}
+
 @media (prefers-color-scheme: dark) {
   .blog-card {
     background: rgba(28, 36, 48, 0.88);
@@ -349,6 +346,13 @@ body.light-mode .blog-archive-toc {
   .blog-card__excerpt,
   .blog-archive-list a {
     color: rgba(230, 236, 244, 0.85);
+  }
+  .blog-archive-toc ul li a {
+    color: rgba(230, 236, 244, 0.85);
+  }
+  .blog-archive-toc ul li a:hover,
+  .blog-archive-toc ul li a:focus {
+    color: rgba(255, 255, 255, 0.95);
   }
 }
 

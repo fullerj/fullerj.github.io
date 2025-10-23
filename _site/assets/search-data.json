@@ -306,7 +306,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-22T19:13:28-04:00",
+    "date": "2025-10-22T20:33:03-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -323,7 +323,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-22T19:13:28-04:00",
+    "date": "2025-10-22T20:33:03-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -340,7 +340,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-22T19:13:28-04:00",
+    "date": "2025-10-22T20:33:03-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
@@ -630,8 +630,8 @@
     "url": "/talks/",
     "collection": "pages",
     "date": null,
-    "excerpt": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% include components/talks-map.html %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk",
-    "content": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% include components/talks-map.html %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}  \n**Date:** {% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n\n{% if talk.description %}\n{{ talk.description }}\n{% endif %}\n\n{% if talk.resources %}\n**Resources:**{% for resource in talk.resources %}\n- [{{ resource.label }}]({{ resource.url }})\n{% endfor %}\n{% endif %}\n\n---\n{% endfor %}\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
+    "excerpt": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif",
+    "content": "{% assign talks = site.data.talks | sort: \"date\" | reverse %}\n\n{% if talks and talks.size > 0 %}\n{% for talk in talks %}\n### {{ talk.title }}\n**Event:** {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}  \n**Date:** {% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n\n{% if talk.description %}\n{{ talk.description }}\n{% endif %}\n\n{% if talk.resources %}\n**Resources:**{% for resource in talk.resources %}\n- [{{ resource.label }}]({{ resource.url }})\n{% endfor %}\n{% endif %}\n\n---\n{% endfor %}\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
   },
 
   

@@ -8,8 +8,6 @@ description: >
 
 {% assign talks = site.data.talks | sort: "date" | reverse %}
 
-{% include components/talks-map.html %}
-
 {% if talks and talks.size > 0 %}
 {% for talk in talks %}
 ### {{ talk.title }}
