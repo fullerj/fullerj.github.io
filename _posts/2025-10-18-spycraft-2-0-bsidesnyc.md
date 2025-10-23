@@ -96,6 +96,7 @@ We applied VADER to large-scale malware analysis and live web data collection wi
 -   Extracted **7 unique de-manipulation recipes**, dominated by **Base64** (**40%**) and hybrid techniques combining **string parsing**, **XOR**, **Base16**, and **rotation**.
 -   Through coordinated remediation efforts, **VADER neutralized 94.4%** of identified dead drops, effectively disrupting **6,674 malware samples**.
 -   Integrating recipe-based detection improved DDR-related network visibility by **57.1%**, demonstrating VADER's proactive detection capability.
+
 ---
 
 ## Looking Ahead
