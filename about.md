@@ -83,23 +83,23 @@ redirect_from:
 <p>Talks will appear here once they are added to the site.</p>
 {% endif %}
 
-### Recent Media Coverage
+### Selected Media Coverage
 
-{% assign coverage_limit = 8 %}
-{% assign coverage_count = 0 %}
-{% assign coverage_items = "" %}
+{% assign coverage_limit = 6 %}
+{% assign per_source_limit = 2 %}
+{% assign publication_coverage = '' | split: '' %}
+{% assign talk_coverage = '' | split: '' %}
 
 {% if recent_publications %}
   {% for pub in recent_publications %}
-    {% if coverage_count >= coverage_limit %}
-      {% break %}
-    {% endif %}
     {% if pub.media_links %}
-      {% for media in pub.media_links %}
-        {% if coverage_count >= coverage_limit %}
+      {% assign sorted_pub_media = pub.media_links | sort: 'date' | reverse %}
+      {% assign source_slot_count = 0 %}
+      {% for media in sorted_pub_media %}
+        {% if source_slot_count >= per_source_limit %}
           {% break %}
         {% endif %}
-        {% if media.title and media.title != "" and media.url and media.url != "" %}
+        {% if media.title and media.title != '' and media.url and media.url != '' %}
           {% assign coverage_date = media.date | default: pub.date %}
           {% capture coverage_entry %}
 <li>
@@ -107,19 +107,16 @@ redirect_from:
   <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }} — {% endif %}{{ pub.title }}</small>
 </li>
           {% endcapture %}
-          {% assign coverage_items = coverage_items | append: coverage_entry %}
-          {% assign coverage_count = coverage_count | plus: 1 %}
+          {% assign publication_coverage = publication_coverage | push: coverage_entry %}
+          {% assign source_slot_count = source_slot_count | plus: 1 %}
         {% endif %}
       {% endfor %}
     {% endif %}
   {% endfor %}
 {% endif %}
 
-{% if coverage_count < coverage_limit and recent_talks %}
+{% if recent_talks %}
   {% for talk in recent_talks %}
-    {% if coverage_count >= coverage_limit %}
-      {% break %}
-    {% endif %}
     {% assign talk_media = talk.media_coverage %}
     {% if talk_media == nil or talk_media == empty %}
       {% assign talk_media = talk.media_links %}
@@ -128,11 +125,13 @@ redirect_from:
       {% assign talk_media = talk.media %}
     {% endif %}
     {% if talk_media %}
-      {% for media in talk_media %}
-        {% if coverage_count >= coverage_limit %}
+      {% assign sorted_talk_media = talk_media | sort: 'date' | reverse %}
+      {% assign source_slot_count = 0 %}
+      {% for media in sorted_talk_media %}
+        {% if source_slot_count >= per_source_limit %}
           {% break %}
         {% endif %}
-        {% if media.title and media.title != "" and media.url and media.url != "" %}
+        {% if media.title and media.title != '' and media.url and media.url != '' %}
           {% assign coverage_date = media.date | default: talk.date %}
           {% capture coverage_entry %}
 <li>
@@ -140,13 +139,57 @@ redirect_from:
   <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }} — {% endif %}{{ talk.title }}{% if talk.event %}, {{ talk.event }}{% endif %}</small>
 </li>
           {% endcapture %}
-          {% assign coverage_items = coverage_items | append: coverage_entry %}
-          {% assign coverage_count = coverage_count | plus: 1 %}
+          {% assign talk_coverage = talk_coverage | push: coverage_entry %}
+          {% assign source_slot_count = source_slot_count | plus: 1 %}
         {% endif %}
       {% endfor %}
     {% endif %}
   {% endfor %}
 {% endif %}
+
+{% assign coverage_items = '' %}
+{% assign coverage_count = 0 %}
+{% assign pub_index = 0 %}
+{% assign talk_index = 0 %}
+{% assign pub_size = publication_coverage | size %}
+{% assign talk_size = talk_coverage | size %}
+{% assign max_iterations = coverage_limit | times: 4 %}
+{% assign source_toggle = 'publication' %}
+
+{% for i in (0..max_iterations) %}
+  {% if coverage_count >= coverage_limit %}
+    {% break %}
+  {% endif %}
+  {% assign entry = '' %}
+  {% if source_toggle == 'publication' %}
+    {% if pub_index < pub_size %}
+      {% assign entry = publication_coverage[pub_index] %}
+      {% assign pub_index = pub_index | plus: 1 %}
+    {% elsif talk_index < talk_size %}
+      {% assign entry = talk_coverage[talk_index] %}
+      {% assign talk_index = talk_index | plus: 1 %}
+    {% endif %}
+    {% assign source_toggle = 'talk' %}
+  {% else %}
+    {% if talk_index < talk_size %}
+      {% assign entry = talk_coverage[talk_index] %}
+      {% assign talk_index = talk_index | plus: 1 %}
+    {% elsif pub_index < pub_size %}
+      {% assign entry = publication_coverage[pub_index] %}
+      {% assign pub_index = pub_index | plus: 1 %}
+    {% endif %}
+    {% assign source_toggle = 'publication' %}
+  {% endif %}
+
+  {% if entry != '' %}
+    {% assign coverage_items = coverage_items | append: entry %}
+    {% assign coverage_count = coverage_count | plus: 1 %}
+  {% endif %}
+
+  {% if pub_index >= pub_size and talk_index >= talk_size %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 
 {% if coverage_count > 0 %}
 <ul>
