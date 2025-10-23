@@ -38,7 +38,7 @@ DDR techniques are effective because they blend naturally with legitimate networ
 
 This design allows DDR-based malware to persist even when individual endpoints are removed. Once one dead drop is taken down, the adversary can generate another using the same encoding methods. Reactive takedown strategies fail to scale. Our objective was to target the *techniques* rather than the *endpoints*.
 
-![Illustrative dead drop resolver workflow](/assets/blogs/spycraft/ddr.jpg){: .img-framed width="70%" }
+![Illustrative dead drop resolver workflow](/assets/blogs/spycraft/ddr.jpg){: .img-framed width="80%" }
 
 Razy’s DDR workflow. (1) The operator hides a manipulated C&C address on X.com. (2) Razy fetches the dead drop after infection. (3) Layered decoding reveals the live C&C rendezvous point.
 {:.figcaption}
@@ -68,7 +68,7 @@ We developed a systematic framework inspired by our research prototype **VADER**
 3. **Symbolic recipe identification.**  
    From these symbolic states, mathematical expressions (λ) are extracted to describe each transformation applied to the fetched data. These expressions are compared against a reference library of known algorithms (e.g., Base64, XOR, Base16, character rotation, etc.) to recover the complete decoding sequence used by the malware.
 
-![Symbolic Expression Matching](/assets/blogs/spycraft/symbex.jpg){: .img-framed width="50%" }
+![Symbolic Expression Matching](/assets/blogs/spycraft/symbex.jpg){: .img-framed width="70%" }
 
 VADER (1) injects symbolic data (λ) into the malware to localize DDR decoding logic and (2) generate a symbolic expression (Mλ). Reference decoder algorithms (e.g., Base16, XOR) are then symbolically executed using the same constraints to (3) produce comparable expressions (B16λ, XORλ). VADER first (4) performs structural matching between expressions, and if differences remain, uses a symbolic solver to evaluate their concrete outputs under identical constraints. A high ratio of matched paths (5) confirms that the malware routine and reference decoder are functionally equivalent.
 {:.figcaption}
@@ -79,7 +79,7 @@ This symbolic approach scales across malware families and isolates decoder logic
 
 The Mudrop case demonstrates how VADER transitions defenders from reactive response to proactive discovery. Once the symbolic de-manipulation recipe was recovered, we scanned WordPress posts, applied the recipe to decode them automatically, and identified three previously unknown dead drops prepared for use by the operator.
 
-![Mudrop Proactive Discovery Placeholder](/assets/blogs/spycraft/mudrop.png){: .img-framed width="70%"}
+![Mudrop Proactive Discovery Placeholder](/assets/blogs/spycraft/mudrop.png){: .img-framed width="80%"}
 To overcome this challenge, VADER scans accessible WordPress posts or messages, decodes them using the de-manipulation recipe from Mudrop (Row 4), and extracts IPs or URLs via a regular expression. It then checks these against blocklists (e.g., VirusTotal, URLHaus) to classify web app accounts as dead drops for remediation. As this table shows, VADER proactively discovered three previously unknown WordPress dead drops-selfcut (Proactive Discovery 1), brainbot02 (Proactive Discovery 2), and suck4 (Proactive Discovery 3)-demonstrating its ability to detect varied content beyond direct matches.
 {:.figcaption}
 
