@@ -16,67 +16,10 @@
   
   
   {
-    "title": "Teaching Cybersecurity as a Discipline, Not a Skillset",
-    "url": "/blog/cyber-as-a-discipline/",
-    "collection": "posts",
-    "date": "2025-11-17T00:00:00-05:00",
-    "excerpt": "Cybersecurity changes faster than most tools can keep up. If all we teach students is how to click buttons, we are really just preparing them for obsolescence. What they actually need is a way to think — to analyze, ques",
-    "content": "Cybersecurity changes faster than most tools can keep up. If all we teach students is how to click buttons, we are really just preparing them for obsolescence. What they actually need is a way to think — to analyze, question, and adapt when those buttons stop working.\n\nThat was the philosophy behind the digital forensics course I directed and taught. My goal was not to train students to run software. It was to train them to think like forensic analysts: curious, disciplined, and capable of reasoning through complex problems even when nothing works the way it should.\n\n\n\nA Process-Focused Approach\n\nThe course covered the full spectrum of digital forensics: file system forensics, malware forensics, memory forensics, Windows artifacts and timelining, and reverse engineering.\n\nThe learning objectives reflected that scope:\n\n\n  Apply a scientific methodology to the acquisition and analysis of digital evidence.\n  Use multiple software tools to acquire and analyze digital evidence.\n  Explain di"
-  },
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
-    "title": "Control Flow Graphs: Mapping Execution Paths",
-    "url": "/blog/program-analysis-series-control-flow-graphs/",
-    "collection": "posts",
-    "date": "2025-11-08T00:00:00-05:00",
-    "excerpt": "",
-    "content": "From Blocks to Graphs\n\nIn Part 1 we carved a messy routine into ten labelled basic blocks. This time we wire those blocks into a control flow graph (CFG)—the representation most static-analysis tools rely on.\n\nAt a high level:\n\n\n  A CFG abstracts the execution paths of a program using only branching structure.\n  Every basic block becomes a node in the graph.\n  Directed edges indicate that control may transfer from one block to another.\n  A well-formed CFG adds a single Start node (no incoming edges) and a single End node (no outgoing edges) to simplify analysis.\n\n\nMathematically we write a CFG as G = (N, E) where N is the set of nodes (basic blocks + Start + End) and E is the set of directed edges.\n\n\n\nOur Running Example (revisited)\n\nWe reuse the same session scoring function so you don’t have to learn new code while we add structure:\n\n\n  1float update_session_score(Session *session, const Event *event) {\n2    float weighted = 0.0f;\n3    int inputs = 0;\n4    if (event-&gt;type == EVENT"
-  },
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
-    "title": "Understanding Basic Blocks",
-    "url": "/blog/program-analysis-series-basic-blocks/",
-    "collection": "posts",
-    "date": "2025-11-01T00:00:00-04:00",
-    "excerpt": "",
-    "content": "Understanding Basic Blocks\n\nReading raw code is slow and brittle. Basic blocks give us chunks the compiler and our brains can reason about. If source code is a novel, basic blocks are the paragraphs.\n\nAt a glance\n\n  Definition: a contiguous sequence of statements with one entry and one exit.\n  Property: once you enter a block, you run straight through to its exit.\n  Why it matters: blocks are the building bricks of control flow graphs.\n\n\nModern software is hard to analyze directly. Programs span multiple languages, millions of lines, external dependencies, different platforms, and often only binaries with no symbols. Humans struggle. Machines do too, especially without semantic hints. Basic blocks provide a stable unit that both can work with.\n\n\n  Note: A block can be a single statement. In that case, its entry and exit coincide.\n\n\n\n\nWhat Is a Basic Block?\n\nA basic block is a sequence of consecutive statements with:\n\n  A single entry point\n  A single exit point\n\n\nOnce control enters a "
-  },
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
     "title": "From Anomalous Traffic to Spycraft 2.0",
     "url": "/blog/spycraft-2-0/",
     "collection": "posts",
-    "date": "2025-10-18T00:00:00-04:00",
+    "date": "2025-10-24T00:00:00-04:00",
     "excerpt": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a",
     "content": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call Spycraft 2.0, where adversaries conceal command instructions within legitimate web services?\n\nThis observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at BSidesNYC 0x05, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.\n\n\n\nDead Drop Resolvers: The Modern Dead Drop\n\nAt the core of Spycraft 2.0 is the Dead Drop Resolver (DDR), a digital version of Cold War tradecraft. I"
   },
@@ -399,7 +342,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-27T10:22:02-04:00",
+    "date": "2025-10-27T18:52:18-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -418,7 +361,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-27T10:22:02-04:00",
+    "date": "2025-10-27T18:52:18-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -437,7 +380,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-27T10:22:02-04:00",
+    "date": "2025-10-27T18:52:18-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
@@ -515,7 +458,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  ",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    Teaching Cybersecurity as a Discipline, Not a Skillset\n  \n  \n  \n    Control Flow Graphs: Mapping Execution Paths\n  \n  \n  \n    Understanding Basic Blocks\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    "
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York City, NY\n    \n  \n  \n  \n    Enhanced Web Application Security Through "
   },
 
   
@@ -533,8 +476,8 @@
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      basic blocks\n    \n  \n    \n      command-and-control\n    \n  \n    \n      control flow graphs\n    \n  \n    \n      cybersecurity\n    \n  \n    \n      dead d",
-    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      basic blocks\n    \n  \n    \n      command-and-control\n    \n  \n    \n      control flow graphs\n    \n  \n    \n      cybersecurity\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      digital forensics\n    \n  \n    \n      education\n    \n  \n    \n      malware\n    \n  \n    \n      pedagogy\n    \n  \n    \n      program analysis\n    \n  \n    \n      research\n    \n  \n    \n      software representation\n    \n  \n    \n      talks\n    \n  \n\nShowing all posts\nTip: Click tags to toggle them; use “All posts” to clear.\n\n2025\n\n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        Teaching Cybersecurity as a Discipline, Not a Skillset\n        \n          How a digital forensics course was designed to teach process, reasoning, and adaptability through structured realism and frameworks like PICL.\n\n        \n      \n    \n  \n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        Control Flow Graphs: "
+    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      research\n    \n  \n    \n      talks\n    \n  \n\nS",
+    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      research\n    \n  \n    \n      talks\n    \n  \n\nShowing all posts\nTip: Click tags to toggle them; use “All posts” to clear.\n\n2025\n\n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        From Anomalous Traffic to Spycraft 2.0\n        \n          Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05."
   },
 
   
@@ -572,7 +515,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  ",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    Teaching Cybersecurity as a Discipline, Not a Skillset\n  \n  \n  \n    Control Flow Graphs: Mapping Execution Paths\n  \n  \n  \n    Understanding Basic Blocks\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    "
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York City, NY\n    \n  \n  \n  \n    Enhanced Web Application Security Through "
   },
 
   

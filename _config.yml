@@ -30,7 +30,7 @@ description:           >
 # A shorter description for the sidebar.
 tagline:               Bridging Research, Education, and Cyber Defense
 blog:
-  max_columns: 3
+  max_columns: 2
 
 # A list of keywords for your blog
 keywords:

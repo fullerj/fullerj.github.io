@@ -3,7 +3,7 @@ layout: blog
 title: "From Anomalous Traffic to Spycraft 2.0"
 description: >
   Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.
-date: 2025-10-18
+date: 2025-10-24
 categories:
   - posts
 permalink: /blog/spycraft-2-0/
