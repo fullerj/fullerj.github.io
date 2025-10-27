@@ -1,5 +1,1232 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-23T14:51:37-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-18T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-27T10:22:02-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Teaching Cybersecurity as a Discipline, Not a Skillset</title><link href="http://localhost:4000/blog/cyber-as-a-discipline/" rel="alternate" type="text/html" title="Teaching Cybersecurity as a Discipline, Not a Skillset" /><published>2025-11-17T00:00:00-05:00</published><updated>2025-10-26T20:50:56-04:00</updated><id>http://localhost:4000/blog/cyber-as-a-discipline</id><content type="html" xml:base="http://localhost:4000/blog/cyber-as-a-discipline/"><![CDATA[<p>Cybersecurity changes faster than most tools can keep up. If all we teach students is how to click buttons, we are really just preparing them for obsolescence. What they actually need is a way to think — to analyze, question, and adapt when those buttons stop working.</p>
+
+<p>That was the philosophy behind the <strong>digital forensics course I directed and taught</strong>. My goal was not to train students to run software. It was to train them to think like forensic analysts: curious, disciplined, and capable of reasoning through complex problems even when nothing works the way it should.</p>
+
+<hr />
+
+<h2 id="a-process-focused-approach">A Process-Focused Approach</h2>
+
+<p>The course covered the full spectrum of digital forensics: <strong>file system forensics, malware forensics, memory forensics, Windows artifacts and timelining, and reverse engineering.</strong></p>
+
+<p>The learning objectives reflected that scope:</p>
+
+<ol>
+  <li>Apply a scientific methodology to the acquisition and analysis of digital evidence.</li>
+  <li>Use multiple software tools to acquire and analyze digital evidence.</li>
+  <li>Explain digital forensics concepts, results, and conclusions to both technical and non-technical audiences.</li>
+  <li>Perform memory forensics to hunt for adversary and criminal activity.</li>
+  <li>Demonstrate an understanding of the process and tools required to reverse engineer malware.</li>
+</ol>
+
+<p>This was not about memorizing commands. It was about mastering a <strong>discipline</strong> — connecting analytical reasoning, technical depth, and communication.</p>
+
+<hr />
+
+<h2 id="the-strategic-view-designing-the-course">The Strategic View: Designing the Course</h2>
+
+<p>The course moved from broad concepts to focused mastery:</p>
+
+<ul>
+  <li>Quizzes developed foundational knowledge.</li>
+  <li>In-class exercises reinforced process.</li>
+  <li>Labs tested individual skill under time pressure.</li>
+  <li>The final project brought everything together in a collaborative investigation.</li>
+</ul>
+
+<p>This design mirrored how real investigations work. You start with theory, apply it in pieces, and then pull everything together under stress — ideally before the caffeine wears off.</p>
+
+<hr />
+
+<h2 id="the-tactical-view-quizzes-as-cognitive-calibration">The Tactical View: Quizzes as Cognitive Calibration</h2>
+
+<p>Every class began with a short, timed, open-book quiz based on the assigned reading.</p>
+
+<p>These quizzes were <strong>individual events</strong>: open book but closed internet. The goal was not to test memory but to reward preparation and reasoning. Students received instant feedback, and we reviewed each question as a class, including when I got something wrong.</p>
+
+<p>That openness modeled the forensic mindset: integrity over ego. In this line of work, being wrong is not a failure. It is just another data point.</p>
+
+<hr />
+
+<h2 id="the-practical-view-in-class-exercises-and-the-picl-framework">The Practical View: In-Class Exercises and the PICL Framework</h2>
+
+<p>In-class exercises (ICEs) were where theory met practice. Students had open access to resources — notes, the internet, ChatGPT, classmates, documentation, anything short of phoning a friend — because that is how real analysts work.</p>
+
+<p>The key was not what they used, but how they reasoned through it.</p>
+
+<p>Our guiding principles were simple:</p>
+
+<ul>
+  <li>Own your tools and understand their behavior.</li>
+  <li>Know the process and trust it when things go sideways.</li>
+  <li>Ask questions freely and collaborate openly.</li>
+  <li>Take responsibility for understanding, not just completion.</li>
+</ul>
+
+<p>To anchor that process, we used a framework called <strong>PICL</strong> — <em>Preserve, Isolate, Correlate, Log.</em></p>
+
+<ul>
+  <li><strong>Preserve</strong> evidence before touching it.</li>
+  <li><strong>Isolate</strong> relevant systems or artifacts.</li>
+  <li><strong>Correlate</strong> data across multiple sources to confirm findings.</li>
+  <li><strong>Log</strong> every action, observation, and decision.</li>
+</ul>
+
+<p>PICL became the class mantra. When confusion hit, the first question was always, “Where are you in the PICL process?” (Usually followed by someone whispering, “Wait, did anyone actually log that?”)</p>
+
+<p>Students also kept an ICE journal — part notebook, part troubleshooting diary — to document their reasoning. That habit built reflective thinking, which is at the core of forensic discipline.</p>
+
+<hr />
+
+<h2 id="the-applied-view-labs-and-the-final-project">The Applied View: Labs and the Final Project</h2>
+
+<p>Labs were where process met pressure. Each was a <strong>timed individual event (75 minutes)</strong>, open to nearly all resources — notes, documentation, internet searches, AI tools like ChatGPT — but <strong>no help from classmates.</strong></p>
+
+<p>This setup reflected real-world conditions: information is available, but execution is individual. The best analysts do not just find answers; they validate and explain them.</p>
+
+<p>The semester ended with a <strong>team-based forensic investigation</strong>, where groups could use anything available. They performed file system, memory, and malware forensics, built timelines of Windows artifacts, and presented their findings to the class. By then, every student had learned that the hardest part of digital forensics is not the analysis — it is defending your conclusions.</p>
+
+<hr />
+
+<h2 id="balancing-rigor-with-realism">Balancing Rigor with Realism</h2>
+
+<p>Giving students access to nearly every resource might sound like an easy way out, but it was actually a deeper test.</p>
+
+<p>In the real world, analysts have Google, chatbots, and colleagues. The question is not <em>“Do you know the answer?”</em> but <em>“Can you think critically, verify information, and apply it under pressure?”</em></p>
+
+<p>The challenge as an educator is to make a course <strong>realistic enough to prepare students for that environment</strong>, while still <strong>rigorous enough to force learning</strong>.</p>
+
+<p>That is why the structure mattered:</p>
+
+<ul>
+  <li>Quizzes trained precision and integrity.</li>
+  <li>In-class exercises built collaboration and process fluency.</li>
+  <li>Labs tested independent reasoning under time constraints.</li>
+  <li>Projects developed communication, synthesis, and teamwork.</li>
+</ul>
+
+<p>Access did not make things easier. It made understanding essential.</p>
+
+<hr />
+
+<h2 id="educational-techniques-that-supported-learning">Educational Techniques That Supported Learning</h2>
+
+<p>Several teaching techniques reinforced this approach:</p>
+
+<ol>
+  <li><strong>Iterative Feedback:</strong> Frequent, low-stakes assessments built continuous improvement.</li>
+  <li><strong>Process Repetition:</strong> Students internalized the forensic cycle — hypothesize, test, observe, refine.</li>
+  <li><strong>Cognitive Realism:</strong> Unpredictable scenarios built comfort with ambiguity.</li>
+  <li><strong>Collaborative Inquiry:</strong> Students learned to reason together, mirroring real investigative teams.</li>
+  <li><strong>Reflective Practice:</strong> Journals and post-lab reviews turned action into understanding.</li>
+  <li><strong>PICL:</strong> Provided a repeatable, adaptable investigative framework for every challenge.</li>
+</ol>
+
+<p>These methods taught <strong>forensic thinking</strong>, not just tool operation. Students learned that the most powerful tool in the room is not dd, Volatility, or IDA — it is their own ability to reason.</p>
+
+<hr />
+
+<h2 id="when-the-tools-break">When the Tools Break</h2>
+
+<p>My favorite phrase to hear during lab sessions was, “The tool isn’t working.” My response was always, “Perfect. Now you are actually learning.”</p>
+
+<p>Tools break. APIs change. Output gets messy. The real test of a cybersecurity professional is whether they can <strong>triage, reason, and recover</strong> when automation fails. The best investigators are not the ones who memorize commands; they are the ones who can think when everything else stops working.</p>
+
+<hr />
+
+<h2 id="teaching-the-discipline">Teaching the Discipline</h2>
+
+<p>Teaching cybersecurity as a discipline means cultivating <strong>intellectual resilience</strong>.<br />
+Digital forensics is a perfect arena for that because it demands precision, creativity, and adaptability in equal measure.</p>
+
+<p>By focusing on method, evidence, and reasoning — through frameworks like <strong>PICL</strong> — students did not just learn <em>what</em> to do; they learned <em>how</em> to think.*</p>
+
+<p>That is the essence of <strong>Empirical Defense</strong>: cybersecurity education that creates analysts who can think as critically as they can code.</p>
+
+<hr />
+
+<blockquote>
+  <p><em>“Cybersecurity education should train thinkers, not technicians.”</em><br />
+— Jonathan Fuller, Empirical Defense</p>
+</blockquote>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="education" /><category term="cybersecurity" /><category term="pedagogy" /><category term="digital forensics" /><summary type="html"><![CDATA[How a digital forensics course was designed to teach process, reasoning, and adaptability through structured realism and frameworks like PICL.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/education/cyber.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/education/cyber.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Control Flow Graphs: Mapping Execution Paths</title><link href="http://localhost:4000/blog/program-analysis-series-control-flow-graphs/" rel="alternate" type="text/html" title="Control Flow Graphs: Mapping Execution Paths" /><published>2025-11-08T00:00:00-05:00</published><updated>2025-10-26T17:36:28-04:00</updated><id>http://localhost:4000/blog/control-flow-graphs</id><content type="html" xml:base="http://localhost:4000/blog/program-analysis-series-control-flow-graphs/"><![CDATA[<style>
+  .cfg-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin: 1.5rem 0;
+    padding: 0.85rem 1rem;
+    background: rgba(79, 114, 205, 0.1);
+    border-radius: 0.9rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+  }
+  .cfg-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1c252c;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  }
+  .cfg-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    display: inline-block;
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+  }
+  .cfg-b1 { background-color: #cfe2ff; }
+  .cfg-b2 { background-color: #d1f2eb; }
+  .cfg-b3 { background-color: #ffe6cc; }
+  .cfg-b4 { background-color: #f6e4ff; }
+  .cfg-b5 { background-color: #ffeef2; }
+  .cfg-b6 { background-color: #dff4ff; }
+  .cfg-b7 { background-color: #e5f6d8; }
+  .cfg-b8 { background-color: #f9e7ff; }
+  .cfg-b9 { background-color: #f2f4f8; }
+  .cfg-b10 { background-color: #fff3cd; }
+  .cfg-start { background-color: #b3d4ff; }
+  .cfg-end { background-color: #fbd5d5; }
+
+  .basic-block-code {
+    margin: 1.75rem 0;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    background: #f8fafc;
+    color: #1f2933;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+  .basic-block-code pre {
+    margin: 0;
+    padding: 1.5rem;
+    font-family: ui-monospace, "SFMono-Regular", SFMono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    position: relative;
+  }
+  .basic-block-code code { display: block; }
+  .basic-block-code .code-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.05rem 0.55rem;
+    margin: 0;
+    border-left: 0.25rem solid transparent;
+    border-radius: 0.45rem;
+    transition: outline 120ms ease-in-out, background 120ms ease-in-out, border-color 120ms ease-in-out;
+  }
+  .basic-block-code .code-line.highlighted {
+    outline: 2px solid #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+  }
+  .basic-block-code .line-no {
+    min-width: 2.2rem;
+    text-align: right;
+    color: #64748b;
+    font-size: 0.83rem;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+  }
+  .basic-block-code .code-text { flex: 1; white-space: pre; }
+  .basic-block-code .code-line[data-block="b1"]  { background: rgba(207, 226, 255, 0.6); border-color: #6ea8fe; }
+  .basic-block-code .code-line[data-block="b2"]  { background: rgba(209, 242, 235, 0.6); border-color: #4fceac; }
+  .basic-block-code .code-line[data-block="b3"]  { background: rgba(255, 230, 204, 0.6); border-color: #ffb56b; }
+  .basic-block-code .code-line[data-block="b4"]  { background: rgba(246, 228, 255, 0.6); border-color: #d0a4ff; }
+  .basic-block-code .code-line[data-block="b5"]  { background: rgba(255, 238, 242, 0.6); border-color: #ff9aa2; }
+  .basic-block-code .code-line[data-block="b6"]  { background: rgba(223, 244, 255, 0.6); border-color: #7dd3fc; }
+  .basic-block-code .code-line[data-block="b7"]  { background: rgba(229, 246, 216, 0.6); border-color: #9bd66b; }
+  .basic-block-code .code-line[data-block="b8"]  { background: rgba(249, 231, 255, 0.6); border-color: #d3a6ff; }
+  .basic-block-code .code-line[data-block="b9"]  { background: rgba(242, 244, 248, 0.6); border-color: #94a8c7; }
+  .basic-block-code .code-line[data-block="b10"] { background: rgba(255, 243, 205, 0.6); border-color: #ffd166; }
+
+  .block-notes {
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.1rem;
+    background: rgba(148, 163, 184, 0.12);
+    border-radius: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+  }
+  .block-notes ul { margin: 0; padding-left: 1.25rem; }
+
+  .cfg-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  }
+  .cfg-table th,
+  .cfg-table td {
+    padding: 0.85rem 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    vertical-align: top;
+  }
+  .cfg-table tbody tr:last-child td { border-bottom: none; }
+
+  @media (prefers-color-scheme: dark) {
+    .cfg-legend {
+      background: rgba(122, 136, 173, 0.24);
+      border-color: rgba(148, 163, 184, 0.35);
+    }
+    .cfg-chip {
+      background: rgba(15, 23, 42, 0.55);
+      color: #e2e8f0;
+      box-shadow: 0 8px 24px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-code {
+      background: rgba(15, 23, 42, 0.72);
+      color: #e2e8f0;
+      box-shadow: 0 18px 38px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-code .line-no { color: #94a3b8; }
+    .block-notes {
+      background: rgba(122, 136, 173, 0.22);
+      border-color: rgba(148, 163, 184, 0.32);
+      color: #e2e8f0;
+    }
+    .cfg-table {
+      box-shadow: 0 20px 42px rgba(5, 10, 20, 0.45);
+    }
+    .cfg-table th,
+    .cfg-table td {
+      background: rgba(15, 23, 42, 0.78);
+      color: #e2e8f0;
+      border-bottom: 1px solid rgba(94, 113, 135, 0.35);
+    }
+  }
+</style>
+
+<h2 id="from-blocks-to-graphs">From Blocks to Graphs</h2>
+
+<p>In <a href="/blog/program-analysis-series-basic-blocks/">Part 1</a> we carved a messy routine into ten labelled basic blocks. This time we wire those blocks into a <strong>control flow graph (CFG)</strong>—the representation most static-analysis tools rely on.</p>
+
+<p>At a high level:</p>
+
+<ul>
+  <li>A CFG abstracts the execution paths of a program using only branching structure.</li>
+  <li>Every <strong>basic block becomes a node</strong> in the graph.</li>
+  <li>Directed <strong>edges</strong> indicate that control may transfer from one block to another.</li>
+  <li>A well-formed CFG adds a single <code class="language-plaintext highlighter-rouge">Start</code> node (no incoming edges) and a single <code class="language-plaintext highlighter-rouge">End</code> node (no outgoing edges) to simplify analysis.</li>
+</ul>
+
+<p>Mathematically we write a CFG as <code class="language-plaintext highlighter-rouge">G = (N, E)</code> where <code class="language-plaintext highlighter-rouge">N</code> is the set of nodes (basic blocks + Start + End) and <code class="language-plaintext highlighter-rouge">E</code> is the set of directed edges.</p>
+
+<hr />
+
+<h2 id="our-running-example-revisited">Our Running Example (revisited)</h2>
+
+<p>We reuse the same session scoring function so you don’t have to learn new code while we add structure:</p>
+
+<div class="basic-block-code" role="figure" aria-label="Code listing with basic-block highlights">
+  <pre><code><span class="code-line" data-block="b1"><span class="line-no">1</span><span class="code-text">float update_session_score(Session *session, const Event *event) {</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">2</span><span class="code-text">    float weighted = 0.0f;</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">3</span><span class="code-text">    int inputs = 0;</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">4</span><span class="code-text">    if (event-&gt;type == EVENT_LOGIN) {</span></span>
+<span class="code-line" data-block="b2"><span class="line-no">5</span><span class="code-text">        weighted += session-&gt;risk * 0.4f;</span></span>
+<span class="code-line" data-block="b2"><span class="line-no">6</span><span class="code-text">        inputs += 1;</span></span>
+<span class="code-line" data-block="b3"><span class="line-no">7</span><span class="code-text">    } else if (event-&gt;type == EVENT_TRANSFER) {</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">8</span><span class="code-text">        weighted += event-&gt;amount * session-&gt;velocity;</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">9</span><span class="code-text">        inputs += 1;</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">10</span><span class="code-text">        if (event-&gt;amount &gt; session-&gt;limits.transfer_ceiling) {</span></span>
+<span class="code-line" data-block="b5"><span class="line-no">11</span><span class="code-text">            weighted += session-&gt;limits.penalty;</span></span>
+<span class="code-line" data-block="b5"><span class="line-no">12</span><span class="code-text">        }</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">13</span><span class="code-text">    } else {</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">14</span><span class="code-text">        weighted += event-&gt;baseline * 0.2f;</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">15</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">16</span><span class="code-text">    if (session-&gt;flags &amp; SESSION_FLAG_RECENT_BREACH) {</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">17</span><span class="code-text">        weighted += 10.0f;</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">18</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">19</span><span class="code-text">    if (inputs &gt; 0) {</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">20</span><span class="code-text">        weighted /= inputs;</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">21</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b9"><span class="line-no">22</span><span class="code-text">    session-&gt;score = clampf(weighted, 0.0f, 100.0f);</span></span>
+<span class="code-line" data-block="b10"><span class="line-no">23</span><span class="code-text">    return session-&gt;score;</span></span>
+<span class="code-line" data-block="b10"><span class="line-no">24</span><span class="code-text">}</span></span></code></pre>
+</div>
+
+<div class="block-notes">
+  <ul>
+    <li><strong>B1</strong> guards the first branch (login vs. other events).</li>
+    <li><strong>B2–B6</strong> differentiate login, transfer (with optional penalty), and baseline paths.</li>
+    <li><strong>B7–B8</strong> apply breach escalation and averaging.</li>
+    <li><strong>B9–B10</strong> clamp and return the score.</li>
+  </ul>
+</div>
+
+<p>This is the exact block layout from Part 1; the only difference is that a CFG will add <strong>Start</strong> and <strong>End</strong> nodes so automated analyses know where execution enters and leaves.</p>
+
+<hr />
+
+<h2 id="building-the-cfg">Building the CFG</h2>
+
+<p>A CFG is a directed graph <code class="language-plaintext highlighter-rouge">G = (N, E)</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">N</code> contains one node per basic block, plus <code class="language-plaintext highlighter-rouge">Start</code> and <code class="language-plaintext highlighter-rouge">End</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">E</code> contains an edge <code class="language-plaintext highlighter-rouge">(i, j)</code> whenever control can transfer from block <code class="language-plaintext highlighter-rouge">Bi</code> to block <code class="language-plaintext highlighter-rouge">Bj</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Start</code> connects to every node with no incoming edges; <code class="language-plaintext highlighter-rouge">End</code> receives every node with no outgoing edges.</li>
+</ul>
+
+<h3 id="nodes-and-edges-for-update_session_score">Nodes and Edges for <code class="language-plaintext highlighter-rouge">update_session_score</code></h3>
+
+<div class="cfg-legend" role="note" aria-label="CFG color legend for Start, End, and blocks B1..B10">
+  <span class="cfg-chip"><span class="cfg-swatch cfg-start" aria-hidden="true"></span>Start</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b1" aria-hidden="true"></span>B1</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b2" aria-hidden="true"></span>B2</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b3" aria-hidden="true"></span>B3</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b4" aria-hidden="true"></span>B4</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b5" aria-hidden="true"></span>B5</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b6" aria-hidden="true"></span>B6</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b7" aria-hidden="true"></span>B7</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b8" aria-hidden="true"></span>B8</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b9" aria-hidden="true"></span>B9</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-b10" aria-hidden="true"></span>B10</span>
+  <span class="cfg-chip"><span class="cfg-swatch cfg-end" aria-hidden="true"></span>End</span>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Meaning</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Start</td>
+      <td>Synthetic entry</td>
+      <td>Outgoing edges to <code class="language-plaintext highlighter-rouge">{B1}</code> because <code class="language-plaintext highlighter-rouge">B1</code> has no predecessors</td>
+    </tr>
+    <tr>
+      <td>B1</td>
+      <td>Lines 1–4</td>
+      <td>Tests the event type and chooses login vs. other paths</td>
+    </tr>
+    <tr>
+      <td>B2</td>
+      <td>Lines 5–6</td>
+      <td>Login path</td>
+    </tr>
+    <tr>
+      <td>B3</td>
+      <td>Line 7</td>
+      <td>Transfer predicate</td>
+    </tr>
+    <tr>
+      <td>B4</td>
+      <td>Lines 8–10</td>
+      <td>Transfer body</td>
+    </tr>
+    <tr>
+      <td>B5</td>
+      <td>Lines 11–12</td>
+      <td>Penalty if transfer exceeds ceiling</td>
+    </tr>
+    <tr>
+      <td>B6</td>
+      <td>Lines 13–15</td>
+      <td>Baseline path</td>
+    </tr>
+    <tr>
+      <td>B7</td>
+      <td>Lines 16–18</td>
+      <td>Breach escalation</td>
+    </tr>
+    <tr>
+      <td>B8</td>
+      <td>Lines 19–21</td>
+      <td>Normalization</td>
+    </tr>
+    <tr>
+      <td>B9</td>
+      <td>Line 22</td>
+      <td>Clamp score</td>
+    </tr>
+    <tr>
+      <td>B10</td>
+      <td>Lines 23–24</td>
+      <td>Return</td>
+    </tr>
+    <tr>
+      <td>End</td>
+      <td>Synthetic exit</td>
+      <td>Incoming edges from <code class="language-plaintext highlighter-rouge">{B10}</code> because it has no successors</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Edges with meaning</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Start → B1</code> — entry to the routine.</li>
+      <li><code class="language-plaintext highlighter-rouge">B1 → B2</code> — login branch taken.</li>
+      <li><code class="language-plaintext highlighter-rouge">B1 → B3</code> — transfer/baseline branch taken.</li>
+      <li><code class="language-plaintext highlighter-rouge">B2 → B7</code> — login work complete, continue flow.</li>
+      <li><code class="language-plaintext highlighter-rouge">B3 → B4</code> — transfer handling begins.</li>
+      <li><code class="language-plaintext highlighter-rouge">B3 → B6</code> — baseline path executes.</li>
+      <li><code class="language-plaintext highlighter-rouge">B4 → B5</code> — transfer exceeds the ceiling.</li>
+      <li><code class="language-plaintext highlighter-rouge">B4 → B7</code> — transfer within limits.</li>
+      <li><code class="language-plaintext highlighter-rouge">B5 → B7</code> — penalty applied.</li>
+      <li><code class="language-plaintext highlighter-rouge">B6 → B7</code> — baseline completed.</li>
+      <li><code class="language-plaintext highlighter-rouge">B7 → B8</code> — breach escalation finished.</li>
+      <li><code class="language-plaintext highlighter-rouge">B8 → B9</code> — normalization (inputs &gt; 0).</li>
+      <li><code class="language-plaintext highlighter-rouge">B9 → B10</code> — clamped score ready.</li>
+      <li><code class="language-plaintext highlighter-rouge">B10 → End</code> — return to caller.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="visual-cfg">Visual CFG</h2>
+
+<p>The interactive diagram below arranges the nodes top-to-bottom (<code class="language-plaintext highlighter-rouge">Start → … → End</code>). Colors and IDs match the legend and code snippet.<br />
+<strong>Tip:</strong> click any node to scroll the corresponding block into view; hover to see Intel-style assembly with addresses (e.g., <code class="language-plaintext highlighter-rouge">0x400032</code>).</p>
+
+<div id="cfg-graph" style="height: 440px; border: 1px solid #ccd5e0; border-radius: 12px; background: #ffffff;"></div>
+<noscript>
+  <p>Enable JavaScript to view the interactive CFG. The edge set is: (Start,B1), (B1,B2), (B1,B3), (B2,B7), (B3,B4), (B3,B6), (B4,B5), (B4,B7), (B5,B7), (B6,B7), (B7,B8), (B8,B9), (B9,B10), (B10,End).</p>
+</noscript>
+
+<script>
+(function () {
+  var LIB_ID = 'vis-network-cfg';
+
+  function ensureVis(cb) {
+    if (window.vis && window.vis.Network && window.vis.DataSet) return cb();
+    var existing = document.getElementById(LIB_ID);
+    if (existing) return existing.addEventListener('load', cb, { once: true });
+    var s = document.createElement('script');
+    s.id = LIB_ID;
+    s.defer = true;
+    s.src = 'https://cdn.jsdelivr.net/npm/vis-network@9.1.7/standalone/umd/vis-network.min.js';
+    s.addEventListener('load', cb, { once: true });
+    document.head.appendChild(s);
+  }
+
+  function highlightBlock(id) {
+    document
+      .querySelectorAll('.basic-block-code .code-line')
+      .forEach(function (ln) { ln.classList.remove('highlighted'); });
+
+    var lines = document.querySelectorAll('.basic-block-code .code-line[data-block="' + id + '"]');
+    lines.forEach(function (ln) { ln.classList.add('highlighted'); });
+    if (lines.length) {
+      lines[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function render() {
+    var container = document.getElementById('cfg-graph');
+    if (!container || container.dataset.graphInitialized === 'true') return;
+
+    var nodes = new vis.DataSet([
+      { id: 'Start', label: 'Start', level: 0, shape: 'ellipse', color: { background: '#b3d4ff', border: '#1557b0', highlight: { background: '#9cc3fa', border: '#0f4190' } } },
+      { id: 'b1', label: 'B1\n0x400030 mov  dword ptr [rbp-0x4], 0\n0x400037 mov  dword ptr [rbp-0x8], 0\n0x40003E cmp  edi, 1', level: 1, shape: 'box', color: { background: '#cfe2ff', border: '#7ba7ff', highlight: { background: '#bfd6ff', border: '#558dff' } } },
+      { id: 'b2', label: 'B2\n0x400045 movss xmm0, dword ptr [rsi+risk]\n0x40004C addss xmm1, xmm0\n0x400050 inc  dword ptr [rbp-0x8]', level: 2, shape: 'box', color: { background: '#d1f2eb', border: '#6fd0b0', highlight: { background: '#c2ece1', border: '#45b28f' } } },
+      { id: 'b3', label: 'B3\n0x400059 cmp  edi, 2\n0x40005C jne  0x40006F',     level: 2, shape: 'box', color: { background: '#ffe6cc', border: '#ffb56b', highlight: { background: '#ffd9aa', border: '#f28c33' } } },
+      { id: 'b4', label: 'B4\n0x400062 movss xmm0, dword ptr [rdx+amount]\n0x400069 mulss xmm0, dword ptr [rsi+velocity]\n0x400070 inc  dword ptr [rbp-0x8]', level: 3, shape: 'box', color: { background: '#f6e4ff', border: '#d0a4ff', highlight: { background: '#ead0ff', border: '#b57cff' } } },
+      { id: 'b5', label: 'B5\n0x400076 ucomiss xmm0, dword ptr [rsi+limits.ceiling]\n0x40007E jbe  0x40008C\n0x400080 addss xmm0, dword ptr [rsi+limits.penalty]', level: 4, shape: 'box', color: { background: '#ffeef2', border: '#ff9aa2', highlight: { background: '#ffd6dd', border: '#ff7b85' } } },
+      { id: 'b6', label: 'B6\n0x40008D movss xmm0, dword ptr [rdx+baseline]\n0x400094 mulss xmm0, dword ptr [rip+0.2f]', level: 3, shape: 'box', color: { background: '#dff4ff', border: '#7dd3fc', highlight: { background: '#c5ecff', border: '#3abff8' } } },
+      { id: 'b7', label: 'B7\n0x40009C test dword ptr [rsi+flags], SESSION_FLAG_RECENT_BREACH\n0x4000A4 je   0x4000AF\n0x4000A6 addss xmm0, dword ptr [rip+10.0f]', level: 5, shape: 'box', color: { background: '#e5f6d8', border: '#9bd66b', highlight: { background: '#c9edac', border: '#78c242' } } },
+      { id: 'b8', label: 'B8\n0x4000B0 cmp  dword ptr [rbp-0x8], 0\n0x4000B4 jle  0x4000C0\n0x4000B6 cvtsi2ss xmm1, dword ptr [rbp-0x8]\n0x4000BB divss xmm0, xmm1', level: 6, shape: 'box', color: { background: '#f9e7ff', border: '#d3a6ff', highlight: { background: '#edceff', border: '#ba7cff' } } },
+      { id: 'b9', label: 'B9\n0x4000C1 movss xmm1, dword ptr [rip+0.0f]\n0x4000C8 maxss xmm0, xmm1\n0x4000CC minss xmm0, dword ptr [rip+100.0f]',    level: 7, shape: 'box', color: { background: '#f2f4f8', border: '#94a8c7', highlight: { background: '#dbe1eb', border: '#6d85ab' } } },
+      { id: 'b10',label: 'B10\n0x4000D5 movss dword ptr [rsi+score], xmm0\n0x4000DC movss xmm0, dword ptr [rsi+score]\n0x4000E3 ret',level: 8,shape: 'box', color: { background: '#fff3cd', border: '#ffd166', highlight: { background: '#ffe8a3', border: '#ffc043' } } },
+      { id: 'End', label: 'End', level: 9, shape: 'ellipse', color: { background: '#fbd5d5', border: '#e03a3a', highlight: { background: '#f7bcbc', border: '#c81c1c' } } }
+    ]);
+
+    var edges = new vis.DataSet([
+      { from: 'Start', to: 'b1', label: 'entry' },
+      { from: 'b1', to: 'b2', label: 'login branch' },
+      { from: 'b1', to: 'b3', label: 'transfer or other' },
+      { from: 'b2', to: 'b7', label: 'after login' },
+      { from: 'b3', to: 'b4', label: 'transfer path' },
+      { from: 'b3', to: 'b6', label: 'baseline path' },
+      { from: 'b4', to: 'b5', label: 'amount > ceiling' },
+      { from: 'b4', to: 'b7', label: 'amount ≤ ceiling' },
+      { from: 'b5', to: 'b7', label: 'apply penalty' },
+      { from: 'b6', to: 'b7', label: 'baseline done' },
+      { from: 'b7', to: 'b8', label: 'after breach check' },
+      { from: 'b8', to: 'b9', label: 'inputs > 0?' },
+      { from: 'b9', to: 'b10', label: 'clamped score' },
+      { from: 'b10', to: 'End', label: 'return' }
+    ]);
+
+    var network = new vis.Network(container, { nodes: nodes, edges: edges }, {
+      physics: { enabled: false },
+      layout: {
+        hierarchical: {
+          enabled: true,
+          direction: 'UD',
+          levelSeparation: 150,
+          nodeSpacing: 220,
+          sortMethod: 'directed'
+        }
+      },
+      edges: {
+        arrows: { to: { enabled: true, scaleFactor: 0.55 } },
+        smooth: { type: 'cubicBezier', roundness: 0.25 },
+        color: { color: '#58677d' },
+        width: 1.6
+      },
+      nodes: {
+        margin: 12,
+        font: { size: 13, color: '#1f2937', face: 'ui-monospace, Menlo, Consolas, monospace', align: 'left' },
+        borderWidth: 1
+      },
+      interaction: { hover: true, dragNodes: true, zoomView: true, dragView: true, tooltipDelay: 80 }
+    });
+
+    container.dataset.graphInitialized = 'true';
+
+    network.on('selectNode', function (event) {
+      if (event.nodes && event.nodes.length) {
+        var id = event.nodes[0];
+        if (id === 'Start' || id === 'End') return;
+        highlightBlock(id);
+      }
+    });
+  }
+
+  function init() { ensureVis(render); }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+
+  var pushStateEl = document.getElementById('_pushState');
+  if (pushStateEl) {
+    pushStateEl.addEventListener('hy-push-state-after', function () {
+      var container = document.getElementById('cfg-graph');
+      if (container) container.dataset.graphInitialized = 'false';
+      init();
+    });
+  }
+})();
+</script>
+
+<hr />
+
+<h2 id="paths-through-the-cfg">Paths Through the CFG</h2>
+
+<p>A <strong>path</strong> <code class="language-plaintext highlighter-rouge">P</code> is an ordered sequence of edges <code class="language-plaintext highlighter-rouge">(e₁, e₂, …, e_k)</code> such that the destination of <code class="language-plaintext highlighter-rouge">e_i</code> is the source of <code class="language-plaintext highlighter-rouge">e_{i+1}</code>. Paths can be:</p>
+
+<ul>
+  <li><strong>Complete</strong> if they begin at <code class="language-plaintext highlighter-rouge">Start</code> and end at <code class="language-plaintext highlighter-rouge">End</code>.</li>
+  <li><strong>Subpaths</strong> if they form a contiguous portion of a complete path.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Type</th>
+      <th>Edge sequence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P1 = (Start, B1, B2, B7, B8, B9, B10, End)</code></td>
+      <td>Complete &amp; Feasible</td>
+      <td><code class="language-plaintext highlighter-rouge">((Start,B1),(B1,B2),(B2,B7),(B7,B8),(B8,B9),(B9,B10),(B10,End))</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P2 = (Start, B1, B3, B4, B5, B7, B8, B9, B10, End)</code></td>
+      <td>Complete &amp; Feasible</td>
+      <td><code class="language-plaintext highlighter-rouge">((Start,B1),(B1,B3),(B3,B4),(B4,B5),(B5,B7),(B7,B8),(B8,B9),(B9,B10),(B10,End))</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P3 = (Start, B1, B3, B6, B7)</code></td>
+      <td>Subpath &amp; Feasible</td>
+      <td><code class="language-plaintext highlighter-rouge">((Start,B1),(B1,B3),(B3,B6),(B6,B7))</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P4 = (B7, B8, B9, End)</code></td>
+      <td>Subpath &amp; Feasible</td>
+      <td><code class="language-plaintext highlighter-rouge">((B7,B8),(B8,B9),(B9,B10),(B10,End))</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P5 = (Start, B1, B3, B4, B6, B7, B8, B9, End)</code></td>
+      <td>Infeasible</td>
+      <td>Breaks sequence: no edge <code class="language-plaintext highlighter-rouge">(B4, B6)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">P6 = (Start, B1, B2, B4, B7, B9, End)</code></td>
+      <td>Infeasible</td>
+      <td>Missing edges <code class="language-plaintext highlighter-rouge">(B2,B4)</code> and <code class="language-plaintext highlighter-rouge">(B7,B9)</code> in CFG</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A path is considered <strong>feasible</strong> if at least one concrete input can traverse all edges in the path. Paths that violate the CFG’s edge structure (like <code class="language-plaintext highlighter-rouge">P5</code> and <code class="language-plaintext highlighter-rouge">P6</code>) are infeasible.</p>
+
+<hr />
+
+<h2 id="path-explosion--feasibility">Path Explosion &amp; Feasibility</h2>
+
+<p>Every conditional adds potential paths; nested or repeated predicates can multiply the count. That’s why static-analysis tools hit <strong>path explosion</strong> so quickly: enumerating every complete path becomes infeasible as programs grow.</p>
+
+<p>Yet many hard problems become solvable when scoped to a single path:</p>
+
+<ul>
+  <li>Security: “Can the malware reach the payload block?”</li>
+  <li>Debugging: “Given the current state, which branch executes next?”</li>
+  <li>Compilers: “Is this block dead, or does some feasible path reach it?”</li>
+  <li>Optimization: “Which sequence of components executes for this workload?”</li>
+</ul>
+
+<p>Determining path feasibility in the general case is undecidable, but tools can solve local, tractable subproblems (e.g., symbolic execution with bounding, loop summarization, lazy path exploration).</p>
+
+<hr />
+
+<h2 id="recap--where-were-heading">Recap &amp; Where We’re Heading</h2>
+
+<ul>
+  <li>A CFG <code class="language-plaintext highlighter-rouge">G = (N, E)</code> captures the flow between our ten basic blocks plus synthetic Start/End nodes.</li>
+  <li>Paths are ordered edge sequences; complete paths visit Start and End, subpaths cover only part of an execution.</li>
+  <li>Feasible paths correspond to real executions—a foundational concept for symbolic execution, test generation, and many security analyses.</li>
+  <li>Path explosion reminds us why analyses often reason about <strong>some</strong> paths rather than <strong>all</strong> paths.</li>
+</ul>
+
+<p>In Part 3 we’ll start answering, “What values make a particular path feasible?” That means diving into path predicates, simple constraint solving, and the first taste of symbolic execution—the bridge between static structure and dynamic behavior.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="program analysis" /><category term="control flow graphs" /><category term="basic blocks" /><category term="education" /><category term="software representation" /><summary type="html"><![CDATA[Part 2 of the visual program analysis series. We turn the basic blocks from our session scoring routine into a full control flow graph, define paths, and look at feasibility and path explosion.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/cfg/thumb.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/cfg/thumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Understanding Basic Blocks</title><link href="http://localhost:4000/blog/program-analysis-series-basic-blocks/" rel="alternate" type="text/html" title="Understanding Basic Blocks" /><published>2025-11-01T00:00:00-04:00</published><updated>2025-10-26T17:36:34-04:00</updated><id>http://localhost:4000/blog/visual-program-analysis-01-basic-blocks</id><content type="html" xml:base="http://localhost:4000/blog/program-analysis-series-basic-blocks/"><![CDATA[<style>
+  .block-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin: 1.5rem 0;
+    padding: 0.85rem 1rem;
+    background: rgba(79, 114, 205, 0.08);
+    border-radius: 0.9rem;
+  }
+  .block-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1c252c;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  }
+  .block-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    display: inline-block;
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+  }
+  .block-b1 { background-color: #cfe2ff; }
+  .block-b2 { background-color: #d1f2eb; }
+  .block-b3 { background-color: #ffe6cc; }
+  .block-b4 { background-color: #f6e4ff; }
+  .block-b5 { background-color: #ffeef2; }
+  .block-b6 { background-color: #dff4ff; }
+  .block-b7 { background-color: #e5f6d8; }
+  .block-b8 { background-color: #f9e7ff; }
+  .block-b9 { background-color: #f2f4f8; }
+  .block-b10 { background-color: #fff3cd; }
+
+  .basic-block-code {
+    margin: 1.75rem 0;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    background: #f8fafc;
+    color: #1f2933;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+  .basic-block-code pre {
+    margin: 0;
+    padding: 1.5rem;
+    font-family: ui-monospace, "SFMono-Regular", SFMono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    position: relative;
+  }
+  .basic-block-code code {
+    display: block;
+  }
+  .basic-block-code .code-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.05rem 0.55rem;
+    margin: 0;
+    border-left: 0.25rem solid transparent;
+    border-radius: 0.45rem;
+    transition: outline 120ms ease-in-out, background 120ms ease-in-out, border-color 120ms ease-in-out;
+  }
+  .basic-block-code .code-line.highlighted {
+    outline: 2px solid #3b82f6;
+    background: rgba(59, 130, 246, 0.08);
+  }
+  .basic-block-code .line-no {
+    min-width: 2.2rem;
+    text-align: right;
+    color: #64748b;
+    font-size: 0.83rem;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+  }
+  .basic-block-code .code-text {
+    flex: 1;
+    white-space: pre;
+  }
+  .basic-block-code .code-line[data-block="b1"]  { background: rgba(207, 226, 255, 0.6); border-color: #6ea8fe; }
+  .basic-block-code .code-line[data-block="b2"]  { background: rgba(209, 242, 235, 0.6); border-color: #4fceac; }
+  .basic-block-code .code-line[data-block="b3"]  { background: rgba(255, 230, 204, 0.6); border-color: #ffb56b; }
+  .basic-block-code .code-line[data-block="b4"]  { background: rgba(246, 228, 255, 0.6); border-color: #d0a4ff; }
+  .basic-block-code .code-line[data-block="b5"]  { background: rgba(255, 238, 242, 0.6); border-color: #ff9aa2; }
+  .basic-block-code .code-line[data-block="b6"]  { background: rgba(223, 244, 255, 0.6); border-color: #7dd3fc; }
+  .basic-block-code .code-line[data-block="b7"]  { background: rgba(229, 246, 216, 0.6); border-color: #9bd66b; }
+  .basic-block-code .code-line[data-block="b8"]  { background: rgba(249, 231, 255, 0.6); border-color: #d3a6ff; }
+  .basic-block-code .code-line[data-block="b9"]  { background: rgba(242, 244, 248, 0.6); border-color: #94a8c7; }
+  .basic-block-code .code-line[data-block="b10"] { background: rgba(255, 243, 205, 0.6); border-color: #ffd166; }
+
+  .basic-block-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 0.85rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+  .basic-block-table th,
+  .basic-block-table td {
+    padding: 0.95rem 1.1rem;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+    vertical-align: top;
+  }
+  .basic-block-table tbody tr:last-child td { border-bottom: none; }
+  .basic-block-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 700;
+  }
+  .basic-block-label .block-swatch { box-shadow: none; }
+  .basic-block-table-desc { color: #334155; }
+  .block-notes {
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.1rem;
+    background: rgba(148, 163, 184, 0.12);
+    border-radius: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+  }
+  .block-notes ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .block-legend {
+      background: rgba(122, 136, 173, 0.24);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+    .block-chip {
+      background: rgba(15, 23, 42, 0.55);
+      color: #e2e8f0;
+      box-shadow: 0 8px 24px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-code {
+      background: rgba(15, 23, 42, 0.72);
+      color: #e2e8f0;
+      box-shadow: 0 18px 38px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-code .line-no { color: #94a3b8; }
+    .basic-block-table {
+      box-shadow: 0 20px 42px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-table th,
+    .basic-block-table td {
+      background: rgba(15, 23, 42, 0.75);
+      color: #e2e8f0;
+      border-bottom: 1px solid rgba(94, 113, 135, 0.35);
+    }
+    .basic-block-table-desc { color: #cbd5f5; }
+    .block-notes {
+      background: rgba(122, 136, 173, 0.22);
+      border-color: rgba(148, 163, 184, 0.32);
+      color: #e2e8f0;
+    }
+  }
+</style>
+
+<h2 id="understanding-basic-blocks">Understanding Basic Blocks</h2>
+
+<p>Reading raw code is slow and brittle. Basic blocks give us chunks the compiler and our brains can reason about. If source code is a novel, basic blocks are the paragraphs.</p>
+
+<h3 id="at-a-glance">At a glance</h3>
+<ul>
+  <li>Definition: a contiguous sequence of statements with one entry and one exit.</li>
+  <li>Property: once you enter a block, you run straight through to its exit.</li>
+  <li>Why it matters: blocks are the building bricks of control flow graphs.</li>
+</ul>
+
+<p>Modern software is hard to analyze directly. Programs span multiple languages, millions of lines, external dependencies, different platforms, and often only binaries with no symbols. Humans struggle. Machines do too, especially without semantic hints. Basic blocks provide a stable unit that both can work with.</p>
+
+<blockquote>
+  <p>Note: A block can be a single statement. In that case, its entry and exit coincide.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="what-is-a-basic-block">What Is a Basic Block?</h2>
+
+<p>A basic block is a sequence of consecutive statements with:</p>
+<ul>
+  <li>A single entry point</li>
+  <li>A single exit point</li>
+</ul>
+
+<p>Once control enters a basic block:</p>
+<ul>
+  <li>Execution proceeds straight through to its exit.</li>
+  <li>There is no branching, no halting, and no internal jumps.</li>
+  <li>The only way out is through the exit.</li>
+</ul>
+
+<p>Basic blocks are valid for both source and binary analysis. They are not directly comparable across levels because compilation and optimization can rearrange logic, but they remain a common currency for analysis.</p>
+
+<hr />
+
+<h2 id="example-a-compact-function">Example: A Compact Function</h2>
+
+<p>The example below uses labeled regions B1 through B10. Each highlighted region maps to a basic block.</p>
+
+<div class="basic-block-code" role="figure" aria-label="Code listing with basic-block highlights">
+  <pre><code><span class="code-line" data-block="b1"><span class="line-no">1</span><span class="code-text">float update_session_score(Session *session, const Event *event) {</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">2</span><span class="code-text">    float weighted = 0.0f;</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">3</span><span class="code-text">    int inputs = 0;</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">4</span><span class="code-text">    if (event-&gt;type == EVENT_LOGIN) {</span></span>
+<span class="code-line" data-block="b2"><span class="line-no">5</span><span class="code-text">        weighted += session-&gt;risk * 0.4f;</span></span>
+<span class="code-line" data-block="b2"><span class="line-no">6</span><span class="code-text">        inputs += 1;</span></span>
+<span class="code-line" data-block="b3"><span class="line-no">7</span><span class="code-text">    } else if (event-&gt;type == EVENT_TRANSFER) {</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">8</span><span class="code-text">        weighted += event-&gt;amount * session-&gt;velocity;</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">9</span><span class="code-text">        inputs += 1;</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">10</span><span class="code-text">        if (event-&gt;amount &gt; session-&gt;limits.transfer_ceiling) {</span></span>
+<span class="code-line" data-block="b5"><span class="line-no">11</span><span class="code-text">            weighted += session-&gt;limits.penalty;</span></span>
+<span class="code-line" data-block="b5"><span class="line-no">12</span><span class="code-text">        }</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">13</span><span class="code-text">    } else {</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">14</span><span class="code-text">        weighted += event-&gt;baseline * 0.2f;</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">15</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">16</span><span class="code-text">    if (session-&gt;flags &amp; SESSION_FLAG_RECENT_BREACH) {</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">17</span><span class="code-text">        weighted += 10.0f;</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">18</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">19</span><span class="code-text">    if (inputs &gt; 0) {</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">20</span><span class="code-text">        weighted /= inputs;</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">21</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b9"><span class="line-no">22</span><span class="code-text">    session-&gt;score = clampf(weighted, 0.0f, 100.0f);</span></span>
+<span class="code-line" data-block="b10"><span class="line-no">23</span><span class="code-text">    return session-&gt;score;</span></span>
+<span class="code-line" data-block="b10"><span class="line-no">24</span><span class="code-text">}</span></span></code></pre>
+</div>
+
+<p>This scoring routine is the through-line for the rest of the series. We will reuse blocks <strong>B1</strong> through <strong>B10</strong> when we build control flow graphs, compute dominator trees, and inspect def-use chains. Treat these highlights as the canonical IDs for the example.</p>
+
+<div class="block-notes">
+  <ul>
+    <li><strong>B1 (L1–L4)</strong> initializes state and branches on the event type.</li>
+    <li><strong>B2 (L5–L6)</strong> handles the login path body.</li>
+    <li><strong>B3–B5 (L7–L12)</strong> cover the transfer path and its nested ceiling check.</li>
+    <li><strong>B6 (L13–L15)</strong> is the fallback for all other event types.</li>
+    <li><strong>B7 (L16–L18)</strong> reacts to the recent breach flag.</li>
+    <li><strong>B8 (L19–L21)</strong> normalizes the accumulated score by the number of contributing inputs.</li>
+    <li><strong>B9–B10 (L22–L24)</strong> clamp, store, and return the score.</li>
+  </ul>
+</div>
+
+<hr />
+
+<h2 id="identifying-the-basic-blocks">Identifying the Basic Blocks</h2>
+
+<p>We can decompose this function into ten basic blocks:</p>
+
+<p class="block-notes" role="note">Match the colors and labels below with the highlights in the code snippet. Each badge is clickable in the interactive diagram, so keep this legend handy as a quick lookup.</p>
+
+<div class="block-legend" role="note" aria-label="Color legend linking blocks B1 to B10">
+  <span class="block-chip"><span class="block-swatch block-b1" aria-hidden="true"></span>Block B1</span>
+  <span class="block-chip"><span class="block-swatch block-b2" aria-hidden="true"></span>Block B2</span>
+  <span class="block-chip"><span class="block-swatch block-b3" aria-hidden="true"></span>Block B3</span>
+  <span class="block-chip"><span class="block-swatch block-b4" aria-hidden="true"></span>Block B4</span>
+  <span class="block-chip"><span class="block-swatch block-b5" aria-hidden="true"></span>Block B5</span>
+  <span class="block-chip"><span class="block-swatch block-b6" aria-hidden="true"></span>Block B6</span>
+  <span class="block-chip"><span class="block-swatch block-b7" aria-hidden="true"></span>Block B7</span>
+  <span class="block-chip"><span class="block-swatch block-b8" aria-hidden="true"></span>Block B8</span>
+  <span class="block-chip"><span class="block-swatch block-b9" aria-hidden="true"></span>Block B9</span>
+  <span class="block-chip"><span class="block-swatch block-b10" aria-hidden="true"></span>Block B10</span>
+</div>
+
+<table class="basic-block-table">
+  <thead>
+    <tr>
+      <th scope="col">Block</th>
+      <th scope="col">Statements</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b1" aria-hidden="true"></span>B1</span></td>
+      <td><code>L1 to L4</code></td>
+      <td class="basic-block-table-desc">Entry, initialize, first predicate</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b2" aria-hidden="true"></span>B2</span></td>
+      <td><code>L5 to L6</code></td>
+      <td class="basic-block-table-desc">Login branch body</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b3" aria-hidden="true"></span>B3</span></td>
+      <td><code>L7</code></td>
+      <td class="basic-block-table-desc">Transfer predicate</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b4" aria-hidden="true"></span>B4</span></td>
+      <td><code>L8 to L10</code></td>
+      <td class="basic-block-table-desc">Transfer body and ceiling test</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b5" aria-hidden="true"></span>B5</span></td>
+      <td><code>L11 to L12</code></td>
+      <td class="basic-block-table-desc">Penalty for oversize transfer</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b6" aria-hidden="true"></span>B6</span></td>
+      <td><code>L13 to L15</code></td>
+      <td class="basic-block-table-desc">Fallback for other events</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b7" aria-hidden="true"></span>B7</span></td>
+      <td><code>L16 to L18</code></td>
+      <td class="basic-block-table-desc">Recent breach flag handling</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b8" aria-hidden="true"></span>B8</span></td>
+      <td><code>L19 to L21</code></td>
+      <td class="basic-block-table-desc">Normalize by inputs</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b9" aria-hidden="true"></span>B9</span></td>
+      <td><code>L22</code></td>
+      <td class="basic-block-table-desc">Clamp and store</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b10" aria-hidden="true"></span>B10</span></td>
+      <td><code>L23 to L24</code></td>
+      <td class="basic-block-table-desc">Unified exit and return</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="interactive-diagram">Interactive Diagram</h2>
+
+<p>The interactive view below gives you the same ten blocks laid out like a control flow graph. Color, numbering, and labels mirror the code and table, so you can bounce between all three without guessing which region is which.<br />
+<strong>Tip:</strong> click any node to highlight the corresponding lines in the source listing—perfect for double-checking that every block really does have a single entry and single exit. Drag to rearrange, or hover to read the disassembly-style labels.</p>
+
+<div id="basic-block-graph" style="height: 420px; border: 1px solid #ccd5e0; border-radius: 10px; background: #ffffff;"></div>
+<noscript>
+  <p>This diagram is interactive. Enable JavaScript to view it. The blocks are: B1 to {B2 or B3 to B4 to B5 or B6} to B7 to B8 to B9 to B10.</p>
+</noscript>
+
+<script>
+(function () {
+  var LIB_ID = 'vis-network-standalone';
+
+  function ensureVis(cb) {
+    if (window.vis && window.vis.Network && window.vis.DataSet) return cb();
+    var s = document.getElementById(LIB_ID);
+    if (s) return s.addEventListener('load', cb, { once: true });
+    s = document.createElement('script');
+    s.id = LIB_ID;
+    s.defer = true;
+    s.src = 'https://cdn.jsdelivr.net/npm/vis-network@9.1.7/standalone/umd/vis-network.min.js';
+    s.addEventListener('load', cb, { once: true });
+    document.head.appendChild(s);
+  }
+
+  function highlightBlock(id) {
+    document.querySelectorAll('.basic-block-code .code-line').forEach(function (ln) {
+      ln.classList.remove('highlighted');
+    });
+    var target = document.querySelectorAll('.basic-block-code .code-line[data-block="b' + id + '"]');
+    target.forEach(function (ln) { ln.classList.add('highlighted'); });
+    if (target.length) target[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function render() {
+    var el = document.getElementById('basic-block-graph');
+    if (!el || (el.dataset.graphInitialized === 'true')) return;
+
+    var nodes = new vis.DataSet([
+      {
+        id: 1,
+        label: 'B1\nL1 to L4',
+        shape: 'box',
+        level: 0,
+        color: { background: '#cfe2ff', border: '#7ba7ff', highlight: { background: '#bfd6ff', border: '#558dff' } }
+      },
+      {
+        id: 2,
+        label: 'B2\nL5 to L6',
+        shape: 'box',
+        level: 1,
+        color: { background: '#d1f2eb', border: '#6fd0b0', highlight: { background: '#c2ece1', border: '#45b28f' } }
+      },
+      {
+        id: 3,
+        label: 'B3\nL7',
+        shape: 'box',
+        level: 1,
+        color: { background: '#ffe6cc', border: '#ffb56b', highlight: { background: '#ffd9aa', border: '#f28c33' } }
+      },
+      {
+        id: 4,
+        label: 'B4\nL8 to L10',
+        shape: 'box',
+        level: 2,
+        color: { background: '#f6e4ff', border: '#d0a4ff', highlight: { background: '#ead0ff', border: '#b57cff' } }
+      },
+      {
+        id: 5,
+        label: 'B5\nL11 to L12',
+        shape: 'box',
+        level: 3,
+        color: { background: '#ffeef2', border: '#ff9aa2', highlight: { background: '#ffd6dd', border: '#ff7b85' } }
+      },
+      {
+        id: 6,
+        label: 'B6\nL13 to L15',
+        shape: 'box',
+        level: 2,
+        color: { background: '#dff4ff', border: '#7dd3fc', highlight: { background: '#c5ecff', border: '#3abff8' } }
+      },
+      {
+        id: 7,
+        label: 'B7\nL16 to L18',
+        shape: 'box',
+        level: 4,
+        color: { background: '#e5f6d8', border: '#9bd66b', highlight: { background: '#c9edac', border: '#78c242' } }
+      },
+      {
+        id: 8,
+        label: 'B8\nL19 to L21',
+        shape: 'box',
+        level: 5,
+        color: { background: '#f9e7ff', border: '#d3a6ff', highlight: { background: '#edceff', border: '#ba7cff' } }
+      },
+      {
+        id: 9,
+        label: 'B9\nL22',
+        shape: 'box',
+        level: 6,
+        color: { background: '#f2f4f8', border: '#94a8c7', highlight: { background: '#dbe1eb', border: '#6d85ab' } }
+      },
+      {
+        id: 10,
+        label: 'B10\nL23 to L24',
+        shape: 'box',
+        level: 7,
+        color: { background: '#fff3cd', border: '#ffd166', highlight: { background: '#ffe8a3', border: '#ffc043' } }
+      }
+    ]);
+
+    var edges = new vis.DataSet([
+      { from: 1, to: 2 },
+      { from: 1, to: 3 },
+      { from: 3, to: 4 },
+      { from: 3, to: 6 },
+      { from: 4, to: 5 },
+      { from: 4, to: 7 },
+      { from: 2, to: 7 },
+      { from: 5, to: 7 },
+      { from: 6, to: 7 },
+      { from: 7, to: 8 },
+      { from: 8, to: 9 },
+      { from: 9, to: 10 }
+    ]);
+
+    var options = {
+      physics: { enabled: false },
+      edges: {
+        arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+        smooth: { type: 'cubicBezier', roundness: 0.2 },
+        color: { color: '#58677d' },
+        width: 1.6
+      },
+      nodes: {
+        shape: 'box',
+        margin: 12,
+        font: { size: 13, color: '#1f2937', face: 'ui-monospace, Menlo, Consolas, monospace', align: 'left' },
+        borderWidth: 1,
+        color: {
+          background: '#f8fafc',
+          border: '#94a3b8',
+          highlight: { background: '#e2e8f0', border: '#475569' }
+        }
+      },
+      layout: {
+        hierarchical: { enabled: true, direction: 'UD', levelSeparation: 200, nodeSpacing: 220 }
+      },
+      interaction: { hover: true, dragNodes: true, zoomView: true, dragView: true, tooltipDelay: 80 }
+    };
+
+    var network = new vis.Network(el, { nodes: nodes, edges: edges }, options);
+    el.dataset.graphInitialized = 'true';
+
+    network.on('selectNode', function (e) {
+      if (e.nodes && e.nodes.length) highlightBlock(e.nodes[0]);
+    });
+  }
+
+  function init() { ensureVis(render); }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+
+  var ps = document.getElementById('_pushState');
+  if (ps) ps.addEventListener('hy-push-state-after', function () {
+    var el = document.getElementById('basic-block-graph');
+    if (el) el.dataset.graphInitialized = 'false';
+    init();
+  });
+})();
+</script>
+
+<hr />
+
+<h2 id="why-basic-blocks-matter">Why Basic Blocks Matter</h2>
+
+<ul>
+  <li>They simplify analysis for both source and binary code.</li>
+  <li>They let tools and compilers detect unreachable code, loops, and optimizations.</li>
+  <li>They form the nodes of control flow graphs, which we will build in the next post.</li>
+</ul>
+
+<p>Compilers think in blocks. Today, we try thinking like a compiler.</p>
+
+<hr />
+
+<h2 id="wrap-up--next-steps">Wrap-Up &amp; Next Steps</h2>
+
+<ul>
+  <li>You now have a color-coded, line-referenced example that we’ll reuse when we discuss CFGs, dominators, and def-use chains. Bookmark it.</li>
+  <li>Practice: pick a short function from your own code, highlight the entry/exit pairs, and sketch the basic blocks. If you can recreate the table from this post, you’re ready for the CFG episode.</li>
+  <li>Curious minds: try adding a helper block (e.g., fraud flag escalation) to this routine and watch how the graph and table evolve.</li>
+</ul>
+
+<p>Next up we’ll connect these blocks into a full control flow graph, add semantic edge labels, and explore how analysis tools walk the structure.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="program analysis" /><category term="basic blocks" /><category term="education" /><category term="software representation" /><summary type="html"><![CDATA[Basic blocks are the foundation of control flow. This post shows what they are, why they matter, and how to see them clearly in code before we build full control flow graphs in the next post.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/basicblock/thumb.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/basicblock/thumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-18T00:00:00-04:00</published><updated>2025-10-23T16:36:47-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
 
 <p>This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at <strong>BSidesNYC 0x05</strong>, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.</p>
 
@@ -19,7 +1246,7 @@
 
 <p>This design allows DDR-based malware to persist even when individual endpoints are removed. Once one dead drop is taken down, the adversary can generate another using the same encoding methods. Reactive takedown strategies fail to scale. Our objective was to target the <em>techniques</em> rather than the <em>endpoints</em>.</p>
 
-<p><img src="/assets/blogs/spycraft/ddr.jpg" alt="Illustrative dead drop resolver workflow" class="img-framed" width="80%" /></p>
+<p><img src="/assets/blogs/spycraft/ddr.png" alt="Illustrative dead drop resolver workflow" class="img-framed" width="80%" /></p>
 
 <p class="figcaption">Razy’s DDR workflow. (1) The operator hides a manipulated C&amp;C address on X.com. (2) Razy fetches the dead drop after infection. (3) Layered decoding reveals the live C&amp;C rendezvous point.</p>
 
@@ -97,7 +1324,7 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><a href="/publications/vader-dead-drop-resolver/">Publication summary and PDF</a></li>
 </ul>
 
-<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead-drop-resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-23T09:53:22-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
+<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-23T09:53:22-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
 <strong>Authors</strong>: <u>Jonathan Fuller</u>*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio<br />
 <strong>Acceptance Rate</strong>: 13.8%</p>
 
@@ -216,7 +1443,7 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><strong>Applied Digital Forensics.</strong> Use industry tools to acquire and analyse evidence from network captures, storage media, and RAM across common operating systems and devices.</li>
 </ol>
 
-<p>Throughout the term, learners execute labs in a virtualized environment, document chain of custody, and deliver expert-witness style reports tying technical findings back to legal requirements.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.]]></summary></entry><entry><title type="html">Invited Tutorial: Counteracting Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/" rel="alternate" type="text/html" title="Invited Tutorial: Counteracting Web Application Abuse in Malware" /><published>2023-09-18T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/secdev-tutorial-marsea</id><content type="html" xml:base="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 2023 IEEE Secure Development Conference (SecDev): Invited Tutorial<br />
+<p>Throughout the term, learners execute labs in a virtualized environment, document chain of custody, and deliver expert-witness style reports tying technical findings back to legal requirements.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.]]></summary></entry><entry><title type="html">Invited Tutorial: Counteracting Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/" rel="alternate" type="text/html" title="Invited Tutorial: Counteracting Web Application Abuse in Malware" /><published>2023-09-18T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/secdev-tutorial-marsea</id><content type="html" xml:base="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: IEEE Secure Development Conference (SecDev): Invited Tutorial<br />
 <strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio</p>
 
 <h2 id="highlights">Highlights</h2>
@@ -251,145 +1478,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
   <span class="na">note</span>      <span class="p">=</span> <span class="s">{Invited Tutorial}</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev 2023 tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry><entry><title type="html">Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/marsea-web-application-abuse/" rel="alternate" type="text/html" title="Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware" /><published>2023-08-09T00:00:00-04:00</published><updated>2025-10-23T10:34:13-04:00</updated><id>http://localhost:4000/publications/marsea</id><content type="html" xml:base="http://localhost:4000/publications/marsea-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023<br />
-<strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio<br />
-<strong>Acceptance Rate</strong>: 29.2%</p>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Identifies 893 web-application-engaged malware specimens across 97 families abusing 29 popular web applications.</li>
-  <li>Measures a 226% surge in WAE malware since 2020 while observing a 13.7% drop in reliance on attacker-controlled servers.</li>
-  <li>Delivers the Marsea pipeline, enabling responders and providers to remove over 50% of malicious web content encountered.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="/assets/papers/sec23yao.pdf">PDF</a></li>
-  <li><a href="https://www.usenix.org/system/files/sec23_slides_yao-mingxuan.pdf">Slides</a></li>
-  <li><a href="https://www.youtube.com/watch?v=o0SWc0cwqy4">Talk recording</a></li>
-  <li><a href="https://github.com/CyFI-Lab-Public/MARSEA">Source code</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>Web applications provide a wide array of utilities that are abused by malware as a replacement for traditional attacker-controlled servers. Thwarting these Web App-Engaged (WAE) malware requires rapid collaboration between incident responders and web app providers. Unfortunately, our research found that delays in this collaboration allow WAE malware to thrive. We developed Marsea, an automated malware analysis pipeline that studies WAE malware and enables rapid remediation. Given 10K malware samples, Marsea revealed 893 WAE malware in 97 families abusing 29 web apps. Our research uncovered a 226% increase in the number of WAE malware since 2020 and that malware authors are beginning to reduce their reliance on attacker-controlled servers. In fact, we found a 13.7% decrease in WAE malware relying on attacker-controlled servers. To date, we have used Marsea to collaborate with the web app providers to take down 50% of the malicious web app content.</p>
-
-<h2 id="artifact-badges">Artifact Badges</h2>
-
-<ul>
-  <li>Available</li>
-  <li>Functional</li>
-</ul>
-
-<h2 id="honors">Honors</h2>
-
-<ul>
-  <li>Invited tutorial at the 2023 IEEE Secure Development Conference (SecDev).</li>
-</ul>
-
-<h2 id="media-coverage">Media Coverage</h2>
-
-<ul>
-  <li><a href="https://research.gatech.edu/playing-hide-and-seek-new-breed-malware-threatening-millions-users">Georgia Tech - Playing Hide and seek with Malware</a></li>
-  <li><a href="https://techxplore.com/news/2023-09-playing-malware-threatening-millions-users.html">TechXPlore - New Breed of Malware</a></li>
-  <li><a href="https://www.techtimes.com/articles/296248/20230912/researchers-find-new-breed-malware-hiding-dropbox-discord.htm">TechTimes - Malware Hiding in Dropbox, Discord</a></li>
-  <li><a href="">ILSoftware - Wep-App Engagnge Malware</a></li>
-</ul>
-
-<h2 id="bibtex">BibTeX</h2>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">yao2023marsea</span><span class="p">,</span>
-  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware}</span><span class="p">,</span>
-  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Yao, Meng and Fuller, Jonathan and Pai Kasturi, Ranjita and Agarwal, Saumya and Sikder, Amit K. and Saltaformaggio, Brendan}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 32nd USENIX Security Symposium (USENIX Security)}</span><span class="p">,</span>
-  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
-  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Anaheim, CA}</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="web-applications" /><category term="incident-response" /><summary type="html"><![CDATA[Large-scale analysis of web-application-engaged malware and the Marsea remediation pipeline, accepted to USENIX Security 2023 (29.2% acceptance rate).]]></summary></entry><entry><title type="html">Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration</title><link href="http://localhost:4000/publications/the-byte-c2-infiltration/" rel="alternate" type="text/html" title="Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration" /><published>2023-05-01T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/the-byte-infiltration</id><content type="html" xml:base="http://localhost:4000/publications/the-byte-c2-infiltration/"><![CDATA[<p><strong>Venue</strong>: The Byte<br />
-<strong>Author</strong>: <u>Jonathan Fuller</u><br />
-<strong>Date</strong>: May 1, 2023</p>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Explores how malware communication protocol weaknesses enable covert infiltration of command-and-control infrastructure.</li>
-  <li>Shares operational guidance for cyber operators confronting adversary C2 networks in the field.</li>
-  <li>Bridges research findings with practitioner insights for the 780th Military Intelligence Brigade (Cyber).</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="/assets/papers/thebyte23.pdf">PDF</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>This article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="command-and-control" /><category term="forensics" /><summary type="html"><![CDATA[Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.]]></summary></entry><entry><title type="html">Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces</title><link href="http://localhost:4000/publications/yoda-malicious-wordpress-plugins/" rel="alternate" type="text/html" title="Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces" /><published>2022-04-10T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/yoda</id><content type="html" xml:base="http://localhost:4000/publications/yoda-malicious-wordpress-plugins/"><![CDATA[<p><strong>Conference</strong>: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022<br />
-<strong>Authors</strong>: R. Pai Kasturi, <u>Jonathan Fuller</u>, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio<br />
-<strong>Acceptance Rate</strong>: 18.1%</p>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Analyzes 400K production web servers dating back to 2012 to uncover malicious plugin campaigns.</li>
-  <li>Introduces YODA, an automated framework that identifies and traces malicious plugin origins across marketplaces, piracy sites, and post-deployment compromises.</li>
-  <li>Documents $41.5K spent on malicious marketplace plugins, $228K in lost revenue from pirated plugins, and $834K in post-deployment compromises, with 94% of malicious plugins still active.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="/assets/papers/sec22.pdf">PDF</a></li>
-  <li><a href="https://youtu.be/16FmkoX_ZMY">Talk recording</a></li>
-  <li><a href="https://youtu.be/TUATgmVKdf8">Demo</a></li>
-  <li><a href="https://github.com/CyFI-Lab-Public/YODA">Source code</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>Modern websites owe most of their aesthetics and functionalities to Content Management Systems (CMS) plugins, which are bought and sold on widely popular marketplaces. Driven by economic incentives, attackers abuse the trust in this economy: selling malware on legitimate marketplaces, pirating popular plugins, and infecting plugins post-deployment. This research studied the evolution of CMS plugins in over 400K production webservers dating back to 2012. We developed YODA, an automated framework to detect malicious plugins and track down their origin. YODA uncovered 47,337 malicious plugins on 24,931 unique websites. Among these, $41.5K had been spent on 3,685 malicious plugins sold on legitimate plugin marketplaces. Pirated plugins cheated developers out of $228K in revenues. Post-deployment attacks infected $834K worth of previously benign plugins with malware. Lastly, YODA informs our remediation efforts, as over 94% of these malicious plugins are still active today.</p>
-
-<h2 id="honors">Honors</h2>
-
-<ul>
-  <li>
-    <p>CSAW’22 Applied Research Competition Award Finalist</p>
-  </li>
-  <li>
-    <p>Invited for a USENIX ;login: Magazine article</p>
-  </li>
-</ul>
-
-<h2 id="media-coverage">Media Coverage</h2>
-
-<ul>
-  <li>
-    <p><a href="https://cacm.acm.org/news/locking-down-secure-open-source-software/">Locking Down Secure Open Source Software</a></p>
-  </li>
-  <li>
-    <p><a href="https://thehackernews.com/2022/06/yoda-tool-found-47000-malicious.html">YODA Tool Found ~47,000 Malicious WordPress Plugins Installed in Over 24,000 Sites</a></p>
-  </li>
-  <li>
-    <p><a href="https://siliconangle.com/2022/08/29/researchers-find-malicious-plugins-25000-wordpress-sites/">Researchers find malicious plugins on 25,000 WordPress sites</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.cc.gatech.edu/news/eight-year-study-shows-dark-side-wordpress-plugins">Eight-Year Study Shows the Dark Side of WordPress Plugins</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.usenix.org/publications/loginonline/mistrust-plugins-you-must-large-scale-study-malicious-plugins-wordpress">USENIX ;login: Mistrust Plugins You Must</a></p>
-  </li>
-</ul>
-
-<h2 id="bibtex">BibTeX</h2>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">kasturi2022yoda</span><span class="p">,</span>
-  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces}</span><span class="p">,</span>
-  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Pai Kasturi, Ranjita and Fuller, Jonathan and Sun, Yiting and Chabklo, Omar and Rodriguez, Andres and Park, Jeman and Saltaformaggio, Brendan}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 31st USENIX Security Symposium (USENIX Security)}</span><span class="p">,</span>
-  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2022}</span><span class="p">,</span>
-  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Boston, MA}</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="wordpress" /><category term="content-management" /><summary type="html"><![CDATA[Measurement study of malicious WordPress plugins and the YODA detection pipeline, accepted to USENIX Security 2022 (18.1% acceptance rate).]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry></feed>

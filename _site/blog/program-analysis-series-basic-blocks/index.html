@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v9.2.1 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+
+
+
+  
+    
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Understanding Basic Blocks | Jonathan Fuller</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Understanding Basic Blocks" />
+<meta name="author" content="Jonathan Fuller" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Basic blocks are the foundation of control flow. This post shows what they are, why they matter, and how to see them clearly in code before we build full control flow graphs in the next post." />
+<meta property="og:description" content="Basic blocks are the foundation of control flow. This post shows what they are, why they matter, and how to see them clearly in code before we build full control flow graphs in the next post." />
+<link rel="canonical" href="http://localhost:4000/blog/program-analysis-series-basic-blocks/" />
+<meta property="og:url" content="http://localhost:4000/blog/program-analysis-series-basic-blocks/" />
+<meta property="og:site_name" content="Jonathan Fuller" />
+<meta property="og:image" content="http://localhost:4000/assets/blogs/basicblock/thumb.jpg" />
+<meta property="og:image:alt" content="Basic blocks visualized as simple nodes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-11-01T00:00:00-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/blogs/basicblock/thumb.jpg" />
+<meta name="twitter:image:alt" content="Basic blocks visualized as simple nodes" />
+<meta property="twitter:title" content="Understanding Basic Blocks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-26T17:36:34-04:00","datePublished":"2025-11-01T00:00:00-04:00","description":"Basic blocks are the foundation of control flow. This post shows what they are, why they matter, and how to see them clearly in code before we build full control flow graphs in the next post.","headline":"Understanding Basic Blocks","image":{"alt":"Basic blocks visualized as simple nodes","url":"http://localhost:4000/assets/blogs/basicblock/thumb.jpg","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/program-analysis-series-basic-blocks/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/blog/program-analysis-series-basic-blocks/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+    <meta name="keywords" content="Jonathan Fuller,Empirical Defense,cybersecurity leadership,cybersecurity research,digital forensics,cyber education,security and privacy,ciso,professor,malware,reverse engineering,memory forensics,symbolic execution,concolic analysis">
+  
+
+
+
+  <meta name="color-scheme" content="dark light">
+
+
+
+  <meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jonathan Fuller">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="application-name" content="Jonathan Fuller">
+
+<meta name="generator" content="Hydejack v9.2.1" />
+
+
+<link rel="alternate" href="http://localhost:4000/blog/program-analysis-series-basic-blocks/" hreflang="en">
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Jonathan Fuller" />
+
+
+<link rel="shortcut icon"    href="/assets/icons/icon-128x128.png">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+
+<link rel="manifest" href="/assets/site.webmanifest">
+
+
+
+
+
+<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
+
+
+  
+  <link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.css" id="_katexPreload">
+  <noscript><link rel="stylesheet" href="/assets/bower_components/katex/dist/katex.min.css"></noscript>
+
+
+
+
+
+<script>((r,a)=>{function d(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=a.createElement("script"),e=(n.src=e,t&&d(n,"load",t,{once:!0}),a.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=a.createElement("script");function o(){r._loaded=!0,t&&d(n,"load",t,{once:!0});var e=a.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():d(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){d(a.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}})(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+!function(w) {
+  w._baseURL = '/';
+  w._publicPath = '/assets/js/';
+  w._noPushState = false;
+  w._noDrawer = false;
+  w._noNavbar = false;
+  w._noToc = false;
+  w._noSearch = false;
+  w._search = {
+    DATA_URL: '/assets/sitedata.json?no-cache',
+    STORAGE_KEY: 'mini-search/',
+    INDEX_KEY: 'index--2025-10-27T10:22:02-04:00',
+  };
+  w._clapButton = true;
+}(window);</script>
+
+
+
+<!--[if gt IE 8]><!---->
+
+  
+
+
+
+
+<link rel="stylesheet" href="/assets/css/hydejack-9.2.1.css" id="_stylePreload">
+<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
+
+
+
+
+  <style id="_pageStyle">
+
+html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.5);--accent-color-highlight: rgba(79, 177, 186, 0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71);--dark-mode-body-bg: hsl(200.8695652174, 5.9895833333%, 17.5%);--dark-mode-border-color: hsl(200.8695652174, 5.9895833333%, 22.5%)}
+</style>
+
+
+<!--<![endif]-->
+
+
+<!-- Add HTML tags here to be included in the head. You can delete the below: -->
+<link rel="dns-prefetch" href="https://assets.gumroad.com">
+<script type="module">
+  const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
+
+  let p1, p2, io1, io2, embedCreated, overlayCreated;
+  document.querySelector('hy-push-state').addEventListener('load', () => {
+    io1 ||= new IntersectionObserver(async (entries) => {
+      if (entries.some(x => x.isIntersecting)) {
+        p1 = p1 || loadJS('https://gumroad.com/js/gumroad-embed.js');
+        await p1;
+        !embedCreated && await new Promise(function check1(res) {
+          if (typeof createGumroadEmbed !== 'undefined')  {
+            embedCreated = 1;
+            res(createGumroadEmbed());
+          }
+          else setTimeout(() => check1(res), 200);
+        });
+        await new Promise(function check2(res) {
+          if (typeof GumroadEmbed !== 'undefined') res(GumroadEmbed.reload());
+          else setTimeout(() => check2(res), 200);
+        });
+      }
+    }, { rootMargin: '1440px' });
+
+    io2 ||= new IntersectionObserver(async (entries) => {
+      if (entries.some(x => x.isIntersecting)) {
+        p2 = p2 || loadJS('https://gumroad.com/js/gumroad.js');
+        await p2;
+        !overlayCreated && await new Promise(function check(res) {
+          if (typeof createGumroadOverlay !== 'undefined') {
+            overlayCreated = 1;
+            res(createGumroadOverlay());
+          }
+          else setTimeout(() => check(res), 200);
+        });
+      }
+    }, { rootMargin: '300px' });
+
+    document.querySelectorAll('.gumroad-product-embed').forEach(el => io1.observe(el));
+    document.querySelectorAll('.gumroad-button').forEach(el => io2.observe(el));
+  });
+</script>
+
+
+</head>
+
+<body class="no-break-layout">
+  
+<script>
+  window._sunrise = 6;
+  window._sunset =  18;
+  ((e,s)=>{var d="light-mode",a="dark-mode",o=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(o=o<=e._sunrise||o>=e._sunset?a:d)==a?d:a,s.body.classList.add(o),s.body.classList.remove(e))})(window,document);
+
+</script>
+
+
+
+<hy-push-state
+  id="_pushState"
+  replace-selector="#_main"
+  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
+  script-selector="script"
+  duration="500"
+  hashchange
+>
+  
+  
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <div class="nav-btn-bar">
+      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+      <button
+        id="_nav-search-toggle"
+        class="nav-btn no-hover"
+        type="button"
+        aria-expanded="false"
+        aria-controls="_nav-search-panel"
+        data-search-toggle
+      >
+        <span class="sr-only">Search</span>
+        <span class="icon-search"></span>
+      </button>
+      <div class="nav-span"></div>
+    </div>
+  </div>
+</div>
+<div
+  id="_nav-search-panel"
+  class="nav-search-panel"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="_nav-search-toggle"
+  hidden
+  data-search-panel
+>
+  <div class="nav-search-surface">
+    <div class="search-pane" data-search-container>
+      <div class="nav-search-header">
+        <label class="sr-only" for="_nav-search-input">
+          Search
+        </label>
+        <input
+          id="_nav-search-input"
+          class="search-pane__input nav-search-input"
+          type="search"
+          placeholder="Type something…"
+          autocomplete="off"
+          data-search-input
+        />
+        <button
+          type="button"
+          class="nav-btn nav-search-close"
+          data-search-close
+        >
+          <span class="sr-only">Close</span>
+          <span class="icon-cross"></span>
+        </button>
+      </div>
+      <p class="nav-search-status" data-search-status hidden></p>
+      <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
+      <p class="search-result--empty nav-search-empty" data-search-empty hidden>
+        No results found for
+        <span data-search-query></span>.
+      </p>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+  <main
+  id="_main"
+  class="content layout-blog"
+  role="main"
+>
+  <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+    <li><a href="/">home</a></li>
+    
+      <li>
+        
+          <span>/</span>
+          
+          
+          <a href="/blog/">blog</a>
+        
+      </li>
+    
+      <li>
+        
+          <span>/</span>
+          <span>program-analysis-series-basic-blocks</span>
+        
+      </li>
+    
+  
+</ul></nav>
+  
+
+
+
+
+
+
+
+
+
+
+<article id="post-blog-visual-program-analysis-01-basic-blocks" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        Understanding Basic Blocks
+      
+    </h1>
+
+    
+
+
+
+  
+    <p class="note-sm" >
+      Basic blocks are the foundation of control flow. This post shows what they are, why they matter, and how to see them clearly in code before we build full control flow graphs in the next post.
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <style>
+  .block-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin: 1.5rem 0;
+    padding: 0.85rem 1rem;
+    background: rgba(79, 114, 205, 0.08);
+    border-radius: 0.9rem;
+  }
+  .block-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1c252c;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  }
+  .block-swatch {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    display: inline-block;
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+  }
+  .block-b1 { background-color: #cfe2ff; }
+  .block-b2 { background-color: #d1f2eb; }
+  .block-b3 { background-color: #ffe6cc; }
+  .block-b4 { background-color: #f6e4ff; }
+  .block-b5 { background-color: #ffeef2; }
+  .block-b6 { background-color: #dff4ff; }
+  .block-b7 { background-color: #e5f6d8; }
+  .block-b8 { background-color: #f9e7ff; }
+  .block-b9 { background-color: #f2f4f8; }
+  .block-b10 { background-color: #fff3cd; }
+
+  .basic-block-code {
+    margin: 1.75rem 0;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    background: #f8fafc;
+    color: #1f2933;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  }
+  .basic-block-code pre {
+    margin: 0;
+    padding: 1.5rem;
+    font-family: ui-monospace, "SFMono-Regular", SFMono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    position: relative;
+  }
+  .basic-block-code code {
+    display: block;
+  }
+  .basic-block-code .code-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    padding: 0.05rem 0.55rem;
+    margin: 0;
+    border-left: 0.25rem solid transparent;
+    border-radius: 0.45rem;
+    transition: outline 120ms ease-in-out, background 120ms ease-in-out, border-color 120ms ease-in-out;
+  }
+  .basic-block-code .code-line.highlighted {
+    outline: 2px solid #3b82f6;
+    background: rgba(59, 130, 246, 0.08);
+  }
+  .basic-block-code .line-no {
+    min-width: 2.2rem;
+    text-align: right;
+    color: #64748b;
+    font-size: 0.83rem;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+  }
+  .basic-block-code .code-text {
+    flex: 1;
+    white-space: pre;
+  }
+  .basic-block-code .code-line[data-block="b1"]  { background: rgba(207, 226, 255, 0.6); border-color: #6ea8fe; }
+  .basic-block-code .code-line[data-block="b2"]  { background: rgba(209, 242, 235, 0.6); border-color: #4fceac; }
+  .basic-block-code .code-line[data-block="b3"]  { background: rgba(255, 230, 204, 0.6); border-color: #ffb56b; }
+  .basic-block-code .code-line[data-block="b4"]  { background: rgba(246, 228, 255, 0.6); border-color: #d0a4ff; }
+  .basic-block-code .code-line[data-block="b5"]  { background: rgba(255, 238, 242, 0.6); border-color: #ff9aa2; }
+  .basic-block-code .code-line[data-block="b6"]  { background: rgba(223, 244, 255, 0.6); border-color: #7dd3fc; }
+  .basic-block-code .code-line[data-block="b7"]  { background: rgba(229, 246, 216, 0.6); border-color: #9bd66b; }
+  .basic-block-code .code-line[data-block="b8"]  { background: rgba(249, 231, 255, 0.6); border-color: #d3a6ff; }
+  .basic-block-code .code-line[data-block="b9"]  { background: rgba(242, 244, 248, 0.6); border-color: #94a8c7; }
+  .basic-block-code .code-line[data-block="b10"] { background: rgba(255, 243, 205, 0.6); border-color: #ffd166; }
+
+  .basic-block-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 0.85rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+  .basic-block-table th,
+  .basic-block-table td {
+    padding: 0.95rem 1.1rem;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+    vertical-align: top;
+  }
+  .basic-block-table tbody tr:last-child td { border-bottom: none; }
+  .basic-block-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 700;
+  }
+  .basic-block-label .block-swatch { box-shadow: none; }
+  .basic-block-table-desc { color: #334155; }
+  .block-notes {
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.1rem;
+    background: rgba(148, 163, 184, 0.12);
+    border-radius: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+  }
+  .block-notes ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .block-legend {
+      background: rgba(122, 136, 173, 0.24);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+    .block-chip {
+      background: rgba(15, 23, 42, 0.55);
+      color: #e2e8f0;
+      box-shadow: 0 8px 24px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-code {
+      background: rgba(15, 23, 42, 0.72);
+      color: #e2e8f0;
+      box-shadow: 0 18px 38px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-code .line-no { color: #94a3b8; }
+    .basic-block-table {
+      box-shadow: 0 20px 42px rgba(5, 10, 20, 0.45);
+    }
+    .basic-block-table th,
+    .basic-block-table td {
+      background: rgba(15, 23, 42, 0.75);
+      color: #e2e8f0;
+      border-bottom: 1px solid rgba(94, 113, 135, 0.35);
+    }
+    .basic-block-table-desc { color: #cbd5f5; }
+    .block-notes {
+      background: rgba(122, 136, 173, 0.22);
+      border-color: rgba(148, 163, 184, 0.32);
+      color: #e2e8f0;
+    }
+  }
+</style>
+
+<h2 id="understanding-basic-blocks">Understanding Basic Blocks</h2>
+
+<p>Reading raw code is slow and brittle. Basic blocks give us chunks the compiler and our brains can reason about. If source code is a novel, basic blocks are the paragraphs.</p>
+
+<h3 id="at-a-glance">At a glance</h3>
+<ul>
+  <li>Definition: a contiguous sequence of statements with one entry and one exit.</li>
+  <li>Property: once you enter a block, you run straight through to its exit.</li>
+  <li>Why it matters: blocks are the building bricks of control flow graphs.</li>
+</ul>
+
+<p>Modern software is hard to analyze directly. Programs span multiple languages, millions of lines, external dependencies, different platforms, and often only binaries with no symbols. Humans struggle. Machines do too, especially without semantic hints. Basic blocks provide a stable unit that both can work with.</p>
+
+<blockquote>
+  <p>Note: A block can be a single statement. In that case, its entry and exit coincide.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="what-is-a-basic-block">What Is a Basic Block?</h2>
+
+<p>A basic block is a sequence of consecutive statements with:</p>
+<ul>
+  <li>A single entry point</li>
+  <li>A single exit point</li>
+</ul>
+
+<p>Once control enters a basic block:</p>
+<ul>
+  <li>Execution proceeds straight through to its exit.</li>
+  <li>There is no branching, no halting, and no internal jumps.</li>
+  <li>The only way out is through the exit.</li>
+</ul>
+
+<p>Basic blocks are valid for both source and binary analysis. They are not directly comparable across levels because compilation and optimization can rearrange logic, but they remain a common currency for analysis.</p>
+
+<hr />
+
+<h2 id="example-a-compact-function">Example: A Compact Function</h2>
+
+<p>The example below uses labeled regions B1 through B10. Each highlighted region maps to a basic block.</p>
+
+<div class="basic-block-code" role="figure" aria-label="Code listing with basic-block highlights">
+  <pre><code><span class="code-line" data-block="b1"><span class="line-no">1</span><span class="code-text">float update_session_score(Session *session, const Event *event) {</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">2</span><span class="code-text">    float weighted = 0.0f;</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">3</span><span class="code-text">    int inputs = 0;</span></span>
+<span class="code-line" data-block="b1"><span class="line-no">4</span><span class="code-text">    if (event-&gt;type == EVENT_LOGIN) {</span></span>
+<span class="code-line" data-block="b2"><span class="line-no">5</span><span class="code-text">        weighted += session-&gt;risk * 0.4f;</span></span>
+<span class="code-line" data-block="b2"><span class="line-no">6</span><span class="code-text">        inputs += 1;</span></span>
+<span class="code-line" data-block="b3"><span class="line-no">7</span><span class="code-text">    } else if (event-&gt;type == EVENT_TRANSFER) {</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">8</span><span class="code-text">        weighted += event-&gt;amount * session-&gt;velocity;</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">9</span><span class="code-text">        inputs += 1;</span></span>
+<span class="code-line" data-block="b4"><span class="line-no">10</span><span class="code-text">        if (event-&gt;amount &gt; session-&gt;limits.transfer_ceiling) {</span></span>
+<span class="code-line" data-block="b5"><span class="line-no">11</span><span class="code-text">            weighted += session-&gt;limits.penalty;</span></span>
+<span class="code-line" data-block="b5"><span class="line-no">12</span><span class="code-text">        }</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">13</span><span class="code-text">    } else {</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">14</span><span class="code-text">        weighted += event-&gt;baseline * 0.2f;</span></span>
+<span class="code-line" data-block="b6"><span class="line-no">15</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">16</span><span class="code-text">    if (session-&gt;flags &amp; SESSION_FLAG_RECENT_BREACH) {</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">17</span><span class="code-text">        weighted += 10.0f;</span></span>
+<span class="code-line" data-block="b7"><span class="line-no">18</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">19</span><span class="code-text">    if (inputs &gt; 0) {</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">20</span><span class="code-text">        weighted /= inputs;</span></span>
+<span class="code-line" data-block="b8"><span class="line-no">21</span><span class="code-text">    }</span></span>
+<span class="code-line" data-block="b9"><span class="line-no">22</span><span class="code-text">    session-&gt;score = clampf(weighted, 0.0f, 100.0f);</span></span>
+<span class="code-line" data-block="b10"><span class="line-no">23</span><span class="code-text">    return session-&gt;score;</span></span>
+<span class="code-line" data-block="b10"><span class="line-no">24</span><span class="code-text">}</span></span></code></pre>
+</div>
+
+<p>This scoring routine is the through-line for the rest of the series. We will reuse blocks <strong>B1</strong> through <strong>B10</strong> when we build control flow graphs, compute dominator trees, and inspect def-use chains. Treat these highlights as the canonical IDs for the example.</p>
+
+<div class="block-notes">
+  <ul>
+    <li><strong>B1 (L1–L4)</strong> initializes state and branches on the event type.</li>
+    <li><strong>B2 (L5–L6)</strong> handles the login path body.</li>
+    <li><strong>B3–B5 (L7–L12)</strong> cover the transfer path and its nested ceiling check.</li>
+    <li><strong>B6 (L13–L15)</strong> is the fallback for all other event types.</li>
+    <li><strong>B7 (L16–L18)</strong> reacts to the recent breach flag.</li>
+    <li><strong>B8 (L19–L21)</strong> normalizes the accumulated score by the number of contributing inputs.</li>
+    <li><strong>B9–B10 (L22–L24)</strong> clamp, store, and return the score.</li>
+  </ul>
+</div>
+
+<hr />
+
+<h2 id="identifying-the-basic-blocks">Identifying the Basic Blocks</h2>
+
+<p>We can decompose this function into ten basic blocks:</p>
+
+<p class="block-notes" role="note">Match the colors and labels below with the highlights in the code snippet. Each badge is clickable in the interactive diagram, so keep this legend handy as a quick lookup.</p>
+
+<div class="block-legend" role="note" aria-label="Color legend linking blocks B1 to B10">
+  <span class="block-chip"><span class="block-swatch block-b1" aria-hidden="true"></span>Block B1</span>
+  <span class="block-chip"><span class="block-swatch block-b2" aria-hidden="true"></span>Block B2</span>
+  <span class="block-chip"><span class="block-swatch block-b3" aria-hidden="true"></span>Block B3</span>
+  <span class="block-chip"><span class="block-swatch block-b4" aria-hidden="true"></span>Block B4</span>
+  <span class="block-chip"><span class="block-swatch block-b5" aria-hidden="true"></span>Block B5</span>
+  <span class="block-chip"><span class="block-swatch block-b6" aria-hidden="true"></span>Block B6</span>
+  <span class="block-chip"><span class="block-swatch block-b7" aria-hidden="true"></span>Block B7</span>
+  <span class="block-chip"><span class="block-swatch block-b8" aria-hidden="true"></span>Block B8</span>
+  <span class="block-chip"><span class="block-swatch block-b9" aria-hidden="true"></span>Block B9</span>
+  <span class="block-chip"><span class="block-swatch block-b10" aria-hidden="true"></span>Block B10</span>
+</div>
+
+<table class="basic-block-table">
+  <thead>
+    <tr>
+      <th scope="col">Block</th>
+      <th scope="col">Statements</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b1" aria-hidden="true"></span>B1</span></td>
+      <td><code>L1 to L4</code></td>
+      <td class="basic-block-table-desc">Entry, initialize, first predicate</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b2" aria-hidden="true"></span>B2</span></td>
+      <td><code>L5 to L6</code></td>
+      <td class="basic-block-table-desc">Login branch body</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b3" aria-hidden="true"></span>B3</span></td>
+      <td><code>L7</code></td>
+      <td class="basic-block-table-desc">Transfer predicate</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b4" aria-hidden="true"></span>B4</span></td>
+      <td><code>L8 to L10</code></td>
+      <td class="basic-block-table-desc">Transfer body and ceiling test</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b5" aria-hidden="true"></span>B5</span></td>
+      <td><code>L11 to L12</code></td>
+      <td class="basic-block-table-desc">Penalty for oversize transfer</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b6" aria-hidden="true"></span>B6</span></td>
+      <td><code>L13 to L15</code></td>
+      <td class="basic-block-table-desc">Fallback for other events</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b7" aria-hidden="true"></span>B7</span></td>
+      <td><code>L16 to L18</code></td>
+      <td class="basic-block-table-desc">Recent breach flag handling</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b8" aria-hidden="true"></span>B8</span></td>
+      <td><code>L19 to L21</code></td>
+      <td class="basic-block-table-desc">Normalize by inputs</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b9" aria-hidden="true"></span>B9</span></td>
+      <td><code>L22</code></td>
+      <td class="basic-block-table-desc">Clamp and store</td>
+    </tr>
+    <tr>
+      <td><span class="basic-block-label"><span class="block-swatch block-b10" aria-hidden="true"></span>B10</span></td>
+      <td><code>L23 to L24</code></td>
+      <td class="basic-block-table-desc">Unified exit and return</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="interactive-diagram">Interactive Diagram</h2>
+
+<p>The interactive view below gives you the same ten blocks laid out like a control flow graph. Color, numbering, and labels mirror the code and table, so you can bounce between all three without guessing which region is which.<br />
+<strong>Tip:</strong> click any node to highlight the corresponding lines in the source listing—perfect for double-checking that every block really does have a single entry and single exit. Drag to rearrange, or hover to read the disassembly-style labels.</p>
+
+<div id="basic-block-graph" style="height: 420px; border: 1px solid #ccd5e0; border-radius: 10px; background: #ffffff;"></div>
+<noscript>
+  <p>This diagram is interactive. Enable JavaScript to view it. The blocks are: B1 to {B2 or B3 to B4 to B5 or B6} to B7 to B8 to B9 to B10.</p>
+</noscript>
+
+<script>
+(function () {
+  var LIB_ID = 'vis-network-standalone';
+
+  function ensureVis(cb) {
+    if (window.vis && window.vis.Network && window.vis.DataSet) return cb();
+    var s = document.getElementById(LIB_ID);
+    if (s) return s.addEventListener('load', cb, { once: true });
+    s = document.createElement('script');
+    s.id = LIB_ID;
+    s.defer = true;
+    s.src = 'https://cdn.jsdelivr.net/npm/vis-network@9.1.7/standalone/umd/vis-network.min.js';
+    s.addEventListener('load', cb, { once: true });
+    document.head.appendChild(s);
+  }
+
+  function highlightBlock(id) {
+    document.querySelectorAll('.basic-block-code .code-line').forEach(function (ln) {
+      ln.classList.remove('highlighted');
+    });
+    var target = document.querySelectorAll('.basic-block-code .code-line[data-block="b' + id + '"]');
+    target.forEach(function (ln) { ln.classList.add('highlighted'); });
+    if (target.length) target[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function render() {
+    var el = document.getElementById('basic-block-graph');
+    if (!el || (el.dataset.graphInitialized === 'true')) return;
+
+    var nodes = new vis.DataSet([
+      {
+        id: 1,
+        label: 'B1\nL1 to L4',
+        shape: 'box',
+        level: 0,
+        color: { background: '#cfe2ff', border: '#7ba7ff', highlight: { background: '#bfd6ff', border: '#558dff' } }
+      },
+      {
+        id: 2,
+        label: 'B2\nL5 to L6',
+        shape: 'box',
+        level: 1,
+        color: { background: '#d1f2eb', border: '#6fd0b0', highlight: { background: '#c2ece1', border: '#45b28f' } }
+      },
+      {
+        id: 3,
+        label: 'B3\nL7',
+        shape: 'box',
+        level: 1,
+        color: { background: '#ffe6cc', border: '#ffb56b', highlight: { background: '#ffd9aa', border: '#f28c33' } }
+      },
+      {
+        id: 4,
+        label: 'B4\nL8 to L10',
+        shape: 'box',
+        level: 2,
+        color: { background: '#f6e4ff', border: '#d0a4ff', highlight: { background: '#ead0ff', border: '#b57cff' } }
+      },
+      {
+        id: 5,
+        label: 'B5\nL11 to L12',
+        shape: 'box',
+        level: 3,
+        color: { background: '#ffeef2', border: '#ff9aa2', highlight: { background: '#ffd6dd', border: '#ff7b85' } }
+      },
+      {
+        id: 6,
+        label: 'B6\nL13 to L15',
+        shape: 'box',
+        level: 2,
+        color: { background: '#dff4ff', border: '#7dd3fc', highlight: { background: '#c5ecff', border: '#3abff8' } }
+      },
+      {
+        id: 7,
+        label: 'B7\nL16 to L18',
+        shape: 'box',
+        level: 4,
+        color: { background: '#e5f6d8', border: '#9bd66b', highlight: { background: '#c9edac', border: '#78c242' } }
+      },
+      {
+        id: 8,
+        label: 'B8\nL19 to L21',
+        shape: 'box',
+        level: 5,
+        color: { background: '#f9e7ff', border: '#d3a6ff', highlight: { background: '#edceff', border: '#ba7cff' } }
+      },
+      {
+        id: 9,
+        label: 'B9\nL22',
+        shape: 'box',
+        level: 6,
+        color: { background: '#f2f4f8', border: '#94a8c7', highlight: { background: '#dbe1eb', border: '#6d85ab' } }
+      },
+      {
+        id: 10,
+        label: 'B10\nL23 to L24',
+        shape: 'box',
+        level: 7,
+        color: { background: '#fff3cd', border: '#ffd166', highlight: { background: '#ffe8a3', border: '#ffc043' } }
+      }
+    ]);
+
+    var edges = new vis.DataSet([
+      { from: 1, to: 2 },
+      { from: 1, to: 3 },
+      { from: 3, to: 4 },
+      { from: 3, to: 6 },
+      { from: 4, to: 5 },
+      { from: 4, to: 7 },
+      { from: 2, to: 7 },
+      { from: 5, to: 7 },
+      { from: 6, to: 7 },
+      { from: 7, to: 8 },
+      { from: 8, to: 9 },
+      { from: 9, to: 10 }
+    ]);
+
+    var options = {
+      physics: { enabled: false },
+      edges: {
+        arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+        smooth: { type: 'cubicBezier', roundness: 0.2 },
+        color: { color: '#58677d' },
+        width: 1.6
+      },
+      nodes: {
+        shape: 'box',
+        margin: 12,
+        font: { size: 13, color: '#1f2937', face: 'ui-monospace, Menlo, Consolas, monospace', align: 'left' },
+        borderWidth: 1,
+        color: {
+          background: '#f8fafc',
+          border: '#94a3b8',
+          highlight: { background: '#e2e8f0', border: '#475569' }
+        }
+      },
+      layout: {
+        hierarchical: { enabled: true, direction: 'UD', levelSeparation: 200, nodeSpacing: 220 }
+      },
+      interaction: { hover: true, dragNodes: true, zoomView: true, dragView: true, tooltipDelay: 80 }
+    };
+
+    var network = new vis.Network(el, { nodes: nodes, edges: edges }, options);
+    el.dataset.graphInitialized = 'true';
+
+    network.on('selectNode', function (e) {
+      if (e.nodes && e.nodes.length) highlightBlock(e.nodes[0]);
+    });
+  }
+
+  function init() { ensureVis(render); }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+
+  var ps = document.getElementById('_pushState');
+  if (ps) ps.addEventListener('hy-push-state-after', function () {
+    var el = document.getElementById('basic-block-graph');
+    if (el) el.dataset.graphInitialized = 'false';
+    init();
+  });
+})();
+</script>
+
+<hr />
+
+<h2 id="why-basic-blocks-matter">Why Basic Blocks Matter</h2>
+
+<ul>
+  <li>They simplify analysis for both source and binary code.</li>
+  <li>They let tools and compilers detect unreachable code, loops, and optimizations.</li>
+  <li>They form the nodes of control flow graphs, which we will build in the next post.</li>
+</ul>
+
+<p>Compilers think in blocks. Today, we try thinking like a compiler.</p>
+
+<hr />
+
+<h2 id="wrap-up--next-steps">Wrap-Up &amp; Next Steps</h2>
+
+<ul>
+  <li>You now have a color-coded, line-referenced example that we’ll reuse when we discuss CFGs, dominators, and def-use chains. Bookmark it.</li>
+  <li>Practice: pick a short function from your own code, highlight the entry/exit pairs, and sketch the basic blocks. If you can recreate the table from this post, you’re ready for the CFG episode.</li>
+  <li>Curious minds: try adding a helper block (e.g., fraud flag escalation) to this routine and watch how the graph and table evolve.</li>
+</ul>
+
+<p>Next up we’ll connect these blocks into a full control flow graph, add semantic edge labels, and explore how analysis tools walk the structure.</p>
+
+  
+</article>
+
+
+
+  <hr class="dingbat related mb6" />
+
+
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+<img
+  
+    src="/assets/img/headshot.png"
+    srcset="/assets/img/headshot.png 1x,/assets/img/headshot.png 2x"
+    
+  
+  alt="Jonathan Fuller"
+  class="avatar"
+  
+  width="120"
+  height="120"
+  loading="lazy"
+/>
+
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+  <p>Jonathan Fuller serves as the Chief Information Security Officer and an Assistant Professor at the United States Military Academy at West Point, where he leads enterprise cybersecurity strategy and governance in a mission-critical environment.</p>
+
+<p>He holds a Ph.D. in Electrical and Computer Engineering with a focus on cybersecurity and brings nearly two decades of Army experience in secure communications, cyber operations, and organizational leadership. His professional and academic work inform <button type="button" class="definition-trigger" data-definition-target="definition-empiricaldefense">Empirical Defense</button>, a platform dedicated to advancing cybersecurity through research, education, and evidence-based practice.</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/fullsec" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+  
+
+  
+  
+
+  
+    
+
+  
+
+
+  
+<footer class="content" role="contentinfo">
+  <hr/>
+  
+    <p><small class="copyright">© 2025. All rights reserved.
+</small></p>
+  
+  
+    <nav class="legal"><small>
+    
+      
+      <a class="heading flip-title" href="/privacy/">Privacy Policy</a>
+      |
+    
+      
+      <a class="heading flip-title" href="/cookies/">Cookie Policy</a>
+      
+    
+    </small></nav>
+  
+    <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">9.2.1</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+  <hy-drawer
+  id="_drawer"
+  class=""
+  side="left"
+  threshold="10"
+  noscroll
+  
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+
+
+
+
+<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar/ed.jpg)"></div>
+
+    <div class="sidebar-sticky">
+  <div class="sidebar-about">
+    
+      <a class="no-hover" href="/" tabindex="-1">
+        <img src="/assets/img/logo.jpg" class="avatar" alt="Jonathan Fuller" width="120" height="120" loading="lazy" />
+      </a>
+    
+    <a class="sidebar-title" href="/"><h2 class="h1">Jonathan Fuller</h2></a>
+    
+    
+      <p class="">
+        Bridging Research, Education, and Cyber Defense
+
+      </p>
+    
+  </div>
+
+  <nav class="sidebar-nav heading" role="navigation">
+    <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_drawer--opened"
+          href="/blog/"
+          class="sidebar-nav-item "
+          
+        >
+          Blog
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/publications/"
+          class="sidebar-nav-item "
+          
+        >
+          Publications
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/talks/"
+          class="sidebar-nav-item "
+          
+        >
+          Talks
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/teaching/"
+          class="sidebar-nav-item "
+          
+        >
+          Teaching
+        </a>
+      </li>
+    
+  
+</ul>
+
+  </nav>
+
+  
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/fullsec" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+</hy-push-state>
+
+
+  <!--[if gt IE 10]><!---->
+  <script nomodule>(()=>{var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())})();
+</script>
+  <script src="/assets/js/hydejack-9.2.1.js" type="module"></script>
+  <script src="/assets/js/LEGACY-hydejack-9.2.1.js" nomodule defer></script>
+  
+
+  
+
+<!--<![endif]-->
+  <!--
+Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+-->
+<script>
+  document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
+    function e(e){
+      (console.error?console.error:console.log).call(console,e)
+    }
+
+    function t(e){
+      return l.innerHTML='<a href="'+e.replace(/"/g,"&quot;")+'"></a>',l.childNodes[0].getAttribute("href")
+    }
+
+    function r(e,t){
+      var r=e.substr(t,2);return parseInt(r,16)
+    }
+
+    function n(e,n){
+      for(var o="",c=r(e,n),a=n+2;a<e.length;a+=2){
+        var l=r(e,a)^c;
+        o+=String.fromCharCode(l)
+      }
+      return t(o)
+    }
+
+    var o="/cdn-cgi/l/email-protection#",
+        c=".__cf_email__",
+        a="data-cfemail",
+        l=document.createElement("div");
+
+    !function(){
+      for(var t=document.getElementsByTagName("a"),r=0;r<t.length;r++)
+        try{
+          var c=t[r],a=c.href.indexOf(o);
+          a>-1&&(c.href="mailto:"+n(c.href,a+o.length))
+        }catch(t){
+          e(t)
+        }
+    }(),
+    function(){
+      for(var t=document.querySelectorAll(c),r=0;r<t.length;r++)
+        try{
+          var o=t[r],l=n(o.getAttribute(a),0),i=document.createTextNode(l);
+          o.parentNode.replaceChild(i,o)
+        }catch(t){
+          e(t)
+        }
+    }()
+  });
+</script>
+
+
+
+
+
+
+
+
+<div id="definition-empiricaldefense"
+     class="definition-modal"
+     hidden
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="definition-title-empiricaldefense">
+  <div class="definition-modal__panel">
+    <button type="button"
+            class="definition-modal__close"
+            aria-label="Close Empirical Defense definition">×</button>
+    <h2 id="definition-title-empiricaldefense">Empirical Defense</h2>
+    <p><strong>Empirical Defense</strong> represents the philosophy that cybersecurity should be practiced as an evolving discipline, guided by evidence, grounded in research, and strengthened through shared knowledge.</p>
+
+<p>The platform explores how <strong>analysis</strong>, <strong>experimentation</strong>, and <strong>education</strong> intersect to advance the understanding and practice of cyber defense. Through this lens, Empirical Defense promotes data-informed approaches to problem-solving, resilience, and innovation in the face of evolving digital threats. It serves as a space for advancing discussion, sharing insight, and connecting rigorous research with real-world application.</p>
+
+<ul>
+  <li><strong>Research:</strong> Apply analytical rigor to uncover patterns, validate ideas, and advance the science of cyber defense.</li>
+  <li><strong>Education:</strong> Translate knowledge into practice to elevate understanding and capability across the cybersecurity community.</li>
+  <li><strong>Practice:</strong> Apply insights, experimentation, and reflection to refine methods and strengthen defensive capability.</li>
+</ul>
+
+<p><strong>Mission:</strong> Empirical Defense advances a future where cybersecurity is driven by analysis, guided by evidence, and sustained through continual learning.</p>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  function closeModal(modal) {
+    modal.setAttribute('hidden', '');
+  }
+
+  document.addEventListener('click', function(event) {
+    var trigger = event.target.closest('.definition-trigger');
+    if (trigger) {
+      var targetId = trigger.getAttribute('data-definition-target');
+      if (!targetId) return;
+      var modal = document.getElementById(targetId);
+      if (modal) {
+        modal.removeAttribute('hidden');
+        var closeBtn = modal.querySelector('.definition-modal__close');
+        if (closeBtn) {
+          closeBtn.focus();
+        }
+      }
+      return;
+    }
+
+    var closeBtn = event.target.closest('.definition-modal__close');
+    if (closeBtn) {
+      closeModal(closeBtn.closest('.definition-modal'));
+      return;
+    }
+
+    if (event.target.classList.contains('definition-modal')) {
+      closeModal(event.target);
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      document.querySelectorAll('.definition-modal').forEach(function(modal) {
+        if (!modal.hasAttribute('hidden')) {
+          closeModal(modal);
+        }
+      });
+    }
+  });
+})();
+</script>
+
+
+
+
+<script>
+(function () {
+  'use strict';
+
+  var SEARCH_DATA_URL = '/assets/search-data.json';
+  var searchState = {
+    docs: null,
+    promise: null,
+    error: null,
+  };
+  var activeBindings = null;
+
+  function ensureSearchData() {
+    if (searchState.docs) {
+      return Promise.resolve(searchState.docs);
+    }
+    if (searchState.promise) {
+      return searchState.promise;
+    }
+    searchState.promise = fetch(SEARCH_DATA_URL, { credentials: 'same-origin' })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Search data request failed with status ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function (raw) {
+        if (!Array.isArray(raw)) {
+          throw new Error('Search data is not an array.');
+        }
+        searchState.docs = raw.map(function (doc) {
+          var title = (doc.title || '').toString();
+          var excerpt = (doc.excerpt || '').toString();
+          var content = (doc.content || '').toString();
+          var enriched = {
+            title: title,
+            excerpt: excerpt,
+            content: content,
+            url: doc.url,
+            collection: doc.collection,
+            date: doc.date,
+            tags: doc.tags,
+          };
+          enriched.titleLower = title.toLowerCase();
+          enriched.excerptLower = excerpt.toLowerCase();
+          enriched._text = (title + ' ' + excerpt + ' ' + content).toLowerCase();
+          return enriched;
+        });
+        searchState.error = null;
+        return searchState.docs;
+      })
+      .catch(function (error) {
+        searchState.error = error;
+        searchState.promise = null;
+        throw error;
+      });
+
+    return searchState.promise;
+  }
+
+  function performSearch(query) {
+    if (!searchState.docs) {
+      return [];
+    }
+    var terms = query
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(Boolean);
+
+    if (!terms.length) {
+      return [];
+    }
+
+    var results = [];
+    for (var i = 0; i < searchState.docs.length; i++) {
+      var doc = searchState.docs[i];
+      var score = 0;
+      var missingTerm = false;
+      for (var j = 0; j < terms.length; j++) {
+        var term = terms[j];
+        if (!doc._text.includes(term)) {
+          missingTerm = true;
+          break;
+        }
+
+        if (doc.titleLower.includes(term)) {
+          score += 6;
+        }
+        if (doc.excerptLower && doc.excerptLower.includes(term)) {
+          score += 3;
+        }
+        score += 1;
+      }
+
+      if (!missingTerm) {
+        results.push({
+          doc: doc,
+          score: score,
+          firstMatch: doc._text.indexOf(terms[0]),
+        });
+      }
+    }
+
+    results.sort(function (a, b) {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      return a.firstMatch - b.firstMatch;
+    });
+
+    var sliced = results.slice(0, 20);
+    var mapped = [];
+    for (var k = 0; k < sliced.length; k++) {
+      mapped.push(sliced[k].doc);
+    }
+    return mapped;
+  }
+
+  function formatCollectionLabel(label) {
+    if (!label || label === 'pages') {
+      return '';
+    }
+    return label
+      .toString()
+      .replace(/[_-]+/g, ' ')
+      .replace(/\b\w/g, function (letter) {
+        return letter.toUpperCase();
+      });
+  }
+
+  function detachBindings() {
+    if (activeBindings && typeof activeBindings.destroy === 'function') {
+      activeBindings.destroy();
+    }
+    activeBindings = null;
+  }
+
+  function bindSearchUI() {
+    detachBindings();
+
+    var toggle = document.querySelector('[data-search-toggle]');
+    var panel = document.querySelector('[data-search-panel]');
+    if (!toggle || !panel) {
+      return;
+    }
+
+    var input = panel.querySelector('[data-search-input]');
+    var closeButton = panel.querySelector('[data-search-close]');
+    var resultsList = panel.querySelector('[data-search-results]');
+    var statusEl = panel.querySelector('[data-search-status]');
+    var emptyEl = panel.querySelector('[data-search-empty]');
+    var queryLabel = emptyEl ? emptyEl.querySelector('[data-search-query]') : null;
+    if (!input || !resultsList) {
+      return;
+    }
+
+    var isOpen = false;
+    var resizeListenerAttached = false;
+
+    function positionPanel() {
+      if (!isOpen) {
+        return;
+      }
+      var surface = panel.querySelector('.nav-search-surface') || panel;
+      if (!surface) {
+        return;
+      }
+
+      var viewportWidth = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      var viewportHeight = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0
+      );
+      var padding = 16;
+      var surfaceWidth = surface.offsetWidth;
+      var surfaceHeight = surface.offsetHeight;
+      var toggleRect = toggle.getBoundingClientRect();
+
+      var left = toggleRect.right - surfaceWidth;
+      left = Math.max(padding, Math.min(left, viewportWidth - surfaceWidth - padding));
+
+      var top = toggleRect.bottom + 12;
+      top = Math.max(padding, Math.min(top, viewportHeight - surfaceHeight - padding));
+
+      panel.style.left = left + 'px';
+      panel.style.right = 'auto';
+      panel.style.top = top + 'px';
+    }
+
+    function attachResizeListener() {
+      if (resizeListenerAttached) {
+        return;
+      }
+      window.addEventListener('resize', positionPanel);
+      resizeListenerAttached = true;
+    }
+
+    function detachResizeListener() {
+      if (!resizeListenerAttached) {
+        return;
+      }
+      window.removeEventListener('resize', positionPanel);
+      resizeListenerAttached = false;
+    }
+
+    function setStatus(message, show) {
+      if (!statusEl) {
+        return;
+      }
+      var text = message || '';
+      statusEl.textContent = text;
+      statusEl.hidden = !text || show === false;
+      positionPanel();
+    }
+
+    function clearStatus() {
+      setStatus('', false);
+    }
+
+    function showEmpty(query) {
+      if (!emptyEl) {
+        return;
+      }
+      if (queryLabel) {
+        queryLabel.textContent = query ? '“' + query + '”' : '';
+      }
+      emptyEl.hidden = !query;
+      positionPanel();
+    }
+
+    function hideEmpty() {
+      if (emptyEl) {
+        emptyEl.hidden = true;
+      }
+      if (queryLabel) {
+        queryLabel.textContent = '';
+      }
+    }
+
+    function clearResults() {
+      resultsList.innerHTML = '';
+      hideEmpty();
+      clearStatus();
+      positionPanel();
+    }
+
+    function renderResults(items, query) {
+      resultsList.innerHTML = '';
+      if (!items.length) {
+        showEmpty(query);
+        setStatus('No results for “' + query + '”.', true);
+        positionPanel();
+        return;
+      }
+
+      hideEmpty();
+      var fragment = document.createDocumentFragment();
+      for (var index = 0; index < items.length; index++) {
+        var doc = items[index];
+        var listItem = document.createElement('li');
+        listItem.className = 'search-result';
+        listItem.setAttribute('role', 'listitem');
+
+        var link = document.createElement('a');
+        link.className = 'search-result__link';
+        link.href = doc.url;
+        link.textContent = doc.title || doc.url || 'Untitled';
+        listItem.appendChild(link);
+
+        var metaParts = [];
+        var collectionLabel = formatCollectionLabel(doc.collection);
+        if (collectionLabel) {
+          metaParts.push(collectionLabel);
+        }
+        if (doc.date) {
+          var date = new Date(doc.date);
+          if (!isNaN(date.getTime())) {
+            metaParts.push(
+              date.toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })
+            );
+          }
+        }
+
+        if (metaParts.length) {
+          var meta = document.createElement('span');
+          meta.className = 'search-result__meta';
+          meta.textContent = metaParts.join(' • ');
+          listItem.appendChild(meta);
+        }
+
+        if (doc.excerpt) {
+          var excerpt = document.createElement('p');
+          excerpt.className = 'search-result__excerpt';
+          excerpt.textContent = doc.excerpt;
+          listItem.appendChild(excerpt);
+        }
+
+        fragment.appendChild(listItem);
+      }
+
+      resultsList.appendChild(fragment);
+      setStatus(
+        'Showing ' + items.length + ' result' + (items.length === 1 ? '' : 's') + '.',
+        true
+      );
+      positionPanel();
+    }
+
+    function handleQueryChange() {
+      var query = input.value.trim();
+      if (!query) {
+        clearResults();
+        setStatus('Start typing to search.', true);
+        return;
+      }
+
+      ensureSearchData()
+        .then(function () {
+          var matches = performSearch(query);
+          renderResults(matches, query);
+        })
+        .catch(function () {
+          setStatus('Search is temporarily unavailable. Please try again later.', true);
+        });
+    }
+
+    function handleEscape(event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closePanel({ focusToggle: true });
+      }
+    }
+
+    function handleDocumentClick(event) {
+      if (!isOpen) {
+        return;
+      }
+      if (
+        !panel.contains(event.target) &&
+        event.target !== toggle &&
+        !toggle.contains(event.target)
+      ) {
+        closePanel({ focusToggle: false });
+      }
+    }
+
+    function openPanel() {
+      if (isOpen) {
+        return;
+      }
+      isOpen = true;
+      panel.removeAttribute('hidden');
+      panel.style.left = '';
+      panel.style.right = '';
+      panel.style.top = '';
+      toggle.setAttribute('aria-expanded', 'true');
+
+      if (!input.value.trim()) {
+        setStatus('Start typing to search.', true);
+      }
+
+      if (!searchState.docs && !searchState.promise) {
+        setStatus('Loading search index…', true);
+      }
+
+      ensureSearchData()
+        .then(function () {
+          if (input.value.trim()) {
+            handleQueryChange();
+          } else {
+            setStatus('Start typing to search.', true);
+          }
+        })
+        .catch(function () {
+          setStatus('Search is temporarily unavailable. Please try again later.', true);
+        });
+
+      positionPanel();
+      attachResizeListener();
+      requestAnimationFrame(function () {
+        positionPanel();
+        input.focus({ preventScroll: true });
+      });
+
+      document.addEventListener('keydown', handleEscape, true);
+      document.addEventListener('mousedown', handleDocumentClick, true);
+    }
+
+    function closePanel(options) {
+      if (!isOpen) {
+        return;
+      }
+      var opts = options || {};
+      isOpen = false;
+      panel.setAttribute('hidden', '');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('keydown', handleEscape, true);
+      document.removeEventListener('mousedown', handleDocumentClick, true);
+      detachResizeListener();
+      panel.style.left = '';
+      panel.style.right = '';
+      panel.style.top = '';
+
+      if (opts.resetQuery) {
+        input.value = '';
+        clearResults();
+      }
+
+      if (opts.focusToggle !== false) {
+        toggle.focus();
+      }
+    }
+
+    function destroy() {
+      document.removeEventListener('keydown', handleEscape, true);
+      document.removeEventListener('mousedown', handleDocumentClick, true);
+      detachResizeListener();
+      toggle.removeEventListener('click', onToggle);
+      input.removeEventListener('input', handleQueryChange);
+      input.removeEventListener('keydown', handleInputEnter);
+      if (closeButton) {
+        closeButton.removeEventListener('click', onClose);
+      }
+      resultsList.removeEventListener('click', onResultClick);
+      closePanel({ focusToggle: false });
+    }
+
+    function onToggle(event) {
+      event.preventDefault();
+      if (isOpen) {
+        closePanel({ focusToggle: false });
+      } else {
+        openPanel();
+      }
+    }
+
+    function onClose(event) {
+      event.preventDefault();
+      closePanel({ focusToggle: true });
+    }
+
+    function handleInputEnter(event) {
+      if (event.key === 'Enter') {
+        var firstLink = resultsList.querySelector('a');
+        if (firstLink) {
+          event.preventDefault();
+          firstLink.click();
+        }
+      }
+    }
+
+    function onResultClick(event) {
+      var anchor = event.target.closest('a');
+      if (!anchor) {
+        return;
+      }
+      closePanel({ focusToggle: false });
+    }
+
+    toggle.addEventListener('click', onToggle);
+    input.addEventListener('input', handleQueryChange);
+    input.addEventListener('keydown', handleInputEnter);
+    if (closeButton) {
+      closeButton.addEventListener('click', onClose);
+    }
+    resultsList.addEventListener('click', onResultClick);
+
+    activeBindings = {
+      destroy: destroy,
+      close: closePanel,
+    };
+  }
+
+  var pushState = document.getElementById('_pushState');
+  if (pushState) {
+    pushState.addEventListener('hy-push-state-after', function () {
+      bindSearchUI();
+    });
+    pushState.addEventListener('hy-push-state-start', function () {
+      if (activeBindings && typeof activeBindings.close === 'function') {
+        activeBindings.close({ focusToggle: false, resetQuery: false });
+      }
+    });
+  }
+
+  bindSearchUI();
+})();
+</script>
+
+
+
+<div hidden>
+  
+  <h2 class="sr-only">Templates (for web app):</h2>
+
+  <template id="_animation-template">
+  <div class="animation-main fixed-top">
+    <nav id="breadcrumbs" class="screen-only"><ul>
+  
+  
+</ul></nav>
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+  <template id="_loading-template">
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+  <template id="_error-template">
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+  <template id="_permalink-template">
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="content-hash"></span>
+  </a>
+</template>
+
+  
+    <template id="_dark-mode-template">
+  <button id="_dark-mode" class="nav-btn no-hover" >
+    <span class="sr-only">Dark Mode</span>
+    <span class="icon-brightness-contrast"></span>
+  </button>
+</template>
+
+  
+</div>
+
+
+</body>
+</html>

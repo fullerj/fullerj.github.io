@@ -11,7 +11,7 @@ tags:
   - talks
   - malware
   - command-and-control
-  - dead-drop-resolvers
+  - dead drop resolvers
   - research
 related_posts:
 image:

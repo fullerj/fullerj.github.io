@@ -2,7 +2,7 @@
 layout: publication
 title: "Invited Tutorial: Counteracting Web Application Abuse in Malware"
 description: >
-  Hands-on SecDev 2023 tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.
+  Hands-on SecDev tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.
 categories:
   - publications
 permalink: /publications/secdev-tutorial-web-application-abuse/
@@ -11,7 +11,7 @@ tags:
   - incident-response
   - tutorials
 related_posts:
-conference: "2023 IEEE Secure Development Conference (SecDev): Invited Tutorial"
+conference: "IEEE Secure Development Conference (SecDev): Invited Tutorial"
 authors: "M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio"
 venue: "IEEE SecDev"
 pdf_url:

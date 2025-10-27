@@ -465,3 +465,83 @@ body.light-mode .certification-card {
   font-weight: 500;
   margin-left: 0.5rem;
 }
+
+
+
+
+.blog-gallery {
+  display: grid;
+  gap: 1.5rem;
+}
+.blog-gallery--cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.blog-gallery--cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.blog-gallery--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.blog-gallery--cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.blog-gallery--cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.blog-gallery--cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+@media (max-width: 1024px) {
+  .blog-gallery--cols-4,
+  .blog-gallery--cols-5,
+  .blog-gallery--cols-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .blog-gallery--cols-3,
+  .blog-gallery--cols-4,
+  .blog-gallery--cols-5,
+  .blog-gallery--cols-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 500px) {
+  .blog-gallery { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+}
+
+.blog-archive-heading--active { color: var(--accent-color, #3b82f6); }
+
+
+.blog-tag-filter__chip {
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: #ffffff;
+  color: #1f2937;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.blog-tag-filter__chip.is-active {
+  background: var(--accent-color, #3b82f6);
+  color: #ffffff;
+  border-color: var(--accent-color, #3b82f6);
+}
+.blog-tag-filter__chip.is-active::after {
+  content: '✓';
+  margin-left: 0.45rem;
+  font-size: 0.78em;
+}
+
+.blog-selected-summary {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.blog-filter-hint {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-tag-filter__chip {
+    border-color: rgba(148, 163, 184, 0.4);
+    background: rgba(15, 23, 42, 0.6);
+    color: #e2e8f0;
+  }
+  .blog-tag-filter__chip.is-active {
+    background: var(--accent-color, #38bdf8);
+    color: #0f172a;
+    border-color: var(--accent-color, #38bdf8);
+  }
+  .blog-selected-summary {
+    color: #cbd5f5;
+  }
+  .blog-filter-hint {
+    color: #94a3b8;
+  }
+}
+

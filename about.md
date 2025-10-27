@@ -34,8 +34,7 @@ redirect_from:
 <ul>
   {% for post in recent_posts limit:3 %}
   <li>
-    <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong><br/>
-    <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+    <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
   </li>
   {% endfor %}
 </ul>
@@ -56,8 +55,11 @@ redirect_from:
 <ul>
   {% for pub in recent_publications limit:3 %}
   <li>
-    <strong><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></strong><br/>
-    <small>{{ pub.date | date: "%B %-d, %Y" }}{% if pub.conference %} - {{ pub.conference }}{% endif %}</small>
+    <strong><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></strong>
+    {% if pub.conference %}
+    <br/>
+    <small>{{ pub.conference }}</small>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>
@@ -73,8 +75,17 @@ redirect_from:
 <ul>
   {% for talk in recent_talks limit:3 %}
   <li>
-    <strong>{{ talk.title }}</strong><br/>
-    <small>{{ talk.date | date: "%B %-d, %Y" }}{% if talk.event %} - {{ talk.event }}{% endif %}{% if talk.location %} - {{ talk.location }}{% endif %}</small>
+    <strong>{{ talk.title }}</strong>
+    {% capture talk_details %}
+      {% if talk.event %}{{ talk.event }}{% endif %}
+      {% if talk.event and talk.location %} - {% endif %}
+      {% if talk.location %}{{ talk.location }}{% endif %}
+    {% endcapture %}
+    {% assign talk_details = talk_details | strip %}
+    {% if talk_details != '' %}
+    <br/>
+    <small>{{ talk_details }}</small>
+    {% endif %}
   </li>
   {% endfor %}
 </ul>
@@ -103,7 +114,6 @@ redirect_from:
         {% if media.title and media.title != '' and media.url and media.url != '' %}
           {% assign media_url = media.url %}
           {% unless coverage_seen_urls contains media_url %}
-            {% assign coverage_date = media.date | default: pub.date %}
             {% assign source_label = media.source %}
             {% if source_label == nil or source_label == '' %}
               {% assign normalized_url = media.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
@@ -111,8 +121,11 @@ redirect_from:
             {% endif %}
             {% capture coverage_entry %}
 <li>
-  <strong><a href="{{ media.url }}">{{ media.title }}</a></strong><br/>
-  <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }}{% endif %}{% if source_label %}{% if coverage_date %} — {% endif %}{{ source_label }}{% endif %}</small>
+  <strong><a href="{{ media.url }}">{{ media.title }}</a></strong>
+  {% if source_label %}
+  <br/>
+  <small>{{ source_label }}</small>
+  {% endif %}
 </li>
             {% endcapture %}
             {% assign publication_coverage = publication_coverage | push: coverage_entry %}
@@ -144,7 +157,6 @@ redirect_from:
         {% if media.title and media.title != '' and media.url and media.url != '' %}
           {% assign media_url = media.url %}
           {% unless coverage_seen_urls contains media_url %}
-            {% assign coverage_date = media.date | default: talk.date %}
             {% assign source_label = media.source %}
             {% if source_label == nil or source_label == '' %}
               {% assign normalized_url = media.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
@@ -152,8 +164,11 @@ redirect_from:
             {% endif %}
             {% capture coverage_entry %}
 <li>
-  <strong><a href="{{ media.url }}">{{ media.title }}</a></strong><br/>
-  <small>{% if coverage_date %}{{ coverage_date | date: "%B %-d, %Y" }}{% endif %}{% if source_label %}{% if coverage_date %} — {% endif %}{{ source_label }}{% endif %}</small>
+  <strong><a href="{{ media.url }}">{{ media.title }}</a></strong>
+  {% if source_label %}
+  <br/>
+  <small>{{ source_label }}</small>
+  {% endif %}
 </li>
             {% endcapture %}
             {% assign talk_coverage = talk_coverage | push: coverage_entry %}
