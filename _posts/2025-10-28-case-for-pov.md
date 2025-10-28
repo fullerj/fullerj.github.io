@@ -53,10 +53,11 @@ What all of our teams value most is **clarity and collaboration**. We don’t ne
 ## Why Proof-of-Value Matters
 
 ![Handshake between two professionals](/assets/blogs/cyberleader/collab.jpg)
-
 A proof-of-value (PoV) or pilot program gives the organization a realistic way to evaluate a tool before committing to it. It’s not about proving the product works (that’s expected, but often confirmed along the way). It’s about proving the **partnership works**. Can the vendor guide our analysts, enterprise engineers, and networking teams through setup and early operations with clarity?  
 
-Peer recommendations are also a huge signal. A strong endorsement from another CISO or cybersecurity lead who’s already tested the product can be just as valuable as a formal pilot. Ideally, you use both, i.e., peer feedback to gauge reputation, and a proof-of-value to validate how the tool performs in your environment.  
+Peer recommendations are also a huge signal. A strong endorsement from another CISO or cybersecurity lead who’s already tested the product can be just as valuable as a formal pilot. Ideally, you use both...peer feedback to gauge reputation, and a proof-of-value to validate how the tool performs in your environment.  
+
+Transparency is another key part of any partnership. No system is perfect, and that’s okay. Security teams understand that. What matters most is honesty about known limitations or coverage gaps. Vendors often worry about protecting their reputation, but real trust comes from showing where the boundaries are. Without that transparency, teams can overestimate their protection and misunderstand their risk. We buy these tools to fill gaps, but we also need to know how much of the gap is actually being filled. Clarity on that allows us to make informed decisions, tune configurations, and strengthen controls around the product’s blind spots.  
 
 In the defense world, readiness is often evaluated using the **DOTMLPF-P** model: Doctrine, Organization, Training, Materiel, Leadership, Personnel, Facilities, and Policy. It is a structured way to ask a simple question: *Are we ready to use this capability effectively?*  
 
@@ -65,9 +66,9 @@ The same logic applies in cybersecurity. Technology alone doesn’t create readi
 A PoV, in many ways, is a DOTMLPF-P check:  
 
 - Does our current **doctrine** or set of playbooks need to change to use this effectively?  
-- Does it align with our **organizational** structure, i.e., security, IT, networking, and enterprise support?  
+- Does it align with our **organizational** structure...security, IT, networking, and enterprise support?  
 - How steep is the **training** curve, and how quickly can our teams gain confidence?  
-- Does it complement our existing **materiel**, or the tools we already rely on across departments?  
+- Does it complement our existing **materiel**, the tools we already rely on across departments?  
 - What level of **leadership** involvement or oversight will it require?  
 - How does it impact **personnel** bandwidth and skill demands across teams?  
 - Are there **facilities** or infrastructure needs we didn’t anticipate?  
