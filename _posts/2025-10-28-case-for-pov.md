@@ -89,7 +89,7 @@ The defense world uses simple milestones to measure when a capability is ready. 
 
 In cybersecurity terms, IOC means the product is installed, configured, and being used effectively. We’re operational, even if still tuning. FOC means the product is fully refined for our environment, integrated into workflows, and producing measurable improvements in visibility, performance, or response.  
 
-As a rule of thumb, about **10–15% of the total contract time** should get us to IOC. On a one-year agreement, hat’s roughly one to two months. If it takes much longer, the product might be too complex or too dependent on vendor intervention.  
+As a rule of thumb, about **10–15% of the total contract time** should get us to IOC. On a one-year agreement, that’s roughly one to two months. If it takes much longer, the product might be too complex or too dependent on vendor intervention.  
 
 We want to reach IOC relatively quickly, but not just for efficiency. We want to build confidence across our teams. We want analysts and engineers to operate, experiment, and adapt without waiting on vendor support. That is true IOC.  
 
