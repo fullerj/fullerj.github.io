@@ -141,4 +141,4 @@ The vendors who stand out are the ones who help us reach IOC fast, stay engaged 
 
 New technology is easy to buy. Turning it into capability takes alignment of people, process, and mission all pulling in the same direction. When that happens across security, enterprise, and networking, everything just works better. 
 
-Make room. I'm growing here. 
+Make some room. I'm growing here. 
