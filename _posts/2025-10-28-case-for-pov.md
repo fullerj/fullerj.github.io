@@ -135,18 +135,19 @@ A strong PoV should be **organization-led and vendor-supported**, not the other 
 
 ![Image Idea: Combined flow graphic — IOC → DOTMLPF-P readiness → FOC → Ongoing Partnership.](/assets/blogs/cyberleader/deal.png)
 
-IOC and FOC tell us how close we are to being fully operational. DOTMLPF-P helps us ask whether we are ready to sustain that capability once we get there.  
+IOC and FOC tell us how close we are to being fully operational. DOTMLPF-P helps us ask whether we can sustain that capability once we get there.  
 
-If IOC is the milestone, then DOTMLPF-P is the checklist that keeps us aligned so we don’t just reach operational capability but we keep improving it.  
+If IOC is the milestone, DOTMLPF-P is the checklist that keeps us aligned so we can keep improving long after deployment.  
 
-The vendors who stand out are the ones who help us reach IOC fast, stay engaged through the messy middle, and keep improving as we grow toward FOC. That’s what partnership looks like.  
+The vendors who stand out are the ones who help us reach IOC fast, stay engaged through the messy middle, and keep building capability as we grow toward FOC. That’s what partnership looks like.  
 
 ---
 
 ## Closing Thoughts
 
-New technology is easy to buy. Turning it into capability takes alignment of people, process, and mission all pulling in the same direction. When that happens across security, enterprise, and networking, everything just works better. 
+New technology is easy to buy. Turning it into capability takes alignment of people, process, and mission all pulling in the same direction. When that happens across security, enterprise, and networking, everything just works better.  
 
 Every evaluation, even the ones that miss the mark, adds to our shared understanding of what effective defense looks like. That is the point of an empirical approach: learn fast, apply what you discover, and share what works.  
 
-Make some room. I'm growing here. 
+**Make some room. I’m still growing.**
+
