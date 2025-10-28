@@ -1,5 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-27T18:52:18-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-24T00:00:00-04:00</published><updated>2025-10-27T10:56:48-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-28T09:00:00-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="http://localhost:4000/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-30T00:00:00-04:00</published><updated>2025-10-27T20:06:51-04:00</updated><id>http://localhost:4000/blog/case-for-pov</id><content type="html" xml:base="http://localhost:4000/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you <em>didn’t</em> do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
+
+<p>This isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.</p>
+
+<p>I’ve found that experience often teaches faster than policy. The onboarding that goes well, and the ones that don’t, both leave an impression. For me, they highlighted how critical the early phase is, not just for security, but for every team that touches the tool (or feeds it data) once it’s live.</p>
+
+<p><img src="/assets/blogs/cyberleader/soc.jpg" alt="Security team collaborating around a table" /></p>
+
+<p>Our security team once onboarded a new product that seemed like a great fit with the right capabilities, the right integrations, the right promises. The marketing looked solid and we thought we had enough data to make a confident call. Once the contract was signed, though, the onboarding process felt less like a guided partnership and more like trial and error.</p>
+
+<p>From this experience, I learned that even a good product can fall short if the onboarding experience isn’t structured, transparent, and responsive. For any organization, that early phase sets the tone for everything that follows…adoption, trust, and collaboration across multiple teams.</p>
+
+<p>Now, we didn’t expect white-glove treatment. We are a smaller organization and understand the balance between cost and service. But what any team should expect is a <strong>clear, standardized, and secure onboarding process</strong> that helps everyone involved succeed without friction or guesswork.</p>
+
+<hr />
+
+<h2 id="setting-realistic-expectations">Setting Realistic Expectations</h2>
+
+<p><img src="/assets/blogs/cyberleader/expectations.jpg" alt="Checklist illustration" /></p>
+
+<p>When we bring in a new tool, structure matters more than hand-holding. A good onboarding process should include:</p>
+
+<ul>
+  <li><strong>Standardized checklists</strong> that provide a clear sequence of steps, templates, and configuration tasks that show what “ready” looks like for both technical and support teams.</li>
+  <li><strong>Self-service components</strong> via a portal or dashboard for uploading documentation, completing setup forms, and tracking progress. This helps security, networking, and enterprise IT move in sync.</li>
+  <li><strong>Tiered due diligence</strong> ensuring that even smaller or lower-risk organizations benefit from a deliberate and secure process.</li>
+</ul>
+
+<p>This shows that the vendor has a repeatable and scalable process that supports different stakeholders while still giving each what they need.</p>
+
+<p>What all of our teams value most is <strong>clarity and collaboration</strong>. We don’t need sales conversations about additional new SKUs mid-deployment. We need to understand how to <strong>get full value from what we’ve already invested in</strong>, and how the product will evolve to stay relevant.</p>
+
+<hr />
+
+<h2 id="why-proof-of-value-matters">Why Proof-of-Value Matters</h2>
+
+<p><img src="/assets/blogs/cyberleader/collab.jpg" alt="Handshake between two professionals" /></p>
+
+<p>A proof-of-value (PoV) or pilot program gives the organization a realistic way to evaluate a tool before committing to it. It’s not about proving the product works (that’s expected, but often confirmed along the way). It’s about proving the <strong>partnership works</strong>. Can the vendor guide our analysts, enterprise engineers, and networking teams through setup and early operations with clarity?</p>
+
+<p>Peer recommendations are also a huge signal. A strong endorsement from another CISO or cybersecurity lead who’s already tested the product can be just as valuable as a formal pilot. Ideally, you use both, i.e., peer feedback to gauge reputation, and a proof-of-value to validate how the tool performs in your environment.</p>
+
+<p>In the defense world, readiness is often evaluated using the <strong>DOTMLPF-P</strong> model: Doctrine, Organization, Training, Materiel, Leadership, Personnel, Facilities, and Policy. It is a structured way to ask a simple question: <em>Are we ready to use this capability effectively?</em></p>
+
+<p>The same logic applies in cybersecurity. Technology alone doesn’t create readiness. It has to align with our people, our processes, and the mission.</p>
+
+<p>A PoV, in many ways, is a DOTMLPF-P check:</p>
+
+<ul>
+  <li>Does our current <strong>doctrine</strong> or set of playbooks need to change to use this effectively?</li>
+  <li>Does it align with our <strong>organizational</strong> structure, i.e., security, IT, networking, and enterprise support?</li>
+  <li>How steep is the <strong>training</strong> curve, and how quickly can our teams gain confidence?</li>
+  <li>Does it complement our existing <strong>materiel</strong>, or the tools we already rely on across departments?</li>
+  <li>What level of <strong>leadership</strong> involvement or oversight will it require?</li>
+  <li>How does it impact <strong>personnel</strong> bandwidth and skill demands across teams?</li>
+  <li>Are there <strong>facilities</strong> or infrastructure needs we didn’t anticipate?</li>
+  <li>What <strong>policy</strong> changes might it trigger around access, data retention, or compliance?</li>
+</ul>
+
+<p>Running through that checklist during a PoV keeps the focus where it belongs…on capability, not marketing claims.</p>
+
+<hr />
+
+<h2 id="defining-success-from-ioc-to-foc">Defining Success: From IOC to FOC</h2>
+
+<p><img src="/assets/blogs/cyberleader/ioc2foc.jpg" alt="IOC to FOC progression diagram" /></p>
+
+<p>The defense world uses simple milestones to measure when a capability is ready. Those same ideas map well to security operations.</p>
+
+<p><strong>Initial Operational Capability (IOC)</strong> is reached when a capability is available in its minimum, usefully deployable form. This typically occurs when some designated teams or organizations have received the system and can operate and maintain it.</p>
+
+<p><strong>Full Operational Capability (FOC)</strong> is reached when system development is complete, all designated teams or organizations have received the system, and those teams can operate and maintain it.</p>
+
+<p>In cybersecurity terms, IOC means the product is installed, configured, and being used effectively. We’re operational, even if still tuning. FOC means the product is fully refined for our environment, integrated into workflows, and producing measurable improvements in visibility, performance, or response.</p>
+
+<p>As a rule of thumb, about <strong>10–15% of the total contract time</strong> should get us to IOC. On a one-year agreement, hat’s roughly one to two months. If it takes much longer, the product might be too complex or too dependent on vendor intervention.</p>
+
+<p>We want to reach IOC relatively quickly, but not just for efficiency. We want to build confidence across our teams. We want analysts and engineers to operate, experiment, and adapt without waiting on vendor support. That is true IOC.</p>
+
+<hr />
+
+<h2 id="measuring-success-in-a-proof-of-value">Measuring Success in a Proof-of-Value</h2>
+
+<p><img src="/assets/blogs/cyberleader/measure.jpg" alt="Image Idea: Dashboard-style graphic showing metrics like Time to IOC, Analyst Onboarding, and Alert Quality." /></p>
+
+<p>When we evaluate a product, we try to focus on operational impact rather than the number of features. That’s not always easy. I still catch myself thinking “that dashboard looks amazing” before asking if anyone will actually use it.</p>
+
+<p>So instead of counting features, we look for signs of real value:</p>
+
+<ul>
+  <li><strong>Time to IOC:</strong> How fast can all teams move from install to functional use?</li>
+  <li><strong>Cross-team onboarding:</strong> How quickly do analysts adopt it?</li>
+  <li><strong>Operational fit:</strong> Does it reduce friction or introduce new work?</li>
+  <li><strong>Alert quality and outcomes:</strong> Are we seeing fewer, more meaningful alerts or just more noise?</li>
+</ul>
+
+<p>When those metrics are trending positive, then analysts are more likely to dive in and confidence follows.</p>
+
+<p>Another simple, anecdotal metric: when you’re not hearing “ugh, not another pane of glass.” If what the new system provides is genuinely useful, analysts won’t avoid it. They’ll likely use it, willingly, and talk about it like it’s part of their toolkit and not another thing they have to babysit.</p>
+
+<hr />
+
+<h2 id="avoiding-common-pitfalls">Avoiding Common Pitfalls</h2>
+
+<p><img src="/assets/blogs/cyberleader/redflag.png" alt="Image Idea: Simple visual of a “red flag” list or warning icons for common pitfalls." /></p>
+
+<p>A few patterns can derail a good pilot:</p>
+
+<ul>
+  <li><strong>Pilots without documentation.</strong> If the vendor has to drive every step, analysts don’t build ownership or understanding.</li>
+  <li><strong>Undefined success metrics.</strong> Without clear goals across departments, it’s impossible to tell whether the PoV delivered value.</li>
+  <li><strong>Being distracted by advanced features.</strong> We care more about stability, integration, and usability than flashy features no one uses after week two.</li>
+</ul>
+
+<p>A strong PoV should be <strong>organization-led and vendor-supported</strong>, not the other way around.</p>
+
+<hr />
+
+<h2 id="using-ioc-foc-and-dotmlpf-p-to-shape-partnerships">Using IOC, FOC, and DOTMLPF-P to Shape Partnerships</h2>
+
+<p><img src="/assets/blogs/cyberleader/deal.png" alt="Image Idea: Combined flow graphic — IOC → DOTMLPF-P readiness → FOC → Ongoing Partnership." /></p>
+
+<p>IOC and FOC tell us how close we are to being fully operational. DOTMLPF-P helps us ask whether we are ready to sustain that capability once we get there.</p>
+
+<p>If IOC is the milestone, then DOTMLPF-P is the checklist that keeps us aligned across people, process, and technology so we don’t just reach operational capability but we keep improving it.</p>
+
+<p>The vendors who stand out are the ones who help us reach IOC fast, stay engaged through the messy middle, and keep improving as we grow toward FOC. That’s what partnership looks like.</p>
+
+<hr />
+
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+
+<p>New technology is easy to buy. Turning it into capability takes alignment of people, process, and mission all pulling in the same direction. When that happens across security, enterprise, and networking, everything just works better.</p>
+
+<p>Every evaluation, even the ones that miss the mark, adds to our shared understanding of what effective defense looks like. That is the point of an empirical approach: learn fast, apply what you discover, and share what works.</p>
+
+<p>Make some room. I’m growing here.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="security operations" /><category term="vendor management" /><category term="proof of value" /><category term="onboarding" /><summary type="html"><![CDATA[Why structured pilots, clear onboarding checklists, and outcome-driven milestones are essential for security teams selecting new vendors.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-24T00:00:00-04:00</published><updated>2025-10-27T18:53:39-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
 
 <p>This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at <strong>BSidesNYC 0x05</strong>, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.</p>
 
@@ -327,69 +463,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
 
 <h2 id="abstract">Abstract</h2>
 
-<p>This article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="command-and-control" /><category term="forensics" /><summary type="html"><![CDATA[Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.]]></summary></entry><entry><title type="html">Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces</title><link href="http://localhost:4000/publications/yoda-malicious-wordpress-plugins/" rel="alternate" type="text/html" title="Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces" /><published>2022-04-10T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/yoda</id><content type="html" xml:base="http://localhost:4000/publications/yoda-malicious-wordpress-plugins/"><![CDATA[<p><strong>Conference</strong>: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022<br />
-<strong>Authors</strong>: R. Pai Kasturi, <u>Jonathan Fuller</u>, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio<br />
-<strong>Acceptance Rate</strong>: 18.1%</p>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Analyzes 400K production web servers dating back to 2012 to uncover malicious plugin campaigns.</li>
-  <li>Introduces YODA, an automated framework that identifies and traces malicious plugin origins across marketplaces, piracy sites, and post-deployment compromises.</li>
-  <li>Documents $41.5K spent on malicious marketplace plugins, $228K in lost revenue from pirated plugins, and $834K in post-deployment compromises, with 94% of malicious plugins still active.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="/assets/papers/sec22.pdf">PDF</a></li>
-  <li><a href="https://youtu.be/16FmkoX_ZMY">Talk recording</a></li>
-  <li><a href="https://youtu.be/TUATgmVKdf8">Demo</a></li>
-  <li><a href="https://github.com/CyFI-Lab-Public/YODA">Source code</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>Modern websites owe most of their aesthetics and functionalities to Content Management Systems (CMS) plugins, which are bought and sold on widely popular marketplaces. Driven by economic incentives, attackers abuse the trust in this economy: selling malware on legitimate marketplaces, pirating popular plugins, and infecting plugins post-deployment. This research studied the evolution of CMS plugins in over 400K production webservers dating back to 2012. We developed YODA, an automated framework to detect malicious plugins and track down their origin. YODA uncovered 47,337 malicious plugins on 24,931 unique websites. Among these, $41.5K had been spent on 3,685 malicious plugins sold on legitimate plugin marketplaces. Pirated plugins cheated developers out of $228K in revenues. Post-deployment attacks infected $834K worth of previously benign plugins with malware. Lastly, YODA informs our remediation efforts, as over 94% of these malicious plugins are still active today.</p>
-
-<h2 id="honors">Honors</h2>
-
-<ul>
-  <li>
-    <p>CSAW’22 Applied Research Competition Award Finalist</p>
-  </li>
-  <li>
-    <p>Invited for a USENIX ;login: Magazine article</p>
-  </li>
-</ul>
-
-<h2 id="media-coverage">Media Coverage</h2>
-
-<ul>
-  <li>
-    <p><a href="https://cacm.acm.org/news/locking-down-secure-open-source-software/">Locking Down Secure Open Source Software</a></p>
-  </li>
-  <li>
-    <p><a href="https://thehackernews.com/2022/06/yoda-tool-found-47000-malicious.html">YODA Tool Found ~47,000 Malicious WordPress Plugins Installed in Over 24,000 Sites</a></p>
-  </li>
-  <li>
-    <p><a href="https://siliconangle.com/2022/08/29/researchers-find-malicious-plugins-25000-wordpress-sites/">Researchers find malicious plugins on 25,000 WordPress sites</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.cc.gatech.edu/news/eight-year-study-shows-dark-side-wordpress-plugins">Eight-Year Study Shows the Dark Side of WordPress Plugins</a></p>
-  </li>
-  <li>
-    <p><a href="https://www.usenix.org/publications/loginonline/mistrust-plugins-you-must-large-scale-study-malicious-plugins-wordpress">USENIX ;login: Mistrust Plugins You Must</a></p>
-  </li>
-</ul>
-
-<h2 id="bibtex">BibTeX</h2>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">kasturi2022yoda</span><span class="p">,</span>
-  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Mistrust Plugins You Must: A Large-Scale Study Of Malicious Plugins In WordPress Marketplaces}</span><span class="p">,</span>
-  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Pai Kasturi, Ranjita and Fuller, Jonathan and Sun, Yiting and Chabklo, Omar and Rodriguez, Andres and Park, Jeman and Saltaformaggio, Brendan}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 31st USENIX Security Symposium (USENIX Security)}</span><span class="p">,</span>
-  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2022}</span><span class="p">,</span>
-  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Boston, MA}</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="wordpress" /><category term="content-management" /><summary type="html"><![CDATA[Measurement study of malicious WordPress plugins and the YODA detection pipeline, accepted to USENIX Security 2022 (18.1% acceptance rate).]]></summary></entry></feed>
+<p>This article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="command-and-control" /><category term="forensics" /><summary type="html"><![CDATA[Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.]]></summary></entry></feed>

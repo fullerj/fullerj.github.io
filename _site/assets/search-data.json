@@ -16,6 +16,25 @@
   
   
   {
+    "title": "The Case for Proof-of-Value in Security Partnerships",
+    "url": "/blog/case-for-proof-of-value/",
+    "collection": "posts",
+    "date": "2025-10-30T00:00:00-04:00",
+    "excerpt": "As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you didn’t do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature securi",
+    "content": "As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you didn’t do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.\n\nThis isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.\n\nI’ve found that experience often teaches faster than policy. The onboarding that goes well, and the ones that don’t, both leave an impression. For me, they highlighted how critical the early phase is, not just for security, but for every team that touches the tool (or feeds it data) once it’s live.\n\n\n\nOur security team once onboarded a new product that seemed like a great fit with the right capabilities, the right integrations, the right promises. The mar"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
     "title": "From Anomalous Traffic to Spycraft 2.0",
     "url": "/blog/spycraft-2-0/",
     "collection": "posts",
@@ -342,7 +361,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-27T18:52:18-04:00",
+    "date": "2025-10-28T09:00:00-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -361,7 +380,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-27T18:52:18-04:00",
+    "date": "2025-10-28T09:00:00-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -380,7 +399,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-27T18:52:18-04:00",
+    "date": "2025-10-28T09:00:00-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
@@ -458,7 +477,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  ",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York City, NY\n    \n  \n  \n  \n    Enhanced Web Application Security Through "
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    The Case for Proof-of-Value in Security Partnerships\n  \n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York Cit"
   },
 
   
@@ -476,8 +495,8 @@
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      research\n    \n  \n    \n      talks\n    \n  \n\nS",
-    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      research\n    \n  \n    \n      talks\n    \n  \n\nShowing all posts\nTip: Click tags to toggle them; use “All posts” to clear.\n\n2025\n\n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        From Anomalous Traffic to Spycraft 2.0\n        \n          Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05."
+    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      onboarding\n    \n  \n    \n      proof of value",
+    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      onboarding\n    \n  \n    \n      proof of value\n    \n  \n    \n      research\n    \n  \n    \n      security operations\n    \n  \n    \n      talks\n    \n  \n    \n      vendor management\n    \n  \n\nShowing all posts\nTip: Click tags to toggle them; use “All posts” to clear.\n\n2025\n\n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        The Case for Proof-of-Value in Security Partnerships\n        \n          Why structured pilots, clear onboarding checklists, and outcome-driven milestones are essential for security teams selecting new vendors.\n\n        \n      \n    \n  \n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        From Anomalous Traffic to Spycraft 2.0\n        \n          Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05."
   },
 
   
@@ -515,7 +534,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  ",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York City, NY\n    \n  \n  \n  \n    Enhanced Web Application Security Through "
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    The Case for Proof-of-Value in Security Partnerships\n  \n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York Cit"
   },
 
   

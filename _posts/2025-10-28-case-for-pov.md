@@ -3,7 +3,7 @@ layout: blog
 title: "The Case for Proof-of-Value in Security Partnerships"
 description: >
   Why structured pilots, clear onboarding checklists, and outcome-driven milestones are essential for security teams selecting new vendors.
-date: 2025-10-30
+date: 2025-10-28
 categories:
   - posts
 permalink: /blog/case-for-proof-of-value/
@@ -13,6 +13,9 @@ tags:
   - proof of value
   - onboarding
 related_posts:
+image:
+  path: /assets/blogs/cyberleader/povthumb.jpg
+  alt: "Trust by Verify"
 ---
 
 As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you *didn’t* do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.  
@@ -140,5 +143,7 @@ The vendors who stand out are the ones who help us reach IOC fast, stay engaged 
 ## Closing Thoughts
 
 New technology is easy to buy. Turning it into capability takes alignment of people, process, and mission all pulling in the same direction. When that happens across security, enterprise, and networking, everything just works better. 
+
+Every evaluation, even the ones that miss the mark, adds to our shared understanding of what effective defense looks like. That is the point of an empirical approach: learn fast, apply what you discover, and share what works.  
 
 Make some room. I'm growing here. 
