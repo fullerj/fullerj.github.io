@@ -15,7 +15,7 @@ tags:
 related_posts:
 image:
   path: /assets/blogs/cyberleader/povthumb.jpg
-  alt: "Trust by Verify"
+  alt: "Trust but Verify"
 ---
 
 As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you *didn’t* do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.  
