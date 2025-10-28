@@ -2,7 +2,7 @@
 layout: blog
 title: "The Case for Proof-of-Value in Security Partnerships"
 description: >
-  Why structured pilots, clear onboarding checklists, and outcome-driven milestones are essential for security teams selecting new vendors.
+  Why structured pilots and outcome-driven milestones are essential for security teams selecting new vendors.
 date: 2025-10-28
 categories:
   - posts
