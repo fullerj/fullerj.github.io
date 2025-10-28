@@ -134,7 +134,7 @@ A strong PoV should be **organization-led and vendor-supported**, not the other 
 
 IOC and FOC tell us how close we are to being fully operational. DOTMLPF-P helps us ask whether we are ready to sustain that capability once we get there.  
 
-If IOC is the milestone, then DOTMLPF-P is the checklist that keeps us aligned across people, process, and technology so we don’t just reach operational capability but we keep improving it.  
+If IOC is the milestone, then DOTMLPF-P is the checklist that keeps us aligned so we don’t just reach operational capability but we keep improving it.  
 
 The vendors who stand out are the ones who help us reach IOC fast, stay engaged through the messy middle, and keep improving as we grow toward FOC. That’s what partnership looks like.  
 
