@@ -48,6 +48,8 @@ keywords:
   - memory forensics
   - symbolic execution
   - concolic analysis
+  - security operations
+  - risk management
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -390,13 +392,6 @@ social:
 #   app_id:              <id>
 #   publisher:           <id>
 #   admins:              <id>
-
-# Used on index and about sites
-# social:
-#   name:                Jonathan Fuller
-#   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
 
 
 # Plugin Configs
