@@ -1,5 +1,321 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-28T09:00:00-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="http://localhost:4000/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-30T00:00:00-04:00</published><updated>2025-10-27T20:06:51-04:00</updated><id>http://localhost:4000/blog/case-for-pov</id><content type="html" xml:base="http://localhost:4000/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you <em>didn’t</em> do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-31T15:26:33-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">What Malware Families Are Still Alive in 2025?</title><link href="http://localhost:4000/blog/malware-families-2025/" rel="alternate" type="text/html" title="What Malware Families Are Still Alive in 2025?" /><published>2025-10-31T00:00:00-04:00</published><updated>2025-10-31T15:26:32-04:00</updated><id>http://localhost:4000/blog/malware-landscape-2025</id><content type="html" xml:base="http://localhost:4000/blog/malware-families-2025/"><![CDATA[<p>The quarter began with a death knell: <strong>MS-ISAC’s long-running “Top 10 Malware” bulletins went silent</strong> when funding for the program was withdrawn. Those lists once offered defenders a scoreboard. With the scoreboard gone, “top lists” (among other important provisions) became relics…nostalgia for an era when counting families felt like understanding them.</p>
+
+<p>Malware doesn’t vanish when the headlines fade. Even after takedowns, sinkholes, and splashy law-enforcement wins, the same families reappear with new droppers, obfuscation, and recycled infrastructure.</p>
+
+<p>This post takes an <strong>Empirical Defense</strong> view of that persistence. Using <a href="https://www.virustotal.com/">VirusTotal</a> metadata and <a href="https://github.com/malicialab/avclass">AVClass</a> labeling, it measures which families actually survived into 2025, how they evolved, and what that means for defenders who want evidence instead of anecdotes.</p>
+
+<hr />
+
+<h2 id="method-summary">Method Summary</h2>
+
+<ul>
+  <li><strong>Data Source:</strong> VirusTotal Intelligence</li>
+  <li><strong>Normalization:</strong> AVClass for family labeling across AV engines</li>
+  <li><strong>Window:</strong> November 2024 through October 2025 (fiscal year 2025)</li>
+  <li><strong>Sampling:</strong> 10,000 samples per month (120,000 total) selected randomly</li>
+  <li><strong>Filters:</strong> <code class="language-plaintext highlighter-rouge">p:5+</code> samples flagged by at least five engines</li>
+</ul>
+
+<p>We follow <strong>Zhu et al. (USENIX Security 2020)</strong> who show that false positives on VirusTotal drop significantly once a threshold of five or more detections is applied. Their precision–recall analysis supports this cutoff as a practical balance between recall and precision. VirusTotal’s own documentation also suggests using more than five detections to avoid false positives. The <code class="language-plaintext highlighter-rouge">p:5+</code> filter is therefore a conservative but empirically grounded threshold.</p>
+
+<blockquote>
+  <p><strong>Disclaimer:</strong> VirusTotal data is not a population sample. It reflects user submissions and scanning bias, not global prevalence. AVClass labels are heuristic and depend on the underlying engine consensus. Results indicate patterns within this dataset, not global infection counts.</p>
+</blockquote>
+
+<p>Every chart below is rendered directly from that dataset.</p>
+
+<hr />
+
+<h2 id="top-families-still-circulating">Top Families Still Circulating</h2>
+
+<p><img src="./out/fig_top_families_2025.png" alt="Top families" /></p>
+
+<p><strong>Figure 1.</strong> Top 15 malware families by sample volume in fiscal year 2025.</p>
+
+<p>Ghanarava trojan dominated the sample set with 17,635 hashes (14.7%), followed by Android adware/PUA (10,467 / 8.7%), the “generic ML loader” cluster (10,002 / 8.3%), riskware loaders (9,855 / 8.2%), and Android monitoring tools (5,757 / 4.8%). Mobidash, VMProtect, Wacatac, and the OnlineGames stealers fill out the rest of the top tier.</p>
+
+<p>Legacy families from the old MS-ISAC lists barely register. Emotet appears 73 times, Zeus/Zbot only 63, and Qakbot never clears the five-engine threshold. Mirai contributes 498 mostly recycled binaries.</p>
+
+<p><strong>Why it matters:</strong> four loader families account for over 40% of observed samples. That concentration gives defenders a clear target list for tuning detections and hunts. Focus where the telemetry shows life, not where nostalgia lingers.</p>
+
+<hr />
+
+<h2 id="family-persistence-through-the-year">Family Persistence Through the Year</h2>
+
+<p><img src="./out/fig_family_persistence_2025.png" alt="Family persistence" /></p>
+
+<p><strong>Figure 2.</strong> Monthly activity for major families.</p>
+
+<p>Ghanarava averaged more than 1,600 uploads per month until August, then fell to 67 hashes by October. Riskware loaders and the “generic ML” droppers plateau through mid-year before tapering. Android adware peaked in July–August and nearly disappeared by October.</p>
+
+<p><strong>How it’s measured:</strong> first-seen timestamps are grouped by month and counted by family. Each point represents unique files, not re-uploads.</p>
+
+<p><strong>Why it matters:</strong> persistent upload activity signals live infrastructure. Sudden drops suggest takedown success or campaign retirement.</p>
+
+<p>The pattern is clear: yesterday’s headline families are obituaries. The active ecosystem now revolves around modular loaders, adware clusters, and mobile kits.</p>
+
+<hr />
+
+<h2 id="file-types-and-delivery-mediums">File Types and Delivery Mediums</h2>
+
+<p><img src="./out/fig_family_filekind_heatmap_counts.png" alt="File types" /></p>
+
+<p><strong>Figure 3.</strong> Distribution of delivery file types (PE, archive, script, etc.) by family.</p>
+
+<p>Most samples are still plain executables.</p>
+<ul>
+  <li><strong>PE files:</strong> 63,867 (53.2%)</li>
+  <li><strong>Android/Other:</strong> 37,388 (31.2%)</li>
+  <li><strong>Archives:</strong> 15,242 (12.7%)</li>
+  <li><strong>Script, Office, ISO, LNK:</strong> ~1% combined</li>
+</ul>
+
+<p><strong>Method note:</strong> VirusTotal <code class="language-plaintext highlighter-rouge">type_tag</code>, MIME type, and file extension were normalized into a consistent taxonomy before cross-tabulation.</p>
+
+<p><strong>Why it matters:</strong> focusing sandbox and EDR investment on executable behavior yields higher return than tuning macro defenses for these families. Scripts and Office droppers are now minor carriers compared to compiled loaders.</p>
+
+<hr />
+
+<h2 id="detection-depth-and-file-size">Detection Depth and File Size</h2>
+
+<p><img src="./out/fig_detections_hist.png" alt="Detections histogram" /></p>
+
+<p><strong>Figure 4.</strong> Number of engines flagging each sample.</p>
+
+<p><img src="./out/fig_size_by_family_box.png" alt="Size by family" /></p>
+
+<p><strong>Figure 5.</strong> File size variance (log scale) across families.</p>
+
+<ul>
+  <li>73.1% of samples were flagged by ≥10 vendors</li>
+  <li>52.8% by ≥20 vendors</li>
+  <li>Median detection count: 21</li>
+  <li>Mean: 24.8</li>
+</ul>
+
+<p>Median file sizes:</p>
+<ul>
+  <li>Ghanarava – 6.5 MB (IQR 1.3–16.3 MB)</li>
+  <li>Riskware loaders – 7.1 MB</li>
+  <li>Generic ML loaders – 4.6 MB</li>
+  <li>Android adware – 19 MB</li>
+</ul>
+
+<p><strong>Interpretation:</strong> high consensus and large payloads indicate well-understood families. If such samples appear in your telemetry with few detections, there may be feed gaps or evasion artifacts worth reviewing.</p>
+
+<hr />
+
+<h2 id="measuring-resurgence">Measuring Resurgence</h2>
+
+<p><img src="./out/fig_resurgence_index.png" alt="Resurgence index" /></p>
+
+<p><strong>Figure 6.</strong> Resurgence Index for legacy families (Jan 2025 = 100%).</p>
+
+<p>The index stayed flat. Classic botnets like Mirai, Zeus, and Qakbot did not regain traction in this dataset. That silence is itself a finding—evidence that their infrastructures remain largely dormant.</p>
+
+<p>For analysts interested in legacy families, rerun the workflow with different filters or larger quotas. Within this slice, the loaders and Android clusters are the operational heart of 2025 malware.</p>
+
+<hr />
+
+<h2 id="delivery-vectors-in-motion">Delivery Vectors in Motion</h2>
+
+<p><img src="./out/fig_delivery_vector_shift.png" alt="Delivery vectors" /></p>
+
+<p><strong>Figure 7.</strong> Monthly share of Office, LNK, ISO, OneNote, and script-based droppers.</p>
+
+<p>Executable loaders dominate every month. PE files maintain 40–70% share through August. Android packages surge only when PE-heavy families taper off in September.</p>
+
+<p>Scripts, Office documents, and ISO droppers remain marginal.</p>
+
+<p><strong>Method note:</strong> monthly family counts were converted to proportional shares per file-kind.</p>
+
+<p><strong>Why it matters:</strong> security teams should prioritize executable delivery controls. Macro defenses alone will not capture where the real activity resides.</p>
+
+<hr />
+
+<h2 id="vendor-consensus">Vendor Consensus</h2>
+
+<p><img src="./out/fig_vendor_consensus.png" alt="Vendor consensus" /></p>
+
+<p><strong>Figure 8.</strong> Average detections per family vs. percentage of samples flagged by ≥10 engines.</p>
+
+<p>Vendor agreement is uneven.</p>
+<ul>
+  <li><strong>High consensus:</strong> Ghanarava (33 average detections, 96.8% ≥10), Redcap and Wacatac &gt;99%.</li>
+  <li><strong>Low consensus:</strong> Android adware/PUA and Mobidash average 9–10 detections; only ~35% clear the ≥10 threshold.</li>
+</ul>
+
+<p><strong>Why it matters:</strong> Windows families are saturated with signatures, while grayware and mobile threats remain under-labeled. Use these discrepancies to guide where additional telemetry or vendor diversity improves coverage.</p>
+
+<hr />
+
+<h2 id="mitre-attck-techniques-t-codes">MITRE ATT&amp;CK Techniques (T-Codes)</h2>
+
+<p><img src="./out/fig_attack_top_techniques.png" alt="ATT&amp;CK techniques" /></p>
+
+<p><strong>Figure 9.</strong> Ten most common MITRE ATT&amp;CK techniques by T-code.</p>
+
+<p>Top techniques:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">T1071</code> – Application Layer Protocol (7,711 samples)</li>
+  <li><code class="language-plaintext highlighter-rouge">T1082</code> – System Information Discovery (7,242)</li>
+  <li><code class="language-plaintext highlighter-rouge">T1574</code> / <code class="language-plaintext highlighter-rouge">.002</code> – Hijack / Side-load (~6.5k each)</li>
+  <li><code class="language-plaintext highlighter-rouge">T1497</code> – Virtualization or Sandbox Evasion (6,254)</li>
+  <li><code class="language-plaintext highlighter-rouge">T1027</code> – Obfuscated Files (5,945)</li>
+  <li><code class="language-plaintext highlighter-rouge">T1055</code> – Process Injection (4,781)</li>
+</ul>
+
+<p>These reflect loader behavior: network communication, system profiling, and anti-analysis routines.</p>
+
+<p><strong>Method note:</strong> MITRE technique labels come from sandbox traces and IDS annotations normalized to <code class="language-plaintext highlighter-rouge">T####</code> identifiers.</p>
+
+<p><strong>Why it matters:</strong> these T-codes show which ATT&amp;CK detections deserve highest priority in defensive engineering and hunt logic.</p>
+
+<hr />
+
+<h2 id="edr-bypass-techniques">EDR Bypass Techniques</h2>
+
+<p><img src="./out/fig_edr_bypass_top.png" alt="EDR bypass toplist" /></p>
+
+<p><strong>Figure 10.</strong> Distinct samples showing EDR or defense-evasion behavior.</p>
+
+<p><img src="./out/fig_edr_bypass_trend.png" alt="EDR bypass trend" /></p>
+
+<p><strong>Figure 11.</strong> Monthly cadence of EDR bypass events.</p>
+
+<p>EDR bypass activity is widespread:</p>
+<ul>
+  <li>Virtualization/sandbox evasion – 6,254 samples</li>
+  <li>Process injection – 4,781</li>
+  <li>Security-tool disruption – 3,263</li>
+  <li>Anti-forensics cleanup – 2,732</li>
+</ul>
+
+<p><strong>How it’s measured:</strong> heuristic scanning of sandbox and IDS notes for ATT&amp;CK references (<code class="language-plaintext highlighter-rouge">T1055</code>, <code class="language-plaintext highlighter-rouge">T1562</code>, etc.) and keywords such as “syswhispers” or “unhook”.</p>
+
+<p><strong>Why it matters:</strong> commodity loaders now implement advanced evasion methods. These aren’t APT-only behaviors—they’re mass-market.</p>
+
+<hr />
+
+<h2 id="mitre-attck-tactics-ta-codes">MITRE ATT&amp;CK Tactics (TA-Codes)</h2>
+
+<p><img src="./out/fig_attack_top_tactics.png" alt="ATT&amp;CK tactics" /></p>
+
+<p><strong>Figure 12.</strong> Most prevalent ATT&amp;CK tactics by TA-code.</p>
+
+<p>Leading tactics:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">TA0007</code> – Discovery</li>
+  <li><code class="language-plaintext highlighter-rouge">TA0005</code> – Defense Evasion</li>
+  <li><code class="language-plaintext highlighter-rouge">TA0011</code> – Command and Control</li>
+  <li><code class="language-plaintext highlighter-rouge">TA0004</code> – Privilege Escalation</li>
+  <li><code class="language-plaintext highlighter-rouge">TA0002</code> – Execution</li>
+</ul>
+
+<p>Credential access (<code class="language-plaintext highlighter-rouge">TA0006</code>) and collection (<code class="language-plaintext highlighter-rouge">TA0009</code>) remain present in over half the samples. These pillars mirror the loader-to-post-compromise transition chain that persists across campaigns.</p>
+
+<hr />
+
+<h2 id="cia-impact-assessment">CIA Impact Assessment</h2>
+
+<p><img src="./out/fig_cia_by_family.png" alt="CIA by family" /></p>
+
+<p><strong>Figure 13.</strong> CIA triad impact distribution for the top families.</p>
+
+<p><img src="./out/fig_cia_trend.png" alt="CIA trend" /></p>
+
+<p><strong>Figure 14.</strong> Monthly mix of confidentiality, integrity, and availability impacts.</p>
+
+<p>Impact scoring maps observed MITRE techniques to CIA outcomes: exfiltration contributes to Confidentiality, tampering to Integrity, and destructive actions to Availability.</p>
+
+<ul>
+  <li>113,913 samples had no confirmed behavior (labeled “unknown”).</li>
+  <li>6,087 scored measurable impact:
+    <ul>
+      <li>3,101 confidentiality-weighted</li>
+      <li>1,397 mixed (CI/AI/ACI)</li>
+      <li>128 availability-only</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Ghanarava dominates the confidentiality profile, while riskware and ML loaders show more integrity or availability effects.</p>
+
+<p><strong>Why it matters:</strong> turning behavioral telemetry into CIA language helps SOCs align defensive priorities with impact rather than family name.</p>
+
+<hr />
+
+<h2 id="targeting-signals-industries-regions-software">Targeting Signals: Industries, Regions, Software</h2>
+
+<p><img src="./out/fig_targeting_industry.png" alt="Targeting industries" /></p>
+
+<p><strong>Figure 15.</strong> Inferred industry targeting signals.</p>
+
+<p><img src="./out/fig_targeting_country.png" alt="Targeting countries" /></p>
+
+<p><strong>Figure 16.</strong> Inferred regional targeting signals.</p>
+
+<p><img src="./out/fig_targeting_software.png" alt="Targeting software" /></p>
+
+<p><strong>Figure 17.</strong> Software and platform references observed.</p>
+
+<p>Weak-supervision rules surfaced targeting hints on 4,598 hashes (~3.8%).</p>
+<ul>
+  <li><strong>Industries:</strong> 4,529 samples showed “government” lure signals.</li>
+  <li><strong>Software:</strong> 484 referenced Microsoft Office.</li>
+  <li><strong>Regions:</strong> Germany, United States, India, and the UK cleared the geographic threshold (&lt;100 hashes total).</li>
+</ul>
+
+<p><strong>How it’s measured:</strong> label functions extract features from filenames, IDS text, and infrastructure overlaps. Tags are emitted only when two or more independent signals agree.</p>
+
+<p><strong>Why it matters:</strong> this approach provides reproducible, low-confidence targeting leads without overstating attribution. Transparency and repeatability over speculation.</p>
+
+<hr />
+
+<h2 id="why-this-matters-in-2025">Why This Matters in 2025</h2>
+
+<ul>
+  <li>Replaces outdated “top 10” lists with measurable telemetry.</li>
+  <li>Quantifies which families survive beyond headlines.</li>
+  <li>Shows how loaders now dominate the ecosystem.</li>
+  <li>Clarifies detection gaps across vendors and platforms.</li>
+  <li>Links behaviors directly to ATT&amp;CK and CIA impact categories.</li>
+</ul>
+
+<p><strong>Empirical Defense</strong> means building strategy on observable data, not anecdote. This analysis grounds malware discussion in repeatable measurement—the same way epidemiology tracks infection, mutation, and recurrence.</p>
+
+<hr />
+
+<h2 id="key-findings">Key Findings</h2>
+
+<ul>
+  <li><strong>Top Families:</strong> Ghanarava (14.7%), Android adware (8.7%), ML loaders (8.3%), riskware loaders (8.2%), Android monitors (4.8%).</li>
+  <li><strong>Decline:</strong> Ghanarava fell from 1,741 uploads in November to 67 in October.</li>
+  <li><strong>Delivery:</strong> PE executables dominated (53%), Android archives close behind.</li>
+  <li><strong>Detection:</strong> 73.1% flagged by ≥10 vendors; median 21 detections.</li>
+  <li><strong>ATT&amp;CK:</strong> Techniques <code class="language-plaintext highlighter-rouge">T1071</code>, <code class="language-plaintext highlighter-rouge">T1082</code>, <code class="language-plaintext highlighter-rouge">T1574</code>, <code class="language-plaintext highlighter-rouge">T1497</code>, <code class="language-plaintext highlighter-rouge">T1055</code> led activity.</li>
+  <li><strong>CIA:</strong> 6k scored samples, mostly confidentiality-weighted.</li>
+  <li><strong>Targeting:</strong> 3.8% of hashes carried medium-confidence signals, mainly government-themed.</li>
+</ul>
+
+<hr />
+
+<h2 id="reproducibility-notes">Reproducibility Notes</h2>
+
+<p>All figures are reproducible with the provided dataset and configuration files.<br />
+Analysts can rerun the pipeline with different months, filters, or quotas to extend the results.</p>
+
+<blockquote>
+  <p><strong>VirusTotal disclaimer:</strong> Data reflects what users upload and scan, not what infects systems globally.<br />
+<strong>AVClass2 disclaimer:</strong> Family labels are heuristic and depend on AV naming consensus.<br />
+<strong>Heuristic disclaimer:</strong> Inference rules for targeting and behavior rely on pattern matching, not manual validation.</p>
+</blockquote>
+
+<hr />
+
+<p><strong>The scoreboard is gone, but the data remains.</strong><br />
+Empirical Defense is the way forward: measure, verify, and adjust.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="malware" /><category term="threat intelligence" /><category term="virustotal" /><category term="avclass2" /><category term="cyber research" /><category term="data analysis" /><summary type="html"><![CDATA[An empirical look at which malware families persist into 2025.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="http://localhost:4000/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-28T00:00:00-04:00</published><updated>2025-10-30T18:15:25-04:00</updated><id>http://localhost:4000/blog/case-for-pov</id><content type="html" xml:base="http://localhost:4000/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
 
 <p>This isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.</p>
 
@@ -35,11 +351,14 @@
 
 <h2 id="why-proof-of-value-matters">Why Proof-of-Value Matters</h2>
 
-<p><img src="/assets/blogs/cyberleader/collab.jpg" alt="Handshake between two professionals" /></p>
+<p><img src="/assets/blogs/cyberleader/collab.jpg" alt="Handshake between two professionals" />
+A proof-of-value (PoV) or pilot program gives the organization a realistic way to evaluate a tool before committing to it. It’s not about proving the product works (that’s expected, but often confirmed along the way). It’s about proving the <strong>partnership works</strong>. Can the vendor guide our analysts, enterprise engineers, and networking teams through setup and early operations with clarity?</p>
 
-<p>A proof-of-value (PoV) or pilot program gives the organization a realistic way to evaluate a tool before committing to it. It’s not about proving the product works (that’s expected, but often confirmed along the way). It’s about proving the <strong>partnership works</strong>. Can the vendor guide our analysts, enterprise engineers, and networking teams through setup and early operations with clarity?</p>
+<p>Peer recommendations are also a huge signal. A strong endorsement from another CISO or cybersecurity lead who’s already tested the product can be just as valuable as a formal pilot. Ideally, you use both…peer feedback to gauge reputation, and a proof-of-value to validate how the tool performs in your environment.</p>
 
-<p>Peer recommendations are also a huge signal. A strong endorsement from another CISO or cybersecurity lead who’s already tested the product can be just as valuable as a formal pilot. Ideally, you use both, i.e., peer feedback to gauge reputation, and a proof-of-value to validate how the tool performs in your environment.</p>
+<p>Transparency is another key part of any partnership. No system is perfect, and that’s okay. Security teams understand that. What matters most is honesty about known limitations or coverage gaps. Vendors often worry about protecting their reputation, but real trust comes from showing where the boundaries are. Without that transparency, teams can overestimate their protection and misunderstand their risk. We buy these tools to fill gaps, but we also need to know how much of the gap is actually being filled. Clarity on that allows us to make informed decisions and strengthen controls around the product’s blind spots.</p>
+
+<p>That kind of openness builds trust. It also builds <strong>readiness</strong>. When both sides share an accurate picture of strengths and limits, it becomes easier to plan and adapt. That’s where structured models of readiness, like those used in defense and operations, start to make sense in cybersecurity too.</p>
 
 <p>In the defense world, readiness is often evaluated using the <strong>DOTMLPF-P</strong> model: Doctrine, Organization, Training, Materiel, Leadership, Personnel, Facilities, and Policy. It is a structured way to ask a simple question: <em>Are we ready to use this capability effectively?</em></p>
 
@@ -49,9 +368,9 @@
 
 <ul>
   <li>Does our current <strong>doctrine</strong> or set of playbooks need to change to use this effectively?</li>
-  <li>Does it align with our <strong>organizational</strong> structure, i.e., security, IT, networking, and enterprise support?</li>
+  <li>Does it align with our <strong>organizational</strong> structure…security, IT, networking, and enterprise support?</li>
   <li>How steep is the <strong>training</strong> curve, and how quickly can our teams gain confidence?</li>
-  <li>Does it complement our existing <strong>materiel</strong>, or the tools we already rely on across departments?</li>
+  <li>Does it complement our existing <strong>materiel</strong>, the tools we already rely on across departments?</li>
   <li>What level of <strong>leadership</strong> involvement or oversight will it require?</li>
   <li>How does it impact <strong>personnel</strong> bandwidth and skill demands across teams?</li>
   <li>Are there <strong>facilities</strong> or infrastructure needs we didn’t anticipate?</li>
@@ -74,9 +393,9 @@
 
 <p>In cybersecurity terms, IOC means the product is installed, configured, and being used effectively. We’re operational, even if still tuning. FOC means the product is fully refined for our environment, integrated into workflows, and producing measurable improvements in visibility, performance, or response.</p>
 
-<p>As a rule of thumb, about <strong>10–15% of the total contract time</strong> should get us to IOC. On a one-year agreement, hat’s roughly one to two months. If it takes much longer, the product might be too complex or too dependent on vendor intervention.</p>
+<p>As a rule of thumb, about <strong>10–15% of the total contract time</strong> should get us to IOC. On a one-year agreement, that’s roughly one to two months. I first heard this perspective from the late Shawn Bowen, who described it as a practical way to balance setup time with real operational use. It stuck with me because it makes sense. If it takes much longer, the product might be too complex or too dependent on vendor intervention.</p>
 
-<p>We want to reach IOC relatively quickly, but not just for efficiency. We want to build confidence across our teams. We want analysts and engineers to operate, experiment, and adapt without waiting on vendor support. That is true IOC.</p>
+<p>So, we want to reach IOC relatively quickly, but not just for efficiency. We want to build confidence across our teams. We want analysts and engineers to operate, experiment, and adapt without waiting on vendor support. That is true IOC.</p>
 
 <hr />
 
@@ -121,11 +440,11 @@
 
 <p><img src="/assets/blogs/cyberleader/deal.png" alt="Image Idea: Combined flow graphic — IOC → DOTMLPF-P readiness → FOC → Ongoing Partnership." /></p>
 
-<p>IOC and FOC tell us how close we are to being fully operational. DOTMLPF-P helps us ask whether we are ready to sustain that capability once we get there.</p>
+<p>IOC and FOC tell us how close we are to being fully operational. DOTMLPF-P helps us ask whether we can sustain that capability once we get there.</p>
 
-<p>If IOC is the milestone, then DOTMLPF-P is the checklist that keeps us aligned across people, process, and technology so we don’t just reach operational capability but we keep improving it.</p>
+<p>If IOC is the milestone, DOTMLPF-P is the checklist that keeps us aligned so we can keep improving long after deployment.</p>
 
-<p>The vendors who stand out are the ones who help us reach IOC fast, stay engaged through the messy middle, and keep improving as we grow toward FOC. That’s what partnership looks like.</p>
+<p>The vendors who stand out are the ones who help us reach IOC fast, stay engaged through the messy middle, and keep building capability as we grow toward FOC. That’s what partnership looks like.</p>
 
 <hr />
 
@@ -135,7 +454,7 @@
 
 <p>Every evaluation, even the ones that miss the mark, adds to our shared understanding of what effective defense looks like. That is the point of an empirical approach: learn fast, apply what you discover, and share what works.</p>
 
-<p>Make some room. I’m growing here.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="security operations" /><category term="vendor management" /><category term="proof of value" /><category term="onboarding" /><summary type="html"><![CDATA[Why structured pilots, clear onboarding checklists, and outcome-driven milestones are essential for security teams selecting new vendors.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-24T00:00:00-04:00</published><updated>2025-10-27T18:53:39-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
+<p><strong>Make some room. I’m still growing.</strong></p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="security operations" /><category term="vendor management" /><category term="proof of value" /><category term="onboarding" /><summary type="html"><![CDATA[Why structured pilots and outcome-driven milestones are essential for security teams selecting new vendors.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-24T00:00:00-04:00</published><updated>2025-10-28T09:00:53-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
 
 <p>This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at <strong>BSidesNYC 0x05</strong>, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.</p>
 
@@ -233,8 +552,9 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><a href="/publications/vader-dead-drop-resolver/">Publication summary and PDF</a></li>
 </ul>
 
-<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-23T09:53:22-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
-<strong>Authors</strong>: <u>Jonathan Fuller</u>*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio<br />
+<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-29T09:42:15-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
+<strong>Authors</strong>: <u>Jonathan Fuller</u><sup>*</sup>, M. Yao<sup>*</sup>, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio<br />
+<small><sup>*</sup> Equal contributing first authors.</small><br />
 <strong>Acceptance Rate</strong>: 13.8%</p>
 
 <h2 id="highlights">Highlights</h2>
@@ -443,24 +763,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
   <span class="na">address</span>   <span class="p">=</span> <span class="s">{Anaheim, CA}</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="web-applications" /><category term="incident-response" /><summary type="html"><![CDATA[Large-scale analysis of web-application-engaged malware and the Marsea remediation pipeline, accepted to USENIX Security 2023 (29.2% acceptance rate).]]></summary></entry><entry><title type="html">Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration</title><link href="http://localhost:4000/publications/the-byte-c2-infiltration/" rel="alternate" type="text/html" title="Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration" /><published>2023-05-01T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/the-byte-infiltration</id><content type="html" xml:base="http://localhost:4000/publications/the-byte-c2-infiltration/"><![CDATA[<p><strong>Venue</strong>: The Byte<br />
-<strong>Author</strong>: <u>Jonathan Fuller</u><br />
-<strong>Date</strong>: May 1, 2023</p>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Explores how malware communication protocol weaknesses enable covert infiltration of command-and-control infrastructure.</li>
-  <li>Shares operational guidance for cyber operators confronting adversary C2 networks in the field.</li>
-  <li>Bridges research findings with practitioner insights for the 780th Military Intelligence Brigade (Cyber).</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="/assets/papers/thebyte23.pdf">PDF</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>This article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="command-and-control" /><category term="forensics" /><summary type="html"><![CDATA[Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="web-applications" /><category term="incident-response" /><summary type="html"><![CDATA[Large-scale analysis of web-application-engaged malware and the Marsea remediation pipeline, accepted to USENIX Security 2023 (29.2% acceptance rate).]]></summary></entry></feed>

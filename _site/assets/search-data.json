@@ -16,12 +16,31 @@
   
   
   {
+    "title": "What Malware Families Are Still Alive in 2025?",
+    "url": "/blog/malware-families-2025/",
+    "collection": "posts",
+    "date": "2025-10-31T00:00:00-04:00",
+    "excerpt": "The quarter began with a death knell: MS-ISAC’s long-running “Top 10 Malware” bulletins went silent when funding for the program was withdrawn. Those lists once offered defenders a scoreboard. With the scoreboard gone, “",
+    "content": "The quarter began with a death knell: MS-ISAC’s long-running “Top 10 Malware” bulletins went silent when funding for the program was withdrawn. Those lists once offered defenders a scoreboard. With the scoreboard gone, “top lists” (among other important provisions) became relics…nostalgia for an era when counting families felt like understanding them.\n\nMalware doesn’t vanish when the headlines fade. Even after takedowns, sinkholes, and splashy law-enforcement wins, the same families reappear with new droppers, obfuscation, and recycled infrastructure.\n\nThis post takes an Empirical Defense view of that persistence. Using VirusTotal metadata and AVClass labeling, it measures which families actually survived into 2025, how they evolved, and what that means for defenders who want evidence instead of anecdotes.\n\n\n\nMethod Summary\n\n\n  Data Source: VirusTotal Intelligence\n  Normalization: AVClass for family labeling across AV engines\n  Window: November 2024 through October 2025 (fiscal year 20"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
     "title": "The Case for Proof-of-Value in Security Partnerships",
     "url": "/blog/case-for-proof-of-value/",
     "collection": "posts",
-    "date": "2025-10-30T00:00:00-04:00",
-    "excerpt": "As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you didn’t do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature securi",
-    "content": "As a newer CISO, I’m learning that not every lesson comes from doing something perfectly. Some come from realizing what you didn’t do. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.\n\nThis isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.\n\nI’ve found that experience often teaches faster than policy. The onboarding that goes well, and the ones that don’t, both leave an impression. For me, they highlighted how critical the early phase is, not just for security, but for every team that touches the tool (or feeds it data) once it’s live.\n\n\n\nOur security team once onboarded a new product that seemed like a great fit with the right capabilities, the right integrations, the right promises. The mar"
+    "date": "2025-10-28T00:00:00-04:00",
+    "excerpt": "As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven",
+    "content": "As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.\n\nThis isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.\n\nI’ve found that experience often teaches faster than policy. The onboarding that goes well, and the ones that don’t, both leave an impression. For me, they highlighted how critical the early phase is, not just for security, but for every team that touches the tool (or feeds it data) once it’s live.\n\n\n\nOur security team once onboarded a new product that seemed like a great fit with the right capabilities, the right integrations, the right promises. The marketing looked solid and we thought we"
   },
 
   
@@ -58,8 +77,8 @@
     "url": "/publications/vader-dead-drop-resolver/",
     "collection": "posts",
     "date": "2025-10-13T00:00:00-04:00",
-    "excerpt": "Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\nAuthors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 13",
-    "content": "Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\nAuthors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\nAcceptance Rate: 13.8%\n\nHighlights\n\n\n  Detects and flags manipulated dead drops across seven popular web apps before attackers weaponize them.\n  Automates layered de-manipulation, surfacing 57.1% more active C2 endpoints than signature-based tools.\n  Delivers takedown intelligence that helped providers remove 13 hidden drop locations during evaluation.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nDead Drop Resolver (DDR) malware evades traditional Command and Control (C&amp;C) server takedowns by dynamically resolving C&amp;C addresses hosted on popular web applications, such as Dropbox and Pastebin. These addresses are often manipulated (i.e., encoded or encrypted), rendering existing detection techniques largely ineffective. To tackle this challenge, we introduce VADER, a malware foren"
+    "excerpt": "Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\nAuthors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\n* Equal contributin",
+    "content": "Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\nAuthors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\n* Equal contributing first authors.\nAcceptance Rate: 13.8%\n\nHighlights\n\n\n  Detects and flags manipulated dead drops across seven popular web apps before attackers weaponize them.\n  Automates layered de-manipulation, surfacing 57.1% more active C2 endpoints than signature-based tools.\n  Delivers takedown intelligence that helped providers remove 13 hidden drop locations during evaluation.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nDead Drop Resolver (DDR) malware evades traditional Command and Control (C&amp;C) server takedowns by dynamically resolving C&amp;C addresses hosted on popular web applications, such as Dropbox and Pastebin. These addresses are often manipulated (i.e., encoded or encrypted), rendering existing detection techniques largely ineffective. To tackle this challenge,"
   },
 
   
@@ -361,7 +380,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-10-28T09:00:00-04:00",
+    "date": "2025-10-31T15:26:33-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -380,7 +399,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-10-28T09:00:00-04:00",
+    "date": "2025-10-31T15:26:33-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -399,7 +418,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-10-28T09:00:00-04:00",
+    "date": "2025-10-31T15:26:33-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
@@ -477,7 +496,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  ",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    The Case for Proof-of-Value in Security Partnerships\n  \n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York Cit"
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    What Malware Families Are Still Alive in 2025?\n  \n  \n  \n    The Case for Proof-of-Value in Security Partnerships\n  \n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n  "
   },
 
   
@@ -495,8 +514,8 @@
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      onboarding\n    \n  \n    \n      proof of value",
-    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      command-and-control\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      onboarding\n    \n  \n    \n      proof of value\n    \n  \n    \n      research\n    \n  \n    \n      security operations\n    \n  \n    \n      talks\n    \n  \n    \n      vendor management\n    \n  \n\nShowing all posts\nTip: Click tags to toggle them; use “All posts” to clear.\n\n2025\n\n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        The Case for Proof-of-Value in Security Partnerships\n        \n          Why structured pilots, clear onboarding checklists, and outcome-driven milestones are essential for security teams selecting new vendors.\n\n        \n      \n    \n  \n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        From Anomalous Traffic to Spycraft 2.0\n        \n          Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05."
+    "excerpt": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      avclass2\n    \n  \n    \n      command-and-control\n    \n  \n    \n      cyber research\n    \n  \n    \n      data analysis\n    \n  \n    \n      dead drop resol",
+    "content": "Browse by Year\n  \n    \n      2025\n    \n  \n\n\n\n  All posts\n  \n    \n      avclass2\n    \n  \n    \n      command-and-control\n    \n  \n    \n      cyber research\n    \n  \n    \n      data analysis\n    \n  \n    \n      dead drop resolvers\n    \n  \n    \n      malware\n    \n  \n    \n      onboarding\n    \n  \n    \n      proof of value\n    \n  \n    \n      research\n    \n  \n    \n      security operations\n    \n  \n    \n      talks\n    \n  \n    \n      threat intelligence\n    \n  \n    \n      vendor management\n    \n  \n    \n      virustotal\n    \n  \n\nShowing all posts\nTip: Click tags to toggle them; use “All posts” to clear.\n\n2025\n\n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        What Malware Families Are Still Alive in 2025?\n        \n          An empirical look at which malware families persist into 2025.\n\n        \n      \n    \n  \n  \n  \n  \n  \n    \n      \n        \n          \n\n\n\n\n        \n      \n      \n        The Case for Proof-of-Value in Security Partnerships\n        \n          Why struct"
   },
 
   
@@ -534,7 +553,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  ",
-    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    The Case for Proof-of-Value in Security Partnerships\n  \n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n    \n    \n    \n    BSidesNYC 0x05\n       - \n      New York Cit"
+    "content": "Highlights    \n      Recent Insights\n      Recent Publications\n      Recent Talks\n      Selected Media Coverage\n      Recent Service\n    \n  \n  Education\n  Professional Certifications\n\n\nHighlights\n\nRecent Insights\n\n\n  \n  \n    What Malware Families Are Still Alive in 2025?\n  \n  \n  \n    The Case for Proof-of-Value in Security Partnerships\n  \n  \n  \n    From Anomalous Traffic to Spycraft 2.0\n  \n  \n\nBrowse all blog posts\n\nRecent Publications\n\n\n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n    \n  \n  \n  \n    Operationalizing Zero Trust: CECOM SEC and West Point Collaborate\n    \n  \n  \n  \n    Invited Tutorial: Counteracting Web Application Abuse in Malware\n    \n    \n    IEEE Secure Development Conference (SecDev): Invited Tutorial\n    \n  \n  \n\nView all publications\n\nRecent Talks\n\n\n  \n  \n    Spycraft 2.0: Hunting Dead Drops in Web Applications\n    \n  "
   },
 
   
