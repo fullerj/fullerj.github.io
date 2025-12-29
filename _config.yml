@@ -57,6 +57,7 @@ keywords:
 logo: /assets/img/logo.jpg
 favicon: /assets/icons/icon-128x128.png
 apple_touch_icon: /assets/icons/icon-192x192.png
+og_image: /assets/img/logo.jpg
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
