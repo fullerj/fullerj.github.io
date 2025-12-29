@@ -24,7 +24,7 @@ Organizational Security focuses on techniques and considerations related to prot
 
 The course addresses how organizations plan, implement, and sustain cybersecurity programs. Topics include cyber governance and policy, personnel security, security operations, systems administration, cybersecurity planning, acquisition and procurement considerations, and business continuity. Emphasis is placed on risk-informed decision-making and effective communication with organizational leadership.
 
-Instruction consists of 40 lessons delivered over the semester. Students complete one oral group presentation, one 8–10 page research paper, and two shorter preliminary papers. Compensatory time is provided.
+Instruction consists of 40 lessons delivered over the semester. Students complete one oral group presentation, one 8–10 page research paper, and two shorter preliminary papers. 
 
 ## Learning Objectives
 
