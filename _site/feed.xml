@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="fullerj.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="fullerj.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-29T15:59:23-06:00</updated><id>fullerj.github.io/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="fullerj.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="fullerj.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-29T16:02:41-06:00</updated><id>fullerj.github.io/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
 </subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="fullerj.github.io/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-28T00:00:00-05:00</published><updated>2025-10-30T17:15:25-05:00</updated><id>fullerj.github.io/blog/case-for-pov</id><content type="html" xml:base="fullerj.github.io/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
 
 <p>This isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.</p>
@@ -249,25 +249,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   
 </div>
 
-<div class="meta" style="margin-top:.5rem">
-  <strong>Media Coverage:</strong>
-  <ul>
-  
-    <li><a href="https://s2e.systems/showcase/">S2E Showcase: VADER</a> — 2025-10-20</li>
-  
-    <li><a href="https://www.growkudos.com/publications/10.1145%25252F3719027.3744860/reader">Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops</a> — 2025-11-24</li>
-  
-    <li><a href="https://securityboulevard.com/2025/10/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters/">Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters</a> — 2025-10-22</li>
-  
-    <li><a href="https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters">Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters</a> — 2025-10-18</li>
-  
-    <li><a href="https://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops</a> — 2025-06-05</li>
-  
-    <li><a href="https://thehackernews.com/2025/06/weekly-recap-chrome-0-day-73-tbps-ddos.html">Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More</a> — 2025-06-23</li>
-  
-  </ul>
-  </div>
-
 <p><small><sup>*</sup> Equal contributing first authors.</small></p>
 
 <div class="meta" style="margin-top:.25rem"><strong>Acceptance Rate:</strong> 13.8%</div>
@@ -330,15 +311,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   
   
 </div>
-
-<div class="meta" style="margin-top:.5rem">
-  <strong>Media Coverage:</strong>
-  <ul>
-  
-    <li><a href="https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point">Army Operationalizes Zero Trust</a> — 2025-09-15</li>
-  
-  </ul>
-  </div>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -478,19 +450,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/MARSEA">Repository</a></div>
   
 </div>
-
-<div class="meta" style="margin-top:.5rem">
-  <strong>Media Coverage:</strong>
-  <ul>
-  
-    <li><a href="https://research.gatech.edu/playing-hide-and-seek-new-breed-malware-threatening-millions-users">Playing Hide and Seek with a New Breed of Malware Threatening Millions of Users</a> — 2023-08-23</li>
-  
-    <li><a href="https://techxplore.com/news/2023-09-playing-malware-threatening-millions-users.html">Playing hide and seek with a new breed of malware threatening millions of users</a> — 2023-09-11</li>
-  
-    <li><a href="https://www.techtimes.com/articles/296248/20230912/researchers-find-new-breed-malware-hiding-dropbox-discord.htm">Researchers Find a New Breed of Malware Hiding in Dropbox, Discord</a> — 2023-09-12</li>
-  
-  </ul>
-  </div>
 
 <div class="meta" style="margin-top:.25rem"><strong>Acceptance Rate:</strong> 29.2%</div>
 

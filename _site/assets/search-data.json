@@ -59,7 +59,7 @@
     "collection": "posts",
     "date": "2025-10-13T00:00:00-05:00",
     "excerpt": "Authors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\n  Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  Venue: AC",
-    "content": "Authors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\n  Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  Venue: ACM CCS\n  Published: October 13, 2025\n  \n  PDF: Download\n  Code: Repository\n  \n\n\n\n  Media Coverage:\n  \n  \n    S2E Showcase: VADER — 2025-10-20\n  \n    Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops — 2025-11-24\n  \n    Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters — 2025-10-22\n  \n    Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters — 2025-10-18\n  \n    Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops — 2025-06-05\n  \n    Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More — 2025-06-23\n  \n  \n  \n\n* Equal contributing first authors.\n\nAcceptance Rate: 13.8%\n\nHighlights\n\n\n  Detects and flags manipulated dead drops across seven popular web apps be"
+    "content": "Authors: Jonathan Fuller*, M. Yao*, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio\n  Conference: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025\n  \n  \n  Venue: ACM CCS\n  Published: October 13, 2025\n  \n  PDF: Download\n  Code: Repository\n  \n\n\n* Equal contributing first authors.\n\nAcceptance Rate: 13.8%\n\nHighlights\n\n\n  Detects and flags manipulated dead drops across seven popular web apps before attackers weaponize them.\n  Automates layered de-manipulation, surfacing 57.1% more active C2 endpoints than signature-based tools.\n  Delivers takedown intelligence that helped providers remove 13 hidden drop locations during evaluation.\n\n\nResources\n\n\n  PDF\n  Source code\n\n\nAbstract\n\nDead Drop Resolver (DDR) malware evades traditional Command and Control (C&amp;C) server takedowns by dynamically resolving C&amp;C addresses hosted on popular web applications, such as Dropbox and Pastebin. These addresses are often manipulated (i.e., encoded or"
   },
 
   
@@ -77,8 +77,8 @@
     "url": "/publications/operationalizing-zero-trust/",
     "collection": "posts",
     "date": "2025-09-11T00:00:00-05:00",
-    "excerpt": "Authors: F. Shah, Jonathan Fuller\n  \n  \n  \n  Venue: U.S. Army\n  Published: September 11, 2025\n  \n  PDF: Download\n  \n  \n\n\n\n  Media Coverage:\n  \n  \n    Army Operationalizes Zero Trust — 2025-09-15",
-    "content": "Authors: F. Shah, Jonathan Fuller\n  \n  \n  \n  Venue: U.S. Army\n  Published: September 11, 2025\n  \n  PDF: Download\n  \n  \n\n\n\n  Media Coverage:\n  \n  \n    Army Operationalizes Zero Trust — 2025-09-15\n  \n  \n  \n\nHighlights\n\n\n  Details the first practical evaluation of the SEC-developed mapping between Zero Trust principles and the DoD Risk Management Framework.\n  Shares insights from the joint U.S. Army CECOM Software Engineering Center and West Point collaboration on adoption challenges.\n  Captures feedback loops needed to operationalize Zero Trust across Army systems and accreditation processes.\n\n\nResources\n\n\n  Official article\n\n\nAbstract\n\nThe Communications-Electronics Command Software Engineering Center and the U.S. Military Academy at West Point partnered to test the feasibility of the SEC-developed mapping between Zero Trust and the Department of Defense Risk Management Framework. This effort marked the first practical exercise to gather feedback on the mapping’s application and to iden"
+    "excerpt": "Authors: F. Shah, Jonathan Fuller\n  \n  \n  \n  Venue: U.S. Army\n  Published: September 11, 2025\n  \n  PDF: Download",
+    "content": "Authors: F. Shah, Jonathan Fuller\n  \n  \n  \n  Venue: U.S. Army\n  Published: September 11, 2025\n  \n  PDF: Download\n  \n  \n\n\nHighlights\n\n\n  Details the first practical evaluation of the SEC-developed mapping between Zero Trust principles and the DoD Risk Management Framework.\n  Shares insights from the joint U.S. Army CECOM Software Engineering Center and West Point collaboration on adoption challenges.\n  Captures feedback loops needed to operationalize Zero Trust across Army systems and accreditation processes.\n\n\nResources\n\n\n  Official article\n\n\nAbstract\n\nThe Communications-Electronics Command Software Engineering Center and the U.S. Military Academy at West Point partnered to test the feasibility of the SEC-developed mapping between Zero Trust and the Department of Defense Risk Management Framework. This effort marked the first practical exercise to gather feedback on the mapping’s application and to identify adjustments needed to operationalize Zero Trust within Army environments.\n\nMedi"
   },
 
   
@@ -173,7 +173,7 @@
     "collection": "posts",
     "date": "2023-08-09T00:00:00-05:00",
     "excerpt": "Authors: M. Yao, Jonathan Fuller, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio\n  Conference: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023\n  \n  \n  Venue: USENIX Security\n  Published: ",
-    "content": "Authors: M. Yao, Jonathan Fuller, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio\n  Conference: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023\n  \n  \n  Venue: USENIX Security\n  Published: August 9, 2023\n  \n  PDF: Download\n  Code: Repository\n  \n\n\n\n  Media Coverage:\n  \n  \n    Playing Hide and Seek with a New Breed of Malware Threatening Millions of Users — 2023-08-23\n  \n    Playing hide and seek with a new breed of malware threatening millions of users — 2023-09-11\n  \n    Researchers Find a New Breed of Malware Hiding in Dropbox, Discord — 2023-09-12\n  \n  \n  \n\nAcceptance Rate: 29.2%\n\nHighlights\n\n\n  Identifies 893 web-application-engaged malware specimens across 97 families abusing 29 popular web applications.\n  Measures a 226% surge in WAE malware since 2020 while observing a 13.7% drop in reliance on attacker-controlled servers.\n  Delivers the Marsea pipeline, enabling responders and providers to remove over 50% of malicious web content encountered.\n\n\nRes"
+    "content": "Authors: M. Yao, Jonathan Fuller, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio\n  Conference: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023\n  \n  \n  Venue: USENIX Security\n  Published: August 9, 2023\n  \n  PDF: Download\n  Code: Repository\n  \n\n\nAcceptance Rate: 29.2%\n\nHighlights\n\n\n  Identifies 893 web-application-engaged malware specimens across 97 families abusing 29 popular web applications.\n  Measures a 226% surge in WAE malware since 2020 while observing a 13.7% drop in reliance on attacker-controlled servers.\n  Delivers the Marsea pipeline, enabling responders and providers to remove over 50% of malicious web content encountered.\n\n\nResources\n\n\n  PDF\n  Slides\n  Talk recording\n  Source code\n\n\nAbstract\n\nWeb applications provide a wide array of utilities that are abused by malware as a replacement for traditional attacker-controlled servers. Thwarting these Web App-Engaged (WAE) malware requires rapid collaboration between incident responders and web a"
   },
 
   
@@ -211,7 +211,7 @@
     "collection": "posts",
     "date": "2022-04-10T00:00:00-05:00",
     "excerpt": "Authors: R. Pai Kasturi, Jonathan Fuller, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio\n  Conference: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022\n  \n  \n  Venue: USENIX Security\n  Pub",
-    "content": "Authors: R. Pai Kasturi, Jonathan Fuller, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio\n  Conference: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022\n  \n  \n  Venue: USENIX Security\n  Published: April 10, 2022\n  \n  PDF: Download\n  Code: Repository\n  \n\n\n\n  Media Coverage:\n  \n  \n    Locking Down Secure Open Source Software\n  \n    YODA Tool Found ~47,000 Malicious WordPress Plugins Installed in Over 24,000 Sites\n  \n    Researchers find malicious plugins on 25,000 WordPress sites\n  \n    Eight-Year Study Shows the Dark Side of WordPress Plugins\n  \n    USENIX ;login: Mistrust Plugins You Must\n  \n  \n  \n\nAcceptance Rate: 18.1%\n\nHighlights\n\n\n  Analyzes 400K production web servers dating back to 2012 to uncover malicious plugin campaigns.\n  Introduces YODA, an automated framework that identifies and traces malicious plugin origins across marketplaces, piracy sites, and post-deployment compromises.\n  Documents $41.5K spent on malicious marketplace plugins, $228K i"
+    "content": "Authors: R. Pai Kasturi, Jonathan Fuller, Y. Sun, O. Chabklo, A. Rodriguez, J. Park, B. Saltaformaggio\n  Conference: 31st USENIX Security Symposium (USENIX Security), Boston, MA, 2022\n  \n  \n  Venue: USENIX Security\n  Published: April 10, 2022\n  \n  PDF: Download\n  Code: Repository\n  \n\n\nAcceptance Rate: 18.1%\n\nHighlights\n\n\n  Analyzes 400K production web servers dating back to 2012 to uncover malicious plugin campaigns.\n  Introduces YODA, an automated framework that identifies and traces malicious plugin origins across marketplaces, piracy sites, and post-deployment compromises.\n  Documents $41.5K spent on malicious marketplace plugins, $228K in lost revenue from pirated plugins, and $834K in post-deployment compromises, with 94% of malicious plugins still active.\n\n\nResources\n\n\n  PDF\n  Talk recording\n  Demo\n  Source code\n\n\nAbstract\n\nModern websites owe most of their aesthetics and functionalities to Content Management Systems (CMS) plugins, which are bought and sold on widely popular mark"
   },
 
   
@@ -361,7 +361,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-12-29T15:59:23-06:00",
+    "date": "2025-12-29T16:02:41-06:00",
     "excerpt": "",
     "content": ""
   },
@@ -380,7 +380,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-12-29T15:59:23-06:00",
+    "date": "2025-12-29T16:02:41-06:00",
     "excerpt": "",
     "content": ""
   },
@@ -399,7 +399,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-12-29T15:59:23-06:00",
+    "date": "2025-12-29T16:02:41-06:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
