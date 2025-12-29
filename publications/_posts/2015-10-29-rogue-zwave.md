@@ -22,8 +22,7 @@ media_links:
 
 ---
 
-**Conference**: {{ page.conference }}  
-**Authors**: {{ page.authors }}
+{% include components/publication-meta.html %}
 
 ## Highlights
 

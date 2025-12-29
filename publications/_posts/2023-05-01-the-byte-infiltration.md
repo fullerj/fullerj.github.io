@@ -18,9 +18,7 @@ media_links:
 
 ---
 
-**Venue**: {{ page.venue }}  
-**Author**: {{ page.authors }}  
-**Date**: {{ page.date | date: "%B %-d, %Y" }}
+{% include components/publication-meta.html %}
 
 ## Highlights
 

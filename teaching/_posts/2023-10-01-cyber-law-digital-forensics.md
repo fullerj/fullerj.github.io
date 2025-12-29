@@ -12,16 +12,12 @@ term: "Fall 2023"
 location: "Virtual"
 role: "Course Instructor"
 course_code: "COP 630"
+credits: 6
 ---
 
 Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.
 
-**Institution:** University of Maryland Global Campus  
-**Department:** School of Cybersecurity and Information Technology  
-**Location:** Virtual  
-**Role:** Course Instructor  
-**Term:** Fall 2023  
-**Credits:** 6
+{% include components/teaching-meta.html %}
 
 Students explore three interlocking modules:
 

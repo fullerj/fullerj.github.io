@@ -5,25 +5,20 @@ description: >
   Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.
 categories:
   - teaching
+course_code: "CY 465"
 institution: "United States Military Academy"
 department: "Department of Electrical Engineering and Computer Science"
 term: "Spring 2026"
 location: "West Point, NY"
 role: "Course Instructor"
+credits: 3.0
 ---
 
 ## CY 465: Organizational Security
 
 Organizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of the organization’s mission. The course treats cybersecurity as a socio-technical problem requiring integration of people, processes, technology, and policy.
 
-## Course Information
-
-- **Institution:** United States Military Academy  
-- **Department:** Department of Electrical Engineering and Computer Science  
-- **Location:** West Point, NY  
-- **Role:** Instructor  
-- **Term:** Spring 2026  
-- **Credit Hours:** 3.0  
+{% include components/teaching-meta.html %}
 
 ## Course Description
 
