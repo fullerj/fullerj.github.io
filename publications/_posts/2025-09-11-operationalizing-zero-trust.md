@@ -21,9 +21,7 @@ media_links:
     date: "2025-09-15"
 ---
 
-**Venue**: {{ page.venue }}  
-**Authors**: {{ page.authors }}  
-**Date**: {{ page.date | date: "%B %-d, %Y" }}
+{% include components/publication-meta.html %}
 
 ## Highlights
 

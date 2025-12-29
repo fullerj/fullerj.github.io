@@ -199,6 +199,18 @@ defaults:
       seo:
         type:          WebPage
 
+  # Ensure consistent layouts for Publications and Teaching content
+  - scope:
+      path:            publications/
+    values:
+      layout:          publication
+      categories:      [publications]
+  - scope:
+      path:            teaching/
+    values:
+      layout:          post
+      categories:      [teaching]
+
 kramdown:
   math_engine:         katex
   math_engine_opts:    {}

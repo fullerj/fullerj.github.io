@@ -1,321 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-31T15:26:33-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">What Malware Families Are Still Alive in 2025?</title><link href="http://localhost:4000/blog/malware-families-2025/" rel="alternate" type="text/html" title="What Malware Families Are Still Alive in 2025?" /><published>2025-10-31T00:00:00-04:00</published><updated>2025-10-31T15:26:32-04:00</updated><id>http://localhost:4000/blog/malware-landscape-2025</id><content type="html" xml:base="http://localhost:4000/blog/malware-families-2025/"><![CDATA[<p>The quarter began with a death knell: <strong>MS-ISAC’s long-running “Top 10 Malware” bulletins went silent</strong> when funding for the program was withdrawn. Those lists once offered defenders a scoreboard. With the scoreboard gone, “top lists” (among other important provisions) became relics…nostalgia for an era when counting families felt like understanding them.</p>
-
-<p>Malware doesn’t vanish when the headlines fade. Even after takedowns, sinkholes, and splashy law-enforcement wins, the same families reappear with new droppers, obfuscation, and recycled infrastructure.</p>
-
-<p>This post takes an <strong>Empirical Defense</strong> view of that persistence. Using <a href="https://www.virustotal.com/">VirusTotal</a> metadata and <a href="https://github.com/malicialab/avclass">AVClass</a> labeling, it measures which families actually survived into 2025, how they evolved, and what that means for defenders who want evidence instead of anecdotes.</p>
-
-<hr />
-
-<h2 id="method-summary">Method Summary</h2>
-
-<ul>
-  <li><strong>Data Source:</strong> VirusTotal Intelligence</li>
-  <li><strong>Normalization:</strong> AVClass for family labeling across AV engines</li>
-  <li><strong>Window:</strong> November 2024 through October 2025 (fiscal year 2025)</li>
-  <li><strong>Sampling:</strong> 10,000 samples per month (120,000 total) selected randomly</li>
-  <li><strong>Filters:</strong> <code class="language-plaintext highlighter-rouge">p:5+</code> samples flagged by at least five engines</li>
-</ul>
-
-<p>We follow <strong>Zhu et al. (USENIX Security 2020)</strong> who show that false positives on VirusTotal drop significantly once a threshold of five or more detections is applied. Their precision–recall analysis supports this cutoff as a practical balance between recall and precision. VirusTotal’s own documentation also suggests using more than five detections to avoid false positives. The <code class="language-plaintext highlighter-rouge">p:5+</code> filter is therefore a conservative but empirically grounded threshold.</p>
-
-<blockquote>
-  <p><strong>Disclaimer:</strong> VirusTotal data is not a population sample. It reflects user submissions and scanning bias, not global prevalence. AVClass labels are heuristic and depend on the underlying engine consensus. Results indicate patterns within this dataset, not global infection counts.</p>
-</blockquote>
-
-<p>Every chart below is rendered directly from that dataset.</p>
-
-<hr />
-
-<h2 id="top-families-still-circulating">Top Families Still Circulating</h2>
-
-<p><img src="./out/fig_top_families_2025.png" alt="Top families" /></p>
-
-<p><strong>Figure 1.</strong> Top 15 malware families by sample volume in fiscal year 2025.</p>
-
-<p>Ghanarava trojan dominated the sample set with 17,635 hashes (14.7%), followed by Android adware/PUA (10,467 / 8.7%), the “generic ML loader” cluster (10,002 / 8.3%), riskware loaders (9,855 / 8.2%), and Android monitoring tools (5,757 / 4.8%). Mobidash, VMProtect, Wacatac, and the OnlineGames stealers fill out the rest of the top tier.</p>
-
-<p>Legacy families from the old MS-ISAC lists barely register. Emotet appears 73 times, Zeus/Zbot only 63, and Qakbot never clears the five-engine threshold. Mirai contributes 498 mostly recycled binaries.</p>
-
-<p><strong>Why it matters:</strong> four loader families account for over 40% of observed samples. That concentration gives defenders a clear target list for tuning detections and hunts. Focus where the telemetry shows life, not where nostalgia lingers.</p>
-
-<hr />
-
-<h2 id="family-persistence-through-the-year">Family Persistence Through the Year</h2>
-
-<p><img src="./out/fig_family_persistence_2025.png" alt="Family persistence" /></p>
-
-<p><strong>Figure 2.</strong> Monthly activity for major families.</p>
-
-<p>Ghanarava averaged more than 1,600 uploads per month until August, then fell to 67 hashes by October. Riskware loaders and the “generic ML” droppers plateau through mid-year before tapering. Android adware peaked in July–August and nearly disappeared by October.</p>
-
-<p><strong>How it’s measured:</strong> first-seen timestamps are grouped by month and counted by family. Each point represents unique files, not re-uploads.</p>
-
-<p><strong>Why it matters:</strong> persistent upload activity signals live infrastructure. Sudden drops suggest takedown success or campaign retirement.</p>
-
-<p>The pattern is clear: yesterday’s headline families are obituaries. The active ecosystem now revolves around modular loaders, adware clusters, and mobile kits.</p>
-
-<hr />
-
-<h2 id="file-types-and-delivery-mediums">File Types and Delivery Mediums</h2>
-
-<p><img src="./out/fig_family_filekind_heatmap_counts.png" alt="File types" /></p>
-
-<p><strong>Figure 3.</strong> Distribution of delivery file types (PE, archive, script, etc.) by family.</p>
-
-<p>Most samples are still plain executables.</p>
-<ul>
-  <li><strong>PE files:</strong> 63,867 (53.2%)</li>
-  <li><strong>Android/Other:</strong> 37,388 (31.2%)</li>
-  <li><strong>Archives:</strong> 15,242 (12.7%)</li>
-  <li><strong>Script, Office, ISO, LNK:</strong> ~1% combined</li>
-</ul>
-
-<p><strong>Method note:</strong> VirusTotal <code class="language-plaintext highlighter-rouge">type_tag</code>, MIME type, and file extension were normalized into a consistent taxonomy before cross-tabulation.</p>
-
-<p><strong>Why it matters:</strong> focusing sandbox and EDR investment on executable behavior yields higher return than tuning macro defenses for these families. Scripts and Office droppers are now minor carriers compared to compiled loaders.</p>
-
-<hr />
-
-<h2 id="detection-depth-and-file-size">Detection Depth and File Size</h2>
-
-<p><img src="./out/fig_detections_hist.png" alt="Detections histogram" /></p>
-
-<p><strong>Figure 4.</strong> Number of engines flagging each sample.</p>
-
-<p><img src="./out/fig_size_by_family_box.png" alt="Size by family" /></p>
-
-<p><strong>Figure 5.</strong> File size variance (log scale) across families.</p>
-
-<ul>
-  <li>73.1% of samples were flagged by ≥10 vendors</li>
-  <li>52.8% by ≥20 vendors</li>
-  <li>Median detection count: 21</li>
-  <li>Mean: 24.8</li>
-</ul>
-
-<p>Median file sizes:</p>
-<ul>
-  <li>Ghanarava – 6.5 MB (IQR 1.3–16.3 MB)</li>
-  <li>Riskware loaders – 7.1 MB</li>
-  <li>Generic ML loaders – 4.6 MB</li>
-  <li>Android adware – 19 MB</li>
-</ul>
-
-<p><strong>Interpretation:</strong> high consensus and large payloads indicate well-understood families. If such samples appear in your telemetry with few detections, there may be feed gaps or evasion artifacts worth reviewing.</p>
-
-<hr />
-
-<h2 id="measuring-resurgence">Measuring Resurgence</h2>
-
-<p><img src="./out/fig_resurgence_index.png" alt="Resurgence index" /></p>
-
-<p><strong>Figure 6.</strong> Resurgence Index for legacy families (Jan 2025 = 100%).</p>
-
-<p>The index stayed flat. Classic botnets like Mirai, Zeus, and Qakbot did not regain traction in this dataset. That silence is itself a finding—evidence that their infrastructures remain largely dormant.</p>
-
-<p>For analysts interested in legacy families, rerun the workflow with different filters or larger quotas. Within this slice, the loaders and Android clusters are the operational heart of 2025 malware.</p>
-
-<hr />
-
-<h2 id="delivery-vectors-in-motion">Delivery Vectors in Motion</h2>
-
-<p><img src="./out/fig_delivery_vector_shift.png" alt="Delivery vectors" /></p>
-
-<p><strong>Figure 7.</strong> Monthly share of Office, LNK, ISO, OneNote, and script-based droppers.</p>
-
-<p>Executable loaders dominate every month. PE files maintain 40–70% share through August. Android packages surge only when PE-heavy families taper off in September.</p>
-
-<p>Scripts, Office documents, and ISO droppers remain marginal.</p>
-
-<p><strong>Method note:</strong> monthly family counts were converted to proportional shares per file-kind.</p>
-
-<p><strong>Why it matters:</strong> security teams should prioritize executable delivery controls. Macro defenses alone will not capture where the real activity resides.</p>
-
-<hr />
-
-<h2 id="vendor-consensus">Vendor Consensus</h2>
-
-<p><img src="./out/fig_vendor_consensus.png" alt="Vendor consensus" /></p>
-
-<p><strong>Figure 8.</strong> Average detections per family vs. percentage of samples flagged by ≥10 engines.</p>
-
-<p>Vendor agreement is uneven.</p>
-<ul>
-  <li><strong>High consensus:</strong> Ghanarava (33 average detections, 96.8% ≥10), Redcap and Wacatac &gt;99%.</li>
-  <li><strong>Low consensus:</strong> Android adware/PUA and Mobidash average 9–10 detections; only ~35% clear the ≥10 threshold.</li>
-</ul>
-
-<p><strong>Why it matters:</strong> Windows families are saturated with signatures, while grayware and mobile threats remain under-labeled. Use these discrepancies to guide where additional telemetry or vendor diversity improves coverage.</p>
-
-<hr />
-
-<h2 id="mitre-attck-techniques-t-codes">MITRE ATT&amp;CK Techniques (T-Codes)</h2>
-
-<p><img src="./out/fig_attack_top_techniques.png" alt="ATT&amp;CK techniques" /></p>
-
-<p><strong>Figure 9.</strong> Ten most common MITRE ATT&amp;CK techniques by T-code.</p>
-
-<p>Top techniques:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">T1071</code> – Application Layer Protocol (7,711 samples)</li>
-  <li><code class="language-plaintext highlighter-rouge">T1082</code> – System Information Discovery (7,242)</li>
-  <li><code class="language-plaintext highlighter-rouge">T1574</code> / <code class="language-plaintext highlighter-rouge">.002</code> – Hijack / Side-load (~6.5k each)</li>
-  <li><code class="language-plaintext highlighter-rouge">T1497</code> – Virtualization or Sandbox Evasion (6,254)</li>
-  <li><code class="language-plaintext highlighter-rouge">T1027</code> – Obfuscated Files (5,945)</li>
-  <li><code class="language-plaintext highlighter-rouge">T1055</code> – Process Injection (4,781)</li>
-</ul>
-
-<p>These reflect loader behavior: network communication, system profiling, and anti-analysis routines.</p>
-
-<p><strong>Method note:</strong> MITRE technique labels come from sandbox traces and IDS annotations normalized to <code class="language-plaintext highlighter-rouge">T####</code> identifiers.</p>
-
-<p><strong>Why it matters:</strong> these T-codes show which ATT&amp;CK detections deserve highest priority in defensive engineering and hunt logic.</p>
-
-<hr />
-
-<h2 id="edr-bypass-techniques">EDR Bypass Techniques</h2>
-
-<p><img src="./out/fig_edr_bypass_top.png" alt="EDR bypass toplist" /></p>
-
-<p><strong>Figure 10.</strong> Distinct samples showing EDR or defense-evasion behavior.</p>
-
-<p><img src="./out/fig_edr_bypass_trend.png" alt="EDR bypass trend" /></p>
-
-<p><strong>Figure 11.</strong> Monthly cadence of EDR bypass events.</p>
-
-<p>EDR bypass activity is widespread:</p>
-<ul>
-  <li>Virtualization/sandbox evasion – 6,254 samples</li>
-  <li>Process injection – 4,781</li>
-  <li>Security-tool disruption – 3,263</li>
-  <li>Anti-forensics cleanup – 2,732</li>
-</ul>
-
-<p><strong>How it’s measured:</strong> heuristic scanning of sandbox and IDS notes for ATT&amp;CK references (<code class="language-plaintext highlighter-rouge">T1055</code>, <code class="language-plaintext highlighter-rouge">T1562</code>, etc.) and keywords such as “syswhispers” or “unhook”.</p>
-
-<p><strong>Why it matters:</strong> commodity loaders now implement advanced evasion methods. These aren’t APT-only behaviors—they’re mass-market.</p>
-
-<hr />
-
-<h2 id="mitre-attck-tactics-ta-codes">MITRE ATT&amp;CK Tactics (TA-Codes)</h2>
-
-<p><img src="./out/fig_attack_top_tactics.png" alt="ATT&amp;CK tactics" /></p>
-
-<p><strong>Figure 12.</strong> Most prevalent ATT&amp;CK tactics by TA-code.</p>
-
-<p>Leading tactics:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">TA0007</code> – Discovery</li>
-  <li><code class="language-plaintext highlighter-rouge">TA0005</code> – Defense Evasion</li>
-  <li><code class="language-plaintext highlighter-rouge">TA0011</code> – Command and Control</li>
-  <li><code class="language-plaintext highlighter-rouge">TA0004</code> – Privilege Escalation</li>
-  <li><code class="language-plaintext highlighter-rouge">TA0002</code> – Execution</li>
-</ul>
-
-<p>Credential access (<code class="language-plaintext highlighter-rouge">TA0006</code>) and collection (<code class="language-plaintext highlighter-rouge">TA0009</code>) remain present in over half the samples. These pillars mirror the loader-to-post-compromise transition chain that persists across campaigns.</p>
-
-<hr />
-
-<h2 id="cia-impact-assessment">CIA Impact Assessment</h2>
-
-<p><img src="./out/fig_cia_by_family.png" alt="CIA by family" /></p>
-
-<p><strong>Figure 13.</strong> CIA triad impact distribution for the top families.</p>
-
-<p><img src="./out/fig_cia_trend.png" alt="CIA trend" /></p>
-
-<p><strong>Figure 14.</strong> Monthly mix of confidentiality, integrity, and availability impacts.</p>
-
-<p>Impact scoring maps observed MITRE techniques to CIA outcomes: exfiltration contributes to Confidentiality, tampering to Integrity, and destructive actions to Availability.</p>
-
-<ul>
-  <li>113,913 samples had no confirmed behavior (labeled “unknown”).</li>
-  <li>6,087 scored measurable impact:
-    <ul>
-      <li>3,101 confidentiality-weighted</li>
-      <li>1,397 mixed (CI/AI/ACI)</li>
-      <li>128 availability-only</li>
-    </ul>
-  </li>
-</ul>
-
-<p>Ghanarava dominates the confidentiality profile, while riskware and ML loaders show more integrity or availability effects.</p>
-
-<p><strong>Why it matters:</strong> turning behavioral telemetry into CIA language helps SOCs align defensive priorities with impact rather than family name.</p>
-
-<hr />
-
-<h2 id="targeting-signals-industries-regions-software">Targeting Signals: Industries, Regions, Software</h2>
-
-<p><img src="./out/fig_targeting_industry.png" alt="Targeting industries" /></p>
-
-<p><strong>Figure 15.</strong> Inferred industry targeting signals.</p>
-
-<p><img src="./out/fig_targeting_country.png" alt="Targeting countries" /></p>
-
-<p><strong>Figure 16.</strong> Inferred regional targeting signals.</p>
-
-<p><img src="./out/fig_targeting_software.png" alt="Targeting software" /></p>
-
-<p><strong>Figure 17.</strong> Software and platform references observed.</p>
-
-<p>Weak-supervision rules surfaced targeting hints on 4,598 hashes (~3.8%).</p>
-<ul>
-  <li><strong>Industries:</strong> 4,529 samples showed “government” lure signals.</li>
-  <li><strong>Software:</strong> 484 referenced Microsoft Office.</li>
-  <li><strong>Regions:</strong> Germany, United States, India, and the UK cleared the geographic threshold (&lt;100 hashes total).</li>
-</ul>
-
-<p><strong>How it’s measured:</strong> label functions extract features from filenames, IDS text, and infrastructure overlaps. Tags are emitted only when two or more independent signals agree.</p>
-
-<p><strong>Why it matters:</strong> this approach provides reproducible, low-confidence targeting leads without overstating attribution. Transparency and repeatability over speculation.</p>
-
-<hr />
-
-<h2 id="why-this-matters-in-2025">Why This Matters in 2025</h2>
-
-<ul>
-  <li>Replaces outdated “top 10” lists with measurable telemetry.</li>
-  <li>Quantifies which families survive beyond headlines.</li>
-  <li>Shows how loaders now dominate the ecosystem.</li>
-  <li>Clarifies detection gaps across vendors and platforms.</li>
-  <li>Links behaviors directly to ATT&amp;CK and CIA impact categories.</li>
-</ul>
-
-<p><strong>Empirical Defense</strong> means building strategy on observable data, not anecdote. This analysis grounds malware discussion in repeatable measurement—the same way epidemiology tracks infection, mutation, and recurrence.</p>
-
-<hr />
-
-<h2 id="key-findings">Key Findings</h2>
-
-<ul>
-  <li><strong>Top Families:</strong> Ghanarava (14.7%), Android adware (8.7%), ML loaders (8.3%), riskware loaders (8.2%), Android monitors (4.8%).</li>
-  <li><strong>Decline:</strong> Ghanarava fell from 1,741 uploads in November to 67 in October.</li>
-  <li><strong>Delivery:</strong> PE executables dominated (53%), Android archives close behind.</li>
-  <li><strong>Detection:</strong> 73.1% flagged by ≥10 vendors; median 21 detections.</li>
-  <li><strong>ATT&amp;CK:</strong> Techniques <code class="language-plaintext highlighter-rouge">T1071</code>, <code class="language-plaintext highlighter-rouge">T1082</code>, <code class="language-plaintext highlighter-rouge">T1574</code>, <code class="language-plaintext highlighter-rouge">T1497</code>, <code class="language-plaintext highlighter-rouge">T1055</code> led activity.</li>
-  <li><strong>CIA:</strong> 6k scored samples, mostly confidentiality-weighted.</li>
-  <li><strong>Targeting:</strong> 3.8% of hashes carried medium-confidence signals, mainly government-themed.</li>
-</ul>
-
-<hr />
-
-<h2 id="reproducibility-notes">Reproducibility Notes</h2>
-
-<p>All figures are reproducible with the provided dataset and configuration files.<br />
-Analysts can rerun the pipeline with different months, filters, or quotas to extend the results.</p>
-
-<blockquote>
-  <p><strong>VirusTotal disclaimer:</strong> Data reflects what users upload and scan, not what infects systems globally.<br />
-<strong>AVClass2 disclaimer:</strong> Family labels are heuristic and depend on AV naming consensus.<br />
-<strong>Heuristic disclaimer:</strong> Inference rules for targeting and behavior rely on pattern matching, not manual validation.</p>
-</blockquote>
-
-<hr />
-
-<p><strong>The scoreboard is gone, but the data remains.</strong><br />
-Empirical Defense is the way forward: measure, verify, and adjust.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="malware" /><category term="threat intelligence" /><category term="virustotal" /><category term="avclass2" /><category term="cyber research" /><category term="data analysis" /><summary type="html"><![CDATA[An empirical look at which malware families persist into 2025.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="http://localhost:4000/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-28T00:00:00-04:00</published><updated>2025-10-30T18:15:25-04:00</updated><id>http://localhost:4000/blog/case-for-pov</id><content type="html" xml:base="http://localhost:4000/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="fullerj.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="fullerj.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-29T15:56:48-06:00</updated><id>fullerj.github.io/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="fullerj.github.io/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-28T00:00:00-05:00</published><updated>2025-10-30T17:15:25-05:00</updated><id>fullerj.github.io/blog/case-for-pov</id><content type="html" xml:base="fullerj.github.io/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
 
 <p>This isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.</p>
 
@@ -454,7 +138,7 @@ A proof-of-value (PoV) or pilot program gives the organization a realistic way t
 
 <p>Every evaluation, even the ones that miss the mark, adds to our shared understanding of what effective defense looks like. That is the point of an empirical approach: learn fast, apply what you discover, and share what works.</p>
 
-<p><strong>Make some room. I’m still growing.</strong></p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="security operations" /><category term="vendor management" /><category term="proof of value" /><category term="onboarding" /><summary type="html"><![CDATA[Why structured pilots and outcome-driven milestones are essential for security teams selecting new vendors.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" /><media:content medium="image" url="http://localhost:4000/assets/blogs/cyberleader/povthumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="http://localhost:4000/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-24T00:00:00-04:00</published><updated>2025-10-28T09:00:53-04:00</updated><id>http://localhost:4000/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
+<p><strong>Make some room. I’m still growing.</strong></p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="security operations" /><category term="vendor management" /><category term="proof of value" /><category term="onboarding" /><summary type="html"><![CDATA[Why structured pilots and outcome-driven milestones are essential for security teams selecting new vendors.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="fullerj.github.io/assets/blogs/cyberleader/povthumb.jpg" /><media:content medium="image" url="fullerj.github.io/assets/blogs/cyberleader/povthumb.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Anomalous Traffic to Spycraft 2.0</title><link href="fullerj.github.io/blog/spycraft-2-0/" rel="alternate" type="text/html" title="From Anomalous Traffic to Spycraft 2.0" /><published>2025-10-24T00:00:00-05:00</published><updated>2025-10-28T08:00:53-05:00</updated><id>fullerj.github.io/blog/spycraft-2-0-bsidesnyc</id><content type="html" xml:base="fullerj.github.io/blog/spycraft-2-0/"><![CDATA[<p>During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to <strong>X.com</strong>. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call <strong>Spycraft 2.0</strong>, where adversaries conceal command instructions within legitimate web services?</p>
 
 <p>This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at <strong>BSidesNYC 0x05</strong>, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.</p>
 
@@ -552,10 +236,41 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><a href="/publications/vader-dead-drop-resolver/">Publication summary and PDF</a></li>
 </ul>
 
-<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2025-10-29T09:42:15-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<p><strong>Conference</strong>: 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025<br />
-<strong>Authors</strong>: <u>Jonathan Fuller</u><sup>*</sup>, M. Yao<sup>*</sup>, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio<br />
-<small><sup>*</sup> Equal contributing first authors.</small><br />
-<strong>Acceptance Rate</strong>: 13.8%</p>
+<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="fullerj.github.io/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="fullerj.github.io/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="fullerj.github.io/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-05:00</published><updated>2025-12-29T07:52:59-06:00</updated><id>fullerj.github.io/publications/vader</id><content type="html" xml:base="fullerj.github.io/publications/vader-dead-drop-resolver/"><![CDATA[<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Authors:</strong> <u>Jonathan Fuller</u><sup>*</sup>, M. Yao<sup>*</sup>, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio</div>
+  <div class="meta-item"><strong>Conference:</strong> 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025</div>
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> ACM CCS</div>
+  <div class="meta-item"><strong>Published:</strong> October 13, 2025</div>
+  
+  <div class="meta-item"><strong>PDF:</strong> <a href="/assets/papers/ccs25.pdf">Download</a></div>
+  <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/VADER">Repository</a></div>
+  
+</div>
+
+<div class="meta" style="margin-top:.5rem">
+  <strong>Media Coverage:</strong>
+  <ul>
+  
+    <li><a href="https://s2e.systems/showcase/">S2E Showcase: VADER</a> — 2025-10-20</li>
+  
+    <li><a href="https://www.growkudos.com/publications/10.1145%25252F3719027.3744860/reader">Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops</a> — 2025-11-24</li>
+  
+    <li><a href="https://securityboulevard.com/2025/10/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters/">Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters</a> — 2025-10-22</li>
+  
+    <li><a href="https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters">Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters</a> — 2025-10-18</li>
+  
+    <li><a href="https://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops</a> — 2025-06-05</li>
+  
+    <li><a href="https://thehackernews.com/2025/06/weekly-recap-chrome-0-day-73-tbps-ddos.html">Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More</a> — 2025-06-23</li>
+  
+  </ul>
+  </div>
+
+<p><small><sup>*</sup> Equal contributing first authors.</small></p>
+
+<div class="meta" style="margin-top:.25rem"><strong>Acceptance Rate:</strong> 13.8%</div>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -585,11 +300,13 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
 </ul>
 
 <h2 id="media-coverage">Media Coverage</h2>
-
 <ul>
+  <li><a href="https://s2e.systems/showcase/">S2E Showcase: VADER</a></li>
+  <li><a href="https://www.growkudos.com/publications/10.1145%25252F3719027.3744860/reader">ACM Showcase - Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops</a></li>
+  <li><a href="https://securityboulevard.com/2025/10/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters/">Security Boulevard - Dead Drop Resolvers</a></li>
   <li><a href="https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters">Deeptempo AI - Malware’s Quiet Rendezvous</a></li>
   <li><a href="https://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">Georgia Tech Research - Hiding in Plain Sight</a></li>
-  <li><a href="https://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">The Hacker News - Weekly Recap</a></li>
+  <li><a href="https://thehackernews.com/2025/06/weekly-recap-chrome-0-day-73-tbps-ddos.html">The Hacker News - Weekly Recap</a></li>
 </ul>
 
 <h2 id="bibtex">BibTeX</h2>
@@ -601,9 +318,27 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
   <span class="na">address</span>   <span class="p">=</span> <span class="s">{Taipei, Taiwan}</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="command-and-control" /><category term="dead drops" /><category term="web-security" /><summary type="html"><![CDATA[Proactive detection and remediation of Dead Drop Resolver malware on web applications, accepted to ACM CCS 2025 (13.8% acceptance rate).]]></summary></entry><entry><title type="html">Operationalizing Zero Trust: CECOM SEC and West Point Collaborate</title><link href="http://localhost:4000/publications/operationalizing-zero-trust/" rel="alternate" type="text/html" title="Operationalizing Zero Trust: CECOM SEC and West Point Collaborate" /><published>2025-09-11T00:00:00-04:00</published><updated>2025-10-23T14:21:03-04:00</updated><id>http://localhost:4000/publications/operationalizing-zero-trust</id><content type="html" xml:base="http://localhost:4000/publications/operationalizing-zero-trust/"><![CDATA[<p><strong>Venue</strong>: U.S. Army<br />
-<strong>Authors</strong>: F. Shah, <u>Jonathan Fuller</u><br />
-<strong>Date</strong>: September 11, 2025</p>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="command-and-control" /><category term="dead drops" /><category term="web-security" /><summary type="html"><![CDATA[Proactive detection and remediation of Dead Drop Resolver malware on web applications, accepted to ACM CCS 2025 (13.8% acceptance rate).]]></summary></entry><entry><title type="html">Operationalizing Zero Trust: CECOM SEC and West Point Collaborate</title><link href="fullerj.github.io/publications/operationalizing-zero-trust/" rel="alternate" type="text/html" title="Operationalizing Zero Trust: CECOM SEC and West Point Collaborate" /><published>2025-09-11T00:00:00-05:00</published><updated>2025-10-23T13:21:03-05:00</updated><id>fullerj.github.io/publications/operationalizing-zero-trust</id><content type="html" xml:base="fullerj.github.io/publications/operationalizing-zero-trust/"><![CDATA[<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Authors:</strong> F. Shah, <u>Jonathan Fuller</u></div>
+  
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> U.S. Army</div>
+  <div class="meta-item"><strong>Published:</strong> September 11, 2025</div>
+  
+  <div class="meta-item"><strong>PDF:</strong> <a href="https://www.army.mil/article/288418">Download</a></div>
+  
+  
+</div>
+
+<div class="meta" style="margin-top:.5rem">
+  <strong>Media Coverage:</strong>
+  <ul>
+  
+    <li><a href="https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point">Army Operationalizes Zero Trust</a> — 2025-09-15</li>
+  
+  </ul>
+  </div>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -627,13 +362,18 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
 
 <ul>
   <li><a href="https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point">Army Operationalizes Zero Trust</a></li>
-</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="zero-trust" /><category term="DoW" /><category term="risk-management" /><summary type="html"><![CDATA[Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.]]></summary></entry><entry><title type="html">CS 483: Digital Forensics</title><link href="http://localhost:4000/teaching/2025-01-15-cs483-digital-forensics/" rel="alternate" type="text/html" title="CS 483: Digital Forensics" /><published>2025-01-15T00:00:00-05:00</published><updated>2025-10-23T06:50:16-04:00</updated><id>http://localhost:4000/teaching/cs483-digital-forensics</id><content type="html" xml:base="http://localhost:4000/teaching/2025-01-15-cs483-digital-forensics/"><![CDATA[<p>Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.</p>
+</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="zero-trust" /><category term="DoW" /><category term="risk-management" /><summary type="html"><![CDATA[Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.]]></summary></entry><entry><title type="html">CS 483: Digital Forensics</title><link href="fullerj.github.io/teaching/2025-01-15-cs483-digital-forensics/" rel="alternate" type="text/html" title="CS 483: Digital Forensics" /><published>2025-01-15T00:00:00-06:00</published><updated>2025-10-23T05:50:16-05:00</updated><id>fullerj.github.io/teaching/cs483-digital-forensics</id><content type="html" xml:base="fullerj.github.io/teaching/2025-01-15-cs483-digital-forensics/"><![CDATA[<p>Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.</p>
 
-<p><strong>Institution:</strong> United States Military Academy<br />
-<strong>Department:</strong> Department of Electrical Engineering and Computer Science<br />
-<strong>Location:</strong> West Point, NY<br />
-<strong>Role:</strong> Course Director<br />
-<strong>Term:</strong> Spring 2025</p>
+<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Institution:</strong> United States Military Academy</div>
+  <div class="meta-item"><strong>Department:</strong> Department of Electrical Engineering and Computer Science</div>
+  <div class="meta-item"><strong>Course:</strong> CS 483</div>
+  <div class="meta-item"><strong>Term:</strong> Spring 2025</div>
+  
+  <div class="meta-item"><strong>Role:</strong> Course Director</div>
+  <div class="meta-item"><strong>Location:</strong> West Point, NY</div>
+  
+</div>
 
 <p>The course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.</p>
 
@@ -647,22 +387,31 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li>Explain digital forensics concepts, results, and conclusions to both technical and non-technical audiences.</li>
   <li>Demonstrate an understanding of the processes and tooling required to reverse engineer malware.</li>
   <li>Perform memory forensics to hunt for adversary and criminal activity.</li>
-</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.]]></summary></entry><entry><title type="html">CS 483: Digital Forensics</title><link href="http://localhost:4000/teaching/2024-01-15-cs483-digital-forensics/" rel="alternate" type="text/html" title="CS 483: Digital Forensics" /><published>2024-01-15T00:00:00-05:00</published><updated>2025-10-23T06:50:16-04:00</updated><id>http://localhost:4000/teaching/cs483-digital-forensics</id><content type="html" xml:base="http://localhost:4000/teaching/2024-01-15-cs483-digital-forensics/"><![CDATA[<p>Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.</p>
+</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.]]></summary></entry><entry><title type="html">CS 483: Digital Forensics</title><link href="fullerj.github.io/teaching/2024-01-15-cs483-digital-forensics/" rel="alternate" type="text/html" title="CS 483: Digital Forensics" /><published>2024-01-15T00:00:00-06:00</published><updated>2025-10-23T05:50:16-05:00</updated><id>fullerj.github.io/teaching/cs483-digital-forensics</id><content type="html" xml:base="fullerj.github.io/teaching/2024-01-15-cs483-digital-forensics/"><![CDATA[<p>Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.</p>
 
-<p><strong>Institution:</strong> United States Military Academy<br />
-<strong>Department:</strong> Department of Electrical Engineering and Computer Science<br />
-<strong>Location:</strong> West Point, NY<br />
-<strong>Role:</strong> Course Director<br />
-<strong>Term:</strong> Spring 2024</p>
+<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Institution:</strong> United States Military Academy</div>
+  <div class="meta-item"><strong>Department:</strong> Department of Electrical Engineering and Computer Science</div>
+  <div class="meta-item"><strong>Course:</strong> CS 483</div>
+  <div class="meta-item"><strong>Term:</strong> Spring 2024</div>
+  
+  <div class="meta-item"><strong>Role:</strong> Course Director</div>
+  <div class="meta-item"><strong>Location:</strong> West Point, NY</div>
+  
+</div>
 
-<p>Throughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze digital evidence after malicious activity on information systems.]]></summary></entry><entry><title type="html">COP 630: Cyber Law and Digital Forensics</title><link href="http://localhost:4000/teaching/2023-10-01-cyber-law-digital-forensics/" rel="alternate" type="text/html" title="COP 630: Cyber Law and Digital Forensics" /><published>2023-10-01T00:00:00-04:00</published><updated>2025-10-23T06:50:16-04:00</updated><id>http://localhost:4000/teaching/cyber-law-digital-forensics</id><content type="html" xml:base="http://localhost:4000/teaching/2023-10-01-cyber-law-digital-forensics/"><![CDATA[<p>Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.</p>
+<p>Throughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze digital evidence after malicious activity on information systems.]]></summary></entry><entry><title type="html">COP 630: Cyber Law and Digital Forensics</title><link href="fullerj.github.io/teaching/2023-10-01-cyber-law-digital-forensics/" rel="alternate" type="text/html" title="COP 630: Cyber Law and Digital Forensics" /><published>2023-10-01T00:00:00-05:00</published><updated>2025-10-23T05:50:16-05:00</updated><id>fullerj.github.io/teaching/cyber-law-digital-forensics</id><content type="html" xml:base="fullerj.github.io/teaching/2023-10-01-cyber-law-digital-forensics/"><![CDATA[<p>Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.</p>
 
-<p><strong>Institution:</strong> University of Maryland Global Campus<br />
-<strong>Department:</strong> School of Cybersecurity and Information Technology<br />
-<strong>Location:</strong> Virtual<br />
-<strong>Role:</strong> Course Instructor<br />
-<strong>Term:</strong> Fall 2023<br />
-<strong>Credits:</strong> 6</p>
+<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Institution:</strong> University of Maryland Global Campus</div>
+  <div class="meta-item"><strong>Department:</strong> School of Cybersecurity and Information Technology</div>
+  <div class="meta-item"><strong>Course:</strong> COP 630</div>
+  <div class="meta-item"><strong>Term:</strong> Fall 2023</div>
+  <div class="meta-item"><strong>Credits:</strong> 6</div>
+  <div class="meta-item"><strong>Role:</strong> Course Instructor</div>
+  <div class="meta-item"><strong>Location:</strong> Virtual</div>
+  
+</div>
 
 <p>Students explore three interlocking modules:</p>
 
@@ -672,8 +421,18 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><strong>Applied Digital Forensics.</strong> Use industry tools to acquire and analyse evidence from network captures, storage media, and RAM across common operating systems and devices.</li>
 </ol>
 
-<p>Throughout the term, learners execute labs in a virtualized environment, document chain of custody, and deliver expert-witness style reports tying technical findings back to legal requirements.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.]]></summary></entry><entry><title type="html">Invited Tutorial: Counteracting Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/" rel="alternate" type="text/html" title="Invited Tutorial: Counteracting Web Application Abuse in Malware" /><published>2023-09-18T00:00:00-04:00</published><updated>2025-10-27T10:56:48-04:00</updated><id>http://localhost:4000/publications/secdev-tutorial-marsea</id><content type="html" xml:base="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: IEEE Secure Development Conference (SecDev): Invited Tutorial<br />
-<strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio</p>
+<p>Throughout the term, learners execute labs in a virtualized environment, document chain of custody, and deliver expert-witness style reports tying technical findings back to legal requirements.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.]]></summary></entry><entry><title type="html">Invited Tutorial: Counteracting Web Application Abuse in Malware</title><link href="fullerj.github.io/publications/secdev-tutorial-web-application-abuse/" rel="alternate" type="text/html" title="Invited Tutorial: Counteracting Web Application Abuse in Malware" /><published>2023-09-18T00:00:00-05:00</published><updated>2025-10-27T09:56:48-05:00</updated><id>fullerj.github.io/publications/secdev-tutorial-marsea</id><content type="html" xml:base="fullerj.github.io/publications/secdev-tutorial-web-application-abuse/"><![CDATA[<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Authors:</strong> M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio</div>
+  <div class="meta-item"><strong>Conference:</strong> IEEE Secure Development Conference (SecDev): Invited Tutorial</div>
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> IEEE SecDev</div>
+  <div class="meta-item"><strong>Published:</strong> September 18, 2023</div>
+  
+  
+  <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/MARSEA">Repository</a></div>
+  
+</div>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -707,9 +466,33 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
   <span class="na">note</span>      <span class="p">=</span> <span class="s">{Invited Tutorial}</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry><entry><title type="html">Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/marsea-web-application-abuse/" rel="alternate" type="text/html" title="Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware" /><published>2023-08-09T00:00:00-04:00</published><updated>2025-10-23T10:34:13-04:00</updated><id>http://localhost:4000/publications/marsea</id><content type="html" xml:base="http://localhost:4000/publications/marsea-web-application-abuse/"><![CDATA[<p><strong>Conference</strong>: 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023<br />
-<strong>Authors</strong>: M. Yao, <u>Jonathan Fuller</u>, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio<br />
-<strong>Acceptance Rate</strong>: 29.2%</p>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry><entry><title type="html">Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware</title><link href="fullerj.github.io/publications/marsea-web-application-abuse/" rel="alternate" type="text/html" title="Hiding in Plain Sight: An Empirical Study of Web Application Abuse in Malware" /><published>2023-08-09T00:00:00-05:00</published><updated>2025-10-23T09:34:13-05:00</updated><id>fullerj.github.io/publications/marsea</id><content type="html" xml:base="fullerj.github.io/publications/marsea-web-application-abuse/"><![CDATA[<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Authors:</strong> M. Yao, <u>Jonathan Fuller</u>, R. Pai Kasturi, S. Agarwal, A. K. Sikder, B. Saltaformaggio</div>
+  <div class="meta-item"><strong>Conference:</strong> 32nd USENIX Security Symposium (USENIX Security), Anaheim, CA, 2023</div>
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> USENIX Security</div>
+  <div class="meta-item"><strong>Published:</strong> August 9, 2023</div>
+  
+  <div class="meta-item"><strong>PDF:</strong> <a href="/assets/papers/sec23yao.pdf">Download</a></div>
+  <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/MARSEA">Repository</a></div>
+  
+</div>
+
+<div class="meta" style="margin-top:.5rem">
+  <strong>Media Coverage:</strong>
+  <ul>
+  
+    <li><a href="https://research.gatech.edu/playing-hide-and-seek-new-breed-malware-threatening-millions-users">Playing Hide and Seek with a New Breed of Malware Threatening Millions of Users</a> — 2023-08-23</li>
+  
+    <li><a href="https://techxplore.com/news/2023-09-playing-malware-threatening-millions-users.html">Playing hide and seek with a new breed of malware threatening millions of users</a> — 2023-09-11</li>
+  
+    <li><a href="https://www.techtimes.com/articles/296248/20230912/researchers-find-new-breed-malware-hiding-dropbox-discord.htm">Researchers Find a New Breed of Malware Hiding in Dropbox, Discord</a> — 2023-09-12</li>
+  
+  </ul>
+  </div>
+
+<div class="meta" style="margin-top:.25rem"><strong>Acceptance Rate:</strong> 29.2%</div>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -763,4 +546,33 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
   <span class="na">address</span>   <span class="p">=</span> <span class="s">{Anaheim, CA}</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="web-applications" /><category term="incident-response" /><summary type="html"><![CDATA[Large-scale analysis of web-application-engaged malware and the Marsea remediation pipeline, accepted to USENIX Security 2023 (29.2% acceptance rate).]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="web-applications" /><category term="incident-response" /><summary type="html"><![CDATA[Large-scale analysis of web-application-engaged malware and the Marsea remediation pipeline, accepted to USENIX Security 2023 (29.2% acceptance rate).]]></summary></entry><entry><title type="html">Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration</title><link href="fullerj.github.io/publications/the-byte-c2-infiltration/" rel="alternate" type="text/html" title="Exploiting Malware Communication Protocols for Command-and-Control Server Infiltration" /><published>2023-05-01T00:00:00-05:00</published><updated>2025-10-23T13:21:03-05:00</updated><id>fullerj.github.io/publications/the-byte-infiltration</id><content type="html" xml:base="fullerj.github.io/publications/the-byte-c2-infiltration/"><![CDATA[<div class="meta grid" style="margin-top:1rem">
+  <div class="meta-item"><strong>Authors:</strong> <u>Jonathan Fuller</u></div>
+  
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> The Byte</div>
+  <div class="meta-item"><strong>Published:</strong> May 1, 2023</div>
+  
+  <div class="meta-item"><strong>PDF:</strong> <a href="/assets/papers/thebyte23.pdf">Download</a></div>
+  
+  
+</div>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Explores how malware communication protocol weaknesses enable covert infiltration of command-and-control infrastructure.</li>
+  <li>Shares operational guidance for cyber operators confronting adversary C2 networks in the field.</li>
+  <li>Bridges research findings with practitioner insights for the 780th Military Intelligence Brigade (Cyber).</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/thebyte23.pdf">PDF</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This article outlines methods for exploiting malware communication protocols to gain footholds inside adversary command-and-control servers. By analyzing protocol manipulation opportunities and applying lessons from battlefield operations, it demonstrates how defenders can turn the tables on malware operators to enable covert monitoring and disrupt hostile infrastructure.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="command-and-control" /><category term="forensics" /><summary type="html"><![CDATA[Article in The Byte detailing practical techniques for infiltrating C2 infrastructure by abusing malware communication protocols.]]></summary></entry></feed>

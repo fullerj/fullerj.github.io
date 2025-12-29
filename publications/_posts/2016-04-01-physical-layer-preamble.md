@@ -21,8 +21,7 @@ media_links:
 
 ---
 
-**Journal**: {{ page.journal }}  
-**Authors**: {{ page.authors }}
+{% include components/publication-meta.html %}
 
 ## Highlights
 

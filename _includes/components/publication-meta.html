@@ -1,0 +1,31 @@
+{% comment %}
+Consistent metadata block for publication pages.
+Usage (in a publication markdown file):
+  {% include components/publication-meta.html %}
+Relies on front matter keys: authors, venue, date, doi, pdf_url, code_url, video_url, media_links, book, conference, journal.
+Only renders fields that are present.
+{% endcomment %}
+
+<div class="meta grid" style="margin-top:1rem">
+  {% if page.authors %}<div class="meta-item"><strong>Authors:</strong> {{ page.authors }}</div>{% endif %}
+  {% if page.conference %}<div class="meta-item"><strong>Conference:</strong> {{ page.conference }}</div>{% endif %}
+  {% if page.book %}<div class="meta-item"><strong>Book:</strong> {{ page.book }}</div>{% endif %}
+  {% if page.journal %}<div class="meta-item"><strong>Journal:</strong> {{ page.journal }}</div>{% endif %}
+  {% if page.venue %}<div class="meta-item"><strong>Venue:</strong> {{ page.venue }}</div>{% endif %}
+  {% if page.date %}<div class="meta-item"><strong>Published:</strong> {{ page.date | date: "%B %-d, %Y" }}</div>{% endif %}
+  {% if page.doi %}<div class="meta-item"><strong>DOI:</strong> <a href="https://doi.org/{{ page.doi }}">{{ page.doi }}</a></div>{% endif %}
+  {% if page.pdf_url %}<div class="meta-item"><strong>PDF:</strong> <a href="{{ page.pdf_url }}">Download</a></div>{% endif %}
+  {% if page.code_url %}<div class="meta-item"><strong>Code:</strong> <a href="{{ page.code_url }}">Repository</a></div>{% endif %}
+  {% if page.video_url %}<div class="meta-item"><strong>Video:</strong> <a href="{{ page.video_url }}">Watch</a></div>{% endif %}
+</div>
+
+{% if page.media_links and page.media_links.size > 0 %}
+<div class="meta" style="margin-top:.5rem">
+  <strong>Media Coverage:</strong>
+  <ul>
+  {% for m in page.media_links %}
+    <li><a href="{{ m.url }}">{{ m.title }}</a>{% if m.date %} — {{ m.date }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+  </div>
+{% endif %}

@@ -5,6 +5,7 @@ description: >
   Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.
 categories:
   - teaching
+course_code: "CS 483"
 institution: "United States Military Academy"
 department: "Department of Electrical Engineering and Computer Science"
 term: "Spring 2025"
@@ -14,11 +15,7 @@ role: "Course Director"
 
 Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.
 
-**Institution:** United States Military Academy  
-**Department:** Department of Electrical Engineering and Computer Science  
-**Location:** West Point, NY  
-**Role:** Course Director  
-**Term:** Spring 2025
+{% include components/teaching-meta.html %}
 
 The course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.
 
