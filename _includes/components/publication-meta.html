@@ -14,8 +14,5 @@ Only renders fields that are present.
   {% if page.venue %}<div class="meta-item"><strong>Venue:</strong> {{ page.venue }}</div>{% endif %}
   {% if page.date %}<div class="meta-item"><strong>Published:</strong> {{ page.date | date: "%B %-d, %Y" }}</div>{% endif %}
   {% if page.doi %}<div class="meta-item"><strong>DOI:</strong> <a href="https://doi.org/{{ page.doi }}">{{ page.doi }}</a></div>{% endif %}
-  {% if page.pdf_url %}<div class="meta-item"><strong>PDF:</strong> <a href="{{ page.pdf_url }}">Download</a></div>{% endif %}
-  {% if page.code_url %}<div class="meta-item"><strong>Code:</strong> <a href="{{ page.code_url }}">Repository</a></div>{% endif %}
-  {% if page.video_url %}<div class="meta-item"><strong>Video:</strong> <a href="{{ page.video_url }}">Watch</a></div>{% endif %}
 </div>
 

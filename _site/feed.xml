@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="fullerj.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="fullerj.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-29T16:02:41-06:00</updated><id>fullerj.github.io/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="fullerj.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="fullerj.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-29T16:06:49-06:00</updated><id>fullerj.github.io/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Evidence-driven cybersecurity leadership, research, and outreach from Jonathan Fuller.
 </subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">The Case for Proof-of-Value in Security Partnerships</title><link href="fullerj.github.io/blog/case-for-proof-of-value/" rel="alternate" type="text/html" title="The Case for Proof-of-Value in Security Partnerships" /><published>2025-10-28T00:00:00-05:00</published><updated>2025-10-30T17:15:25-05:00</updated><id>fullerj.github.io/blog/case-for-pov</id><content type="html" xml:base="fullerj.github.io/blog/case-for-proof-of-value/"><![CDATA[<p>As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.</p>
 
 <p>This isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.</p>
@@ -244,9 +244,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <div class="meta-item"><strong>Venue:</strong> ACM CCS</div>
   <div class="meta-item"><strong>Published:</strong> October 13, 2025</div>
   
-  <div class="meta-item"><strong>PDF:</strong> <a href="/assets/papers/ccs25.pdf">Download</a></div>
-  <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/VADER">Repository</a></div>
-  
 </div>
 
 <p><small><sup>*</sup> Equal contributing first authors.</small></p>
@@ -306,9 +303,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   
   <div class="meta-item"><strong>Venue:</strong> U.S. Army</div>
   <div class="meta-item"><strong>Published:</strong> September 11, 2025</div>
-  
-  <div class="meta-item"><strong>PDF:</strong> <a href="https://www.army.mil/article/288418">Download</a></div>
-  
   
 </div>
 
@@ -401,9 +395,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <div class="meta-item"><strong>Venue:</strong> IEEE SecDev</div>
   <div class="meta-item"><strong>Published:</strong> September 18, 2023</div>
   
-  
-  <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/MARSEA">Repository</a></div>
-  
 </div>
 
 <h2 id="highlights">Highlights</h2>
@@ -445,9 +436,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   
   <div class="meta-item"><strong>Venue:</strong> USENIX Security</div>
   <div class="meta-item"><strong>Published:</strong> August 9, 2023</div>
-  
-  <div class="meta-item"><strong>PDF:</strong> <a href="/assets/papers/sec23yao.pdf">Download</a></div>
-  <div class="meta-item"><strong>Code:</strong> <a href="https://github.com/CyFI-Lab-Public/MARSEA">Repository</a></div>
   
 </div>
 
@@ -512,9 +500,6 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   
   <div class="meta-item"><strong>Venue:</strong> The Byte</div>
   <div class="meta-item"><strong>Published:</strong> May 1, 2023</div>
-  
-  <div class="meta-item"><strong>PDF:</strong> <a href="/assets/papers/thebyte23.pdf">Download</a></div>
-  
   
 </div>
 
