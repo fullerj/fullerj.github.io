@@ -16,6 +16,6 @@ description: >
 
 ### Reviewer Engagements
 
-- **Computers & Security** (Elsevier) (2022–Present)
+- **Computers & Security (Elsevier)** (2022–Present)
 - **Cyber Defense Review** (2024)
 
