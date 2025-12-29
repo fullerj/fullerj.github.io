@@ -11,6 +11,7 @@ department: "Department of Electrical Engineering and Computer Science"
 term: "Spring 2024"
 location: "West Point, NY"
 role: "Course Director"
+credits: 3.0
 ---
 
 Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.
