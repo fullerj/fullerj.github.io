@@ -16,6 +16,25 @@
   
   
   {
+    "title": "CY 465: Organizational Security",
+    "url": "/teaching/2026-01-06-cy465-organizational-security/",
+    "collection": "posts",
+    "date": "2026-01-06T00:00:00-06:00",
+    "excerpt": "Organizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of the organization’s mission. The co",
+    "content": "Organizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of the organization’s mission. The course treats cybersecurity as a socio-technical problem requiring integration of people, processes, technology, and policy.\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: Spring 2026\n  Credits: 3.0\n  Role: Course Instructor\n  Location: West Point, NY\n  \n\n\nCourse Description\n\nThe course addresses how organizations plan, implement, and sustain cybersecurity programs. Topics include cyber governance and policy, personnel security, security operations, systems administration, cybersecurity planning, acquisition and procurement considerations, and business continuity. Emphasis is placed on risk-informed decision-making and effective communication with organizational leadership.\n\n"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
     "title": "The Case for Proof-of-Value in Security Partnerships",
     "url": "/blog/case-for-proof-of-value/",
     "collection": "posts",
@@ -97,7 +116,7 @@
     "collection": "posts",
     "date": "2025-01-15T00:00:00-06:00",
     "excerpt": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architectur",
-    "content": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2025\n  \n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nThe course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.\n\nLearning Objectives\n\nUpon successful completion, students are able to:\n\n\n  Apply a scientific methodology to the acquisition and analysis of digital evidence.\n  Use multiple software tools to ac"
+    "content": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2025\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nThe course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.\n\nLearning Objectives\n\nUpon successful completion, students are able to:\n\n\n  Apply a scientific methodology to the acquisition and analysis of digital evidence.\n  Use multiple software"
   },
 
   
@@ -116,7 +135,7 @@
     "collection": "posts",
     "date": "2024-01-15T00:00:00-06:00",
     "excerpt": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and n",
-    "content": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2024\n  \n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nThroughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity."
+    "content": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2024\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nThroughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity."
   },
 
   
@@ -361,7 +380,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2025-12-29T16:06:49-06:00",
+    "date": "2025-12-30T15:52:54-06:00",
     "excerpt": "",
     "content": ""
   },
@@ -380,7 +399,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2025-12-29T16:06:49-06:00",
+    "date": "2025-12-30T15:52:54-06:00",
     "excerpt": "",
     "content": ""
   },
@@ -399,28 +418,9 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2025-12-29T16:06:49-06:00",
+    "date": "2025-12-30T15:52:54-06:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
-  },
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
-    "title": "CY 465: Organizational Security",
-    "url": "/teaching/2026-01-06-cy465-organizational-security/",
-    "collection": "pages",
-    "date": null,
-    "excerpt": "CY 465: Organizational Security\n\nOrganizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of t",
-    "content": "CY 465: Organizational Security\n\nOrganizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of the organization’s mission. The course treats cybersecurity as a socio-technical problem requiring integration of people, processes, technology, and policy.\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: Spring 2026\n  Credits: 3.0\n  Role: Course Instructor\n  Location: West Point, NY\n  \n\n\nCourse Description\n\nThe course addresses how organizations plan, implement, and sustain cybersecurity programs. Topics include cyber governance and policy, personnel security, security operations, systems administration, cybersecurity planning, acquisition and procurement considerations, and business continuity. Emphasis is placed on risk-informed decision-making and effective communication "
   },
 
   
