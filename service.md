@@ -13,7 +13,7 @@ description: >
 
 ### Program Committee Membership
 
-- **USENIX Security Symposium** (2025–Present)
+- **USENIX Security Symposium** (2024–Present)
 - **Digital Forensics Research Workshop (DFRWS)** (2024)
 - **International Conference on Cyber Warfare and Security (ICCWS)** (2023–Present)
 - **European Conference on Cyber Warfare and Security (ECCWS)** (2023–2024)
