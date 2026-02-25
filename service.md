@@ -3,9 +3,13 @@ layout: page
 title: Service
 permalink: /service/
 description: >
-  Program committee work, peer review, and outreach initiatives that advance the cybersecurity community.
+  Program committee work, peer review, consortium leadership, and outreach initiatives that advance the cybersecurity and trustworthy AI communities.
 ---
 
+### Consortium Leadership
+
+- **AIUC-1 (AI Unified Certification Consortium)** — *Founding Consortium Member*  
+  Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.
 
 ### Program Committee Membership
 
@@ -18,4 +22,3 @@ description: >
 
 - **Computers & Security** (2022–Present)
 - **Cyber Defense Review** (2024)
-
