@@ -22,3 +22,8 @@
   issuer: "GIAC"
   logo: "/assets/img/certs/gsom.png"
   alt: "GIAC GSOM logo"
+
+- title: "GIAC Cloud Penetration Testeter (GCPN)"
+  issuer: "GIAC"
+  logo: "/assets/img/certs/gcpn.png"
+  alt: "GIAC GCPN logo"

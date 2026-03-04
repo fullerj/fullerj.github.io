@@ -6,7 +6,7 @@ description: >
   Privacy policy.
 ---
 
-**Last Updated:** October 23, 2025  
+**Last Updated:** March 4, 2026 
 
 ## 1. Overview  
 Welcome to *Empirical Defense* (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website [EmpiricalDefense.com](https://empiricaldefense.com).  
