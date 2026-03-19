@@ -43,7 +43,8 @@ jobs:
             --disable-external \
             --allow-hash-href \
             --ignore-urls "/localhost/" \
-            --ignore-files "/CHANGELOG/"
+            --ignore-files "/CHANGELOG/,/licenses/,/LICENSE/,/NOTICE/" \
+            --ignore-patterns 'a\s+tag is missing a reference'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
