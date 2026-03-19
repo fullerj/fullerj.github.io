@@ -68,7 +68,7 @@ permalink: /blog/
         {% if post.image %}
           {% include_cached components/hy-img.html img=post.image alt=post.title width=760 height=428 %}
         {% else %}
-          <img src="{{ '/assets/img/logos/brand.png' | relative_url }}" alt="Empirical Defense icon" loading="lazy">
+          <img src="{{ '/assets/img/logos/brand.png' | relative_url }}" alt="Empirical Defense icon" loading="lazy" decoding="async">
         {% endif %}
       </div>
       <div class="blog-card__body">
@@ -113,6 +113,8 @@ permalink: /blog/
 
     var buttons = Array.prototype.slice.call(filter.querySelectorAll('[data-tag]'));
     var articles = Array.prototype.slice.call(root.querySelectorAll('.blog-card'));
+    var galleries = Array.prototype.slice.call(root.querySelectorAll('.blog-gallery'));
+    var summary = root.querySelector('.blog-selected-summary');
     if (!buttons.length || !articles.length) {
       return;
     }
@@ -126,6 +128,26 @@ permalink: /blog/
     });
 
     var selected = new Set();
+
+    function highlightYears() {
+      galleries.forEach(function (gallery) {
+        var heading = gallery.previousElementSibling;
+        if (!heading) return;
+        heading.classList.toggle('blog-archive-heading--active', !gallery.hidden);
+      });
+    }
+
+    function updateSummary() {
+      if (!summary) return;
+      if (selected.size === 0) {
+        summary.textContent = 'Showing all posts';
+        return;
+      }
+      var friendly = Array.from(selected).map(function (tag) {
+        return tagLabels[tag] || tag;
+      }).sort();
+      summary.textContent = 'Active tags: ' + friendly.join(', ');
+    }
 
     function updateButtonStates() {
       buttons.forEach(function (btn) {
@@ -193,26 +215,6 @@ permalink: /blog/
     filter.setAttribute('data-filter-initialized', 'true');
   }
 
-
-  function highlightYears() {
-    galleries.forEach(function (gallery) {
-      var heading = gallery.previousElementSibling;
-      if (!heading) return;
-      heading.classList.toggle('blog-archive-heading--active', !gallery.hidden);
-    });
-  }
-
-  function updateSummary() {
-    if (!summary) return;
-    if (selected.size === 0) {
-      summary.textContent = 'Showing all posts';
-      return;
-    }
-    var friendly = Array.from(selected).map(function (tag) {
-      return tagLabels[tag] || tag;
-    }).sort();
-    summary.textContent = 'Active tags: ' + friendly.join(', ');
-  }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initTagFilter(document);

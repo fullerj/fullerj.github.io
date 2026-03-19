@@ -34,6 +34,16 @@ jobs:
         run: JEKYLL_ENV=production bundle exec jekyll build --trace
         # If you're publishing a prebuilt site (no Jekyll on Pages), keep .nojekyll INSIDE _site
 
+      - name: Install HTML Proofer
+        run: gem install html-proofer --no-document
+
+      - name: Validate generated HTML
+        run: |
+          htmlproofer ./_site \
+            --disable-external \
+            --allow-hash-href \
+            --ignore-urls "/localhost/"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -255,7 +255,7 @@ redirect_from:
   {% for edu in site.data.education %}
   <article class="education-card">
     {% if edu.logo %}
-    <img src="{{ edu.logo | relative_url }}" alt="{{ edu.institution }}" loading="lazy" class="education-card__logo">
+    <img src="{{ edu.logo | relative_url }}" alt="{{ edu.institution }}" loading="lazy" decoding="async" class="education-card__logo">
     {% endif %}
     <div class="education-card__body">
       <h3 class="education-card__degree">{{ edu.degree }}{% if edu.year %} <span class="education-card__year">{{ edu.year }}</span>{% endif %}</h3>
@@ -281,7 +281,7 @@ redirect_from:
   {% for cert in site.data.certifications %}
   <article class="certification-card">
     {% if cert.logo %}
-    <img src="{{ cert.logo | relative_url }}" alt="{{ cert.alt | default: cert.title }}" loading="lazy" class="certification-card__logo">
+    <img src="{{ cert.logo | relative_url }}" alt="{{ cert.alt | default: cert.title }}" loading="lazy" decoding="async" class="certification-card__logo">
     {% endif %}
     <div class="certification-card__body">
       <h3 class="certification-card__title">{{ cert.title }}</h3>

@@ -399,7 +399,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-02-25T12:32:28-05:00",
+    "date": "2026-03-19T12:42:28-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -418,7 +418,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-02-25T12:32:28-05:00",
+    "date": "2026-03-19T12:42:28-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -437,7 +437,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-02-25T12:32:28-05:00",
+    "date": "2026-03-19T12:42:28-04:00",
     "excerpt": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus",
     "content": "Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus"
   },
@@ -552,8 +552,8 @@
     "url": "/cookies/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Last Updated: October 23, 2025\n\n1. What Are Cookies?\nCookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.\n\n\n\n2. H",
-    "content": "Last Updated: October 23, 2025\n\n1. What Are Cookies?\nCookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.\n\n\n\n2. How We Use Cookies\nEmpiricalDefense.com does not use cookies for advertising, analytics, or user profiling.\nHowever, our service providers (Squarespace and Cloudflare) may set essential cookies for purposes such as:\n\n  Securing your connection (HTTPS and firewall protection)\n  Optimizing site performance and caching content\n  Balancing traffic loads between servers\n\n\nThese cookies are strictly necessary for the operation of the site.\n\n\n\n3. Managing Cookies\nYou can manage or delete cookies through your browser settings.\nMost browsers allow you to block cookies entirely or delete them when you close your browser.\n\nFor guidance, see:\n\n  Google Chrome Help: Manage Cookies\n  Mozilla Firefox: Enable and Disable Cookies\n  Apple Safari: Manage Cookies and Website Data\n\n\nIf you d"
+    "excerpt": "Last Updated: March 19, 2026\n\n1. What Are Cookies?\nCookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.\n\n\n\n2. How",
+    "content": "Last Updated: March 19, 2026\n\n1. What Are Cookies?\nCookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.\n\n\n\n2. How We Use Cookies\nEmpiricalDefense.com does not use cookies for advertising, analytics, or user profiling.\nHowever, our service providers (including GitHub Pages and Cloudflare) may set essential cookies for purposes such as:\n\n  Securing your connection (HTTPS and firewall protection)\n  Optimizing site performance and caching content\n  Balancing traffic loads between servers\n\n\nThese cookies are strictly necessary for the operation of the site.\n\nFor broader data handling details, see our Privacy Policy.\n\n\n\n3. Managing Cookies\nYou can manage or delete cookies through your browser settings.\nMost browsers allow you to block cookies entirely or delete them when you close your browser.\n\nFor guidance, see:\n\n  Google Chrome Help: Manage Cookies\n  Mozilla Firefox: Enable and Disab"
   },
 
   
@@ -590,8 +590,8 @@
     "url": "/privacy/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Last Updated: October 23, 2025\n\n1. Overview\nWelcome to Empirical Defense (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website Empirica",
-    "content": "Last Updated: October 23, 2025\n\n1. Overview\nWelcome to Empirical Defense (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website EmpiricalDefense.com.\n\nWe do not collect, store, or sell personal information. Our website exists to share insights, research, and commentary for educational and professional purposes.\n\n\n\n2. Information We Do Not Collect\nWe do not use contact forms, comment systems, or user accounts.\nWe do not collect personally identifiable information such as your name, email address, or phone number.\n\nIf you contact us directly via email (for example, at hello@empiricaldefense.com), any information you provide is used solely to respond to your inquiry.\n\n\n\n3. Website Analytics\nWe use Cloudflare Web Analytics to understand general trends in how visitors use our website.\nThis service collects aggregated, anonymous data — such as page views, referrers, and browser types — without using cookies o"
+    "excerpt": "Last Updated: March 19, 2026\n\n1. Overview\nWelcome to Empirical Defense (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website EmpiricalD",
+    "content": "Last Updated: March 19, 2026\n\n1. Overview\nWelcome to Empirical Defense (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website EmpiricalDefense.com.\n\nWe do not collect, store, or sell personal information. Our website exists to share insights, research, and commentary for educational and professional purposes.\n\n\n\n2. Information We Do Not Collect\nWe do not use contact forms, comment systems, or user accounts.\nWe do not collect personally identifiable information such as your name, email address, or phone number.\n\nIf you contact us directly via email (for example, at hello@empiricaldefense.com), any information you provide is used solely to respond to your inquiry.\n\n\n\n3. Website Analytics\nWe use Cloudflare Web Analytics to understand general trends in how visitors use our website.\nThis service collects aggregated, anonymous data — such as page views, referrers, and browser types — without using cookies or "
   },
 
   
@@ -609,8 +609,8 @@
     "url": "/service/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Program Committee Membership\n\n\n  USENIX Security Symposium (2025–Present)\n  Digital Forensics Research Workshop (DFRWS) (2024)\n  International Conference on Cyber Warfare and Security (ICCWS) (2023–Present)\n  European Co",
-    "content": "Program Committee Membership\n\n\n  USENIX Security Symposium (2025–Present)\n  Digital Forensics Research Workshop (DFRWS) (2024)\n  International Conference on Cyber Warfare and Security (ICCWS) (2023–Present)\n  European Conference on Cyber Warfare and Security (ECCWS) (2023–2024)\n\n\nReviewer Engagements\n\n\n  Computers &amp; Security (2022–Present)\n  Cyber Defense Review (2024)"
+    "excerpt": "Consortium Leadership\n\n\n  AIUC-1 (AI Unified Certification Consortium) — Founding Consortium Member\nContributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongsi",
+    "content": "Consortium Leadership\n\n\n  AIUC-1 (AI Unified Certification Consortium) — Founding Consortium Member\nContributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.\n\n\nProgram Committee Membership\n\n\n  USENIX Security Symposium (2024–Present)\n  Digital Forensics Research Workshop (DFRWS) (2024)\n  International Conference on Cyber Warfare and Security (ICCWS) (2023–Present)\n  European Conference on Cyber Warfare and Security (ECCWS) (2023–2024)\n\n\nReviewer Engagements\n\n\n  Computers &amp; Security (2022–Present)\n  Cyber Defense Review (2024)"
   },
 
   
