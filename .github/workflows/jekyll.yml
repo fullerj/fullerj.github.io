@@ -43,9 +43,7 @@ jobs:
             --disable-external \
             --allow-hash-href \
             --ignore-urls "/localhost/" \
-            --ignore-files "CHANGELOG" \
-            --check-internal-links true \
-            --check-sri false
+            --ignore-files "/CHANGELOG/"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
