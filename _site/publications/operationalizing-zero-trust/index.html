@@ -119,7 +119,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-03-19T12:42:28-04:00',
+    INDEX_KEY: 'index--2026-03-19T13:08:48-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -1282,6 +1282,90 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
   }
 
   bindSearchUI();
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  var host;
+  var bar;
+  var target;
+  var ticking = false;
+
+  function ensureProgressUI() {
+    if (host && bar) {
+      return;
+    }
+
+    host = document.createElement('div');
+    host.className = 'reading-progress';
+    host.setAttribute('aria-hidden', 'true');
+
+    bar = document.createElement('div');
+    bar.className = 'reading-progress__bar';
+    host.appendChild(bar);
+
+    document.body.appendChild(host);
+  }
+
+  function getTargetElement() {
+    return document.querySelector('#_main article.page') || null;
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function updateProgress() {
+    ticking = false;
+
+    if (!host || !bar || !target) {
+      return;
+    }
+
+    var start = target.offsetTop;
+    var distance = target.offsetHeight - window.innerHeight;
+    var progress = distance <= 0 ? 1 : clamp((window.scrollY - start) / distance, 0, 1);
+    bar.style.transform = 'scaleX(' + progress + ')';
+  }
+
+  function requestUpdate() {
+    if (ticking) {
+      return;
+    }
+    ticking = true;
+    window.requestAnimationFrame(updateProgress);
+  }
+
+  function bindProgress() {
+    ensureProgressUI();
+    target = getTargetElement();
+
+    if (!target) {
+      document.body.classList.remove('has-reading-progress');
+      bar.style.transform = 'scaleX(0)';
+      return;
+    }
+
+    document.body.classList.add('has-reading-progress');
+    requestUpdate();
+  }
+
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+
+  var pushState = document.getElementById('_pushState');
+  if (pushState) {
+    pushState.addEventListener('hy-push-state-after', bindProgress);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindProgress);
+  } else {
+    bindProgress();
+  }
 })();
 </script>
 
