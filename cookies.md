@@ -6,7 +6,7 @@ description: >
   Cookie policy.
 ---
 
-**Last Updated:** October 23, 2025  
+**Last Updated:** March 19, 2026
 
 ## 1. What Are Cookies?  
 Cookies are small text files stored on your device by websites you visit. They are widely used to make websites work efficiently and provide usage information.
@@ -15,12 +15,14 @@ Cookies are small text files stored on your device by websites you visit. They a
 
 ## 2. How We Use Cookies  
 EmpiricalDefense.com does **not use cookies** for advertising, analytics, or user profiling.  
-However, our service providers (Squarespace and Cloudflare) may set essential cookies for purposes such as:
+However, our service providers (including GitHub Pages and Cloudflare) may set essential cookies for purposes such as:
 - Securing your connection (HTTPS and firewall protection)  
 - Optimizing site performance and caching content  
 - Balancing traffic loads between servers  
 
 These cookies are strictly necessary for the operation of the site.
+
+For broader data handling details, see our [Privacy Policy]({{ '/privacy/' | relative_url }}).
 
 ---
 

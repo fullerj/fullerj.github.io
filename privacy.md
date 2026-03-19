@@ -6,7 +6,7 @@ description: >
   Privacy policy.
 ---
 
-**Last Updated:** March 4, 2026 
+**Last Updated:** March 19, 2026
 
 ## 1. Overview  
 Welcome to *Empirical Defense* (“we,” “us,” or “our”). Your privacy is important to us. This Privacy Policy explains how we handle information when you visit our website [EmpiricalDefense.com](https://empiricaldefense.com).  
@@ -33,10 +33,10 @@ You can learn more about Cloudflare’s privacy approach at [Cloudflare Privacy 
 
 ## 4. Cookies  
 Our site does **not use cookies** for analytics, advertising, or tracking purposes.  
-Some necessary cookies may be set automatically by Squarespace or Cloudflare to ensure site security and performance (e.g., caching and load balancing).  
+Some necessary cookies may be set automatically by our hosting and edge providers (including GitHub Pages and Cloudflare) to ensure site security and performance (e.g., caching and load balancing).  
 These cookies do not collect personal data.
 
-For details, see our [Cookie Policy](#cookie-policy) below.
+For details, see our [Cookie Policy]({{ '/cookies/' | relative_url }}).
 
 ---
 

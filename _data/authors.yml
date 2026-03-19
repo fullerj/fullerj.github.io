@@ -81,17 +81,3 @@ author1:
     # mastodon:        https://<url>
     # x:               <username>
 
-# Another author (optional)
-author2:
-  name:              Jonathan Fuller
-  email:             hello@empiricaldefense.com
-  about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-    Open `_data/authors.yml` to edit this text.
-
-  picture:           /assets/img/headshot.png
-  twitter:           <username>
-  github:            <username>
