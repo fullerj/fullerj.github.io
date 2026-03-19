@@ -134,6 +134,8 @@ Key paths and how they are used:
   ```bash
   bundle install
   bundle exec jekyll build
+
+  kill -9 $(lsof -t -i:4000)
   ```
 - For GitHub Pages hosting, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** so the “Build & Deploy Jekyll (Hydejack)” workflow publishes the `_site` artifact instead of the legacy builder.
 - To manually re-run the workflow, open the repository on GitHub, choose **Actions → Build & Deploy Jekyll (Hydejack)**, then use the `⋯` menu on the latest run and select **Re-run all jobs** (or click **Run workflow** for a clean trigger).
