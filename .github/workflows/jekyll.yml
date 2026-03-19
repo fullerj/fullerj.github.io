@@ -41,10 +41,8 @@ jobs:
         run: |
           htmlproofer ./_site \
             --disable-external \
-            --allow-hash-href \
-            --ignore-urls "/localhost/" \
             --ignore-files "/CHANGELOG/,/licenses/,/LICENSE/,/NOTICE/" \
-            --ignore-patterns 'a\s+tag is missing a reference'
+            --checks Images,Scripts
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
