@@ -12,6 +12,17 @@
       {% unless no_link_title %}</a>{% endunless %}
     </h1>
 
+    {% assign is_blog_post = post.categories contains "posts" %}
+    {% if is_blog_post %}
+      {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
+      {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
+      {% assign rounding_offset = reading_wpm | minus: 1 %}
+      {% assign word_count = post.content | strip_html | number_of_words %}
+      {% assign reading_minutes = word_count | plus: rounding_offset | divided_by: reading_wpm %}
+      {% if reading_minutes < 1 %}{% assign reading_minutes = 1 %}{% endif %}
+      <p class="post-reading-time">{{ reading_minutes }} min read</p>
+    {% endif %}
+
     {% include components/message.html text=post.description hide=hide_description alt=false %}
   </header>
 

@@ -31,6 +31,7 @@ description:           >
 tagline:               Bridging Research, Education, and Cyber Defense
 blog:
   max_columns: 2
+  reading_wpm: 220
 
 # A list of keywords for your blog
 keywords:
