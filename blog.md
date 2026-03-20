@@ -73,6 +73,13 @@ permalink: /blog/
       </div>
       <div class="blog-card__body">
         <h2 class="blog-card__title">{{ post.title }}</h2>
+        {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
+        {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
+        {% assign rounding_offset = reading_wpm | minus: 1 %}
+        {% assign card_word_count = post.content | strip_html | number_of_words %}
+        {% assign card_reading_minutes = card_word_count | plus: rounding_offset | divided_by: reading_wpm %}
+        {% if card_reading_minutes < 1 %}{% assign card_reading_minutes = 1 %}{% endif %}
+        <p class="blog-card__meta">{{ card_reading_minutes }} min read</p>
         {% if post.description %}
           <p class="blog-card__excerpt">{{ post.description }}</p>
         {% else %}

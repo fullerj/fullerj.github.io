@@ -33,8 +33,16 @@ redirect_from:
 {% if recent_posts and recent_posts.size > 0 %}
 <ul>
   {% for post in recent_posts limit:3 %}
+  {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
+  {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
+  {% assign rounding_offset = reading_wpm | minus: 1 %}
+  {% assign recent_word_count = post.content | strip_html | number_of_words %}
+  {% assign recent_reading_minutes = recent_word_count | plus: rounding_offset | divided_by: reading_wpm %}
+  {% if recent_reading_minutes < 1 %}{% assign recent_reading_minutes = 1 %}{% endif %}
   <li>
     <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
+    <br/>
+    <small class="post-inline-meta">{{ recent_reading_minutes }} min read</small>
   </li>
   {% endfor %}
 </ul>

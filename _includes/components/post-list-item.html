@@ -3,4 +3,13 @@
 <li class="h4">
   {% if post.venue %}<span class="badge badge--outline mr1">[{{ post.venue }}]</span>{% endif %}
   <a href="{{ post.url | relative_url }}" class="flip-title"><span>{{ post.title }}</span></a>
+  {% if post.categories contains "posts" %}
+    {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
+    {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
+    {% assign rounding_offset = reading_wpm | minus: 1 %}
+    {% assign list_word_count = post.content | strip_html | number_of_words %}
+    {% assign list_reading_minutes = list_word_count | plus: rounding_offset | divided_by: reading_wpm %}
+    {% if list_reading_minutes < 1 %}{% assign list_reading_minutes = 1 %}{% endif %}
+    <small class="post-inline-meta">{{ list_reading_minutes }} min read</small>
+  {% endif %}
 </li>
