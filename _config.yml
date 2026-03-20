@@ -83,6 +83,8 @@ menu:
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
 legal:
+  - title:             Disclaimer
+    url:               /disclaimer/
   - title:             Privacy Policy
     url:               /privacy/
   - title:             Cookie Policy
