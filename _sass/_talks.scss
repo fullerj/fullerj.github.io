@@ -18,16 +18,16 @@
 }
 
 .talk-card {
-  border: 1px solid rgba(25, 55, 71, 0.14);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 10px 22px rgba(17, 30, 45, 0.09);
-  padding: 1rem 1.15rem;
+  border: 1px solid var(--ds-border-1);
+  border-radius: var(--ds-radius-2);
+  background: var(--ds-surface-1);
+  box-shadow: var(--ds-shadow-1);
+  padding: var(--ds-card-padding-y) var(--ds-card-padding-x);
 }
 
 .talk-card--featured {
-  border-color: rgba(79, 177, 186, 0.36);
-  box-shadow: 0 14px 30px rgba(17, 30, 45, 0.12);
+  border-color: var(--ds-accent-border);
+  box-shadow: var(--ds-shadow-2);
 }
 
 .talk-card__meta {
@@ -43,8 +43,8 @@
 .talk-card__chip {
   display: inline-flex;
   padding: 0.08rem 0.5rem;
-  border: 1px solid rgba(79, 177, 186, 0.52);
-  border-radius: 999px;
+  border: 1px solid var(--ds-chip-hover-border);
+  border-radius: var(--ds-radius-pill);
   font-weight: 700;
 }
 
@@ -58,7 +58,7 @@
 .talk-card__date,
 .talk-card__description {
   margin: 0.52rem 0 0;
-  color: var(--gray, #666);
+  color: var(--ds-text-3);
   font-size: 0.93rem;
 }
 
@@ -80,16 +80,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .talk-card {
-    background: rgba(28, 36, 48, 0.88);
-    border-color: rgba(210, 220, 230, 0.2);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
-  }
-
-  .talk-card__event,
-  .talk-card__date,
-  .talk-card__description {
-    color: rgba(230, 236, 244, 0.82);
-  }
-}

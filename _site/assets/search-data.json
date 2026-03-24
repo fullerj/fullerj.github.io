@@ -399,7 +399,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-03-24T14:42:39-04:00",
+    "date": "2026-03-24T15:41:35-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -418,7 +418,7 @@
     "title": "Publications",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-03-24T14:42:39-04:00",
+    "date": "2026-03-24T15:41:35-04:00",
     "excerpt": "",
     "content": "13 publications across 8 years and 11 venues.\n  \n  \n    \n      2026\n    \n      2025\n    \n      2023\n    \n      2022\n    \n      2021\n    \n      2017\n    \n      2016\n    \n      2015"
   },
@@ -437,9 +437,28 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-03-24T14:42:39-04:00",
+    "date": "2026-03-24T15:41:35-04:00",
     "excerpt": "",
     "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "Page Not Found",
+    "url": "/404.html",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Blogs\n\tView Publications\n\tSee Talks\n\n\n  You can also use the s",
+    "content": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Blogs\n\tView Publications\n\tSee Talks\n\n\n  You can also use the search icon in the top navigation to find what you need."
   },
 
   
@@ -629,7 +648,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "7 active and recent service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Consortium Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n",
-    "content": "7 active and recent service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Consortium Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n\n  Consortium Leadership\n  \n    \n      \n        AIUC-1 (AI Unified Certification Consortium)\n        Founding Consortium Member\n      \n      \n        Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.\n      \n    \n  \n\n\n\n  Program Committee Membership\n  \n    \n      \n        USENIX Security Symposium\n        Program Committee, 2024-Present\n      \n      \n        Supporting peer review and technical program quality for one of the leading venues in systems and security research.\n      \n    \n\n    \n      \n        Digital Forensics Research Workshop (DFRWS)\n        Program Committee, 2024\n      \n      \n        Contribute"
+    "content": "7 active and recent service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Consortium Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n\n  Consortium Leadership\n  \n    \n      \n        AIUC-1\n        Founding Consortium Member\n      \n      \n        Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.\n      \n    \n  \n\n\n\n  Program Committee Membership\n  \n    \n      \n        USENIX Security Symposium\n        Program Committee, 2024-Present\n      \n      \n        Supporting peer review and technical program quality for one of the leading venues in systems and security research.\n      \n    \n\n    \n      \n        Digital Forensics Research Workshop (DFRWS)\n        Program Committee, 2024\n      \n      \n        Contributed to review and selection of applied d"
   },
 
   
