@@ -10,19 +10,54 @@ redirect_from:
 
 # About
 
+<section class="home-section home-section--intro">
+
 <!--author-->
 
+</section>
 
 <!--more-->
 
+{% assign insights_count = site.posts | where_exp:'post','post.categories contains "posts"' | size %}
+{% assign research_count = site.posts | where_exp:'post','post.categories contains "publications"' | size %}
+{% assign talks_count = site.data.talks | size %}
+{% assign certifications_count = site.data.certifications | size %}
 
+<section class="home-section home-section--snapshot">
+  <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">{{ insights_count }}</p>
+      <p class="home-kpi__label">Insights</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">{{ research_count }}</p>
+      <p class="home-kpi__label">Research and Publications</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">{{ talks_count }}</p>
+      <p class="home-kpi__label">Talks and Events</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">{{ certifications_count }}</p>
+      <p class="home-kpi__label">Professional Certifications</p>
+    </article>
+  </div>
 
-1. this toc will be replaced by a hydejack-generated toc
-{:toc}
+  <nav class="home-quick-links" aria-label="Quick access">
+    <a class="home-quick-links__link" href="{{ '/blog/' | relative_url }}">Insights</a>
+    <a class="home-quick-links__link" href="{{ '/publications/' | relative_url }}">Research</a>
+    <a class="home-quick-links__link" href="{{ '/talks/' | relative_url }}">Speaking</a>
+    <a class="home-quick-links__link" href="{{ '/service/' | relative_url }}">Service</a>
+  </nav>
+</section>
 
 ## Highlights
 
-### Recent Insights
+<section class="home-section home-section--highlights">
+  <div class="home-highlights-grid">
+    <article class="home-panel home-panel--feature">
+
+      <h3>Recent Insights</h3>
 
 {% assign recent_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
 {% if recent_posts %}
@@ -51,7 +86,10 @@ redirect_from:
 <p>Posts will appear here once they are published.</p>
 {% endif %}
 
-### Recent Publications
+    </article>
+
+    <article class="home-panel home-panel--feature">
+      <h3>Research and Publications</h3>
 
 {% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
 {% if recent_publications %}
@@ -76,7 +114,10 @@ redirect_from:
 <p>Publications will appear here once they are added to the site.</p>
 {% endif %}
 
-### Recent Talks
+    </article>
+
+    <article class="home-panel">
+      <h3>Recent Talks</h3>
 
 {% assign recent_talks = site.data.talks | sort: 'date' | reverse %}
 {% if recent_talks and recent_talks.size > 0 %}
@@ -102,7 +143,10 @@ redirect_from:
 <p>Talks will appear here once they are added to the site.</p>
 {% endif %}
 
-### Selected Media Coverage
+    </article>
+
+    <article class="home-panel">
+      <h3>Selected Media Coverage</h3>
 
 {% assign coverage_limit = 6 %}
 {% assign per_source_limit = 2 %}
@@ -241,7 +285,10 @@ redirect_from:
 <p>Media highlights will appear here once coverage links are available.</p>
 {% endif %}
 
-### Recent Service
+    </article>
+
+    <article class="home-panel">
+      <h3>Recent Service</h3>
 
 {% assign service_posts = site.pages | where: 'url', '/service/' %}
 {% if service_posts and service_posts.size > 0 %}
@@ -257,9 +304,16 @@ redirect_from:
 <p>Service highlights will appear here once they are published.</p>
 {% endif %}
 
-## Education
+    </article>
+  </div>
+</section>
 
-<div class="education-grid">
+<section class="home-section home-section--credentials">
+  <details class="home-expandable">
+    <summary>Education</summary>
+
+    <div class="home-expandable__content">
+      <div class="education-grid">
   {% for edu in site.data.education %}
   <article class="education-card">
     {% if edu.logo %}
@@ -280,12 +334,19 @@ redirect_from:
     </div>
   </article>
   {% endfor %}
-</div>
+      </div>
+    </div>
+  </details>
+</section>
 
-## Professional Certifications 
-<a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">Verify credentials on Credly</a>
+<section class="home-section home-section--credentials">
+  <details class="home-expandable">
+    <summary>Professional Certifications</summary>
 
-<div class="certifications-grid">
+    <div class="home-expandable__content">
+      <a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">Verify credentials on Credly</a>
+
+      <div class="certifications-grid">
   {% for cert in site.data.certifications %}
   <article class="certification-card">
     {% if cert.logo %}
@@ -299,4 +360,7 @@ redirect_from:
     </div>
   </article>
   {% endfor %}
-</div>
+      </div>
+    </div>
+  </details>
+</section>

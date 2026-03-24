@@ -1,15 +1,52 @@
 {% assign post = include.post %}
 
-<li class="h4">
-  {% if post.venue %}<span class="badge badge--outline mr1">[{{ post.venue }}]</span>{% endif %}
-  <a href="{{ post.url | relative_url }}" class="flip-title"><span>{{ post.title }}</span></a>
-  {% if post.categories contains "posts" %}
-    {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
-    {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
-    {% assign rounding_offset = reading_wpm | minus: 1 %}
-    {% assign list_word_count = post.content | strip_html | number_of_words %}
-    {% assign list_reading_minutes = list_word_count | plus: rounding_offset | divided_by: reading_wpm %}
-    {% if list_reading_minutes < 1 %}{% assign list_reading_minutes = 1 %}{% endif %}
-    <small class="post-inline-meta">{{ list_reading_minutes }} min read</small>
-  {% endif %}
-</li>
+{% if post.categories contains "publications" %}
+  {% assign pub_year = post.date | date: "%Y" %}
+  {% assign pub_meta = post.conference | default: post.journal | default: post.book %}
+  {% assign pub_summary = post.description | default: post.excerpt | strip_html | strip_newlines %}
+
+  <li class="publication-list-item">
+    <article class="publication-card">
+      <p class="publication-card__meta">
+        {% if post.venue %}
+          <span class="publication-card__venue">{{ post.venue }}</span>
+        {% endif %}
+        <span class="publication-card__year">{{ pub_year }}</span>
+      </p>
+
+      <h3 class="publication-card__title">
+        <a href="{{ post.url | relative_url }}" class="flip-title"><span>{{ post.title }}</span></a>
+      </h3>
+
+      {% if pub_meta %}
+        <p class="publication-card__context">{{ pub_meta }}</p>
+      {% endif %}
+
+      {% if pub_summary and pub_summary != '' %}
+        <p class="publication-card__excerpt">{{ pub_summary }}</p>
+      {% endif %}
+
+      <p class="publication-card__actions">
+        <a href="{{ post.url | relative_url }}">Details</a>
+        {% if post.pdf_url %}<a href="{{ post.pdf_url }}">PDF</a>{% endif %}
+        {% if post.code_url %}<a href="{{ post.code_url }}">Code</a>{% endif %}
+        {% if post.doi %}<a href="https://doi.org/{{ post.doi }}">DOI</a>{% endif %}
+        {% if post.slides_url %}<a href="{{ post.slides_url }}">Slides</a>{% endif %}
+      </p>
+    </article>
+  </li>
+{% else %}
+  <li class="h4">
+    {% if post.venue %}<span class="badge badge--outline mr1">[{{ post.venue }}]</span>{% endif %}
+    <a href="{{ post.url | relative_url }}" class="flip-title"><span>{{ post.title }}</span></a>
+    {% if post.categories contains "posts" %}
+      {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
+      {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
+      {% assign rounding_offset = reading_wpm | minus: 1 %}
+      {% assign list_word_count = post.content | strip_html | number_of_words %}
+      {% assign list_reading_minutes = list_word_count | plus: rounding_offset | divided_by: reading_wpm %}
+      {% if list_reading_minutes < 1 %}{% assign list_reading_minutes = 1 %}{% endif %}
+      <small class="post-inline-meta">{{ list_reading_minutes }} min read</small>
+    {% endif %}
+  </li>
+{% endif %}

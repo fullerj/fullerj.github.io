@@ -1,4 +1,4 @@
-An incomplete list of features included in all versions of **Hydejack**:
+An incomplete list of features included in all versions of this site theme:
 
 * Responsive layout with unique design features for every screen size
 * Cover Pages for a stunning first impression.

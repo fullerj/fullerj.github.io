@@ -7,11 +7,11 @@ layout: base
 {% assign minor = version[1] | plus:0 %}
 {% assign patch = version[2] | plus:0 %}
 
-{% include components/post.html post=page no_link_title=true no_excerpt=true hide_image=page.hide_image hide_description=page.hide_description %}
+{% include components/post.html post=page no_link_title=true no_excerpt=true hide_image=page.hide_image hide_description=true %}
 
 {% include components/dingbat.html %}
 
-{% assign addons = page.addons | default:site.hydejack.post_addons %}
+{% assign addons = page.addons | default:site.post_addons %}
 {% unless addons %}{% assign addons = "about,newsletter,related,random" | split:"," %}{% endunless %}
 {% for addon in addons %}
   {% case addon %}

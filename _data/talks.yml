@@ -24,6 +24,7 @@
 
 - title: "10th Published Authors’ Night"
   event: "U.S. Military Academy Preparatory School"
+  talk_type: panel
   location: "West Point, NY"
   date: "2024-09-15"
   latitude: 41.3676
@@ -83,6 +84,7 @@
 
 - title: "C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration"
   event: "Cybersecurity Lecture Series, Georgia Institute of Technology"
+  talk_type: Seminar
   location: "Atlanta, GA"
   date: "2021-10-15"
   latitude: 33.749

@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-03-20T16:08:06-04:00',
+    INDEX_KEY: 'index--2026-03-24T14:42:39-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -272,6 +272,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           <span class="icon-cross"></span>
         </button>
       </div>
+      <div class="nav-search-scopes" role="group" aria-label="Search scope" data-search-scopes>
+        <button type="button" class="nav-search-scope is-active" data-search-scope="all" aria-pressed="true">All</button>
+        <button type="button" class="nav-search-scope" data-search-scope="blog" aria-pressed="false">Blog</button>
+        <button type="button" class="nav-search-scope" data-search-scope="publications" aria-pressed="false">Publications</button>
+        <button type="button" class="nav-search-scope" data-search-scope="talks" aria-pressed="false">Talks</button>
+        <button type="button" class="nav-search-scope" data-search-scope="teaching" aria-pressed="false">Teaching</button>
+      </div>
       <p class="nav-search-status" data-search-status hidden></p>
       <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
       <p class="search-result--empty nav-search-empty" data-search-empty hidden>
@@ -346,7 +353,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 (function() {
   'use strict';
   
-  var talks = [{"title":"Spycraft 2.0: Hunting Dead Drops in Web Applications","event":"BSidesNYC 0x05","location":"New York City, NY","date":"2025-10-18","latitude":40.7128,"longitude":-74.006,"resources":[{"label":"Video","url":"https://www.youtube.com/watch?v=axuZzwJ7xnc&list=PLiVMecYmLYz5mswUsFNwBTgjGHXKiPN2k&index=25"}],"media_coverage":[{"title":"Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters","url":"https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters","date":"2025-10-22"}]},{"title":"Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation","event":"32nd ACM Conference on Computer and Communications Security (CCS)","location":"Taipei, Taiwan (Virtual)","date":"2025-10-13","latitude":25.033,"longitude":121.5654},{"title":"10th Published Authors’ Night","event":"U.S. Military Academy Preparatory School","location":"West Point, NY","date":"2024-09-15","latitude":41.3676,"longitude":-73.955},{"title":"Hiding in Plain Sight: Tracking Malware Abusing Web Applications","event":"AvengerCon VIII","location":"Augusta, GA","date":"2024-02-10","latitude":33.4735,"longitude":-82.0105,"resources":[{"label":"Video","url":"https://www.dvidshub.net/video/926082/avengercon-viii-hiding-plain-sight-tracking-malware-abusing-web-applications"}]},{"title":"Gearing Rapid Malware Forensics toward Botnet Monitoring and Takedown","event":"Cybersecurity Seminar, Naval Postgraduate School","location":"Monterey, CA","date":"2023-11-15","latitude":36.6002,"longitude":-121.8947},{"title":"The Bot Reveals Its Master: Exposing and Infiltrating Command and Control Servers via Malware Logic Reuse","event":"Cybersecurity Seminar, The Ohio State University","location":"Columbus, OH (Virtual)","date":"2023-02-20","latitude":39.9612,"longitude":-82.9988,"resources":[{"label":"Video","url":"https://icdt.osu.edu/events/2023/02/virtual-event-bot-reveals-its-master"}]},{"title":"Large-Scale Infiltration and Monitoring of C&C Servers","event":"ShmooCon","location":"Washington, DC","date":"2023-01-20","latitude":38.9072,"longitude":-77.0369,"resources":[{"label":"Video","url":"https://www.youtube.com/watch?v=nFhKCl6sA0E"}]},{"title":"Covert Infiltration and Monitoring of Command and Control Servers","event":"AvengerCon VII","location":"Columbia, MD","date":"2022-11-05","latitude":39.2037,"longitude":-76.861,"resources":[{"label":"Video","url":"https://www.dvidshub.net/video/870227/avengercon-vii-covertly-infiltrating-and-monitoring-cc-servers"}]},{"title":"C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration","event":"28th ACM Conference on Computer and Communications Security (CCS)","location":"Virtual Conference","date":"2021-11-15"},{"title":"C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration","event":"Cybersecurity Lecture Series, Georgia Institute of Technology","location":"Atlanta, GA","date":"2021-10-15","latitude":33.749,"longitude":-84.388},{"title":"Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks","event":"11th International Conference on Cyber Warfare and Security (ICCWS)","location":"Boston, MA","date":"2016-03-01","latitude":42.3601,"longitude":-71.0589},{"title":"Rogue Z-Wave Controllers: A Persistent Attack Channel","event":"10th IEEE International Workshop on Practical Issues in Building Sensor Network Applications (SenseApp)","location":"Clearwater, FL","date":"2015-10-12","latitude":27.9659,"longitude":-82.8001},{"title":"Stealthy and Persistent Access to Z-Wave Gateways","event":"DerbyCon 5.0 “Unity”","location":"Louisville, KY","date":"2015-09-25","latitude":38.2527,"longitude":-85.7585,"resources":[{"label":"Video","url":"https://www.youtube.com/watch?v=KQMGI-e8wtA"}]}];
+  var talks = [{"title":"Spycraft 2.0: Hunting Dead Drops in Web Applications","event":"BSidesNYC 0x05","location":"New York City, NY","date":"2025-10-18","latitude":40.7128,"longitude":-74.006,"resources":[{"label":"Video","url":"https://www.youtube.com/watch?v=axuZzwJ7xnc&list=PLiVMecYmLYz5mswUsFNwBTgjGHXKiPN2k&index=25"}],"media_coverage":[{"title":"Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters","url":"https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters","date":"2025-10-22"}]},{"title":"Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation","event":"32nd ACM Conference on Computer and Communications Security (CCS)","location":"Taipei, Taiwan (Virtual)","date":"2025-10-13","latitude":25.033,"longitude":121.5654},{"title":"10th Published Authors’ Night","event":"U.S. Military Academy Preparatory School","talk_type":"panel","location":"West Point, NY","date":"2024-09-15","latitude":41.3676,"longitude":-73.955},{"title":"Hiding in Plain Sight: Tracking Malware Abusing Web Applications","event":"AvengerCon VIII","location":"Augusta, GA","date":"2024-02-10","latitude":33.4735,"longitude":-82.0105,"resources":[{"label":"Video","url":"https://www.dvidshub.net/video/926082/avengercon-viii-hiding-plain-sight-tracking-malware-abusing-web-applications"}]},{"title":"Gearing Rapid Malware Forensics toward Botnet Monitoring and Takedown","event":"Cybersecurity Seminar, Naval Postgraduate School","location":"Monterey, CA","date":"2023-11-15","latitude":36.6002,"longitude":-121.8947},{"title":"The Bot Reveals Its Master: Exposing and Infiltrating Command and Control Servers via Malware Logic Reuse","event":"Cybersecurity Seminar, The Ohio State University","location":"Columbus, OH (Virtual)","date":"2023-02-20","latitude":39.9612,"longitude":-82.9988,"resources":[{"label":"Video","url":"https://icdt.osu.edu/events/2023/02/virtual-event-bot-reveals-its-master"}]},{"title":"Large-Scale Infiltration and Monitoring of C&C Servers","event":"ShmooCon","location":"Washington, DC","date":"2023-01-20","latitude":38.9072,"longitude":-77.0369,"resources":[{"label":"Video","url":"https://www.youtube.com/watch?v=nFhKCl6sA0E"}]},{"title":"Covert Infiltration and Monitoring of Command and Control Servers","event":"AvengerCon VII","location":"Columbia, MD","date":"2022-11-05","latitude":39.2037,"longitude":-76.861,"resources":[{"label":"Video","url":"https://www.dvidshub.net/video/870227/avengercon-vii-covertly-infiltrating-and-monitoring-cc-servers"}]},{"title":"C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration","event":"28th ACM Conference on Computer and Communications Security (CCS)","location":"Virtual Conference","date":"2021-11-15"},{"title":"C3PO: Large-Scale Study Of Covert Monitoring of C&C Servers via Over-Permissioned Protocol Infiltration","event":"Cybersecurity Lecture Series, Georgia Institute of Technology","talk_type":"Seminar","location":"Atlanta, GA","date":"2021-10-15","latitude":33.749,"longitude":-84.388},{"title":"Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks","event":"11th International Conference on Cyber Warfare and Security (ICCWS)","location":"Boston, MA","date":"2016-03-01","latitude":42.3601,"longitude":-71.0589},{"title":"Rogue Z-Wave Controllers: A Persistent Attack Channel","event":"10th IEEE International Workshop on Practical Issues in Building Sensor Network Applications (SenseApp)","location":"Clearwater, FL","date":"2015-10-12","latitude":27.9659,"longitude":-82.8001},{"title":"Stealthy and Persistent Access to Z-Wave Gateways","event":"DerbyCon 5.0 “Unity”","location":"Louisville, KY","date":"2015-09-25","latitude":38.2527,"longitude":-85.7585,"resources":[{"label":"Video","url":"https://www.youtube.com/watch?v=KQMGI-e8wtA"}]}];
   var mapInitialized = false;
   
   function initMap() {
@@ -412,113 +419,390 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 })();
 </script>
 
-<h3 id="spycraft-20-hunting-dead-drops-in-web-applications">Spycraft 2.0: Hunting Dead Drops in Web Applications</h3>
-<p><strong>Event:</strong> BSidesNYC 0x05, New York City, NY<br />
-<strong>Date:</strong> October 18, 2025</p>
+<section class="talks-section talks-section--featured">
+  <h2>Featured Talks</h2>
+  <div class="talks-grid">
+    
+      
+      
+      
 
-<p><strong>Resources:</strong></p>
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=axuZzwJ7xnc&amp;list=PLiVMecYmLYz5mswUsFNwBTgjGHXKiPN2k&amp;index=25">Video</a></li>
-</ul>
+      <article class="talk-card talk-card--featured">
+        <p class="talk-card__meta">
+          <span class="talk-card__chip">Talk</span>
+          <span>2025</span>
+        </p>
+        <h3 class="talk-card__title">Spycraft 2.0: Hunting Dead Drops in Web Applications</h3>
+        <p class="talk-card__event">BSidesNYC 0x05 - New York City, NY</p>
+        <p class="talk-card__date">October 18, 2025</p>
+        
+        
+          <p class="talk-card__links">
+            
+              <a href="https://www.youtube.com/watch?v=axuZzwJ7xnc&amp;list=PLiVMecYmLYz5mswUsFNwBTgjGHXKiPN2k&amp;index=25">Video</a>
+            
+          </p>
+        
+      </article>
+    
+      
+      
+      
 
-<hr />
+      <article class="talk-card talk-card--featured">
+        <p class="talk-card__meta">
+          <span class="talk-card__chip">Conference</span>
+          <span>2025</span>
+        </p>
+        <h3 class="talk-card__title">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</h3>
+        <p class="talk-card__event">32nd ACM Conference on Computer and Communications Security (CCS) - Taipei, Taiwan (Virtual)</p>
+        <p class="talk-card__date">October 13, 2025</p>
+        
+        
+      </article>
+    
+      
+      
+      
 
-<h3 id="enhanced-web-application-security-through-proactive-dead-drop-resolver-remediation">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</h3>
-<p><strong>Event:</strong> 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan (Virtual)<br />
-<strong>Date:</strong> October 13, 2025</p>
+      <article class="talk-card talk-card--featured">
+        <p class="talk-card__meta">
+          <span class="talk-card__chip">Panel</span>
+          <span>2024</span>
+        </p>
+        <h3 class="talk-card__title">10th Published Authors’ Night</h3>
+        <p class="talk-card__event">U.S. Military Academy Preparatory School - West Point, NY</p>
+        <p class="talk-card__date">September 15, 2024</p>
+        
+        
+      </article>
+    
+  </div>
+</section>
 
-<hr />
+<section class="talks-section talks-section--timeline">
+  <h2>All Talks</h2>
+  <div class="talks-timeline">
+    
+      
+      
+        
+          
+          
+      
+    
+      
+      
+        
+      
+        
+          
+          
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+          
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<h3 id="10th-published-authors-night">10th Published Authors’ Night</h3>
-<p><strong>Event:</strong> U.S. Military Academy Preparatory School, West Point, NY<br />
-<strong>Date:</strong> September 15, 2024</p>
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Conference</span>
+            <span>2024</span>
+          </p>
+          <h3 class="talk-card__title">Hiding in Plain Sight: Tracking Malware Abusing Web Applications</h3>
+          <p class="talk-card__event">AvengerCon VIII - Augusta, GA</p>
+          <p class="talk-card__date">February 10, 2024</p>
+          
+          
+            <p class="talk-card__links">
+              
+                <a href="https://www.dvidshub.net/video/926082/avengercon-viii-hiding-plain-sight-tracking-malware-abusing-web-applications">Video</a>
+              
+            </p>
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<hr />
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Seminar</span>
+            <span>2023</span>
+          </p>
+          <h3 class="talk-card__title">Gearing Rapid Malware Forensics toward Botnet Monitoring and Takedown</h3>
+          <p class="talk-card__event">Cybersecurity Seminar, Naval Postgraduate School - Monterey, CA</p>
+          <p class="talk-card__date">November 15, 2023</p>
+          
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<h3 id="hiding-in-plain-sight-tracking-malware-abusing-web-applications">Hiding in Plain Sight: Tracking Malware Abusing Web Applications</h3>
-<p><strong>Event:</strong> AvengerCon VIII, Augusta, GA<br />
-<strong>Date:</strong> February 10, 2024</p>
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Seminar</span>
+            <span>2023</span>
+          </p>
+          <h3 class="talk-card__title">The Bot Reveals Its Master: Exposing and Infiltrating Command and Control Servers via Malware Logic Reuse</h3>
+          <p class="talk-card__event">Cybersecurity Seminar, The Ohio State University - Columbus, OH (Virtual)</p>
+          <p class="talk-card__date">February 20, 2023</p>
+          
+          
+            <p class="talk-card__links">
+              
+                <a href="https://icdt.osu.edu/events/2023/02/virtual-event-bot-reveals-its-master">Video</a>
+              
+            </p>
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<p><strong>Resources:</strong></p>
-<ul>
-  <li><a href="https://www.dvidshub.net/video/926082/avengercon-viii-hiding-plain-sight-tracking-malware-abusing-web-applications">Video</a></li>
-</ul>
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Conference</span>
+            <span>2023</span>
+          </p>
+          <h3 class="talk-card__title">Large-Scale Infiltration and Monitoring of C&amp;C Servers</h3>
+          <p class="talk-card__event">ShmooCon - Washington, DC</p>
+          <p class="talk-card__date">January 20, 2023</p>
+          
+          
+            <p class="talk-card__links">
+              
+                <a href="https://www.youtube.com/watch?v=nFhKCl6sA0E">Video</a>
+              
+            </p>
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<hr />
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Conference</span>
+            <span>2022</span>
+          </p>
+          <h3 class="talk-card__title">Covert Infiltration and Monitoring of Command and Control Servers</h3>
+          <p class="talk-card__event">AvengerCon VII - Columbia, MD</p>
+          <p class="talk-card__date">November 5, 2022</p>
+          
+          
+            <p class="talk-card__links">
+              
+                <a href="https://www.dvidshub.net/video/870227/avengercon-vii-covertly-infiltrating-and-monitoring-cc-servers">Video</a>
+              
+            </p>
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<h3 id="gearing-rapid-malware-forensics-toward-botnet-monitoring-and-takedown">Gearing Rapid Malware Forensics toward Botnet Monitoring and Takedown</h3>
-<p><strong>Event:</strong> Cybersecurity Seminar, Naval Postgraduate School, Monterey, CA<br />
-<strong>Date:</strong> November 15, 2023</p>
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Conference</span>
+            <span>2021</span>
+          </p>
+          <h3 class="talk-card__title">C3PO: Large-Scale Study Of Covert Monitoring of C&amp;C Servers via Over-Permissioned Protocol Infiltration</h3>
+          <p class="talk-card__event">28th ACM Conference on Computer and Communications Security (CCS) - Virtual Conference</p>
+          <p class="talk-card__date">November 15, 2021</p>
+          
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<hr />
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Seminar</span>
+            <span>2021</span>
+          </p>
+          <h3 class="talk-card__title">C3PO: Large-Scale Study Of Covert Monitoring of C&amp;C Servers via Over-Permissioned Protocol Infiltration</h3>
+          <p class="talk-card__event">Cybersecurity Lecture Series, Georgia Institute of Technology - Atlanta, GA</p>
+          <p class="talk-card__date">October 15, 2021</p>
+          
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<h3 id="the-bot-reveals-its-master-exposing-and-infiltrating-command-and-control-servers-via-malware-logic-reuse">The Bot Reveals Its Master: Exposing and Infiltrating Command and Control Servers via Malware Logic Reuse</h3>
-<p><strong>Event:</strong> Cybersecurity Seminar, The Ohio State University, Columbus, OH (Virtual)<br />
-<strong>Date:</strong> February 20, 2023</p>
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Conference</span>
+            <span>2016</span>
+          </p>
+          <h3 class="talk-card__title">Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks</h3>
+          <p class="talk-card__event">11th International Conference on Cyber Warfare and Security (ICCWS) - Boston, MA</p>
+          <p class="talk-card__date">March 1, 2016</p>
+          
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<p><strong>Resources:</strong></p>
-<ul>
-  <li><a href="https://icdt.osu.edu/events/2023/02/virtual-event-bot-reveals-its-master">Video</a></li>
-</ul>
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Workshop</span>
+            <span>2015</span>
+          </p>
+          <h3 class="talk-card__title">Rogue Z-Wave Controllers: A Persistent Attack Channel</h3>
+          <p class="talk-card__event">10th IEEE International Workshop on Practical Issues in Building Sensor Network Applications (SenseApp) - Clearwater, FL</p>
+          <p class="talk-card__date">October 12, 2015</p>
+          
+          
+        </article>
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+      
+        
+        
+        
 
-<hr />
-
-<h3 id="large-scale-infiltration-and-monitoring-of-cc-servers">Large-Scale Infiltration and Monitoring of C&amp;C Servers</h3>
-<p><strong>Event:</strong> ShmooCon, Washington, DC<br />
-<strong>Date:</strong> January 20, 2023</p>
-
-<p><strong>Resources:</strong></p>
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=nFhKCl6sA0E">Video</a></li>
-</ul>
-
-<hr />
-
-<h3 id="covert-infiltration-and-monitoring-of-command-and-control-servers">Covert Infiltration and Monitoring of Command and Control Servers</h3>
-<p><strong>Event:</strong> AvengerCon VII, Columbia, MD<br />
-<strong>Date:</strong> November 5, 2022</p>
-
-<p><strong>Resources:</strong></p>
-<ul>
-  <li><a href="https://www.dvidshub.net/video/870227/avengercon-vii-covertly-infiltrating-and-monitoring-cc-servers">Video</a></li>
-</ul>
-
-<hr />
-
-<h3 id="c3po-large-scale-study-of-covert-monitoring-of-cc-servers-via-over-permissioned-protocol-infiltration">C3PO: Large-Scale Study Of Covert Monitoring of C&amp;C Servers via Over-Permissioned Protocol Infiltration</h3>
-<p><strong>Event:</strong> 28th ACM Conference on Computer and Communications Security (CCS), Virtual Conference<br />
-<strong>Date:</strong> November 15, 2021</p>
-
-<hr />
-
-<h3 id="c3po-large-scale-study-of-covert-monitoring-of-cc-servers-via-over-permissioned-protocol-infiltration-1">C3PO: Large-Scale Study Of Covert Monitoring of C&amp;C Servers via Over-Permissioned Protocol Infiltration</h3>
-<p><strong>Event:</strong> Cybersecurity Lecture Series, Georgia Institute of Technology, Atlanta, GA<br />
-<strong>Date:</strong> October 15, 2021</p>
-
-<hr />
-
-<h3 id="wireless-intrusion-detection-of-covert-channel-attacks-in-itu-t-g9959-based-networks">Wireless Intrusion Detection of Covert Channel Attacks in ITU-T G.9959-Based Networks</h3>
-<p><strong>Event:</strong> 11th International Conference on Cyber Warfare and Security (ICCWS), Boston, MA<br />
-<strong>Date:</strong> March 1, 2016</p>
-
-<hr />
-
-<h3 id="rogue-z-wave-controllers-a-persistent-attack-channel">Rogue Z-Wave Controllers: A Persistent Attack Channel</h3>
-<p><strong>Event:</strong> 10th IEEE International Workshop on Practical Issues in Building Sensor Network Applications (SenseApp), Clearwater, FL<br />
-<strong>Date:</strong> October 12, 2015</p>
-
-<hr />
-
-<h3 id="stealthy-and-persistent-access-to-z-wave-gateways">Stealthy and Persistent Access to Z-Wave Gateways</h3>
-<p><strong>Event:</strong> DerbyCon 5.0 “Unity”, Louisville, KY<br />
-<strong>Date:</strong> September 25, 2015</p>
-
-<p><strong>Resources:</strong></p>
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=KQMGI-e8wtA">Video</a></li>
-</ul>
-
-<hr />
+        <article class="talk-card talk-card--timeline">
+          <p class="talk-card__meta">
+            <span class="talk-card__chip">Conference</span>
+            <span>2015</span>
+          </p>
+          <h3 class="talk-card__title">Stealthy and Persistent Access to Z-Wave Gateways</h3>
+          <p class="talk-card__event">DerbyCon 5.0 “Unity” - Louisville, KY</p>
+          <p class="talk-card__date">September 25, 2015</p>
+          
+          
+            <p class="talk-card__links">
+              
+                <a href="https://www.youtube.com/watch?v=KQMGI-e8wtA">Video</a>
+              
+            </p>
+          
+        </article>
+      
+    
+  </div>
+</section>
 
 
 </article>
@@ -534,7 +818,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <footer class="content" role="contentinfo">
   <hr/>
   
-    <p><small class="copyright">© 2025. All rights reserved.
+    <p><small class="copyright">© 2026. All rights reserved.
 </small></p>
   
   
@@ -705,7 +989,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <!--<![endif]-->
   <!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+Code for integrating CloudFlare email protection with single-page navigation.
 -->
 <script>
   document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
@@ -882,6 +1166,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           enriched.titleLower = title.toLowerCase();
           enriched.excerptLower = excerpt.toLowerCase();
           enriched._text = (title + ' ' + excerpt + ' ' + content).toLowerCase();
+          enriched.scope = detectDocScope(enriched);
           return enriched;
         });
         searchState.error = null;
@@ -896,7 +1181,26 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     return searchState.promise;
   }
 
-  function performSearch(query) {
+  function detectDocScope(doc) {
+    var collection = (doc.collection || '').toString().toLowerCase();
+    var url = (doc.url || '').toString().toLowerCase();
+
+    if (collection === 'publications' || url.indexOf('/publications/') !== -1) {
+      return 'publications';
+    }
+    if (collection === 'talks' || url.indexOf('/talks/') !== -1) {
+      return 'talks';
+    }
+    if (collection === 'teaching' || url.indexOf('/teaching/') !== -1) {
+      return 'teaching';
+    }
+    if (collection === 'posts' || url.indexOf('/blog/') !== -1) {
+      return 'blog';
+    }
+    return 'all';
+  }
+
+  function performSearch(query, scope) {
     if (!searchState.docs) {
       return [];
     }
@@ -913,6 +1217,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var results = [];
     for (var i = 0; i < searchState.docs.length; i++) {
       var doc = searchState.docs[i];
+      if (scope && scope !== 'all' && doc.scope !== scope) {
+        continue;
+      }
+
       var score = 0;
       var missingTerm = false;
       for (var j = 0; j < terms.length; j++) {
@@ -967,6 +1275,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       });
   }
 
+  function formatScopeLabel(scope) {
+    if (!scope || scope === 'all') {
+      return 'All';
+    }
+    return scope.charAt(0).toUpperCase() + scope.slice(1);
+  }
+
   function detachBindings() {
     if (activeBindings && typeof activeBindings.destroy === 'function') {
       activeBindings.destroy();
@@ -988,6 +1303,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var resultsList = panel.querySelector('[data-search-results]');
     var statusEl = panel.querySelector('[data-search-status]');
     var emptyEl = panel.querySelector('[data-search-empty]');
+    var scopeButtons = panel.querySelectorAll('[data-search-scope]');
     var queryLabel = emptyEl ? emptyEl.querySelector('[data-search-query]') : null;
     if (!input || !resultsList) {
       return;
@@ -995,6 +1311,18 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
     var isOpen = false;
     var resizeListenerAttached = false;
+    var currentScope = 'all';
+
+    function setScope(scope) {
+      currentScope = scope || 'all';
+      for (var idx = 0; idx < scopeButtons.length; idx++) {
+        var button = scopeButtons[idx];
+        var buttonScope = button.getAttribute('data-search-scope');
+        var isActive = buttonScope === currentScope;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.classList.toggle('is-active', isActive);
+      }
+    }
 
     function positionPanel() {
       if (!isOpen) {
@@ -1090,7 +1418,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       resultsList.innerHTML = '';
       if (!items.length) {
         showEmpty(query);
-        setStatus('No results for “' + query + '”.', true);
+        setStatus(
+          'No results in ' + formatScopeLabel(currentScope) + ' for “' + query + '”.',
+          true
+        );
         positionPanel();
         return;
       }
@@ -1146,7 +1477,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
       resultsList.appendChild(fragment);
       setStatus(
-        'Showing ' + items.length + ' result' + (items.length === 1 ? '' : 's') + '.',
+        'Showing ' +
+          items.length +
+          ' result' +
+          (items.length === 1 ? '' : 's') +
+          ' in ' +
+          formatScopeLabel(currentScope) +
+          '.',
         true
       );
       positionPanel();
@@ -1156,13 +1493,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       var query = input.value.trim();
       if (!query) {
         clearResults();
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
         return;
       }
 
       ensureSearchData()
         .then(function () {
-          var matches = performSearch(query);
+          var matches = performSearch(query, currentScope);
           renderResults(matches, query);
         })
         .catch(function () {
@@ -1202,7 +1539,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.setAttribute('aria-expanded', 'true');
 
       if (!input.value.trim()) {
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
       }
 
       if (!searchState.docs && !searchState.promise) {
@@ -1214,7 +1551,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           if (input.value.trim()) {
             handleQueryChange();
           } else {
-            setStatus('Start typing to search.', true);
+            setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
           }
         })
         .catch(function () {
@@ -1264,6 +1601,9 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.removeEventListener('click', onToggle);
       input.removeEventListener('input', handleQueryChange);
       input.removeEventListener('keydown', handleInputEnter);
+      for (var i = 0; i < scopeButtons.length; i++) {
+        scopeButtons[i].removeEventListener('click', onScopeClick);
+      }
       if (closeButton) {
         closeButton.removeEventListener('click', onClose);
       }
@@ -1303,9 +1643,27 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       closePanel({ focusToggle: false });
     }
 
+    function onScopeClick(event) {
+      var scope = event.currentTarget.getAttribute('data-search-scope') || 'all';
+      if (scope === currentScope) {
+        return;
+      }
+      setScope(scope);
+      if (!input.value.trim()) {
+        clearResults();
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
+        return;
+      }
+      handleQueryChange();
+    }
+
+    setScope('all');
     toggle.addEventListener('click', onToggle);
     input.addEventListener('input', handleQueryChange);
     input.addEventListener('keydown', handleInputEnter);
+    for (var i = 0; i < scopeButtons.length; i++) {
+      scopeButtons[i].addEventListener('click', onScopeClick);
+    }
     if (closeButton) {
       closeButton.addEventListener('click', onClose);
     }

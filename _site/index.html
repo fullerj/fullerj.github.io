@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-03-20T16:08:06-04:00',
+    INDEX_KEY: 'index--2026-03-24T14:42:39-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -272,6 +272,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           <span class="icon-cross"></span>
         </button>
       </div>
+      <div class="nav-search-scopes" role="group" aria-label="Search scope" data-search-scopes>
+        <button type="button" class="nav-search-scope is-active" data-search-scope="all" aria-pressed="true">All</button>
+        <button type="button" class="nav-search-scope" data-search-scope="blog" aria-pressed="false">Blog</button>
+        <button type="button" class="nav-search-scope" data-search-scope="publications" aria-pressed="false">Publications</button>
+        <button type="button" class="nav-search-scope" data-search-scope="talks" aria-pressed="false">Talks</button>
+        <button type="button" class="nav-search-scope" data-search-scope="teaching" aria-pressed="false">Teaching</button>
+      </div>
       <p class="nav-search-status" data-search-status hidden></p>
       <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
       <p class="search-result--empty nav-search-empty" data-search-empty hidden>
@@ -313,7 +320,9 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
   
 
-  
+  <section class="home-section home-section--intro">
+
+
       
 
       <p>Jonathan Fuller is the Chief Information Security Officer and an Assistant Professor at the United States Military Academy at West Point, where he leads enterprise cybersecurity strategy and risk governance in a mission-critical environment. With nearly two decades of Army experience spanning secure communications, enterprise IT engineering, and organizational leadership, his work focuses on building resilient security programs that integrate technology, policy, and people to manage risk at an institutional scale.</p>
@@ -322,24 +331,48 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
     
 
+</section>
+
 <!--more-->
 
-<ol id="markdown-toc">
-  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a>    <ol>
-      <li><a href="#recent-insights" id="markdown-toc-recent-insights">Recent Insights</a></li>
-      <li><a href="#recent-publications" id="markdown-toc-recent-publications">Recent Publications</a></li>
-      <li><a href="#recent-talks" id="markdown-toc-recent-talks">Recent Talks</a></li>
-      <li><a href="#selected-media-coverage" id="markdown-toc-selected-media-coverage">Selected Media Coverage</a></li>
-      <li><a href="#recent-service" id="markdown-toc-recent-service">Recent Service</a></li>
-    </ol>
-  </li>
-  <li><a href="#education" id="markdown-toc-education">Education</a></li>
-  <li><a href="#professional-certifications" id="markdown-toc-professional-certifications">Professional Certifications</a></li>
-</ol>
+<section class="home-section home-section--snapshot">
+  <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">2</p>
+      <p class="home-kpi__label">Insights</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">13</p>
+      <p class="home-kpi__label">Research and Publications</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">13</p>
+      <p class="home-kpi__label">Talks and Events</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">6</p>
+      <p class="home-kpi__label">Professional Certifications</p>
+    </article>
+  </div>
+
+  <nav class="home-quick-links" aria-label="Quick access">
+    <a class="home-quick-links__link" href="/blog/">Insights</a>
+    <a class="home-quick-links__link" href="/publications/">Research</a>
+    <a class="home-quick-links__link" href="/talks/">Speaking</a>
+    <a class="home-quick-links__link" href="/service/">Service</a>
+  </nav>
+</section>
 
 <h2 id="highlights">Highlights</h2>
 
-<h3 id="recent-insights">Recent Insights</h3>
+<section class="home-section home-section--highlights">
+  <div class="home-highlights-grid">
+    <article class="home-panel home-panel--feature">
+
+      <h3>Recent Insights</h3>
+
+
+
 
 <ul>
   
@@ -370,7 +403,14 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 </ul>
 <p><a href="/blog/">Browse all blog posts</a></p>
 
-<h3 id="recent-publications">Recent Publications</h3>
+
+    </article>
+
+    <article class="home-panel home-panel--feature">
+      <h3>Research and Publications</h3>
+
+
+
 
 <ul>
   
@@ -395,7 +435,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 </ul>
 <p><a href="/publications/">View all publications</a></p>
 
-<h3 id="recent-talks">Recent Talks</h3>
+
+    </article>
+
+    <article class="home-panel">
+      <h3>Recent Talks</h3>
+
+
 
 <ul>
   
@@ -438,7 +484,235 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 </ul>
 <p><a href="/talks/">Explore talks and events</a></p>
 
-<h3 id="selected-media-coverage">Selected Media Coverage</h3>
+
+    </article>
+
+    <article class="home-panel">
+      <h3>Selected Media Coverage</h3>
+
+
+
+
+
+
+
+
+  
+    
+      
+      
+      
+        
+        
+      
+    
+  
+    
+      
+      
+      
+        
+        
+      
+        
+        
+      
+        
+          
+    
+  
+    
+      
+      
+      
+        
+        
+      
+    
+  
+    
+  
+    
+      
+      
+      
+        
+        
+      
+        
+        
+      
+        
+          
+    
+  
+    
+  
+    
+      
+      
+      
+        
+        
+      
+        
+        
+      
+        
+          
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+  
+    
+    
+    
+    
+      
+      
+      
+        
+        
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
+    
+
 
 <ul>
 
@@ -492,7 +766,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
             
 </ul>
 
-<h3 id="recent-service">Recent Service</h3>
+
+    </article>
+
+    <article class="home-panel">
+      <h3>Recent Service</h3>
+
+
 
 <ul>
   
@@ -503,9 +783,17 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 </ul>
 <p><a href="/service/">Explore service and volunteer efforts</a></p>
 
-<h2 id="education">Education</h2>
 
-<div class="education-grid">
+    </article>
+  </div>
+</section>
+
+<section class="home-section home-section--credentials">
+  <details class="home-expandable">
+    <summary>Education</summary>
+
+    <div class="home-expandable__content">
+      <div class="education-grid">
   
   <article class="education-card">
     
@@ -554,12 +842,19 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
     </div>
   </article>
   
-</div>
+      </div>
+    </div>
+  </details>
+</section>
 
-<h2 id="professional-certifications">Professional Certifications</h2>
-<p><a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">Verify credentials on Credly</a></p>
+<section class="home-section home-section--credentials">
+  <details class="home-expandable">
+    <summary>Professional Certifications</summary>
 
-<div class="certifications-grid">
+    <div class="home-expandable__content">
+      <a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">Verify credentials on Credly</a>
+
+      <div class="certifications-grid">
   
   <article class="certification-card">
     
@@ -633,7 +928,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
     </div>
   </article>
   
-</div>
+      </div>
+    </div>
+  </details>
+</section>
 
 
 
@@ -649,7 +947,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <footer class="content" role="contentinfo">
   <hr/>
   
-    <p><small class="copyright">© 2025. All rights reserved.
+    <p><small class="copyright">© 2026. All rights reserved.
 </small></p>
   
   
@@ -820,7 +1118,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <!--<![endif]-->
   <!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+Code for integrating CloudFlare email protection with single-page navigation.
 -->
 <script>
   document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
@@ -997,6 +1295,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           enriched.titleLower = title.toLowerCase();
           enriched.excerptLower = excerpt.toLowerCase();
           enriched._text = (title + ' ' + excerpt + ' ' + content).toLowerCase();
+          enriched.scope = detectDocScope(enriched);
           return enriched;
         });
         searchState.error = null;
@@ -1011,7 +1310,26 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     return searchState.promise;
   }
 
-  function performSearch(query) {
+  function detectDocScope(doc) {
+    var collection = (doc.collection || '').toString().toLowerCase();
+    var url = (doc.url || '').toString().toLowerCase();
+
+    if (collection === 'publications' || url.indexOf('/publications/') !== -1) {
+      return 'publications';
+    }
+    if (collection === 'talks' || url.indexOf('/talks/') !== -1) {
+      return 'talks';
+    }
+    if (collection === 'teaching' || url.indexOf('/teaching/') !== -1) {
+      return 'teaching';
+    }
+    if (collection === 'posts' || url.indexOf('/blog/') !== -1) {
+      return 'blog';
+    }
+    return 'all';
+  }
+
+  function performSearch(query, scope) {
     if (!searchState.docs) {
       return [];
     }
@@ -1028,6 +1346,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var results = [];
     for (var i = 0; i < searchState.docs.length; i++) {
       var doc = searchState.docs[i];
+      if (scope && scope !== 'all' && doc.scope !== scope) {
+        continue;
+      }
+
       var score = 0;
       var missingTerm = false;
       for (var j = 0; j < terms.length; j++) {
@@ -1082,6 +1404,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       });
   }
 
+  function formatScopeLabel(scope) {
+    if (!scope || scope === 'all') {
+      return 'All';
+    }
+    return scope.charAt(0).toUpperCase() + scope.slice(1);
+  }
+
   function detachBindings() {
     if (activeBindings && typeof activeBindings.destroy === 'function') {
       activeBindings.destroy();
@@ -1103,6 +1432,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var resultsList = panel.querySelector('[data-search-results]');
     var statusEl = panel.querySelector('[data-search-status]');
     var emptyEl = panel.querySelector('[data-search-empty]');
+    var scopeButtons = panel.querySelectorAll('[data-search-scope]');
     var queryLabel = emptyEl ? emptyEl.querySelector('[data-search-query]') : null;
     if (!input || !resultsList) {
       return;
@@ -1110,6 +1440,18 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
     var isOpen = false;
     var resizeListenerAttached = false;
+    var currentScope = 'all';
+
+    function setScope(scope) {
+      currentScope = scope || 'all';
+      for (var idx = 0; idx < scopeButtons.length; idx++) {
+        var button = scopeButtons[idx];
+        var buttonScope = button.getAttribute('data-search-scope');
+        var isActive = buttonScope === currentScope;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.classList.toggle('is-active', isActive);
+      }
+    }
 
     function positionPanel() {
       if (!isOpen) {
@@ -1205,7 +1547,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       resultsList.innerHTML = '';
       if (!items.length) {
         showEmpty(query);
-        setStatus('No results for “' + query + '”.', true);
+        setStatus(
+          'No results in ' + formatScopeLabel(currentScope) + ' for “' + query + '”.',
+          true
+        );
         positionPanel();
         return;
       }
@@ -1261,7 +1606,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
       resultsList.appendChild(fragment);
       setStatus(
-        'Showing ' + items.length + ' result' + (items.length === 1 ? '' : 's') + '.',
+        'Showing ' +
+          items.length +
+          ' result' +
+          (items.length === 1 ? '' : 's') +
+          ' in ' +
+          formatScopeLabel(currentScope) +
+          '.',
         true
       );
       positionPanel();
@@ -1271,13 +1622,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       var query = input.value.trim();
       if (!query) {
         clearResults();
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
         return;
       }
 
       ensureSearchData()
         .then(function () {
-          var matches = performSearch(query);
+          var matches = performSearch(query, currentScope);
           renderResults(matches, query);
         })
         .catch(function () {
@@ -1317,7 +1668,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.setAttribute('aria-expanded', 'true');
 
       if (!input.value.trim()) {
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
       }
 
       if (!searchState.docs && !searchState.promise) {
@@ -1329,7 +1680,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           if (input.value.trim()) {
             handleQueryChange();
           } else {
-            setStatus('Start typing to search.', true);
+            setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
           }
         })
         .catch(function () {
@@ -1379,6 +1730,9 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.removeEventListener('click', onToggle);
       input.removeEventListener('input', handleQueryChange);
       input.removeEventListener('keydown', handleInputEnter);
+      for (var i = 0; i < scopeButtons.length; i++) {
+        scopeButtons[i].removeEventListener('click', onScopeClick);
+      }
       if (closeButton) {
         closeButton.removeEventListener('click', onClose);
       }
@@ -1418,9 +1772,27 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       closePanel({ focusToggle: false });
     }
 
+    function onScopeClick(event) {
+      var scope = event.currentTarget.getAttribute('data-search-scope') || 'all';
+      if (scope === currentScope) {
+        return;
+      }
+      setScope(scope);
+      if (!input.value.trim()) {
+        clearResults();
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
+        return;
+      }
+      handleQueryChange();
+    }
+
+    setScope('all');
     toggle.addEventListener('click', onToggle);
     input.addEventListener('input', handleQueryChange);
     input.addEventListener('keydown', handleInputEnter);
+    for (var i = 0; i < scopeButtons.length; i++) {
+      scopeButtons[i].addEventListener('click', onScopeClick);
+    }
     if (closeButton) {
       closeButton.addEventListener('click', onClose);
     }

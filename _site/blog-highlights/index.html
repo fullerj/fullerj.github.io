@@ -41,11 +41,11 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
 <meta property="og:url" content="http://localhost:4000/blog-highlights/" />
 <meta property="og:site_name" content="Jonathan Fuller" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-20T16:08:06-04:00" />
+<meta property="article:published_time" content="2026-03-24T14:42:39-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Blog Highlights" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-21T22:07:32-04:00","datePublished":"2026-03-20T16:08:06-04:00","description":"Selected commentary, event recaps, and thought leadership pieces that explore data-driven cybersecurity strategy and operations.","headline":"Blog Highlights","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/blog-highlights/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-21T22:07:32-04:00","datePublished":"2026-03-24T14:42:39-04:00","description":"Selected commentary, event recaps, and thought leadership pieces that explore data-driven cybersecurity strategy and operations.","headline":"Blog Highlights","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/blog-highlights/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -119,7 +119,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-03-20T16:08:06-04:00',
+    INDEX_KEY: 'index--2026-03-24T14:42:39-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -273,6 +273,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           <span class="icon-cross"></span>
         </button>
       </div>
+      <div class="nav-search-scopes" role="group" aria-label="Search scope" data-search-scopes>
+        <button type="button" class="nav-search-scope is-active" data-search-scope="all" aria-pressed="true">All</button>
+        <button type="button" class="nav-search-scope" data-search-scope="blog" aria-pressed="false">Blog</button>
+        <button type="button" class="nav-search-scope" data-search-scope="publications" aria-pressed="false">Publications</button>
+        <button type="button" class="nav-search-scope" data-search-scope="talks" aria-pressed="false">Talks</button>
+        <button type="button" class="nav-search-scope" data-search-scope="teaching" aria-pressed="false">Teaching</button>
+      </div>
       <p class="nav-search-status" data-search-status hidden></p>
       <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
       <p class="search-result--empty nav-search-empty" data-search-empty hidden>
@@ -341,19 +348,21 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-<li class="h4">
-  
-  <a href="/blog/case-for-proof-of-value/" class="flip-title"><span>The Case for Proof-of-Value in Security Partnerships</span></a>
-  
+
+  <li class="h4">
     
+    <a href="/blog/case-for-proof-of-value/" class="flip-title"><span>The Case for Proof-of-Value in Security Partnerships</span></a>
     
+      
+      
+      
+      
+      
+      
+      <small class="post-inline-meta">8 min read</small>
     
-    
-    
-    
-    <small class="post-inline-meta">8 min read</small>
-  
-</li>
+  </li>
+
 
   
 
@@ -361,19 +370,21 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-<li class="h4">
-  
-  <a href="/blog/spycraft-2-0/" class="flip-title"><span>From Anomalous Traffic to Spycraft 2.0</span></a>
-  
+
+  <li class="h4">
     
+    <a href="/blog/spycraft-2-0/" class="flip-title"><span>From Anomalous Traffic to Spycraft 2.0</span></a>
     
+      
+      
+      
+      
+      
+      
+      <small class="post-inline-meta">6 min read</small>
     
-    
-    
-    
-    <small class="post-inline-meta">6 min read</small>
-  
-</li>
+  </li>
+
 
   </ul>
 
@@ -391,7 +402,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <footer class="content" role="contentinfo">
   <hr/>
   
-    <p><small class="copyright">© 2025. All rights reserved.
+    <p><small class="copyright">© 2026. All rights reserved.
 </small></p>
   
   
@@ -562,7 +573,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <!--<![endif]-->
   <!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+Code for integrating CloudFlare email protection with single-page navigation.
 -->
 <script>
   document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
@@ -739,6 +750,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           enriched.titleLower = title.toLowerCase();
           enriched.excerptLower = excerpt.toLowerCase();
           enriched._text = (title + ' ' + excerpt + ' ' + content).toLowerCase();
+          enriched.scope = detectDocScope(enriched);
           return enriched;
         });
         searchState.error = null;
@@ -753,7 +765,26 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     return searchState.promise;
   }
 
-  function performSearch(query) {
+  function detectDocScope(doc) {
+    var collection = (doc.collection || '').toString().toLowerCase();
+    var url = (doc.url || '').toString().toLowerCase();
+
+    if (collection === 'publications' || url.indexOf('/publications/') !== -1) {
+      return 'publications';
+    }
+    if (collection === 'talks' || url.indexOf('/talks/') !== -1) {
+      return 'talks';
+    }
+    if (collection === 'teaching' || url.indexOf('/teaching/') !== -1) {
+      return 'teaching';
+    }
+    if (collection === 'posts' || url.indexOf('/blog/') !== -1) {
+      return 'blog';
+    }
+    return 'all';
+  }
+
+  function performSearch(query, scope) {
     if (!searchState.docs) {
       return [];
     }
@@ -770,6 +801,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var results = [];
     for (var i = 0; i < searchState.docs.length; i++) {
       var doc = searchState.docs[i];
+      if (scope && scope !== 'all' && doc.scope !== scope) {
+        continue;
+      }
+
       var score = 0;
       var missingTerm = false;
       for (var j = 0; j < terms.length; j++) {
@@ -824,6 +859,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       });
   }
 
+  function formatScopeLabel(scope) {
+    if (!scope || scope === 'all') {
+      return 'All';
+    }
+    return scope.charAt(0).toUpperCase() + scope.slice(1);
+  }
+
   function detachBindings() {
     if (activeBindings && typeof activeBindings.destroy === 'function') {
       activeBindings.destroy();
@@ -845,6 +887,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var resultsList = panel.querySelector('[data-search-results]');
     var statusEl = panel.querySelector('[data-search-status]');
     var emptyEl = panel.querySelector('[data-search-empty]');
+    var scopeButtons = panel.querySelectorAll('[data-search-scope]');
     var queryLabel = emptyEl ? emptyEl.querySelector('[data-search-query]') : null;
     if (!input || !resultsList) {
       return;
@@ -852,6 +895,18 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
     var isOpen = false;
     var resizeListenerAttached = false;
+    var currentScope = 'all';
+
+    function setScope(scope) {
+      currentScope = scope || 'all';
+      for (var idx = 0; idx < scopeButtons.length; idx++) {
+        var button = scopeButtons[idx];
+        var buttonScope = button.getAttribute('data-search-scope');
+        var isActive = buttonScope === currentScope;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.classList.toggle('is-active', isActive);
+      }
+    }
 
     function positionPanel() {
       if (!isOpen) {
@@ -947,7 +1002,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       resultsList.innerHTML = '';
       if (!items.length) {
         showEmpty(query);
-        setStatus('No results for “' + query + '”.', true);
+        setStatus(
+          'No results in ' + formatScopeLabel(currentScope) + ' for “' + query + '”.',
+          true
+        );
         positionPanel();
         return;
       }
@@ -1003,7 +1061,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
       resultsList.appendChild(fragment);
       setStatus(
-        'Showing ' + items.length + ' result' + (items.length === 1 ? '' : 's') + '.',
+        'Showing ' +
+          items.length +
+          ' result' +
+          (items.length === 1 ? '' : 's') +
+          ' in ' +
+          formatScopeLabel(currentScope) +
+          '.',
         true
       );
       positionPanel();
@@ -1013,13 +1077,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       var query = input.value.trim();
       if (!query) {
         clearResults();
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
         return;
       }
 
       ensureSearchData()
         .then(function () {
-          var matches = performSearch(query);
+          var matches = performSearch(query, currentScope);
           renderResults(matches, query);
         })
         .catch(function () {
@@ -1059,7 +1123,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.setAttribute('aria-expanded', 'true');
 
       if (!input.value.trim()) {
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
       }
 
       if (!searchState.docs && !searchState.promise) {
@@ -1071,7 +1135,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           if (input.value.trim()) {
             handleQueryChange();
           } else {
-            setStatus('Start typing to search.', true);
+            setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
           }
         })
         .catch(function () {
@@ -1121,6 +1185,9 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.removeEventListener('click', onToggle);
       input.removeEventListener('input', handleQueryChange);
       input.removeEventListener('keydown', handleInputEnter);
+      for (var i = 0; i < scopeButtons.length; i++) {
+        scopeButtons[i].removeEventListener('click', onScopeClick);
+      }
       if (closeButton) {
         closeButton.removeEventListener('click', onClose);
       }
@@ -1160,9 +1227,27 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       closePanel({ focusToggle: false });
     }
 
+    function onScopeClick(event) {
+      var scope = event.currentTarget.getAttribute('data-search-scope') || 'all';
+      if (scope === currentScope) {
+        return;
+      }
+      setScope(scope);
+      if (!input.value.trim()) {
+        clearResults();
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
+        return;
+      }
+      handleQueryChange();
+    }
+
+    setScope('all');
     toggle.addEventListener('click', onToggle);
     input.addEventListener('input', handleQueryChange);
     input.addEventListener('keydown', handleInputEnter);
+    for (var i = 0; i < scopeButtons.length; i++) {
+      scopeButtons[i].addEventListener('click', onScopeClick);
+    }
     if (closeButton) {
       closeButton.addEventListener('click', onClose);
     }

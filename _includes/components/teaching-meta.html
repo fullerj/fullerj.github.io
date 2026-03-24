@@ -6,7 +6,14 @@ Relies on front matter keys: institution, department, term, location, role, cour
 Only renders fields that are present.
 {% endcomment %}
 
-<div class="meta grid" style="margin-top:1rem">
+<div class="entry-context entry-context--teaching" aria-label="Teaching metadata summary">
+  {% if page.course_code %}<span class="entry-context__item">{{ page.course_code }}</span>{% endif %}
+  {% if page.term %}<span class="entry-context__item">{{ page.term }}</span>{% endif %}
+  {% if page.role %}<span class="entry-context__item">{{ page.role }}</span>{% endif %}
+  {% if page.institution %}<span class="entry-context__item">{{ page.institution }}</span>{% endif %}
+</div>
+
+<div class="meta grid entry-details">
   <div class="meta-item"><strong>Institution:</strong> {{ page.institution }}</div>
   {% if page.department %}<div class="meta-item"><strong>Department:</strong> {{ page.department }}</div>{% endif %}
   {% if page.course_code %}<div class="meta-item"><strong>Course:</strong> {{ page.course_code }}</div>{% endif %}

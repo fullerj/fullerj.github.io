@@ -41,11 +41,11 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
 <meta property="og:url" content="http://localhost:4000/teaching/" />
 <meta property="og:site_name" content="Jonathan Fuller" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-20T16:08:06-04:00" />
+<meta property="article:published_time" content="2026-03-24T14:42:39-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Teaching" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-22T12:29:43-04:00","datePublished":"2026-03-20T16:08:06-04:00","description":"University courses, guest lectures, and professional programs focused on cybersecurity and privacy.","headline":"Teaching","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/teaching/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2025-10-22T12:29:43-04:00","datePublished":"2026-03-24T14:42:39-04:00","description":"University courses, guest lectures, and professional programs focused on cybersecurity and privacy.","headline":"Teaching","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/teaching/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -119,7 +119,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-03-20T16:08:06-04:00',
+    INDEX_KEY: 'index--2026-03-24T14:42:39-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -273,6 +273,13 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           <span class="icon-cross"></span>
         </button>
       </div>
+      <div class="nav-search-scopes" role="group" aria-label="Search scope" data-search-scopes>
+        <button type="button" class="nav-search-scope is-active" data-search-scope="all" aria-pressed="true">All</button>
+        <button type="button" class="nav-search-scope" data-search-scope="blog" aria-pressed="false">Blog</button>
+        <button type="button" class="nav-search-scope" data-search-scope="publications" aria-pressed="false">Publications</button>
+        <button type="button" class="nav-search-scope" data-search-scope="talks" aria-pressed="false">Talks</button>
+        <button type="button" class="nav-search-scope" data-search-scope="teaching" aria-pressed="false">Teaching</button>
+      </div>
       <p class="nav-search-status" data-search-status hidden></p>
       <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
       <p class="search-result--empty nav-search-empty" data-search-empty hidden>
@@ -286,7 +293,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
   <main
   id="_main"
-  class="content layout-list"
+  class="content layout-page"
   role="main"
 >
   <nav id="breadcrumbs" class="screen-only"><ul>
@@ -320,7 +327,15 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
   </header>
 
-  <section class="teaching-logos">
+  
+<section class="teaching-summary" aria-label="Teaching overview">
+  <p class="teaching-summary__item"><strong>5</strong> total course entries</p>
+  <p class="teaching-summary__item"><strong>1</strong> current</p>
+  <p class="teaching-summary__item"><strong>2</strong> recent</p>
+  <p class="teaching-summary__item"><strong>2</strong> past</p>
+</section>
+
+<section class="teaching-logos">
   <h3 class="teaching-logos__heading">Institutions</h3>
   <ul class="teaching-logos__grid">
     <li class="teaching-logos__item">
@@ -338,101 +353,132 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </ul>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-  
-  
+<section class="teaching-group" aria-label="Current Teaching">
+    <h2>Current Teaching</h2>
     
-    <h2 id="y-2026" class="hr-bottom">2026</h2>
-    <ul class="related-posts">
+      <div class="teaching-expandables">
+        
+          <details class="teaching-course">
+            <summary>
+              <span class="teaching-course__heading">CY 465: CY 465: Organizational Security</span>
+              <span class="teaching-course__meta">Spring 2026 - United States Military Academy</span>
+            </summary>
+            <div class="teaching-course__content">
+              
+                <p class="teaching-course__description">Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.
+</p>
+              
+              <ul class="teaching-course__facts">
+                <li><strong>Role:</strong> Course Instructor</li>
+                <li><strong>Department:</strong> Department of Electrical Engineering and Computer Science</li>
+                <li><strong>Location:</strong> West Point, NY</li>
+                <li><strong>Credits:</strong> 3.0</li>
+              </ul>
+              <p class="teaching-course__actions"><a href="/teaching/2026-01-06-cy465-organizational-security/">View full course details</a></p>
+            </div>
+          </details>
+        
+      </div>
     
-  
-  
+  </section>
 
-<li class="h4">
-  
-  <a href="/teaching/2026-01-06-cy465-organizational-security/" class="flip-title"><span>CY 465: Organizational Security</span></a>
-  
-</li>
-
-  
-
-  
-  
-    </ul>
-    <h2 id="y-2025" class="hr-bottom">2025</h2>
-    <ul class="related-posts">
+<section class="teaching-group" aria-label="Recent Teaching">
+    <h2>Recent Teaching</h2>
     
-  
-  
-
-<li class="h4">
-  
-  <a href="/teaching/2025-01-15-cs483-digital-forensics/" class="flip-title"><span>CS 483: Digital Forensics</span></a>
-  
-</li>
-
-  
-
-  
-  
-    </ul>
-    <h2 id="y-2024" class="hr-bottom">2024</h2>
-    <ul class="related-posts">
+      <div class="teaching-expandables">
+        
+          <details class="teaching-course">
+            <summary>
+              <span class="teaching-course__heading">CS 483: CS 483: Digital Forensics</span>
+              <span class="teaching-course__meta">Spring 2025 - United States Military Academy</span>
+            </summary>
+            <div class="teaching-course__content">
+              
+                <p class="teaching-course__description">Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.
+</p>
+              
+              <ul class="teaching-course__facts">
+                <li><strong>Role:</strong> Course Director</li>
+                <li><strong>Department:</strong> Department of Electrical Engineering and Computer Science</li>
+                <li><strong>Location:</strong> West Point, NY</li>
+                <li><strong>Credits:</strong> 3.0</li>
+              </ul>
+              <p class="teaching-course__actions"><a href="/teaching/2025-01-15-cs483-digital-forensics/">View full course details</a></p>
+            </div>
+          </details>
+        
+          <details class="teaching-course">
+            <summary>
+              <span class="teaching-course__heading">CS 483: CS 483: Digital Forensics</span>
+              <span class="teaching-course__meta">Spring 2024 - United States Military Academy</span>
+            </summary>
+            <div class="teaching-course__content">
+              
+                <p class="teaching-course__description">Undergraduate course examining how to recover and analyze digital evidence after malicious activity on information systems.
+</p>
+              
+              <ul class="teaching-course__facts">
+                <li><strong>Role:</strong> Course Director</li>
+                <li><strong>Department:</strong> Department of Electrical Engineering and Computer Science</li>
+                <li><strong>Location:</strong> West Point, NY</li>
+                <li><strong>Credits:</strong> 3.0</li>
+              </ul>
+              <p class="teaching-course__actions"><a href="/teaching/2024-01-15-cs483-digital-forensics/">View full course details</a></p>
+            </div>
+          </details>
+        
+      </div>
     
-  
-  
+  </section>
 
-<li class="h4">
-  
-  <a href="/teaching/2024-01-15-cs483-digital-forensics/" class="flip-title"><span>CS 483: Digital Forensics</span></a>
-  
-</li>
-
-  
-
-  
-  
-    </ul>
-    <h2 id="y-2023" class="hr-bottom">2023</h2>
-    <ul class="related-posts">
+<section class="teaching-group" aria-label="Past Teaching">
+    <h2>Past Teaching</h2>
     
-  
-  
-
-<li class="h4">
-  
-  <a href="/teaching/2023-10-01-cyber-law-digital-forensics/" class="flip-title"><span>COP 630: Cyber Law and Digital Forensics</span></a>
-  
-</li>
-
-  
-
-  
-  
-    </ul>
-    <h2 id="y-2022" class="hr-bottom">2022</h2>
-    <ul class="related-posts">
+      <div class="teaching-expandables">
+        
+          <details class="teaching-course">
+            <summary>
+              <span class="teaching-course__heading">COP 630: COP 630: Cyber Law and Digital Forensics</span>
+              <span class="teaching-course__meta">Fall 2023 - University of Maryland Global Campus</span>
+            </summary>
+            <div class="teaching-course__content">
+              
+                <p class="teaching-course__description">Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.
+</p>
+              
+              <ul class="teaching-course__facts">
+                <li><strong>Role:</strong> Course Instructor</li>
+                <li><strong>Department:</strong> School of Cybersecurity and Information Technology</li>
+                <li><strong>Location:</strong> Virtual</li>
+                <li><strong>Credits:</strong> 6</li>
+              </ul>
+              <p class="teaching-course__actions"><a href="/teaching/2023-10-01-cyber-law-digital-forensics/">View full course details</a></p>
+            </div>
+          </details>
+        
+          <details class="teaching-course">
+            <summary>
+              <span class="teaching-course__heading">ECE 4117: ECE 4117: Introduction to Malware Reverse Engineering</span>
+              <span class="teaching-course__meta">Spring 2022 - Georgia Institute of Technology</span>
+            </summary>
+            <div class="teaching-course__content">
+              
+                <p class="teaching-course__description">Guest lecture series focused on reverse engineering methodology, tooling, and malware remediation strategies.
+</p>
+              
+              <ul class="teaching-course__facts">
+                <li><strong>Role:</strong> Guest Lecturer</li>
+                <li><strong>Department:</strong> School of Electrical and Computer Engineering</li>
+                <li><strong>Location:</strong> Atlanta, GA</li>
+                
+              </ul>
+              <p class="teaching-course__actions"><a href="/teaching/2022-04-01-ece4117-malware-reverse-engineering/">View full course details</a></p>
+            </div>
+          </details>
+        
+      </div>
     
-  
-  
-
-<li class="h4">
-  
-  <a href="/teaching/2022-04-01-ece4117-malware-reverse-engineering/" class="flip-title"><span>ECE 4117: Introduction to Malware Reverse Engineering</span></a>
-  
-</li>
-
-  </ul>
-
+  </section>
 
 </article>
 
@@ -447,7 +493,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 <footer class="content" role="contentinfo">
   <hr/>
   
-    <p><small class="copyright">© 2025. All rights reserved.
+    <p><small class="copyright">© 2026. All rights reserved.
 </small></p>
   
   
@@ -618,7 +664,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <!--<![endif]-->
   <!--
-Code for integrating CloudFlare's email protection with Hydejack's single page app loading.
+Code for integrating CloudFlare email protection with single-page navigation.
 -->
 <script>
   document.getElementById('_pushState').addEventListener('hy-push-state-after', function (e) {
@@ -795,6 +841,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           enriched.titleLower = title.toLowerCase();
           enriched.excerptLower = excerpt.toLowerCase();
           enriched._text = (title + ' ' + excerpt + ' ' + content).toLowerCase();
+          enriched.scope = detectDocScope(enriched);
           return enriched;
         });
         searchState.error = null;
@@ -809,7 +856,26 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     return searchState.promise;
   }
 
-  function performSearch(query) {
+  function detectDocScope(doc) {
+    var collection = (doc.collection || '').toString().toLowerCase();
+    var url = (doc.url || '').toString().toLowerCase();
+
+    if (collection === 'publications' || url.indexOf('/publications/') !== -1) {
+      return 'publications';
+    }
+    if (collection === 'talks' || url.indexOf('/talks/') !== -1) {
+      return 'talks';
+    }
+    if (collection === 'teaching' || url.indexOf('/teaching/') !== -1) {
+      return 'teaching';
+    }
+    if (collection === 'posts' || url.indexOf('/blog/') !== -1) {
+      return 'blog';
+    }
+    return 'all';
+  }
+
+  function performSearch(query, scope) {
     if (!searchState.docs) {
       return [];
     }
@@ -826,6 +892,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var results = [];
     for (var i = 0; i < searchState.docs.length; i++) {
       var doc = searchState.docs[i];
+      if (scope && scope !== 'all' && doc.scope !== scope) {
+        continue;
+      }
+
       var score = 0;
       var missingTerm = false;
       for (var j = 0; j < terms.length; j++) {
@@ -880,6 +950,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       });
   }
 
+  function formatScopeLabel(scope) {
+    if (!scope || scope === 'all') {
+      return 'All';
+    }
+    return scope.charAt(0).toUpperCase() + scope.slice(1);
+  }
+
   function detachBindings() {
     if (activeBindings && typeof activeBindings.destroy === 'function') {
       activeBindings.destroy();
@@ -901,6 +978,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
     var resultsList = panel.querySelector('[data-search-results]');
     var statusEl = panel.querySelector('[data-search-status]');
     var emptyEl = panel.querySelector('[data-search-empty]');
+    var scopeButtons = panel.querySelectorAll('[data-search-scope]');
     var queryLabel = emptyEl ? emptyEl.querySelector('[data-search-query]') : null;
     if (!input || !resultsList) {
       return;
@@ -908,6 +986,18 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
     var isOpen = false;
     var resizeListenerAttached = false;
+    var currentScope = 'all';
+
+    function setScope(scope) {
+      currentScope = scope || 'all';
+      for (var idx = 0; idx < scopeButtons.length; idx++) {
+        var button = scopeButtons[idx];
+        var buttonScope = button.getAttribute('data-search-scope');
+        var isActive = buttonScope === currentScope;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.classList.toggle('is-active', isActive);
+      }
+    }
 
     function positionPanel() {
       if (!isOpen) {
@@ -1003,7 +1093,10 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       resultsList.innerHTML = '';
       if (!items.length) {
         showEmpty(query);
-        setStatus('No results for “' + query + '”.', true);
+        setStatus(
+          'No results in ' + formatScopeLabel(currentScope) + ' for “' + query + '”.',
+          true
+        );
         positionPanel();
         return;
       }
@@ -1059,7 +1152,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
 
       resultsList.appendChild(fragment);
       setStatus(
-        'Showing ' + items.length + ' result' + (items.length === 1 ? '' : 's') + '.',
+        'Showing ' +
+          items.length +
+          ' result' +
+          (items.length === 1 ? '' : 's') +
+          ' in ' +
+          formatScopeLabel(currentScope) +
+          '.',
         true
       );
       positionPanel();
@@ -1069,13 +1168,13 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       var query = input.value.trim();
       if (!query) {
         clearResults();
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
         return;
       }
 
       ensureSearchData()
         .then(function () {
-          var matches = performSearch(query);
+          var matches = performSearch(query, currentScope);
           renderResults(matches, query);
         })
         .catch(function () {
@@ -1115,7 +1214,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.setAttribute('aria-expanded', 'true');
 
       if (!input.value.trim()) {
-        setStatus('Start typing to search.', true);
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
       }
 
       if (!searchState.docs && !searchState.promise) {
@@ -1127,7 +1226,7 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
           if (input.value.trim()) {
             handleQueryChange();
           } else {
-            setStatus('Start typing to search.', true);
+            setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
           }
         })
         .catch(function () {
@@ -1177,6 +1276,9 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       toggle.removeEventListener('click', onToggle);
       input.removeEventListener('input', handleQueryChange);
       input.removeEventListener('keydown', handleInputEnter);
+      for (var i = 0; i < scopeButtons.length; i++) {
+        scopeButtons[i].removeEventListener('click', onScopeClick);
+      }
       if (closeButton) {
         closeButton.removeEventListener('click', onClose);
       }
@@ -1216,9 +1318,27 @@ Code for integrating CloudFlare's email protection with Hydejack's single page a
       closePanel({ focusToggle: false });
     }
 
+    function onScopeClick(event) {
+      var scope = event.currentTarget.getAttribute('data-search-scope') || 'all';
+      if (scope === currentScope) {
+        return;
+      }
+      setScope(scope);
+      if (!input.value.trim()) {
+        clearResults();
+        setStatus('Start typing to search ' + formatScopeLabel(currentScope) + '.', true);
+        return;
+      }
+      handleQueryChange();
+    }
+
+    setScope('all');
     toggle.addEventListener('click', onToggle);
     input.addEventListener('input', handleQueryChange);
     input.addEventListener('keydown', handleInputEnter);
+    for (var i = 0; i < scopeButtons.length; i++) {
+      scopeButtons[i].addEventListener('click', onScopeClick);
+    }
     if (closeButton) {
       closeButton.addEventListener('click', onClose);
     }

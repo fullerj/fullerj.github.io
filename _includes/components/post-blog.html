@@ -20,7 +20,11 @@
       {% assign word_count = post.content | strip_html | number_of_words %}
       {% assign reading_minutes = word_count | plus: rounding_offset | divided_by: reading_wpm %}
       {% if reading_minutes < 1 %}{% assign reading_minutes = 1 %}{% endif %}
-      <p class="post-reading-time">{{ reading_minutes }} min read</p>
+      <div class="entry-context entry-context--blog" aria-label="Post metadata">
+        {% if post.date %}<span class="entry-context__item">{{ post.date | date: "%B %-d, %Y" }}</span>{% endif %}
+        <span class="entry-context__item post-reading-time">{{ reading_minutes }} min read</span>
+        {% if post.tags and post.tags.size > 0 %}<span class="entry-context__item">{{ post.tags.first }}</span>{% endif %}
+      </div>
     {% endif %}
 
     {% include components/message.html text=post.description hide=hide_description alt=false %}

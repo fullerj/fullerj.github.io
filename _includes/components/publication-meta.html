@@ -6,7 +6,14 @@ Relies on front matter keys: authors, venue, date, doi, pdf_url, code_url, video
 Only renders fields that are present.
 {% endcomment %}
 
-<div class="meta grid" style="margin-top:1rem">
+<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+  {% if page.venue %}<span class="entry-context__item">{{ page.venue }}</span>{% endif %}
+  {% if page.date %}<span class="entry-context__item">{{ page.date | date: "%B %-d, %Y" }}</span>{% endif %}
+  {% if page.acceptance_rate %}<span class="entry-context__item">Acceptance: {{ page.acceptance_rate }}</span>{% endif %}
+  {% if page.doi %}<span class="entry-context__item">DOI available</span>{% endif %}
+</div>
+
+<div class="meta grid entry-details">
   {% if page.authors %}<div class="meta-item"><strong>Authors:</strong> {{ page.authors }}</div>{% endif %}
   {% if page.conference %}<div class="meta-item"><strong>Conference:</strong> {{ page.conference }}</div>{% endif %}
   {% if page.book %}<div class="meta-item"><strong>Book:</strong> {{ page.book }}</div>{% endif %}
