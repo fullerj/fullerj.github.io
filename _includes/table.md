@@ -1,4 +1,4 @@
-There are two versions of **Hydejack**: The *Free Version* includes basic blogging functionality and most of Hydejack's [Features], such as dynamic page loading and advanced animations.
+There are two versions of this theme: The *Free Version* includes basic blogging functionality and most core [Features], such as dynamic page loading and advanced animations.
 
 The *PRO Version* includes additional features for professionals, such as a [portfolio], [resume], [Dark Mode][dark], [Forms], [Built-In Search][search] and customizable cookie banners.
 
@@ -18,7 +18,7 @@ The table below shows what's included in each version:
 | [Offline Support][ofln]       |                     | &#x2714;            |
 | Table of Contents[^21]        |                     | &#x2714;            |
 | Cookie Banner                 |                     | &#x2714;            |
-| No Hydejack Branding          |                     | &#x2714;            |
+| No Theme Branding             |                     | &#x2714;            |
 | License                       | [GPL-3.0][lic]      | [PRO]               |
 | Source                        | [GitHub][src]       | Included            |
 | __Price__                     | __Free__            | __$99__{:.price} <small>One-Time Purchase</small>[^xx] |

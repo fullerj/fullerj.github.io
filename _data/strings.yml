@@ -97,7 +97,7 @@ date_formats:
 
 # PRO Version
 # ---------------------------------------------------------------------------------------
-# If you don't own the PRO version of Hydejack, modifying these will have no effect.
+# If you don't own the PRO version of the active theme, modifying these will have no effect.
 
 welcome:
   more_projects:       See <!--projects_title--> for more

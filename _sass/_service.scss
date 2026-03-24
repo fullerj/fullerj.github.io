@@ -1,0 +1,144 @@
+.service-summary {
+  margin: 0.75rem 0 1.6rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(25, 55, 71, 0.14);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+}
+
+.service-summary__item {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.service-quick-links {
+  margin: 0 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.service-quick-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.25rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(25, 55, 71, 0.18);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.service-quick-links a:hover,
+.service-quick-links a:focus {
+  border-color: rgba(79, 177, 186, 0.58);
+  background: rgba(79, 177, 186, 0.15);
+}
+
+.service-group {
+  margin: 2.3rem 0;
+}
+
+.service-group h2 {
+  margin-bottom: 0.9rem;
+}
+
+.service-cards {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.service-card {
+  border: 1px solid rgba(25, 55, 71, 0.14);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 24px rgba(17, 30, 45, 0.1);
+  overflow: hidden;
+}
+
+.service-card > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.95rem 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.service-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-card__heading {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.service-card__meta {
+  font-size: 0.84rem;
+  color: rgba(25, 55, 71, 0.74);
+}
+
+.service-card > summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: rgba(25, 55, 71, 0.74);
+}
+
+.service-card[open] > summary::after {
+  content: "-";
+}
+
+.service-card[open] > summary {
+  border-bottom: 1px solid rgba(25, 55, 71, 0.12);
+}
+
+.service-card__content {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.service-card__content p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .service-summary {
+    display: grid;
+    gap: 0.45rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .service-summary {
+    background: rgba(28, 36, 48, 0.86);
+    border-color: rgba(210, 220, 230, 0.2);
+  }
+
+  .service-quick-links a {
+    border-color: rgba(210, 220, 230, 0.24);
+    background: rgba(28, 36, 48, 0.7);
+  }
+
+  .service-card {
+    background: rgba(28, 36, 48, 0.88);
+    border-color: rgba(210, 220, 230, 0.2);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.44);
+  }
+
+  .service-card__meta,
+  .service-card > summary::after {
+    color: rgba(230, 236, 244, 0.76);
+  }
+
+  .service-card[open] > summary {
+    border-bottom-color: rgba(210, 220, 230, 0.18);
+  }
+}
