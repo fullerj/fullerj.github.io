@@ -5,10 +5,10 @@
 
 .teaching-summary {
   margin: 0.75rem 0 2rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid rgba(25, 55, 71, 0.14);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.9);
+  padding: var(--ds-space-3) var(--ds-space-4);
+  border: 1px solid var(--ds-border-1);
+  border-radius: var(--ds-radius-2);
+  background: var(--ds-surface-2);
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.2rem;
@@ -33,10 +33,10 @@
 }
 
 .teaching-course {
-  border: 1px solid rgba(25, 55, 71, 0.14);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 10px 24px rgba(17, 30, 45, 0.1);
+  border: 1px solid var(--ds-border-1);
+  border-radius: var(--ds-radius-2);
+  background: var(--ds-surface-1);
+  box-shadow: var(--ds-shadow-1);
   overflow: hidden;
 }
 
@@ -62,7 +62,7 @@
 
 .teaching-course__meta {
   font-size: 0.84rem;
-  color: rgba(25, 55, 71, 0.74);
+  color: var(--ds-text-2);
 }
 
 .teaching-course > summary::after {
@@ -70,7 +70,7 @@
   margin-left: auto;
   font-size: 1.1rem;
   line-height: 1;
-  color: rgba(25, 55, 71, 0.74);
+  color: var(--ds-text-2);
 }
 
 .teaching-course[open] > summary::after {
@@ -78,7 +78,7 @@
 }
 
 .teaching-course[open] > summary {
-  border-bottom: 1px solid rgba(25, 55, 71, 0.12);
+  border-bottom: 1px solid var(--ds-border-1);
 }
 
 .teaching-course__content {
@@ -133,15 +133,15 @@
   height: 150px;
   object-fit: contain;
   padding: 0.75rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 24px rgba(17, 30, 45, 0.2);
-  border: 1px solid rgba(25, 55, 71, 0.15);
-  background: #fff;
+  border-radius: var(--ds-radius-2);
+  box-shadow: var(--ds-shadow-1);
+  border: 1px solid var(--ds-border-1);
+  background: var(--ds-surface-1);
 }
 
 .teaching-logos__label {
   font-size: 0.9rem;
-  color: var(--gray, #666);
+  color: var(--ds-text-3);
 }
 
 @media (max-width: 640px) {
@@ -151,24 +151,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .teaching-summary {
-    background: rgba(28, 36, 48, 0.86);
-    border-color: rgba(210, 220, 230, 0.2);
-  }
-
-  .teaching-course {
-    background: rgba(28, 36, 48, 0.88);
-    border-color: rgba(210, 220, 230, 0.2);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.44);
-  }
-
-  .teaching-course__meta,
-  .teaching-course > summary::after {
-    color: rgba(230, 236, 244, 0.76);
-  }
-
-  .teaching-course[open] > summary {
-    border-bottom-color: rgba(210, 220, 230, 0.18);
-  }
-}

@@ -24,7 +24,7 @@ description: >
   <div class="service-cards">
     <details class="service-card">
       <summary>
-        <span class="service-card__heading">AIUC-1 (AI Unified Certification Consortium)</span>
+        <span class="service-card__heading">AIUC-1</span>
         <span class="service-card__meta">Founding Consortium Member</span>
       </summary>
       <div class="service-card__content">

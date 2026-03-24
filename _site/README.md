@@ -48,6 +48,13 @@ bundle _2.2.3_ install
 bundle exec jekyll serve
 ```
 
+If Jekyll fails because port `4000` is already in use, free it with:
+
+```bash
+pids=$(lsof -tiTCP:4000 -sTCP:LISTEN)
+[ -n "$pids" ] && kill -9 $pids
+```
+
 Navigate to <http://localhost:4000/> to preview the site. Jekyll rebuilds automatically when files change.
 
 ---
@@ -135,7 +142,8 @@ Key paths and how they are used:
   bundle install
   bundle exec jekyll build
 
-  kill -9 $(lsof -t -i:4000)
+  pids=$(lsof -tiTCP:4000 -sTCP:LISTEN)
+  [ -n "$pids" ] && kill -9 $pids
   ```
 - For GitHub Pages hosting, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** so the configured Jekyll workflow publishes the `_site` artifact instead of the legacy builder.
 - To manually re-run the workflow, open the repository on GitHub, choose **Actions**, select the Jekyll deploy workflow, then use the `⋯` menu on the latest run and select **Re-run all jobs** (or click **Run workflow** for a clean trigger).
