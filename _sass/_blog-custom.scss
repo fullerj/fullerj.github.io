@@ -29,10 +29,25 @@
 
 .blog-archive-heading--active { color: var(--ds-accent-border-strong); }
 
+.blog-tag-filter {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
 .blog-tag-filter__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--ds-radius-pill);
   border: 1px solid var(--ds-chip-border);
   background: var(--ds-chip-bg);
   color: var(--ds-text-2);
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
   transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
 }
 
@@ -40,12 +55,6 @@
   background: var(--ds-accent-border-strong);
   color: var(--ds-accent-text-on-strong);
   border-color: var(--ds-accent-border-strong);
-}
-
-.blog-tag-filter__chip.is-active::after {
-  content: "\2713";
-  margin-left: 0.45rem;
-  font-size: 0.78em;
 }
 
 .blog-selected-summary {
