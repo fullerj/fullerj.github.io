@@ -154,56 +154,47 @@ description: >
   <h2>All Talks</h2>
   <div class="talks-timeline">
     {% for talk in talks %}
-      {% assign featured_key = false %}
-      {% for featured in featured_talks %}
-        {% if featured.title == talk.title and featured.date == talk.date %}
-          {% assign featured_key = true %}
-          {% break %}
+      {% assign event_downcase = talk.event | downcase %}
+      {% assign talk_type = talk.talk_type | default: '' | strip %}
+      {% if talk_type != '' %}
+        {% assign talk_type_downcase = talk_type | downcase %}
+        {% assign talk_type = talk_type_downcase | capitalize %}
+      {% else %}
+        {% assign talk_type = 'Talk' %}
+        {% if event_downcase contains 'panel' %}
+          {% assign talk_type = 'Panel' %}
+        {% elsif event_downcase contains 'tutorial' %}
+          {% assign talk_type = 'Tutorial' %}
+        {% elsif event_downcase contains 'seminar' %}
+          {% assign talk_type = 'Seminar' %}
+        {% elsif event_downcase contains 'lecture' %}
+          {% assign talk_type = 'Lecture' %}
+        {% elsif event_downcase contains 'conference' or event_downcase contains 'con' %}
+          {% assign talk_type = 'Conference' %}
+        {% elsif event_downcase contains 'workshop' %}
+          {% assign talk_type = 'Workshop' %}
         {% endif %}
-      {% endfor %}
-      {% unless featured_key %}
-        {% assign event_downcase = talk.event | downcase %}
-        {% assign talk_type = talk.talk_type | default: '' | strip %}
-        {% if talk_type != '' %}
-          {% assign talk_type_downcase = talk_type | downcase %}
-          {% assign talk_type = talk_type_downcase | capitalize %}
-        {% else %}
-          {% assign talk_type = 'Talk' %}
-          {% if event_downcase contains 'panel' %}
-            {% assign talk_type = 'Panel' %}
-          {% elsif event_downcase contains 'tutorial' %}
-            {% assign talk_type = 'Tutorial' %}
-          {% elsif event_downcase contains 'seminar' %}
-            {% assign talk_type = 'Seminar' %}
-          {% elsif event_downcase contains 'lecture' %}
-            {% assign talk_type = 'Lecture' %}
-          {% elsif event_downcase contains 'conference' or event_downcase contains 'con' %}
-            {% assign talk_type = 'Conference' %}
-          {% elsif event_downcase contains 'workshop' %}
-            {% assign talk_type = 'Workshop' %}
-          {% endif %}
-        {% endif %}
+      {% endif %}
 
-        <article class="talk-card talk-card--timeline">
-          <p class="talk-card__meta">
-            <span class="talk-card__chip">{{ talk_type }}</span>
-            <span>{{ talk.date | date: "%Y" }}</span>
+      <article class="talk-card talk-card--timeline">
+        <p class="talk-card__meta">
+          <span class="talk-card__chip">{{ talk_type }}</span>
+          <span>{{ talk.date | date: "%Y" }}</span>
+        </p>
+        <h3 class="talk-card__title">{{ talk.title }}</h3>
+        <p class="talk-card__event">{{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}</p>
+        <p class="talk-card__date">{% if talk.date %}{{ talk.date | date: "%B %-d, %Y" }}{% else %}TBA{% endif %}</p>
+        {% if talk.description %}
+          <p class="talk-card__description">{{ talk.description }}</p>
+        {% endif %}
+        {% if talk.resources %}
+          <p class="talk-card__links">
+            {% for resource in talk.resources %}
+              <a href="{{ resource.url }}">{{ resource.label }}</a>
+            {% endfor %}
           </p>
-          <h3 class="talk-card__title">{{ talk.title }}</h3>
-          <p class="talk-card__event">{{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}</p>
-          <p class="talk-card__date">{% if talk.date %}{{ talk.date | date: "%B %-d, %Y" }}{% else %}TBA{% endif %}</p>
-          {% if talk.description %}
-            <p class="talk-card__description">{{ talk.description }}</p>
-          {% endif %}
-          {% if talk.resources %}
-            <p class="talk-card__links">
-              {% for resource in talk.resources %}
-                <a href="{{ resource.url }}">{{ resource.label }}</a>
-              {% endfor %}
-            </p>
-          {% endif %}
-        </article>
-      {% endunless %}
+        {% endif %}
+      </article>
     {% endfor %}
   </div>
 </section>
