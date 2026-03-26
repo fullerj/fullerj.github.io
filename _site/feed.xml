@@ -1,5 +1,247 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-25T08:43:38-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">2026: The End of Vibe Adoption</title><link href="http://localhost:4000/publications/the-end-of-vibe-adoption/" rel="alternate" type="text/html" title="2026: The End of Vibe Adoption" /><published>2026-02-01T00:00:00-05:00</published><updated>2026-02-25T12:29:14-05:00</updated><id>http://localhost:4000/publications/end-of-vibe-adoption</id><content type="html" xml:base="http://localhost:4000/publications/the-end-of-vibe-adoption/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-26T09:28:34-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-03-26T09:28:33-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
+
+<h2 id="executive-summary">Executive Summary</h2>
+
+<p>I ran a reproducible pipeline over 120,000 VirusTotal samples (November 2024 to October 2025) and found that persistence is both highly concentrated and surprisingly stable:</p>
+
+<ul>
+  <li>Ten normalized clusters account for 89.4% of observed activity.</li>
+  <li>79.8% of samples map to ATT&amp;CK techniques, with stable behavior profiles month-over-month.</li>
+  <li>Evasion is common but not rapidly escalating: sandbox evasion appears in 49.9% of enriched samples, and process injection in 37.1%.</li>
+</ul>
+
+<p>What stood out to me is that persistence in commodity malware is less about constant novelty and more about durable operating models, especially loaders, mobile grayware, and service-style delivery ecosystems.</p>
+
+<p>That gives a clearer way to read malware trend claims and a better idea of where sustained detection engineering actually pays off.</p>
+
+<h2 id="at-a-glance-metrics">At-a-Glance Metrics</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th style="text-align: right">Value</th>
+      <th>Why It Matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Total samples analyzed</td>
+      <td style="text-align: right">120,000</td>
+      <td>Sufficient scale for longitudinal signal</td>
+    </tr>
+    <tr>
+      <td>Study window</td>
+      <td style="text-align: right">Nov 2024 - Oct 2025</td>
+      <td>Covers seasonal and campaign variation</td>
+    </tr>
+    <tr>
+      <td>Distinct normalized clusters</td>
+      <td style="text-align: right">861</td>
+      <td>Captures ecosystem breadth</td>
+    </tr>
+    <tr>
+      <td>Top-10 cluster share</td>
+      <td style="text-align: right">89.4%</td>
+      <td>Activity is highly concentrated</td>
+    </tr>
+    <tr>
+      <td>ATT&amp;CK-mapped samples</td>
+      <td style="text-align: right">79.8% (95,780)</td>
+      <td>Strong behavior-level coverage</td>
+    </tr>
+    <tr>
+      <td>Sandbox/virtualization evasion</td>
+      <td style="text-align: right">49.9%</td>
+      <td>Evasion is baseline behavior</td>
+    </tr>
+    <tr>
+      <td>Process injection/tampering</td>
+      <td style="text-align: right">37.1%</td>
+      <td>Injection remains a common execution pattern</td>
+    </tr>
+    <tr>
+      <td>Security tool tampering</td>
+      <td style="text-align: right">27.6%</td>
+      <td>Defense impairment is routine in many workflows</td>
+    </tr>
+    <tr>
+      <td>Integrity-primary impact</td>
+      <td style="text-align: right">42.9%</td>
+      <td>Credential theft and file modification are central outcomes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/blogs/yearly_malware/fig_family_persistence_2025.png" alt="Malware cluster persistence over time" /></p>
+
+<p><em>Figure: Persistence of leading normalized clusters across the observation window.</em></p>
+
+<h2 id="why-this-matters-right-now">Why This Matters Right Now</h2>
+
+<p>Recurring public dashboards are useful for short-term situational awareness. But snapshot rankings rarely tell you whether the same operational clusters are still active month to month.</p>
+
+<p>This analysis adds a repeatable layer to those reports. I treat telemetry as imperfect but useful, then test whether conclusions still hold when assumptions change.</p>
+
+<p>No dashboard gives certainty, but I care more about whether the finding survives reruns, threshold changes, and sanity checks.</p>
+
+<h2 id="how-to-read-the-results">How to Read the Results</h2>
+
+<p>Two interpretation choices matter before you dive into details:</p>
+
+<ul>
+  <li>These are normalized operational clusters, not guaranteed one-to-one code lineages.</li>
+  <li>For broader labels (for example, some Android adware-style categories), persistence should be read as class-level continuity in telemetry.</li>
+</ul>
+
+<p>This keeps the claims grounded without losing operational value. You still need to know what keeps showing up, even when naming taxonomies are messy.</p>
+
+<h2 id="what-the-analysis-covered">What the Analysis Covered</h2>
+
+<p>The study processed 120,000 samples from a 12-month window with a six-stage workflow:</p>
+
+<ol>
+  <li>Observation filtering to remove duplicate submission noise.</li>
+  <li>Family normalization to collapse vendor naming variance.</li>
+  <li>Heuristic labeling to improve coverage when canonical labels are missing.</li>
+  <li>Behavioral mapping to ATT&amp;CK techniques.</li>
+  <li>Monthly temporal aggregation by normalized cluster.</li>
+  <li>Empirical validation for agreement and stability.</li>
+</ol>
+
+<p>Convergence testing is a key safeguard in the pipeline: major indicators stabilized after roughly 35,000 samples, which suggests later findings are not under-sampling artifacts.</p>
+
+<p>This is more than a big sample pull. We filter and validate to avoid mistaking raw volume for real signal.</p>
+
+<p><img src="/assets/blogs/yearly_malware/framework.png" alt="Measurement workflow from telemetry to persistence indicators" /></p>
+
+<p><em>Figure: Six-stage workflow used to transform raw telemetry into validated persistence indicators.</em></p>
+
+<h2 id="method-details-that-matter">Method Details That Matter</h2>
+
+<p>The workflow is easy to describe, but each stage has a specific quality-control job:</p>
+
+<ul>
+  <li>Observation filtering reduces repeated-upload inflation by deduplicating high-confidence submissions at the file-plus-time level.</li>
+  <li>Family normalization aligns noisy vendor strings into consistent cluster identities for temporal comparison.</li>
+  <li>Heuristic labeling recovers coverage when canonical labels are absent, while preserving provenance (<a href="https://github.com/malicialab/avclass">avclass</a> vs heuristic).</li>
+  <li>Behavioral mapping translates execution evidence into ATT&amp;CK techniques using explicit matching rules and confidence scoring.</li>
+  <li>Structural aggregation converts sample-level data into family-by-month persistence profiles.</li>
+  <li>Empirical validation checks both vendor consistency and behavioral stability before marking a cluster as persistent.</li>
+</ul>
+
+<p>Together, those safeguards make the rankings more trustworthy than raw sample counts.</p>
+
+<h2 id="four-findings-that-stand-out">Four Findings That Stand Out</h2>
+
+<h3 id="1-the-ecosystem-is-concentrated-and-that-concentration-is-robust">1. The ecosystem is concentrated, and that concentration is robust</h3>
+
+<p>Across 861 normalized clusters, a small group dominates observed activity. The top ten clusters account for 89.4% of all samples, and the top three account for 32.7%.</p>
+
+<p>This concentration held even when I tightened detection consensus thresholds (for example, from p:5+ to p:15+), which suggests dominance is not just a threshold side effect.</p>
+
+<p>The convergence diagnostics back that up. Family-set similarity and rank correlation both stabilize early, with the major structure in place by about 35,000 samples.</p>
+
+<p><img src="/assets/blogs/yearly_malware/fig_family_stability_curve.png" alt="Top-ten set stability as sample volume increases" /></p>
+
+<p><em>Figure: Top-ten family-set similarity converges early, supporting stability of concentration findings.</em></p>
+
+<h3 id="2-behavior-is-stable-enough-to-support-longitudinal-tracking">2. Behavior is stable enough to support longitudinal tracking</h3>
+
+<p>Behavioral enrichment mapped 95,780 samples (79.8%) to ATT&amp;CK techniques. The most frequent patterns remained consistent over time and across prevalence tiers:</p>
+
+<ul>
+  <li>T1071 (Application Layer Protocol)</li>
+  <li>T1082 (System Information Discovery)</li>
+  <li>T1027 (Obfuscated Files or Information)</li>
+</ul>
+
+<p>These are high-prevalence ATT&amp;CK parent techniques. In SOC operations, they work best when implemented through sub-technique coverage and behavior-chain correlation, not single-technique alerting.</p>
+
+<p>That consistency matters because it lets defenders prioritize durable technique patterns instead of constantly chasing family-name churn.</p>
+
+<p><img src="/assets/blogs/yearly_malware/fig_attack_top_techniques.png" alt="Most frequent ATT&amp;CK techniques in enriched samples" /></p>
+
+<p><em>Figure: Technique prevalence is dominated by communication, discovery, and obfuscation-related behavior.</em></p>
+
+<h3 id="3-evasion-is-now-baseline-tradecraft-in-commodity-malware">3. Evasion is now baseline tradecraft in commodity malware</h3>
+
+<p>The study found substantial, steady use of evasion-related behaviors:</p>
+
+<ul>
+  <li>Sandbox/virtualization evasion: 49.9%</li>
+  <li>Process injection and memory tampering: 37.1%</li>
+  <li>Security tool tampering: 27.6%</li>
+</ul>
+
+<p>Importantly, the trend is stable rather than sharply rising. That points to mature use of known bypass practices, not a sudden jump in novel evasion capability.</p>
+
+<p>Operationally, this means anti-analysis assumptions belong in baseline defensive content, not just advanced-tier playbooks.</p>
+
+<h3 id="4-impact-clusters-around-integrity-effects">4. Impact clusters around Integrity effects</h3>
+
+<p>CIA impact analysis showed a strong skew toward Integrity-linked outcomes:</p>
+
+<ul>
+  <li>Integrity-primary impact: 42.9%</li>
+  <li>Confidentiality + Integrity: 23.9%</li>
+  <li>Unknown/unclassified: 21.9%</li>
+</ul>
+
+<p>This profile aligns with common credential theft and file modification workflows seen in loader-centric operations, where control and tampering effects often matter more than pure availability disruption.</p>
+
+<h2 id="what-changed-in-the-malware-ecosystem">What Changed in the Malware Ecosystem</h2>
+
+<p>Across this dataset, the pattern points to a broader shift: away from monolithic, long-lived botnets and toward modular, service-like delivery ecosystems.</p>
+
+<p>Loader-centric clusters persist because they decouple delivery from payload. If one payload burns, operators can replace it while preserving delivery pathways, packer pipelines, and portions of infrastructure. That architectural flexibility is a practical persistence advantage.</p>
+
+<p>A second shift appears in platform mix. Android grayware and monitoring-style categories are no longer edge noise; they are part of the persistent core signal. Even with known mobile telemetry gaps, they show consistent operational presence.</p>
+
+<p>A third shift is delivery mechanism. Macro and document-heavy infection routes are now a small minority of observed activity, while executable and mobile package workflows dominate.</p>
+
+<h2 id="soc-translation-from-findings-to-action">SOC Translation: From Findings to Action</h2>
+
+<p>If you run or support a SOC, these results translate into concrete operating improvements:</p>
+
+<ul>
+  <li>Detection engineering: Build and tune content around persistent technique patterns (<code class="language-plaintext highlighter-rouge">T1071</code>, <code class="language-plaintext highlighter-rouge">T1082</code>, <code class="language-plaintext highlighter-rouge">T1027</code>) and pair them with high-signal evasive behaviors like <code class="language-plaintext highlighter-rouge">T1055</code> (Process Injection) and <code class="language-plaintext highlighter-rouge">T1497</code> (Virtualization/Sandbox Evasion) rather than chasing family-name churn.</li>
+  <li>Hunting strategy: Hunt for loader continuity indicators across campaigns (delivery paths, infrastructure overlap, recurring execution chains).</li>
+  <li>Control validation: Continuously test anti-analysis and anti-injection coverage, because evasion is baseline behavior, not edge-case behavior.</li>
+  <li>Coverage governance: Track mobile and grayware visibility as a formal gap area, with explicit telemetry and triage metrics.</li>
+</ul>
+
+<p>For smaller teams, adopting even one of these practices can materially improve defensive consistency.</p>
+
+<h2 id="reproducibility-notes">Reproducibility Notes</h2>
+
+<p>This project emphasizes reproducibility over one-off dashboard storytelling. That includes:</p>
+
+<ul>
+  <li>Explicit filtering thresholds.</li>
+  <li>Transparent normalization and heuristic rules.</li>
+  <li>Convergence checks before making strong claims.</li>
+  <li>Separation between measured facts and interpretation.</li>
+</ul>
+
+<p>Uncertainty remains, but this setup makes disagreement and replication possible, which is what mature security measurement needs.</p>
+
+<h2 id="important-caveats">Important Caveats</h2>
+
+<p>This analysis measures persistence in public telemetry, not a full census of global infections. Public feeds skew toward environments with mature scanning and sharing practices.</p>
+
+<p>The corpus is intentionally heterogeneous (Windows loaders, Android adware/grayware, monitoring tools, and riskware classes). As a result, these findings should be interpreted as normalized operational-cluster persistence, not strict one-to-one lineage prevalence across every software class.</p>
+
+<p>Behavioral enrichment also depends on dynamic evidence quality. Some samples have sparse or incomplete execution traces, which can cap ATT&amp;CK and impact attribution depth for specific subsets.</p>
+
+<h2 id="closing-thought">Closing Thought</h2>
+
+<p>The most useful result is not a single family ranking. It is that transparent, reproducible measurement adds lasting ecosystem insight alongside operational dashboards.</p>
+
+<p>For security teams, that is actionable: the adversary landscape may look noisy at the sample level, but at the cluster and behavior level, persistence is measurable, consistent, and defensible.</p>
+
+<p>Practical takeaway: transparent, repeatable analysis gives teams something they can defend, challenge, and improve over time.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="malware" /><category term="threat intelligence" /><category term="persistence" /><category term="mitre attack" /><category term="detection engineering" /><summary type="html"><![CDATA[A reproducible analysis of 120,000 VirusTotal samples showing which malware clusters remained active and behaviorally stable over time.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">2026: The End of Vibe Adoption</title><link href="http://localhost:4000/publications/the-end-of-vibe-adoption/" rel="alternate" type="text/html" title="2026: The End of Vibe Adoption" /><published>2026-02-01T00:00:00-05:00</published><updated>2026-02-25T12:29:14-05:00</updated><id>http://localhost:4000/publications/end-of-vibe-adoption</id><content type="html" xml:base="http://localhost:4000/publications/the-end-of-vibe-adoption/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
   <span class="entry-context__item">AIUC-1</span>
   <span class="entry-context__item">February 1, 2026</span>
   
@@ -501,53 +743,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><strong>Applied Digital Forensics.</strong> Use industry tools to acquire and analyse evidence from network captures, storage media, and RAM across common operating systems and devices.</li>
 </ol>
 
-<p>Throughout the term, learners execute labs in a virtualized environment, document chain of custody, and deliver expert-witness style reports tying technical findings back to legal requirements.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.]]></summary></entry><entry><title type="html">Invited Tutorial: Counteracting Web Application Abuse in Malware</title><link href="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/" rel="alternate" type="text/html" title="Invited Tutorial: Counteracting Web Application Abuse in Malware" /><published>2023-09-18T00:00:00-04:00</published><updated>2025-12-29T16:57:04-05:00</updated><id>http://localhost:4000/publications/secdev-tutorial-marsea</id><content type="html" xml:base="http://localhost:4000/publications/secdev-tutorial-web-application-abuse/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
-  <span class="entry-context__item">IEEE SecDev</span>
-  <span class="entry-context__item">September 18, 2023</span>
-  
-  
-</div>
-
-<div class="meta grid entry-details">
-  <div class="meta-item"><strong>Authors:</strong> M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio</div>
-  <div class="meta-item"><strong>Conference:</strong> IEEE Secure Development Conference (SecDev): Invited Tutorial</div>
-  
-  
-  <div class="meta-item"><strong>Venue:</strong> IEEE SecDev</div>
-  <div class="meta-item"><strong>Published:</strong> September 18, 2023</div>
-  
-</div>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Distills forensic best practices for identifying and containing Web App-Engaged malware across popular web platforms.</li>
-  <li>Showcases the Marsea pipeline, enabling responders to document proof-of-abuse and coordinate takedowns with service providers.</li>
-  <li>Features a 90-minute mix of tool walkthroughs and labs, giving participants practical experience handling WAE incidents end-to-end.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="">PDF</a></li>
-  <li><a href="https://github.com/CyFI-Lab-Public/MARSEA">Source code</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>Web applications offer a broad range of functionalities that are exploited by malware to serve as alternatives to traditional attacker-controlled servers. To effectively combat these Web App-Engaged (WAE) malware, prompt coordination between incident responders and web application providers is crucial. Any delay in this collaboration can allow WAE malware to flourish, posing serious security risks to the compromised web applications.</p>
-
-<p>Our tutorial is designed to enlighten attendees on the best practices for forensic analysis of malware, while also helping to assess the scope of infection caused by WAE malware. Additionally, we will discuss the essential “proof-of-abuse” documentation required to facilitate groundbreaking collaboration between incident responders and service providers.</p>
-
-<p>To enhance the security awareness of incident responders and to streamline forensic analysis for quicker response times, we are offering a 90-minute tutorial. This educational session will address the unique challenges posed by WAE malware and explore specialized remediation techniques available through web application platforms. We will also unveil a recently-developed forensic tool designed specifically for handling WAE malware. The tutorial will be a hybrid experience, featuring both a walkthrough of this innovative tool and a hands-on exercise, enabling participants to use the tool for analyzing WAE malware effectively.</p>
-
-<h2 id="bibtex">BibTeX</h2>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">yao2023secdevtutorial</span><span class="p">,</span>
-  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Invited Tutorial: Counteracting Web Application Abuse in Malware}</span><span class="p">,</span>
-  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Yao, Mingxuan and Fuller, Jonathan and Pai Sridhar, Ranjita and Agarwal, Saumya and Sikder, Amit K. and Saltaformaggio, Brendan}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the IEEE Secure Development Conference (SecDev)}</span><span class="p">,</span>
-  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2023}</span><span class="p">,</span>
-  <span class="na">note</span>      <span class="p">=</span> <span class="s">{Invited Tutorial}</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="incident-response" /><category term="tutorials" /><summary type="html"><![CDATA[Hands-on SecDev tutorial that teaches incident responders how to triage and remediate Web App-Engaged malware using the Marsea toolchain.]]></summary></entry></feed>
+<p>Throughout the term, learners execute labs in a virtualized environment, document chain of custody, and deliver expert-witness style reports tying technical findings back to legal requirements.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Graduate-level exploration of cyber law and applied digital forensics, delivered in a virtual environment.]]></summary></entry></feed>
