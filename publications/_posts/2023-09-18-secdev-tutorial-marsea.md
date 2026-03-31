@@ -18,6 +18,7 @@ pdf_url:
 slides_url: 
 talk_url: 
 code_url: https://github.com/CyFI-Lab-Public/MARSEA
+demo_url:
 dataset_url: 
 media_links:
 

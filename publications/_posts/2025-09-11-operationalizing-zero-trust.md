@@ -15,6 +15,7 @@ authors: "F. Shah, <u>Jonathan Fuller</u>"
 date: 2025-09-11
 venue: "U.S. Army"
 pdf_url: https://www.army.mil/article/288418
+demo_url:
 media_links:
   - title: "Army Operationalizes Zero Trust"
     url: https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point
