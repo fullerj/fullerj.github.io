@@ -15,6 +15,7 @@ journal: "Computers & Security, Volume 64, January 2017, Pages 44–58"
 venue: "COSE"
 authors: "<u>Jonathan Fuller</u>, B. Ramsey, M. Rice, J. Pecarina"
 pdf_url: /assets/papers/cose17.pdf
+demo_url:
 code_url: https://github.com/fullerj/MBIDS
 dataset_url: 
 media_links:

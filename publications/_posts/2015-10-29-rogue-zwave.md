@@ -15,6 +15,7 @@ conference: "2015 IEEE 40th Local Computer Networks Conference Workshops (LCN Wo
 authors: "<u>Jonathan Fuller</u>; B. Ramsey"
 venue: "IEEE LCN Workshops"
 pdf_url: /assets/papers/senseapp15.pdf
+demo_url:
 talk_url: 
 code_url: 
 dataset_url: 
