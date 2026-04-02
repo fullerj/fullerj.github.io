@@ -74,14 +74,14 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Blog
+  - title:             Analysis and Insights
     url:               /blog/
-  - title:             Service
+  - title:             Leadership and Service
     url:               /service/
+  - title:             Technical Writing
+    url:               /publications/
   - title:             Talks
     url:               /talks/
-  - title:             Publications
-    url:               /publications/
   - title:             Teaching
     url:               /teaching/
 
@@ -441,6 +441,11 @@ compress_html:
 
 sass:
   style:               compressed
+  quiet_deps:          true
+  silence_deprecations:
+    - import
+    - color-functions
+    - global-builtin
 
 # Jekyll Compose Defaults
 # ---------------------------------------------------------------------------------------
