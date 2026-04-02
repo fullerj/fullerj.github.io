@@ -1,0 +1,125 @@
+<script>
+(function() {
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function bindPanning(figure) {
+    if (figure.getAttribute('data-pan-bound') === 'true') return;
+
+    var viewport = figure.querySelector('.zoomable-figure__viewport');
+    var image = figure.querySelector('.zoomable-figure__image');
+    if (!viewport || !image) return;
+
+    var isDragging = false;
+    var startX = 0;
+    var startY = 0;
+    var startScrollLeft = 0;
+    var startScrollTop = 0;
+
+    viewport.addEventListener('mousedown', function(event) {
+      var scale = parseFloat(figure.getAttribute('data-zoom-scale') || '1');
+      if (scale <= 1) return;
+
+      isDragging = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      startScrollLeft = viewport.scrollLeft;
+      startScrollTop = viewport.scrollTop;
+      viewport.classList.add('is-dragging');
+      event.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(event) {
+      if (!isDragging) return;
+
+      var deltaX = event.clientX - startX;
+      var deltaY = event.clientY - startY;
+      viewport.scrollLeft = startScrollLeft - deltaX;
+      viewport.scrollTop = startScrollTop - deltaY;
+    });
+
+    document.addEventListener('mouseup', function() {
+      if (!isDragging) return;
+      isDragging = false;
+      viewport.classList.remove('is-dragging');
+    });
+
+    image.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+    });
+
+    figure.setAttribute('data-pan-bound', 'true');
+  }
+
+  function updateFigure(figure, scale) {
+    var image = figure.querySelector('.zoomable-figure__image');
+    var level = figure.querySelector('.zoomable-figure__level');
+    var viewport = figure.querySelector('.zoomable-figure__viewport');
+    if (!image || !level || !viewport) return;
+
+    image.style.width = (scale * 100).toFixed(0) + '%';
+    level.textContent = Math.round(scale * 100) + '%';
+    figure.setAttribute('data-zoom-scale', String(scale));
+
+    if (scale > 1) {
+      figure.classList.add('zoomable-figure--can-pan');
+    } else {
+      figure.classList.remove('zoomable-figure--can-pan');
+      viewport.classList.remove('is-dragging');
+    }
+  }
+
+  function initializeAll() {
+    document.querySelectorAll('.zoomable-figure').forEach(function(figure) {
+      bindPanning(figure);
+      updateFigure(figure, 1);
+    });
+  }
+
+  document.addEventListener('click', function(event) {
+    var button = event.target.closest('[data-zoom-action]');
+    if (!button) return;
+
+    var figure = button.closest('.zoomable-figure');
+    if (!figure) return;
+
+    var min = parseFloat(figure.getAttribute('data-zoom-min') || '1');
+    var max = parseFloat(figure.getAttribute('data-zoom-max') || '4');
+    var step = parseFloat(figure.getAttribute('data-zoom-step') || '0.2');
+    var scale = parseFloat(figure.getAttribute('data-zoom-scale') || '1');
+    var action = button.getAttribute('data-zoom-action');
+
+    if (action === 'in') {
+      scale = clamp(scale + step, min, max);
+    } else if (action === 'out') {
+      scale = clamp(scale - step, min, max);
+    } else if (action === 'reset') {
+      scale = 1;
+    } else {
+      return;
+    }
+
+    updateFigure(figure, scale);
+
+    if (action === 'reset') {
+      var viewport = figure.querySelector('.zoomable-figure__viewport');
+      if (viewport) {
+        viewport.scrollLeft = 0;
+        viewport.scrollTop = 0;
+      }
+    }
+  });
+
+  var pushState = document.getElementById('_pushState');
+  if (pushState) {
+    pushState.addEventListener('hy-push-state-after', initializeAll);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAll);
+  } else {
+    initializeAll();
+  }
+})();
+</script>

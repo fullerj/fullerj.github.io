@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-02T16:18:27-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-02T16:18:27-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (also highligned in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and it stuck with me that I needed to go deeper on the Bitcoin transaction data behind that work.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-02T17:05:12-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-02T16:20:00-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (also highligned in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and it stuck with me that I needed to go deeper on the Bitcoin transaction data behind that work.</p>
 
 <p>The first pass focused on collecting blockchain indicators tied to malware activity. That included wallet IDs and transaction IDs.</p>
 
@@ -29,11 +29,33 @@
 
 <p>Figure 1 shows the full graph view. Even with minimal styling, dense cores and spoke-like neighborhoods stand out.</p>
 
-<p><img src="/assets/blogs/trace-wi/graph_full.png" alt="Figure 1 - Full graph overview (993 nodes, 1,579 edges)" /></p>
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 1 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/trace-wi/graph_full.png" alt="Figure 1 - Full graph overview (993 nodes, 1,579 edges)" />
+  </div>
+  <figcaption>Figure 1 - Full graph overview (993 nodes, 1,579 edges)</figcaption>
+</figure>
 
 <p>Figure 2 isolates the hub-focused view used for analysis. It makes the central wallets and their immediate neighborhoods easier to see.</p>
 
-<p><img src="/assets/blogs/trace-wi/graph_hubs.png" alt="Figure 2 - Hub-focused graph view" /></p>
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 2 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/trace-wi/graph_hubs.png" alt="Figure 2 - Hub-focused graph view" />
+  </div>
+  <figcaption>Figure 2 - Hub-focused graph view</figcaption>
+</figure>
 
 <p>These figures are dense, but the shape matters more than the details.</p>
 
@@ -126,7 +148,7 @@
       <p>Greenberg, Andy. <em>Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</em>. Doubleday, 2022. <a href="#fnref:tracers" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph-analysis" /><category term="threat-intelligence" /><category term="spycraft" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived seeds.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-04-01T13:46:49-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
+</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph-analysis" /><category term="threat-intelligence" /><category term="spycraft" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-04-01T13:46:49-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
 
 <h2 id="executive-summary">Executive Summary</h2>
 
