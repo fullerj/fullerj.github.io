@@ -1,0 +1,73 @@
+.zoomable-figure {
+  margin: 1.5rem 0;
+}
+
+.zoomable-figure__toolbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--ds-border-1);
+  border-radius: 999px;
+  background: var(--ds-surface-1);
+}
+
+.zoomable-figure__button {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--ds-border-1);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--ds-text-1);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.zoomable-figure__button:hover,
+.zoomable-figure__button:focus {
+  background: #f4f7fb;
+}
+
+.zoomable-figure__button--reset {
+  width: auto;
+  padding: 0 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.zoomable-figure__level {
+  min-width: 3.2rem;
+  text-align: center;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.zoomable-figure__viewport {
+  overflow: auto;
+  border: 1px solid var(--ds-border-1);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  cursor: default;
+}
+
+.zoomable-figure--can-pan .zoomable-figure__viewport {
+  cursor: grab;
+}
+
+.zoomable-figure__viewport.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.zoomable-figure__image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+.content .zoomable-figure .zoomable-figure__image {
+  max-width: none;
+}

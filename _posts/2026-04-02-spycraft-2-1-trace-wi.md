@@ -2,7 +2,7 @@
 layout: blog
 title: "Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs"
 description: >
-  This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived seeds.
+  This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.
 date: 2026-04-02
 categories:
   - posts
@@ -54,11 +54,33 @@ That shift, from a list of indicators to a recurring structure, is the main resu
 
 Figure 1 shows the full graph view. Even with minimal styling, dense cores and spoke-like neighborhoods stand out.
 
-![Figure 1 - Full graph overview (993 nodes, 1,579 edges)](/assets/blogs/trace-wi/graph_full.png)
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 1 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/trace-wi/graph_full.png" alt="Figure 1 - Full graph overview (993 nodes, 1,579 edges)" />
+  </div>
+  <figcaption>Figure 1 - Full graph overview (993 nodes, 1,579 edges)</figcaption>
+</figure>
 
 Figure 2 isolates the hub-focused view used for analysis. It makes the central wallets and their immediate neighborhoods easier to see.
 
-![Figure 2 - Hub-focused graph view](/assets/blogs/trace-wi/graph_hubs.png)
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 2 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/trace-wi/graph_hubs.png" alt="Figure 2 - Hub-focused graph view" />
+  </div>
+  <figcaption>Figure 2 - Hub-focused graph view</figcaption>
+</figure>
 
 These figures are dense, but the shape matters more than the details.
 
