@@ -152,7 +152,7 @@ redirect_from:
     <article class="home-panel" id="media-coverage">
       <h3>Selected Media Coverage</h3>
 
-{% assign coverage_limit = 6 %}
+{% assign coverage_limit = 3 %}
 {% assign per_source_limit = 2 %}
 {% assign publication_coverage = '' | split: '' %}
 {% assign talk_coverage = '' | split: '' %}
@@ -285,30 +285,13 @@ redirect_from:
 <ul>
 {{ coverage_items }}
 </ul>
+<p><a href="{{ '/media/' | relative_url }}">View all media coverage</a></p>
 {% else %}
 <p>Media highlights will appear here once coverage links are available.</p>
 {% endif %}
 
     </article>
 
-    <article class="home-panel">
-      <h3>Recent Service</h3>
-
-{% assign service_posts = site.pages | where: 'url', '/service/' %}
-{% if service_posts and service_posts.size > 0 %}
-<ul>
-  {% assign service_page = service_posts.first %}
-  <li>
-    <strong><a href="{{ service_page.url | relative_url }}">Community & Professional Service Highlights</a></strong><br/>
-    <small>Volunteer outreach, mentoring, and reviewer engagements supporting the broader cybersecurity community.</small>
-  </li>
-</ul>
-<p><a href="{{ '/service/' | relative_url }}">Explore service and volunteer efforts</a></p>
-{% else %}
-<p>Service highlights will appear here once they are published.</p>
-{% endif %}
-
-    </article>
   </div>
 </section>
 
