@@ -22,7 +22,7 @@ image:
 
 # Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs
 
-I read *Tracers in the Dark*[^tracers] while working on [VADER]({{ "/publications/vader-dead-drop-resolver/" | relative_url }}) (also highligned in [Spycraft 2.0]({{ "/blog/spycraft-2-0/" | relative_url }})), and I've wanted to go deeper on the Bitcoin transaction data behind that work. Well, I carved out some time to do it. 
+I read *Tracers in the Dark*[^tracers] while working on [VADER]({{ "/publications/vader-dead-drop-resolver/" | relative_url }}) (also highligned in [Spycraft 2.0]({{ "/blog/spycraft-2-0/" | relative_url }})), and I've wanted to go deeper on the Bitcoin transaction data behind found in that work. Well, I carved out some time to do it. 
 
 The first pass focused on collecting blockchain indicators tied to malware activity. That included wallet IDs and transaction IDs.
 
