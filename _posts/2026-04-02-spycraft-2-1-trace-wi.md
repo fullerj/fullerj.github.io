@@ -94,23 +94,19 @@ This does not look like random payment traffic. It looks organized, with core co
 
 ## The Most Interesting Signals
 
-The first signal is concentration. Activity is not evenly distributed. It accumulates around a small set of hubs:
+The first signal is concentration: activity is not evenly distributed and instead accumulates around a small set of hubs:
 
 - 17gd1msp5FnMcEMF1MitTNSsYs7w7AQyCt: 530 interactions  
 - 1CeLgFDu917tgtunhJZ6BA2YdR559Boy9Y: 213 interactions  
 - 1HTDy9SkfhwaNCXFA8wFCvN53f3iGpm8kb: 29 interactions  
 
-If this were random contamination, the distribution would be flatter. Even at depth 1, the structure looks hierarchical.
-
-The hub-focused graph in Figure 2 supports this and makes the centralization visible without requiring the full graph.
-
-The second signal is repetition in decoded values. The busiest wallets repeatedly map to the same candidate outputs:
+If this were random contamination, the distribution would be flatter. Even at depth 1, the structure remains hierarchical, and the hub-focused graph in Figure 2 makes that centralization visible without requiring the full graph. That leads to the second signal: repetition in decoded values, where the busiest wallets repeatedly map to the same candidate outputs.
 
 - 17gd1msp5FnMcEMF1MitTNSsYs7w7AQyCt → 96.69.184.42 (269 events)  
 - 1CeLgFDu917tgtunhJZ6BA2YdR559Boy9Y → 195.123.220.180 (215 events)  
 - 1CpTCVckjajNKDd7PsApV3cAkunVd4Mcmt → 128.247.64.234 (14 events)  
 
-A single decode could be noise. Repetition at this volume is not.
+Any single decode could be noise. Repetition at this volume is harder to dismiss.
 
 ### Figure 7: Recurrence Timeline for Decoded Candidates
 
@@ -135,13 +131,13 @@ Finally, seed expansion is large relative to the initial footprint. From a small
 
 ## What This May Lead To
 
-The question now is not only whether individual nodes are malicious. It is how this system operates over time.
+The question now is not only whether individual nodes are malicious, but how this system operates over time.
 
-A working interpretation: signaling rides on public rails because they are durable and inexpensive. A small set of hubs likely acts as long-lived coordination points. Transit-heavy edges reflect compartmentalization between stages. Related-wallet neighborhoods capture rotation paths before they appear elsewhere.
+A working interpretation is that signaling rides on public rails because they are durable and inexpensive. A small set of hubs likely acts as long-lived coordination points, while transit-heavy edges reflect compartmentalization between stages. Related-wallet neighborhoods may capture rotation paths before they appear elsewhere.
 
-These are not attribution claims. They are structural inferences from repeated behavior.
+This is not an attribution claim; it is a structural inference drawn from repeated behavior.
 
-If this holds across additional windows, the operation is not just leaving traces. It is exposing parts of its coordination model.
+If this pattern holds across additional windows, the operation is not just leaving traces; it is exposing parts of its coordination model.
 
 ## Open Questions Worth Chasing
 
