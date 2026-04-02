@@ -257,11 +257,14 @@ Example code for using Matamo as alternative analytics solution.
     if (!scope || scope === 'all') {
       return 'All';
     }
-    if (scope === 'blog') {
-      return 'insights';
-    }
-    if (scope === 'publications') {
-      return 'writing';
+    var labels = {
+      blog: 'Analysis and Insights',
+      publications: 'Technical Writing',
+      talks: 'Talks',
+      teaching: 'Teaching',
+    };
+    if (labels[scope]) {
+      return labels[scope];
     }
     return scope.charAt(0).toUpperCase() + scope.slice(1);
   }
