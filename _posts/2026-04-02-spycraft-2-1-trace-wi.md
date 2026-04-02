@@ -118,7 +118,7 @@ A single decode could be noise. Repetition at this volume is not.
 
 The timeline places recurrence in time, not just counts. In this run, decoded events span from mid-2017 through early 2021. All 10 wallets with decoded activity retain enough timestamp context to measure intervals between observations.
 
-These wallet IDs come from the Vader dataset, which includes malware samples from 2012 through 2022. The timeline reflects when decoded on-chain events were observed, not the full range of the source corpus.
+These wallet IDs come from the [VADER]({{ "/publications/vader-dead-drop-resolver/" | relative_url }}) dataset, which includes malware samples from 2012 through 2022. The timeline reflects when decoded on-chain events were observed, not the full range of the source corpus.
 
 Bubble size tracks recurrence volume. The same wallets that dominate counts also persist over multiple years.
 
