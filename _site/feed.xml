@@ -1,88 +1,132 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-03-31T13:57:54-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Applying AUIC-1 Controls to AI Agents</title><link href="http://localhost:4000/blog/auic1-controls-usma-aegis/" rel="alternate" type="text/html" title="Applying AUIC-1 Controls to AI Agents" /><published>2026-03-31T00:00:00-04:00</published><updated>2026-03-31T13:57:53-04:00</updated><id>http://localhost:4000/blog/auic1-controls-usma-aegis</id><content type="html" xml:base="http://localhost:4000/blog/auic1-controls-usma-aegis/"><![CDATA[<p>Most work on AI security focuses on defining controls. The harder part is applying those controls in a way that can be tested.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-02T16:18:27-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-02T16:18:27-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (also highligned in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and it stuck with me that I needed to go deeper on the Bitcoin transaction data behind that work.</p>
 
-<p>At USMA, we built Aegis to do that. It takes AUIC-1 control expectations and turns them into tests that run against an agent, with results that can be reviewed later.</p>
+<p>The first pass focused on collecting blockchain indicators tied to malware activity. That included wallet IDs and transaction IDs.</p>
 
-<p>Here is the flow:</p>
+<p>This writeup is the second pass.</p>
 
-<p><img src="/assets/blogs/aegis/aegis_flow.png" alt="Aegis Evaluation Flow" /></p>
+<p>Instead of treating those indicators as static artifacts, I asked a different question: what does the system look like if those indicators are treated as a network?</p>
 
-<p>A control is mapped to a test. Inputs are generated to exercise that control. The agent responds. The response is checked against expected behavior using deterministic logic.</p>
+<p>Baseline context: the upstream collection identified 273 dead drops across 7 web applications. Pastebin accounted for 68 percent of the abuse. Blockchain explorers made up 25 percent, including 23 transaction IDs and 14 wallet IDs.</p>
 
-<p>The evaluation is not left to the model. LLMs can help generate inputs or surface odd behavior, but they are not used to decide pass or fail.</p>
+<h2 id="scope-and-data">Scope and Data</h2>
 
-<p>Each run produces a record of what was tested, what passed, and what did not. That record matters more than the score.</p>
+<p>This run starts from that blockchain-explorer slice: 14 wallet IDs and 23 transaction IDs. After enrichment and a single round of neighborhood expansion, the dataset grew to 41 wallets. The resulting graph contains 993 nodes and 1,579 edges. From the original seeds, hop-based expansion produced 540 related-wallet links, and 10 seed wallets generated decoded signal rows.</p>
 
-<h2 id="how-it-is-structured">How It Is Structured</h2>
+<p>The workflow is intentionally simple. Ingest local wallet and transaction seeds, pull Bitcoin data from multiple providers, build a depth-1 graph, label wallet roles, decode value sequences into candidate IPv4 outputs (see <a href="/publications/vader-dead-drop-resolver/">VADER</a>), then expand related-wallet neighborhoods from the seeds.</p>
 
-<p>Controls are defined separately from execution logic.</p>
+<p>Role labels are literal. A transit wallet primarily passes value between peers. A collector accumulates value. A distributor pushes value outward to many peers. An isolated wallet shows little connected activity within this slice.</p>
 
-<p>Control metadata lives outside the code. Test definitions and evaluation logic live in the framework. This allows controls to change without rewriting how tests run.</p>
+<p>The graph depth is shallow by design. The goal is fast pattern extraction from known footholds.</p>
 
-<p>At runtime the system:</p>
+<h2 id="how-the-picture-changed">How the Picture Changed</h2>
+
+<p>At the start, the data looked like a loose set of wallet references.</p>
+
+<p>After graphing and decoding, it stopped looking loose. The same wallets reappear. The same patterns repeat. The neighborhoods around those anchors expand in ways that do not look random.</p>
+
+<p>That shift, from a list of indicators to a recurring structure, is the main result.</p>
+
+<p>Figure 1 shows the full graph view. Even with minimal styling, dense cores and spoke-like neighborhoods stand out.</p>
+
+<p><img src="/assets/blogs/trace-wi/graph_full.png" alt="Figure 1 - Full graph overview (993 nodes, 1,579 edges)" /></p>
+
+<p>Figure 2 isolates the hub-focused view used for analysis. It makes the central wallets and their immediate neighborhoods easier to see.</p>
+
+<p><img src="/assets/blogs/trace-wi/graph_hubs.png" alt="Figure 2 - Hub-focused graph view" /></p>
+
+<p>These figures are dense, but the shape matters more than the details.</p>
+
+<p>In Figure 1, several nodes sit far from the central mass. Given that the initial wallets and transactions are malware-linked access points, those outliers may represent short-lived paths or access routes that shifted quickly under pressure. That is still a working hypothesis, but they likely reflect more than incidental contact. They matter because they can become future pivots if activity moves away from current hubs.</p>
+
+<p>Figure 1 also shows detached mini-clusters and long, thin tails connected by very few edges. That pattern is consistent with compartmentalized movement. Value can move through narrow paths without broad connectivity.</p>
+
+<p>In Figure 2, the hub-and-spoke structure is clearer. A small number of nodes absorb most of the activity, while many peripheral nodes appear once or a few times and then drop out. That asymmetry drives the concentration metrics.</p>
+
+<p>Another signal in Figure 2 is the presence of self-loops and short cycles around active nodes. A loop does not prove signaling on its own, but repeated loopback behavior can indicate reuse, staged consolidation, or test transfers before outward movement.</p>
+
+<p>This does not look like random payment traffic. It looks organized, with core coordination points, disposable edge wallets, and bridge paths that allow rotation without rebuilding the system.</p>
+
+<h2 id="the-most-interesting-signals">The Most Interesting Signals</h2>
+
+<p>The first signal is concentration. Activity is not evenly distributed. It accumulates around a small set of hubs:</p>
 
 <ul>
-  <li>loads the selected controls</li>
-  <li>maps each control to a test and agent category</li>
-  <li>generates inputs and sends them to the agent</li>
-  <li>captures responses</li>
-  <li>evaluates results using deterministic checks</li>
-  <li>stores results as structured evidence</li>
+  <li>17gd1msp5FnMcEMF1MitTNSsYs7w7AQyCt: 530 interactions</li>
+  <li>1CeLgFDu917tgtunhJZ6BA2YdR559Boy9Y: 213 interactions</li>
+  <li>1HTDy9SkfhwaNCXFA8wFCvN53f3iGpm8kb: 29 interactions</li>
 </ul>
 
-<p>Controls that do not apply to a given agent type are skipped and excluded from scoring.</p>
+<p>If this were random contamination, the distribution would be flatter. Even at depth 1, the structure looks hierarchical.</p>
 
-<p>Evaluation logic is explicit. Checks are implemented as rules such as pattern matching, keyword checks, and other constrained logic. This keeps validation consistent across runs.</p>
+<p>The hub-focused graph in Figure 2 supports this and makes the centralization visible without requiring the full graph.</p>
 
-<h2 id="what-gets-tested">What Gets Tested</h2>
+<p>The second signal is repetition in decoded values. The busiest wallets repeatedly map to the same candidate outputs:</p>
 
-<p>Tests are designed to exercise control boundaries.</p>
-
-<p>For chat agents this often means prompt injection and instruction handling. For RAG systems it includes data integrity, retrieval manipulation, and response grounding.</p>
-
-<p>Inputs are not limited to fixed prompts. They can be templated or generated to explore variations of the same condition.</p>
-
-<p>The goal is not to cover every case. The goal is to make specific risks observable.</p>
-
-<h2 id="what-gets-produced">What Gets Produced</h2>
-
-<p>The output is a record, not just a score.</p>
-
-<p>For each run:</p>
 <ul>
-  <li>which controls were in scope</li>
-  <li>which tests were executed</li>
-  <li>what responses were returned</li>
-  <li>how each control was evaluated</li>
+  <li>17gd1msp5FnMcEMF1MitTNSsYs7w7AQyCt → 96.69.184.42 (269 events)</li>
+  <li>1CeLgFDu917tgtunhJZ6BA2YdR559Boy9Y → 195.123.220.180 (215 events)</li>
+  <li>1CpTCVckjajNKDd7PsApV3cAkunVd4Mcmt → 128.247.64.234 (14 events)</li>
 </ul>
 
-<p>Results are stored so they can be reviewed later. This makes it possible to answer what was tested at a given point in time.</p>
+<p>A single decode could be noise. Repetition at this volume is not.</p>
 
-<h2 id="where-this-helps">Where This Helps</h2>
+<h3 id="figure-7-recurrence-timeline-for-decoded-candidates">Figure 7: Recurrence Timeline for Decoded Candidates</h3>
 
-<p>This is most useful at release boundaries.</p>
+<p><img src="/assets/blogs/trace-wi/decoded_recurrence_timeline.png" alt="Figure 7 - decoded recurrence timeline" /></p>
 
-<p>Instead of relying on one off reviews, teams can run a defined set of checks and review concrete results. That changes the discussion. It moves from general confidence to specific findings.</p>
+<p>The timeline places recurrence in time, not just counts. In this run, decoded events span from mid-2017 through early 2021. All 10 wallets with decoded activity retain enough timestamp context to measure intervals between observations.</p>
 
-<p>It also creates a loop. Run tests. Review results. Adjust. Run again.</p>
+<p>These wallet IDs come from the Vader dataset, which includes malware samples from 2012 through 2022. The timeline reflects when decoded on-chain events were observed, not the full range of the source corpus.</p>
 
-<h2 id="limits">Limits</h2>
+<p>Bubble size tracks recurrence volume. The same wallets that dominate counts also persist over multiple years.</p>
 
-<p>This approach has limits.</p>
+<p>The role split reinforces this:</p>
 
-<p>Coverage depends on how well controls are mapped to tests. Prompt based checks will not catch everything. Static test sets can fall behind changes in models or attack patterns. Behavior in a test environment will not fully match production.</p>
+<ul>
+  <li>transit: 31</li>
+  <li>collector: 7</li>
+  <li>distributor: 1</li>
+  <li>isolated: 2</li>
+</ul>
 
-<p>These are expected constraints.</p>
+<p>Most nodes act as pass-through points, with very few clear fan-out endpoints. That profile aligns with staged relay movement rather than simple one-direction payments.</p>
 
-<h2 id="closing">Closing</h2>
+<p>Finally, seed expansion is large relative to the initial footprint. From a small seed set, the graph produced 540 related-wallet links. That suggests stable adjacency around known anchors.</p>
 
-<p>Shipping AI is not the hard part. Explaining what was tested is.</p>
+<h2 id="what-this-may-lead-to">What This May Lead To</h2>
 
-<p>Aegis focuses on that gap by turning AUIC-1 controls into tests and results into evidence that can be reviewed, compared, and reused.</p>
+<p>The question now is not only whether individual nodes are malicious. It is how this system operates over time.</p>
 
-<p>Full write up here:</p>
+<p>A working interpretation: signaling rides on public rails because they are durable and inexpensive. A small set of hubs likely acts as long-lived coordination points. Transit-heavy edges reflect compartmentalization between stages. Related-wallet neighborhoods capture rotation paths before they appear elsewhere.</p>
 
-<p><a href="Link to full article">Read the AUIC-1 post</a></p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="AI" /><category term="security" /><category term="AUIC" /><category term="USMA" /><category term="Aegis" /><summary type="html"><![CDATA[This post shows how AUIC-1 controls can be applied to AI agents by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/aegis/aegis.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/aegis/aegis.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-03-27T05:58:11-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
+<p>These are not attribution claims. They are structural inferences from repeated behavior.</p>
+
+<p>If this holds across additional windows, the operation is not just leaving traces. It is exposing parts of its coordination model.</p>
+
+<h2 id="open-questions-worth-chasing">Open Questions Worth Chasing</h2>
+
+<p>The next questions focus on stability and timing. Do the same hubs remain dominant across reruns and time windows, or does control rotate? Do decoded candidates cluster around campaign periods? How often do they recur across unrelated seed sets? When a hub goes quiet, which adjacent wallets take its place? Do decoded candidates overlap with known hosting providers or prior infrastructure clusters?</p>
+
+<p>Answering those moves this from pattern observation toward lifecycle understanding.</p>
+
+<h2 id="what-changed-in-my-understanding">What Changed in My Understanding</h2>
+
+<p>Before this pass, these blockchain indicators read like dead drops.</p>
+
+<p>After this pass, part of the wallet set reads like signaling infrastructure with visible structure: concentrated hubs, repeated value-encoded candidates, transit-heavy movement, and expandable neighborhoods.</p>
+
+<p>This is less a list of clues and more a partial blueprint.</p>
+
+<p>The full system is still incomplete, but the shape, rhythm, and likely handoff points are visible.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:tracers">
+      <p>Greenberg, Andy. <em>Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</em>. Doubleday, 2022. <a href="#fnref:tracers" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph-analysis" /><category term="threat-intelligence" /><category term="spycraft" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived seeds.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-04-01T13:46:49-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
 
 <h2 id="executive-summary">Executive Summary</h2>
 
@@ -162,9 +206,11 @@ You can use this to make day-to-day SOC decisions, not just read a ranking. Star
   </tbody>
 </table>
 
+<p>Concentration emerges clearly in the data (as shown in Figure 1):</p>
+
 <p><img src="/assets/blogs/yearly_malware/fig_family_persistence_2025.png" alt="Malware cluster persistence over time" /></p>
 
-<p><em>Figure: Persistence of leading normalized clusters across the observation window.</em></p>
+<p><em>Figure 1: Persistence of leading normalized clusters across the observation window.</em></p>
 
 <h2 id="why-this-matters-right-now">Why This Matters Right Now</h2>
 
@@ -187,39 +233,17 @@ You can use this to make day-to-day SOC decisions, not just read a ranking. Star
 
 <h2 id="what-the-analysis-covered">What the Analysis Covered</h2>
 
-<p>The study processed 120,000 samples from a 12-month window with a six-stage workflow:</p>
+<p>I processed 120,000 samples across 12 months and applied a deliberate six-stage pipeline to avoid the trap of mistaking volume for signal.</p>
 
-<ol>
-  <li>Observation filtering to remove duplicate submission noise.</li>
-  <li>Family normalization to collapse vendor naming variance.</li>
-  <li>Heuristic labeling to improve coverage when canonical labels are missing.</li>
-  <li>Behavioral mapping to ATT&amp;CK techniques.</li>
-  <li>Monthly temporal aggregation by normalized cluster.</li>
-  <li>Empirical validation for agreement and stability.</li>
-</ol>
+<p>First, I filtered out duplicate uploads. The same sample resubmitted multiple times skews prevalence. Then I normalized family names across vendors, since one malware sample might be called “Emotet” by one engine and something else entirely by another. Heuristic labeling kicked in when vendors went silent, pulling data from behavior and <a href="https://github.com/malicialab/avclass">AVClass</a> tagging to patch gaps.</p>
 
-<p>Convergence testing is a key safeguard in the pipeline: major indicators stabilized after roughly 35,000 samples, which suggests later findings are not under-sampling artifacts.</p>
+<p>Next came behavioral mapping to ATT&amp;CK. Each sample’s execution trail was tagged with techniques: T1071 (network comms), T1055 (process injection), T1497 (sandbox checks). I aggregated monthly to see whether the same clusters stayed active and behaved consistently. Finally, I validated: checked whether vendor agreement held up, whether behavioral patterns were stable month to month, and whether major findings were robust to threshold tweaks.</p>
 
-<p>This is more than a big sample pull. We filter and validate to avoid mistaking raw volume for real signal.</p>
+<p>A critical safeguard emerged early: convergence testing showed that major indicators (which families dominated, their top techniques, behavior stability) all stabilized around 35,000 samples. The remaining 85,000 weren’t just noise; they confirmed the signal, not buried under it. The pipeline itself follows this structure (Figure 2):</p>
 
 <p><img src="/assets/blogs/yearly_malware/framework.png" alt="Measurement workflow from telemetry to persistence indicators" /></p>
 
-<p><em>Figure: Six-stage workflow used to transform raw telemetry into validated persistence indicators.</em></p>
-
-<h2 id="method-details-that-matter">Method Details That Matter</h2>
-
-<p>The workflow is easy to describe, but each stage has a specific quality-control job:</p>
-
-<ul>
-  <li>Observation filtering reduces repeated-upload inflation by deduplicating high-confidence submissions at the file-plus-time level.</li>
-  <li>Family normalization aligns noisy vendor strings into consistent cluster identities for temporal comparison.</li>
-  <li>Heuristic labeling recovers coverage when canonical labels are absent, while preserving provenance (<a href="https://github.com/malicialab/avclass">avclass</a> vs heuristic).</li>
-  <li>Behavioral mapping translates execution evidence into ATT&amp;CK techniques using explicit matching rules and confidence scoring.</li>
-  <li>Structural aggregation converts sample-level data into family-by-month persistence profiles.</li>
-  <li>Empirical validation checks both vendor consistency and behavioral stability before marking a cluster as persistent.</li>
-</ul>
-
-<p>Together, those safeguards make the rankings more trustworthy than raw sample counts.</p>
+<p><em>Figure 2: Six-stage workflow used to transform raw telemetry into validated persistence indicators.</em></p>
 
 <h2 id="four-findings-that-stand-out">Four Findings That Stand Out</h2>
 
@@ -229,11 +253,11 @@ You can use this to make day-to-day SOC decisions, not just read a ranking. Star
 
 <p>This concentration held even when I tightened detection consensus thresholds (for example, from p:5+ to p:15+), which suggests dominance is not just a threshold side effect.</p>
 
-<p>The convergence diagnostics back that up. Family-set similarity and rank correlation both stabilize early, with the major structure in place by about 35,000 samples.</p>
+<p>The convergence diagnostics back that up. Family-set similarity and rank correlation both stabilize early, with the major structure in place by about 35,000 samples. This robustness is visible across the sample collection period (as shown in Figure 3):</p>
 
 <p><img src="/assets/blogs/yearly_malware/fig_family_stability_curve.png" alt="Top-ten set stability as sample volume increases" /></p>
 
-<p><em>Figure: Top-ten family-set similarity converges early, supporting stability of concentration findings.</em></p>
+<p><em>Figure 3: Top-ten family-set similarity converges early, supporting stability of concentration findings.</em></p>
 
 <h3 id="2-behavior-is-stable-enough-to-support-longitudinal-tracking">2. Behavior is stable enough to support longitudinal tracking</h3>
 
@@ -247,11 +271,11 @@ You can use this to make day-to-day SOC decisions, not just read a ranking. Star
 
 <p>These are high-prevalence ATT&amp;CK parent techniques. In SOC operations, they work best when implemented through sub-technique coverage and behavior-chain correlation, not single-technique alerting.</p>
 
-<p>That consistency matters because it lets defenders prioritize durable technique patterns instead of constantly chasing family-name churn.</p>
+<p>That consistency matters because it lets defenders prioritize durable technique patterns instead of constantly chasing family-name churn. The dominance of these three techniques shows in the full dataset (Figure 4):</p>
 
 <p><img src="/assets/blogs/yearly_malware/fig_attack_top_techniques.png" alt="Most frequent ATT&amp;CK techniques in enriched samples" /></p>
 
-<p><em>Figure: Technique prevalence is dominated by communication, discovery, and obfuscation-related behavior.</em></p>
+<p><em>Figure 4: Technique prevalence is dominated by communication, discovery, and obfuscation-related behavior.</em></p>
 
 <h3 id="3-evasion-is-now-baseline-tradecraft-in-commodity-malware">3. Evasion is now baseline tradecraft in commodity malware</h3>
 
@@ -291,16 +315,15 @@ You can use this to make day-to-day SOC decisions, not just read a ranking. Star
 
 <h2 id="soc-translation-from-findings-to-action">SOC Translation: From Findings to Action</h2>
 
-<p>If you run or support a SOC, these results translate into concrete operating improvements:</p>
+<p>If you run or support a SOC, here’s what I’d do with this.</p>
 
-<ul>
-  <li>Detection engineering: Build and tune content around persistent technique patterns (<code class="language-plaintext highlighter-rouge">T1071</code>, <code class="language-plaintext highlighter-rouge">T1082</code>, <code class="language-plaintext highlighter-rouge">T1027</code>) and pair them with high-signal evasive behaviors like <code class="language-plaintext highlighter-rouge">T1055</code> (Process Injection) and <code class="language-plaintext highlighter-rouge">T1497</code> (Virtualization/Sandbox Evasion) rather than chasing family-name churn.</li>
-  <li>Hunting strategy: Hunt for loader continuity indicators across campaigns (delivery paths, infrastructure overlap, recurring execution chains).</li>
-  <li>Control validation: Continuously test anti-analysis and anti-injection coverage, because evasion is baseline behavior, not edge-case behavior.</li>
-  <li>Coverage governance: Track mobile and grayware visibility as a formal gap area, with explicit telemetry and triage metrics.</li>
-</ul>
+<p>Start with detection engineering around the three behaviors that show up in almost everything: application-layer comms (T1071: SSH, HTTP tunnels, DNS exfil), system info discovery (T1082), and obfuscation (T1027). These aren’t flashy, but they’re in 80% of the samples I looked at. Then layer in the evasion behaviors: process injection and sandbox checks, since nearly half the samples do those things. A real detection here isn’t “alert on T1071.” It’s “alert when you see T1071 <em>and</em> T1055 <em>and</em> unsigned DLLs in the same process chain.” That combination is rare enough to matter.</p>
 
-<p>For smaller teams, adopting even one of these practices can materially improve defensive consistency.</p>
+<p>For hunting, watch for loader persistence specifically. Loaders like Emotet variants or QakBot spin-offs hang around because they’re modular. Track the delivery URLs, the unpacking behaviors, the injection targets. In this dataset, the same three loader families appeared consistently every month across the 12-month window. If you can tie those patterns to your network (“we see this delivery + execution chain once a week”), you have a priority to either block or tune faster.</p>
+
+<p>Test your anti-evasion controls routinely. Sandbox detection and injection prevention aren’t exotic anymore; they’re in most things that make it past first-stage delivery. If your endpoint tools aren’t catching process injection attempts, or if your analysis lab is transparent to basic VM detection, close that now.</p>
+
+<p>You don’t need to do all of this. Pick one: maybe detection tuning around the top three techniques, or a single hunting loop on loader infrastructure. Do it for a month, measure your alert quality and response time, and see if it moved.</p>
 
 <h2 id="reproducibility-notes">Reproducibility Notes</h2>
 
@@ -647,7 +670,7 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><a href="/publications/vader-dead-drop-resolver/">Publication summary and PDF</a></li>
 </ul>
 
-<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2026-03-31T11:50:11-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2026-04-01T13:46:49-04:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
   <span class="entry-context__item">ACM CCS</span>
   <span class="entry-context__item">October 13, 2025</span>
   <span class="entry-context__item">Acceptance: 13.8%</span>
