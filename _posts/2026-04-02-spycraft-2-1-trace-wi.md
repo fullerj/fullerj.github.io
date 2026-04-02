@@ -11,9 +11,7 @@ tags:
   - blockchain
   - bitcoin
   - malware
-  - graph-analysis
-  - threat-intelligence
-  - spycraft
+  - graph analysis
 related_posts:
   - /blog/spycraft-2-0/
  
