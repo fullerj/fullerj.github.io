@@ -43,11 +43,11 @@ redirect_from:
     </article>
   </div>
 
-  <nav class="home-quick-links" aria-label="Quick access">
-    <a class="home-quick-links__link" href="{{ '/blog/' | relative_url }}">Insights</a>
-    <a class="home-quick-links__link" href="{{ '/publications/' | relative_url }}">Research</a>
-    <a class="home-quick-links__link" href="{{ '/talks/' | relative_url }}">Speaking</a>
-    <a class="home-quick-links__link" href="{{ '/service/' | relative_url }}">Service</a>
+  <nav class="home-quick-links" aria-label="Quick access" data-inpage-scroll="true">
+    <a class="home-quick-links__link" href="#insights">Insights</a>
+    <a class="home-quick-links__link" href="#writing">Writing</a>
+    <a class="home-quick-links__link" href="#talks">Talks</a>
+    <a class="home-quick-links__link" href="#media-coverage">Media</a>
   </nav>
 </section>
 
@@ -55,7 +55,7 @@ redirect_from:
 
 <section class="home-section home-section--highlights">
   <div class="home-highlights-grid">
-    <article class="home-panel home-panel--feature">
+    <article class="home-panel home-panel--feature" id="insights">
 
       <h3>Recent Insights</h3>
 
@@ -66,7 +66,7 @@ redirect_from:
   {% assign recent_posts = '' | split: '' %}
 {% endif %}
 {% if recent_posts and recent_posts.size > 0 %}
-<ul>
+<div class="home-posts-grid">
   {% for post in recent_posts limit:3 %}
   {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
   {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
@@ -74,13 +74,17 @@ redirect_from:
   {% assign recent_word_count = post.content | strip_html | number_of_words %}
   {% assign recent_reading_minutes = recent_word_count | plus: rounding_offset | divided_by: reading_wpm %}
   {% if recent_reading_minutes < 1 %}{% assign recent_reading_minutes = 1 %}{% endif %}
-  <li>
-    <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong>
-    <br/>
-    <small class="post-inline-meta">{{ recent_reading_minutes }} min read</small>
-  </li>
+  <a href="{{ post.url | relative_url }}" class="home-post-card">
+    {% if post.image and post.image.path %}
+    <img src="{{ post.image.path | relative_url }}" alt="{{ post.image.alt }}" class="home-post-card__image" loading="lazy" decoding="async">
+    {% endif %}
+    <div class="home-post-card__content">
+      <h4 class="home-post-card__title">{{ post.title }}</h4>
+      <small class="post-inline-meta">{{ recent_reading_minutes }} min read</small>
+    </div>
+  </a>
   {% endfor %}
-</ul>
+</div>
 <p><a href="{{ '/blog/' | relative_url }}">Browse all blog posts</a></p>
 {% else %}
 <p>Posts will appear here once they are published.</p>
@@ -88,8 +92,8 @@ redirect_from:
 
     </article>
 
-    <article class="home-panel home-panel--feature">
-      <h3>Research and Publications</h3>
+    <article class="home-panel home-panel--feature" id="writing">
+      <h3>Technical Writing and Industry Papers</h3>
 
 {% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
 {% if recent_publications %}
@@ -116,7 +120,7 @@ redirect_from:
 
     </article>
 
-    <article class="home-panel">
+    <article class="home-panel" id="talks">
       <h3>Recent Talks</h3>
 
 {% assign recent_talks = site.data.talks | sort: 'date' | reverse %}
@@ -145,7 +149,7 @@ redirect_from:
 
     </article>
 
-    <article class="home-panel">
+    <article class="home-panel" id="media-coverage">
       <h3>Selected Media Coverage</h3>
 
 {% assign coverage_limit = 6 %}

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Service
+title: Leadership and Service
 permalink: /service/
 description: >
   Program committee work, peer review, consortium leadership, and outreach initiatives that advance the cybersecurity and trustworthy AI communities.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Empirical Defense Blog
+title: Analysis and Insights
 description: >
   Analyses, talk recaps, educational insights, and applied research highlights.
 permalink: /blog/
