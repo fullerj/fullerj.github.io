@@ -74,9 +74,9 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Analysis and Insights
+  - title:             Analysis & Insights
     url:               /blog/
-  - title:             Leadership and Service
+  - title:             Leadership & Service
     url:               /service/
   - title:             Technical Writing
     url:               /publications/
