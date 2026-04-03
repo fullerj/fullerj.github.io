@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Media Coverage
+title: Media & Mentions
 permalink: /media/
 description: >
   Interviews, features, and external coverage related to talks, technical writing, and research.
