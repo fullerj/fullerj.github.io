@@ -29,6 +29,18 @@ description: >
       </summary>
       <div class="service-card__content">
         <p>Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.</p>
+        {% assign aiuc_artifacts = site.posts | where_exp: "item", "item.venue == 'AIUC-1' or item.authors contains 'AIUC-1' or item.tags contains 'AIUC' or item.tags contains 'AUIC'" | sort: "date" | reverse %}
+        {% if aiuc_artifacts.size > 0 %}
+          <p><strong>Related Artifacts</strong></p>
+          <ul>
+            {% for artifact in aiuc_artifacts %}
+              <li>
+                <a href="{{ artifact.url | relative_url }}">{{ artifact.title }}</a>
+                {% if artifact.categories contains 'publications' %}(Publication){% else %}(Article){% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </details>
   </div>
