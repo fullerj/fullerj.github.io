@@ -26,8 +26,8 @@
 }
 
 .talk-card--featured {
-  border-color: var(--ds-accent-border);
-  box-shadow: var(--ds-shadow-2);
+  border-color: var(--ds-border-1);
+  box-shadow: var(--ds-shadow-1);
 }
 
 .talk-card__meta {
@@ -44,7 +44,7 @@
   display: inline-flex;
   padding: 0.08rem 0.5rem;
   border: 1px solid var(--ds-chip-hover-border);
-  border-radius: var(--ds-radius-pill);
+  border-radius: var(--ds-radius-1);
   font-weight: 700;
 }
 
