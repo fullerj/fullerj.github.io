@@ -43,11 +43,7 @@ The graph depth is shallow by design. The goal is fast pattern extraction from k
 
 ## How the Picture Changed
 
-At the start, the data looked like a loose set of wallet references.
-
-After graphing and decoding, it stopped looking loose. The same wallets reappear. The same patterns repeat. The neighborhoods around those anchors expand in ways that do not look random.
-
-That shift, from a list of indicators to a recurring structure, is the main result.
+At the start, the data looked like a loose set of wallet references. But, after graphing and decoding, it stopped looking loose. The same wallets reappear. The same patterns repeat. The neighborhoods around those anchors expand in ways that do not look random. Teasing out the structure is the main result.
 
 Figure 1 shows the full graph view. Even with minimal styling, dense cores and spoke-like neighborhoods stand out.
 
@@ -79,17 +75,17 @@ Figure 2 isolates the hub-focused view used for analysis. It makes the central w
   <figcaption>Figure 2 - Hub-focused graph view</figcaption>
 </figure>
 
-These figures are dense. The shape matters more than the details.
+These figures are a bit dense but it's the shape matters more than the details.
 
 In Figure 1, several nodes sit far from the central mass. Given that the initial wallets and transactions are malware-linked access points, those outliers may represent short-lived paths or routes that shifted quickly under pressure. That remains a working hypothesis, but the pattern suggests more than incidental contact. They matter because they can become future pivots if activity moves away from current hubs.
 
 Figure 1 also shows detached mini-clusters and long, thin tails connected by very few edges. That pattern is consistent with compartmentalized movement. Value moves through narrow paths without broad connectivity.
 
-In Figure 2, the hub-and-spoke structure is clearer. A small number of nodes absorb most of the activity, while many peripheral nodes appear once or a few times and then drop out. That asymmetry drives the concentration metrics.
+Now, in Figure 2, the hub-and-spoke structure is a bit clearer. A small number of nodes absorb most of the activity, while many peripheral nodes appear once or a few times and then drop out. That asymmetry drives the concentration metrics.
 
 Another signal in Figure 2 is the presence of self-loops and short cycles around active nodes. A loop does not prove signaling on its own, but repeated loopback behavior can indicate reuse, staged consolidation, or test transfers before outward movement.
 
-This does not look like random payment traffic. It looks organized, with core coordination points, disposable edge wallets, and bridge paths that allow rotation without rebuilding the system.
+Now we can see that it's not just random payment traffic. It more organized than that, with core coordination points, disposable edge wallets, and bridge paths that allow rotation without rebuilding the system.
 
 ## The Most Interesting Signals
 
@@ -99,7 +95,7 @@ The first signal is concentration. Activity accumulates around a small set of hu
 - 1CeLgFDu917tgtunhJZ6BA2YdR559Boy9Y: 213 interactions  
 - 1HTDy9SkfhwaNCXFA8wFCvN53f3iGpm8kb: 29 interactions  
 
-If this were random contamination, the distribution would be flatter. Even at depth 1, the structure remains hierarchical. Figure 2 makes that centralization obvious.
+If this were random contamination, the distribution would be flatter. Even at depth 1, the structure remains hierarchical. That centralization is apparent in Figure 2.
 
 The second signal is repetition in decoded values. The busiest wallets repeatedly map to the same candidate outputs:
 
@@ -126,17 +122,15 @@ The role split reinforces this:
 - distributor: 1  
 - isolated: 2  
 
-Most nodes act as pass-through points, with very few clear fan-out endpoints. That profile aligns with staged relay movement rather than simple one-direction payments.
-
-Seed expansion is also large relative to the initial footprint. From a small seed set, the graph produced 540 related-wallet links. That suggests stable adjacency around known anchors.
+Most nodes act as pass-through points, with very few clear fan-out endpoints. That profile aligns with staged relay movement rather than simple one-direction payments.Seed expansion is also large relative to the initial footprint. From a small seed set, the graph produced 540 related-wallet links. That suggests stable adjacency around known anchors.
 
 ## What This May Lead To
 
-At this point, labeling individual nodes matters less than understanding the operating pattern over time.
+At this point, I'm not too concerned about labelling individual nodes. I'm trying to understand the operating patterns over time.
 
 One practical read: public rails are cheap, durable, and always available, which makes them useful for signaling. A few hubs stay consistently active. Transit-heavy paths segment movement between stages. Related-wallet neighborhoods look like rotation routes before they become obvious elsewhere.
 
-These are structural reads from repeated behavior and not any attribution claims. If the same shape keeps showing up in additional windows, it points to coordination logic rather than isolated traces.
+However, I want to be clear that I'm not trying to make any attribution claims. If the same shape keeps showing up in additional windows, it points to coordination logic rather than isolated traces.
 
 ## Open Questions Worth Chasing
 
