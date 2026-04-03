@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-04-02T17:05:12-04:00',
+    INDEX_KEY: 'index--2026-04-03T13:45:27-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -329,7 +329,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
 <section class="pub-index-toolbar blog-index-toolbar" aria-label="Blog overview and filters">
   <p class="pub-index-toolbar__summary">
-    <strong>4</strong> published posts across <strong>2</strong> years and <strong>18</strong> tags.
+    <strong>4</strong> published posts across <strong>2</strong> years and <strong>16</strong> tags.
   </p>
 
   <nav class="pub-index-toolbar__years" aria-label="Jump to blog year">
@@ -365,7 +365,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         </button>
       
         <button type="button" class="blog-tag-filter__chip" data-tag="graph-analysis">
-          graph-analysis
+          graph analysis
         </button>
       
         <button type="button" class="blog-tag-filter__chip" data-tag="malware">
@@ -396,20 +396,12 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           security operations
         </button>
       
-        <button type="button" class="blog-tag-filter__chip" data-tag="spycraft">
-          spycraft
-        </button>
-      
         <button type="button" class="blog-tag-filter__chip" data-tag="talks">
           talks
         </button>
       
         <button type="button" class="blog-tag-filter__chip" data-tag="threat-intelligence">
           threat intelligence
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="threat-intelligence">
-          threat-intelligence
         </button>
       
         <button type="button" class="blog-tag-filter__chip" data-tag="vendor-management">
@@ -429,7 +421,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       
         
         
-        <article class="blog-card" data-tags="blockchain bitcoin malware graph-analysis threat-intelligence spycraft">
+        <article class="blog-card" data-tags="blockchain bitcoin malware graph-analysis">
           <a class="blog-card__link" href="/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/">
             <div class="blog-card__image">
               
@@ -1009,11 +1001,13 @@ Code for integrating CloudFlare email protection with single-page navigation.
   <button type="button"
           class="image-lightbox__close"
           aria-label="Close image preview">x</button>
-  <img class="image-lightbox__image" src="" alt="" />
+  <img class="image-lightbox__image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E" alt="" />
 </div>
 
 <script>
 (function() {
+  var PLACEHOLDER_IMAGE_SRC = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
+
   function getLightboxElements() {
     var modal = document.getElementById('image-lightbox');
     if (!modal) return null;
@@ -1028,7 +1022,7 @@ Code for integrating CloudFlare email protection with single-page navigation.
   function closeLightbox(elements) {
     if (!elements) return;
     elements.modal.setAttribute('hidden', '');
-    elements.image.setAttribute('src', '');
+    elements.image.setAttribute('src', PLACEHOLDER_IMAGE_SRC);
     elements.image.setAttribute('alt', '');
   }
 
@@ -1361,6 +1355,15 @@ Code for integrating CloudFlare email protection with single-page navigation.
   function formatScopeLabel(scope) {
     if (!scope || scope === 'all') {
       return 'All';
+    }
+    var labels = {
+      blog: 'Analysis and Insights',
+      publications: 'Technical Writing',
+      talks: 'Talks',
+      teaching: 'Teaching',
+    };
+    if (labels[scope]) {
+      return labels[scope];
     }
     return scope.charAt(0).toUpperCase() + scope.slice(1);
   }

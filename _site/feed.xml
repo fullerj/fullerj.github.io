@@ -1,33 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-02T17:05:12-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-02T16:20:00-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (also highligned in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and it stuck with me that I needed to go deeper on the Bitcoin transaction data behind that work.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-03T13:45:27-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-03T13:35:19-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (and later wrote about that in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.</p>
 
-<p>The first pass focused on collecting blockchain indicators tied to malware activity. That included wallet IDs and transaction IDs.</p>
+<p>At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, nothing complicated, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.</p>
 
-<p>This writeup is the second pass.</p>
-
-<p>Instead of treating those indicators as static artifacts, I asked a different question: what does the system look like if those indicators are treated as a network?</p>
-
-<p>Baseline context: the upstream collection identified 273 dead drops across 7 web applications. Pastebin accounted for 68 percent of the abuse. Blockchain explorers made up 25 percent, including 23 transaction IDs and 14 wallet IDs.</p>
+<p>For context, the VADER collection surfaced 273 dead drops across 7 web applications, with Pastebin dominating at 68 percent, and blockchain explorers making up another 25 percent, including 23 transaction IDs and 14 wallet IDs.</p>
 
 <h2 id="scope-and-data">Scope and Data</h2>
 
-<p>This run starts from that blockchain-explorer slice: 14 wallet IDs and 23 transaction IDs. After enrichment and a single round of neighborhood expansion, the dataset grew to 41 wallets. The resulting graph contains 993 nodes and 1,579 edges. From the original seeds, hop-based expansion produced 540 related-wallet links, and 10 seed wallets generated decoded signal rows.</p>
+<p>This run starts from that slice, 14 wallets and 23 transactions, which after enrichment and a single round of expansion grew to 41 wallets. The resulting graph contains 993 nodes and 1,579 edges, with hop-based expansion producing 540 related-wallet links, and 10 seed wallets generating decoded signal rows.</p>
 
-<p>The workflow is intentionally simple. Ingest local wallet and transaction seeds, pull Bitcoin data from multiple providers, build a depth-1 graph, label wallet roles, decode value sequences into candidate IPv4 outputs (see <a href="/publications/vader-dead-drop-resolver/">VADER</a>), then expand related-wallet neighborhoods from the seeds.</p>
+<p>I kept the workflow simple, pulling local seeds, querying multiple Bitcoin data providers, building a depth-1 graph, labeling wallet roles, decoding value sequences into candidate IPv4 outputs (see <a href="/publications/vader-dead-drop-resolver/">VADER</a>), and then expanding outward once. The goal here is not completeness, but speed, pulling structure from known footholds and seeing what holds up.</p>
 
-<p>Role labels are literal. A transit wallet primarily passes value between peers. A collector accumulates value. A distributor pushes value outward to many peers. An isolated wallet shows little connected activity within this slice.</p>
-
-<p>The graph depth is shallow by design. The goal is fast pattern extraction from known footholds.</p>
+<p>Role labels are literal, transit wallets pass value along, collectors accumulate, distributors push outward, and isolated wallets barely connect. The shallow depth is deliberate, because if structure shows up here, it tends to be real.</p>
 
 <h2 id="how-the-picture-changed">How the Picture Changed</h2>
 
-<p>At the start, the data looked like a loose set of wallet references.</p>
+<p>This started out looking like a loose collection of references, just wallets tied to activity, but once everything was graphed and decoded, the same wallets kept showing up, the same patterns repeated, and the same neighborhoods expanded outward in ways that did not feel random. That shift, from scattered indicators to something with shape, is really the main result.</p>
 
-<p>After graphing and decoding, it stopped looking loose. The same wallets reappear. The same patterns repeat. The neighborhoods around those anchors expand in ways that do not look random.</p>
-
-<p>That shift, from a list of indicators to a recurring structure, is the main result.</p>
-
-<p>Figure 1 shows the full graph view. Even with minimal styling, dense cores and spoke-like neighborhoods stand out.</p>
+<p>Figure 1 shows the full graph, which is dense and a bit messy, but even without heavy styling you can see cores forming and spokes radiating outward.</p>
 
 <figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
   <div class="zoomable-figure__toolbar" aria-label="Figure 1 zoom controls">
@@ -42,7 +32,7 @@
   <figcaption>Figure 1 - Full graph overview (993 nodes, 1,579 edges)</figcaption>
 </figure>
 
-<p>Figure 2 isolates the hub-focused view used for analysis. It makes the central wallets and their immediate neighborhoods easier to see.</p>
+<p>Figure 2 narrows that view to the hubs, where the structure becomes easier to read, and where most of the interesting behavior sits.</p>
 
 <figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
   <div class="zoomable-figure__toolbar" aria-label="Figure 2 zoom controls">
@@ -57,21 +47,17 @@
   <figcaption>Figure 2 - Hub-focused graph view</figcaption>
 </figure>
 
-<p>These figures are dense, but the shape matters more than the details.</p>
+<p>Some nodes sit well outside the main cluster, and given that the starting points are malware-linked, those outliers may represent short-lived paths or routes that shifted under pressure. That remains a working assumption, but they do not look accidental, more like fragments of activity that moved.</p>
 
-<p>In Figure 1, several nodes sit far from the central mass. Given that the initial wallets and transactions are malware-linked access points, those outliers may represent short-lived paths or access routes that shifted quickly under pressure. That is still a working hypothesis, but they likely reflect more than incidental contact. They matter because they can become future pivots if activity moves away from current hubs.</p>
+<p>There are also detached clusters and long, thin chains with very few connections, which is consistent with compartmentalized movement, where value moves through narrow corridors rather than broadly across the network.</p>
 
-<p>Figure 1 also shows detached mini-clusters and long, thin tails connected by very few edges. That pattern is consistent with compartmentalized movement. Value can move through narrow paths without broad connectivity.</p>
+<p>In the hub-focused view, a small number of nodes carry most of the activity, while many peripheral nodes appear briefly and then disappear, creating a clear imbalance. Around those active nodes, self-loops and short cycles show up repeatedly, which on their own do not prove signaling, but taken together start to suggest reuse, staging, or test transfers before outward movement.</p>
 
-<p>In Figure 2, the hub-and-spoke structure is clearer. A small number of nodes absorb most of the activity, while many peripheral nodes appear once or a few times and then drop out. That asymmetry drives the concentration metrics.</p>
-
-<p>Another signal in Figure 2 is the presence of self-loops and short cycles around active nodes. A loop does not prove signaling on its own, but repeated loopback behavior can indicate reuse, staged consolidation, or test transfers before outward movement.</p>
-
-<p>This does not look like random payment traffic. It looks organized, with core coordination points, disposable edge wallets, and bridge paths that allow rotation without rebuilding the system.</p>
+<p>At that point, it stops looking like random transaction flow and starts to look organized, with coordination points, disposable edge wallets, and bridge paths that allow rotation without rebuilding the system.</p>
 
 <h2 id="the-most-interesting-signals">The Most Interesting Signals</h2>
 
-<p>The first signal is concentration. Activity is not evenly distributed. It accumulates around a small set of hubs:</p>
+<p>This gets concentrated fast, with a small set of hubs absorbing a disproportionate amount of activity:</p>
 
 <ul>
   <li>17gd1msp5FnMcEMF1MitTNSsYs7w7AQyCt: 530 interactions</li>
@@ -79,11 +65,9 @@
   <li>1HTDy9SkfhwaNCXFA8wFCvN53f3iGpm8kb: 29 interactions</li>
 </ul>
 
-<p>If this were random contamination, the distribution would be flatter. Even at depth 1, the structure looks hierarchical.</p>
+<p>If this were random contamination, the distribution would be flatter, but even at shallow depth the structure remains hierarchical.</p>
 
-<p>The hub-focused graph in Figure 2 supports this and makes the centralization visible without requiring the full graph.</p>
-
-<p>The second signal is repetition in decoded values. The busiest wallets repeatedly map to the same candidate outputs:</p>
+<p>The other signal is repetition in decoded values, and it shows up consistently enough to be difficult to dismiss, with the busiest wallets mapping to the same outputs, over and over:</p>
 
 <ul>
   <li>17gd1msp5FnMcEMF1MitTNSsYs7w7AQyCt → 96.69.184.42 (269 events)</li>
@@ -91,19 +75,13 @@
   <li>1CpTCVckjajNKDd7PsApV3cAkunVd4Mcmt → 128.247.64.234 (14 events)</li>
 </ul>
 
-<p>A single decode could be noise. Repetition at this volume is not.</p>
-
 <h3 id="figure-7-recurrence-timeline-for-decoded-candidates">Figure 7: Recurrence Timeline for Decoded Candidates</h3>
 
 <p><img src="/assets/blogs/trace-wi/decoded_recurrence_timeline.png" alt="Figure 7 - decoded recurrence timeline" /></p>
 
-<p>The timeline places recurrence in time, not just counts. In this run, decoded events span from mid-2017 through early 2021. All 10 wallets with decoded activity retain enough timestamp context to measure intervals between observations.</p>
+<p>Looking at this over time adds another layer, with decoded events spanning from mid-2017 through early 2021, and all 10 wallets with decoded activity retaining enough timestamp context to track recurrence intervals. These wallets come from the VADER dataset, which spans malware samples from 2012 through 2022, so what shows up here reflects the on-chain portion of that broader activity.</p>
 
-<p>These wallet IDs come from the Vader dataset, which includes malware samples from 2012 through 2022. The timeline reflects when decoded on-chain events were observed, not the full range of the source corpus.</p>
-
-<p>Bubble size tracks recurrence volume. The same wallets that dominate counts also persist over multiple years.</p>
-
-<p>The role split reinforces this:</p>
+<p>Bubble size tracks recurrence, and the same wallets that dominate counts also persist across multiple years. The role distribution lines up with that behavior:</p>
 
 <ul>
   <li>transit: 31</li>
@@ -112,35 +90,27 @@
   <li>isolated: 2</li>
 </ul>
 
-<p>Most nodes act as pass-through points, with very few clear fan-out endpoints. That profile aligns with staged relay movement rather than simple one-direction payments.</p>
+<p>Most nodes act as pass-through points, with very few clear endpoints, which aligns more with staged relay movement than simple one-direction transfers.</p>
 
-<p>Finally, seed expansion is large relative to the initial footprint. From a small seed set, the graph produced 540 related-wallet links. That suggests stable adjacency around known anchors.</p>
+<p>Expansion is also telling, because starting from a small seed set, the graph produced 540 related-wallet links, which suggests stable adjacency around those anchors rather than incidental connections.</p>
 
 <h2 id="what-this-may-lead-to">What This May Lead To</h2>
 
-<p>The question now is not only whether individual nodes are malicious. It is how this system operates over time.</p>
+<p>At this point I am less concerned with labeling individual nodes and more focused on how this behaves over time. Public blockchains are cheap, durable, and always available, which makes them useful not just for moving value, but for signaling.</p>
 
-<p>A working interpretation: signaling rides on public rails because they are durable and inexpensive. A small set of hubs likely acts as long-lived coordination points. Transit-heavy edges reflect compartmentalization between stages. Related-wallet neighborhoods capture rotation paths before they appear elsewhere.</p>
-
-<p>These are not attribution claims. They are structural inferences from repeated behavior.</p>
-
-<p>If this holds across additional windows, the operation is not just leaving traces. It is exposing parts of its coordination model.</p>
+<p>A few hubs remain consistently active, transit-heavy paths segment movement, and related-wallet neighborhoods look like rotation space where activity can shift before becoming obvious elsewhere. This is not an attribution claim, but if the same structure continues to appear across different runs, it starts to point toward coordination logic rather than isolated traces.</p>
 
 <h2 id="open-questions-worth-chasing">Open Questions Worth Chasing</h2>
 
-<p>The next questions focus on stability and timing. Do the same hubs remain dominant across reruns and time windows, or does control rotate? Do decoded candidates cluster around campaign periods? How often do they recur across unrelated seed sets? When a hub goes quiet, which adjacent wallets take its place? Do decoded candidates overlap with known hosting providers or prior infrastructure clusters?</p>
+<p>What matters next is whether any of this is stable over time, whether the same hubs remain dominant or rotate, whether decoded values cluster around campaign periods, how often these patterns recur across unrelated seed sets, what replaces a hub when it goes quiet, and whether decoded outputs overlap with known infrastructure.</p>
 
-<p>Answering those moves this from pattern observation toward lifecycle understanding.</p>
+<p>Answering those questions moves this from pattern observation toward lifecycle understanding.</p>
 
 <h2 id="what-changed-in-my-understanding">What Changed in My Understanding</h2>
 
-<p>Before this pass, these blockchain indicators read like dead drops.</p>
+<p>Before this, these blockchain indicators felt like dead drops, static and isolated, but after this pass they look more like infrastructure, not complete, but structured enough to expose concentration, repetition, transit-heavy flow, and expandable neighborhoods.</p>
 
-<p>After this pass, part of the wallet set reads like signaling infrastructure with visible structure: concentrated hubs, repeated value-encoded candidates, transit-heavy movement, and expandable neighborhoods.</p>
-
-<p>This is less a list of clues and more a partial blueprint.</p>
-
-<p>The full system is still incomplete, but the shape, rhythm, and likely handoff points are visible.</p>
+<p>It reads more like a partial blueprint than a list of clues, with enough visible shape and continuity to suggest underlying coordination, even if the full system is still incomplete. I will probably keep pulling on this thread.</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
@@ -148,7 +118,7 @@
       <p>Greenberg, Andy. <em>Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</em>. Doubleday, 2022. <a href="#fnref:tracers" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph-analysis" /><category term="threat-intelligence" /><category term="spycraft" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-04-01T13:46:49-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
+</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph analysis" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-04-01T13:46:49-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
 
 <h2 id="executive-summary">Executive Summary</h2>
 
