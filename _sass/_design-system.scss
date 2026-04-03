@@ -7,26 +7,26 @@
   --ds-space-3: 1rem;
   --ds-space-4: 1.5rem;
   --ds-space-5: 2rem;
-  --ds-space-6: 3.5rem;
-  --ds-space-7: 4.5rem;
+  --ds-space-6: 3rem;
+  --ds-space-7: 4rem;
 
-  --ds-radius-1: 0.75rem;
-  --ds-radius-2: 1rem;
-  --ds-radius-3: 1.25rem;
+  --ds-radius-1: 0.35rem;
+  --ds-radius-2: 0.5rem;
+  --ds-radius-3: 0.7rem;
   --ds-radius-pill: 999px;
 
   --ds-text-1: rgba(17, 30, 45, 0.96);
-  --ds-text-2: rgba(25, 55, 71, 0.78);
-  --ds-text-3: rgba(25, 55, 71, 0.66);
+  --ds-text-2: rgba(25, 55, 71, 0.84);
+  --ds-text-3: rgba(25, 55, 71, 0.74);
 
-  --ds-accent-soft: rgba(79, 177, 186, 0.15);
-  --ds-accent-soft-strong: rgba(79, 177, 186, 0.22);
-  --ds-accent-solid: rgb(79, 177, 186);
-  --ds-accent-border: rgba(79, 177, 186, 0.6);
-  --ds-accent-border-strong: rgba(79, 177, 186, 0.74);
+  --ds-accent-soft: rgba(57, 110, 126, 0.11);
+  --ds-accent-soft-strong: rgba(57, 110, 126, 0.17);
+  --ds-accent-solid: rgb(57, 110, 126);
+  --ds-accent-border: rgba(57, 110, 126, 0.46);
+  --ds-accent-border-strong: rgba(57, 110, 126, 0.62);
   --ds-accent-text-on-strong: rgba(12, 20, 30, 0.95);
 
-  --ds-hero-bg: linear-gradient(145deg, rgba(79, 177, 186, 0.18), rgba(255, 255, 255, 0.9));
+  --ds-hero-bg: linear-gradient(145deg, rgba(57, 110, 126, 0.12), rgba(255, 255, 255, 0.92));
   --ds-hero-orb: radial-gradient(circle at center, rgba(25, 55, 71, 0.16), rgba(25, 55, 71, 0));
 
   --ds-surface-1: rgba(255, 255, 255, 0.94);
@@ -36,8 +36,8 @@
   --ds-border-1: rgba(25, 55, 71, 0.14);
   --ds-border-2: rgba(25, 55, 71, 0.2);
 
-  --ds-shadow-1: 0 12px 28px rgba(17, 30, 45, 0.1);
-  --ds-shadow-2: 0 20px 40px rgba(17, 30, 45, 0.14);
+  --ds-shadow-1: 0 6px 16px rgba(17, 30, 45, 0.07);
+  --ds-shadow-2: 0 10px 24px rgba(17, 30, 45, 0.11);
 
   --ds-card-padding-y: 1rem;
   --ds-card-padding-x: 1.15rem;
@@ -56,17 +56,17 @@ body[data-theme="dark"],
 html[data-theme="dark"] body,
 html[data-color-mode="dark"] body {
   --ds-text-1: rgba(240, 246, 252, 0.97);
-  --ds-text-2: rgba(230, 236, 244, 0.84);
-  --ds-text-3: rgba(218, 226, 236, 0.76);
+  --ds-text-2: rgba(230, 236, 244, 0.9);
+  --ds-text-3: rgba(218, 226, 236, 0.82);
 
-  --ds-accent-soft: rgba(79, 177, 186, 0.2);
-  --ds-accent-soft-strong: rgba(79, 177, 186, 0.24);
-  --ds-accent-solid: rgb(79, 177, 186);
-  --ds-accent-border: rgba(79, 177, 186, 0.7);
-  --ds-accent-border-strong: rgba(79, 177, 186, 0.95);
+  --ds-accent-soft: rgba(106, 168, 190, 0.18);
+  --ds-accent-soft-strong: rgba(106, 168, 190, 0.24);
+  --ds-accent-solid: rgb(106, 168, 190);
+  --ds-accent-border: rgba(106, 168, 190, 0.68);
+  --ds-accent-border-strong: rgba(106, 168, 190, 0.9);
   --ds-accent-text-on-strong: rgba(12, 20, 30, 0.95);
 
-  --ds-hero-bg: linear-gradient(145deg, rgba(79, 177, 186, 0.18), rgba(28, 36, 48, 0.9));
+  --ds-hero-bg: linear-gradient(145deg, rgba(106, 168, 190, 0.17), rgba(28, 36, 48, 0.9));
   --ds-hero-orb: radial-gradient(circle at center, rgba(210, 220, 230, 0.22), rgba(210, 220, 230, 0));
 
   --ds-surface-1: rgba(28, 36, 48, 0.88);
@@ -76,8 +76,8 @@ html[data-color-mode="dark"] body {
   --ds-border-1: rgba(210, 220, 230, 0.2);
   --ds-border-2: rgba(210, 220, 230, 0.26);
 
-  --ds-shadow-1: 0 16px 32px rgba(0, 0, 0, 0.44);
-  --ds-shadow-2: 0 22px 44px rgba(0, 0, 0, 0.52);
+  --ds-shadow-1: 0 10px 22px rgba(0, 0, 0, 0.36);
+  --ds-shadow-2: 0 14px 30px rgba(0, 0, 0, 0.44);
 
   --ds-chip-bg: rgba(28, 36, 48, 0.78);
   --ds-chip-border: rgba(210, 220, 230, 0.24);
@@ -91,8 +91,8 @@ html[data-color-mode="dark"] body {
 @media (prefers-color-scheme: dark) {
   body:not(.light-mode) {
     --ds-text-1: rgba(240, 246, 252, 0.97);
-    --ds-text-2: rgba(230, 236, 244, 0.84);
-    --ds-text-3: rgba(218, 226, 236, 0.76);
+    --ds-text-2: rgba(230, 236, 244, 0.9);
+    --ds-text-3: rgba(218, 226, 236, 0.82);
 
     --ds-surface-1: rgba(28, 36, 48, 0.88);
     --ds-surface-2: rgba(28, 36, 48, 0.84);
@@ -101,8 +101,8 @@ html[data-color-mode="dark"] body {
     --ds-border-1: rgba(210, 220, 230, 0.2);
     --ds-border-2: rgba(210, 220, 230, 0.26);
 
-    --ds-shadow-1: 0 16px 32px rgba(0, 0, 0, 0.44);
-    --ds-shadow-2: 0 22px 44px rgba(0, 0, 0, 0.52);
+    --ds-shadow-1: 0 10px 22px rgba(0, 0, 0, 0.36);
+    --ds-shadow-2: 0 14px 30px rgba(0, 0, 0, 0.44);
 
     --ds-chip-bg: rgba(28, 36, 48, 0.78);
     --ds-chip-border: rgba(210, 220, 230, 0.24);

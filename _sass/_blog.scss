@@ -16,13 +16,13 @@
   overflow: hidden;
   background: var(--ds-surface-1);
   box-shadow: var(--ds-shadow-1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .blog-card:hover,
 .blog-card:focus-within {
-  transform: translateY(-4px);
-  box-shadow: var(--ds-shadow-2);
+  box-shadow: var(--ds-shadow-1);
+  border-color: var(--ds-accent-border);
 }
 
 .blog-card__link {
