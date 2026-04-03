@@ -148,10 +148,12 @@ Answering those moves this from pattern observation toward lifecycle understandi
 
 Before this pass, these blockchain indicators were just dead drops.
 
-After this pass, part of the wallet set reads like signaling infrastructure with visible structure: concentrated hubs, repeated value-encoded candidates, transit-heavy movement, and expandable neighborhoods.
+After this pass, part of the wallet set seems to be signaling infrastructure with visible structure, i.e, concentrated hubs, repeated value-encoded candidates, transit-heavy movement, and expandable neighborhoods.
 
-This is less a list of clues and more a partial blueprint.
+So, this is more like a partial blueprint instead of just a list of clues.
 
-The full system is still incomplete, but the shape, rhythm, and likely handoff points are visible.
+The full system is still incomplete, but the shape, rhythm, and likely handoff points are visible. 
+
+I may keep just keep pulling this thread...
 
 [^tracers]: Greenberg, Andy. *Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency*. Doubleday, 2022.
