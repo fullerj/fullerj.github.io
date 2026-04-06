@@ -1,0 +1,105 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}
+{% assign date_formats  = site.data.strings.date_formats               %}
+{% assign list_group_by = date_formats.list_group_by | default:"%Y"    %}
+{% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
+
+{% if page.slug == 'publications' %}
+  {% assign prev_date = 0 %}
+  {% assign posts = posts | sort: 'date' | reverse %}
+  <script>
+  (function () {
+    function sortPublicationArchive(root, sortOrder) {
+      var groups = Array.prototype.slice.call(root.querySelectorAll('.publication-year-group'));
+      if (!groups.length) return;
+
+      var ascending = sortOrder === 'asc';
+
+      groups.forEach(function (group) {
+        var items = Array.prototype.slice.call(group.querySelectorAll('.publication-list-item'));
+        items.sort(function (left, right) {
+          var leftDate = left.getAttribute('data-date') || '';
+          var rightDate = right.getAttribute('data-date') || '';
+          if (leftDate === rightDate) return 0;
+          return ascending ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
+        });
+
+        var list = group.querySelector('ul.related-posts');
+        items.forEach(function (item) {
+          list.appendChild(item);
+        });
+      });
+
+      groups.sort(function (left, right) {
+        var leftYear = parseInt(left.getAttribute('data-year') || '0', 10);
+        var rightYear = parseInt(right.getAttribute('data-year') || '0', 10);
+        return ascending ? leftYear - rightYear : rightYear - leftYear;
+      });
+
+      var archiveRoot = root.querySelector('.publication-archive');
+      groups.forEach(function (group) {
+        archiveRoot.appendChild(group);
+      });
+    }
+
+    function initPublicationSort(root) {
+      var select = root.querySelector('#pub-sort-select');
+      if (!select || select.hasAttribute('data-sort-initialized')) return;
+      select.addEventListener('change', function () {
+        sortPublicationArchive(root, select.value || 'desc');
+      });
+      sortPublicationArchive(root, select.value || 'desc');
+      select.setAttribute('data-sort-initialized', 'true');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        initPublicationSort(document);
+      }, { once: true });
+    } else {
+      initPublicationSort(document);
+    }
+
+    var pushStateEl = document.getElementById('_pushState');
+    if (pushStateEl) {
+      pushStateEl.addEventListener('hy-push-state-after', function () {
+        initPublicationSort(document);
+      });
+    }
+  })();
+  </script>
+
+  <section class="publication-archive" aria-label="Publication archive by year">
+  {% for post in posts %}
+    {% assign current_date = post.date | date:list_group_by %}
+    {% unless page.no_groups %}{% if current_date != prev_date %}
+      {% unless forloop.first %}</ul></article>{% endunless %}
+      <article class="publication-year-group" data-year="{{ current_date }}">
+        <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
+        <ul class="related-posts">
+        {% assign prev_date = current_date %}
+      {% endif %}{% endunless %}
+    {% include_cached components/post-list-item.html post=post format=list_entry %}
+    {% if forloop.last %}</ul></article>{% endif %}
+  {% endfor %}
+  </section>
+{% else %}
+  {% assign prev_date = 0 %}
+  {% if page.no_groups %}<ul class="related-posts">{% endif %}
+  {% for post in posts %}
+    {% assign current_date = post.date | date:list_group_by %}
+    {% unless page.no_groups %}{% if current_date != prev_date %}
+      {% unless forloop.first %}</ul>{% endunless %}
+      <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
+      <ul class="related-posts">
+      {% assign prev_date = current_date %}
+    {% endif %}{% endunless %}
+    {% include_cached components/post-list-item.html post=post format=list_entry %}
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+{% endif %}

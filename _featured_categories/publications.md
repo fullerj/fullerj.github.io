@@ -26,9 +26,14 @@ description: >
   <p class="pub-index-toolbar__summary">
     <strong>{{ pub_count }}</strong> publications across <strong>{{ pub_years | size }}</strong> years and <strong>{{ pub_venues | size }}</strong> venues.
   </p>
-  <nav class="pub-index-toolbar__years" aria-label="Jump to publication year">
-    {% for year in pub_years %}
-      <a href="#y-{{ year }}">{{ year }}</a>
-    {% endfor %}
-  </nav>
+
+  <div class="blog-index-toolbar__controls">
+    <div class="blog-sort-filter">
+      <label class="blog-sort-filter__label" for="pub-sort-select">Sort by</label>
+      <select id="pub-sort-select" class="blog-sort-filter__select" aria-label="Sort publications">
+        <option value="desc" selected>Newest first</option>
+        <option value="asc">Oldest first</option>
+      </select>
+    </div>
+  </div>
 </section>

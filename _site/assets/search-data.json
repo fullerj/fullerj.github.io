@@ -437,7 +437,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-04-06T10:03:04-04:00",
+    "date": "2026-04-06T10:34:29-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -456,9 +456,9 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-04-06T10:03:04-04:00",
+    "date": "2026-04-06T10:34:29-04:00",
     "excerpt": "",
-    "content": "13 publications across 8 years and 11 venues.\n  \n  \n    \n      2026\n    \n      2025\n    \n      2023\n    \n      2022\n    \n      2021\n    \n      2017\n    \n      2016\n    \n      2015"
+    "content": "13 publications across 8 years and 11 venues.\n  \n\n  \n    \n      Sort by\n      \n        Newest first\n        Oldest first"
   },
 
   
@@ -475,7 +475,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-04-06T10:03:04-04:00",
+    "date": "2026-04-06T10:34:29-04:00",
     "excerpt": "",
     "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
   },
@@ -590,8 +590,8 @@
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "4 published posts across 2 years and 16 tags.\n  \n\n  \n    \n      2026\n    \n      2025\n    \n  \n\n  \n    \n      All posts\n      \n        \n          bitcoin\n        \n      \n        \n          blockchain\n        \n      \n      ",
-    "content": "4 published posts across 2 years and 16 tags.\n  \n\n  \n    \n      2026\n    \n      2025\n    \n  \n\n  \n    \n      All posts\n      \n        \n          bitcoin\n        \n      \n        \n          blockchain\n        \n      \n        \n          command-and-control\n        \n      \n        \n          dead drop resolvers\n        \n      \n        \n          detection engineering\n        \n      \n        \n          graph analysis\n        \n      \n        \n          malware\n        \n      \n        \n          mitre attack\n        \n      \n        \n          onboarding\n        \n      \n        \n          persistence\n        \n      \n        \n          proof of value\n        \n      \n        \n          research\n        \n      \n        \n          security operations\n        \n      \n        \n          talks\n        \n      \n        \n          threat intelligence\n        \n      \n        \n          vendor management\n        \n      \n    \n    Showing all posts\n    Tip: Click tags to toggle them; use \"All posts\" to clear"
+    "excerpt": "4 published posts across 2 years and 16 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                B\n             ",
+    "content": "4 published posts across 2 years and 16 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                B\n                \n                  \n                    \n                      \n                      bitcoin\n                    \n                  \n                    \n                      \n                      blockchain\n                    \n                  \n                \n              \n            \n              \n                C\n                \n                  \n                    \n                      \n                      command-and-control\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      dead drop resolvers\n                    \n                  \n                    \n                      \n  "
   },
 
   
