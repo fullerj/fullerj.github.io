@@ -119,7 +119,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-04-05T20:49:54-04:00',
+    INDEX_KEY: 'index--2026-04-05T20:56:40-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -150,6 +150,40 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <!-- Add HTML tags here to be included in the head. You can delete the below: -->
 <link rel="dns-prefetch" href="https://assets.gumroad.com">
+<script>
+  (function () {
+    function applyInitialThemeClass() {
+      var body = document.body;
+      if (!body) return;
+
+      var classes = body.classList;
+      if (classes.contains('dark-mode') || classes.contains('light-mode')) {
+        return;
+      }
+
+      var prefersDark = false;
+      try {
+        prefersDark = !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      } catch (e) {
+        prefersDark = false;
+      }
+
+      var mode = prefersDark ? 'dark' : 'light';
+      classes.add(prefersDark ? 'dark-mode' : 'light-mode');
+
+      var colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+      if (colorSchemeMeta) {
+        colorSchemeMeta.setAttribute('content', mode);
+      }
+      document.documentElement.style.colorScheme = mode;
+    }
+
+    applyInitialThemeClass();
+    if (!document.body) {
+      document.addEventListener('DOMContentLoaded', applyInitialThemeClass, { once: true });
+    }
+  })();
+</script>
 <script type="module">
   const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
 
