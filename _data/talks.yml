@@ -13,6 +13,7 @@
   media_coverage:
     - title: "Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters"
       url: "https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters"
+      source: "DeepTempo"
       date: "2025-10-22"
 
 - title: "Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation"
