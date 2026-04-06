@@ -21,7 +21,42 @@ redirect_from:
 {% assign insights_count = site.posts | where_exp:'post','post.categories contains "posts"' | size %}
 {% assign research_count = site.posts | where_exp:'post','post.categories contains "publications"' | size %}
 {% assign talks_count = site.data.talks | size %}
-{% assign certifications_count = site.data.certifications | size %}
+{% assign media_mentions_urls = '' | split: '' %}
+
+{% assign media_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
+{% for pub in media_publications %}
+  {% if pub.media_links %}
+    {% for media in pub.media_links %}
+      {% if media.url and media.url != '' %}
+        {% unless media_mentions_urls contains media.url %}
+          {% assign media_mentions_urls = media_mentions_urls | push: media.url %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% for talk in site.data.talks %}
+  {% assign talk_media = talk.media_coverage %}
+  {% if talk_media == nil or talk_media == empty %}
+    {% assign talk_media = talk.media_links %}
+  {% endif %}
+  {% if talk_media == nil or talk_media == empty %}
+    {% assign talk_media = talk.media %}
+  {% endif %}
+
+  {% if talk_media %}
+    {% for media in talk_media %}
+      {% if media.url and media.url != '' %}
+        {% unless media_mentions_urls contains media.url %}
+          {% assign media_mentions_urls = media_mentions_urls | push: media.url %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% assign media_mentions_count = media_mentions_urls | size %}
 
 <section class="home-section home-section--snapshot">
   <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
@@ -31,15 +66,15 @@ redirect_from:
     </article>
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ research_count }}</p>
-      <p class="home-kpi__label">Research and Publications</p>
+      <p class="home-kpi__label">Research and Technical Writing</p>
     </article>
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ talks_count }}</p>
       <p class="home-kpi__label">Talks and Events</p>
     </article>
     <article class="home-kpi" role="listitem">
-      <p class="home-kpi__value">{{ certifications_count }}</p>
-      <p class="home-kpi__label">Professional Certifications</p>
+      <p class="home-kpi__value">{{ media_mentions_count }}</p>
+      <p class="home-kpi__label">Media and Mentions</p>
     </article>
   </div>
 
