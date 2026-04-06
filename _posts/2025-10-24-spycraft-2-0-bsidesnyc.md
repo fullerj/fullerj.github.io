@@ -14,6 +14,7 @@ tags:
   - dead drop resolvers
   - research
 related_posts:
+  - /publications/vader-dead-drop-resolver/
 image:
   path: /assets/blogs/spycraft/thumbnail.png
   alt: "Spycraft 2.0 DDR dead drop resolver workflow"
