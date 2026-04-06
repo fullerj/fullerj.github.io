@@ -38,6 +38,9 @@ description: >
   <p class="media-card__eyebrow"><span class="media-badge">Publication</span> <span class="media-outlet">{{ source_label }}</span>{% if media_date %} <span class="media-date">{{ media_date | date: "%b %-d, %Y" }}</span>{% endif %}</p>
   <h3 class="media-card__title"><a href="{{ media.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open media mention: {{ media.title }}">{{ media.title }}</a></h3>
   <p class="media-card__context">Related publication: <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></p>
+  {% if media.related_talk and media.related_talk.title and media.related_talk.url %}
+  <p class="media-card__context">Related talk: <a href="{{ media.related_talk.url | relative_url }}">{{ media.related_talk.title }}</a>{% if media.related_talk.event %} ({{ media.related_talk.event }}){% endif %}</p>
+  {% endif %}
 </article>
           {% endcapture %}
           {% assign coverage_entries = coverage_entries | push: coverage_entry %}
@@ -81,6 +84,9 @@ description: >
   <p class="media-card__eyebrow"><span class="media-badge">Talk</span> <span class="media-outlet">{{ source_label }}</span>{% if media_date %} <span class="media-date">{{ media_date | date: "%b %-d, %Y" }}</span>{% endif %}</p>
   <h3 class="media-card__title"><a href="{{ media.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open media mention: {{ media.title }}">{{ media.title }}</a></h3>
   <p class="media-card__context">Related talk: {{ talk.title }}{% if talk.event %} ({{ talk.event }}){% endif %}</p>
+  {% if media.related_publication and media.related_publication.title and media.related_publication.url %}
+  <p class="media-card__context">Related publication: <a href="{{ media.related_publication.url | relative_url }}">{{ media.related_publication.title }}</a></p>
+  {% endif %}
 </article>
           {% endcapture %}
           {% assign coverage_entries = coverage_entries | push: coverage_entry %}

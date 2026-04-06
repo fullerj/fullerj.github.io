@@ -15,6 +15,9 @@
       url: "https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters"
       source: "DeepTempo"
       date: "2025-10-22"
+      related_publication:
+        title: "Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation"
+        url: /publications/vader-dead-drop-resolver/
 
 - title: "Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation"
   event: "32nd ACM Conference on Computer and Communications Security (CCS)"
