@@ -21,72 +21,96 @@ permalink: /blog/
   {% endif %}
 {% endfor %}
 {% assign unique_tags = all_tags | uniq | sort %}
+{% assign focus_groups = unique_tags | group_by_exp: "tag", "tag | slice: 0, 1 | upcase" %}
 {% assign post_count = blog_posts | size %}
 
 <section class="pub-index-toolbar blog-index-toolbar" aria-label="Blog overview and filters">
   <p class="pub-index-toolbar__summary">
-    <strong>{{ post_count }}</strong> published posts across <strong>{{ posts_by_year | size }}</strong> years{% if unique_tags.size > 0 %} and <strong>{{ unique_tags.size }}</strong> tags{% endif %}.
+    <strong>{{ post_count }}</strong> published posts across <strong>{{ posts_by_year | size }}</strong> years{% if unique_tags.size > 0 %} and <strong>{{ unique_tags.size }}</strong> focus areas{% endif %}.
   </p>
 
-  <nav class="pub-index-toolbar__years" aria-label="Jump to blog year">
-    {% for year in posts_by_year %}
-      <a href="#year-{{ year.name }}">{{ year.name }}</a>
-    {% endfor %}
-  </nav>
+  <div class="blog-index-toolbar__controls">
+    {% if unique_tags.size > 0 %}
+      <div class="blog-focus-filter" aria-label="Filter posts by focus">
+        <p class="blog-focus-filter__label">Filter by</p>
+        <button type="button" class="blog-focus-filter__toggle" aria-expanded="false" aria-controls="blog-focus-filter-panel">
+          <span class="blog-focus-filter__toggle-label">Focus Area</span>
+          <span class="blog-focus-filter__toggle-caret" aria-hidden="true">▾</span>
+        </button>
+        <div id="blog-focus-filter-panel" class="blog-focus-filter__panel" hidden>
+          <div class="blog-focus-filter__groups">
+            {% for group in focus_groups %}
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">{{ group.name }}</p>
+                <div class="blog-focus-filter__options">
+                  {% for tag in group.items %}
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="{{ tag | slugify }}">
+                      <span>{{ tag }}</span>
+                    </label>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="blog-sort-filter">
+      <label class="blog-sort-filter__label" for="blog-sort-select">Sort by</label>
+      <select id="blog-sort-select" class="blog-sort-filter__select" aria-label="Sort blog posts">
+        <option value="desc" selected>Newest first</option>
+        <option value="asc">Oldest first</option>
+      </select>
+    </div>
+  </div>
 
   {% if unique_tags.size > 0 %}
-    <div class="blog-tag-filter" aria-label="Filter posts by tag">
-      <button type="button" class="blog-tag-filter__chip is-active" data-tag="__all">All posts</button>
-      {% for tag in unique_tags %}
-        <button type="button"
-                class="blog-tag-filter__chip"
-                data-tag="{{ tag | slugify }}">
-          {{ tag }}
-        </button>
-      {% endfor %}
-    </div>
     <p class="blog-selected-summary" aria-live="polite">Showing all posts</p>
-    <p class="blog-filter-hint">Tip: Click tags to toggle them; use "All posts" to clear.</p>
+    <p class="blog-filter-hint">Select a focus to narrow the archive.</p>
   {% endif %}
 </section>
 
 <section class="blog-section blog-section--archive" aria-label="Blog archive by year">
   {% for year in posts_by_year %}
-    <h2 class="blog-archive-heading" id="year-{{ year.name }}">{{ year.name }}</h2>
-    <section class="blog-gallery" data-layout-columns="{{ site.blog.max_columns | default: 3 }}">
-      {% for post in year.items %}
-        {% assign post_tag_tokens = '' %}
-        {% if post.tags %}
-          {% for tag in post.tags %}
-            {% assign tag_slug = tag | slugify %}
-            {% if forloop.first %}
-              {% assign post_tag_tokens = tag_slug %}
-            {% else %}
-              {% assign post_tag_tokens = post_tag_tokens | append: ' ' | append: tag_slug %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-        <article class="blog-card" data-tags="{{ post_tag_tokens | strip }}">
-          <a class="blog-card__link" href="{{ post.url | relative_url }}">
-            <div class="blog-card__image">
-              {% if post.image %}
-                {% include_cached components/hy-img.html img=post.image alt=post.title width=760 height=428 %}
+    <article class="blog-year-group" data-year="{{ year.name }}">
+      <h2 class="blog-archive-heading" id="year-{{ year.name }}">{{ year.name }}</h2>
+      <section class="blog-gallery" data-layout-columns="{{ site.blog.max_columns | default: 3 }}">
+        {% for post in year.items %}
+          {% assign post_tag_tokens = '' %}
+          {% if post.tags %}
+            {% for tag in post.tags %}
+              {% assign tag_slug = tag | slugify %}
+              {% if forloop.first %}
+                {% assign post_tag_tokens = tag_slug %}
               {% else %}
-                <img src="{{ '/assets/img/logos/brand.png' | relative_url }}" alt="Empirical Defense icon" loading="lazy" decoding="async">
+                {% assign post_tag_tokens = post_tag_tokens | append: ' ' | append: tag_slug %}
               {% endif %}
-            </div>
-            <div class="blog-card__body">
-              <h3 class="blog-card__title">{{ post.title }}</h3>
-              {% if post.description %}
-                <p class="blog-card__excerpt">{{ post.description }}</p>
-              {% else %}
-                <p class="blog-card__excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
-              {% endif %}
-            </div>
-          </a>
-        </article>
-      {% endfor %}
-    </section>
+            {% endfor %}
+          {% endif %}
+          <article class="blog-card" data-tags="{{ post_tag_tokens | strip }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+            <a class="blog-card__link" href="{{ post.url | relative_url }}">
+              <div class="blog-card__image">
+                {% if post.image %}
+                  {% include_cached components/hy-img.html img=post.image alt=post.title width=760 height=428 %}
+                {% else %}
+                  <img src="{{ '/assets/img/logos/brand.png' | relative_url }}" alt="Empirical Defense icon" loading="lazy" decoding="async">
+                {% endif %}
+              </div>
+              <div class="blog-card__body">
+                <h3 class="blog-card__title">{{ post.title }}</h3>
+                {% if post.description %}
+                  <p class="blog-card__excerpt">{{ post.description }}</p>
+                {% else %}
+                  <p class="blog-card__excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+                {% endif %}
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      </section>
+    </article>
   {% endfor %}
 </section>
 
@@ -110,29 +134,117 @@ permalink: /blog/
 
 <script>
 (function () {
+  function sortArchive(root, sortOrder) {
+    var archive = root.querySelector('.blog-section--archive');
+    if (!archive) {
+      return;
+    }
+
+    var yearGroups = Array.prototype.slice.call(archive.querySelectorAll('.blog-year-group'));
+    if (!yearGroups.length) {
+      return;
+    }
+
+    var ascending = sortOrder === 'asc';
+
+    yearGroups.forEach(function (group) {
+      var gallery = group.querySelector('.blog-gallery');
+      if (!gallery) {
+        return;
+      }
+
+      var cards = Array.prototype.slice.call(gallery.querySelectorAll('.blog-card'));
+      cards.sort(function (left, right) {
+        var leftDate = left.getAttribute('data-date') || '';
+        var rightDate = right.getAttribute('data-date') || '';
+        if (leftDate === rightDate) return 0;
+        return ascending ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
+      });
+
+      cards.forEach(function (card) {
+        gallery.appendChild(card);
+      });
+    });
+
+    yearGroups.sort(function (left, right) {
+      var leftYear = parseInt(left.getAttribute('data-year') || '0', 10);
+      var rightYear = parseInt(right.getAttribute('data-year') || '0', 10);
+      return ascending ? leftYear - rightYear : rightYear - leftYear;
+    });
+
+    yearGroups.forEach(function (group) {
+      archive.appendChild(group);
+    });
+  }
+
+  function initSortControl(root) {
+    var sortFilter = root.querySelector('.blog-sort-filter');
+    if (!sortFilter) {
+      return;
+    }
+
+    var select = sortFilter.querySelector('.blog-sort-filter__select');
+    if (!select || select.hasAttribute('data-sort-initialized')) {
+      return;
+    }
+
+    var applySort = function () {
+      sortArchive(root, select.value || 'desc');
+    };
+
+    select.addEventListener('change', applySort);
+    applySort();
+    select.setAttribute('data-sort-initialized', 'true');
+  }
+
+  initSortControl(document);
+
+  function initFocusDropdown(root) {
+    var filter = root.querySelector('.blog-focus-filter');
+    if (!filter) {
+      return;
+    }
+
+    var toggle = filter.querySelector('.blog-focus-filter__toggle');
+    var panel = filter.querySelector('.blog-focus-filter__panel');
+    if (!toggle || !panel || toggle.hasAttribute('data-dropdown-initialized')) {
+      return;
+    }
+
+    toggle.addEventListener('click', function () {
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+      panel.hidden = isExpanded;
+    });
+
+    toggle.setAttribute('data-dropdown-initialized', 'true');
+  }
+
+  initFocusDropdown(document);
+
   function initTagFilter(root) {
-    var filter = root.querySelector('.blog-tag-filter');
+    var filter = root.querySelector('.blog-focus-filter');
     if (!filter || filter.hasAttribute('data-filter-initialized')) {
       return;
     }
 
-    var buttons = Array.prototype.slice.call(filter.querySelectorAll('[data-tag]'));
+    var checkboxes = Array.prototype.slice.call(filter.querySelectorAll('.blog-focus-filter__checkbox'));
     var articles = Array.prototype.slice.call(root.querySelectorAll('.blog-card'));
     var galleries = Array.prototype.slice.call(root.querySelectorAll('.blog-gallery'));
     var summary = root.querySelector('.blog-selected-summary');
-    if (!buttons.length || !articles.length) {
+    if (!checkboxes.length || !articles.length) {
       return;
     }
 
     var tagLabels = {};
-    buttons.forEach(function (btn) {
-      var tagSlug = btn.getAttribute('data-tag');
-      if (tagSlug && tagSlug !== '__all') {
-        tagLabels[tagSlug] = btn.textContent.trim();
+    checkboxes.forEach(function (checkbox) {
+      var optionValue = checkbox.value;
+      if (optionValue) {
+        tagLabels[optionValue] = checkbox.nextElementSibling ? checkbox.nextElementSibling.textContent.trim() : optionValue;
       }
     });
 
-    var selected = new Set();
+    var selectedTags = new Set();
 
     function highlightYears() {
       galleries.forEach(function (gallery) {
@@ -144,32 +256,22 @@ permalink: /blog/
 
     function updateSummary() {
       if (!summary) return;
-      if (selected.size === 0) {
+      if (selectedTags.size === 0) {
         summary.textContent = 'Showing all posts';
         return;
       }
-      var friendly = Array.from(selected).map(function (tag) {
+      var focused = Array.from(selectedTags).map(function (tag) {
         return tagLabels[tag] || tag;
       }).sort();
-      summary.textContent = 'Active tags: ' + friendly.join(', ');
-    }
-
-    function updateButtonStates() {
-      buttons.forEach(function (btn) {
-        var tag = btn.getAttribute('data-tag');
-        var isAll = tag === '__all';
-        var isActive = isAll ? selected.size === 0 : selected.has(tag);
-        btn.classList.toggle('is-active', isActive);
-        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-      });
+      summary.textContent = 'Focused on: ' + focused.join(', ');
     }
 
     function applyFilter() {
       articles.forEach(function (article) {
         var tagsString = article.getAttribute('data-tags') || '';
         var tags = tagsString ? tagsString.split(/\s+/) : [];
-        var matches = selected.size === 0 || tags.some(function (tag) {
-          return selected.has(tag);
+        var matches = selectedTags.size === 0 || tags.some(function (tag) {
+          return selectedTags.has(tag);
         });
         article.hidden = !matches;
         article.setAttribute('aria-hidden', matches ? 'false' : 'true');
@@ -191,31 +293,17 @@ permalink: /blog/
       highlightYears();
     }
 
-    filter.addEventListener('click', function (event) {
-      var button = event.target.closest('[data-tag]');
-      if (!button) {
-        return;
-      }
-      event.preventDefault();
-      var tag = button.getAttribute('data-tag');
-      var isAll = tag === '__all';
-      var isActive = selected.has(tag);
-
-      if (isAll) {
-        selected.clear();
-      } else {
-        if (isActive) {
-          selected.delete(tag);
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          selectedTags.add(checkbox.value);
         } else {
-          selected.add(tag);
+          selectedTags.delete(checkbox.value);
         }
-      }
-
-      updateButtonStates();
-      applyFilter();
+        applyFilter();
+      });
     });
 
-    updateButtonStates();
     applyFilter();
     filter.setAttribute('data-filter-initialized', 'true');
   }
@@ -231,6 +319,7 @@ permalink: /blog/
   var pushStateEl = document.getElementById('_pushState');
   if (pushStateEl) {
     pushStateEl.addEventListener('hy-push-state-after', function () {
+      initSortControl(document);
       initTagFilter(document);
     });
   }

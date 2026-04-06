@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-04-06T10:03:04-04:00',
+    INDEX_KEY: 'index--2026-04-06T10:34:29-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -363,194 +363,304 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
 <section class="pub-index-toolbar blog-index-toolbar" aria-label="Blog overview and filters">
   <p class="pub-index-toolbar__summary">
-    <strong>4</strong> published posts across <strong>2</strong> years and <strong>16</strong> tags.
+    <strong>4</strong> published posts across <strong>2</strong> years and <strong>16</strong> focus areas.
   </p>
 
-  <nav class="pub-index-toolbar__years" aria-label="Jump to blog year">
+  <div class="blog-index-toolbar__controls">
     
-      <a href="#year-2026">2026</a>
+      <div class="blog-focus-filter" aria-label="Filter posts by focus">
+        <p class="blog-focus-filter__label">Filter by</p>
+        <button type="button" class="blog-focus-filter__toggle" aria-expanded="false" aria-controls="blog-focus-filter-panel">
+          <span class="blog-focus-filter__toggle-label">Focus Area</span>
+          <span class="blog-focus-filter__toggle-caret" aria-hidden="true">▾</span>
+        </button>
+        <div id="blog-focus-filter-panel" class="blog-focus-filter__panel" hidden="">
+          <div class="blog-focus-filter__groups">
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">B</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="bitcoin" />
+                      <span>bitcoin</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="blockchain" />
+                      <span>blockchain</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">C</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="command-and-control" />
+                      <span>command-and-control</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">D</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="dead-drop-resolvers" />
+                      <span>dead drop resolvers</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="detection-engineering" />
+                      <span>detection engineering</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">G</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="graph-analysis" />
+                      <span>graph analysis</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">M</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="malware" />
+                      <span>malware</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="malware-persistence" />
+                      <span>malware persistence</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="mitre-attack" />
+                      <span>mitre attack</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">O</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="onboarding-vendors" />
+                      <span>onboarding vendors</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">P</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="proof-of-value" />
+                      <span>proof of value</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">R</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="research" />
+                      <span>research</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">S</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="security-operations" />
+                      <span>security operations</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">T</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="talks" />
+                      <span>talks</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="threat-intelligence" />
+                      <span>threat intelligence</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">V</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="vendor-management" />
+                      <span>vendor management</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      </div>
     
-      <a href="#year-2025">2025</a>
-    
-  </nav>
+
+    <div class="blog-sort-filter">
+      <label class="blog-sort-filter__label" for="blog-sort-select">Sort by</label>
+      <select id="blog-sort-select" class="blog-sort-filter__select" aria-label="Sort blog posts">
+        <option value="desc" selected="">Newest first</option>
+        <option value="asc">Oldest first</option>
+      </select>
+    </div>
+  </div>
 
   
-    <div class="blog-tag-filter" aria-label="Filter posts by tag">
-      <button type="button" class="blog-tag-filter__chip is-active" data-tag="__all">All posts</button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="bitcoin">
-          bitcoin
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="blockchain">
-          blockchain
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="command-and-control">
-          command-and-control
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="dead-drop-resolvers">
-          dead drop resolvers
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="detection-engineering">
-          detection engineering
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="graph-analysis">
-          graph analysis
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="malware">
-          malware
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="mitre-attack">
-          mitre attack
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="onboarding">
-          onboarding
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="persistence">
-          persistence
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="proof-of-value">
-          proof of value
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="research">
-          research
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="security-operations">
-          security operations
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="talks">
-          talks
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="threat-intelligence">
-          threat intelligence
-        </button>
-      
-        <button type="button" class="blog-tag-filter__chip" data-tag="vendor-management">
-          vendor management
-        </button>
-      
-    </div>
     <p class="blog-selected-summary" aria-live="polite">Showing all posts</p>
-    <p class="blog-filter-hint">Tip: Click tags to toggle them; use "All posts" to clear.</p>
+    <p class="blog-filter-hint">Select a focus to narrow the archive.</p>
   
 </section>
 
 <section class="blog-section blog-section--archive" aria-label="Blog archive by year">
   
-    <h2 class="blog-archive-heading" id="year-2026">2026</h2>
-    <section class="blog-gallery" data-layout-columns="2">
-      
+    <article class="blog-year-group" data-year="2026">
+      <h2 class="blog-archive-heading" id="year-2026">2026</h2>
+      <section class="blog-gallery" data-layout-columns="2">
         
-        
-        <article class="blog-card" data-tags="blockchain bitcoin malware graph-analysis">
-          <a class="blog-card__link" href="/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/">
-            <div class="blog-card__image">
-              
+          
+          
+          <article class="blog-card" data-tags="blockchain bitcoin malware graph-analysis" data-date="2026-04-02">
+            <a class="blog-card__link" href="/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/">
+              <div class="blog-card__image">
                 
+                  
 
 
 <img src="/assets/blogs/trace-wi/trace-wi.png" alt="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" width="760" height="428" loading="lazy" />
 
-              
-            </div>
-            <div class="blog-card__body">
-              <h3 class="blog-card__title">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</h3>
-              
-                <p class="blog-card__excerpt">This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.
-</p>
-              
-            </div>
-          </a>
-        </article>
-      
-        
-        
-        <article class="blog-card" data-tags="malware threat-intelligence persistence mitre-attack detection-engineering">
-          <a class="blog-card__link" href="/blog/what-malware-persists/">
-            <div class="blog-card__image">
-              
                 
+              </div>
+              <div class="blog-card__body">
+                <h3 class="blog-card__title">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</h3>
+                
+                  <p class="blog-card__excerpt">This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.
+</p>
+                
+              </div>
+            </a>
+          </article>
+        
+          
+          
+          <article class="blog-card" data-tags="malware threat-intelligence malware-persistence mitre-attack detection-engineering" data-date="2026-03-02">
+            <a class="blog-card__link" href="/blog/what-malware-persists/">
+              <div class="blog-card__image">
+                
+                  
 
 
 <img src="/assets/blogs/yearly_malware/icon.png" alt="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" width="760" height="428" loading="lazy" />
 
-              
-            </div>
-            <div class="blog-card__body">
-              <h3 class="blog-card__title">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</h3>
-              
-                <p class="blog-card__excerpt">A reproducible analysis of 120,000 malware samples showing which malware clusters remained active and behaviorally stable over time.
-</p>
-              
-            </div>
-          </a>
-        </article>
-      
-    </section>
-  
-    <h2 class="blog-archive-heading" id="year-2025">2025</h2>
-    <section class="blog-gallery" data-layout-columns="2">
-      
-        
-        
-        <article class="blog-card" data-tags="security-operations vendor-management proof-of-value onboarding">
-          <a class="blog-card__link" href="/blog/case-for-proof-of-value/">
-            <div class="blog-card__image">
-              
                 
+              </div>
+              <div class="blog-card__body">
+                <h3 class="blog-card__title">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</h3>
+                
+                  <p class="blog-card__excerpt">A reproducible analysis of 120,000 malware samples showing which malware clusters remained active and behaviorally stable over time.
+</p>
+                
+              </div>
+            </a>
+          </article>
+        
+      </section>
+    </article>
+  
+    <article class="blog-year-group" data-year="2025">
+      <h2 class="blog-archive-heading" id="year-2025">2025</h2>
+      <section class="blog-gallery" data-layout-columns="2">
+        
+          
+          
+          <article class="blog-card" data-tags="security-operations vendor-management proof-of-value onboarding-vendors" data-date="2025-10-28">
+            <a class="blog-card__link" href="/blog/case-for-proof-of-value/">
+              <div class="blog-card__image">
+                
+                  
 
 
 <img src="/assets/blogs/cyberleader/povthumb.jpg" alt="The Case for Proof-of-Value in Security Partnerships" width="760" height="428" loading="lazy" />
 
-              
-            </div>
-            <div class="blog-card__body">
-              <h3 class="blog-card__title">The Case for Proof-of-Value in Security Partnerships</h3>
-              
-                <p class="blog-card__excerpt">Why structured pilots and outcome-driven milestones are essential for security teams selecting new vendors.
-</p>
-              
-            </div>
-          </a>
-        </article>
-      
-        
-        
-        <article class="blog-card" data-tags="talks malware command-and-control dead-drop-resolvers research">
-          <a class="blog-card__link" href="/blog/spycraft-2-0/">
-            <div class="blog-card__image">
-              
                 
+              </div>
+              <div class="blog-card__body">
+                <h3 class="blog-card__title">The Case for Proof-of-Value in Security Partnerships</h3>
+                
+                  <p class="blog-card__excerpt">Why structured pilots and outcome-driven milestones are essential for security teams selecting new vendors.
+</p>
+                
+              </div>
+            </a>
+          </article>
+        
+          
+          
+          <article class="blog-card" data-tags="talks malware command-and-control dead-drop-resolvers research" data-date="2025-10-24">
+            <a class="blog-card__link" href="/blog/spycraft-2-0/">
+              <div class="blog-card__image">
+                
+                  
 
 
 <img src="/assets/blogs/spycraft/thumbnail.png" alt="From Anomalous Traffic to Spycraft 2.0" width="760" height="428" loading="lazy" />
 
-              
-            </div>
-            <div class="blog-card__body">
-              <h3 class="blog-card__title">From Anomalous Traffic to Spycraft 2.0</h3>
-              
-                <p class="blog-card__excerpt">Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.
+                
+              </div>
+              <div class="blog-card__body">
+                <h3 class="blog-card__title">From Anomalous Traffic to Spycraft 2.0</h3>
+                
+                  <p class="blog-card__excerpt">Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.
 </p>
-              
-            </div>
-          </a>
-        </article>
-      
-    </section>
+                
+              </div>
+            </a>
+          </article>
+        
+      </section>
+    </article>
   
 </section>
 
@@ -574,29 +684,117 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <script>
 (function () {
+  function sortArchive(root, sortOrder) {
+    var archive = root.querySelector('.blog-section--archive');
+    if (!archive) {
+      return;
+    }
+
+    var yearGroups = Array.prototype.slice.call(archive.querySelectorAll('.blog-year-group'));
+    if (!yearGroups.length) {
+      return;
+    }
+
+    var ascending = sortOrder === 'asc';
+
+    yearGroups.forEach(function (group) {
+      var gallery = group.querySelector('.blog-gallery');
+      if (!gallery) {
+        return;
+      }
+
+      var cards = Array.prototype.slice.call(gallery.querySelectorAll('.blog-card'));
+      cards.sort(function (left, right) {
+        var leftDate = left.getAttribute('data-date') || '';
+        var rightDate = right.getAttribute('data-date') || '';
+        if (leftDate === rightDate) return 0;
+        return ascending ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
+      });
+
+      cards.forEach(function (card) {
+        gallery.appendChild(card);
+      });
+    });
+
+    yearGroups.sort(function (left, right) {
+      var leftYear = parseInt(left.getAttribute('data-year') || '0', 10);
+      var rightYear = parseInt(right.getAttribute('data-year') || '0', 10);
+      return ascending ? leftYear - rightYear : rightYear - leftYear;
+    });
+
+    yearGroups.forEach(function (group) {
+      archive.appendChild(group);
+    });
+  }
+
+  function initSortControl(root) {
+    var sortFilter = root.querySelector('.blog-sort-filter');
+    if (!sortFilter) {
+      return;
+    }
+
+    var select = sortFilter.querySelector('.blog-sort-filter__select');
+    if (!select || select.hasAttribute('data-sort-initialized')) {
+      return;
+    }
+
+    var applySort = function () {
+      sortArchive(root, select.value || 'desc');
+    };
+
+    select.addEventListener('change', applySort);
+    applySort();
+    select.setAttribute('data-sort-initialized', 'true');
+  }
+
+  initSortControl(document);
+
+  function initFocusDropdown(root) {
+    var filter = root.querySelector('.blog-focus-filter');
+    if (!filter) {
+      return;
+    }
+
+    var toggle = filter.querySelector('.blog-focus-filter__toggle');
+    var panel = filter.querySelector('.blog-focus-filter__panel');
+    if (!toggle || !panel || toggle.hasAttribute('data-dropdown-initialized')) {
+      return;
+    }
+
+    toggle.addEventListener('click', function () {
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+      panel.hidden = isExpanded;
+    });
+
+    toggle.setAttribute('data-dropdown-initialized', 'true');
+  }
+
+  initFocusDropdown(document);
+
   function initTagFilter(root) {
-    var filter = root.querySelector('.blog-tag-filter');
+    var filter = root.querySelector('.blog-focus-filter');
     if (!filter || filter.hasAttribute('data-filter-initialized')) {
       return;
     }
 
-    var buttons = Array.prototype.slice.call(filter.querySelectorAll('[data-tag]'));
+    var checkboxes = Array.prototype.slice.call(filter.querySelectorAll('.blog-focus-filter__checkbox'));
     var articles = Array.prototype.slice.call(root.querySelectorAll('.blog-card'));
     var galleries = Array.prototype.slice.call(root.querySelectorAll('.blog-gallery'));
     var summary = root.querySelector('.blog-selected-summary');
-    if (!buttons.length || !articles.length) {
+    if (!checkboxes.length || !articles.length) {
       return;
     }
 
     var tagLabels = {};
-    buttons.forEach(function (btn) {
-      var tagSlug = btn.getAttribute('data-tag');
-      if (tagSlug && tagSlug !== '__all') {
-        tagLabels[tagSlug] = btn.textContent.trim();
+    checkboxes.forEach(function (checkbox) {
+      var optionValue = checkbox.value;
+      if (optionValue) {
+        tagLabels[optionValue] = checkbox.nextElementSibling ? checkbox.nextElementSibling.textContent.trim() : optionValue;
       }
     });
 
-    var selected = new Set();
+    var selectedTags = new Set();
 
     function highlightYears() {
       galleries.forEach(function (gallery) {
@@ -608,32 +806,22 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
     function updateSummary() {
       if (!summary) return;
-      if (selected.size === 0) {
+      if (selectedTags.size === 0) {
         summary.textContent = 'Showing all posts';
         return;
       }
-      var friendly = Array.from(selected).map(function (tag) {
+      var focused = Array.from(selectedTags).map(function (tag) {
         return tagLabels[tag] || tag;
       }).sort();
-      summary.textContent = 'Active tags: ' + friendly.join(', ');
-    }
-
-    function updateButtonStates() {
-      buttons.forEach(function (btn) {
-        var tag = btn.getAttribute('data-tag');
-        var isAll = tag === '__all';
-        var isActive = isAll ? selected.size === 0 : selected.has(tag);
-        btn.classList.toggle('is-active', isActive);
-        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-      });
+      summary.textContent = 'Focused on: ' + focused.join(', ');
     }
 
     function applyFilter() {
       articles.forEach(function (article) {
         var tagsString = article.getAttribute('data-tags') || '';
         var tags = tagsString ? tagsString.split(/\s+/) : [];
-        var matches = selected.size === 0 || tags.some(function (tag) {
-          return selected.has(tag);
+        var matches = selectedTags.size === 0 || tags.some(function (tag) {
+          return selectedTags.has(tag);
         });
         article.hidden = !matches;
         article.setAttribute('aria-hidden', matches ? 'false' : 'true');
@@ -655,31 +843,17 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       highlightYears();
     }
 
-    filter.addEventListener('click', function (event) {
-      var button = event.target.closest('[data-tag]');
-      if (!button) {
-        return;
-      }
-      event.preventDefault();
-      var tag = button.getAttribute('data-tag');
-      var isAll = tag === '__all';
-      var isActive = selected.has(tag);
-
-      if (isAll) {
-        selected.clear();
-      } else {
-        if (isActive) {
-          selected.delete(tag);
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          selectedTags.add(checkbox.value);
         } else {
-          selected.add(tag);
+          selectedTags.delete(checkbox.value);
         }
-      }
-
-      updateButtonStates();
-      applyFilter();
+        applyFilter();
+      });
     });
 
-    updateButtonStates();
     applyFilter();
     filter.setAttribute('data-filter-initialized', 'true');
   }
@@ -695,6 +869,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   var pushStateEl = document.getElementById('_pushState');
   if (pushStateEl) {
     pushStateEl.addEventListener('hy-push-state-after', function () {
+      initSortControl(document);
       initTagFilter(document);
     });
   }

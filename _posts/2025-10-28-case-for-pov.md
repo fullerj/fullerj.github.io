@@ -11,7 +11,7 @@ tags:
   - security operations
   - vendor management
   - proof of value
-  - onboarding
+  - onboarding vendors
 related_posts:
 image:
   path: /assets/blogs/cyberleader/povthumb.jpg
