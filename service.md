@@ -14,18 +14,18 @@ description: >
 </section>
 
 <nav class="service-quick-links" aria-label="Jump to service categories">
-  <a href="#service-consortium">Consortium Leadership</a>
+  <a href="#service-consortium">Security Standards Leadership</a>
   <a href="#service-committees">Program Committees</a>
   <a href="#service-review">Reviewer Engagements</a>
 </nav>
 
-<section class="service-group" id="service-consortium" aria-label="Consortium Leadership">
-  <h2>Consortium Leadership</h2>
+<section class="service-group" id="service-consortium" aria-label="Security Standards Leadership">
+  <h2>Security Standards Leadership</h2>
   <div class="service-cards">
     <details class="service-card">
       <summary>
         <span class="service-card__heading">AIUC-1</span>
-        <span class="service-card__meta">Founding Consortium Member</span>
+        <span class="service-card__meta">Founding Consortium Member, Nov 2025-Present</span>
       </summary>
       <div class="service-card__content">
         <p>Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.</p>
