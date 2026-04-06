@@ -46,7 +46,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
 <meta property="twitter:image" content="http://localhost:4000/assets/img/headshot.png" />
 <meta property="twitter:title" content="About" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2026-04-05T20:34:38-04:00","description":"Bridging research, education, and cyber defense.","headline":"About","image":"http://localhost:4000/assets/img/headshot.png","name":"Jonathan Fuller","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"sameAs":["https://www.linkedin.com/in/fullsec","mailto:hello@empiricaldefense.com","https://scholar.google.com/citations?user=mZ_cDEYAAAAJ&hl=en"],"url":"http://localhost:4000/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2026-04-05T20:50:14-04:00","description":"Bridging research, education, and cyber defense.","headline":"About","image":"http://localhost:4000/assets/img/headshot.png","name":"Jonathan Fuller","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"sameAs":["https://www.linkedin.com/in/fullsec","mailto:hello@empiricaldefense.com","https://scholar.google.com/citations?user=mZ_cDEYAAAAJ&hl=en"],"url":"http://localhost:4000/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -120,7 +120,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-04-05T20:49:54-04:00',
+    INDEX_KEY: 'index--2026-04-05T20:56:40-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -151,6 +151,40 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
 
 <!-- Add HTML tags here to be included in the head. You can delete the below: -->
 <link rel="dns-prefetch" href="https://assets.gumroad.com">
+<script>
+  (function () {
+    function applyInitialThemeClass() {
+      var body = document.body;
+      if (!body) return;
+
+      var classes = body.classList;
+      if (classes.contains('dark-mode') || classes.contains('light-mode')) {
+        return;
+      }
+
+      var prefersDark = false;
+      try {
+        prefersDark = !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      } catch (e) {
+        prefersDark = false;
+      }
+
+      var mode = prefersDark ? 'dark' : 'light';
+      classes.add(prefersDark ? 'dark-mode' : 'light-mode');
+
+      var colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+      if (colorSchemeMeta) {
+        colorSchemeMeta.setAttribute('content', mode);
+      }
+      document.documentElement.style.colorScheme = mode;
+    }
+
+    applyInitialThemeClass();
+    if (!document.body) {
+      document.addEventListener('DOMContentLoaded', applyInitialThemeClass, { once: true });
+    }
+  })();
+</script>
 <script type="module">
   const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
 

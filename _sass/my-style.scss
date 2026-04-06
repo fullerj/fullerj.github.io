@@ -888,109 +888,114 @@ html[data-color-mode="dark"] body {
   }
 }
 
-/* Contrast hardening: ensure boxes never stay white while dark mode text is active. */
-body.dark-mode .home-panel,
-body.dark-mode .home-expandable,
-body.dark-mode .home-kpi,
-body.dark-mode .blog-card,
-body.dark-mode .blog-archive-toc,
-body.dark-mode .pub-index-toolbar,
-body.dark-mode .publication-card,
-body.dark-mode .entry-details,
-body.dark-mode .education-card,
-body.dark-mode .certification-card,
-body.dark-mode .talk-card,
-body.dark-mode .teaching-summary,
-body.dark-mode .teaching-course,
-body.dark-mode .service-summary,
-body.dark-mode .service-card,
-body.dark-mode .nav-search-surface,
-body.dark-mode .note-sm,
-body.dark-mode .note,
-body.dark-mode .entry-context__item,
-body.dark-mode .nav-search-scope,
-body.dark-mode .blog-tag-filter__chip,
-body.dark-mode .service-quick-links a,
-body.dark-mode .pub-index-toolbar__years a,
-body.dark-mode .home-quick-links__link {
-  background-color: var(--ds-surface-1);
-  border-color: var(--ds-border-2);
-}
+/* Contrast hardening: ensure first-load dark mode matches post-toggle dark mode. */
+body.dark-mode,
+body[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-color-mode="dark"] body {
+  .home-panel,
+  .home-expandable,
+  .home-kpi,
+  .blog-card,
+  .blog-archive-toc,
+  .pub-index-toolbar,
+  .publication-card,
+  .entry-details,
+  .education-card,
+  .certification-card,
+  .talk-card,
+  .teaching-summary,
+  .teaching-course,
+  .service-summary,
+  .service-card,
+  .nav-search-surface,
+  .note-sm,
+  .note,
+  .entry-context__item,
+  .nav-search-scope,
+  .blog-tag-filter__chip,
+  .service-quick-links a,
+  .pub-index-toolbar__years a,
+  .home-quick-links__link {
+    background-color: var(--ds-surface-1);
+    border-color: var(--ds-border-2);
+  }
 
-/* Keep high priority only for theme note callouts. */
-body.dark-mode .note-sm,
-body.dark-mode .note {
-  background-color: var(--ds-surface-1) !important;
-  border-color: var(--ds-border-2) !important;
-}
+  /* Keep high priority only for theme note callouts. */
+  .note-sm,
+  .note {
+    background-color: var(--ds-surface-1) !important;
+    border-color: var(--ds-border-2) !important;
+  }
 
-body.dark-mode .home-panel,
-body.dark-mode .home-expandable,
-body.dark-mode .home-kpi,
-body.dark-mode .blog-card,
-body.dark-mode .publication-card,
-body.dark-mode .entry-details,
-body.dark-mode .education-card,
-body.dark-mode .certification-card,
-body.dark-mode .talk-card,
-body.dark-mode .teaching-course,
-body.dark-mode .service-card,
-body.dark-mode .nav-search-surface {
-  box-shadow: var(--ds-shadow-1);
-}
+  .home-panel,
+  .home-expandable,
+  .home-kpi,
+  .blog-card,
+  .publication-card,
+  .entry-details,
+  .education-card,
+  .certification-card,
+  .talk-card,
+  .teaching-course,
+  .service-card,
+  .nav-search-surface {
+    box-shadow: var(--ds-shadow-1);
+  }
 
-body.dark-mode .publication-card__context,
-body.dark-mode .publication-card__excerpt,
-body.dark-mode .blog-card__excerpt,
-body.dark-mode .blog-selected-summary,
-body.dark-mode .blog-filter-hint,
-body.dark-mode .blog-archive-toc ul li a,
-body.dark-mode .search-result__meta,
-body.dark-mode .search-result--empty,
-body.dark-mode .nav-search-status,
-body.dark-mode .nav-search-empty,
-body.dark-mode .education-card__institution,
-body.dark-mode .certification-card__issuer,
-body.dark-mode .education-card__detail,
-body.dark-mode .talk-card__event,
-body.dark-mode .talk-card__date,
-body.dark-mode .talk-card__description,
-body.dark-mode .teaching-course__meta,
-body.dark-mode .service-card__meta,
-body.dark-mode .service-card > summary::after,
-body.dark-mode .teaching-course > summary::after {
-  color: var(--ds-text-2);
-}
+  .publication-card__context,
+  .publication-card__excerpt,
+  .blog-card__excerpt,
+  .blog-selected-summary,
+  .blog-filter-hint,
+  .blog-archive-toc ul li a,
+  .search-result__meta,
+  .search-result--empty,
+  .nav-search-status,
+  .nav-search-empty,
+  .education-card__institution,
+  .certification-card__issuer,
+  .education-card__detail,
+  .talk-card__event,
+  .talk-card__date,
+  .talk-card__description,
+  .teaching-course__meta,
+  .service-card__meta,
+  .service-card > summary::after,
+  .teaching-course > summary::after {
+    color: var(--ds-text-2);
+  }
 
-body.dark-mode .publication-card__title a,
-body.dark-mode .search-result__link,
-body.dark-mode .blog-card__title,
-body.dark-mode .blog-card__title a,
-body.dark-mode .blog-archive-toc__heading,
-body.dark-mode .note-sm,
-body.dark-mode .note,
-body.dark-mode .teaching-course__heading,
-body.dark-mode .service-card__heading,
-body.dark-mode .education-card__degree,
-body.dark-mode .certification-card__title {
-  color: var(--ds-text-1);
-}
+  .publication-card__title a,
+  .search-result__link,
+  .blog-card__title,
+  .blog-card__title a,
+  .blog-archive-toc__heading,
+  .note-sm,
+  .note,
+  .teaching-course__heading,
+  .service-card__heading,
+  .education-card__degree,
+  .certification-card__title {
+    color: var(--ds-text-1);
+  }
 
-body.dark-mode .blog-tag-filter__chip.is-active {
-  background-color: var(--ds-accent-border-strong);
-  border-color: var(--ds-accent-border-strong);
-  color: var(--ds-accent-text-on-strong);
-}
+  .blog-tag-filter__chip.is-active {
+    background-color: var(--ds-accent-border-strong);
+    border-color: var(--ds-accent-border-strong);
+    color: var(--ds-accent-text-on-strong);
+  }
 
-body.dark-mode .blog-tag-filter__chip {
-  color: var(--ds-text-2);
-}
+  .blog-tag-filter__chip {
+    color: var(--ds-text-2);
+  }
 
-body.dark-mode .blog-tag-filter__chip:hover,
-body.dark-mode .blog-tag-filter__chip:focus {
-  background-color: var(--ds-chip-hover-bg);
-  border-color: var(--ds-chip-hover-border);
-  color: var(--ds-text-1);
+  .blog-tag-filter__chip:hover,
+  .blog-tag-filter__chip:focus {
+    background-color: var(--ds-chip-hover-bg);
+    border-color: var(--ds-chip-hover-border);
+    color: var(--ds-text-1);
+  }
 }
 
 .notfound-panel {
