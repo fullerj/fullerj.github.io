@@ -28,7 +28,7 @@ description:           >
   Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
 
 # A shorter description for the sidebar.
-tagline:               Security Strategy, Risk Leadership, and Operational Resilience
+tagline:               Security Leadership, Research, and Operational Practice
 blog:
   max_columns: 2
   reading_wpm: 220
@@ -74,9 +74,9 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Analysis & Insights
+  - title:             Analysis and Insights
     url:               /blog/
-  - title:             Leadership & Service
+  - title:             Leadership and Service
     url:               /service/
   - title:             Technical Writing
     url:               /publications/

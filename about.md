@@ -51,13 +51,13 @@ redirect_from:
   </nav>
 </section>
 
-## Highlights
+## Recent Work
 
 <section class="home-section home-section--highlights">
   <div class="home-highlights-grid">
     <article class="home-panel home-panel--feature" id="insights">
 
-      <h3>Recent Insights</h3>
+      <h3>Latest Analysis</h3>
 
 {% assign recent_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
 {% if recent_posts %}
@@ -85,7 +85,7 @@ redirect_from:
   </a>
   {% endfor %}
 </div>
-<p><a href="{{ '/blog/' | relative_url }}">Browse all blog posts</a></p>
+<p><a href="{{ '/blog/' | relative_url }}">Read all analysis</a></p>
 {% else %}
 <p>Posts will appear here once they are published.</p>
 {% endif %}
@@ -93,7 +93,7 @@ redirect_from:
     </article>
 
     <article class="home-panel home-panel--feature" id="writing">
-      <h3>Technical Writing and Industry Papers</h3>
+      <h3>Selected Writing and Papers</h3>
 
 {% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
 {% if recent_publications %}
@@ -113,7 +113,7 @@ redirect_from:
   </li>
   {% endfor %}
 </ul>
-<p><a href="{{ '/publications/' | relative_url }}">View all publications</a></p>
+<p><a href="{{ '/publications/' | relative_url }}">Read all publications</a></p>
 {% else %}
 <p>Publications will appear here once they are added to the site.</p>
 {% endif %}
@@ -121,7 +121,7 @@ redirect_from:
     </article>
 
     <article class="home-panel" id="talks">
-      <h3>Recent Talks</h3>
+      <h3>Talks and Appearances</h3>
 
 {% assign recent_talks = site.data.talks | sort: 'date' | reverse %}
 {% if recent_talks and recent_talks.size > 0 %}
@@ -142,7 +142,7 @@ redirect_from:
   </li>
   {% endfor %}
 </ul>
-<p><a href="{{ '/talks/' | relative_url }}">Explore talks and events</a></p>
+<p><a href="{{ '/talks/' | relative_url }}">View talks and events</a></p>
 {% else %}
 <p>Talks will appear here once they are added to the site.</p>
 {% endif %}
@@ -150,7 +150,7 @@ redirect_from:
     </article>
 
     <article class="home-panel" id="media-coverage">
-      <h3>Selected Media Coverage</h3>
+      <h3>In the Media</h3>
 
 {% assign coverage_limit = 3 %}
 {% assign per_source_limit = 2 %}
@@ -285,7 +285,7 @@ redirect_from:
 <ul>
 {{ coverage_items }}
 </ul>
-<p><a href="{{ '/media/' | relative_url }}">View all media coverage</a></p>
+<p><a href="{{ '/media/' | relative_url }}">View media mentions</a></p>
 {% else %}
 <p>Media highlights will appear here once coverage links are available.</p>
 {% endif %}
