@@ -29,7 +29,7 @@
 
 body {
   font-family: var(--ds-font-body);
-  line-height: 1.64;
+  line-height: 1.68;
 }
 
 h1,
@@ -40,6 +40,94 @@ h5,
 h6 {
   font-family: var(--ds-font-heading);
   letter-spacing: 0.005em;
+}
+
+.page.post {
+  max-width: 72ch;
+}
+
+.page.post > p,
+.page.post > ul,
+.page.post > ol,
+.page.post > blockquote,
+.page.post > pre,
+.page.post > .highlight,
+.page.post > .katex-display,
+.page.post > .table-wrapper {
+  max-width: 68ch;
+}
+
+.page.post > p,
+.page.post > ul,
+.page.post > ol,
+.page.post > blockquote {
+  margin-top: 1.05rem;
+  margin-bottom: 1.05rem;
+  line-height: 1.75;
+}
+
+.page.post > h2,
+.page.post > h3,
+.page.post > h4 {
+  max-width: 32ch;
+  line-height: 1.24;
+}
+
+.page.post > h2 {
+  margin-top: 2.55rem;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.002em;
+}
+
+.page.post > h3 {
+  margin-top: 1.95rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.22rem;
+  color: var(--ds-text-1);
+}
+
+.page.post > h2 + p,
+.page.post > h3 + p,
+.page.post > h4 + p {
+  margin-top: 0.7rem;
+}
+
+.page.post > ul,
+.page.post > ol {
+  padding-left: 1.2rem;
+}
+
+.page.post > ul li,
+.page.post > ol li {
+  margin: 0.45rem 0;
+}
+
+.page.post > hr {
+  margin: 2.2rem 0 2rem;
+  border-top-color: var(--ds-border-1);
+  opacity: 0.7;
+}
+
+.page.post > :not(pre) > code,
+.page.post > p code,
+.page.post li code {
+  padding: 0.08rem 0.38rem;
+  border: 1px solid var(--ds-border-1);
+  border-radius: 0.35rem;
+  background: var(--ds-surface-2);
+  color: var(--ds-text-1);
+  font-size: 0.93em;
+}
+
+.page.post pre,
+.page.post .highlight > pre,
+.page.post pre.highlight {
+  margin: 1.4rem 0;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid var(--ds-border-1);
+  border-radius: var(--ds-radius-2);
+  box-shadow: var(--ds-shadow-1);
+  background: var(--ds-surface-1);
 }
 
 /* Shared card primitives for section consistency. */
@@ -672,11 +760,11 @@ h6 {
 }
 
 .post-reading-time {
-  margin: 0.2rem 0 0.75rem;
-  font-size: 0.82rem;
+  margin: 0;
+  font-size: 0.78rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--ds-text-2);
+  color: var(--ds-text-3);
 }
 
 .post-inline-meta {
@@ -689,24 +777,25 @@ h6 {
 }
 
 .entry-context {
-  margin: 0.45rem 0 0.9rem;
+  margin: 0.55rem 0 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.4rem;
 }
 
 .entry-context__item {
   display: inline-flex;
   align-items: center;
   min-height: 1.9rem;
-  padding: 0.2rem 0.65rem;
+  padding: 0.18rem 0.62rem;
   border-radius: var(--ds-radius-pill);
   border: 1px solid var(--ds-chip-border);
   background: var(--ds-chip-bg);
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 650;
+  color: var(--ds-text-2);
 }
 
 .entry-details {
