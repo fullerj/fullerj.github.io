@@ -62,7 +62,7 @@ redirect_from:
   <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ insights_count }}</p>
-      <p class="home-kpi__label">Analysis</p>
+      <p class="home-kpi__label">Analysis and Insights</p>
     </article>
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ research_count }}</p>
