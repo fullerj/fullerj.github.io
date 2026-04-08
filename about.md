@@ -62,7 +62,7 @@ redirect_from:
   <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ insights_count }}</p>
-      <p class="home-kpi__label">Insights</p>
+      <p class="home-kpi__label">Analysis</p>
     </article>
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ research_count }}</p>
@@ -79,7 +79,7 @@ redirect_from:
   </div>
 
   <nav class="home-quick-links" aria-label="Quick access" data-inpage-scroll="true">
-    <a class="home-quick-links__link" href="#insights">Insights</a>
+    <a class="home-quick-links__link" href="#insights">Analysis</a>
     <a class="home-quick-links__link" href="#writing">Writing</a>
     <a class="home-quick-links__link" href="#talks">Talks</a>
     <a class="home-quick-links__link" href="#media-coverage">Media</a>
