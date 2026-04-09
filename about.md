@@ -366,7 +366,7 @@ redirect_from:
     <summary>Professional Certifications</summary>
 
     <div class="home-expandable__content">
-      <a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener">Verify credentials on Credly</a>
+      <a class="about-cert-link" href="https://www.credly.com/users/jonathan-fuller.f869cdaf/badges#credly" target="_blank" rel="noopener noreferrer">Verify credentials on Credly</a>
 
       <div class="certifications-grid">
   {% for cert in site.data.certifications %}

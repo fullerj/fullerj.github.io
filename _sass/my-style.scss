@@ -254,6 +254,12 @@ h6 {
   transform: none;
 }
 
+/* Keep primary socials inline but place the last item (email) on its own row. */
+.sidebar-social > ul > li:last-child {
+  clear: both;
+  float: none;
+}
+
 .home-highlights-grid {
   display: grid;
   gap: var(--site-space-4);
