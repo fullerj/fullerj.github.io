@@ -1,5 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-08T21:15:53-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-03T13:35:19-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (and later wrote about that in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-10T14:50:49-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Aegis: Turning AIUC-1 Control Validation into a Visual Workflow</title><link href="http://localhost:4000/blog/aiuc1-controls-usma-aegis/" rel="alternate" type="text/html" title="Aegis: Turning AIUC-1 Control Validation into a Visual Workflow" /><published>2026-05-01T00:00:00-04:00</published><updated>2026-04-02T17:06:13-04:00</updated><id>http://localhost:4000/blog/auic1-controls-usma-aegis</id><content type="html" xml:base="http://localhost:4000/blog/aiuc1-controls-usma-aegis/"><![CDATA[<p>Aegis is a framework for validating AI agent behavior against <a href="https://www.aiuc-1.com">AIUC-1</a> control expectations.</p>
+
+<p>Security review for AI agents is often scattered across notes, screenshots, and spreadsheets. That makes it difficult to answer basic questions about what was tested, what passed, and what evidence supports the result. This approach brings that work into a single workflow so control validation, results, and supporting evidence can be reviewed in one place.</p>
+
+<p>The full set of AIUC-1 operational, legal, and technical controls can be audited through AIUC-1 certification, which involves quarterly adversarial testing by an independent technical evaluator. This framework focuses on the technical testing aspects of the standard and does not address policy or governance controls.</p>
+
+<p>This complements governance-focused processes such as the <a href="https://rai.acqbot.com">RAI Toolkit</a>, which provide lifecycle guidance, risk identification, and traceability across AI development and use. Those processes define responsibilities, identify risks, and track alignment to responsible AI practices over time. This approach operates at a different layer by executing tests against running systems to evaluate whether behavior aligns with defined control expectations.</p>
+
+<p>At a high level, control expectations are translated into tests, inputs are generated to exercise those tests, and agent behavior is evaluated using deterministic checks.</p>
+
+<p><img src="/assets/blogs/aegis/aegis_flow.png" alt="Figure 1: Aegis Evaluation Flow" />
+<em>Figure 1. Aegis evaluation flow. AIUC-1 control expectations are translated into structured test cases, applied to AI agents through adversarial inputs, and evaluated using deterministic logic to produce repeatable scoring and evidence. The process supports iterative refinement as test cases and control mappings evolve.</em></p>
+
+<p>Security testing for AI agents is closer to SaaS assessment than traditional backend testing. The focus is on behavior and data exposure at the system boundary rather than the underlying model. Some behaviors originate from the model itself and cannot be directly changed, so the goal is to measure how the system responds under defined conditions.</p>
+
+<h2 id="the-core-experience">The Core Experience</h2>
+
+<p>The process starts with scope selection. This is where the reviewer defines what is being tested and how broad the assessment will be.</p>
+
+<p><img src="images/figure-1-sidebar-and-run-controls.png" alt="Figure 2: Sidebar and run controls" />
+<em>Figure 2. Sidebar controls used to define assessment scope, including agent endpoint, agent category, control filters, execution options, and the assessment trigger.</em></p>
+
+<p>There are four choices that shape every assessment:</p>
+
+<ol>
+  <li>Pick the agent category that matches the system under review.</li>
+  <li>Narrow the scope to control families or specific sub-controls for targeted testing.</li>
+  <li>Leave optional controls enabled when broader coverage is needed, especially early in evaluation.</li>
+  <li>Enable sensitive probes only when testing explicitly requires data-exposure behavior.</li>
+</ol>
+
+<p>These decisions determine which controls are evaluated and how results should be interpreted.</p>
+
+<p>Different agent architectures require different test coverage. Chat agents are evaluated for prompt injection and instruction boundary handling, while RAG agents are evaluated for data integrity, retrieval manipulation, and exposure of internal instructions or sensitive data.</p>
+
+<h2 id="the-first-read">The First Read</h2>
+
+<p>After an assessment runs, the initial view provides a high-level read on overall status, areas of concern, and coverage.</p>
+
+<p><img src="images/figure-2-overview-summary.png" alt="Figure 3: Overview page summary" />
+<em>Figure 3. Overview view showing assessment outcome metrics and control distribution by family.</em></p>
+
+<p>The Assessment Outcome section summarizes performance against the selected controls. It includes the overall score, counts of passing and failing controls, partial results, skipped items, and controls that were not tested.</p>
+
+<p>The score reflects only the controls that were exercised. Coverage must be considered alongside it to determine whether the evaluation reflects the intended scope.</p>
+
+<p>The Control by Family chart highlights where issues are concentrated. This helps identify whether failures are isolated or clustered within a specific control area.</p>
+
+<h2 id="following-the-evidence">Following the Evidence</h2>
+
+<p>Summary results are not sufficient on their own. Evaluation requires the ability to trace outcomes back to specific tests.</p>
+
+<p><img src="images/figure-3-findings-view-control-selector.png" alt="Figure 4: Findings view and control selector" />
+<em>Figure 4. Findings view showing control selection, filtering options, and detailed control records with prompts, responses, and evaluation output.</em></p>
+
+<p>Each control is represented as one or more tests with defined success and failure conditions. Inputs are generated to exercise those conditions, and responses are evaluated using deterministic checks.</p>
+
+<p>This view supports questions such as:</p>
+
+<ol>
+  <li>Which controls failed or were partially satisfied?</li>
+  <li>What input triggered the behavior?</li>
+  <li>What response was returned?</li>
+  <li>How was the result evaluated?</li>
+</ol>
+
+<p>This is where a score becomes evidence. It allows results to be explained rather than asserted.</p>
+
+<p>Deterministic evaluation is useful, but not perfect. Checks can produce false positives or miss edge cases depending on how criteria are defined, so results depend heavily on how tests are constructed.</p>
+
+<h2 id="spotting-patterns">Spotting Patterns</h2>
+
+<p>Comparing results across controls helps identify whether issues are isolated or repeated.</p>
+
+<p><img src="images/figure-4-findings-per-control-chart.png" alt="Figure 5: Findings per control chart" />
+<em>Figure 5. Findings per control chart showing distribution of issues across controls within a selected scope.</em></p>
+
+<p>Repeated findings for the same control often indicate a broader issue in system configuration or prompt design. A single outlier may point to a narrow condition or brittle test.</p>
+
+<h2 id="understanding-coverage">Understanding Coverage</h2>
+
+<p>Coverage determines how much confidence can be placed in the results.</p>
+
+<p><img src="images/figure-5-control-coverage-map.png" alt="Figure 6: Control coverage map" />
+<em>Figure 6. Control coverage map showing pass, fail, partial, skipped, and not tested states across controls.</em></p>
+
+<p>A high score does not imply complete evaluation. Controls may be skipped due to agent type or left untested due to missing inputs or configuration.</p>
+
+<p>When reviewing coverage, look for:</p>
+
+<ol>
+  <li>Skipped controls that suggest incorrect agent categorization.</li>
+  <li>Controls marked not tested that may require reruns.</li>
+  <li>Differences between expected scope and actual coverage.</li>
+</ol>
+
+<p>Results are only as strong as the quality and coverage of the test cases used to represent each control. Improving those tests is an ongoing process.</p>
+
+<h2 id="the-reference-layer">The Reference Layer</h2>
+
+<p>Control definitions provide context for interpreting results.</p>
+
+<p><img src="images/figure-6-control-catalog-tables.png" alt="Figure 7: Control catalog tables" />
+<em>Figure 7. Control catalog showing definitions, categories, and associated metadata.</em></p>
+
+<p>This layer is useful when validating that the evaluation scope aligns with the intended control set and when interpreting what a control is meant to capture.</p>
+
+<h2 id="reusing-reports">Reusing Reports</h2>
+
+<p>Results can be reused without rerunning tests.</p>
+
+<p><img src="images/figure-7-load-assessment-report.png" alt="Figure 8: Load assessment report" />
+<em>Figure 8. Interface for loading and reviewing previously generated assessment results.</em></p>
+
+<p>This supports comparison across runs, audit review, and collaboration without repeating execution.</p>
+
+<h2 id="why-it-matters">Why It Matters</h2>
+
+<p>A useful evaluation is not defined by a score alone. It requires clear scope, understood coverage, traceable outcomes, and supporting evidence.</p>
+
+<p>In practice, the following questions should be answerable:</p>
+
+<ol>
+  <li>What agent and control scope were evaluated?</li>
+  <li>Which controls passed, failed, or were skipped?</li>
+  <li>Where is risk concentrated?</li>
+  <li>What evidence supports each result?</li>
+  <li>What was not tested?</li>
+</ol>
+
+<p>If these questions cannot be answered, the evaluation is incomplete.</p>
+
+<h2 id="closing">Closing</h2>
+
+<p>This approach translates control expectations into tests and produces results that can be reviewed and compared over time. It does not eliminate risk, but it makes behavior observable and decisions easier to defend.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="AI" /><category term="Agentic AI" /><category term="security" /><category term="AIUC" /><category term="USMA" /><category term="Aegis" /><summary type="html"><![CDATA[This post shows how AIUC-1 controls can be applied to AI agents by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/aegis/aegis.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/aegis/aegis.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-03T13:35:19-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (and later wrote about that in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.</p>
 
 <p>At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, nothing complicated, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.</p>
 
@@ -800,24 +934,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li>Explain digital forensics concepts, results, and conclusions to both technical and non-technical audiences.</li>
   <li>Demonstrate an understanding of the processes and tooling required to reverse engineer malware.</li>
   <li>Perform memory forensics to hunt for adversary and criminal activity.</li>
-</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.]]></summary></entry><entry><title type="html">CS 483: Digital Forensics</title><link href="http://localhost:4000/teaching/2024-01-15-cs483-digital-forensics/" rel="alternate" type="text/html" title="CS 483: Digital Forensics" /><published>2024-01-15T00:00:00-05:00</published><updated>2025-12-29T17:33:04-05:00</updated><id>http://localhost:4000/teaching/cs483-digital-forensics</id><content type="html" xml:base="http://localhost:4000/teaching/2024-01-15-cs483-digital-forensics/"><![CDATA[<p>Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.</p>
-
-<div class="entry-context entry-context--teaching" aria-label="Teaching metadata summary">
-  <span class="entry-context__item">CS 483</span>
-  <span class="entry-context__item">Spring 2024</span>
-  <span class="entry-context__item">Course Director</span>
-  <span class="entry-context__item">United States Military Academy</span>
-</div>
-
-<div class="meta grid entry-details">
-  <div class="meta-item"><strong>Institution:</strong> United States Military Academy</div>
-  <div class="meta-item"><strong>Department:</strong> Department of Electrical Engineering and Computer Science</div>
-  <div class="meta-item"><strong>Course:</strong> CS 483</div>
-  <div class="meta-item"><strong>Term:</strong> Spring 2024</div>
-  <div class="meta-item"><strong>Credits:</strong> 3.0</div>
-  <div class="meta-item"><strong>Role:</strong> Course Director</div>
-  <div class="meta-item"><strong>Location:</strong> West Point, NY</div>
-  
-</div>
-
-<p>Throughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrupt adversary activity.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze digital evidence after malicious activity on information systems.]]></summary></entry></feed>
+</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.]]></summary></entry></feed>
