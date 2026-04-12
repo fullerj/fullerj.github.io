@@ -23,7 +23,7 @@ image:
 
 I read *Tracers in the Dark*[^tracers] while working on [VADER]({{ "/publications/vader-dead-drop-resolver/" | relative_url }}) (and later wrote about that in [Spycraft 2.0]({{ "/blog/spycraft-2-0/" | relative_url }})), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.
 
-At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, nothing complicated, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.
+At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, to identify the full scope of dead drop resolvoers, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.
 
 For context, the VADER collection surfaced 273 dead drops across 7 web applications, with Pastebin dominating at 68 percent, and blockchain explorers making up another 25 percent, including 23 transaction IDs and 14 wallet IDs.
 
