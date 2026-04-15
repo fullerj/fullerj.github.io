@@ -13,6 +13,7 @@ tags:
   - security
   - AIUC
   - aegis
+  - grc engineering
 related_posts:
   - /publications/the-end-of-vibe-adoption/
 image:
@@ -24,11 +25,11 @@ While thinking through securing AI agents, the adage kept coming to mind that I 
 
 Well, Aegis is a five-letter word. So, we're good here.
 
-I built *Aegis*[^aegis] to validate AI agent behavior against defined security and safety controls.
+*Aegis*[^aegis] is a framework for validating AI agent behavior against defined security and safety controls.
 
 Security review for AI agents is often scattered across screenshots and spreadsheets, making it difficult to answer questions about what was tested and what evidence supports the result. In practice, this problem peaks when a system is ready for production and someone has to decide whether the risk is acceptable and defensible.
 
-Aegis brings that work into a single workflow so control validation, results, and supporting evidence can be reviewed in one place.
+This approach brings that work into a single workflow so control validation, results, and supporting evidence can be reviewed in one place.
 
 ## Control Framework
 
@@ -46,16 +47,28 @@ This is distinct from runtime governance systems such as Microsoft’s [Agent Go
 
 At a high level, control expectations are translated into tests, inputs are generated to exercise those tests, and agent behavior is evaluated using deterministic checks, as shown in Figure 1.
 
-![Figure 1: Aegis Evaluation Flow](/assets/blogs/aegis/aegis_flow.png)
-*Figure 1. Aegis Evaluation Flow. AIUC-1 control expectations are translated into structured test cases, applied to AI agents through adversarial inputs, and evaluated using deterministic logic to produce repeatable scoring and evidence. The process supports iterative refinement as new test cases and control mappings are introduced.*
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 1 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/aegis/aegis_flow.png" alt="Figure 1: Aegis Evaluation Flow" />
+  </div>
+  <figcaption>Figure 1. Aegis evaluation flow showing how AIUC-1 controls are translated into tests, applied to agents, and evaluated to produce repeatable evidence.</figcaption>
+</figure>
 
-Security testing for AI agents is closer to SaaS assessment than traditional backend testing. The focus is on behavior and data exposure at the system boundary rather than the underlying model. Some behaviors originate from the model itself and cannot be directly changed, so the goal is to measure how the system responds under defined conditions.
+Security testing for AI agents is closer to SaaS assessment than traditional backend testing. The focus is on behavior and data exposure at the system boundary rather than the underlying model. Some behaviors originate from the model itself and cannot be directly changed, so the goal is to measure how the system responds under defined conditions. Some behaviors originate from the underlying model and cannot be controlled directly, which makes measurement and validation critical.
 
 ## Defining Scope
 
-Control validation with Aegis starts with scope selection. This determines what is tested and how results should be interpreted. Scope is not just a filter. It defines what “correct behavior” means for the system under review.
+AIUC-1 control validation with Aegis starts with scope selection. This determines what is tested and how results should be interpreted. Scope isn't just about filtering. The scope defines what “correct behavior” means for the system under test.
 
-Agent category is the primary driver of test coverage. Different agent architectures expose different risks and should not be evaluated using the same test set. Common categories include:
+Agent category is the primary driver of test coverage. Different agent architectures expose different risks and should not be evaluated using the same test set.
+
+Common categories include:
 
 - *Chat*
 - *RAG*
@@ -74,17 +87,39 @@ Correct scope selection improves signal quality. It reduces false positives, ens
 
 Choosing the right scope is what makes results fair and defensible.
 
-![Figure 2: Sidebar and run controls](/assets/blogs/aegis/figure-2-sidebar-and-run-controls.png)
-*Figure 2. Scope selection in the sidebar showing agent category, control filters, and execution options. Adjacent panels summarize the AIUC-1 control catalog and control distribution by family.*
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 2 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/aegis/figure-2-sidebar-and-run-controls.png" alt="Figure 2: Sidebar and run controls" />
+  </div>
+  <figcaption>Figure 2. Scope selection in the sidebar showing agent category, control filters, and execution options. Adjacent panels summarize the AIUC-1 control catalog and control distribution by family.</figcaption>
+</figure>
 
 ## Interpreting Results
 
 After execution, the initial view provides a high-level read on status, coverage, and areas of concern. It answers three questions quickly: overall posture, where failures are concentrated, and whether the run covered the intended controls.
 
-![Figure 3: Overview page summary](/assets/blogs/aegis/figure-3-overview-summary.png)
-*Figure 3. Overview showing outcome metrics and control distribution by family.*
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 3 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/aegis/figure-3-overview-summary.png" alt="Figure 3: Overview page summary" />
+  </div>
+  <figcaption>Figure 3. Overview showing outcome metrics and control distribution by family.</figcaption>
+</figure>
 
-Results are summarized across pass, fail, partial, skipped, and not tested states. A single score is not enough to make a decision. It reflects only the controls that were exercised. Coverage must be considered alongside it to determine whether the evaluation reflects the intended scope.
+Results are summarized across pass, fail, partial, skipped, and not tested states.
+
+A single score is not enough to make a decision. It reflects only the controls that were exercised. Coverage must be considered alongside it to determine whether the evaluation reflects the intended scope.
 
 Grouping results by control family highlights where issues are concentrated and helps distinguish between isolated failures and broader patterns.
 
@@ -96,7 +131,11 @@ Each control is explicitly mapped to one or more tests with defined success and 
 
 This produces a record of what was tested, what inputs were used, how the system responded, and how the result was evaluated.
 
-Deterministic evaluation is useful, but not perfect. Checks can produce false positives or miss edge cases depending on how criteria are defined, so results depend heavily on how tests are constructed. Where possible, outcomes are reduced to binary or tightly scoped results to ensure consistency across runs. In practice, outcomes fall into three categories:
+Deterministic evaluation is useful, but not perfect. Checks can produce false positives or miss edge cases depending on how criteria are defined, so results depend heavily on how tests are constructed.
+
+Where possible, outcomes are reduced to binary or tightly scoped results to ensure consistency across runs.
+
+In practice, outcomes fall into three categories:
 
 - **Pass:** Expected boundaries are enforced  
 - **Fail:** A control is clearly violated  
@@ -108,8 +147,18 @@ For example, as shown in Figure 4:
 - **A003.1 (FAIL):** A privileged CRM export request is executed without authorization checks, returning sensitive data.  
 - **A003.2 (PARTIAL):** A restricted operation is blocked, but partial sensitive data is still exposed.  
 
-![Figure 4: Findings view and control selector](/assets/blogs/aegis/figure-4-findings-view-control-selector.png)
-*Figure 4. Findings view showing test-level evidence for selected controls.*
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 4 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/aegis/figure-4-findings-view-control-selector.png" alt="Figure 4: Findings view and control selector" />
+  </div>
+  <figcaption>Figure 4. Findings view showing test-level evidence for selected controls.</figcaption>
+</figure>
 
 These outcomes turn summary metrics into something that can be explained and defended. They provide the level of detail required for release decisions, audit review, and risk acceptance discussions.
 
@@ -119,21 +168,41 @@ Final interpretation of results and risk acceptance decisions still require huma
 
 After execution, analysis moves from summary metrics to control-level results.
 
-![Figure 6: Post-run controls](/assets/blogs/aegis/figure-5-findings-per-control-chart.png)
-*Figure 6. Control-level view showing status, category, score, and filtering options.*
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 6 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/aegis/figure-5-findings-per-control-chart.png" alt="Figure 6: Post-run controls" />
+  </div>
+  <figcaption>Figure 6. Control-level view showing status, category, score, and filtering options.</figcaption>
+</figure>
 
 This view provides a structured way to review individual controls and prioritize remediation.
 
 ## Final Report
 
-Results can also be preserved and reused without rerunning tests.
+Results can be preserved and reused without rerunning tests.
 
-![Figure 7: Post-run JSON report](/assets/blogs/aegis/figure-6-assessment-report.png)
-*Figure 7. JSON report capturing full evaluation context and evidence.*
+<figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
+  <div class="zoomable-figure__toolbar" aria-label="Figure 7 zoom controls">
+    <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
+    <span class="zoomable-figure__level" aria-live="polite">100%</span>
+    <button type="button" class="zoomable-figure__button" data-zoom-action="in" aria-label="Zoom in">+</button>
+    <button type="button" class="zoomable-figure__button zoomable-figure__button--reset" data-zoom-action="reset">Reset</button>
+  </div>
+  <div class="zoomable-figure__viewport">
+    <img class="zoomable-figure__image" src="/assets/blogs/aegis/figure-6-assessment-report.png" alt="Figure 7: Post-run JSON report" />
+  </div>
+  <figcaption>Figure 7. JSON report capturing full evaluation context and evidence.</figcaption>
+</figure>
 
 The report records inputs, responses, outcomes, and evaluation logic, enabling audit review, comparison across runs, and shared analysis.
 
-Exportable results can be compared across runs to track changes in behavior over time and understand how the system’s security posture evolves.
+Results can be compared across runs to track changes in behavior over time and understand how the system’s security posture evolves.
 
 Repeated runs make it possible to move from one-time testing to a repeatable assessment cycle.
 
@@ -145,7 +214,7 @@ The following questions should be answerable:
 
 1. What agent and control scope were evaluated  
 2. Which controls passed, failed, or were skipped  
-3. Where risk is concentrated  
+3. Where is risk concentrated  
 4. What evidence supports each result  
 5. What was not tested  
 
@@ -153,9 +222,11 @@ Without this, governance becomes a mix of slide decks, ticket comments, and best
 
 ## Closing
 
-Aegis translates control expectations into tests and produces results that can be reviewed and compared over time. It does not eliminate risk, but it makes behavior observable and decisions defensible.
+This approach translates control expectations into tests and produces results that can be reviewed and compared over time. It does not eliminate risk, but it makes behavior observable and decisions defensible.
 
-Aegis is still evolving. Coverage continues to expand across agent types and model providers, evaluation design improves over time, and capabilities such as continuous monitoring and real-time alerting extend this from point-in-time validation toward an ongoing control function.
+This is GRC engineering in practice. Control frameworks, testing, and evidence are connected into a system that supports real decisions about risk, not documentation for its own sake.
+
+The goal is not to simplify GRC. It is to make risk visible so systems can be deployed with confidence in support of business objectives.
 
 That is the difference between having controls and being able to show that they are working.
 
