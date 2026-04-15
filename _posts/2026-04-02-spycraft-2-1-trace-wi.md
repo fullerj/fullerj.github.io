@@ -19,8 +19,6 @@ image:
   alt: "Bitcoin transaction graph showing wallet clusters and flow patterns"
 ---
 
-# Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs
-
 I read *Tracers in the Dark*[^tracers] while working on [VADER]({{ "/publications/vader-dead-drop-resolver/" | relative_url }}) (and later wrote about that in [Spycraft 2.0]({{ "/blog/spycraft-2-0/" | relative_url }})), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.
 
 At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, to identify the full scope of dead drop resolvoers, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.
@@ -37,7 +35,9 @@ Role labels are literal, transit wallets pass value along, collectors accumulate
 
 ## How the Picture Changed
 
-This started out looking like a loose collection of references, just wallets tied to activity, but once everything was graphed and decoded, the same wallets kept showing up, the same patterns repeated, and the same neighborhoods expanded outward in ways that did not feel random. That shift, from scattered indicators to something with shape, is really the main result.
+This started out looking like a loose collection of references, just wallets tied to activity, but once everything was graphed and decoded, the same wallets kept showing up, the same patterns repeated, and the same neighborhoods expanded outward in ways that did not feel random. That shift, from scattered indicators to something with shape, is really the main result. At that point, it starts to look less like a set of dead drops and more like a lightweight, durable signaling layer embedded in transaction flow.
+
+Figure 1 shows the full graph, which is dense and a bit messy, but even without heavy styling you can see cores forming and spokes radiating outward.
 
 Figure 1 shows the full graph, which is dense and a bit messy, but even without heavy styling you can see cores forming and spokes radiating outward.
 
