@@ -12,6 +12,7 @@ tags:
   - risk-management
   - governance
 related_posts:
+- /blog/aiuc1-controls-aegis/
 authors: "AIUC-1 Consortium"
 date: 2026-02-01
 venue: "AIUC-1"
