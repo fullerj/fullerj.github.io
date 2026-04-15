@@ -21,7 +21,7 @@
     "collection": "posts",
     "date": "2026-05-01T00:00:00-04:00",
     "excerpt": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often, “STIG1 is a four-letter word.” No one likes IT compliance.\n\n\n  \n    \n      Security Technical Implementation Guides (STIGs",
-    "content": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often, “STIG1 is a four-letter word.” No one likes IT compliance.\n\nWell, Aegis is a five-letter word. So, we’re good here.\n\nI built Aegis2 to validate AI agent behavior against defined security and safety controls.\n\nSecurity review for AI agents is often scattered across screenshots and spreadsheets, making it difficult to answer questions about what was tested and what evidence supports the result. In practice, this problem peaks when a system is ready for production and someone has to decide whether the risk is acceptable and defensible.\n\nAegis brings that work into a single workflow so control validation, results, and supporting evidence can be reviewed in one place.\n\nControl Framework\n\nWhat controls does Aegis use?\n\nAIUC-1 is an independent certification standard designed to validate the security, reliability, and safety of autonomous AI agents. Certification includes quarterly adversarial te"
+    "content": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often, “STIG1 is a four-letter word.” No one likes IT compliance.\n\nWell, Aegis is a five-letter word. So, we’re good here.\n\nAegis2 is a framework for validating AI agent behavior against defined security and safety controls.\n\nSecurity review for AI agents is often scattered across screenshots and spreadsheets, making it difficult to answer questions about what was tested and what evidence supports the result. In practice, this problem peaks when a system is ready for production and someone has to decide whether the risk is acceptable and defensible. Those decisions are only as strong as the evidence behind them.\n\nAegis brings that work into a single workflow so control validation, results, and supporting evidence can be reviewed in one place.\n\nControl Framework\n\nWhat controls does Aegis use?\n\nAIUC-1 is an independent certification standard designed to validate the security, reliability, and safet"
   },
 
   
@@ -456,7 +456,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-04-13T21:23:37-04:00",
+    "date": "2026-04-15T18:19:24-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -475,7 +475,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-04-13T21:23:37-04:00",
+    "date": "2026-04-15T18:19:24-04:00",
     "excerpt": "",
     "content": "13 publications across 8 years and 11 venues.\n  \n\n  \n    \n      Sort by\n      \n        Newest first\n        Oldest first"
   },
@@ -494,7 +494,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-04-13T21:23:37-04:00",
+    "date": "2026-04-15T18:19:24-04:00",
     "excerpt": "",
     "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
   },
@@ -591,7 +591,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
-    "content": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Aegis: A Framework for AIUC-1 Control Validation\n      7 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      5 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS),"
+    "content": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Aegis: A Framework for AIUC-1 Control Validation\n      8 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      6 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS),"
   },
 
   
@@ -609,8 +609,8 @@
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "5 published posts across 2 years and 21 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n             ",
-    "content": "5 published posts across 2 years and 21 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      aegis\n                    \n                  \n                    \n                      \n                      agentic aI\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n              \n            \n              \n                B\n                \n                  \n                    \n                      \n                      bitcoin\n                    \n                  \n                    \n                      \n               "
+    "excerpt": "5 published posts across 2 years and 22 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n             ",
+    "content": "5 published posts across 2 years and 22 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      aegis\n                    \n                  \n                    \n                      \n                      agentic aI\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n              \n            \n              \n                B\n                \n                  \n                    \n                      \n                      bitcoin\n                    \n                  \n                    \n                      \n               "
   },
 
   
@@ -667,7 +667,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
-    "content": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Aegis: A Framework for AIUC-1 Control Validation\n      7 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      5 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS),"
+    "content": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Aegis: A Framework for AIUC-1 Control Validation\n      8 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      6 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security (CCS),"
   },
 
   
