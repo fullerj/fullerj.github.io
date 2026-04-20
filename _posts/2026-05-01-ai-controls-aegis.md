@@ -20,7 +20,7 @@ tags:
 related_posts:
   - /publications/the-end-of-vibe-adoption/
 image:
-  path: /assets/blogs/AgentBench/AgentBench.png
+  path: /assets/blogs/agentbench/agentbench.png
   alt: "AI agent control validation with AgentBench"
 ---
 While thinking through securing AI agents, the adage kept coming to mind that I still hear often: "STIG[^stig] is a four-letter word." No one likes IT compliance.
