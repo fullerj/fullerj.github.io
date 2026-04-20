@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-04-15T18:19:24-04:00',
+    INDEX_KEY: 'index--2026-04-20T15:10:00-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -365,7 +365,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
 <section class="pub-index-toolbar blog-index-toolbar" aria-label="Blog overview and filters">
   <p class="pub-index-toolbar__summary">
-    <strong>5</strong> published posts across <strong>2</strong> years and <strong>22</strong> focus areas.
+    <strong>5</strong> published posts across <strong>2</strong> years and <strong>25</strong> focus areas.
   </p>
 
   <div class="blog-index-toolbar__controls">
@@ -384,23 +384,74 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
                 <div class="blog-focus-filter__options">
                   
                     <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="ai-governance" />
+                      <span>AI governance</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
                       <input type="checkbox" class="blog-focus-filter__checkbox" value="aiuc" />
                       <span>AIUC</span>
                     </label>
                   
                     <label class="blog-focus-filter__option">
-                      <input type="checkbox" class="blog-focus-filter__checkbox" value="aegis" />
-                      <span>aegis</span>
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="agentbench" />
+                      <span>AgentBench</span>
                     </label>
                   
                     <label class="blog-focus-filter__option">
                       <input type="checkbox" class="blog-focus-filter__checkbox" value="agentic-ai" />
-                      <span>agentic aI</span>
+                      <span>agentic AI</span>
                     </label>
                   
                     <label class="blog-focus-filter__option">
                       <input type="checkbox" class="blog-focus-filter__checkbox" value="artificial-intelligence" />
                       <span>artificial intelligence</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">G</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="grc-engineering" />
+                      <span>GRC engineering</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="graph-analysis" />
+                      <span>graph analysis</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">N</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="nist-ai-rmf" />
+                      <span>NIST AI RMF</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">O</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="owasp-llm-top-10" />
+                      <span>OWASP LLM Top 10</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="blog-focus-filter__checkbox" value="onboarding-vendors" />
+                      <span>onboarding vendors</span>
                     </label>
                   
                 </div>
@@ -453,23 +504,6 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
               </div>
             
               <div class="blog-focus-filter__group">
-                <p class="blog-focus-filter__group-label">G</p>
-                <div class="blog-focus-filter__options">
-                  
-                    <label class="blog-focus-filter__option">
-                      <input type="checkbox" class="blog-focus-filter__checkbox" value="graph-analysis" />
-                      <span>graph analysis</span>
-                    </label>
-                  
-                    <label class="blog-focus-filter__option">
-                      <input type="checkbox" class="blog-focus-filter__checkbox" value="grc-engineering" />
-                      <span>grc engineering</span>
-                    </label>
-                  
-                </div>
-              </div>
-            
-              <div class="blog-focus-filter__group">
                 <p class="blog-focus-filter__group-label">M</p>
                 <div class="blog-focus-filter__options">
                   
@@ -486,18 +520,6 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
                     <label class="blog-focus-filter__option">
                       <input type="checkbox" class="blog-focus-filter__checkbox" value="mitre-attack" />
                       <span>mitre attack</span>
-                    </label>
-                  
-                </div>
-              </div>
-            
-              <div class="blog-focus-filter__group">
-                <p class="blog-focus-filter__group-label">O</p>
-                <div class="blog-focus-filter__options">
-                  
-                    <label class="blog-focus-filter__option">
-                      <input type="checkbox" class="blog-focus-filter__checkbox" value="onboarding-vendors" />
-                      <span>onboarding vendors</span>
                     </label>
                   
                 </div>
@@ -601,21 +623,21 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         
           
           
-          <article class="blog-card" data-tags="artificial-intelligence agentic-ai security aiuc aegis grc-engineering" data-date="2026-05-01">
-            <a class="blog-card__link" href="/blog/aiuc1-controls-aegis/">
+          <article class="blog-card" data-tags="artificial-intelligence agentic-ai security ai-governance agentbench grc-engineering aiuc owasp-llm-top-10 nist-ai-rmf" data-date="2026-05-01">
+            <a class="blog-card__link" href="/blog/ai-agent-control-validation-agent-bench/">
               <div class="blog-card__image">
                 
                   
 
 
-<img src="/assets/blogs/aegis/aegis.png" alt="Aegis: A Framework for AIUC-1 Control Validation" width="760" height="428" loading="lazy" />
+<img src="/assets/blogs/AgentBench/AgentBench.png" alt="AgentBench: A Framework for AI Agent Control Validation" width="760" height="428" loading="lazy" />
 
                 
               </div>
               <div class="blog-card__body">
-                <h3 class="blog-card__title">Aegis: A Framework for AIUC-1 Control Validation</h3>
+                <h3 class="blog-card__title">AgentBench: A Framework for AI Agent Control Validation</h3>
                 
-                  <p class="blog-card__excerpt">This post shows how AIUC-1 controls can be applied to AI agents by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.
+                  <p class="blog-card__excerpt">This post shows how AI agent controls can be validated by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.
 </p>
                 
               </div>
