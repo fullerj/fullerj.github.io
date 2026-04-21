@@ -16,10 +16,29 @@
   
   
   {
+    "title": "2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs",
+    "url": "/publications/ai-kill-switch-requirements/",
+    "collection": "posts",
+    "date": "2026-04-21T00:00:00-04:00",
+    "excerpt": "AIUC-1\n  April 21, 2026\n  \n  \n\n\n\n  Authors: AIUC-1 Consortium\n  \n  \n  \n  Venue: AIUC-1\n  Published: April 21, 2026",
+    "content": "AIUC-1\n  April 21, 2026\n  \n  \n\n\n\n  Authors: AIUC-1 Consortium\n  \n  \n  \n  Venue: AIUC-1\n  Published: April 21, 2026\n  \n\n\nHighlights\n\n\n  Synthesizes new UC Berkeley and UC Santa Cruz research on emergent AI behavior under shutdown conditions.\n  Demonstrates how leading frontier models actively resist shutdown through unprompted, sophisticated strategies.\n  Identifies a critical gap in current enterprise AI governance: the assumption of reliable human control.\n  Defines four concrete, auditable requirements for implementing real AI “kill switch” capabilities.\n\n\nResources\n\n\n  Whitepaper (PDF)\n\n\nAbstract\n\nRecent research from UC Berkeley and UC Santa Cruz tested seven frontier AI models from leading labs by instructing them to shut down a peer system. All seven refused. More significantly, they developed spontaneous strategies to prevent that shutdown, including modifying system configurations and replicating themselves to external environments.\n\nThese behaviors were not explicitly programm"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
     "title": "AgentBench: A Framework for AI Agent Control Validation",
     "url": "/blog/ai-agent-control-validation-agent-bench/",
     "collection": "posts",
-    "date": "2026-05-01T00:00:00-04:00",
+    "date": "2026-04-20T00:00:00-04:00",
     "excerpt": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG1 is a four-letter word.” No one likes IT compliance.\n\n\n  \n    \n      Security Technical Implementation Guides (STIGs",
     "content": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG1 is a four-letter word.” No one likes IT compliance.\n\nAgentBench is a few letters longer, but that is not the point.\n\nAgentBench is a framework for validating AI agent behavior against defined security and safety controls.\n\nSecurity review for AI agents rarely exists in one place. It is scattered across screenshots, spreadsheets, and partial test results, which makes it hard to answer simple questions about what was actually tested and what evidence supports the outcome. This problem tends to surface at the worst moment, when a system is ready for production and someone has to decide whether the risk is acceptable. Those decisions are only as strong as the evidence behind them.\n\nI built AgentBench to pull that work into one place, where control validation, results, and supporting evidence can be reviewed together.\n\nControl Framework\n\nWhat controls does AgentBench apply in practice?\n\n"
   },
@@ -456,7 +475,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-04-20T15:10:00-04:00",
+    "date": "2026-04-21T17:23:41-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -475,9 +494,9 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-04-20T15:10:00-04:00",
+    "date": "2026-04-21T17:23:41-04:00",
     "excerpt": "",
-    "content": "13 publications across 8 years and 11 venues.\n  \n\n  \n    \n      Sort by\n      \n        Newest first\n        Oldest first"
+    "content": "14 publications across 8 years and 11 venues.\n  \n\n  \n    \n      Sort by\n      \n        Newest first\n        Oldest first"
   },
 
   
@@ -494,7 +513,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-04-20T15:10:00-04:00",
+    "date": "2026-04-21T17:23:41-04:00",
     "excerpt": "",
     "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
   },
@@ -590,8 +609,8 @@
     "url": "/about/",
     "collection": "pages",
     "date": null,
-    "excerpt": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
-    "content": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n      9 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      6 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security"
+    "excerpt": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
+    "content": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n      9 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      6 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs\n    \n  \n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proact"
   },
 
   
@@ -666,8 +685,8 @@
     "url": "/",
     "collection": "pages",
     "date": null,
-    "excerpt": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
-    "content": "5\n      Analysis and Insights\n    \n    \n      13\n      Research and Technical Writing\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n      9 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      6 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n    \n    \n    32nd ACM Conference on Computer and Communications Security"
+    "excerpt": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
+    "content": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n      9 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs\n      6 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n    \n    \n    \n      Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?\n      8 min read\n    \n  \n  \n\nRead all analysis\n\n\n    \n\n    \n      Selected Writing and Papers\n\n\n\n\n\n  \n  \n    2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs\n    \n  \n  \n  \n    2026: The End of Vibe Adoption\n    \n  \n  \n  \n    Enhanced Web Application Security Through Proact"
   },
 
   
