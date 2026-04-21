@@ -61,12 +61,12 @@ redirect_from:
 <section class="home-section home-section--snapshot">
   <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
     <article class="home-kpi" role="listitem">
-      <p class="home-kpi__value">{{ insights_count }}</p>
-      <p class="home-kpi__label">Analysis and Insights</p>
-    </article>
-    <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ research_count }}</p>
       <p class="home-kpi__label">Research and Technical Writing</p>
+    </article>
+    <article class="home-kpi" role="listitem">
+      <p class="home-kpi__value">{{ insights_count }}</p>
+      <p class="home-kpi__label">Analysis and Insights</p>
     </article>
     <article class="home-kpi" role="listitem">
       <p class="home-kpi__value">{{ talks_count }}</p>
@@ -185,7 +185,7 @@ redirect_from:
     </article>
 
     <article class="home-panel" id="media-coverage">
-      <h3>In the Media</h3>
+      <h3>Media and Mentions</h3>
 
 {% assign coverage_limit = 3 %}
 {% assign per_source_limit = 2 %}

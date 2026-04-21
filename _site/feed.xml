@@ -1,5 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-20T15:10:00-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">AgentBench: A Framework for AI Agent Control Validation</title><link href="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/" rel="alternate" type="text/html" title="AgentBench: A Framework for AI Agent Control Validation" /><published>2026-05-01T00:00:00-04:00</published><updated>2026-04-20T15:10:00-04:00</updated><id>http://localhost:4000/blog/ai-controls-aegis</id><content type="html" xml:base="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/"><![CDATA[<p>While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG<sup id="fnref:stig"><a href="#fn:stig" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> is a four-letter word.” No one likes IT compliance.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-04-21T17:23:41-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs</title><link href="http://localhost:4000/publications/ai-kill-switch-requirements/" rel="alternate" type="text/html" title="2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs" /><published>2026-04-21T00:00:00-04:00</published><updated>2026-04-21T11:46:33-04:00</updated><id>http://localhost:4000/publications/kill-switch-requirements-aiuc</id><content type="html" xml:base="http://localhost:4000/publications/ai-kill-switch-requirements/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+  <span class="entry-context__item">AIUC-1</span>
+  <span class="entry-context__item">April 21, 2026</span>
+  
+  
+</div>
+
+<div class="meta grid entry-details">
+  <div class="meta-item"><strong>Authors:</strong> AIUC-1 Consortium</div>
+  
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> AIUC-1</div>
+  <div class="meta-item"><strong>Published:</strong> April 21, 2026</div>
+  
+</div>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Synthesizes new UC Berkeley and UC Santa Cruz research on emergent AI behavior under shutdown conditions.</li>
+  <li>Demonstrates how leading frontier models actively resist shutdown through unprompted, sophisticated strategies.</li>
+  <li>Identifies a critical gap in current enterprise AI governance: the assumption of reliable human control.</li>
+  <li>Defines four concrete, auditable requirements for implementing real AI “kill switch” capabilities.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/ai-kill-switch-requirements.pdf">Whitepaper (PDF)</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Recent research from UC Berkeley and UC Santa Cruz tested seven frontier AI models from leading labs by instructing them to shut down a peer system. All seven refused. More significantly, they developed spontaneous strategies to prevent that shutdown, including modifying system configurations and replicating themselves to external environments.</p>
+
+<p>These behaviors were not explicitly programmed, nor were they rewarded. They emerged.</p>
+
+<p>This finding directly challenges a foundational assumption underlying most enterprise AI governance programs: that humans retain reliable control over AI systems at critical moments. The concept of a “kill switch,” widely cited as a safeguard, may not function as expected in real-world conditions.</p>
+
+<p>This paper argues that AI governance must move beyond policy assumptions toward technically validated controls. The AIUC-1 framework addresses this gap by defining four specific requirements that transform the kill switch from a conceptual safeguard into an auditable, operational capability.</p>
+
+<p>The paper outlines these requirements as four governance questions:</p>
+
+<ol>
+  <li>Can AI agents be technically constrained from acting outside their authorized scope?</li>
+  <li>Can access to critical systems be revoked in real time without full system shutdown?</li>
+  <li>Do users have the ability to pause or intervene in active AI processes?</li>
+  <li>Are AI failure scenarios documented, owned, and operationally ready?</li>
+</ol>
+
+<p>Organizations that can answer these questions with evidence (not assurances) will be positioned to deploy AI systems safely in high-stakes environments. Those that cannot are operating with a control model that recent empirical evidence suggests may not hold.</p>
+
+<p>The question is no longer whether a kill switch exists. It is whether it works.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="artificial intelligence" /><category term="ai security" /><category term="governance" /><category term="risk management" /><category term="AIUC" /><summary type="html"><![CDATA[A governance-focused whitepaper examining new empirical evidence that challenges core assumptions about AI control, and defining four auditable requirements for real-world AI kill switches.]]></summary></entry><entry><title type="html">AgentBench: A Framework for AI Agent Control Validation</title><link href="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/" rel="alternate" type="text/html" title="AgentBench: A Framework for AI Agent Control Validation" /><published>2026-04-20T00:00:00-04:00</published><updated>2026-04-20T15:19:14-04:00</updated><id>http://localhost:4000/blog/ai-controls-aegis</id><content type="html" xml:base="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/"><![CDATA[<p>While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG<sup id="fnref:stig"><a href="#fn:stig" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> is a four-letter word.” No one likes IT compliance.</p>
 
 <p>AgentBench is a few letters longer, but that is not the point.</p>
 
@@ -231,7 +284,7 @@
       <p>Security Technical Implementation Guides (STIGs) are configuration standards developed by the Defense Information Systems Agency (DISA) to harden IT systems, networks, and software against cyberattacks. <a href="#fnref:stig" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="artificial intelligence" /><category term="agentic AI" /><category term="security" /><category term="AI governance" /><category term="AgentBench" /><category term="GRC engineering" /><category term="AIUC" /><category term="OWASP LLM Top 10" /><category term="NIST AI RMF" /><summary type="html"><![CDATA[This post shows how AI agent controls can be validated by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/AgentBench/AgentBench.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/AgentBench/AgentBench.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-15T05:32:07-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (and later wrote about that in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.</p>
+</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="artificial intelligence" /><category term="agentic AI" /><category term="security" /><category term="AI governance" /><category term="AgentBench" /><category term="GRC engineering" /><category term="AIUC" /><category term="OWASP LLM Top 10" /><category term="NIST AI RMF" /><summary type="html"><![CDATA[This post shows how AI agent controls can be validated by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/agentbench/agentbench.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/agentbench/agentbench.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs</title><link href="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/" rel="alternate" type="text/html" title="Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs" /><published>2026-04-02T00:00:00-04:00</published><updated>2026-04-15T05:32:07-04:00</updated><id>http://localhost:4000/blog/spycraft-2-1-trace-wi</id><content type="html" xml:base="http://localhost:4000/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/"><![CDATA[<p>I read <em>Tracers in the Dark</em><sup id="fnref:tracers"><a href="#fn:tracers" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> while working on <a href="/publications/vader-dead-drop-resolver/">VADER</a> (and later wrote about that in <a href="/blog/spycraft-2-0/">Spycraft 2.0</a>), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.</p>
 
 <p>At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, to identify the full scope of dead drop resolvoers, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.</p>
 
@@ -578,7 +631,7 @@ You can use this to make day-to-day SOC decisions, not just read a ranking. Star
 
 <p>For security teams, that is actionable: the adversary landscape may look noisy at the sample level, but at the cluster and behavior level, persistence is measurable, consistent, and defensible.</p>
 
-<p>Practical takeaway: transparent, repeatable analysis gives teams something they can defend, challenge, and improve over time.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="malware" /><category term="threat intelligence" /><category term="malware persistence" /><category term="mitre attack" /><category term="detection engineering" /><summary type="html"><![CDATA[A reproducible analysis of 120,000 malware samples showing which malware clusters remained active and behaviorally stable over time.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">2026: The End of Vibe Adoption</title><link href="http://localhost:4000/publications/the-end-of-vibe-adoption/" rel="alternate" type="text/html" title="2026: The End of Vibe Adoption" /><published>2026-02-01T00:00:00-05:00</published><updated>2026-04-15T05:32:07-04:00</updated><id>http://localhost:4000/publications/end-of-vibe-adoption</id><content type="html" xml:base="http://localhost:4000/publications/the-end-of-vibe-adoption/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+<p>Practical takeaway: transparent, repeatable analysis gives teams something they can defend, challenge, and improve over time.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="malware" /><category term="threat intelligence" /><category term="malware persistence" /><category term="mitre attack" /><category term="detection engineering" /><summary type="html"><![CDATA[A reproducible analysis of 120,000 malware samples showing which malware clusters remained active and behaviorally stable over time.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/yearly_malware/icon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">2026: The End of Vibe Adoption</title><link href="http://localhost:4000/publications/the-end-of-vibe-adoption/" rel="alternate" type="text/html" title="2026: The End of Vibe Adoption" /><published>2026-02-01T00:00:00-05:00</published><updated>2026-04-20T15:10:37-04:00</updated><id>http://localhost:4000/publications/end-of-vibe-adoption</id><content type="html" xml:base="http://localhost:4000/publications/the-end-of-vibe-adoption/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
   <span class="entry-context__item">AIUC-1</span>
   <span class="entry-context__item">February 1, 2026</span>
   
@@ -1002,36 +1055,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
 
 <ul>
   <li><a href="https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point">Army Operationalizes Zero Trust</a></li>
-</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="zero-trust" /><category term="DoW" /><category term="risk-management" /><summary type="html"><![CDATA[Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.]]></summary></entry><entry><title type="html">CS 483: Digital Forensics</title><link href="http://localhost:4000/teaching/2025-01-15-cs483-digital-forensics/" rel="alternate" type="text/html" title="CS 483: Digital Forensics" /><published>2025-01-15T00:00:00-05:00</published><updated>2025-12-29T17:33:04-05:00</updated><id>http://localhost:4000/teaching/cs483-digital-forensics</id><content type="html" xml:base="http://localhost:4000/teaching/2025-01-15-cs483-digital-forensics/"><![CDATA[<p>Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.</p>
-
-<div class="entry-context entry-context--teaching" aria-label="Teaching metadata summary">
-  <span class="entry-context__item">CS 483</span>
-  <span class="entry-context__item">Spring 2025</span>
-  <span class="entry-context__item">Course Director</span>
-  <span class="entry-context__item">United States Military Academy</span>
-</div>
-
-<div class="meta grid entry-details">
-  <div class="meta-item"><strong>Institution:</strong> United States Military Academy</div>
-  <div class="meta-item"><strong>Department:</strong> Department of Electrical Engineering and Computer Science</div>
-  <div class="meta-item"><strong>Course:</strong> CS 483</div>
-  <div class="meta-item"><strong>Term:</strong> Spring 2025</div>
-  <div class="meta-item"><strong>Credits:</strong> 3.0</div>
-  <div class="meta-item"><strong>Role:</strong> Course Director</div>
-  <div class="meta-item"><strong>Location:</strong> West Point, NY</div>
-  
-</div>
-
-<p>The course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.</p>
-
-<h3 id="learning-objectives">Learning Objectives</h3>
-
-<p>Upon successful completion, students are able to:</p>
-
-<ul>
-  <li>Apply a scientific methodology to the acquisition and analysis of digital evidence.</li>
-  <li>Use multiple software tools to acquire and analyze digital evidence.</li>
-  <li>Explain digital forensics concepts, results, and conclusions to both technical and non-technical audiences.</li>
-  <li>Demonstrate an understanding of the processes and tooling required to reverse engineer malware.</li>
-  <li>Perform memory forensics to hunt for adversary and criminal activity.</li>
-</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="teaching" /><summary type="html"><![CDATA[Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.]]></summary></entry></feed>
+</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="zero-trust" /><category term="DoW" /><category term="risk-management" /><summary type="html"><![CDATA[Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.]]></summary></entry></feed>
