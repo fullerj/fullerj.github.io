@@ -55,7 +55,3 @@ The paper outlines these requirements as four governance questions:
 Organizations that can answer these questions with evidence (not assurances) will be positioned to deploy AI systems safely in high-stakes environments. Those that cannot are operating with a control model that recent empirical evidence suggests may not hold.
 
 The question is no longer whether a kill switch exists. It is whether it works.
-
-## Media Coverage
-
-- [{{ page.media_links[0].title }}]({{ page.media_links[0].url }})
