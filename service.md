@@ -7,7 +7,7 @@ description: >
 ---
 
 <section class="service-summary" aria-label="Service overview">
-  <p class="service-summary__item"><strong>7</strong> active and recent service roles</p>
+  <p class="service-summary__item"><strong>5</strong> active service roles</p>
   <p class="service-summary__item"><strong>1</strong> consortium leadership role</p>
   <p class="service-summary__item"><strong>4</strong> program committee appointments</p>
   <p class="service-summary__item"><strong>2</strong> journal and publication review engagements</p>
@@ -28,7 +28,7 @@ description: >
         <span class="service-card__meta">Founding Consortium Member, Nov 2025-Present</span>
       </summary>
       <div class="service-card__content">
-        <p>Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.</p>
+        <p>CContributing to the development of <a href="https://www.aiuc-1.com">AIUC-1</a>, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and legal leaders across industry, government, academia, and nonprofits.</p>
         {% assign aiuc_artifacts = site.posts | where_exp: "item", "item.venue == 'AIUC-1' or item.authors contains 'AIUC-1' or item.tags contains 'AIUC' or item.tags contains 'AUIC'" | sort: "date" | reverse %}
         {% if aiuc_artifacts.size > 0 %}
           <p><strong>Related Artifacts</strong></p>
@@ -55,7 +55,7 @@ description: >
         <span class="service-card__meta">Program Committee, 2024-Present</span>
       </summary>
       <div class="service-card__content">
-        <p>Supporting peer review and technical program quality for one of the leading venues in systems and security research.</p>
+        <p>Supporting peer review and technical program quality for the <a href="https://www.usenix.org/conferences/byname/108">USENIX Security Symposium</a>, a leading venue for systems and security research.</p>
       </div>
     </details>
 
@@ -96,7 +96,7 @@ description: >
   <div class="service-cards">
     <details class="service-card">
       <summary>
-        <span class="service-card__heading">Computers &amp; Security</span>
+        <span class="service-card__heading">Computers &amp; Security (Elsevier Journal)</span>
         <span class="service-card__meta">Reviewer, 2022-Present</span>
       </summary>
       <div class="service-card__content">
