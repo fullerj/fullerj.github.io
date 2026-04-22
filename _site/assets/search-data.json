@@ -475,7 +475,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-04-21T17:23:41-04:00",
+    "date": "2026-04-22T15:38:36-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -494,7 +494,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-04-21T17:23:41-04:00",
+    "date": "2026-04-22T15:38:36-04:00",
     "excerpt": "",
     "content": "14 publications across 8 years and 11 venues.\n  \n\n  \n    \n      Sort by\n      \n        Newest first\n        Oldest first"
   },
@@ -513,7 +513,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-04-21T17:23:41-04:00",
+    "date": "2026-04-22T15:38:36-04:00",
     "excerpt": "",
     "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
   },
@@ -742,8 +742,8 @@
     "url": "/service/",
     "collection": "pages",
     "date": null,
-    "excerpt": "7 active and recent service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Security Standards Leadership\n  Program Committees\n  Reviewer Engage",
-    "content": "7 active and recent service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Security Standards Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n\n  Security Standards Leadership\n  \n    \n      \n        AIUC-1\n        Founding Consortium Member, Nov 2025-Present\n      \n      \n        Contributing to the development of the first end-to-end certification standard for enterprise AI agents, working alongside security, risk, and legal leaders across industry, government, academia, and nonprofits.\n        {% assign aiuc_artifacts = site.posts | where_exp: \"item\", \"item.venue == 'AIUC-1' or item.authors contains 'AIUC-1' or item.tags contains 'AIUC' or item.tags contains 'AUIC'\" | sort: \"date\" | reverse %}\n        {% if aiuc_artifacts.size &gt; 0 %}\n          Related Artifacts\n          \n            {% for artifact in aiuc_artifacts %}\n              \n                {{ artifact.title }}\n                {% if arti"
+    "excerpt": "5 active service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Security Standards Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n\n  ",
+    "content": "5 active service roles\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Security Standards Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n\n  Security Standards Leadership\n  \n    \n      \n        AIUC-1\n        Founding Consortium Member, Nov 2025-Present\n      \n      \n        CContributing to the development of AIUC-1, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and legal leaders across industry, government, academia, and nonprofits.\n        {% assign aiuc_artifacts = site.posts | where_exp: \"item\", \"item.venue == 'AIUC-1' or item.authors contains 'AIUC-1' or item.tags contains 'AIUC' or item.tags contains 'AUIC'\" | sort: \"date\" | reverse %}\n        {% if aiuc_artifacts.size &gt; 0 %}\n          Related Artifacts\n          \n            {% for artifact in aiuc_artifacts %}\n              \n                {{ artifact.title }}\n                {% if ar"
   },
 
   
