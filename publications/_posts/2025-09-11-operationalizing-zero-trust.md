@@ -7,9 +7,9 @@ categories:
   - publications
 permalink: /publications/operationalizing-zero-trust/
 tags:
-  - zero-trust
+  - zero- rust
   - DoW
-  - risk-management
+  - risk management
 related_posts:
 authors: "F. Shah, <u>Jonathan Fuller</u>"
 date: 2025-09-11

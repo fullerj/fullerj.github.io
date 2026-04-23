@@ -7,9 +7,9 @@ categories:
   - publications
 permalink: /publications/rogue-zwave-controllers/
 tags:
-  - wireless-security
+  - wireless security
   - IoT
-  - ZWave
+  - Z-Wave
 related_posts:
 conference: "2015 IEEE 40th Local Computer Networks Conference Workshops (LCN Workshops), Clearwater Beach, FL, 2015"
 authors: "<u>Jonathan Fuller</u>; B. Ramsey"

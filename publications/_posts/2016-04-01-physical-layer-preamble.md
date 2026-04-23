@@ -7,8 +7,8 @@ categories:
   - publications
 permalink: /publications/physical-layer-preamble-manipulation-80211ac/
 tags:
-  - wireless-security
-  - ieee-80211
+  - wireless security
+  - IEEE 802.11
   - fingerprinting
 related_posts:
 journal: "IET Electronics Letters, Volume 52, Issue 8, April 2016, Pages 669–671"
