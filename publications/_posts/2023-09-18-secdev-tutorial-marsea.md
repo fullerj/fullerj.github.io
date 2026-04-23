@@ -8,7 +8,7 @@ categories:
 permalink: /publications/secdev-tutorial-web-application-abuse/
 tags:
   - malware
-  - incident-response
+  - incident response
   - tutorials
 related_posts:
 conference: "IEEE Secure Development Conference (SecDev): Invited Tutorial"

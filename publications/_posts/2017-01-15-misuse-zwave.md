@@ -7,9 +7,10 @@ categories:
   - publications
 permalink: /publications/misuse-detection-zwave-attacks/
 tags:
-  - intrusion-detection
-  - wireless-security
+  - intrusion detection
+  - wireless security
   - z-wave
+  - iot
 related_posts:
 journal: "Computers & Security, Volume 64, January 2017, Pages 44–58"
 venue: "COSE"

@@ -7,9 +7,9 @@ categories:
   - publications
 permalink: /publications/the-end-of-vibe-adoption/
 tags:
-  - artificial-intelligence
-  - ai-security
-  - risk-management
+  - artificial intelligence
+  - ai security
+  - risk management
   - governance
 related_posts:
 - /blog/ai-agent-control-validation-agentbench/
