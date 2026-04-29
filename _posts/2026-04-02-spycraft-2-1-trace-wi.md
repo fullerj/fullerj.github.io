@@ -129,3 +129,7 @@ Before this, these blockchain indicators felt like dead drops, static and isolat
 It reads more like a partial blueprint than a list of clues, with enough visible shape and continuity to suggest underlying coordination, even if the full system is still incomplete. I will probably keep pulling on this thread.
 
 [^tracers]: Greenberg, Andy. *Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency*. Doubleday, 2022.
+
+---
+
+For the source, see the [GitHub repo](https://github.com/Empirical-Defense/trace-wi).
