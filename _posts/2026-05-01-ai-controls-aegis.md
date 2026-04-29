@@ -19,6 +19,7 @@ tags:
   - NIST AI RMF
 related_posts:
   - /publications/the-end-of-vibe-adoption/
+  - /publications/ai-kill-switch-requirements/
 image:
   path: /assets/blogs/agentbench/agentbench.png
   alt: "AI agent control validation with AgentBench"
