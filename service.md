@@ -7,17 +7,35 @@ description: >
 ---
 
 <section class="service-summary" aria-label="Service overview">
-  <p class="service-summary__item"><strong>5</strong> active service roles</p>
+  <p class="service-summary__item"><strong>6</strong> active service roles</p>
+  <p class="service-summary__item"><strong>1</strong> advisory role</p>
   <p class="service-summary__item"><strong>1</strong> consortium leadership role</p>
   <p class="service-summary__item"><strong>4</strong> program committee appointments</p>
   <p class="service-summary__item"><strong>2</strong> journal and publication review engagements</p>
 </section>
 
 <nav class="service-quick-links" aria-label="Jump to service categories">
+  <a href="#service-advisory">Advisory Roles</a>
   <a href="#service-consortium">Security Standards Leadership</a>
   <a href="#service-committees">Program Committees</a>
   <a href="#service-review">Reviewer Engagements</a>
 </nav>
+
+<section class="service-group" id="service-advisory" aria-label="Advisory Roles">
+  <h2>Advisory Roles</h2>
+  <div class="service-cards">
+    <details class="service-card">
+      <summary>
+        <span class="service-card__heading">Refractal</span>
+        <span class="service-card__meta">Founding Advisor, Apr 2026-Present</span>
+      </summary>
+      <div class="service-card__content">
+        <p>Advise <a href="https://refractal-ai.com">Refractal</a> on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
 
 
 <section class="service-group" id="service-consortium" aria-label="Security Standards Leadership">
@@ -29,7 +47,7 @@ description: >
         <span class="service-card__meta">Founding Consortium Member, Nov 2025-Present</span>
       </summary>
       <div class="service-card__content">
-        <p>CContributing to the development of <a href="https://www.aiuc-1.com">AIUC-1</a>, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and legal leaders across industry, government, academia, and nonprofits.</p>
+        <p>Contributing to the development of <a href="https://www.aiuc-1.com">AIUC-1</a>, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and legal leaders across industry, government, academia, and nonprofits.</p>
         {% assign aiuc_artifacts = site.posts | where_exp: "item", "item.venue == 'AIUC-1' or item.authors contains 'AIUC-1' or item.tags contains 'AIUC' or item.tags contains 'AUIC'" | sort: "date" | reverse %}
         {% if aiuc_artifacts.size > 0 %}
           <p><strong>Related Artifacts</strong></p>
