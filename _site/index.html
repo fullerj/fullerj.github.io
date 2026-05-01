@@ -118,7 +118,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-05-01T15:18:11-04:00',
+    INDEX_KEY: 'index--2026-05-01T15:53:02-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -420,7 +420,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
   
-  <article class="home-post-card" tabindex="0" aria-expanded="false" data-flip-card="">
+  <article class="home-post-card" aria-expanded="false" data-flip-card="">
     <div class="home-post-card__media">
       <div class="home-post-card__inner">
         <div class="home-post-card__face home-post-card__face--front">
@@ -451,7 +451,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
   
-  <article class="home-post-card" tabindex="0" aria-expanded="false" data-flip-card="">
+  <article class="home-post-card" aria-expanded="false" data-flip-card="">
     <div class="home-post-card__media">
       <div class="home-post-card__inner">
         <div class="home-post-card__face home-post-card__face--front">
@@ -482,7 +482,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
   
-  <article class="home-post-card" tabindex="0" aria-expanded="false" data-flip-card="">
+  <article class="home-post-card" aria-expanded="false" data-flip-card="">
     <div class="home-post-card__media">
       <div class="home-post-card__inner">
         <div class="home-post-card__face home-post-card__face--front">
@@ -516,11 +516,14 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       <h3>Selected Writing and Papers</h3>
 
 
-
+  
 <ul>
   
   <li>
     <strong><a href="/publications/ai-kill-switch-requirements/">2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs</a></strong>
+    
+    <br />
+    <small>AIUC-1</small>
     
   </li>
   
@@ -875,23 +878,18 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         return;
       }
 
-      card.addEventListener('click', function (event) {
-        if (isInteractiveTarget(event.target)) {
-          return;
-        }
-        toggleCard(root, card);
+      // Flip on hover (mouse) only. Clicking the card does nothing; only
+      // the "Read more" link should navigate.
+      card.addEventListener('mouseenter', function () {
+        setFlipped(card, true);
       });
 
+      card.addEventListener('mouseleave', function () {
+        setFlipped(card, false);
+      });
+
+      // Allow Escape to close a flipped card when a keyboard user is within it.
       card.addEventListener('keydown', function (event) {
-        if (isInteractiveTarget(event.target)) {
-          return;
-        }
-
-        if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
-          event.preventDefault();
-          toggleCard(root, card);
-        }
-
         if (event.key === 'Escape') {
           setFlipped(card, false);
         }

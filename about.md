@@ -128,7 +128,7 @@ featured_publications:
   {% assign recent_reading_minutes = recent_word_count | plus: rounding_offset | divided_by: reading_wpm %}
   {% if recent_reading_minutes < 1 %}{% assign recent_reading_minutes = 1 %}{% endif %}
   {% assign post_abstract = post.abstract | default: post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 %}
-  <article class="home-post-card" tabindex="0" aria-expanded="false" data-flip-card>
+  <article class="home-post-card" aria-expanded="false" data-flip-card>
     <div class="home-post-card__media">
       <div class="home-post-card__inner">
         <div class="home-post-card__face home-post-card__face--front">
@@ -164,14 +164,14 @@ featured_publications:
       <h3>Selected Writing and Papers</h3>
 
 {% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
-{% if featured_publications and featured_publications.size > 0 %}
+  {% if featured_publications and featured_publications.size > 0 %}
 <ul>
   {% for pub in featured_publications limit:3 %}
   <li>
     <strong><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></strong>
-    {% if pub.conference %}
+    {% if pub.conference or pub.venue %}
     <br/>
-    <small>{{ pub.conference }}</small>
+    <small>{{ pub.conference | default: pub.venue }}</small>
     {% endif %}
   </li>
   {% endfor %}
@@ -398,23 +398,18 @@ featured_publications:
         return;
       }
 
-      card.addEventListener('click', function (event) {
-        if (isInteractiveTarget(event.target)) {
-          return;
-        }
-        toggleCard(root, card);
+      // Flip on hover (mouse) only. Clicking the card does nothing; only
+      // the "Read more" link should navigate.
+      card.addEventListener('mouseenter', function () {
+        setFlipped(card, true);
       });
 
+      card.addEventListener('mouseleave', function () {
+        setFlipped(card, false);
+      });
+
+      // Allow Escape to close a flipped card when a keyboard user is within it.
       card.addEventListener('keydown', function (event) {
-        if (isInteractiveTarget(event.target)) {
-          return;
-        }
-
-        if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
-          event.preventDefault();
-          toggleCard(root, card);
-        }
-
         if (event.key === 'Escape') {
           setFlipped(card, false);
         }
