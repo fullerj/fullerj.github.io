@@ -41,11 +41,11 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
 <meta property="og:url" content="http://localhost:4000/publications/" />
 <meta property="og:site_name" content="Jonathan Fuller" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-30T16:27:50-04:00" />
+<meta property="article:published_time" content="2026-05-01T15:18:11-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Technical Writing and Industry Papers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2026-04-06T10:34:41-04:00","datePublished":"2026-04-30T16:27:50-04:00","description":"A collection of technical writing and industry papers spanning multiple formats. This includes peer-reviewed research articles, online publications, and contributions across academic and professional venues.","headline":"Technical Writing and Industry Papers","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/publications/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Jonathan Fuller"},"dateModified":"2026-04-06T10:34:41-04:00","datePublished":"2026-05-01T15:18:11-04:00","description":"A collection of technical writing and industry papers spanning multiple formats. This includes peer-reviewed research articles, online publications, and contributions across academic and professional venues.","headline":"Technical Writing and Industry Papers","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.jpg"},"name":"Jonathan Fuller"},"url":"http://localhost:4000/publications/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -119,7 +119,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-04-30T16:27:50-04:00',
+    INDEX_KEY: 'index--2026-05-01T15:18:11-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -364,12 +364,263 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </header>
 
   
-<section class="pub-index-toolbar" aria-label="Publications overview">
+<section class="pub-index-toolbar blog-index-toolbar" aria-label="Publications overview and filters">
   <p class="pub-index-toolbar__summary">
-    <strong>14</strong> publications across <strong>8</strong> years and <strong>11</strong> venues.
+    <strong>14</strong> publications across <strong>8</strong> years and <strong>29</strong> focus areas.
   </p>
 
   <div class="blog-index-toolbar__controls">
+    
+      <div class="blog-focus-filter" aria-label="Filter publications by focus">
+        <p class="blog-focus-filter__label">Filter by</p>
+        <button type="button" class="blog-focus-filter__toggle" aria-expanded="false" aria-controls="pub-focus-filter-panel">
+          <span class="blog-focus-filter__toggle-label">Focus Area</span>
+          <span class="blog-focus-filter__toggle-caret" aria-hidden="true">▾</span>
+        </button>
+        <div id="pub-focus-filter-panel" class="blog-focus-filter__panel" hidden="">
+          <div class="blog-focus-filter__groups">
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">A</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="aiuc" />
+                      <span>AIUC</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="ai-security" />
+                      <span>ai security</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="artificial-intelligence" />
+                      <span>artificial intelligence</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">D</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="dow" />
+                      <span>DoW</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="dead-drops" />
+                      <span>dead drops</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">I</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="ieee-802-11" />
+                      <span>IEEE 802.11</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="iot" />
+                      <span>IoT</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="incident-response" />
+                      <span>incident response</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="intrusion-detection" />
+                      <span>intrusion detection</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="iot" />
+                      <span>iot</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">Z</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="z-wave" />
+                      <span>Z-Wave</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="z-wave" />
+                      <span>z-wave</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="zero-rust" />
+                      <span>zero- rust</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">B</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="botnets" />
+                      <span>botnets</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">C</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="command-and-control" />
+                      <span>command-and-control</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="content-management" />
+                      <span>content management</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="covert-channels" />
+                      <span>covert channels</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="critical-infrastructure" />
+                      <span>critical infrastructure</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">F</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="fingerprinting" />
+                      <span>fingerprinting</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="forensics" />
+                      <span>forensics</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">G</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="governance" />
+                      <span>governance</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">M</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="malware" />
+                      <span>malware</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">O</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="over-premissioned" />
+                      <span>over-premissioned</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">R</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="risk-management" />
+                      <span>risk management</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">T</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="tutorials" />
+                      <span>tutorials</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+              <div class="blog-focus-filter__group">
+                <p class="blog-focus-filter__group-label">W</p>
+                <div class="blog-focus-filter__options">
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="web-applications" />
+                      <span>web applications</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="web-security" />
+                      <span>web security</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="wireless-security" />
+                      <span>wireless security</span>
+                    </label>
+                  
+                    <label class="blog-focus-filter__option">
+                      <input type="checkbox" class="pub-focus-filter__checkbox" value="wordpress" />
+                      <span>wordpress</span>
+                    </label>
+                  
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    
+
     <div class="blog-sort-filter">
       <label class="blog-sort-filter__label" for="pub-sort-select">Sort by</label>
       <select id="pub-sort-select" class="blog-sort-filter__select" aria-label="Sort publications">
@@ -378,7 +629,134 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       </select>
     </div>
   </div>
+
+  
+    <p class="pub-selected-summary" aria-live="polite">Showing all publications</p>
+    <p class="pub-filter-hint">Select a focus to narrow the archive.</p>
+  
 </section>
+
+<script>
+(function () {
+  function initFocusDropdown(root) {
+    var filter = root.querySelector('.blog-focus-filter');
+    if (!filter) return;
+
+    var toggle = filter.querySelector('.blog-focus-filter__toggle');
+    var panel = filter.querySelector('.blog-focus-filter__panel');
+    if (!toggle || !panel || toggle.hasAttribute('data-dropdown-initialized')) return;
+
+    toggle.addEventListener('click', function () {
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+      panel.hidden = isExpanded;
+    });
+
+    toggle.setAttribute('data-dropdown-initialized', 'true');
+  }
+
+  initFocusDropdown(document);
+
+  function initPublicationFilter(root) {
+    var filter = root.querySelector('.blog-focus-filter');
+    if (!filter || filter.hasAttribute('data-filter-initialized')) return;
+
+    var checkboxes = Array.prototype.slice.call(filter.querySelectorAll('.pub-focus-filter__checkbox'));
+    var items = Array.prototype.slice.call(root.querySelectorAll('.publication-list-item'));
+    var groups = Array.prototype.slice.call(root.querySelectorAll('.publication-year-group'));
+    var summary = root.querySelector('.pub-selected-summary');
+    if (!checkboxes.length || !items.length) return;
+
+    var tagLabels = {};
+    checkboxes.forEach(function (checkbox) {
+      var optionValue = checkbox.value;
+      if (optionValue) {
+        tagLabels[optionValue] = checkbox.nextElementSibling ? checkbox.nextElementSibling.textContent.trim() : optionValue;
+      }
+    });
+
+    var selectedTags = new Set();
+
+    function highlightYears() {
+      groups.forEach(function (group) {
+        var heading = group.querySelector('h2');
+        if (!heading) return;
+        var visibleItems = group.querySelector('.publication-list-item:not([hidden])');
+        heading.classList.toggle('blog-archive-heading--active', !!visibleItems);
+      });
+    }
+
+    function updateSummary() {
+      if (!summary) return;
+      if (selectedTags.size === 0) {
+        summary.textContent = 'Showing all publications';
+        return;
+      }
+      var focused = Array.from(selectedTags).map(function (tag) {
+        return tagLabels[tag] || tag;
+      }).sort();
+      summary.textContent = 'Focused on: ' + focused.join(', ');
+    }
+
+    function applyFilter() {
+      items.forEach(function (item) {
+        var tagsString = item.getAttribute('data-tags') || '';
+        var tags = tagsString ? tagsString.split(/\s+/) : [];
+        var matches = selectedTags.size === 0 || tags.some(function (tag) {
+          return selectedTags.has(tag);
+        });
+        item.hidden = !matches;
+        item.setAttribute('aria-hidden', matches ? 'false' : 'true');
+      });
+
+      groups.forEach(function (group) {
+        var visible = group.querySelector('.publication-list-item:not([hidden])');
+        var heading = group.querySelector('h2');
+        var isEmpty = !visible;
+        group.hidden = isEmpty;
+        group.setAttribute('aria-hidden', isEmpty ? 'true' : 'false');
+        if (heading) {
+          heading.hidden = isEmpty;
+          heading.setAttribute('aria-hidden', isEmpty ? 'true' : 'false');
+        }
+      });
+
+      updateSummary();
+      highlightYears();
+    }
+
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+          selectedTags.add(checkbox.value);
+        } else {
+          selectedTags.delete(checkbox.value);
+        }
+        applyFilter();
+      });
+    });
+
+    applyFilter();
+    filter.setAttribute('data-filter-initialized', 'true');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      initPublicationFilter(document);
+    }, { once: true });
+  } else {
+    initPublicationFilter(document);
+  }
+
+  var pushStateEl = document.getElementById('_pushState');
+  if (pushStateEl) {
+    pushStateEl.addEventListener('hy-push-state-after', function () {
+      initPublicationFilter(document);
+    });
+  }
+})();
+</script>
+
 
 
 
@@ -468,7 +846,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2026-04-21">
+  
+  
+
+  <li class="publication-list-item" data-date="2026-04-21" data-tags="artificial-intelligence ai-security governance risk-management aiuc">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -509,7 +890,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2026-02-01">
+  
+  
+
+  <li class="publication-list-item" data-date="2026-02-01" data-tags="artificial-intelligence ai-security risk-management governance">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -556,7 +940,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2025-10-13">
+  
+  
+
+  <li class="publication-list-item" data-date="2025-10-13" data-tags="malware command-and-control dead-drops web-security">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -599,7 +986,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2025-09-11">
+  
+  
+
+  <li class="publication-list-item" data-date="2025-09-11" data-tags="zero-rust dow risk-management">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -646,7 +1036,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2023-09-18">
+  
+  
+
+  <li class="publication-list-item" data-date="2023-09-18" data-tags="malware incident-response tutorials">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -689,7 +1082,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2023-08-09">
+  
+  
+
+  <li class="publication-list-item" data-date="2023-08-09" data-tags="malware web-applications incident-response">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -732,7 +1128,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2023-05-01">
+  
+  
+
+  <li class="publication-list-item" data-date="2023-05-01" data-tags="command-and-control forensics">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -779,7 +1178,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2022-04-10">
+  
+  
+
+  <li class="publication-list-item" data-date="2022-04-10" data-tags="malware wordpress content-management">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -828,7 +1230,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2021-11-17">
+  
+  
+
+  <li class="publication-list-item" data-date="2021-11-17" data-tags="botnets command-and-control over-premissioned">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -877,7 +1282,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2017-01-15">
+  
+  
+
+  <li class="publication-list-item" data-date="2017-01-15" data-tags="intrusion-detection wireless-security z-wave iot">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -926,7 +1334,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2016-04-01">
+  
+  
+
+  <li class="publication-list-item" data-date="2016-04-01" data-tags="wireless-security ieee-802-11 fingerprinting">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -969,7 +1380,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2016-03-01">
+  
+  
+
+  <li class="publication-list-item" data-date="2016-03-01" data-tags="intrusion-detection covert-channels">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -1018,7 +1432,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2015-10-29">
+  
+  
+
+  <li class="publication-list-item" data-date="2015-10-29" data-tags="wireless-security iot z-wave">
     <article class="publication-card">
       <p class="publication-card__meta">
         
@@ -1061,7 +1478,10 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   
   
 
-  <li class="publication-list-item" data-date="2015-03-01">
+  
+  
+
+  <li class="publication-list-item" data-date="2015-03-01" data-tags="wireless-security critical-infrastructure">
     <article class="publication-card">
       <p class="publication-card__meta">
         

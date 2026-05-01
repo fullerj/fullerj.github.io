@@ -3,6 +3,8 @@ layout: blog
 title: "Spycraft 2.1: From Wallets to Structure in Bitcoin Transaction Graphs"
 description: >
   This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.
+abstract: >
+  Spycraft 2.1 models malware-linked Bitcoin wallets and transactions as a graph to expose concentrated hubs, repeated flows, and structured signaling patterns.
 date: 2026-04-02
 categories:
   - posts

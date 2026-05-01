@@ -3,6 +3,8 @@ layout: blog
 title: "From Anomalous Traffic to Spycraft 2.0"
 description: >
   Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.
+abstract: >
+  We turn dead drop resolver tradecraft back on botnet operators by extracting malware decoding logic and using it to uncover covert command channels before they spread.
 date: 2025-10-24
 categories:
   - posts

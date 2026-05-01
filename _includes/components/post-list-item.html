@@ -5,7 +5,19 @@
   {% assign pub_meta = post.conference | default: post.journal | default: post.book %}
   {% assign pub_summary = post.description | default: post.excerpt | strip_html | strip_newlines %}
 
-  <li class="publication-list-item" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+  {% assign post_tag_tokens = '' %}
+  {% if post.tags %}
+    {% for tag in post.tags %}
+      {% assign tag_slug = tag | slugify %}
+      {% if forloop.first %}
+        {% assign post_tag_tokens = tag_slug %}
+      {% else %}
+        {% assign post_tag_tokens = post_tag_tokens | append: ' ' | append: tag_slug %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  <li class="publication-list-item" data-date="{{ post.date | date: '%Y-%m-%d' }}" data-tags="{{ post_tag_tokens | strip }}">
     <article class="publication-card">
       <p class="publication-card__meta">
         {% if post.venue %}
