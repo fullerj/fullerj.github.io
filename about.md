@@ -6,6 +6,12 @@ description: >
 hide_description: true
 redirect_from:
   - /download/
+featured_publications:
+  - /publications/ai-kill-switch-requirements/
+  - /publications/vader-dead-drop-resolver/
+  - /publications/marsea-web-application-abuse/
+
+
 ---
 
 # About
@@ -21,6 +27,18 @@ redirect_from:
 {% assign insights_count = site.posts | where_exp:'post','post.categories contains "posts"' | size %}
 {% assign research_count = site.posts | where_exp:'post','post.categories contains "publications"' | size %}
 {% assign talks_count = site.data.talks | size %}
+{% assign featured_publications = '' | split: '' %}
+{% if page.featured_publications and page.featured_publications.size > 0 %}
+  {% for featured_url in page.featured_publications %}
+    {% for pub in site.posts %}
+      {% if pub.categories contains "publications" and pub.url == featured_url %}
+        {% assign featured_publications = featured_publications | push: pub %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% assign featured_publications = site.posts | where_exp:'post','post.categories contains "publications"' | sort: 'date' | reverse %}
+{% endif %}
 {% assign media_mentions_urls = '' | split: '' %}
 
 {% assign media_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
@@ -109,15 +127,30 @@ redirect_from:
   {% assign recent_word_count = post.content | strip_html | number_of_words %}
   {% assign recent_reading_minutes = recent_word_count | plus: rounding_offset | divided_by: reading_wpm %}
   {% if recent_reading_minutes < 1 %}{% assign recent_reading_minutes = 1 %}{% endif %}
-  <a href="{{ post.url | relative_url }}" class="home-post-card">
-    {% if post.image and post.image.path %}
-    <img src="{{ post.image.path | relative_url }}" alt="{{ post.image.alt }}" class="home-post-card__image" loading="lazy" decoding="async">
-    {% endif %}
+  {% assign post_abstract = post.abstract | default: post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 180 %}
+  <article class="home-post-card" tabindex="0" aria-expanded="false" data-flip-card>
+    <div class="home-post-card__media">
+      <div class="home-post-card__inner">
+        <div class="home-post-card__face home-post-card__face--front">
+          {% if post.image and post.image.path %}
+          <img src="{{ post.image.path | relative_url }}" alt="{{ post.image.alt }}" class="home-post-card__image" loading="lazy" decoding="async">
+          {% endif %}
+        </div>
+        <div class="home-post-card__face home-post-card__face--back">
+          <div class="home-post-card__back-content">
+            {% if post_abstract and post_abstract != '' %}
+            <p class="home-post-card__abstract">{{ post_abstract }}</p>
+            {% endif %}
+            <a class="home-post-card__read-more" href="{{ post.url | relative_url }}">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="home-post-card__content">
-      <h4 class="home-post-card__title">{{ post.title }}</h4>
+      <h4 class="home-post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
       <small class="post-inline-meta">{{ recent_reading_minutes }} min read</small>
     </div>
-  </a>
+  </article>
   {% endfor %}
 </div>
 <p><a href="{{ '/blog/' | relative_url }}">Read all analysis</a></p>
@@ -131,14 +164,9 @@ redirect_from:
       <h3>Selected Writing and Papers</h3>
 
 {% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
-{% if recent_publications %}
-  {% assign recent_publications = recent_publications | sort: 'date' | reverse %}
-{% else %}
-  {% assign recent_publications = '' | split: '' %}
-{% endif %}
-{% if recent_publications and recent_publications.size > 0 %}
+{% if featured_publications and featured_publications.size > 0 %}
 <ul>
-  {% for pub in recent_publications limit:3 %}
+  {% for pub in featured_publications limit:3 %}
   <li>
     <strong><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></strong>
     {% if pub.conference %}
@@ -329,6 +357,94 @@ redirect_from:
 
   </div>
 </section>
+
+<script>
+(function () {
+  var CARD_SELECTOR = '[data-flip-card]';
+
+  function getCards(root) {
+    return Array.prototype.slice.call(root.querySelectorAll(CARD_SELECTOR));
+  }
+
+  function isInteractiveTarget(target) {
+    return !!target.closest('a, button, input, textarea, select, summary, label');
+  }
+
+  function setFlipped(card, flipped) {
+    card.classList.toggle('is-flipped', flipped);
+    card.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+  }
+
+  function clearCards(root) {
+    getCards(root).forEach(function (card) {
+      setFlipped(card, false);
+    });
+  }
+
+  function toggleCard(root, card) {
+    var shouldFlip = !card.classList.contains('is-flipped');
+    clearCards(root);
+    setFlipped(card, shouldFlip);
+  }
+
+  function initFlipCards(root) {
+    var cards = getCards(root);
+    if (!cards.length) {
+      return;
+    }
+
+    cards.forEach(function (card) {
+      if (card.getAttribute('data-flip-initialized') === 'true') {
+        return;
+      }
+
+      card.addEventListener('click', function (event) {
+        if (isInteractiveTarget(event.target)) {
+          return;
+        }
+        toggleCard(root, card);
+      });
+
+      card.addEventListener('keydown', function (event) {
+        if (isInteractiveTarget(event.target)) {
+          return;
+        }
+
+        if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+          event.preventDefault();
+          toggleCard(root, card);
+        }
+
+        if (event.key === 'Escape') {
+          setFlipped(card, false);
+        }
+      });
+
+      card.setAttribute('data-flip-initialized', 'true');
+    });
+
+    if (!root.hasAttribute('data-flip-global-initialized')) {
+      root.addEventListener('click', function (event) {
+        if (event.target.closest(CARD_SELECTOR)) {
+          return;
+        }
+
+        clearCards(root);
+      });
+
+      root.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          clearCards(root);
+        }
+      });
+
+      root.setAttribute('data-flip-global-initialized', 'true');
+    }
+  }
+
+  initFlipCards(document);
+})();
+</script>
 
 <section class="home-section home-section--credentials">
   <details class="home-expandable">

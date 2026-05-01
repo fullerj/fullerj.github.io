@@ -3,6 +3,8 @@ layout: blog
 title: "AgentBench: A Framework for AI Agent Control Validation"
 description: >
   This post shows how AI agent controls can be validated by translating them into structured tests, evaluating responses deterministically, and producing repeatable evidence for security validation.
+abstract: >
+  AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.
 date: 2026-04-20
 categories:
   - posts
