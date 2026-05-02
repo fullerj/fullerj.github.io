@@ -475,7 +475,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-05-01T15:53:02-04:00",
+    "date": "2026-05-02T09:42:03-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -494,9 +494,9 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-05-01T15:53:02-04:00",
+    "date": "2026-05-02T09:42:03-04:00",
     "excerpt": "",
-    "content": "14 publications across 8 years and 29 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      ai security\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              "
+    "content": "14 publications across 8 years and 27 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              "
   },
 
   
@@ -513,7 +513,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-05-01T15:53:02-04:00",
+    "date": "2026-05-02T09:42:03-04:00",
     "excerpt": "",
     "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
   },
@@ -628,8 +628,8 @@
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "5 published posts across 2 years and 25 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n             ",
-    "content": "5 published posts across 2 years and 25 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI governance\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      AgentBench\n                    \n                  \n                    \n                      \n                      agentic AI\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n              \n            \n              \n                G\n                \n                  \n                    \n                      \n    "
+    "excerpt": "Empirical Defense Blog\n  \n\n  New posts appear here first. Use the controls below to filter by focus area or sort the archive.\n\n\n\n  \n    5 published posts across 2 years and 25 focus areas.\n  \n\n  \n    \n      \n        Filt",
+    "content": "Empirical Defense Blog\n  \n\n  New posts appear here first. Use the controls below to filter by focus area or sort the archive.\n\n\n\n  \n    5 published posts across 2 years and 25 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI governance\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      AgentBench\n                    \n                  \n                    \n                      \n                      agentic AI\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n         "
   },
 
   
@@ -742,8 +742,8 @@
     "url": "/service/",
     "collection": "pages",
     "date": null,
-    "excerpt": "6 active service roles\n  1 advisory role\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Advisory Roles\n  Security Standards Leadership\n  Program Comm",
-    "content": "6 active service roles\n  1 advisory role\n  1 consortium leadership role\n  4 program committee appointments\n  2 journal and publication review engagements\n\n\n\n  Advisory Roles\n  Security Standards Leadership\n  Program Committees\n  Reviewer Engagements\n\n\n\n  Advisory Roles\n  \n    \n      \n        Refractal\n        Founding Advisor, Apr 2026-Present\n      \n      \n        Advise Refractal on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.\n      \n    \n  \n\n\n\n  Security Standards Leadership\n  \n    \n      \n        AIUC-1\n        Founding Consortium Member, Nov 2025-Present\n      \n      \n        Contributing to the development of AIUC-1, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and"
+    "excerpt": "Advisory Roles\n    1 role\n    \n      \n    \n  \n  \n    Security Standards\n    1 consortium role\n    \n      \n    \n  \n  \n    Program Committees\n    4 appointments\n    \n      \n      \n    \n  \n  \n    Reviewer Engagements\n    2 ",
+    "content": "Advisory Roles\n    1 role\n    \n      \n    \n  \n  \n    Security Standards\n    1 consortium role\n    \n      \n    \n  \n  \n    Program Committees\n    4 appointments\n    \n      \n      \n    \n  \n  \n    Reviewer Engagements\n    2 journal venues\n    \n      \n      \n    \n  \n\n\n\n  Advisory Roles\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.\n      \n    \n  \n\n\n\n  Security Standards Leadership\n  \n    \n      \n        \n          \n          \n            AIUC-1\n            Founding Consortium Member, Nov 2025-Present\n          \n        \n      \n      \n        Contributing to the deve"
   },
 
   

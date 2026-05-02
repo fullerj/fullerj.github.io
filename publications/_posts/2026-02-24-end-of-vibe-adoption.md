@@ -8,7 +8,7 @@ categories:
 permalink: /publications/the-end-of-vibe-adoption/
 tags:
   - artificial intelligence
-  - ai security
+  - AI security
   - risk management
   - governance
 related_posts:

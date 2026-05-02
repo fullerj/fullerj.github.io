@@ -7,7 +7,7 @@ categories:
   - publications
 permalink: /publications/operationalizing-zero-trust/
 tags:
-  - zero- rust
+  - zero trust
   - DoW
   - risk management
 related_posts:
