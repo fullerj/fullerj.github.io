@@ -2,7 +2,7 @@
 layout: page
 title: Analysis and Insights
 description: >
-  Analyses, talk recaps, educational insights, and applied research highlights.
+  Analysis, applied research, and field notes on cyber defense, adversary behavior, and AI security.
 permalink: /blog/
 ---
 
@@ -23,6 +23,14 @@ permalink: /blog/
 {% assign unique_tags = all_tags | uniq | sort %}
 {% assign focus_groups = unique_tags | group_by_exp: "tag", "tag | slice: 0, 1 | upcase" %}
 {% assign post_count = blog_posts | size %}
+
+<section class="blog-hero" aria-label="Empirical Defense Blog" style="--blog-hero-logo: url('{{ '/assets/blogs/blog_logo.jpeg' | relative_url }}');">
+  <div class="blog-hero__content">
+    <p class="blog-hero__eyebrow">Empirical Defense Blog</p>
+  </div>
+
+  <p class="blog-hero__meta">New posts appear here first. Use the controls below to filter by focus area or sort the archive.</p>
+</section>
 
 <section class="pub-index-toolbar blog-index-toolbar" aria-label="Blog overview and filters">
   <p class="pub-index-toolbar__summary">

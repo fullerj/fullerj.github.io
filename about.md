@@ -2,7 +2,7 @@
 layout: about
 image: /assets/img/headshot.png
 description: >
-  Bridging research, education, and cyber defense.
+  CISO at the United States Military Academy at West Point and Assistant Professor with a PhD in cybersecurity.
 hide_description: true
 redirect_from:
   - /download/
@@ -18,7 +18,8 @@ featured_publications:
 
 <section class="home-section home-section--intro">
 
-<!--author-->
+
+  <!--author-->
 
 </section>
 

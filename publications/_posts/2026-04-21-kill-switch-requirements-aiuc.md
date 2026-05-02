@@ -8,7 +8,7 @@ categories:
 permalink: /publications/ai-kill-switch-requirements/
 tags:
   - artificial intelligence
-  - ai security
+  - AI security
   - governance
   - risk management
   - AIUC
