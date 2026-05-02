@@ -7,39 +7,16 @@ description: >
 ---
 
 <!-- markdownlint-disable MD033 -->
-<nav class="service-category-rail" aria-label="Jump to service categories">
-  <a class="service-category-card service-category-card--advisory" href="#service-advisory">
-    <span class="service-category-card__title">Advisory Roles</span>
-    <span class="service-category-card__meta">1 role</span>
-    <span class="service-category-card__logos" aria-hidden="true">
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/refractal.png' | relative_url }}');"></span>
-    </span>
-  </a>
-  <a class="service-category-card service-category-card--consortium" href="#service-consortium">
-    <span class="service-category-card__title">Security Standards</span>
-    <span class="service-category-card__meta">1 consortium role</span>
-    <span class="service-category-card__logos" aria-hidden="true">
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/aiuc.jpeg' | relative_url }}');"></span>
-    </span>
-  </a>
-  <a class="service-category-card service-category-card--committees" href="#service-committees">
-    <span class="service-category-card__title">Program Committees</span>
-    <span class="service-category-card__meta">4 appointments</span>
-    <span class="service-category-card__logos" aria-hidden="true">
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/usenix-security-symposium.png' | relative_url }}');"></span>
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/dfrws.png' | relative_url }}');"></span>
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/iccws.png' | relative_url }}');"></span>
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/eccws.png' | relative_url }}');"></span>
-    </span>
-  </a>
-  <a class="service-category-card service-category-card--review" href="#service-review">
-    <span class="service-category-card__title">Reviewer Engagements</span>
-    <span class="service-category-card__meta">2 journal venues</span>
-    <span class="service-category-card__logos" aria-hidden="true">
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/computers-and-security.png' | relative_url }}');"></span>
-      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/cyber-defense-review.png' | relative_url }}');"></span>
-    </span>
-  </a>
+
+<div class="service-summary service-summary--active" aria-label="Active service roles summary">
+  <p class="service-summary__item service-summary__item--active"><strong>5</strong> active service roles</p>
+</div>
+
+<nav class="service-quick-links" aria-label="Jump to service categories">
+  <a href="#service-advisory">Advisory Roles · 1 </a>
+  <a href="#service-consortium">Security Standards · 1 </a>
+  <a href="#service-committees">Program Committees · 4 </a>
+  <a href="#service-review">Reviewer Engagements · 2 </a>
 </nav>
 
 <section class="service-group service-group--advisory" id="service-advisory" aria-label="Advisory Roles">
