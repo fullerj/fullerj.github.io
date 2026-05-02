@@ -8,7 +8,6 @@ description: >
 
 <!-- markdownlint-disable MD033 -->
 <nav class="service-category-rail" aria-label="Jump to service categories">
-<nav class="service-category-rail" aria-label="Jump to service categories">
   <a class="service-category-card service-category-card--advisory" href="#service-advisory">
     <span class="service-category-card__title">Advisory Roles</span>
     <span class="service-category-card__meta">1 role</span>
