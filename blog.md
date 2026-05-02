@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Analysis and Insights
+title: Empirical Defense Blog
 description: >
   Analysis, applied research, and field notes on cyber defense, adversary behavior, and AI security.
 permalink: /blog/
+hide_description: true
 ---
 
 {% assign blog_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
@@ -24,19 +25,25 @@ permalink: /blog/
 {% assign focus_groups = unique_tags | group_by_exp: "tag", "tag | slice: 0, 1 | upcase" %}
 {% assign post_count = blog_posts | size %}
 
-<section class="blog-hero" aria-label="Empirical Defense Blog" style="--blog-hero-logo: url('{{ '/assets/blogs/blog_logo.jpeg' | relative_url }}');">
-  <div class="blog-hero__content">
-    <p class="blog-hero__eyebrow">Empirical Defense Blog</p>
+<section class="blog-hero" aria-label="Empirical Defense Blog">
+  <div class="blog-hero__brand">
+    <img class="blog-hero__logo" src="{{ '/assets/blogs/blog_logo.jpeg' | relative_url }}" alt="Empirical Defense blog logo" loading="eager" decoding="async">
+    <div class="blog-hero__copy">
+      <p class="blog-hero__lede">Empirical approaches to cyber defense, adversary behavior, and AI security, grounded in analysis, applied research, and real-world decision-making.</p>
+    </div>
   </div>
 
-  <p class="blog-hero__meta">New posts appear here first. Use the controls below to filter by focus area or sort the archive.</p>
+  <div class="blog-hero__stats" aria-label="Blog summary">
+    <p class="blog-hero__stat"><strong>{{ post_count }}</strong> posts</p>
+    <p class="blog-hero__stat"><strong>{{ posts_by_year | size }}</strong> years</p>
+    {% if unique_tags.size > 0 %}
+      <p class="blog-hero__stat"><strong>{{ unique_tags.size }}</strong> focus areas</p>
+    {% endif %}
+  </div>
+
 </section>
 
 <section class="pub-index-toolbar blog-index-toolbar" aria-label="Blog overview and filters">
-  <p class="pub-index-toolbar__summary">
-    <strong>{{ post_count }}</strong> published posts across <strong>{{ posts_by_year | size }}</strong> years{% if unique_tags.size > 0 %} and <strong>{{ unique_tags.size }}</strong> focus areas{% endif %}.
-  </p>
-
   <div class="blog-index-toolbar__controls">
     {% if unique_tags.size > 0 %}
       <div class="blog-focus-filter" aria-label="Filter posts by focus">
