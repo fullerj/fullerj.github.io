@@ -7,10 +7,7 @@ description: >
 ---
 
 <!-- markdownlint-disable MD033 -->
-
-
-
-
+<nav class="service-category-rail" aria-label="Jump to service categories">
 <nav class="service-category-rail" aria-label="Jump to service categories">
   <a class="service-category-card service-category-card--advisory" href="#service-advisory">
     <span class="service-category-card__title">Advisory Roles</span>
@@ -32,6 +29,8 @@ description: >
     <span class="service-category-card__logos" aria-hidden="true">
       <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/usenix-security-symposium.png' | relative_url }}');"></span>
       <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/dfrws.png' | relative_url }}');"></span>
+      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/iccws.png' | relative_url }}');"></span>
+      <span class="service-logo-mark service-logo-mark--sm" style="--service-logo: url('{{ '/assets/img/service/eccws.png' | relative_url }}');"></span>
     </span>
   </a>
   <a class="service-category-card service-category-card--review" href="#service-review">
