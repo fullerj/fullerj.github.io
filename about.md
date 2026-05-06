@@ -2,19 +2,31 @@
 layout: about
 image: /assets/img/headshot.png
 description: >
-  CISO at the United States Military Academy at West Point and Assistant Professor with a PhD in cybersecurity.
+  Chief Information Security Officer securing hybrid enterprise systems in adversarial environments.
+  I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
 hide_description: true
 redirect_from:
   - /download/
-featured_publications:
-  - /publications/ai-kill-switch-requirements/
+featured_writings:
+  - /blog/ai-agent-control-validation-agent-bench/
   - /publications/vader-dead-drop-resolver/
   - /publications/marsea-web-application-abuse/
+
+selected_impact:
+  - Lead cybersecurity strategy for a 10,000-user hybrid environment
+  - Built detection engineering capability to expand threat coverage and reduce visibility gaps
+  - Identified and disrupted 100+ adversary infrastructure abuse cases across global systems
+  - Developed detection methods covering 100+ malware families and thousands of artifacts
+  - Established early-stage AI security evaluation capability for agent-based systems
 
 
 ---
 
 # About
+
+{% unless page.hide_description %}
+{{ page.description }}
+{% endunless %}
 
 <section class="home-section home-section--intro">
 
@@ -23,17 +35,25 @@ featured_publications:
 
 </section>
 
+<section class="home-section home-section--impact" aria-label="Selected Impact">
+  <div class="home-impact-box">
+    <h3>Select Impact</h3>
+    <ul class="home-impact-list">
+      {% for impact in page.selected_impact %}
+      <li>{{ impact }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
 <!--more-->
 
-{% assign insights_count = site.posts | where_exp:'post','post.categories contains "posts"' | size %}
-{% assign research_count = site.posts | where_exp:'post','post.categories contains "publications"' | size %}
-{% assign talks_count = site.data.talks | size %}
 {% assign featured_publications = '' | split: '' %}
 {% if page.featured_publications and page.featured_publications.size > 0 %}
   {% for featured_url in page.featured_publications %}
-    {% for pub in site.posts %}
-      {% if pub.categories contains "publications" and pub.url == featured_url %}
-        {% assign featured_publications = featured_publications | push: pub %}
+    {% for p in site.posts %}
+      {% if p.url == featured_url %}
+        {% assign featured_publications = featured_publications | push: p %}
       {% endif %}
     {% endfor %}
   {% endfor %}
@@ -75,43 +95,12 @@ featured_publications:
   {% endif %}
 {% endfor %}
 
-{% assign media_mentions_count = media_mentions_urls | size %}
-
-<section class="home-section home-section--snapshot">
-  <div class="home-kpi-grid" role="list" aria-label="Executive snapshot">
-    <article class="home-kpi" role="listitem">
-      <p class="home-kpi__value">{{ research_count }}</p>
-      <p class="home-kpi__label">Research and Technical Writing</p>
-    </article>
-    <article class="home-kpi" role="listitem">
-      <p class="home-kpi__value">{{ insights_count }}</p>
-      <p class="home-kpi__label">Analysis and Insights</p>
-    </article>
-    <article class="home-kpi" role="listitem">
-      <p class="home-kpi__value">{{ talks_count }}</p>
-      <p class="home-kpi__label">Talks and Events</p>
-    </article>
-    <article class="home-kpi" role="listitem">
-      <p class="home-kpi__value">{{ media_mentions_count }}</p>
-      <p class="home-kpi__label">Media and Mentions</p>
-    </article>
-  </div>
-
-  <nav class="home-quick-links" aria-label="Quick access" data-inpage-scroll="true">
-    <a class="home-quick-links__link" href="#insights">Analysis</a>
-    <a class="home-quick-links__link" href="#writing">Writing</a>
-    <a class="home-quick-links__link" href="#talks">Talks</a>
-    <a class="home-quick-links__link" href="#media-coverage">Media</a>
-  </nav>
-</section>
-
 ## Recent Work
 
 <section class="home-section home-section--highlights">
   <div class="home-highlights-grid">
     <article class="home-panel home-panel--feature" id="insights">
-
-      <h3>Latest Analysis</h3>
+      <h3>Latest Strategy and Threats</h3>
 
 {% assign recent_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
 {% if recent_posts %}
@@ -119,9 +108,27 @@ featured_publications:
 {% else %}
   {% assign recent_posts = '' | split: '' %}
 {% endif %}
-{% if recent_posts and recent_posts.size > 0 %}
+
+{% comment %}Select explicit featured writings (permalkinks) if provided in frontmatter{% endcomment %}
+{% assign selected_writings = '' | split: '' %}
+{% if page.featured_writings and page.featured_writings.size > 0 %}
+  {% for featured_url in page.featured_writings %}
+    {% for p in site.posts %}
+      {% if p.url == featured_url %}
+        {% assign selected_writings = selected_writings | push: p %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+{% if selected_writings and selected_writings.size > 0 %}
+  {% assign insights_posts = selected_writings %}
+{% else %}
+  {% assign insights_posts = recent_posts %}
+{% endif %}
+{% if insights_posts and insights_posts.size > 0 %}
 <div class="home-posts-grid">
-  {% for post in recent_posts limit:3 %}
+  {% for post in insights_posts limit:3 %}
   {% assign reading_wpm = site.blog.reading_wpm | default: 220 | plus: 0 %}
   {% if reading_wpm < 1 %}{% assign reading_wpm = 220 %}{% endif %}
   {% assign rounding_offset = reading_wpm | minus: 1 %}
@@ -133,8 +140,10 @@ featured_publications:
     <div class="home-post-card__media">
       <div class="home-post-card__inner">
         <div class="home-post-card__face home-post-card__face--front">
-          {% if post.image and post.image.path %}
-          <img src="{{ post.image.path | relative_url }}" alt="{{ post.image.alt }}" class="home-post-card__image" loading="lazy" decoding="async">
+          {% if post.blog_image %}
+            <img src="{{ post.blog_image | relative_url }}" alt="{{ post.title }}" class="home-post-card__image" loading="lazy" decoding="async">
+          {% elsif post.image and post.image.path %}
+            <img src="{{ post.image.path | relative_url }}" alt="{{ post.image.alt }}" class="home-post-card__image" loading="lazy" decoding="async">
           {% endif %}
         </div>
         <div class="home-post-card__face home-post-card__face--back">
@@ -162,30 +171,59 @@ featured_publications:
     </article>
 
     <article class="home-panel home-panel--feature" id="writing">
-      <h3>Selected Writing and Papers</h3>
+      <h3>Advisory and Leadership <small class="home-panel__source">(<a href="{{ '/service/' | relative_url }}">full roles & details</a>)</small></h3>
 
-{% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' %}
-  {% if featured_publications and featured_publications.size > 0 %}
-<ul>
-  {% for pub in featured_publications limit:3 %}
-  <li>
-    <strong><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></strong>
-    {% if pub.conference or pub.venue %}
-    <br/>
-    <small>{{ pub.conference | default: pub.venue }}</small>
-    {% endif %}
-  </li>
-  {% endfor %}
-</ul>
-<p><a href="{{ '/publications/' | relative_url }}">Read all publications</a></p>
-{% else %}
-<p>Publications will appear here once they are added to the site.</p>
-{% endif %}
+      <div class="service-cards">
+        <details class="service-card">
+          <summary>
+            <span class="service-card__summary-main">
+              <span class="service-logo-mark" style="--service-logo: url('{{ '/assets/img/service/refractal.png' | relative_url }}');"></span>
+              <span class="service-card__summary-copy">
+                <span class="service-card__heading">Refractal</span>
+                <span class="service-card__meta">Founding Advisor, Apr 2026-Present</span>
+              </span>
+            </span>
+          </summary>
+          <div class="service-card__content">
+            <p>Advise <a href="https://refractal-ai.com">Refractal</a> on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation.</p>
+          </div>
+        </details>
+
+        <details class="service-card">
+          <summary>
+            <span class="service-card__summary-main">
+              <span class="service-logo-mark" style="--service-logo: url('{{ '/assets/img/service/aiuc.jpeg' | relative_url }}');"></span>
+              <span class="service-card__summary-copy">
+                <span class="service-card__heading">AIUC-1</span>
+                <span class="service-card__meta">Founding Consortium Member, Nov 2025-Present</span>
+              </span>
+            </span>
+          </summary>
+          <div class="service-card__content">
+            <p>Contributing to the development of AIUC-1, the first end-to-end certification standard for enterprise AI agents, in collaboration with industry, government, academia, and nonprofits.</p>
+          </div>
+        </details>
+
+        <details class="service-card">
+          <summary>
+            <span class="service-card__summary-main">
+              <span class="service-logo-mark" style="--service-logo: url('{{ '/assets/img/service/usenix-security-symposium.png' | relative_url }}');"></span>
+              <span class="service-card__summary-copy">
+                <span class="service-card__heading">USENIX Security Symposium</span>
+                <span class="service-card__meta">Program Committee, 2024-Present</span>
+              </span>
+            </span>
+          </summary>
+          <div class="service-card__content">
+            <p>Supporting peer review and technical program quality for the USENIX Security Symposium, a leading venue for systems and security research.</p>
+          </div>
+        </details>
+      </div>
 
     </article>
 
     <article class="home-panel" id="talks">
-      <h3>Talks and Appearances</h3>
+      <h3>Speaking and Briefings</h3>
 
 {% assign recent_talks = site.data.talks | sort: 'date' | reverse %}
 {% if recent_talks and recent_talks.size > 0 %}
@@ -206,7 +244,7 @@ featured_publications:
   </li>
   {% endfor %}
 </ul>
-<p><a href="{{ '/talks/' | relative_url }}">View talks and events</a></p>
+<p><a href="{{ '/talks/' | relative_url }}">View speaking and breifings</a></p>
 {% else %}
 <p>Talks will appear here once they are added to the site.</p>
 {% endif %}
@@ -216,6 +254,7 @@ featured_publications:
     <article class="home-panel" id="media-coverage">
       <h3>Media and Mentions</h3>
 
+{% assign recent_publications = site.posts | where_exp:'post','post.categories contains "publications"' | sort: 'date' | reverse %}
 {% assign coverage_limit = 3 %}
 {% assign per_source_limit = 2 %}
 {% assign publication_coverage = '' | split: '' %}

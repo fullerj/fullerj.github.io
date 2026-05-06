@@ -20,7 +20,8 @@ demo_url:
 code_url: https://github.com/fullerj/MBIDS
 dataset_url: 
 media_links:
-
+card_label: Publication
+blog_image: /assets/papers/zwave.png
 ---
 
 {% include components/publication-meta.html %}

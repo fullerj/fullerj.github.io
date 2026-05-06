@@ -7,7 +7,6 @@ categories:
   - publications
 permalink: /publications/the-end-of-vibe-adoption/
 tags:
-  - artificial intelligence
   - AI security
   - risk management
   - governance
@@ -18,6 +17,8 @@ date: 2026-02-01
 venue: "AIUC-1"
 pdf_url: /assets/papers/aiuc-end-of-vibe-adoption.pdf
 demo_url:
+card_label: Whitepaper
+blog_image: /assets/papers/aiuc.png
 media_links:
   - title: "Whitepaper: 2026 - The End of Vibe Adoption"
     url: https://www.aiuc-1.com/research/whitepaper-the-end-of-vibe-adoption

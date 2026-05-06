@@ -14,7 +14,7 @@ related_posts:
 conference: "IEEE Secure Development Conference (SecDev): Invited Tutorial"
 authors: "M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio"
 venue: "IEEE SecDev"
-pdf_url:
+pdf_url: https://ieeexplore.ieee.org/document/10305560
 slides_url: 
 talk_url: 
 code_url: https://github.com/CyFI-Lab-Public/MARSEA

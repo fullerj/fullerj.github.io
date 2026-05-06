@@ -18,6 +18,8 @@ Recommended keys:
 - `pdf_url`, `code_url`, `video_url`
 - `media_links` (list of `{ title, url, date }`)
 - `image` (social preview / hero)
+- `blog_image` (blog card image; falls back to a template image if omitted)
+- `card_label` (visible badge on the blog card, e.g. `Article`, `Whitepaper`, `Publication`)
 - `tags` (list)
 
 Render consistent metadata by adding after your lead paragraph:

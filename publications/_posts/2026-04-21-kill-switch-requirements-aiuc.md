@@ -7,7 +7,6 @@ categories:
   - publications
 permalink: /publications/ai-kill-switch-requirements/
 tags:
-  - artificial intelligence
   - AI security
   - governance
   - risk management
@@ -19,7 +18,8 @@ date: 2026-04-21
 venue: "AIUC-1"
 pdf_url: /assets/papers/ai-kill-switch-requirements.pdf
 demo_url:
-
+card_label: Whitepaper
+blog_image: /assets/papers/aiuc.png
 ---
 
 {% include components/publication-meta.html %}
