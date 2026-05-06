@@ -10,7 +10,6 @@ categories:
   - posts
 permalink: /blog/ai-agent-control-validation-agent-bench/
 tags:
-  - artificial intelligence
   - agentic AI
   - security
   - AI governance

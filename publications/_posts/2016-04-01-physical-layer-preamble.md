@@ -19,7 +19,8 @@ demo_url:
 code_url: 
 dataset_url: 
 media_links:
-
+card_label: Publication
+blog_image: /assets/papers/preamble.png
 ---
 
 {% include components/publication-meta.html %}

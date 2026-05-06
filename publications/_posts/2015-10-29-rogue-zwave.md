@@ -20,7 +20,8 @@ talk_url:
 code_url: 
 dataset_url: 
 media_links:
-
+card_label: Publication
+blog_image: /assets/papers/zwave.png
 ---
 
 {% include components/publication-meta.html %}

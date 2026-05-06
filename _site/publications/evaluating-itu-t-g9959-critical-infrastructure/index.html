@@ -119,7 +119,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-05-02T15:16:57-04:00',
+    INDEX_KEY: 'index--2026-05-06T05:57:26-04:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -311,10 +311,9 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       </div>
       <div class="nav-search-scopes" role="group" aria-label="Search scope" data-search-scopes>
         <button type="button" class="nav-search-scope is-active" data-search-scope="all" aria-pressed="true">All</button>
-        <button type="button" class="nav-search-scope" data-search-scope="blog" aria-pressed="false">Analysis and Insights</button>
-        <button type="button" class="nav-search-scope" data-search-scope="publications" aria-pressed="false">Technical Writing </button>
-        <button type="button" class="nav-search-scope" data-search-scope="talks" aria-pressed="false">Talks</button>
-        <button type="button" class="nav-search-scope" data-search-scope="teaching" aria-pressed="false">Teaching</button>
+        <button type="button" class="nav-search-scope" data-search-scope="blog" aria-pressed="false">Strategy & Threats</button>
+        <button type="button" class="nav-search-scope" data-search-scope="talks" aria-pressed="false">Speaking & Briefings</button>
+        <button type="button" class="nav-search-scope" data-search-scope="teaching" aria-pressed="false">Practitioner Development</button>
       </div>
       <p class="nav-search-status" data-search-status hidden></p>
       <ul class="search-pane__results nav-search-results" data-search-results role="list"></ul>
@@ -476,9 +475,9 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
   </h2>
 
   
-<p>Jonathan Fuller is the Chief Information Security Officer at the United States Military Academy at West Point, where he leads enterprise cybersecurity strategy, risk governance, and operational resilience in a mission-critical environment. With nearly two decades of Army experience spanning secure communications, enterprise IT engineering, and organizational leadership, his work focuses on building practical security programs that align technology, policy, and people.</p>
+<p>Jonathan Fuller is Chief Information Security Officer at the United States Military Academy at West Point, leading cybersecurity strategy, risk, and operations for a mission-critical enterprise environment. His work focuses on building detection-driven security capabilities that align visibility, control, and response across hybrid and data-driven systems.</p>
 
-<p>He is also an Assistant Professor and holds a Ph.D. in Computer Engineering with a focus on cybersecurity. Through <button type="button" class="definition-trigger" data-definition-target="definition-empiricaldefense">Empirical Defense,</button> he publishes evidence-based analysis that connects technical depth to practical decision-making, with an emphasis on validation, assurance, and the security of data-driven systems.</p>
+<p>His background spans Army operational leadership, enterprise systems engineering, and adversary-focused research on malware infrastructure and command-and-control systems. He shares analysis on adversary behavior, detection engineering, and AI system security through Empirical Defense.</p>
 
 
   <div class="sidebar-social">
@@ -612,11 +611,23 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       <li>
         <a
           id="_drawer--opened"
+          href="/"
+          class="sidebar-nav-item "
+          
+        >
+          Overview
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
           href="/blog/"
           class="sidebar-nav-item "
           
         >
-          Analysis and Insights
+          Strategy & Threats
         </a>
       </li>
     
@@ -628,19 +639,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           class="sidebar-nav-item "
           
         >
-          Leadership and Service
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
-          
-          href="/publications/"
-          class="sidebar-nav-item "
-          
-        >
-          Technical Writing
+          Advisory & Leadership
         </a>
       </li>
     
@@ -652,7 +651,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           class="sidebar-nav-item "
           
         >
-          Talks
+          Speaking & Briefings
         </a>
       </li>
     
@@ -664,7 +663,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
           class="sidebar-nav-item "
           
         >
-          Teaching
+          Practitioner Development
         </a>
       </li>
     
@@ -1219,10 +1218,10 @@ Code for integrating CloudFlare email protection with single-page navigation.
       return 'All';
     }
     var labels = {
-      blog: 'Analysis and Insights',
+      blog: 'Strategy & Threats',
       publications: 'Technical Writing',
-      talks: 'Talks',
-      teaching: 'Teaching',
+      talks: 'Speaking & Briefings',
+      teaching: 'Practitioner Development',
     };
     if (labels[scope]) {
       return labels[scope];

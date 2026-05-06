@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Talks
+title: Speaking and Briefings
 permalink: /talks/
 description: >
-  This section features a selection of conference presentations, invited talks, and panel discussions delivered at academic, professional, and public forums. 
+  Invited talks and executive briefings on adversary behavior, detection engineering, and securing complex systems, delivered across leading conferences, research venues, and operational environments.
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -98,90 +98,20 @@ description: >
 </script>
 
 {% assign talks = site.data.talks | sort: "date" | reverse %}
-{% assign featured_talks = talks | slice: 0, 3 %}
 
 {% if talks and talks.size > 0 %}
-<section class="talks-section talks-section--featured">
-  <h2>Featured Talks</h2>
-  <div class="talks-grid">
-    {% for talk in featured_talks %}
-      {% assign event_downcase = talk.event | downcase %}
-      {% assign talk_type = talk.talk_type | default: '' | strip %}
-      {% if talk_type != '' %}
-        {% assign talk_type_downcase = talk_type | downcase %}
-        {% assign talk_type = talk_type_downcase | capitalize %}
-      {% else %}
-        {% assign talk_type = 'Talk' %}
-        {% if event_downcase contains 'panel' %}
-          {% assign talk_type = 'Panel' %}
-        {% elsif event_downcase contains 'tutorial' %}
-          {% assign talk_type = 'Tutorial' %}
-        {% elsif event_downcase contains 'seminar' %}
-          {% assign talk_type = 'Seminar' %}
-        {% elsif event_downcase contains 'lecture' %}
-          {% assign talk_type = 'Lecture' %}
-        {% elsif event_downcase contains 'conference' or event_downcase contains 'con' %}
-          {% assign talk_type = 'Conference' %}
-        {% elsif event_downcase contains 'workshop' %}
-          {% assign talk_type = 'Workshop' %}
-        {% endif %}
-      {% endif %}
-
-      <article class="talk-card talk-card--featured">
-        <p class="talk-card__meta">
-          <span class="talk-card__chip">{{ talk_type }}</span>
-          <span>{{ talk.date | date: "%Y" }}</span>
-        </p>
-        <h3 class="talk-card__title">{{ talk.title }}</h3>
-        <p class="talk-card__event">{{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}</p>
-        <p class="talk-card__date">{% if talk.date %}{{ talk.date | date: "%B %-d, %Y" }}{% else %}TBA{% endif %}</p>
-        {% if talk.description %}
-          <p class="talk-card__description">{{ talk.description }}</p>
-        {% endif %}
-        {% if talk.resources %}
-          <p class="talk-card__links">
-            {% for resource in talk.resources %}
-              <a href="{{ resource.url }}">{{ resource.label }}</a>
-            {% endfor %}
-          </p>
-        {% endif %}
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
 <section class="talks-section talks-section--timeline">
-  <h2>All Talks</h2>
+
   <div class="talks-timeline">
     {% for talk in talks %}
-      {% assign event_downcase = talk.event | downcase %}
-      {% assign talk_type = talk.talk_type | default: '' | strip %}
-      {% if talk_type != '' %}
-        {% assign talk_type_downcase = talk_type | downcase %}
-        {% assign talk_type = talk_type_downcase | capitalize %}
-      {% else %}
-        {% assign talk_type = 'Talk' %}
-        {% if event_downcase contains 'panel' %}
-          {% assign talk_type = 'Panel' %}
-        {% elsif event_downcase contains 'tutorial' %}
-          {% assign talk_type = 'Tutorial' %}
-        {% elsif event_downcase contains 'seminar' %}
-          {% assign talk_type = 'Seminar' %}
-        {% elsif event_downcase contains 'lecture' %}
-          {% assign talk_type = 'Lecture' %}
-        {% elsif event_downcase contains 'conference' or event_downcase contains 'con' %}
-          {% assign talk_type = 'Conference' %}
-        {% elsif event_downcase contains 'workshop' %}
-          {% assign talk_type = 'Workshop' %}
-        {% endif %}
-      {% endif %}
-
       <article class="talk-card talk-card--timeline">
         <p class="talk-card__meta">
-          <span class="talk-card__chip">{{ talk_type }}</span>
           <span>{{ talk.date | date: "%Y" }}</span>
         </p>
         <h3 class="talk-card__title">{{ talk.title }}</h3>
+        {% if talk.subtitle %}
+          <p class="talk-card__subtitle">{{ talk.subtitle }}</p>
+        {% endif %}
         <p class="talk-card__event">{{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}</p>
         <p class="talk-card__date">{% if talk.date %}{{ talk.date | date: "%B %-d, %Y" }}{% else %}TBA{% endif %}</p>
         {% if talk.description %}

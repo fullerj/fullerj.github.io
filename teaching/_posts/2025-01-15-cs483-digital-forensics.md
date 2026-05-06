@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "CS 483: Digital Forensics"
+title: "Digital Forensics"
 description: >
-  Undergraduate course examining how to recover and analyze evidence after malicious activity on information systems.
+  Develops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.
 categories:
   - teaching
 course_code: "CS 483"
 institution: "United States Military Academy"
+logo_url: "/assets/img/logos/usma.png"
 department: "Department of Electrical Engineering and Computer Science"
 term: "Spring 2025"
 location: "West Point, NY"
@@ -14,18 +15,13 @@ role: "Course Director"
 credits: 3.0
 ---
 
-Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.
-
 {% include components/teaching-meta.html %}
 
-The course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.
+Develops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.
 
-### Learning Objectives
+## Training Focus
 
-Upon successful completion, students are able to:
-
-- Apply a scientific methodology to the acquisition and analysis of digital evidence.
-- Use multiple software tools to acquire and analyze digital evidence.
-- Explain digital forensics concepts, results, and conclusions to both technical and non-technical audiences.
-- Demonstrate an understanding of the processes and tooling required to reverse engineer malware.
-- Perform memory forensics to hunt for adversary and criminal activity.
+* Memory forensics and live system analysis under operational constraints
+* Malware artifact recovery and behavioral attribution
+* Translating technical findings into actionable executive briefings
+* Incident response workflows in contested environments

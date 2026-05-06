@@ -1,26 +1,16 @@
 ---
 layout: page
-title: Leadership and Service
+title: Advisory and Leadership
 permalink: /service/
 description: >
-  Program committee work, peer review, consortium leadership, and outreach initiatives that advance the cybersecurity and trustworthy AI communities.
+  Advisory, standards, and research leadership shaping cybersecurity, adversary analysis, and AI system security.
 ---
 
 <!-- markdownlint-disable MD033 -->
 
-<div class="service-summary service-summary--active" aria-label="Active service roles summary">
-  <p class="service-summary__item service-summary__item--active"><strong>5</strong> active service roles</p>
-</div>
-
-<nav class="service-quick-links" aria-label="Jump to service categories">
-  <a href="#service-advisory">Advisory Roles · 1 </a>
-  <a href="#service-consortium">Security Standards · 1 </a>
-  <a href="#service-committees">Program Committees · 4 </a>
-  <a href="#service-review">Reviewer Engagements · 2 </a>
-</nav>
 
 <section class="service-group service-group--advisory" id="service-advisory" aria-label="Advisory Roles">
-  <h2>Advisory Roles</h2>
+  <h2>Advisory & Industry Engagement</h2>
   <div class="service-cards">
     <details class="service-card">
       <summary>
@@ -36,12 +26,7 @@ description: >
         <p>Advise <a href="https://refractal-ai.com">Refractal</a> on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.</p>
       </div>
     </details>
-  </div>
-</section>
-
-<section class="service-group service-group--consortium" id="service-consortium" aria-label="Security Standards Leadership">
-  <h2>Security Standards Leadership</h2>
-  <div class="service-cards">
+ 
     <details class="service-card">
       <summary>
         <span class="service-card__summary-main">
@@ -71,8 +56,10 @@ description: >
   </div>
 </section>
 
+
+
 <section class="service-group service-group--committees" id="service-committees" aria-label="Program Committee Membership">
-  <h2>Program Committee Membership</h2>
+  <h2>Standards & Research Leadership</h2>
   <div class="service-cards">
     <details class="service-card">
       <summary>
@@ -137,7 +124,7 @@ description: >
 </section>
 
 <section class="service-group service-group--review" id="service-review" aria-label="Reviewer Engagements">
-  <h2>Reviewer Engagements</h2>
+  <h2> Peer Review & Editorial Contribution</h2>
   <div class="service-cards">
     <details class="service-card">
       <summary>

@@ -1,0 +1,12 @@
+﻿Flagged,Ticket Type,Viewing,ID,User,SLA Time Left with Percentage,What Service is this request for?,Agent,Assigned or Additional Agents,Status Icon,Date Created,Last Action Date,Team,Date Closed
+false,Incident,[object Object],0086160,"Rogers , Clifford DR",82424.89%/-6585:59,,Unassigned,,Escalated,10/24/2023 07:41,10/24/2023 11:17,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0124064,"Thorenz, Stephen W CIV",4720.41%/-2263:59,,"Fuller, Jonathan D LTC",,Updated,6/13/2025 10:34,11/24/2025 15:02,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0147205,"Cownie, John CTR",355.90%/-127:57,,"Fuller, Jonathan D LTC",,In Progress,4/7/2026 10:59,4/9/2026 12:08,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0148617,"Cownie, John CTR",40.70%/04:44,,Unassigned,,New,5/4/2026 11:48,5/4/2026 11:48,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0148624,"Ferraiuolo, Christine T CIV",24.41%/06:02,,Unassigned,,New,5/4/2026 13:07,5/4/2026 13:07,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0148411,"Maresco, Frank G CIV",61.42%/19:17,,"Fuller, Jonathan D LTC",,In Progress,4/29/2026 14:21,5/1/2026 12:38,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0148527-C,"German, Kerry A CIV",29.89%/35:03,,"Fuller, Jonathan D LTC",,In Progress,5/1/2026 10:07,5/1/2026 12:33,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0144337,"Cownie, John CTR",On Hold,,"Fuller, Jonathan D LTC",,On Hold,3/6/2026 12:57,3/30/2026 16:15,Cyber - Cyber Security Branch,
+false,Incident,[object Object],0141428,"Aragon, Cynthia C CIV",On Hold,,Unassigned,,Awaiting Customer Response,2/5/2026 11:13,2/16/2026 10:34,Cyber - Cyber Security Branch,
+false,Task,[object Object],0134759,"Wilhelm, Andrew S. LTC",On Hold,,Unassigned,,Awaiting Customer Response,9/25/2025 11:13,2/3/2026 08:45,Cyber - Cyber Security Branch,
+false,Project,[object Object],0078596-P,"Shaw, Robert W CIV",NaN%/,,Unassigned,,New,7/26/2023 11:28,7/26/2023 11:28,Cyber - Cyber Security Branch,

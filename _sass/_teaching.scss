@@ -47,7 +47,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem 1rem;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -58,6 +58,9 @@
 .teaching-course__heading {
   font-weight: 700;
   line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .teaching-course__meta {
@@ -87,6 +90,21 @@
 
 .teaching-course__description {
   margin: 0;
+}
+
+.teaching-logo-mark {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 auto;
+  border-radius: var(--ds-radius-1);
+  border: 1px solid var(--ds-border-1);
+  background-color: var(--ds-surface-2);
+  background-image: var(--teaching-logo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  box-shadow: var(--ds-shadow-1);
 }
 
 .teaching-course__facts {

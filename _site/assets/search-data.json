@@ -111,12 +111,12 @@
   
   
   {
-    "title": "CY 465: Organizational Security",
+    "title": "Organizational Security",
     "url": "/teaching/2026-01-06-cy465-organizational-security/",
     "collection": "posts",
     "date": "2026-01-06T00:00:00-05:00",
-    "excerpt": "Organizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of the organization’s mission. The co",
-    "content": "Organizational Security focuses on techniques and considerations related to protecting organizations from cybersecurity threats and managing risk to support successful accomplishment of the organization’s mission. The course treats cybersecurity as a socio-technical problem requiring integration of people, processes, technology, and policy.\n\n\n  CY 465\n  Spring 2026\n  Course Instructor\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: Spring 2026\n  Credits: 3.0\n  Role: Course Instructor\n  Location: West Point, NY\n  \n\n\nCourse Description\n\nThe course addresses how organizations plan, implement, and sustain cybersecurity programs. Topics include cyber governance and policy, personnel security, security operations, systems administration, cybersecurity planning, acquisition and procurement considerations, and business continuity. Emphasis is placed on risk-informe"
+    "excerpt": "CY 465\n  Spring 2026\n  Course Instructor\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: ",
+    "content": "CY 465\n  Spring 2026\n  Course Instructor\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: Spring 2026\n  Credits: 3.0\n  Role: Course Instructor\n  Location: West Point, NY\n  \n\n\nFocuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\nTraining Focus\n\n\n  Adversary modeling and threat-informed defensive strategy\n  Risk quantification supporting operational decision-making\n  Security control alignment with organizational mission\n  Executive communication of security posture and residual risk"
   },
 
   
@@ -206,12 +206,12 @@
   
   
   {
-    "title": "CS 483: Digital Forensics",
+    "title": "Digital Forensics",
     "url": "/teaching/2025-01-15-cs483-digital-forensics/",
     "collection": "posts",
     "date": "2025-01-15T00:00:00-05:00",
-    "excerpt": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architectur",
-    "content": "Digital Forensics explores the evidence left behind when malicious activity occurs on an information system. Students build on earlier work in operating systems, file formats, file system structures, computer architecture, and networking to perform disciplined investigations.\n\n\n  CS 483\n  Spring 2025\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2025\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nThe course begins with a guided review of foundational concepts, then advances into locating and extracting digital evidence. Students tackle three self-directed projects and multiple in-class challenges that require them to apply forensic techniques, communicate findings, and articulate mitigation strategies.\n\nLearning Objectives\n\nUpon successful completion, students are able to:\n\n\n  Apply a scientific methodology"
+    "excerpt": "CS 483\n  Spring 2025\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Sp",
+    "content": "CS 483\n  Spring 2025\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2025\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nDevelops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.\n\nTraining Focus\n\n\n  Memory forensics and live system analysis under operational constraints\n  Malware artifact recovery and behavioral attribution\n  Translating technical findings into actionable executive briefings\n  Incident response workflows in contested environments"
   },
 
   
@@ -225,12 +225,12 @@
   
   
   {
-    "title": "CS 483: Digital Forensics",
+    "title": "Digital Forensics",
     "url": "/teaching/2024-01-15-cs483-digital-forensics/",
     "collection": "posts",
     "date": "2024-01-15T00:00:00-05:00",
-    "excerpt": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and n",
-    "content": "Digital Forensics introduces students to the evidence left behind when malicious activity occurs on an information system. Building on operating systems, file formats, file system structures, computer architecture, and networking, they practice disciplined investigations across end hosts and enterprise environments.\n\n\n  CS 483\n  Spring 2024\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2024\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nThroughout the semester students complete three self-directed projects and a series of in-class challenges that require them to acquire data, interpret artifacts, and communicate findings to technical and non-technical audiences. The capstone focus is on applying science-based methodologies across host-based forensics, malware triage, and memory analysis to detect and disrup"
+    "excerpt": "CS 483\n  Spring 2024\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Sp",
+    "content": "CS 483\n  Spring 2024\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2024\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nDevelops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.\n\nTraining Focus\n\n\n  Memory forensics and live system analysis under operational constraints\n  Malware artifact recovery and behavioral attribution\n  Translating technical findings into actionable executive briefings\n  Incident response workflows in contested environments"
   },
 
   
@@ -244,12 +244,12 @@
   
   
   {
-    "title": "COP 630: Cyber Law and Digital Forensics",
+    "title": "Cyber Law and Digital Forensics",
     "url": "/teaching/2023-10-01-cyber-law-digital-forensics/",
     "collection": "posts",
     "date": "2023-10-01T00:00:00-04:00",
-    "excerpt": "Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-",
-    "content": "Cyber Law and Digital Forensics examines the U.S. and international legal frameworks that govern cyber operations and the collection of digital evidence. The course builds on COP 620 and blends legal analysis with hands-on forensic practice in a virtual lab environment.\n\n\n  COP 630\n  Fall 2023\n  Course Instructor\n  University of Maryland Global Campus\n\n\n\n  Institution: University of Maryland Global Campus\n  Department: School of Cybersecurity and Information Technology\n  Course: COP 630\n  Term: Fall 2023\n  Credits: 6\n  Role: Course Instructor\n  Location: Virtual\n  \n\n\nStudents explore three interlocking modules:\n\n\n  Legal Frameworks. Study U.S. statutory and case law, international norms, and rules of engagement that shape cyber operations.\n  Operational Compliance. Design and defend a cyber-offense campaign that remains compliant with U.S. regulations and policy constraints.\n  Applied Digital Forensics. Use industry tools to acquire and analyse evidence from network captures, storage m"
+    "excerpt": "COP 630\n  Fall 2023\n  Course Instructor\n  University of Maryland Global Campus\n\n\n\n  Institution: University of Maryland Global Campus\n  Department: School of Cybersecurity and Information Technology\n  Course: COP 630\n  T",
+    "content": "COP 630\n  Fall 2023\n  Course Instructor\n  University of Maryland Global Campus\n\n\n\n  Institution: University of Maryland Global Campus\n  Department: School of Cybersecurity and Information Technology\n  Course: COP 630\n  Term: Fall 2023\n  Credits: 6\n  Role: Course Instructor\n  Location: Virtual\n  \n\n\nIntegrates legal constraints, evidence handling, and forensic workflows to support operational investigations and executive reporting within rules of engagement.\n\nTraining Focus\n\n\n  Legal and operational frameworks for digital investigations\n  Evidence preservation and chain-of-custody under operational conditions\n  Translating forensic findings into legally defensible outcomes\n  Balancing investigative agility with legal defensibility"
   },
 
   
@@ -339,12 +339,12 @@
   
   
   {
-    "title": "ECE 4117: Introduction to Malware Reverse Engineering",
+    "title": "Malware Reverse Engineering",
     "url": "/teaching/2022-04-01-ece4117-malware-reverse-engineering/",
     "collection": "posts",
     "date": "2022-04-01T00:00:00-04:00",
-    "excerpt": "Introduction to Malware Reverse Engineering ntroduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emp",
-    "content": "Introduction to Malware Reverse Engineering ntroduces students to the fundamentals of malware reverse engineering by examining the code, structure, and behaviour of modern malicious software. The guest lecture series emphasized disciplined analysis workflows, tooling, and remediation strategies needed to combat advanced threats.\n\n\n  ECE 4117\n  Spring 2022\n  Guest Lecturer\n  Georgia Institute of Technology\n\n\n\n  Institution: Georgia Institute of Technology\n  Department: School of Electrical and Computer Engineering\n  Course: ECE 4117\n  Term: Spring 2022\n  \n  Role: Guest Lecturer\n  Location: Atlanta, GA\n  \n\n\nAcross the session students performed immersive, hands-on exercises in malware analysis and explored applied software security topics including operating systems internals, debugging at multiple layers, and software protection countermeasures."
+    "excerpt": "ECE 4117\n  Spring 2022\n  Guest Lecturer\n  Georgia Institute of Technology\n\n\n\n  Institution: Georgia Institute of Technology\n  Department: School of Electrical and Computer Engineering\n  Course: ECE 4117\n  Term: Spring 20",
+    "content": "ECE 4117\n  Spring 2022\n  Guest Lecturer\n  Georgia Institute of Technology\n\n\n\n  Institution: Georgia Institute of Technology\n  Department: School of Electrical and Computer Engineering\n  Course: ECE 4117\n  Term: Spring 2022\n  \n  Role: Guest Lecturer\n  Location: Atlanta, GA\n  \n\n\nExplores adversary techniques through reverse engineering, including process injection, persistence mechanisms, and artifact recovery from compromised systems.\n\nTraining Focus\n\n\n  Malware analysis under operational security constraints\n  Process injection and in-memory persistence techniques\n  Rapid artifact recovery supporting investigation timelines\n  Building detection signatures from adversary behavior patterns"
   },
 
   
@@ -475,7 +475,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-05-02T15:16:57-04:00",
+    "date": "2026-05-06T05:57:26-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -494,9 +494,9 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-05-02T15:16:57-04:00",
+    "date": "2026-05-06T05:57:26-04:00",
     "excerpt": "",
-    "content": "14 publications across 8 years and 27 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              "
+    "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
   },
 
   
@@ -510,12 +510,12 @@
   
   
   {
-    "title": "Teaching",
+    "title": "Practitioner Development",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-05-02T15:16:57-04:00",
+    "date": "2026-05-06T05:57:26-04:00",
     "excerpt": "",
-    "content": "5 total course entries\n  1 current\n  2 recent\n  2 past\n\n\n\n  Institutions\n  \n    \n      \n      United States Military Academy\n    \n    \n      \n      Georgia Institute of Technology\n    \n    \n      \n      University of Maryland Global Campus\n    \n  \n\n\n\n    Current Teaching\n    \n      \n        \n          \n            \n              CY 465: CY 465: Organizational Security\n              Spring 2026 - United States Military Academy\n            \n            \n              \n                Undergraduate course focused on protecting organizations from cybersecurity threats through governance, risk management, and operational security practices.\n\n              \n              \n                Role: Course Instructor\n                Department: Department of Electrical Engineering and Computer Science\n                Location: West Point, NY\n                Credits: 3.0\n              \n              View full course details\n            \n          \n        \n      \n    \n  \n\n\n    Recent Teaching\n    \n"
+    "content": "Focused on adversary-driven training, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n          \n        \n      \n        \n          \n            \n              \n              Digital Forensics (CS 483)\n            \n            \n            United States Military Academy\n            \n          \n\n    "
   },
 
   
@@ -533,8 +533,8 @@
     "url": "/404.html",
     "collection": "pages",
     "date": null,
-    "excerpt": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Analysis\n\tView Writing\n\tSee Talks\n\n\n  You can also use the sea",
-    "content": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Analysis\n\tView Writing\n\tSee Talks\n\n\n  You can also use the search icon in the top navigation to find what you need."
+    "excerpt": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Strategy and Threats\n\tView Advisory and Leadership\n\tSee Speaki",
+    "content": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Strategy and Threats\n\tView Advisory and Leadership\n\tSee Speaking and Briefings\n\n\n  You can also use the search icon in the top navigation to find what you need."
   },
 
   
@@ -609,8 +609,8 @@
     "url": "/about/",
     "collection": "pages",
     "date": null,
-    "excerpt": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
-    "content": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n          \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n      9 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n          \n          \n        \n        \n          \n            \n            Spycraft 2.1 models malware-linked Bitcoin wallets and transactions as a graph to expose concentrated hubs, repeated flows, and structured signali"
+    "excerpt": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ident",
+    "content": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n    "
   },
 
   
@@ -624,12 +624,12 @@
   
   
   {
-    "title": "Empirical Defense Blog",
+    "title": "Cybersecurity Strategy & Threat Analysis",
     "url": "/blog/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Empirical approaches to cyber defense, adversary behavior, and AI security, grounded in analysis, applied research, and real-world decision-making.\n    \n  \n\n  \n    5 posts\n    2 years\n    \n      25 focus areas\n    \n  \n\n\n",
-    "content": "Empirical approaches to cyber defense, adversary behavior, and AI security, grounded in analysis, applied research, and real-world decision-making.\n    \n  \n\n  \n    5 posts\n    2 years\n    \n      25 focus areas\n    \n  \n\n\n\n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI governance\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      AgentBench\n                    \n                  \n                    \n                      \n                      agentic AI\n                    \n                  \n                    \n                      \n                      artificial intelligence\n                    \n                "
+    "excerpt": "Security grounded in observed system behavior, using evidence and experimentation to understand how complex systems are attacked, fail, and are secured under real-world conditions.\n    \n  \n\n\n\n\n\n\n  \n    \n      \n        \n ",
+    "content": "Security grounded in observed system behavior, using evidence and experimentation to understand how complex systems are attacked, fail, and are secured under real-world conditions.\n    \n  \n\n\n\n\n\n\n  \n    \n      \n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                  \n                    \n                      \n                      AgentBench\n                    \n                  \n                    \n                      \n                      agentic AI\n                    \n                  \n                    \n                      \n                      AI governance\n                    \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n   "
   },
 
   
@@ -685,8 +685,8 @@
     "url": "/",
     "collection": "pages",
     "date": null,
-    "excerpt": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n ",
-    "content": "14\n      Research and Technical Writing\n    \n    \n      5\n      Analysis and Insights\n    \n    \n      13\n      Talks and Events\n    \n    \n      16\n      Media and Mentions\n    \n  \n\n  \n    Analysis\n    Writing\n    Talks\n    Media\n  \n\n\nRecent Work\n\n\n  \n    \n\n      Latest Analysis\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n          \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n      9 min read\n    \n  \n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n          \n          \n        \n        \n          \n            \n            Spycraft 2.1 models malware-linked Bitcoin wallets and transactions as a graph to expose concentrated hubs, repeated flows, and structured signali"
+    "excerpt": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ident",
+    "content": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n    "
   },
 
   
@@ -738,12 +738,12 @@
   
   
   {
-    "title": "Leadership and Service",
+    "title": "Advisory and Leadership",
     "url": "/service/",
     "collection": "pages",
     "date": null,
-    "excerpt": "5 active service roles\n\n\n\n  Advisory Roles · 1 \n  Security Standards · 1 \n  Program Committees · 4 \n  Reviewer Engagements · 2 \n\n\n\n  Advisory Roles\n  \n    \n      \n        \n          \n          \n            Refractal\n    ",
-    "content": "5 active service roles\n\n\n\n  Advisory Roles · 1 \n  Security Standards · 1 \n  Program Committees · 4 \n  Reviewer Engagements · 2 \n\n\n\n  Advisory Roles\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.\n      \n    \n  \n\n\n\n  Security Standards Leadership\n  \n    \n      \n        \n          \n          \n            AIUC-1\n            Founding Consortium Member, Nov 2025-Present\n          \n        \n      \n      \n        Contributing to the development of AIUC-1, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and leg"
+    "excerpt": "Advisory &amp; Industry Engagement\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security",
+    "content": "Advisory &amp; Industry Engagement\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.\n      \n    \n \n    \n      \n        \n          \n          \n            AIUC-1\n            Founding Consortium Member, Nov 2025-Present\n          \n        \n      \n      \n        Contributing to the development of AIUC-1, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and legal leaders across industry, government, academia, and nonprofits.\n        {% assign aiuc_artifacts = site.posts | where_exp: \"item\", \"item.venue == 'AIU"
   },
 
   
@@ -757,12 +757,12 @@
   
   
   {
-    "title": "Talks",
+    "title": "Speaking and Briefings",
     "url": "/talks/",
     "collection": "pages",
     "date": null,
-    "excerpt": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n    \n      {% assign featured_talks = talks\n      slice: 0, 3 %}\n       \n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n\n  Featured Talks\n  \n    ",
-    "content": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n    \n      {% assign featured_talks = talks\n      slice: 0, 3 %}\n       \n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n\n  Featured Talks\n  \n    {% for talk in featured_talks %}\n      {% assign event_downcase = talk.event | downcase %}\n      {% assign talk_type = talk.talk_type | default: '' | strip %}\n      {% if talk_type != '' %}\n        {% assign talk_type_downcase = talk_type | downcase %}\n        {% assign talk_type = talk_type_downcase | capitalize %}\n      {% else %}\n        {% assign talk_type = 'Talk' %}\n        {% if event_downcase contains 'panel' %}\n          {% assign talk_type = 'Panel' %}\n        {% elsif event_downcase contains 'tutorial' %}\n          {% assign talk_type = 'Tutorial' %}\n        {% elsif event_downcase contains 'seminar' %}\n          {% assign talk_type = 'Seminar' %}\n        {% elsif event_downcase contains 'lecture' %}\n          {% assign talk_type = 'Lecture' %}\n        {% els"
+    "excerpt": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n\n\n  \n    {% for talk in talks %}\n      \n        \n          {{ talk.date | date: \"%Y\" }}\n        \n      ",
+    "content": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n\n\n  \n    {% for talk in talks %}\n      \n        \n          {{ talk.date | date: \"%Y\" }}\n        \n        {{ talk.title }}\n        {% if talk.subtitle %}\n          {{ talk.subtitle }}\n        {% endif %}\n        {{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}\n        {% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n        {% if talk.description %}\n          {{ talk.description }}\n        {% endif %}\n        {% if talk.resources %}\n          \n            {% for resource in talk.resources %}\n              {{ resource.label }}\n            {% endfor %}\n          \n        {% endif %}\n      \n    {% endfor %}\n  \n\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
   },
 
   
@@ -800,7 +800,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "This guide defines a consistent front matter schema and reusable includes for Publications and Teaching pages.\n\nPublications\n\nRequired front matter keys:\n\n  layout: publication\n  title\n  description (1–2 sentences)\n  cat",
-    "content": "This guide defines a consistent front matter schema and reusable includes for Publications and Teaching pages.\n\nPublications\n\nRequired front matter keys:\n\n  layout: publication\n  title\n  description (1–2 sentences)\n  categories: [publications]\n  date (YYYY-MM-DD)\n\n\nRecommended keys:\n\n  authors (string or list)\n  venue (conference/journal/institution)\n  doi (just the DOI string)\n  pdf_url, code_url, video_url\n  media_links (list of { title, url, date })\n  image (social preview / hero)\n  tags (list)\n\n\nRender consistent metadata by adding after your lead paragraph:\n\n{% include components/publication-meta.html %}\n\n\nTeaching\n\nRequired front matter keys:\n\n  layout: post (or layout: teaching if added)\n  title\n  description (1–2 sentences)\n  categories: [teaching]\n\n\nRecommended keys:\n\n  institution, department\n  course_code (e.g., CS 483)\n  term (e.g., Spring 2025)\n  location\n  role (e.g., Course Director)\n  credits (optional)\n  syllabus_url (optional)\n  image (social preview / hero)\n  tags (l"
+    "content": "This guide defines a consistent front matter schema and reusable includes for Publications and Teaching pages.\n\nPublications\n\nRequired front matter keys:\n\n  layout: publication\n  title\n  description (1–2 sentences)\n  categories: [publications]\n  date (YYYY-MM-DD)\n\n\nRecommended keys:\n\n  authors (string or list)\n  venue (conference/journal/institution)\n  doi (just the DOI string)\n  pdf_url, code_url, video_url\n  media_links (list of { title, url, date })\n  image (social preview / hero)\n  blog_image (blog card image; falls back to a template image if omitted)\n  card_label (visible badge on the blog card, e.g. Article, Whitepaper, Publication)\n  tags (list)\n\n\nRender consistent metadata by adding after your lead paragraph:\n\n{% include components/publication-meta.html %}\n\n\nTeaching\n\nRequired front matter keys:\n\n  layout: post (or layout: teaching if added)\n  title\n  description (1–2 sentences)\n  categories: [teaching]\n\n\nRecommended keys:\n\n  institution, department\n  course_code (e.g., CS 483"
   },
 
   

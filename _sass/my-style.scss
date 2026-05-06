@@ -275,6 +275,41 @@ h6 {
   pointer-events: none;
 }
 
+.home-section--impact {
+  margin-top: 0;
+}
+
+.home-impact-box {
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius-3);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--site-space-2) var(--site-space-4);
+  background: var(--ds-surface-1);
+  box-shadow: var(--site-shadow-1);
+}
+
+.home-impact-box h2,
+.home-impact-box h3 {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
+  line-height: 1.2;
+}
+
+.home-impact-list {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.home-impact-list li {
+  color: var(--ds-text-2);
+  line-height: 1.28;
+  font-size: 0.98rem;
+}
+
 .home-section--highlights {
   margin-top: var(--site-space-5);
 }
@@ -394,13 +429,14 @@ h6 {
 
 .home-post-card {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: var(--site-space-2);
+  /* reduced media column to make cards smaller */
+  grid-template-columns: 110px 1fr;
+  gap: var(--site-space-1);
   align-items: flex-start;
   color: inherit;
   border: 1px solid var(--site-border);
   border-radius: var(--site-radius-1);
-  padding: var(--site-space-2);
+  padding: var(--site-space-1);
   transition: border-color 0.18s ease;
 }
 
@@ -417,7 +453,8 @@ h6 {
 .home-post-card__media {
   position: relative;
   width: 100%;
-  height: 140px;
+  /* smaller thumbnail height to match reduced column */
+  height: 110px;
   perspective: 1000px;
   overflow: hidden;
 }
@@ -479,7 +516,7 @@ h6 {
 
 .home-post-card__abstract {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.45;
   color: var(--ds-text-1);
 }
@@ -1125,6 +1162,7 @@ html[data-color-mode="dark"] body {
   .education-card__institution,
   .certification-card__issuer,
   .education-card__detail,
+  .talk-card__subtitle,
   .talk-card__event,
   .talk-card__date,
   .talk-card__description,
@@ -1260,6 +1298,7 @@ html[data-color-mode="dark"] body {
   .education-card__institution,
   .certification-card__issuer,
   .education-card__detail,
+  .talk-card__subtitle,
   .talk-card__event,
   .talk-card__date,
   .talk-card__description,

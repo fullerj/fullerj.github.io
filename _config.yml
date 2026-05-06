@@ -25,8 +25,8 @@ title:                 Jonathan Fuller
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Executive cybersecurity leadership, applied research, and strategic advisory insights from Jonathan Fuller.
-
+  Chief Information Security Officer securing hybrid enterprise systems in adversarial environments.
+  I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
 # A shorter description for the sidebar.
 tagline:               Security Leadership, Research, and Operational Practice
 blog:
@@ -74,15 +74,17 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Analysis and Insights
+  - title:             Overview
+    url:               /
+  - title:             Strategy & Threats
     url:               /blog/
-  - title:             Leadership and Service
+  - title:             Advisory & Leadership
     url:               /service/
-  - title:             Technical Writing
-    url:               /publications/
-  - title:             Talks
+  #- title:             Technical Writing
+  #  url:               /publications/
+  - title:             Speaking & Briefings
     url:               /talks/
-  - title:             Teaching
+  - title:             Practitioner Development
     url:               /teaching/
 
 
