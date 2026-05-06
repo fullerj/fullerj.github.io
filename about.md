@@ -9,8 +9,8 @@ redirect_from:
   - /download/
 featured_writings:
   - /blog/ai-agent-control-validation-agent-bench/
-  - /publications/vader-dead-drop-resolver/
-  - /publications/marsea-web-application-abuse/
+  - /blog/spycraft-2-1-bitcoin-transaction-graph-analysis/
+  - /blog/what-malware-persists/
 
 selected_impact:
   - Lead cybersecurity strategy for a 10,000-user hybrid environment
