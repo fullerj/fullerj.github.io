@@ -37,7 +37,7 @@ selected_impact:
 
 <section class="home-section home-section--impact" aria-label="Selected Impact">
   <div class="home-impact-box">
-    <h3>Select Impact</h3>
+    <h3>Selected Impact</h3>
     <ul class="home-impact-list">
       {% for impact in page.selected_impact %}
       <li>{{ impact }}</li>
