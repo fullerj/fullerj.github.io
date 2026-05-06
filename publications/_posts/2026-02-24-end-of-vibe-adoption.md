@@ -10,6 +10,7 @@ tags:
   - AI security
   - risk management
   - governance
+  - AIUC
 related_posts:
 - /blog/ai-agent-control-validation-agentbench/
 authors: "AIUC-1 Consortium"
