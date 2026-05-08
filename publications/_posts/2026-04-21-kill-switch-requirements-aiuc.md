@@ -13,7 +13,8 @@ tags:
   - AIUC
 related_posts:
 - /blog/ai-agent-control-validation-agentbench/
-authors: "AIUC-1 Consortium"
+authors: "Chris DeNoia, Scott Kennedy, Adnan Dakhwe, <u>Jonathan Fuller</u>"
+
 date: 2026-04-21
 venue: "AIUC-1"
 pdf_url: /assets/papers/ai-kill-switch-requirements.pdf
