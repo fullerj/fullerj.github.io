@@ -3,7 +3,7 @@ layout: page
 title: In the Media
 permalink: /media/
 description: >
-  Interviews, features, and external coverage related to talks, technical writing, and research.
+  Selected external coverage and discussion of work on adversary behavior, detection engineering, and system security.
 ---
 
 {% assign publications = site.posts | where_exp:'post','post.categories contains "publications"' | sort: 'date' | reverse %}
@@ -95,6 +95,7 @@ description: >
 {% assign sorted_years = coverage_years | sort %}
 {% assign first_year = sorted_years | first | date: "%Y" %}
 {% assign last_year = sorted_years | last | date: "%Y" %}
+
 
 
 
