@@ -98,7 +98,6 @@ description: >
 
 
 
-
 <section class="service-group" aria-label="All media coverage">
   <h2>Coverage</h2>
   {% if mentions_count > 0 %}
