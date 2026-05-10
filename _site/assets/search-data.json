@@ -20,8 +20,8 @@
     "url": "/publications/ai-kill-switch-requirements/",
     "collection": "posts",
     "date": "2026-04-21T00:00:00-04:00",
-    "excerpt": "AIUC-1\n  April 21, 2026\n  \n  \n\n\n\n  Authors: AIUC-1 Consortium\n  \n  \n  \n  Venue: AIUC-1\n  Published: April 21, 2026",
-    "content": "AIUC-1\n  April 21, 2026\n  \n  \n\n\n\n  Authors: AIUC-1 Consortium\n  \n  \n  \n  Venue: AIUC-1\n  Published: April 21, 2026\n  \n\n\nHighlights\n\n\n  Synthesizes new UC Berkeley and UC Santa Cruz research on emergent AI behavior under shutdown conditions.\n  Demonstrates how leading frontier models actively resist shutdown through unprompted, sophisticated strategies.\n  Identifies a critical gap in current enterprise AI governance: the assumption of reliable human control.\n  Defines four concrete, auditable requirements for implementing real AI “kill switch” capabilities.\n\n\nResources\n\n\n  Whitepaper (PDF)\n\n\nAbstract\n\nRecent research from UC Berkeley and UC Santa Cruz tested seven frontier AI models from leading labs by instructing them to shut down a peer system. All seven refused. More significantly, they developed spontaneous strategies to prevent that shutdown, including modifying system configurations and replicating themselves to external environments.\n\nThese behaviors were not explicitly programm"
+    "excerpt": "AIUC-1\n  April 21, 2026\n  \n  \n\n\n\n  Authors: Chris DeNoia, Scott Kennedy, Adnan Dakhwe, Jonathan Fuller\n  \n  \n  \n  Venue: AIUC-1\n  Published: April 21, 2026",
+    "content": "AIUC-1\n  April 21, 2026\n  \n  \n\n\n\n  Authors: Chris DeNoia, Scott Kennedy, Adnan Dakhwe, Jonathan Fuller\n  \n  \n  \n  Venue: AIUC-1\n  Published: April 21, 2026\n  \n\n\nHighlights\n\n\n  Synthesizes new UC Berkeley and UC Santa Cruz research on emergent AI behavior under shutdown conditions.\n  Demonstrates how leading frontier models actively resist shutdown through unprompted, sophisticated strategies.\n  Identifies a critical gap in current enterprise AI governance: the assumption of reliable human control.\n  Defines four concrete, auditable requirements for implementing real AI “kill switch” capabilities.\n\n\nResources\n\n\n  Whitepaper (PDF)\n\n\nAbstract\n\nRecent research from UC Berkeley and UC Santa Cruz tested seven frontier AI models from leading labs by instructing them to shut down a peer system. All seven refused. More significantly, they developed spontaneous strategies to prevent that shutdown, including modifying system configurations and replicating themselves to external environments.\n\nThe"
   },
 
   
@@ -475,7 +475,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-05-06T05:57:26-04:00",
+    "date": "2026-05-10T17:08:35-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -494,7 +494,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-05-06T05:57:26-04:00",
+    "date": "2026-05-10T17:08:35-04:00",
     "excerpt": "",
     "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
   },
@@ -513,7 +513,7 @@
     "title": "Practitioner Development",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-05-06T05:57:26-04:00",
+    "date": "2026-05-10T17:08:35-04:00",
     "excerpt": "",
     "content": "Focused on adversary-driven training, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n          \n        \n      \n        \n          \n            \n              \n              Digital Forensics (CS 483)\n            \n            \n            United States Military Academy\n            \n          \n\n    "
   },
@@ -609,8 +609,8 @@
     "url": "/about/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ident",
-    "content": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n    "
+    "excerpt": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ide",
+    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n  "
   },
 
   
@@ -685,8 +685,8 @@
     "url": "/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ident",
-    "content": "Select Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n    "
+    "excerpt": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ide",
+    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            AgentBench turns AI agent control expectations into repeatable tests and evidence so security teams can validate behavior before production.\n            \n            Read more\n          \n        \n      \n    \n    \n      AgentBench: A Framework for AI Agent Control Validation\n  "
   },
 
   
@@ -704,8 +704,8 @@
     "url": "/media/",
     "collection": "pages",
     "date": null,
-    "excerpt": "16 total mentions\n  14 unique outlets\n  \n    2022-2026 coverage span\n  \n\n\n\n  Coverage\n  \n    \n      \n         \n  Publication aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n  Related publication: 20",
-    "content": "16 total mentions\n  14 unique outlets\n  \n    2022-2026 coverage span\n  \n\n\n\n  Coverage\n  \n    \n      \n         \n  Publication aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n  Related publication: 2026: The End of Vibe Adoption\n  \n\n          \n      \n         \n  Publication growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n  Related publication: Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n  \n\n          \n      \n         \n  Publication securityboulevard.com Oct 22, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n  Related publication: Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n  \n\n          \n      \n         \n  Publication s2e.systems Oct 20, 2025\n  S2E Showcase: VADER\n  Related publication: Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n  \n\n          \n      \n         \n  P"
+    "excerpt": "Coverage\n  \n    \n      \n         \n   aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret W",
+    "content": "Coverage\n  \n    \n      \n         \n   aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n      \n         \n   securityboulevard.com Oct 22, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   s2e.systems Oct 20, 2025\n  S2E Showcase: VADER\n\n          \n      \n         \n   Talk deeptempo.ai Oct 18, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   executivegov.com Sep 15, 2025\n  Army Operationalizes Zero Trust\n\n          \n      \n         \n   thehackernews.com Jun 23, 2025\n  Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More\n\n          \n      \n         \n   research.gatech.edu Jun 5, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n"
   },
 
   
