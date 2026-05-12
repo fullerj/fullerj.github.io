@@ -475,7 +475,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-05-10T18:34:44-04:00",
+    "date": "2026-05-12T11:03:15-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -494,7 +494,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-05-10T18:34:44-04:00",
+    "date": "2026-05-12T11:03:15-04:00",
     "excerpt": "",
     "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
   },
@@ -513,7 +513,7 @@
     "title": "Practitioner Development",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-05-10T18:34:44-04:00",
+    "date": "2026-05-12T11:03:15-04:00",
     "excerpt": "",
     "content": "Focused on adversary-driven training, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n          \n        \n      \n        \n          \n            \n              \n              Digital Forensics (CS 483)\n            \n            \n            United States Military Academy\n            \n          \n\n    "
   },
@@ -704,8 +704,8 @@
     "url": "/media/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Coverage\n  \n    \n      \n         \n   aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret W",
-    "content": "Coverage\n  \n    \n      \n         \n   aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n      \n         \n   securityboulevard.com Oct 22, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   s2e.systems Oct 20, 2025\n  S2E Showcase: VADER\n\n          \n      \n         \n   Talk deeptempo.ai Oct 18, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   executivegov.com Sep 15, 2025\n  Army Operationalizes Zero Trust\n\n          \n      \n         \n   thehackernews.com Jun 23, 2025\n  Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More\n\n          \n      \n         \n   research.gatech.edu Jun 5, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n"
+    "excerpt": "Coverage\n  \n    \n      \n         \n            aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n            growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting ",
+    "content": "Coverage\n  \n    \n      \n         \n            aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n            growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n      \n         \n            securityboulevard.com Oct 22, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n            s2e.systems Oct 20, 2025\n  S2E Showcase: VADER\n\n          \n      \n         \n            deeptempo.ai Oct 18, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n            executivegov.com Sep 15, 2025\n  Army Operationalizes Zero Trust\n\n          \n      \n         \n            thehackernews.com Jun 23, 2025\n  Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More\n\n          \n      \n         \n            research.gatech.edu Jun 5, 2025\n  Hiding in P"
   },
 
   

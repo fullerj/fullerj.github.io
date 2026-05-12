@@ -35,7 +35,7 @@ description: >
 
           {% capture coverage_entry %}
 {{ sort_key }}|||<article class="media-card"> 
-  <p class="media-card__eyebrow">{% if media.related_talk and media.related_talk.title and media.related_talk.url %} <span class="media-badge">Talk</span>{% endif %} <span class="media-outlet">{{ source_label }}</span>{% if media_date %} <span class="media-date">{{ media_date | date: "%b %-d, %Y" }}</span>{% endif %}</p>
+            <p class="media-card__eyebrow"><span class="media-outlet">{{ source_label }}</span>{% if media_date %} <span class="media-date">{{ media_date | date: "%b %-d, %Y" }}</span>{% endif %}</p>
   <h3 class="media-card__title"><a href="{{ media.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open media mention: {{ media.title }}">{{ media.title }}</a></h3>
 </article>
           {% endcapture %}
@@ -77,7 +77,7 @@ description: >
 
           {% capture coverage_entry %}
 {{ sort_key }}|||<article class="media-card"> 
-  <p class="media-card__eyebrow"><span class="media-badge">Talk</span> <span class="media-outlet">{{ source_label }}</span>{% if media_date %} <span class="media-date">{{ media_date | date: "%b %-d, %Y" }}</span>{% endif %}</p>
+            <p class="media-card__eyebrow"><span class="media-outlet">{{ source_label }}</span>{% if media_date %} <span class="media-date">{{ media_date | date: "%b %-d, %Y" }}</span>{% endif %}</p>
   <h3 class="media-card__title"><a href="{{ media.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open media mention: {{ media.title }}">{{ media.title }}</a></h3>
 </article>
           {% endcapture %}
