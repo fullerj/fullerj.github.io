@@ -20,6 +20,8 @@ media_links:
   - title: "Army Operationalizes Zero Trust"
     url: https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point
     date: "2025-09-15"
+    group: ent-sec
+
 card_label: Article
 blog_image: /assets/papers/zerotrust.png
 ---
