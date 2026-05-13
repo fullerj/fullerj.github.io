@@ -171,7 +171,7 @@ selected_impact:
     </article>
 
     <article class="home-panel home-panel--feature" id="writing">
-      <h3>Advisory and Leadership <small class="home-panel__source">(<a href="{{ '/service/' | relative_url }}">full roles & details</a>)</small></h3>
+      <h3>Advisory and Leadership </h3>
 
       <div class="service-cards">
         <details class="service-card">
@@ -219,6 +219,7 @@ selected_impact:
           </div>
         </details>
       </div>
+      <p><a href="{{ '/service/' | relative_url }}">View all roles and details</a></p>
 
     </article>
 
