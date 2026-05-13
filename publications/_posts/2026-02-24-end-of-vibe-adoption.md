@@ -24,6 +24,7 @@ media_links:
   - title: "Whitepaper: 2026 - The End of Vibe Adoption"
     url: https://www.aiuc-1.com/research/whitepaper-the-end-of-vibe-adoption
     date: "2026-02-24"
+    group: ai-security
 ---
 
 {% include components/publication-meta.html %}
