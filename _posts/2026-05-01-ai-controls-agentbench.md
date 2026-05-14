@@ -249,3 +249,7 @@ This is the first pass of AgentBench. More to come.
 
 
 [^stig]: Security Technical Implementation Guides (STIGs) are configuration standards developed by the Defense Information Systems Agency (DISA) to harden IT systems, networks, and software against cyberattacks.
+
+---
+
+For the source, see the [GitHub repo](https://github.com/Empirical-Defense/agentbench).
