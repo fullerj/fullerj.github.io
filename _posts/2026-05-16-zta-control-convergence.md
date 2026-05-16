@@ -5,7 +5,7 @@ description: >
   This post explores how PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings can be normalized into a shared DoW Zero Trust activity model to improve prioritization, detection engineering, and operational decision-making.
 abstract: >
   By treating DoW Zero Trust activities as the control layer, security teams can unify fragmented findings into a coherent operational model.
-date: 2026-05-22
+date: 2026-05-16
 categories:
   - posts
 permalink: /blog/zta-control-convergence/
@@ -65,7 +65,7 @@ There is also a legitimate concern that Zero Trust can become overly compliance-
 
 #### What Happened to ICAM?
 
-At times, it is worth asking a simple question: what happened to thinking about Zero Trust primarily through the lens of ICAM, Identity, Credential, and Access Management (ICAM)? That question was posed to me last year during a visit to the U.S. Military Academy by the Deputy Chief of Staff, G-6 (the ultimate logistics and implementation boss for the U.S. Army, turning the Army policies into real-world networks used on the move). The question stuck with me because it cut through much of the architectural complexity and forced the conversation back toward fundamentals. Plus, he was pushing back on my definition of Zero Trust since I had the 152 activities in mind. 
+At times, it is worth asking a simple question: what happened to thinking about Zero Trust primarily through the lens of ICAM, Identity, Credential, and Access Management? That question was posed to me last year during a visit to the U.S. Military Academy by the Deputy Chief of Staff, G-6 (the ultimate logistics and implementation boss for the U.S. Army, turning the Army policies into real-world networks used on the move). The question stuck with me because it cut through much of the architectural complexity and forced the conversation back toward fundamentals. Plus, he was pushing back on my definition of Zero Trust since I had the 152 activities in mind. 
 
 #### Identity Still Matters Most
 
@@ -166,7 +166,6 @@ At a high level, the workflow looks like this:
 3. Run the post-processing script against the reports.
 4. Normalize findings into shared ZTA activity mappings.
 5. Review where multiple assessment sources converge on the same operational capability.
-
 
 #### Closing
 
