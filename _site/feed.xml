@@ -1,5 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-13T09:52:34-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Chief Information Security Officer securing hybrid enterprise systems in adversarial environments. I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs</title><link href="http://localhost:4000/publications/ai-kill-switch-requirements/" rel="alternate" type="text/html" title="2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs" /><published>2026-04-21T00:00:00-04:00</published><updated>2026-05-08T09:29:01-04:00</updated><id>http://localhost:4000/publications/kill-switch-requirements-aiuc</id><content type="html" xml:base="http://localhost:4000/publications/ai-kill-switch-requirements/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-16T12:52:08-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Chief Information Security Officer securing hybrid enterprise systems in adversarial environments. I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model</title><link href="http://localhost:4000/blog/zta-control-convergence/" rel="alternate" type="text/html" title="Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model" /><published>2026-05-22T00:00:00-04:00</published><updated>2026-05-16T12:52:07-04:00</updated><id>http://localhost:4000/blog/zta-control-convergence</id><content type="html" xml:base="http://localhost:4000/blog/zta-control-convergence/"><![CDATA[<p>The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.
+The roadmap is compressive, and I have mixed feelings about having to focus on 152 activities. However, it’s approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.</p>
+
+<blockquote>
+  <h3 id="example-dow-zero-trust-activities">Example DoW Zero Trust Activities</h3>
+
+  <p>The DoW Zero Trust Architecture defines activities that become the canonical reference layer for normalization. Findings from PingCastle, Microsoft Zero Trust Assessment, and ScubaGear map into these activities to provide a shared operational view across identity, access, and policy domains.</p>
+</blockquote>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Activity ID</th>
+      <th style="text-align: left">Activity</th>
+      <th style="text-align: left">Pillar</th>
+      <th style="text-align: left">Maturity Level</th>
+      <th style="text-align: left">Operational Focus</th>
+      <th style="text-align: left">Intended Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>1.1.1</strong></td>
+      <td style="text-align: left"><strong>Inventory User</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Target Level ZT</td>
+      <td style="text-align: left">Establish authoritative identity sources for privileged and non-privileged users. Connect identities to lifecycle management processes.</td>
+      <td style="text-align: left">Organizations maintain accurate visibility and control over authenticated users and privileged accounts.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>1.2.1</strong></td>
+      <td style="text-align: left"><strong>Implement App Based Permissions per Enterprise</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Target Level ZT</td>
+      <td style="text-align: left">Standardize enterprise attributes, roles, and permissions across ICAM implementations and applications.</td>
+      <td style="text-align: left">Conditional access and PAM workflows can enforce authorization consistently across enterprise applications.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>1.2.2</strong></td>
+      <td style="text-align: left"><strong>Rule Based Dynamic Access</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Target Level ZT</td>
+      <td style="text-align: left">Use dynamic rules, JIT, and JEA to control administrative access in real time.</td>
+      <td style="text-align: left">Access decisions become continuously evaluated based on identity, context, and authorization state.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>1.2.4</strong></td>
+      <td style="text-align: left"><strong>Enterprise Gov’t Roles and Permissions</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Advanced Level ZT</td>
+      <td style="text-align: left">Federate identity attributes and standardize enterprise roles through centralized ICAM services.</td>
+      <td style="text-align: left">Enterprise-wide role consistency improves resilience and authorization management.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>1.3.1</strong></td>
+      <td style="text-align: left"><strong>Organizational MFA/IDP</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Target Level ZT</td>
+      <td style="text-align: left">Centralize MFA and identity provider integration for critical applications and services.</td>
+      <td style="text-align: left">Critical applications consistently enforce MFA using approved identity and PKI solutions.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>1.3.2</strong></td>
+      <td style="text-align: left"><strong>Alternative Flexible MFA</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Advanced Level ZT</td>
+      <td style="text-align: left">Support alternative MFA mechanisms including tokens, biometrics, and self-service capabilities.</td>
+      <td style="text-align: left">Users gain flexible MFA options while maintaining approved security requirements.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>1.4.1</strong></td>
+      <td style="text-align: left"><strong>Implement System and Migrate Privileged Users</strong></td>
+      <td style="text-align: left">User</td>
+      <td style="text-align: left">Target Level ZT</td>
+      <td style="text-align: left">Deploy PAM tooling and migrate supported privileged workflows into managed access systems.</td>
+      <td style="text-align: left">Privileged access becomes centrally governed through PAM-integrated applications and systems.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<blockquote>
+  <p>In this model, ZTA activities become the operational normalization layer. Assessment tools become evidence sources mapped into those activities rather than isolated reporting systems.</p>
+</blockquote>
+
+<p>More on my mixed feelings…</p>
+
+<p>It is fair to acknowledge that the roadmap can feel overwhelming, especially for organizations operating in complex brownfield environments. Much of the Zero Trust conversation assumes a level of architectural cleanliness that simply does not exist across large enterprises, particularly within operational technology, legacy mission systems, and hybrid environments built over decades. It also often assumes a level of fiscal flexibility that many organizations simply do not have. Building a mature Zero Trust architecture is not cheap. Efforts like <a href="https://ironbow.com/techsource/thunderdome-shifting-dod-cybersecurity-to-zero-trust">DISA Thunderdome</a> demonstrate what large-scale Zero Trust engineering can look like in practice, but they also highlight the reality that significant architectural transformation requires significant investment. Some portions of the framework are naturally more achievable in greenfield cloud-native environments than in operational environments where uptime, interoperability, and mission continuity outweigh the luxury of architectural purity unless organizations are willing and able to fund major structural changes. Some of us are implementing Zero Trust while also quietly touching our index finger to our nose anytime someone mentions “strategic modernization funding.”</p>
+
+<p>There is also a legitimate concern that Zero Trust can become overly compliance-driven. When a framework expands into 152 distinct activities, organizations naturally begin measuring progress through checklists. I’ve spent more time than I care to admit trying to demonstrate alignment to the framework than materially reducing attack paths or operational risk. Complexity itself can become a vulnerability.</p>
+
+<p>At times, it is worth asking a simple question: what happened to thinking about Zero Trust primarily through the lens of ICAM, Identity, Credential, and Access Management (ICAM)? That question was posed to me last year during a visit to the U.S. Military Academy by the Deputy Chief of Staff, G-6 (the ultimate logistics and implementation boss for the U.S. Army, turning the Army policies into real-world networks used on the move). The question stuck with me because it cut through much of the architectural complexity and forced the conversation back toward fundamentals. Plus, he was pushing back on my definition of Zero Trust since I had the 152 activities in mind.</p>
+
+<p>For many practitioners, Zero Trust originally centered on a relatively straightforward principle: strongly verify identities, continuously validate trust, enforce least privilege, and tightly control access to resources. In many ways, identity was the foundation that everything else was built upon.</p>
+
+<p>Today, however, the conversation can sometimes feel as though Zero Trust has evolved into an almost all-encompassing architecture doctrine touching every domain, platform, telemetry stream, and orchestration layer simultaneously. While that expansion reflects the growing complexity of modern environments, it can also dilute focus. There is a risk that organizations pursue sprawling Zero Trust transformation efforts while still struggling with foundational identity governance, privileged access management, asset inventory, or consistent MFA enforcement. In practice, many successful security programs still derive the majority of their defensive value from getting the ICAM fundamentals right. Yes, I’m looking at you!</p>
+
+<p>And yet, despite the sometime overly complex DoW process, there are important positives that I wont dismiss. The framework provides a common language for modernization across the enterprise. It creates alignment between security, infrastructure, cloud, identity, and operational technology teams that have historically operated in silos. It also moves us away from perimeter-centric assumptions toward continuous verification, visibility, and least privilege, all of which reflect the realities of modern threat activity. Is this not what we need more than ever with the proliferation of AI solutions in our environment?</p>
+
+<p>Perhaps most importantly, the roadmap forces strategic prioritization. Many organizations have accumulated years of disconnected security tooling without a coherent architectural direction. The DoW ZTA model, despite its complexity, offers a structured framework for thinking about modernization in phases rather than as isolated technology purchases even though organizations that have “successfully achieved” all 152 activities have taken this approach.</p>
+
+<p>Ultimately, reasonable people can debate whether every activity within the roadmap delivers equal operational value, whether portions of the framework overcomplicate security, or whether some advanced capabilities are realistically attainable at scale. But for those of us operating within the DoW environment, the practical reality is straightforward: this is the framework we are implementing…and no, I’m not saluting as I write this. My hands are on the keyboard.</p>
+
+<p>Now, I’m forced to find how to implement it pragmatically while balancing mission needs, operational realities, legacy constraints, and measurable risk reduction without losing sight of the reason the framework exists in the first place.</p>
+
+<h2 id="the-operational-problem-i-am-trying-to-solve">The Operational Problem I Am Trying To Solve</h2>
+
+<p>Most security teams already run multiple assessments. You might use <a href="https://www.pingcastle.com">PingCastle</a> to assess Active Directory (AD) exposure and privilege structure. If you’ve made it this far, why do you still have AD? <a href="https://github.com/microsoft/zerotrustassessment">Microsoft Zero Trust Assessment</a> evaluates cloud identity posture and conditional access maturity. CISA’s <a href="https://github.com/cisagov/ScubaGear">ScubaGear</a> measures policy alignment and configuration drift against secure baselines.</p>
+
+<p>Individually, each tool is valuable, but they create a different problem when all together. Each assessment sees a different slice of the environment and reports independently. The result is fragmented prioritization and teams that spend more time managing reports than understanding system behavior under attack.</p>
+
+<p>For smaller security teams (I can’t forget my vCISO colleagues who often use tools like these), this becomes operationally painful very quickly. One engineer understands AD inheritance. Another owns cloud policy. Nobody owns cross-domain attack modeling. But I still need to be able to communicate a coherent risk narrative and measurable progress.</p>
+
+<h2 id="why-the-dow-zta-activity-model-becomes-useful">Why The DoW ZTA Activity Model Becomes Useful</h2>
+
+<p>How do I make lemonade out of mixed feelings? Originally, the instinct was to correlate overlapping findings directly between tools.</p>
+
+<p>PingCastle might flag excessive privilege inheritance. Microsoft Zero Trust might report weak privileged access governance. ScubaGear might surface policy drift affecting administrative controls. However, many duplicate findings were not actually duplicates. They are multiple observations of the same operational weakness appearing across different control planes.</p>
+
+<p>So, instead of correlating findings directly between PingCastle, Microsoft Zero Trust Assessment, and ScubaGear, all findings are normalized into a shared DoW Zero Trust activity model. The ZTA activities become the canonical layer. The tools become evidence sources mapped into that structure.
+Now, we’re not asking which tool is correct or which severity score matters most or whether findings should be deduplicated. Instead, we’re focusing on which ZTA activities are weak, how many independent systems surface evidence for that weakness, and what adversary behaviors become possible because of it. We find this to be an operationally useful model.</p>
+
+<h2 id="from-tool-overlap-to-control-convergence">From Tool Overlap to Control Convergence</h2>
+
+<p>Once findings are mapped into shared ZTA activities, overlap stops being the important concept. Convergence becomes the important concept. A single finding tied to one ZTA activity may not mean much by itself. But when identity assessments, access-control assessments, and policy assessments independently map into the same operational capability, confidence increases dramatically that the weakness is both real and exploitable. Anchoring findings to ZTA activities instead of directly to vendor outputs creates a more durable prioritization model that can survive tooling evolution over time.</p>
+
+<h2 id="what-the-data-actually-looks-like">What The Data Actually Looks Like</h2>
+
+<p>The implementation itself is intentionally simple. Each assessment source maps findings into shared DoW Zero Trust activities. The activity becomes the canonical reference point, while the individual tools become evidence sources attached to that activity.</p>
+
+<p>A simplified example looks like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ztaCapabilityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msZeroTrust"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"scubaGear"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"match"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"testId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS.AAD.6.1v1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User passwords SHALL NOT expire."</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"ztaCapabilityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"match"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"testId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS.EXO.5.1v1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMTP AUTH SHALL be disabled."</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"ztaCapabilityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pingCastle"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<blockquote>
+  <p>The example below shows a real mapping from the dataset. In this case, the DoW ZTA activity <code class="language-plaintext highlighter-rouge">1.1.1</code> (“Inventory User”) is associated with multiple ScubaGear findings, while no corresponding mappings currently exist from Microsoft Zero Trust Assessment or PingCastle for this specific activity. Not every ZTA activity receives coverage from every assessment source, which itself becomes useful operational context when evaluating visibility gaps across the framework.</p>
+</blockquote>
+
+<p>Normalization leads to simplification. Instead of treating PingCastle, Microsoft Zero Trust Assessment, and ScubaGear as disconnected reports, all findings now resolve into a shared operational capability model. The ZTA activity becomes the common language between identity, access, policy, and configuration assessments.This is not meant to replace threat modeling or detection engineering. It creates a cleaner foundation for those activities later.</p>
+
+<p>It is also important to acknowledge what this model does not do. Mapping findings into ZTA activities does not mean every activity within the DoW Zero Trust Architecture is fully represented or validated. These mappings only reflect what the underlying assessment sources are capable of observing. Some ZTA activities naturally align well with identity, access, and policy assessment tooling. Others do not. Entire portions of the framework may have little or no visibility through PingCastle, Microsoft Zero Trust Assessment, or ScubaGear because those tools were never designed to measure every operational capability inside the roadmap.</p>
+
+<p>This means the model is best understood as a normalization and visibility layer rather than a complete representation of Zero Trust maturity. It helps organizations understand where multiple assessment sources converge, where operational weaknesses repeatedly surface, and where additional visibility may still need to be engineered.</p>
+
+<h2 id="why-this-matters-operationally">Why This Matters Operationally</h2>
+
+<p>This simplifies remediation. Instead of chasing isolated findings, teams work against capability failures. Ownership becomes clearer. We actually assign findings to teams who then assign them to engineers within their teams. Prioritization now becomes defensible. It also makes it easier to explain when illustrating <strong><em>one way</em></strong> we are tackling the DoW ZTA mandate.</p>
+
+<h2 id="what-small-teams-gain-from-this">What Small Teams Gain From This</h2>
+
+<p>Smaller teams rarely win through scale. Clarity is key to succeed. The aim of this model is to reduce fragmentation (and fatigue). It reduces duplicated effort. It creates a shared operational language between our teams. Most importantly, it gives us a way to prioritize realistically. Not every Zero Trust activity matters equally in practice. Not every assessment finding deserves equal urgency. But when multiple independent systems converge on the same operational weakness, that is usually where attention belongs first.</p>
+
+<h2 id="closing">Closing</h2>
+
+<p>PingCastle, Microsoft Zero Trust Assessment, and ScubaGear are not competing viewpoints. They are partial observations of the same environment under stress.The DoW Zero Trust activity model provides something these tools cannot provide independently: a stable operational structure capable of normalizing fragmented findings into a coherent capability model.</p>
+
+<p>That does not solve every problem inside Zero Trust modernization. The framework is still large. The operational realities are still messy. Legacy systems still exist. ICAM fundamentals still matter more than many organizations are willing to admit. But if the framework is going to succeed operationally, organizations need a way to translate fragmented assessment data into actionable defensive understanding.</p>
+
+<hr />
+
+<p>For the source, see the <a href="https://github.com/Empirical-Defense/zta-convergence">GitHub repo</a></p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="zero trust" /><category term="ICAM" /><category term="PingCastle" /><category term="ScubaGear" /><category term="Microsoft Zero Trust" /><category term="threat modeling" /><category term="detection engineering" /><category term="security operations" /><category term="identity security" /><category term="control convergence" /><summary type="html"><![CDATA[This post explores how PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings can be normalized into a shared DoW Zero Trust activity model to improve prioritization, detection engineering, and operational decision-making.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/zta-control-convergence/zta.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/zta-control-convergence/zta.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs</title><link href="http://localhost:4000/publications/ai-kill-switch-requirements/" rel="alternate" type="text/html" title="2026: There Is a Standard for This — 4 Kill Switch Requirements Every AI Deployment Needs" /><published>2026-04-21T00:00:00-04:00</published><updated>2026-05-08T09:29:01-04:00</updated><id>http://localhost:4000/publications/kill-switch-requirements-aiuc</id><content type="html" xml:base="http://localhost:4000/publications/ai-kill-switch-requirements/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
   <span class="entry-context__item">AIUC-1</span>
   <span class="entry-context__item">April 21, 2026</span>
   
@@ -52,7 +235,7 @@
 
 <p>Organizations that can answer these questions with evidence (not assurances) will be positioned to deploy AI systems safely in high-stakes environments. Those that cannot are operating with a control model that recent empirical evidence suggests may not hold.</p>
 
-<p>The question is no longer whether a kill switch exists. It is whether it works.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="AI security" /><category term="governance" /><category term="risk management" /><category term="AIUC" /><summary type="html"><![CDATA[A governance-focused whitepaper examining new empirical evidence that challenges core assumptions about AI control, and defining four auditable requirements for real-world AI kill switches.]]></summary></entry><entry><title type="html">AgentBench: A Framework for AI Agent Control Validation</title><link href="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/" rel="alternate" type="text/html" title="AgentBench: A Framework for AI Agent Control Validation" /><published>2026-04-20T00:00:00-04:00</published><updated>2026-05-06T05:58:24-04:00</updated><id>http://localhost:4000/blog/ai-controls-aegis</id><content type="html" xml:base="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/"><![CDATA[<p>While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG<sup id="fnref:stig"><a href="#fn:stig" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> is a four-letter word.” No one likes IT compliance.</p>
+<p>The question is no longer whether a kill switch exists. It is whether it works.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="AI security" /><category term="governance" /><category term="risk management" /><category term="AIUC" /><summary type="html"><![CDATA[A governance-focused whitepaper examining new empirical evidence that challenges core assumptions about AI control, and defining four auditable requirements for real-world AI kill switches.]]></summary></entry><entry><title type="html">AgentBench: A Framework for AI Agent Control Validation</title><link href="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/" rel="alternate" type="text/html" title="AgentBench: A Framework for AI Agent Control Validation" /><published>2026-04-20T00:00:00-04:00</published><updated>2026-05-14T12:13:38-04:00</updated><id>http://localhost:4000/blog/ai-controls-agentbench</id><content type="html" xml:base="http://localhost:4000/blog/ai-agent-control-validation-agent-bench/"><![CDATA[<p>While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG<sup id="fnref:stig"><a href="#fn:stig" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> is a four-letter word.” No one likes IT compliance.</p>
 
 <p>AgentBench is a few letters longer, but that is not the point.</p>
 
@@ -278,6 +461,9 @@
 
 <p>This is the first pass of AgentBench. More to come.</p>
 
+<hr />
+
+<p>For the source, see the <a href="https://github.com/Empirical-Defense/agentbench">GitHub repo</a>.</p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:stig">
@@ -1009,43 +1195,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <span class="na">year</span>      <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
   <span class="na">address</span>   <span class="p">=</span> <span class="s">{Taipei, Taiwan}</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="command-and-control" /><category term="dead drops" /><category term="web security" /><summary type="html"><![CDATA[Proactive detection and remediation of Dead Drop Resolver malware on web applications, accepted to ACM CCS 2025 (13.8% acceptance rate).]]></summary></entry><entry><title type="html">Operationalizing Zero Trust: CECOM SEC and West Point Collaborate</title><link href="http://localhost:4000/publications/operationalizing-zero-trust/" rel="alternate" type="text/html" title="Operationalizing Zero Trust: CECOM SEC and West Point Collaborate" /><published>2025-09-11T00:00:00-04:00</published><updated>2026-05-13T06:10:46-04:00</updated><id>http://localhost:4000/publications/operationalizing-zero-trust</id><content type="html" xml:base="http://localhost:4000/publications/operationalizing-zero-trust/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
-  <span class="entry-context__item">U.S. Army</span>
-  <span class="entry-context__item">September 11, 2025</span>
-  
-  
-</div>
-
-<div class="meta grid entry-details">
-  <div class="meta-item"><strong>Authors:</strong> F. Shah, <u>Jonathan Fuller</u></div>
-  
-  
-  
-  <div class="meta-item"><strong>Venue:</strong> U.S. Army</div>
-  <div class="meta-item"><strong>Published:</strong> September 11, 2025</div>
-  
-</div>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Details the first practical evaluation of the SEC-developed mapping between Zero Trust principles and the DoD Risk Management Framework.</li>
-  <li>Shares insights from the joint U.S. Army CECOM Software Engineering Center and West Point collaboration on adoption challenges.</li>
-  <li>Captures feedback loops needed to operationalize Zero Trust across Army systems and accreditation processes.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="https://www.army.mil/article/288418">Official article</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>The Communications-Electronics Command Software Engineering Center and the U.S. Military Academy at West Point partnered to test the feasibility of the SEC-developed mapping between Zero Trust and the Department of Defense Risk Management Framework. This effort marked the first practical exercise to gather feedback on the mapping’s application and to identify adjustments needed to operationalize Zero Trust within Army environments.</p>
-
-<h2 id="media-coverage">Media Coverage</h2>
-
-<ul>
-  <li><a href="https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point">Army Operationalizes Zero Trust</a></li>
-</ul>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="zero trust" /><category term="DoW" /><category term="risk management" /><summary type="html"><![CDATA[Field collaboration between CECOM SEC and West Point to validate Zero Trust mappings to the DoD Risk Management Framework.]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="command-and-control" /><category term="dead drops" /><category term="web security" /><summary type="html"><![CDATA[Proactive detection and remediation of Dead Drop Resolver malware on web applications, accepted to ACM CCS 2025 (13.8% acceptance rate).]]></summary></entry></feed>
