@@ -31,9 +31,6 @@ image:
 The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.
 The roadmap is compressive, and I have mixed feelings about having to focus on 152 activities. However, it’s approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.
 
-> ### Example DoW Zero Trust Activities
->
-> The DoW Zero Trust Architecture defines activities that become the canonical reference layer for normalization. Findings from PingCastle, Microsoft Zero Trust Assessment, and ScubaGear map into these activities to provide a shared operational view across identity, access, and policy domains.
 
 <br>
 
@@ -48,8 +45,7 @@ The roadmap is compressive, and I have mixed feelings about having to focus on 1
 | **1.4.1** | **Implement System and Migrate Privileged Users** | User | Target Level ZT | Deploy PAM tooling and migrate supported privileged workflows into managed access systems. | Privileged access becomes centrally governed through PAM-integrated applications and systems. |
 
 <br>
-
-> In this model, ZTA activities become the operational normalization layer. Assessment tools become evidence sources mapped into those activities rather than isolated reporting systems.
+<sub><i>Example DoW Zero Trust activities used as the canonical normalization layer for mapping findings across PingCastle, Microsoft Zero Trust Assessment, and ScubaGear.</i></sub>
 
 More on my mixed feelings… 
 
@@ -121,7 +117,7 @@ A simplified example looks like this:
   "pingCastle": []
 }
 ```
-> The example below shows a real mapping from the dataset. In this case, the DoW ZTA activity `1.1.1` ("Inventory User") is associated with multiple ScubaGear findings, while no corresponding mappings currently exist from Microsoft Zero Trust Assessment or PingCastle for this specific activity. Not every ZTA activity receives coverage from every assessment source, which itself becomes useful operational context when evaluating visibility gaps across the framework.
+<sub><i>Example of a real ZTA activity mapping. Activity <code>1.1.1</code> currently maps to multiple ScubaGear findings, while no corresponding mappings exist from Microsoft Zero Trust Assessment or PingCastle for this activity. Not all ZTA activities receive equal coverage across assessment sources.</i></sub>
 
 Normalization leads to simplification. Instead of treating PingCastle, Microsoft Zero Trust Assessment, and ScubaGear as disconnected reports, all findings now resolve into a shared operational capability model. The ZTA activity becomes the common language between identity, access, policy, and configuration assessments.This is not meant to replace threat modeling or detection engineering. It creates a cleaner foundation for those activities later. 
 
@@ -136,6 +132,23 @@ This simplifies remediation. Instead of chasing isolated findings, teams work ag
 ## What Small Teams Gain From This
 
 Smaller teams rarely win through scale. Clarity is key to succeed. The aim of this model is to reduce fragmentation (and fatigue). It reduces duplicated effort. It creates a shared operational language between our teams. Most importantly, it gives us a way to prioritize realistically. Not every Zero Trust activity matters equally in practice. Not every assessment finding deserves equal urgency. But when multiple independent systems converge on the same operational weakness, that is usually where attention belongs first.
+
+## How This Works in Practice
+
+The implementation behind this model is intentionally lightweight.
+
+At a high level, the workflow looks like this:
+
+![DoW ZTA normalization and convergence workflow](/assets/blogs/zta-control-convergence/workflow.png)
+
+<sub><i>Figure 1. PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings normalize into shared DoW Zero Trust activities, creating a common operational reference layer across identity, access, and policy assessment domains.</i></sub>
+
+1. Run the native assessment tools normally.
+2. Export the resulting HTML reports.
+3. Run the post-processing script against the reports.
+4. Normalize findings into shared ZTA activity mappings.
+5. Review where multiple assessment sources converge on the same operational capability.
+
 
 ## Closing
 
