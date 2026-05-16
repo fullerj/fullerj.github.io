@@ -8,8 +8,8 @@ hide_description: true
 redirect_from:
   - /download/
 featured_writings:
+  - /blog/zta-control-convergence/
   - /blog/ai-agent-control-validation-agent-bench/
-  - /blog/spycraft-2-1-bitcoin-transaction-graph-analysis/
   - /blog/what-malware-persists/
 
 selected_impact:
