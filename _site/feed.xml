@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-16T13:18:10-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Chief Information Security Officer securing hybrid enterprise systems in adversarial environments. I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model</title><link href="http://localhost:4000/blog/zta-control-convergence/" rel="alternate" type="text/html" title="Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model" /><published>2026-05-22T00:00:00-04:00</published><updated>2026-05-16T12:53:48-04:00</updated><id>http://localhost:4000/blog/zta-control-convergence</id><content type="html" xml:base="http://localhost:4000/blog/zta-control-convergence/"><![CDATA[<p>The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.
-The roadmap is compressive, and I have mixed feelings about having to focus on 152 activities. However, it’s approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-16T18:19:38-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>Chief Information Security Officer securing hybrid enterprise systems in adversarial environments. I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model</title><link href="http://localhost:4000/blog/zta-control-convergence/" rel="alternate" type="text/html" title="Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model" /><published>2026-05-22T00:00:00-04:00</published><updated>2026-05-16T13:18:22-04:00</updated><id>http://localhost:4000/blog/zta-control-convergence</id><content type="html" xml:base="http://localhost:4000/blog/zta-control-convergence/"><![CDATA[<h4 id="the-reality-of-the-dow-zero-trust-roadmap">The Reality of the DoW Zero Trust Roadmap</h4>
+
+<p>The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.</p>
+
+<p>The roadmap is comprehensive, and I have mixed feelings about having to focus on 152 activities. However, its approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.</p>
 
 <p><br /></p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">Activity ID</th>
+      <th style="text-align: left">ID</th>
       <th style="text-align: left">Activity</th>
-      <th style="text-align: left">Pillar</th>
-      <th style="text-align: left">Maturity Level</th>
       <th style="text-align: left">Operational Focus</th>
       <th style="text-align: left">Intended Outcome</th>
     </tr>
@@ -19,56 +20,42 @@ The roadmap is compressive, and I have mixed feelings about having to focus on 1
     <tr>
       <td style="text-align: left"><strong>1.1.1</strong></td>
       <td style="text-align: left"><strong>Inventory User</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Target Level ZT</td>
       <td style="text-align: left">Establish authoritative identity sources for privileged and non-privileged users. Connect identities to lifecycle management processes.</td>
       <td style="text-align: left">Organizations maintain accurate visibility and control over authenticated users and privileged accounts.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>1.2.1</strong></td>
       <td style="text-align: left"><strong>Implement App Based Permissions per Enterprise</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Target Level ZT</td>
       <td style="text-align: left">Standardize enterprise attributes, roles, and permissions across ICAM implementations and applications.</td>
       <td style="text-align: left">Conditional access and PAM workflows can enforce authorization consistently across enterprise applications.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>1.2.2</strong></td>
       <td style="text-align: left"><strong>Rule Based Dynamic Access</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Target Level ZT</td>
       <td style="text-align: left">Use dynamic rules, JIT, and JEA to control administrative access in real time.</td>
       <td style="text-align: left">Access decisions become continuously evaluated based on identity, context, and authorization state.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>1.2.4</strong></td>
       <td style="text-align: left"><strong>Enterprise Gov’t Roles and Permissions</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Advanced Level ZT</td>
       <td style="text-align: left">Federate identity attributes and standardize enterprise roles through centralized ICAM services.</td>
       <td style="text-align: left">Enterprise-wide role consistency improves resilience and authorization management.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>1.3.1</strong></td>
       <td style="text-align: left"><strong>Organizational MFA/IDP</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Target Level ZT</td>
       <td style="text-align: left">Centralize MFA and identity provider integration for critical applications and services.</td>
       <td style="text-align: left">Critical applications consistently enforce MFA using approved identity and PKI solutions.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>1.3.2</strong></td>
       <td style="text-align: left"><strong>Alternative Flexible MFA</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Advanced Level ZT</td>
       <td style="text-align: left">Support alternative MFA mechanisms including tokens, biometrics, and self-service capabilities.</td>
       <td style="text-align: left">Users gain flexible MFA options while maintaining approved security requirements.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>1.4.1</strong></td>
       <td style="text-align: left"><strong>Implement System and Migrate Privileged Users</strong></td>
-      <td style="text-align: left">User</td>
-      <td style="text-align: left">Target Level ZT</td>
       <td style="text-align: left">Deploy PAM tooling and migrate supported privileged workflows into managed access systems.</td>
       <td style="text-align: left">Privileged access becomes centrally governed through PAM-integrated applications and systems.</td>
     </tr>
@@ -78,19 +65,35 @@ The roadmap is compressive, and I have mixed feelings about having to focus on 1
 <p><br />
 <sub><i>Example DoW Zero Trust activities used as the canonical normalization layer for mapping findings across PingCastle, Microsoft Zero Trust Assessment, and ScubaGear.</i></sub></p>
 
+<h4 id="the-challenge-of-implementing-zero-trust-in-brownfield-environments">The Challenge of Implementing Zero Trust in Brownfield Environments</h4>
+
 <p>More on my mixed feelings…</p>
 
-<p>It is fair to acknowledge that the roadmap can feel overwhelming, especially for organizations operating in complex brownfield environments. Much of the Zero Trust conversation assumes a level of architectural cleanliness that simply does not exist across large enterprises, particularly within operational technology, legacy mission systems, and hybrid environments built over decades. It also often assumes a level of fiscal flexibility that many organizations simply do not have. Building a mature Zero Trust architecture is not cheap. Efforts like <a href="https://ironbow.com/techsource/thunderdome-shifting-dod-cybersecurity-to-zero-trust">DISA Thunderdome</a> demonstrate what large-scale Zero Trust engineering can look like in practice, but they also highlight the reality that significant architectural transformation requires significant investment. Some portions of the framework are naturally more achievable in greenfield cloud-native environments than in operational environments where uptime, interoperability, and mission continuity outweigh the luxury of architectural purity unless organizations are willing and able to fund major structural changes. Some of us are implementing Zero Trust while also quietly touching our index finger to our nose anytime someone mentions “strategic modernization funding.”</p>
+<p>It is fair to acknowledge that the roadmap can feel overwhelming, especially for organizations operating in complex brownfield environments. Much of the Zero Trust conversation assumes a level of architectural cleanliness that simply does not exist across large enterprises, particularly within operational technology, legacy mission systems, and hybrid environments built over decades. It also often assumes a level of fiscal flexibility that many organizations simply do not have.</p>
 
-<p>There is also a legitimate concern that Zero Trust can become overly compliance-driven. When a framework expands into 152 distinct activities, organizations naturally begin measuring progress through checklists. I’ve spent more time than I care to admit trying to demonstrate alignment to the framework than materially reducing attack paths or operational risk. Complexity itself can become a vulnerability.</p>
+<p>Building a mature Zero Trust architecture is not cheap. Efforts like <a href="https://ironbow.com/techsource/thunderdome-shifting-dod-cybersecurity-to-zero-trust">DISA Thunderdome</a> demonstrate what large-scale Zero Trust engineering can look like in practice, but they also highlight the reality that significant architectural transformation requires significant investment. Some portions of the framework are naturally more achievable in greenfield cloud-native environments than in operational environments where uptime, interoperability, and mission continuity outweigh the luxury of architectural purity unless organizations are willing and able to fund major structural changes.</p>
+
+<p>Some of us are implementing Zero Trust while also quietly touching our index finger to our nose anytime someone mentions “strategic modernization funding.”</p>
+
+<h4 id="when-zero-trust-becomes-compliance-theater">When Zero Trust Becomes Compliance Theater</h4>
+
+<p>There is also a legitimate concern that Zero Trust can become overly compliance-driven. When a framework expands into 152 distinct activities, organizations naturally begin measuring progress through checklists. I’ve spent more time than I care to admit trying to demonstrate alignment to the framework rather than materially reducing attack paths or operational risk. Complexity itself can become a vulnerability.</p>
+
+<h4 id="what-happened-to-icam">What Happened to ICAM?</h4>
 
 <p>At times, it is worth asking a simple question: what happened to thinking about Zero Trust primarily through the lens of ICAM, Identity, Credential, and Access Management (ICAM)? That question was posed to me last year during a visit to the U.S. Military Academy by the Deputy Chief of Staff, G-6 (the ultimate logistics and implementation boss for the U.S. Army, turning the Army policies into real-world networks used on the move). The question stuck with me because it cut through much of the architectural complexity and forced the conversation back toward fundamentals. Plus, he was pushing back on my definition of Zero Trust since I had the 152 activities in mind.</p>
+
+<h4 id="identity-still-matters-most">Identity Still Matters Most</h4>
 
 <p>For many practitioners, Zero Trust originally centered on a relatively straightforward principle: strongly verify identities, continuously validate trust, enforce least privilege, and tightly control access to resources. In many ways, identity was the foundation that everything else was built upon.</p>
 
 <p>Today, however, the conversation can sometimes feel as though Zero Trust has evolved into an almost all-encompassing architecture doctrine touching every domain, platform, telemetry stream, and orchestration layer simultaneously. While that expansion reflects the growing complexity of modern environments, it can also dilute focus. There is a risk that organizations pursue sprawling Zero Trust transformation efforts while still struggling with foundational identity governance, privileged access management, asset inventory, or consistent MFA enforcement. In practice, many successful security programs still derive the majority of their defensive value from getting the ICAM fundamentals right. Yes, I’m looking at you!</p>
 
+<h4 id="the-benefits-i-still-believe-in">The Benefits I Still Believe In</h4>
+
 <p>And yet, despite the sometime overly complex DoW process, there are important positives that I wont dismiss. The framework provides a common language for modernization across the enterprise. It creates alignment between security, infrastructure, cloud, identity, and operational technology teams that have historically operated in silos. It also moves us away from perimeter-centric assumptions toward continuous verification, visibility, and least privilege, all of which reflect the realities of modern threat activity. Is this not what we need more than ever with the proliferation of AI solutions in our environment?</p>
+
+<h4 id="strategic-alignment-vs-architectural-complexity">Strategic Alignment vs. Architectural Complexity</h4>
 
 <p>Perhaps most importantly, the roadmap forces strategic prioritization. Many organizations have accumulated years of disconnected security tooling without a coherent architectural direction. The DoW ZTA model, despite its complexity, offers a structured framework for thinking about modernization in phases rather than as isolated technology purchases even though organizations that have “successfully achieved” all 152 activities have taken this approach.</p>
 
@@ -98,7 +101,7 @@ The roadmap is compressive, and I have mixed feelings about having to focus on 1
 
 <p>Now, I’m forced to find how to implement it pragmatically while balancing mission needs, operational realities, legacy constraints, and measurable risk reduction without losing sight of the reason the framework exists in the first place.</p>
 
-<h2 id="the-operational-problem-i-am-trying-to-solve">The Operational Problem I Am Trying To Solve</h2>
+<h4 id="the-operational-problem-i-am-trying-to-solve">The Operational Problem I Am Trying To Solve</h4>
 
 <p>Most security teams already run multiple assessments. You might use <a href="https://www.pingcastle.com">PingCastle</a> to assess Active Directory (AD) exposure and privilege structure. If you’ve made it this far, why do you still have AD? <a href="https://github.com/microsoft/zerotrustassessment">Microsoft Zero Trust Assessment</a> evaluates cloud identity posture and conditional access maturity. CISA’s <a href="https://github.com/cisagov/ScubaGear">ScubaGear</a> measures policy alignment and configuration drift against secure baselines.</p>
 
@@ -106,7 +109,7 @@ The roadmap is compressive, and I have mixed feelings about having to focus on 1
 
 <p>For smaller security teams (I can’t forget my vCISO colleagues who often use tools like these), this becomes operationally painful very quickly. One engineer understands AD inheritance. Another owns cloud policy. Nobody owns cross-domain attack modeling. But I still need to be able to communicate a coherent risk narrative and measurable progress.</p>
 
-<h2 id="why-the-dow-zta-activity-model-becomes-useful">Why The DoW ZTA Activity Model Becomes Useful</h2>
+<h4 id="why-the-dow-zta-activity-model-becomes-useful">Why The DoW ZTA Activity Model Becomes Useful</h4>
 
 <p>How do I make lemonade out of mixed feelings? Originally, the instinct was to correlate overlapping findings directly between tools.</p>
 
@@ -115,11 +118,11 @@ The roadmap is compressive, and I have mixed feelings about having to focus on 1
 <p>So, instead of correlating findings directly between PingCastle, Microsoft Zero Trust Assessment, and ScubaGear, all findings are normalized into a shared DoW Zero Trust activity model. The ZTA activities become the canonical layer. The tools become evidence sources mapped into that structure.
 Now, we’re not asking which tool is correct or which severity score matters most or whether findings should be deduplicated. Instead, we’re focusing on which ZTA activities are weak, how many independent systems surface evidence for that weakness, and what adversary behaviors become possible because of it. We find this to be an operationally useful model.</p>
 
-<h2 id="from-tool-overlap-to-control-convergence">From Tool Overlap to Control Convergence</h2>
+<h4 id="from-tool-overlap-to-control-convergence">From Tool Overlap to Control Convergence</h4>
 
 <p>Once findings are mapped into shared ZTA activities, overlap stops being the important concept. Convergence becomes the important concept. A single finding tied to one ZTA activity may not mean much by itself. But when identity assessments, access-control assessments, and policy assessments independently map into the same operational capability, confidence increases dramatically that the weakness is both real and exploitable. Anchoring findings to ZTA activities instead of directly to vendor outputs creates a more durable prioritization model that can survive tooling evolution over time.</p>
 
-<h2 id="what-the-data-actually-looks-like">What The Data Actually Looks Like</h2>
+<h4 id="what-the-data-actually-looks-like">What The Data Actually Looks Like</h4>
 
 <p>The implementation itself is intentionally simple. Each assessment source maps findings into shared DoW Zero Trust activities. The activity becomes the canonical reference point, while the individual tools become evidence sources attached to that activity.</p>
 
@@ -155,15 +158,15 @@ Now, we’re not asking which tool is correct or which severity score matters mo
 
 <p>This means the model is best understood as a normalization and visibility layer rather than a complete representation of Zero Trust maturity. It helps organizations understand where multiple assessment sources converge, where operational weaknesses repeatedly surface, and where additional visibility may still need to be engineered.</p>
 
-<h2 id="why-this-matters-operationally">Why This Matters Operationally</h2>
+<h4 id="why-this-matters-operationally">Why This Matters Operationally</h4>
 
 <p>This simplifies remediation. Instead of chasing isolated findings, teams work against capability failures. Ownership becomes clearer. We actually assign findings to teams who then assign them to engineers within their teams. Prioritization now becomes defensible. It also makes it easier to explain when illustrating <strong><em>one way</em></strong> we are tackling the DoW ZTA mandate.</p>
 
-<h2 id="what-small-teams-gain-from-this">What Small Teams Gain From This</h2>
+<h4 id="what-small-teams-gain-from-this">What Small Teams Gain From This</h4>
 
 <p>Smaller teams rarely win through scale. Clarity is key to succeed. The aim of this model is to reduce fragmentation (and fatigue). It reduces duplicated effort. It creates a shared operational language between our teams. Most importantly, it gives us a way to prioritize realistically. Not every Zero Trust activity matters equally in practice. Not every assessment finding deserves equal urgency. But when multiple independent systems converge on the same operational weakness, that is usually where attention belongs first.</p>
 
-<h2 id="how-this-works-in-practice">How This Works in Practice</h2>
+<h4 id="how-this-works-in-practice">How This Works in Practice</h4>
 
 <p>The implementation behind this model is intentionally lightweight.</p>
 
@@ -181,7 +184,7 @@ Now, we’re not asking which tool is correct or which severity score matters mo
   <li>Review where multiple assessment sources converge on the same operational capability.</li>
 </ol>
 
-<h2 id="closing">Closing</h2>
+<h4 id="closing">Closing</h4>
 
 <p>PingCastle, Microsoft Zero Trust Assessment, and ScubaGear are not competing viewpoints. They are partial observations of the same environment under stress.The DoW Zero Trust activity model provides something these tools cannot provide independently: a stable operational structure capable of normalizing fragmented findings into a coherent capability model.</p>
 
@@ -601,7 +604,7 @@ Now, we’re not asking which tool is correct or which severity score matters mo
       <p>Greenberg, Andy. <em>Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency</em>. Doubleday, 2022. <a href="#fnref:tracers" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph analysis" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-05-01T15:18:20-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
+</div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="blockchain" /><category term="bitcoin" /><category term="malware" /><category term="graph analysis" /><summary type="html"><![CDATA[This post extends Spycraft by analyzing Bitcoin wallet and transaction identifiers as a graph, revealing concentrated hubs, repeated value patterns, and structured behavior from malware-derived data.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/trace-wi/trace-wi.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?</title><link href="http://localhost:4000/blog/what-malware-persists/" rel="alternate" type="text/html" title="Measuring Malware Cluster Persistence in 2025: What Actually Stayed Active?" /><published>2026-03-02T00:00:00-05:00</published><updated>2026-05-16T13:18:22-04:00</updated><id>http://localhost:4000/blog/what-malware-persists</id><content type="html" xml:base="http://localhost:4000/blog/what-malware-persists/"><![CDATA[<p>Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?</p>
 
 <h2 id="executive-summary">Executive Summary</h2>
 
