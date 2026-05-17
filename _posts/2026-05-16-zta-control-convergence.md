@@ -47,7 +47,7 @@ The roadmap is comprehensive, and I have mixed feelings about having to focus on
 | **1.4.1** | **Implement System and Migrate Privileged Users** | Deploy PAM tooling and migrate supported privileged workflows into managed access systems. | Privileged access becomes centrally governed through PAM-integrated applications and systems. |
 
 <br>
-<sub><i>Example DoW Zero Trust activities used as the canonical normalization layer for mapping findings across PingCastle, Microsoft Zero Trust Assessment, and ScubaGear.</i></sub>
+<sub><i>Example DoW Zero Trust activities (7/152) used as the canonical normalization layer for mapping findings across PingCastle, Microsoft Zero Trust Assessment, and ScubaGear.</i></sub>
 
 #### The Challenge of Implementing Zero Trust in Brownfield Environments
 
