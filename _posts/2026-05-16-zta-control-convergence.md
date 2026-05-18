@@ -2,9 +2,9 @@
 layout: blog
 title: "Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model"
 description: >
-  This post explores how PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings can be normalized into a shared DoW Zero Trust activity model to improve prioritization, detection engineering, and operational decision-making.
+  This post explores how PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings can be normalized into a shared DoW Zero Trust activity model to improve assessment visibility, remediation tracking, and operational prioritization.
 abstract: >
-  By treating DoW Zero Trust activities as the control layer, security teams can unify fragmented findings into a coherent operational model.
+  By treating DoW Zero Trust activities as the normalization layer, security teams can unify fragmented assessment findings into a more coherent operational model.
 date: 2026-05-16
 categories:
   - posts
@@ -15,12 +15,11 @@ tags:
   - PingCastle
   - ScubaGear
   - Microsoft Zero Trust
-  - threat modeling
-  - detection engineering
+  - security benchmarking
   - security operations
   - identity security
   - control convergence
-related_posts:
+  - security modernization
 
 image:
   path: /assets/blogs/zta-control-convergence/zta.png
@@ -31,7 +30,7 @@ image:
 
 The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.
 
-The roadmap is comprehensive, and I have mixed feelings about having to focus on 152 activities. However, its approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.
+The roadmap is comprehensive, and I have mixed feelings about operationalizing 152 separate activities across already-complex environments. Its focus on identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation unquestionably improves defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.
 
 
 <br>
@@ -89,7 +88,7 @@ Now, I’m forced to find how to implement it pragmatically while balancing miss
 
 Most security teams already run multiple assessments. You might use [PingCastle](https://www.pingcastle.com) to assess Active Directory (AD) exposure and privilege structure. If you’ve made it this far, why do you still have AD? [Microsoft Zero Trust Assessment](https://github.com/microsoft/zerotrustassessment) evaluates cloud identity posture and conditional access maturity. CISA's [ScubaGear](https://github.com/cisagov/ScubaGear) measures policy alignment and configuration drift against secure baselines.
 
-Individually, each tool is valuable, but they create a different problem when all together. Each assessment sees a different slice of the environment and reports independently. The result is fragmented prioritization and teams that spend more time managing reports than understanding system behavior under attack.
+Individually, each tool is valuable, but they create a different problem when all together. Each assessment sees a different slice of the environment and reports independently. The result is fragmented prioritization and teams that spend more time managing reports than understanding where operational weaknesses repeatedly surface.
 
 For smaller security teams (I can't forget my vCISO colleagues who often use tools like these), this becomes operationally painful very quickly. One engineer understands AD inheritance. Another owns cloud policy. Nobody owns cross-domain attack modeling. But I still need to be able to communicate a coherent risk narrative and measurable progress.
 
@@ -100,11 +99,11 @@ How do I make lemonade out of mixed feelings? Originally, the instinct was to co
 PingCastle might flag excessive privilege inheritance. Microsoft Zero Trust might report weak privileged access governance. ScubaGear might surface policy drift affecting administrative controls. However, many duplicate findings were not actually duplicates. They are multiple observations of the same operational weakness appearing across different control planes.
 
 So, instead of correlating findings directly between PingCastle, Microsoft Zero Trust Assessment, and ScubaGear, all findings are normalized into a shared DoW Zero Trust activity model. The ZTA activities become the canonical layer. The tools become evidence sources mapped into that structure.
-Now, we’re not asking which tool is correct or which severity score matters most or whether findings should be deduplicated. Instead, we’re focusing on which ZTA activities are weak, how many independent systems surface evidence for that weakness, and what adversary behaviors become possible because of it. We find this to be an operationally useful model.
+Now, we’re not asking which tool is correct or which severity score matters most or whether findings should be deduplicated. Instead, we focus on which ZTA activities are weak, how many independent systems surface evidence for those weaknesses, and where operational gaps repeatedly appear across assessment sources.
 
 #### From Tool Overlap to Control Convergence
 
-Once findings are mapped into shared ZTA activities, overlap stops being the important concept. Convergence becomes the important concept. A single finding tied to one ZTA activity may not mean much by itself. But when multiple assessments (e.g., identify, access-control, etc.) independently map into the same operational capability, confidence increases dramatically that the weakness is both real and exploitable. Anchoring findings to ZTA activities instead of directly to vendor outputs creates a more durable prioritization model that can survive tooling evolution over time.
+Once findings are mapped into shared ZTA activities, overlap stops being the important concept. Convergence becomes the important concept. A single finding tied to one ZTA activity may not mean much by itself. But when multiple assessments (e.g., identify, access-control, etc.) independently map into the same operational capability, confidence increases that the weakness is operationally significant and not isolated to a single assessment source. Anchoring findings to ZTA activities instead of directly to vendor outputs creates a more durable prioritization model that can survive tooling evolution over time.
 
 #### What The Data Actually Looks Like
 
@@ -137,7 +136,7 @@ A simplified example looks like this:
 ```
 <sub><i>Example of a real ZTA activity mapping. Activity <code>1.1.1</code> currently maps to multiple ScubaGear findings, while no corresponding mappings exist from Microsoft Zero Trust Assessment or PingCastle for this activity. Not all ZTA activities receive equal coverage across assessment sources.</i></sub>
 
-Normalization leads to simplification. Instead of treating PingCastle, Microsoft Zero Trust Assessment, and ScubaGear as disconnected reports, all findings now resolve into a shared operational capability model. The ZTA activity becomes the common language between identity, access, policy, and configuration assessments. This is not meant to replace threat modeling or detection engineering. It creates a cleaner foundation for those activities later. 
+The practical beneift is consistency. Instead of treating PingCastle, Microsoft Zero Trust Assessment, and ScubaGear as disconnected reports, all findings now resolve into a shared operational capability model. The ZTA activity becomes the common language between identity, access, policy, and configuration assessments. This is not meant to replace threat modeling or detection engineering. It creates a cleaner foundation for those activities later. 
 
 It is also important to acknowledge what this model does not do. Mapping findings into ZTA activities does not mean every activity within the DoW Zero Trust Architecture is fully represented or validated. These mappings only reflect what the underlying assessment sources are capable of observing. Some ZTA activities naturally align well with identity, access, and policy assessment tooling. Others do not. Entire portions of the framework may have little or no visibility through PingCastle, Microsoft Zero Trust Assessment, or ScubaGear because those tools were never designed to measure every operational capability inside the roadmap.
 
@@ -145,7 +144,7 @@ This means the model is best understood as a normalization and visibility layer 
 
 #### Why This Matters Operationally
 
-This simplifies remediation. Instead of chasing isolated findings, teams work against capability failures. Ownership becomes clearer. We actually assign findings to teams who then assign them to engineers within their teams. Prioritization now becomes defensible. It also makes it easier to explain when illustrating ***one way*** we are tackling the DoW ZTA mandate.
+This simplifies remediation. Teams can organize remediation work around shared capability weaknesses instead of isolated findings. Ownership becomes clearer. We actually assign findings to teams who then assign them to engineers within their teams. Prioritization now becomes defensible. It also makes it easier to explain when illustrating ***one way*** we are tackling the DoW ZTA mandate.
 
 #### What Small Teams Gain From This
 
@@ -165,7 +164,7 @@ At a high level, the workflow looks like this:
 2. Export the resulting HTML reports.
 3. Run the post-processing script against the reports.
 4. Normalize findings into shared ZTA activity mappings.
-5. Review where multiple assessment sources converge on the same operational capability.
+5. Review where multiple assessment sources map into the same ZTA activities.
 
 #### Closing
 
