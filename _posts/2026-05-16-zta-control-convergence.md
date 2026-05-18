@@ -30,7 +30,7 @@ image:
 
 The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.
 
-The roadmap is comprehensive, and I have mixed feelings about operationalizing 152 separate activities across already-complex environments. Its focus on identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation unquestionably improves defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented visibility, weak access governance, and limited operational automation.
+The roadmap is comprehensive, and I have mixed feelings about operationalizing 152 separate activities across already-complex environments. Its focus on identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation unquestionably improves defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years.
 
 
 <br>
