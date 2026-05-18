@@ -41,8 +41,6 @@ This started out looking like a loose collection of references, just wallets tie
 
 Figure 1 shows the full graph, which is dense and a bit messy, but even without heavy styling you can see cores forming and spokes radiating outward.
 
-Figure 1 shows the full graph, which is dense and a bit messy, but even without heavy styling you can see cores forming and spokes radiating outward.
-
 <figure class="zoomable-figure" data-zoom-min="1" data-zoom-max="4" data-zoom-step="0.2">
   <div class="zoomable-figure__toolbar" aria-label="Figure 1 zoom controls">
     <button type="button" class="zoomable-figure__button" data-zoom-action="out" aria-label="Zoom out">-</button>
