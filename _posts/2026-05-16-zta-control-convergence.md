@@ -1,8 +1,8 @@
 ---
 layout: blog
-title: "Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model"
+title: "Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model"
 description: >
-  This post explores how PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings can be normalized into a shared DoW Zero Trust activity model to improve assessment visibility, remediation tracking, and operational prioritization.
+  This post explores how PingCastle, Microsoft Zero Trust Assessment, and SCuBA findings can be normalized into a shared DoW Zero Trust activity model to improve assessment visibility, remediation tracking, and operational prioritization.
 abstract: >
   By treating DoW Zero Trust activities as the normalization layer, security teams can unify fragmented assessment findings into a more coherent operational model.
 date: 2026-05-16
@@ -13,7 +13,7 @@ tags:
   - zero trust
   - ICAM
   - PingCastle
-  - ScubaGear
+  - SCuBA
   - Microsoft Zero Trust
   - security benchmarking
   - security operations
@@ -23,7 +23,7 @@ tags:
 
 image:
   path: /assets/blogs/zta-control-convergence/zta.png
-  alt: "Control convergence across PingCastle, Microsoft Zero Trust, and ScubaGear mapped into DoW Zero Trust activities"
+  alt: "Control convergence across PingCastle, Microsoft Zero Trust, and SCuBA mapped into DoW Zero Trust activities"
 ---
 
 #### The Reality of the DoW Zero Trust Roadmap
@@ -46,7 +46,7 @@ The roadmap is comprehensive, and I have mixed feelings about operationalizing 1
 | **1.4.1** | **Implement System and Migrate Privileged Users** | Deploy PAM tooling and migrate supported privileged workflows into managed access systems. | Privileged access becomes centrally governed through PAM-integrated applications and systems. |
 
 <br>
-<sub><i>Example DoW Zero Trust activities (7/152) used as the canonical normalization layer for mapping findings across PingCastle, Microsoft Zero Trust Assessment, and ScubaGear.</i></sub>
+<sub><i>Example DoW Zero Trust activities (7/152) used as the canonical normalization layer for mapping findings across PingCastle, Microsoft Zero Trust Assessment, and SCuBA.</i></sub>
 
 #### The Challenge of Implementing Zero Trust in Brownfield Environments
 
@@ -86,7 +86,7 @@ Now, I’m forced to find how to implement it pragmatically while balancing miss
 
 #### The Operational Problem I Am Trying To Solve
 
-Most security teams already run multiple assessments. You might use [PingCastle](https://www.pingcastle.com) to assess Active Directory (AD) exposure and privilege structure. If you’ve made it this far, why do you still have AD? [Microsoft Zero Trust Assessment](https://github.com/microsoft/zerotrustassessment) evaluates cloud identity posture and conditional access maturity. CISA's [ScubaGear](https://github.com/cisagov/ScubaGear) measures policy alignment and configuration drift against secure baselines.
+Most security teams already run multiple assessments. You might use [PingCastle](https://www.pingcastle.com) to assess Active Directory (AD) exposure and privilege structure. If you’ve made it this far, why do you still have AD? [Microsoft Zero Trust Assessment](https://github.com/microsoft/zerotrustassessment) evaluates cloud identity posture and conditional access maturity. CISA's [SCuBA](https://github.com/cisagov/ScubaGear) measures policy alignment and configuration drift against secure baselines.
 
 Individually, each tool is valuable, but they create a different problem when all together. Each assessment sees a different slice of the environment and reports independently. The result is fragmented prioritization and teams that spend more time managing reports than understanding where operational weaknesses repeatedly surface.
 
@@ -96,9 +96,9 @@ For smaller security teams (I can't forget my vCISO colleagues who often use too
 
 How do I make lemonade out of mixed feelings? Originally, the instinct was to correlate overlapping findings directly between tools.
 
-PingCastle might flag excessive privilege inheritance. Microsoft Zero Trust might report weak privileged access governance. ScubaGear might surface policy drift affecting administrative controls. However, many duplicate findings were not actually duplicates. They are multiple observations of the same operational weakness appearing across different control planes.
+PingCastle might flag excessive privilege inheritance. Microsoft Zero Trust might report weak privileged access governance. SCuBA might surface policy drift affecting administrative controls. However, many duplicate findings were not actually duplicates. They are multiple observations of the same operational weakness appearing across different control planes.
 
-So, instead of correlating findings directly between PingCastle, Microsoft Zero Trust Assessment, and ScubaGear, all findings are normalized into a shared DoW Zero Trust activity model. The ZTA activities become the canonical layer. The tools become evidence sources mapped into that structure.
+So, instead of correlating findings directly between PingCastle, Microsoft Zero Trust Assessment, and SCuBA, all findings are normalized into a shared DoW Zero Trust activity model. The ZTA activities become the canonical layer. The tools become evidence sources mapped into that structure.
 Now, we’re not asking which tool is correct or which severity score matters most or whether findings should be deduplicated. Instead, we focus on which ZTA activities are weak, how many independent systems surface evidence for those weaknesses, and where operational gaps repeatedly appear across assessment sources.
 
 #### From Tool Overlap to Control Convergence
@@ -115,7 +115,7 @@ A simplified example looks like this:
 {
   "ztaCapabilityId": "1.1.1",
   "msZeroTrust": [],
-  "scubaGear": [
+  "SCuBA": [
     {
       "match": {
         "testId": "MS.AAD.6.1v1",
@@ -134,11 +134,11 @@ A simplified example looks like this:
   "pingCastle": []
 }
 ```
-<sub><i>Example of a real ZTA activity mapping. Activity <code>1.1.1</code> currently maps to multiple ScubaGear findings, while no corresponding mappings exist from Microsoft Zero Trust Assessment or PingCastle for this activity. Not all ZTA activities receive equal coverage across assessment sources.</i></sub>
+<sub><i>Example of a real ZTA activity mapping. Activity <code>1.1.1</code> currently maps to multiple SCuBA findings, while no corresponding mappings exist from Microsoft Zero Trust Assessment or PingCastle for this activity. Not all ZTA activities receive equal coverage across assessment sources.</i></sub>
 
-The practical beneift is consistency. Instead of treating PingCastle, Microsoft Zero Trust Assessment, and ScubaGear as disconnected reports, all findings now resolve into a shared operational capability model. The ZTA activity becomes the common language between identity, access, policy, and configuration assessments. This is not meant to replace threat modeling or detection engineering. It creates a cleaner foundation for those activities later. 
+The practical beneift is consistency. Instead of treating PingCastle, Microsoft Zero Trust Assessment, and SCuBA as disconnected reports, all findings now resolve into a shared operational capability model. The ZTA activity becomes the common language between identity, access, policy, and configuration assessments. This is not meant to replace threat modeling or detection engineering. It creates a cleaner foundation for those activities later. 
 
-It is also important to acknowledge what this model does not do. Mapping findings into ZTA activities does not mean every activity within the DoW Zero Trust Architecture is fully represented or validated. These mappings only reflect what the underlying assessment sources are capable of observing. Some ZTA activities naturally align well with identity, access, and policy assessment tooling. Others do not. Entire portions of the framework may have little or no visibility through PingCastle, Microsoft Zero Trust Assessment, or ScubaGear because those tools were never designed to measure every operational capability inside the roadmap.
+It is also important to acknowledge what this model does not do. Mapping findings into ZTA activities does not mean every activity within the DoW Zero Trust Architecture is fully represented or validated. These mappings only reflect what the underlying assessment sources are capable of observing. Some ZTA activities naturally align well with identity, access, and policy assessment tooling. Others do not. Entire portions of the framework may have little or no visibility through PingCastle, Microsoft Zero Trust Assessment, or SCuBA because those tools were never designed to measure every operational capability inside the roadmap.
 
 This means the model is best understood as a normalization and visibility layer rather than a complete representation of Zero Trust maturity. It helps organizations understand where multiple assessment sources converge, where operational weaknesses repeatedly surface, and where additional visibility may still need to be engineered.
 
@@ -158,7 +158,7 @@ At a high level, the workflow looks like this:
 
 ![DoW ZTA normalization and convergence workflow](/assets/blogs/zta-control-convergence/workflow.png)
 
-<sub><i>Figure 1. PingCastle, Microsoft Zero Trust Assessment, and ScubaGear findings normalize into shared DoW Zero Trust activities, creating a common operational reference layer across identity, access, and policy assessment domains.</i></sub>
+<sub><i>Figure 1. PingCastle, Microsoft Zero Trust Assessment, and SCuBA findings normalize into shared DoW Zero Trust activities, creating a common operational reference layer across identity, access, and policy assessment domains.</i></sub>
 
 1. Run the native assessment tools normally.
 2. Export the resulting HTML reports.
@@ -168,7 +168,7 @@ At a high level, the workflow looks like this:
 
 #### Closing
 
-PingCastle, Microsoft Zero Trust Assessment, and ScubaGear are not competing viewpoints. They are partial observations of the same environment under stress.The DoW Zero Trust activity model provides something these tools cannot provide independently: a stable operational structure capable of normalizing fragmented findings into a coherent capability model.
+PingCastle, Microsoft Zero Trust Assessment, and SCuBA are not competing viewpoints. They are partial observations of the same environment under stress.The DoW Zero Trust activity model provides something these tools cannot provide independently: a stable operational structure capable of normalizing fragmented findings into a coherent capability model.
 
 That does not solve every problem inside Zero Trust modernization. The framework is still large. The operational realities are still messy. Legacy systems still exist. ICAM fundamentals still matter more than many organizations are willing to admit. But if the framework is going to succeed operationally, organizations need a way to translate fragmented assessment data into actionable defensive understanding.
 
