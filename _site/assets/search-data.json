@@ -19,7 +19,7 @@
     "title": "Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model",
     "url": "/blog/zta-control-convergence/",
     "collection": "posts",
-    "date": "2026-05-22T00:00:00-04:00",
+    "date": "2026-05-16T00:00:00-04:00",
     "excerpt": "The Reality of the DoW Zero Trust Roadmap",
     "content": "The Reality of the DoW Zero Trust Roadmap\n\nThe DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.\n\nThe roadmap is comprehensive, and I have mixed feelings about having to focus on 152 activities. However, its approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented "
   },
@@ -494,7 +494,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-05-16T18:25:09-04:00",
+    "date": "2026-05-18T11:51:49-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -513,7 +513,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-05-16T18:25:09-04:00",
+    "date": "2026-05-18T11:51:49-04:00",
     "excerpt": "",
     "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
   },
@@ -532,7 +532,7 @@
     "title": "Practitioner Development",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-05-16T18:25:09-04:00",
+    "date": "2026-05-18T11:51:49-04:00",
     "excerpt": "",
     "content": "Focused on adversary-driven training, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n          \n        \n      \n        \n          \n            \n              \n              Digital Forensics (CS 483)\n            \n            \n            United States Military Academy\n            \n          \n\n    "
   },
