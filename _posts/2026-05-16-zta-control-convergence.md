@@ -90,7 +90,7 @@ Most security teams already run multiple assessments. You might use [PingCastle]
 
 Individually, each tool is valuable, but they create a different problem when all together. Each assessment sees a different slice of the environment and reports independently. The result is fragmented prioritization and teams that spend more time managing reports than understanding where operational weaknesses repeatedly surface.
 
-For smaller security teams (I can't forget my vCISO colleagues who often use tools like these), this becomes operationally painful very quickly. One engineer understands AD inheritance. Another owns cloud policy. Nobody owns cross-domain attack modeling. But I still need to be able to communicate a coherent risk narrative and measurable progress.
+For smaller security teams (I can’t forget my vCISO colleagues who often use tools like these), this becomes operationally painful very quickly. One engineer may understand AD inheritance and identity hygiene. Another may own cloud policy and Conditional Access. Pulling those perspectives into one coherent picture while still communicating progress and defensible prioritization is where things start becoming difficult.
 
 #### Why The DoW ZTA Activity Model Becomes Useful
 
