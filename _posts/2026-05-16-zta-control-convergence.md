@@ -168,7 +168,7 @@ At a high level, the workflow looks like this:
 
 #### Closing
 
-PingCastle, Microsoft Zero Trust Assessment, and SCuBA are not competing viewpoints. They are partial observations of the same environment under stress.The DoW Zero Trust activity model provides something these tools cannot provide independently: a stable operational structure capable of normalizing fragmented findings into a coherent capability model.
+PingCastle, Microsoft Zero Trust Assessment, and SCuBA are not competing viewpoints. They are partial observations of the same environment under stress. The DoW Zero Trust activity model provides something these tools cannot provide independently: a stable operational structure capable of normalizing fragmented findings into a coherent capability model.
 
 That does not solve every problem inside Zero Trust modernization. The framework is still large. The operational realities are still messy. Legacy systems still exist. ICAM fundamentals still matter more than many organizations are willing to admit. But if the framework is going to succeed operationally, organizations need a way to translate fragmented assessment data into actionable defensive understanding.
 
