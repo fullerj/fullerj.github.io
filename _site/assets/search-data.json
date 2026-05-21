@@ -16,12 +16,12 @@
   
   
   {
-    "title": "Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Through the DoW Zero Trust Activity Model",
+    "title": "Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model",
     "url": "/blog/zta-control-convergence/",
     "collection": "posts",
     "date": "2026-05-16T00:00:00-04:00",
     "excerpt": "The Reality of the DoW Zero Trust Roadmap",
-    "content": "The Reality of the DoW Zero Trust Roadmap\n\nThe DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.\n\nThe roadmap is comprehensive, and I have mixed feelings about having to focus on 152 activities. However, its approach to identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation are all areas that unquestionably improve defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years: sprawling implicit trust relationships, fragmented "
+    "content": "The Reality of the DoW Zero Trust Roadmap\n\nThe DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.\n\nThe roadmap is comprehensive, and I have mixed feelings about operationalizing 152 separate activities across already-complex environments. Its focus on identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation unquestionably improves defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years.\n\n\n\n\n  \n    \n      ID\n      Activity\n  "
   },
 
   
@@ -494,7 +494,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-05-18T11:51:49-04:00",
+    "date": "2026-05-21T09:17:49-04:00",
     "excerpt": "",
     "content": ""
   },
@@ -513,7 +513,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-05-18T11:51:49-04:00",
+    "date": "2026-05-21T09:17:49-04:00",
     "excerpt": "",
     "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
   },
@@ -532,7 +532,7 @@
     "title": "Practitioner Development",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-05-18T11:51:49-04:00",
+    "date": "2026-05-21T09:17:49-04:00",
     "excerpt": "",
     "content": "Focused on adversary-driven training, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n          \n        \n      \n        \n          \n            \n              \n              Digital Forensics (CS 483)\n            \n            \n            United States Military Academy\n            \n          \n\n    "
   },
@@ -629,7 +629,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ide",
-    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            By treating DoW Zero Trust activities as the control layer, security teams can unify fragmented findings into a coherent operational model.\n            \n            Read more\n          \n        \n      \n    \n    \n      Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Th"
+    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            By treating DoW Zero Trust activities as the normalization layer, security teams can unify fragmented assessment findings into a more coherent operational model.\n            \n            Read more\n          \n        \n      \n    \n    \n      Unifying PingCastle, Microsoft Zero T"
   },
 
   
@@ -705,7 +705,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ide",
-    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            By treating DoW Zero Trust activities as the control layer, security teams can unify fragmented findings into a coherent operational model.\n            \n            Read more\n          \n        \n      \n    \n    \n      Unifying PingCastle, Microsoft Zero Trust, and ScubaGear Th"
+    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            By treating DoW Zero Trust activities as the normalization layer, security teams can unify fragmented assessment findings into a more coherent operational model.\n            \n            Read more\n          \n        \n      \n    \n    \n      Unifying PingCastle, Microsoft Zero T"
   },
 
   
@@ -820,25 +820,6 @@
     "date": null,
     "excerpt": "KaTeX installed using Node.js package managers comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\nnpx katex\n\n\n\n  Above us",
     "content": "KaTeX installed using Node.js package managers comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\nnpx katex\n\n\n\n  Above uses the npx command to run the locally installed executable\nafter npm install katex.  You can also execute with the relative path:\n./node_modules/.bin/katex\n\n\n\n  To use the CLI from local Git clone, you need to build the project first.\nSee Building from Source for more details.\n\n\nOptions"
-  },
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {
-    "title": "Content Consistency Guide",
-    "url": "/CONTENT_GUIDE/",
-    "collection": "pages",
-    "date": null,
-    "excerpt": "This guide defines a consistent front matter schema and reusable includes for Publications and Teaching pages.\n\nPublications\n\nRequired front matter keys:\n\n  layout: publication\n  title\n  description (1–2 sentences)\n  cat",
-    "content": "This guide defines a consistent front matter schema and reusable includes for Publications and Teaching pages.\n\nPublications\n\nRequired front matter keys:\n\n  layout: publication\n  title\n  description (1–2 sentences)\n  categories: [publications]\n  date (YYYY-MM-DD)\n\n\nRecommended keys:\n\n  authors (string or list)\n  venue (conference/journal/institution)\n  doi (just the DOI string)\n  pdf_url, code_url, video_url\n  media_links (list of { title, url, date })\n  image (social preview / hero)\n  blog_image (blog card image; falls back to a template image if omitted)\n  card_label (visible badge on the blog card, e.g. Article, Whitepaper, Publication)\n  tags (list)\n\n\nRender consistent metadata by adding after your lead paragraph:\n\n{% include components/publication-meta.html %}\n\n\nTeaching\n\nRequired front matter keys:\n\n  layout: post (or layout: teaching if added)\n  title\n  description (1–2 sentences)\n  categories: [teaching]\n\n\nRecommended keys:\n\n  institution, department\n  course_code (e.g., CS 483"
   },
 
   
