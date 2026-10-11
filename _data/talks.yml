@@ -1,6 +1,14 @@
 # List conference and invited talks here.
 # Example fields: title, event, location, date, description, resources (array of {label, url})
 
+- title: "When Malware Analysis Leaks Passwords"
+  subtitle: "What Shared Samples Reveal"
+  event: "BSidesNYC 0x06"
+  location: "New York City, NY"
+  date: "2026-10-17"
+  latitude: 40.7128
+  longitude: -74.006
+
 - title: "Spycraft 2.0: Hunting Dead Drops in Web Applications"
   subtitle: "Detecting hidden command paths in modern web apps"
   event: "BSidesNYC 0x05"
