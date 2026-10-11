@@ -19,7 +19,19 @@ hide_description: true
 
   {% if teaching_posts and teaching_posts.size > 0 %}
     <div class="teaching-expandables">
+      {% assign seen_courses = "" %}
       {% for course in teaching_posts %}
+        {% assign course_key = course.course_code | default: course.title %}
+        {% assign course_marker = "|" | append: course_key | append: "|" %}
+        {% if seen_courses contains course_marker %}{% continue %}{% endif %}
+        {% assign seen_courses = seen_courses | append: course_marker %}
+        {% assign taught_terms = "" | split: "" %}
+        {% for other in teaching_posts %}
+          {% assign other_key = other.course_code | default: other.title %}
+          {% if other_key == course_key and other.term %}
+            {% assign taught_terms = taught_terms | push: other.term %}
+          {% endif %}
+        {% endfor %}
         <details class="teaching-course">
           <summary>
             <span class="teaching-course__heading">
@@ -38,6 +50,10 @@ hide_description: true
 
             {% if course.location %}
               <p class="teaching-course__meta"><strong>Location:</strong> {{ course.location }}</p>
+            {% endif %}
+
+            {% if taught_terms.size > 0 %}
+              <p class="teaching-course__footnote"><small>Taught: {{ taught_terms | join: ", " }}</small></p>
             {% endif %}
           </div>
         </details>
