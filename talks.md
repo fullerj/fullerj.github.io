@@ -54,13 +54,14 @@ description: >
     talks.forEach(function(talk) {
       if (!talk.latitude || !talk.longitude) return;
       
-      var key = talk.latitude + ',' + talk.longitude;
+      var key = talk.latitude.toFixed(1) + ',' + talk.longitude.toFixed(1);
       var popup = '<strong>' + talk.title + '</strong><br>' +
                   '<small>' + talk.event + '</small><br>' +
                   '<small>' + (talk.date ? new Date(talk.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : 'TBA') + '</small>';
       
       if (markers[key]) {
         markers[key].popup += '<hr>' + popup;
+        markers[key].setPopupContent(markers[key].popup);
       } else {
         var marker = L.circleMarker([talk.latitude, talk.longitude], {
           radius: 8,
