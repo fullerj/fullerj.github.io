@@ -20,6 +20,16 @@ image:
   alt: "Trust but Verify"
 ---
 
+<h2>Executive Summary</h2>
+
+I came to proof-of-value from an onboarding experience that did not go as expected. The product looked promising, but after the contract was signed, getting it into use felt more like trial and error than a guided process. I had not led a proof-of-value myself, so this is a reflection on what I would do differently rather than a report of a completed pilot.
+
+A useful pilot should show how a product and its vendor work with the people who will operate it. That includes security analysts, enterprise engineers, and networking teams. Clear setup documentation, realistic milestones, honest discussion of coverage gaps, and peer feedback all help establish whether the organization can use the capability without relying on the vendor for every step.
+
+I find the military concepts of Initial Operational Capability and Full Operational Capability useful here. IOC is the point where a capability is installed and being used effectively, even if it still needs tuning. FOC is the more mature state where teams can sustain it and see measurable operational improvement. One rule of thumb I heard from the late Shawn Bowen is to aim for IOC within roughly 10–15% of the contract period. It is a planning guide, not a guarantee.
+
+The DOTMLPF-P readiness model adds another question: can our people, processes, infrastructure, and policies support the tool after the pilot? Measures such as time to IOC, analyst onboarding, operational friction, and alert quality make that discussion more concrete. The goal is an organization-led, vendor-supported evaluation that tests the working relationship as well as the technology.
+
 As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.   
 
 This isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.  

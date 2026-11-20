@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cybersecurity Strategy & Threat Analysis
+title: Research & Insights
 description: >
   Analysis, applied research, and field notes on cyber defense, adversary behavior, and AI security.
 permalink: /blog/

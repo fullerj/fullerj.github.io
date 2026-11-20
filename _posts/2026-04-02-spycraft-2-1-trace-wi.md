@@ -21,6 +21,14 @@ image:
   alt: "Bitcoin transaction graph showing wallet clusters and flow patterns"
 ---
 
+<h2>Executive Summary</h2>
+
+The VADER collection included Bitcoin wallet and transaction identifiers associated with dead drop resolvers. I wanted to see what those indicators looked like as a network rather than a list. Starting with 14 wallets and 23 transactions, I enriched the data and expanded it one hop. The resulting graph contained 993 nodes, 1,579 edges, and 41 wallets.
+
+A small number of hubs carried much of the observed activity, while many surrounding wallets appeared less often. The expanded graph also produced 540 related-wallet links. Some decoded values repeated across transactions, and the ten seed wallets with decoded activity had enough timestamp context to examine recurrence from mid-2017 through early 2021. These patterns give an investigator places to look for continuity and change.
+
+The graph is still a partial view. A hub, a repeated value, or a short cycle does not establish who controls a wallet or prove that transactions carry coordinated signals. I see the results as leads for further work: checking whether hubs persist or rotate, whether decoded values overlap known infrastructure, and whether similar structures appear across other seed sets.
+
 I read *Tracers in the Dark*[^tracers] while working on [VADER]({{ "/publications/vader-dead-drop-resolver/" | relative_url }}) (and later wrote about that in [Spycraft 2.0]({{ "/blog/spycraft-2-0/" | relative_url }})), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.
 
 At first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, to identify the full scope of dead drop resolvoers, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.

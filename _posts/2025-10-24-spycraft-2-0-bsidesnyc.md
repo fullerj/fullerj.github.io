@@ -24,6 +24,16 @@ image:
 
 ## From Anomalous Traffic to Spycraft 2.0
 
+## Executive Summary
+
+The investigation began with a malware sample connecting to X.com rather than directly to its known command-and-control server. That traffic led us to a dead drop resolver: malware retrieves an encoded address from a legitimate web service, decodes it, and uses the result to find its operator's infrastructure. The web service provides useful cover, and removing one dead drop does not prevent the operator from creating another.
+
+With VADER, we looked for a way to address the decoding method instead of chasing each endpoint separately. We traced the path from a web request to a command-and-control connection, isolated the code that transforms the retrieved data, and used symbolic analysis to recover a reusable decoding recipe. In the Mudrop case, that recipe helped us find three previously unknown dead drops in WordPress posts.
+
+Across 100,000 Windows samples collected from 2012 through 2022, we identified dead drop resolver malware spanning 110 families and found 273 dead drops across seven web applications. Pastebin accounted for 68% of those drops, while blockchain explorers represented 25%. Coordinated remediation neutralized 94.4% of the identified dead drops, and integrating recipe-based detection improved related network visibility by 57.1% in the study.
+
+The practical lesson is that the malware's own decoding logic can give defenders a way to find related malicious content. It also gives web providers a basis for remediation before waiting for each new endpoint to appear in an incident.
+
 During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&C) destination, but to **X.com**. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call **Spycraft 2.0**, where adversaries conceal command instructions within legitimate web services? 
 
 This observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&C rendezvous points, defenders must learn to detect and stop them. Our research, presented at **BSidesNYC 0x05**, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.

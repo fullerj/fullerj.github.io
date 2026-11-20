@@ -26,6 +26,16 @@ image:
   alt: "Control convergence across PingCastle, Microsoft Zero Trust, and SCuBA mapped into DoW Zero Trust activities"
 ---
 
+<h2>Executive Summary</h2>
+
+The DoW Zero Trust roadmap provides a common direction for modernization, but its 152 activities can be difficult to apply in a hybrid enterprise with legacy systems, mission constraints, and limited funding. I see value in the framework, especially its emphasis on continuous verification and least privilege. I also worry that tracking activities can take attention away from reducing attack paths and getting identity fundamentals right.
+
+One practical problem is that assessments report on different parts of the environment. PingCastle examines Active Directory exposure, Microsoft Zero Trust Assessment covers cloud identity and access, and SCuBA checks configuration against secure baselines. Their findings may point to the same underlying weakness without being duplicates. Reading the reports separately makes it harder to assign ownership and decide what deserves attention first.
+
+My approach maps those findings to shared DoW Zero Trust activities. Teams run the tools, export their HTML reports, and use a post-processing script to normalize findings into the activity model. When multiple sources converge on a capability, that gives teams a reason to investigate the weakness together and organize remediation around it rather than around separate vendor reports.
+
+The mapping is a visibility and prioritization aid, not a complete maturity assessment. The tools only observe what they were designed to measure, so some activities have little or no coverage. The model does not replace threat modeling or detection engineering, and it cannot establish that every mapped activity has been validated.
+
 #### The Reality of the DoW Zero Trust Roadmap
 
 The DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.

@@ -1,5 +1,9 @@
 .talks-section {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
+}
+
+.talks-section--timeline {
+  container-type: inline-size;
 }
 
 .talks-section h2 {
@@ -14,7 +18,13 @@
 
 .talks-timeline {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.75rem;
+}
+
+@container (min-width: 40rem) {
+  .talks-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .talk-card {
@@ -22,22 +32,12 @@
   border-radius: var(--ds-radius-2);
   background: var(--ds-surface-1);
   box-shadow: var(--ds-shadow-1);
-  padding: var(--ds-card-padding-y) var(--ds-card-padding-x);
+  padding: 0.85rem 1rem;
 }
 
 .talk-card--featured {
   border-color: var(--ds-border-1);
   box-shadow: var(--ds-shadow-1);
-}
-
-.talk-card__meta {
-  margin: 0 0 0.45rem;
-  display: flex;
-  gap: 0.55rem;
-  align-items: center;
-  font-size: 0.78rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
 }
 
 .talk-card__chip {
@@ -62,7 +62,6 @@
 }
 
 .talk-card__event,
-.talk-card__date,
 .talk-card__description {
   margin: 0.52rem 0 0;
   color: var(--ds-text-3);

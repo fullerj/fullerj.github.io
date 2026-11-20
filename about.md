@@ -12,14 +12,6 @@ featured_writings:
   - /blog/ai-agent-control-validation-agent-bench/
   - /blog/what-malware-persists/
 
-selected_impact:
-  - Lead cybersecurity strategy for a 10,000-user hybrid environment
-  - Built detection engineering capability to expand threat coverage and reduce visibility gaps
-  - Identified and disrupted 100+ adversary infrastructure abuse cases across global systems
-  - Developed detection methods covering 100+ malware families and thousands of artifacts
-  - Established early-stage AI security evaluation capability for agent-based systems
-
-
 ---
 
 # About
@@ -29,20 +21,11 @@ selected_impact:
 {% endunless %}
 
 <section class="home-section home-section--intro">
-
-
-  <!--author-->
-
-</section>
-
-<section class="home-section home-section--impact" aria-label="Selected Impact">
-  <div class="home-impact-box">
-    <h3>Selected Impact</h3>
-    <ul class="home-impact-list">
-      {% for impact in page.selected_impact %}
-      <li>{{ impact }}</li>
-      {% endfor %}
-    </ul>
+  <p>Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to guide decisions.</p>
+  <p>Jonathan Fuller is Chief Information Security Officer at the United States Military Academy at West Point. Through Empirical Defense, he shares research and practical insights on enterprise security, adversary behavior, and AI system security.</p>
+  <div class="home-hero__actions">
+    <a href="{{ '/blog/' | relative_url }}">Explore Research &amp; Insights</a>
+    <a href="{{ '/service/' | relative_url }}">View Leadership &amp; Advisory</a>
   </div>
 </section>
 
@@ -95,12 +78,12 @@ selected_impact:
   {% endif %}
 {% endfor %}
 
-## Recent Work
+## Selected Work
 
 <section class="home-section home-section--highlights">
   <div class="home-highlights-grid">
     <article class="home-panel home-panel--feature" id="insights">
-      <h3>Latest Strategy and Threats</h3>
+      <h3>Research &amp; Insights</h3>
 
 {% assign recent_posts = site.posts | where_exp:'post','post.categories contains "posts"' %}
 {% if recent_posts %}
@@ -163,7 +146,7 @@ selected_impact:
   </article>
   {% endfor %}
 </div>
-<p><a href="{{ '/blog/' | relative_url }}">Read all analysis</a></p>
+<p><a href="{{ '/blog/' | relative_url }}">Explore Research &amp; Insights</a></p>
 {% else %}
 <p>Posts will appear here once they are published.</p>
 {% endif %}
@@ -171,7 +154,7 @@ selected_impact:
     </article>
 
     <article class="home-panel home-panel--feature" id="writing">
-      <h3>Advisory and Leadership </h3>
+      <h3>Leadership &amp; Advisory</h3>
 
       <div class="service-cards">
         <details class="service-card">
@@ -219,12 +202,12 @@ selected_impact:
           </div>
         </details>
       </div>
-      <p><a href="{{ '/service/' | relative_url }}">View all roles and details</a></p>
+      <p><a href="{{ '/service/' | relative_url }}">View Leadership &amp; Advisory</a></p>
 
     </article>
 
     <article class="home-panel" id="talks">
-      <h3>Speaking and Briefings</h3>
+      <h3>Speaking</h3>
 
 {% assign recent_talks = site.data.talks | sort: 'date' | reverse %}
 {% if recent_talks and recent_talks.size > 0 %}
@@ -245,7 +228,7 @@ selected_impact:
   </li>
   {% endfor %}
 </ul>
-<p><a href="{{ '/talks/' | relative_url }}">View speaking and breifings</a></p>
+<p><a href="{{ '/talks/' | relative_url }}">View Speaking</a></p>
 {% else %}
 <p>Talks will appear here once they are added to the site.</p>
 {% endif %}

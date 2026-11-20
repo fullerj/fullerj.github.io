@@ -42,6 +42,35 @@ h6 {
   letter-spacing: 0.005em;
 }
 
+.page-title {
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  line-height: 1.15;
+}
+
+.sidebar-about .avatar {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-nav .sidebar-nav-item {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sidebar-nav-item:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.sidebar.invert .sidebar-nav-item:focus-visible {
+  outline-color: #222;
+}
+
+.sidebar-bg.sidebar-overlay::after {
+  background: rgba(12, 28, 40, 0.7);
+}
+
 .page.post {
   max-width: 96ch;
 }
@@ -203,6 +232,17 @@ h6 {
   margin-top: var(--site-space-4);
 }
 
+.home-hero__actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.home-hero__actions a:focus-visible {
+  outline: 3px solid var(--ds-accent-solid);
+  outline-offset: 3px;
+}
+
 .home-hero__sidebar {
   display: flex;
   flex-wrap: wrap;
@@ -273,41 +313,6 @@ h6 {
   border-radius: var(--ds-radius-pill);
   background: var(--ds-hero-orb);
   pointer-events: none;
-}
-
-.home-section--impact {
-  margin-top: 0;
-}
-
-.home-impact-box {
-  border: 1px solid var(--site-border);
-  border-radius: var(--site-radius-3);
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: var(--site-space-2) var(--site-space-4);
-  background: var(--ds-surface-1);
-  box-shadow: var(--site-shadow-1);
-}
-
-.home-impact-box h2,
-.home-impact-box h3 {
-  margin: 0 0 0.45rem;
-  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
-  line-height: 1.2;
-}
-
-.home-impact-list {
-  margin: 0;
-  padding-left: 1rem;
-  display: grid;
-  gap: 0.25rem;
-}
-
-.home-impact-list li {
-  color: var(--ds-text-2);
-  line-height: 1.28;
-  font-size: 0.98rem;
 }
 
 .home-section--highlights {
@@ -1164,7 +1169,6 @@ html[data-color-mode="dark"] body {
   .education-card__detail,
   .talk-card__subtitle,
   .talk-card__event,
-  .talk-card__date,
   .talk-card__description,
   .teaching-course__meta,
   .service-card__meta,
@@ -1300,7 +1304,6 @@ html[data-color-mode="dark"] body {
   .education-card__detail,
   .talk-card__subtitle,
   .talk-card__event,
-  .talk-card__date,
   .talk-card__description,
   .teaching-course__meta,
   .service-card__meta,

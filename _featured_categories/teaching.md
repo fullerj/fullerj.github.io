@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Practitioner Development
+title: Training
 slug: teaching
 description: >
   Development of cybersecurity practitioners through adversary-driven training, forensic investigation, and enterprise security scenarios.
@@ -14,7 +14,7 @@ hide_description: true
 
 <p>Programs are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.</p>
 
-<section class="teaching-group" aria-label="Practitioner Development Programs">
+<section class="teaching-group" aria-label="Training programs">
   <h2>Selected Courses</h2>
 
   {% if teaching_posts and teaching_posts.size > 0 %}

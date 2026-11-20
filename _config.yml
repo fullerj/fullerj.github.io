@@ -28,7 +28,7 @@ description:           >
   Chief Information Security Officer securing hybrid enterprise systems in adversarial environments.
   I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
 # A shorter description for the sidebar.
-tagline:               Security Leadership, Research, and Operational Practice
+tagline:               Security leadership grounded in evidence.
 blog:
   max_columns: 2
   reading_wpm: 220
@@ -76,15 +76,15 @@ author:
 menu:
   - title:             Overview
     url:               /
-  - title:             Strategy & Threats
+  - title:             Research & Insights
     url:               /blog/
-  - title:             Advisory & Leadership
+  - title:             Leadership & Advisory
     url:               /service/
   #- title:             Technical Writing
   #  url:               /publications/
-  - title:             Speaking & Briefings
+  - title:             Speaking
     url:               /talks/
-  - title:             Practitioner Development
+  - title:             Training
     url:               /teaching/
 
 
@@ -98,6 +98,8 @@ legal:
     url:               /privacy/
   - title:             Cookie Policy
     url:               /cookies/
+  - title:             Contact for inquiries
+    url:               mailto:hello@empiricaldefense.com
 
 
 # This text will appear in a `<small>` tag in the footer of every page.

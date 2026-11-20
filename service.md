@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advisory and Leadership
+title: Leadership & Advisory
 permalink: /service/
 description: >
   Advisory, standards, and research leadership shaping cybersecurity, adversary analysis, and AI system security.
@@ -8,6 +8,7 @@ description: >
 
 <!-- markdownlint-disable MD033 -->
 
+Security leadership requires more than meeting control requirements. It means understanding how systems behave, validating defenses in practice, and using evidence to make informed risk decisions. This approach connects Jonathan's enterprise security leadership with his advisory, standards, and research work.
 
 <section class="service-group service-group--advisory" id="service-advisory" aria-label="Advisory Roles">
   <h2>Advisory & Industry Engagement</h2>

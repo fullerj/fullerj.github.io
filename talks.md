@@ -1,10 +1,44 @@
 ---
 layout: page
-title: Speaking and Briefings
+title: Speaking
 permalink: /talks/
 description: >
   Invited talks and executive briefings on adversary behavior, detection engineering, and securing complex systems, delivered across leading conferences, research venues, and operational environments.
 ---
+
+<p><a href="#speaking-locations">View speaking locations</a></p>
+
+{% assign talks = site.data.talks | sort: "date" | reverse %}
+
+{% if talks and talks.size > 0 %}
+<section class="talks-section talks-section--timeline">
+  <div class="talks-timeline">
+    {% for talk in talks %}
+      <article class="talk-card talk-card--timeline">
+        <h3 class="talk-card__title">{{ talk.title }}</h3>
+        {% if talk.subtitle %}
+          <p class="talk-card__subtitle">{{ talk.subtitle }}</p>
+        {% endif %}
+        <p class="talk-card__event">{{ talk.event }}{% if talk.location %}{% if talk.event %} | {% endif %}{{ talk.location }}{% endif %}{% if talk.event or talk.location %} | {% endif %}{% if talk.date %}<time datetime="{{ talk.date | date: '%Y-%m-%d' }}">{{ talk.date | date: "%B %-d, %Y" }}</time>{% else %}TBA{% endif %}</p>
+        {% if talk.description %}
+          <p class="talk-card__description">{{ talk.description }}</p>
+        {% endif %}
+        {% if talk.resources %}
+          <p class="talk-card__links">
+            {% for resource in talk.resources %}
+              <a href="{{ resource.url }}">{{ resource.label }}</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% else %}
+No talks have been published yet. Check back soon.
+{% endif %}
+
+<h2 id="speaking-locations">Speaking locations</h2>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
@@ -97,38 +131,3 @@ description: >
   }
 })();
 </script>
-
-{% assign talks = site.data.talks | sort: "date" | reverse %}
-
-{% if talks and talks.size > 0 %}
-<section class="talks-section talks-section--timeline">
-
-  <div class="talks-timeline">
-    {% for talk in talks %}
-      <article class="talk-card talk-card--timeline">
-        <p class="talk-card__meta">
-          <span>{{ talk.date | date: "%Y" }}</span>
-        </p>
-        <h3 class="talk-card__title">{{ talk.title }}</h3>
-        {% if talk.subtitle %}
-          <p class="talk-card__subtitle">{{ talk.subtitle }}</p>
-        {% endif %}
-        <p class="talk-card__event">{{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}</p>
-        <p class="talk-card__date">{% if talk.date %}{{ talk.date | date: "%B %-d, %Y" }}{% else %}TBA{% endif %}</p>
-        {% if talk.description %}
-          <p class="talk-card__description">{{ talk.description }}</p>
-        {% endif %}
-        {% if talk.resources %}
-          <p class="talk-card__links">
-            {% for resource in talk.resources %}
-              <a href="{{ resource.url }}">{{ resource.label }}</a>
-            {% endfor %}
-          </p>
-        {% endif %}
-      </article>
-    {% endfor %}
-  </div>
-</section>
-{% else %}
-No talks have been published yet. Check back soon.
-{% endif %}

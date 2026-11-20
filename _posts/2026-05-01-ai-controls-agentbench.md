@@ -25,6 +25,16 @@ image:
   path: /assets/blogs/agentbench/agentbench.png
   alt: "AI agent control validation with AgentBench"
 ---
+<h2>Executive Summary</h2>
+
+Security reviews for AI agents often leave evidence scattered across screenshots, spreadsheets, and test results. I built AgentBench to bring control validation into one place so a team can see what was tested, how the agent responded, and what remains outside the assessment. It draws on frameworks including NIST AI RMF, AIUC-1, and the OWASP LLM Top 10, while focusing on controls that can be exercised directly.
+
+The distinction between governance, validation, and enforcement matters. Governance sets expectations. AgentBench tests behavior against those expectations, including attempts to cross data or authorization boundaries. Runtime controls constrain what the agent can do in production. Each has a different job, and a favorable test result does not replace the others.
+
+Scope changes what a result means. A retrieval-augmented agent, for example, has different risks from a code-generation or autonomous agent, and sensitive leakage tests may belong only in controlled environments. Results distinguish passed, failed, partial, skipped, and untested controls. A score without that coverage information can make the assessment look more complete than it is.
+
+Each result links back to the inputs, response, and evaluation criteria. Deterministic checks make comparisons repeatable, but they can miss edge cases or produce false positives when a test is poorly defined. The saved report supports review and comparison across runs; people still need to interpret the evidence, plan remediation, and decide whether residual risk is acceptable.
+
 While thinking through securing AI agents, the adage kept coming to mind that I still hear often: "STIG[^stig] is a four-letter word." No one likes IT compliance.
 
 AgentBench is a few letters longer, but that is not the point.
