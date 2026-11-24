@@ -6,15 +6,23 @@ description: >
   Invited talks and executive briefings on adversary behavior, detection engineering, and securing complex systems, delivered across leading conferences, research venues, and operational environments.
 ---
 
-<p><a href="#speaking-locations">View speaking locations</a></p>
-
 {% assign talks = site.data.talks | sort: "date" | reverse %}
+
+<section class="speaking-intro" aria-label="Speaking overview">
+  <p class="speaking-intro__summary"><strong>{{ talks.size }} talks</strong> from ACM CCS and ShmooCon to the Naval Postgraduate School, spanning research, practitioner, and invited audiences.</p>
+  <p class="speaking-intro__cta"><a href="https://www.linkedin.com/in/fullsec" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="#speaking-locations">View speaking locations</a></p>
+</section>
+
+<h2 id="talk-history">Talk History</h2>
 
 {% if talks and talks.size > 0 %}
 <section class="talks-section talks-section--timeline">
   <div class="talks-timeline">
     {% for talk in talks %}
       <article class="talk-card talk-card--timeline">
+        {% if talk.audience %}
+          <p class="talk-card__audience talk-card__audience--{{ talk.audience | slugify }}">{{ talk.audience }}</p>
+        {% endif %}
         <h3 class="talk-card__title">{{ talk.title }}</h3>
         {% if talk.subtitle %}
           <p class="talk-card__subtitle">{{ talk.subtitle }}</p>

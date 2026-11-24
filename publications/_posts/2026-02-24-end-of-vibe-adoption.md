@@ -23,8 +23,11 @@ blog_image: /assets/papers/aiuc.png
 media_links:
   - title: "Whitepaper: 2026 - The End of Vibe Adoption"
     url: https://www.aiuc-1.com/research/whitepaper-the-end-of-vibe-adoption
+    source: "AIUC-1"
     date: "2026-02-24"
     group: ai-security
+media_hook: >
+  Stanford Trustworthy AI Research Lab findings paired with what security, risk, and legal leaders see when AI reaches production.
 ---
 
 {% include components/publication-meta.html %}

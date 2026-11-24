@@ -19,7 +19,7 @@ credits: 3.0
 
 Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.
 
-## Training Focus
+## Teaching Focus
 
 * Adversary modeling and threat-informed defensive strategy
 * Risk quantification supporting operational decision-making

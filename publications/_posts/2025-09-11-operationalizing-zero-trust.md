@@ -19,11 +19,15 @@ demo_url:
 media_links:
   - title: "Army Operationalizes Zero Trust"
     url: https://www.executivegov.com/articles/army-zero-trust-mapping-cecom-sec-west-point
+    source: "ExecutiveGov"
     date: "2025-09-15"
     group: ent-sec
 
 card_label: Article
 blog_image: /assets/papers/zerotrust.png
+media_name: "Zero Trust & RMF"
+media_hook: >
+  The first practical evaluation of the Army SEC mapping between Zero Trust principles and the DoD Risk Management Framework, with West Point.
 ---
 
 {% include components/publication-meta.html %}

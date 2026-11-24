@@ -14,6 +14,7 @@ related_posts:
 conference: "IEEE Secure Development Conference (SecDev): Invited Tutorial"
 authors: "M. Yao, <u>Jonathan Fuller</u>, R. Pai Sridhar, S. Agarwal, A. K. Sikder, B. Saltaformaggio"
 venue: "IEEE SecDev"
+card_label: Publication
 pdf_url: https://ieeexplore.ieee.org/document/10305560
 slides_url: 
 talk_url: 

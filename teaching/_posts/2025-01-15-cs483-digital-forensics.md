@@ -19,7 +19,7 @@ credits: 3.0
 
 Develops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.
 
-## Training Focus
+## Teaching Focus
 
 * Memory forensics and live system analysis under operational constraints
 * Malware artifact recovery and behavioral attribution

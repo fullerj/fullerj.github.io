@@ -79,3 +79,30 @@
 </script>
 
 <!-- Canonical and social metadata are emitted by jekyll-seo-tag. -->
+
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jonathan Fuller",
+  "honorificSuffix": "Ph.D.",
+  "jobTitle": "Chief Information Security Officer",
+  "worksFor": {
+    "@type": "CollegeOrUniversity",
+    "name": "United States Military Academy at West Point"
+  },
+  "alumniOf": [
+    {% for edu in site.data.education %}{ "@type": "CollegeOrUniversity", "name": {{ edu.institution | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "knowsAbout": ["Cybersecurity leadership", "Zero Trust", "AI system security", "Malware analysis", "Command-and-control infrastructure"],
+  "url": "{{ '/' | absolute_url }}",
+  "image": "{{ '/assets/img/headshot.png' | absolute_url }}",
+  "sameAs": [
+    "https://www.linkedin.com/in/fullsec",
+    "https://scholar.google.com/citations?user=mZ_cDEYAAAAJ&hl=en"
+  ]
+}
+</script>
+{% endif %}

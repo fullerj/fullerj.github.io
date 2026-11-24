@@ -25,8 +25,7 @@ title:                 Jonathan Fuller
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Chief Information Security Officer securing hybrid enterprise systems in adversarial environments.
-  I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
+  CISO of the U.S. Military Academy at West Point and Ph.D. security researcher publishing at USENIX Security and ACM CCS on adversary infrastructure and AI system security.
 # A shorter description for the sidebar.
 tagline:               Security leadership grounded in evidence.
 blog:
@@ -84,7 +83,9 @@ menu:
   #  url:               /publications/
   - title:             Speaking
     url:               /talks/
-  - title:             Training
+  - title:             Media
+    url:               /media/
+  - title:             Teaching
     url:               /teaching/
 
 
@@ -98,8 +99,8 @@ legal:
     url:               /privacy/
   - title:             Cookie Policy
     url:               /cookies/
-  - title:             Contact for inquiries
-    url:               mailto:hello@empiricaldefense.com
+  - title:             LinkedIn
+    url:               https://www.linkedin.com/in/fullsec
 
 
 # This text will appear in a `<small>` tag in the footer of every page.

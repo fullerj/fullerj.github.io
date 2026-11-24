@@ -20,8 +20,8 @@
     "url": "/blog/zta-control-convergence/",
     "collection": "posts",
     "date": "2026-05-16T00:00:00-04:00",
-    "excerpt": "The Reality of the DoW Zero Trust Roadmap",
-    "content": "The Reality of the DoW Zero Trust Roadmap\n\nThe DoW Zero Trust Architecture roadmap has become one of the most influential cybersecurity modernization frameworks in government. With 152 activities spanning seven pillars, it represents an ambitious attempt to operationalize Zero Trust at enterprise scale. For those of us inside the Department of War (DoW) ecosystem, it is a strategic mandate that will shape architecture, procurement, operations, and governance for years to come.\n\nThe roadmap is comprehensive, and I have mixed feelings about operationalizing 152 separate activities across already-complex environments. Its focus on identity-centric security, microsegmentation, device trust, behavioral analytics, continuous monitoring, and automation unquestionably improves defensive posture when implemented thoughtfully. The framework also forces organizations to confront uncomfortable realities that many enterprises have delayed addressing for years.\n\n\n\n\n  \n    \n      ID\n      Activity\n  "
+    "excerpt": "Executive Summary",
+    "content": "Executive Summary\n\nThe DoW Zero Trust roadmap provides a common direction for modernization, but its 152 activities can be difficult to apply in a hybrid enterprise with legacy systems, mission constraints, and limited funding. I see value in the framework, especially its emphasis on continuous verification and least privilege. I also worry that tracking activities can take attention away from reducing attack paths and getting identity fundamentals right.\n\nOne practical problem is that assessments report on different parts of the environment. PingCastle examines Active Directory exposure, Microsoft Zero Trust Assessment covers cloud identity and access, and SCuBA checks configuration against secure baselines. Their findings may point to the same underlying weakness without being duplicates. Reading the reports separately makes it harder to assign ownership and decide what deserves attention first.\n\nMy approach maps those findings to shared DoW Zero Trust activities. Teams run the tools"
   },
 
   
@@ -58,8 +58,8 @@
     "url": "/blog/ai-agent-control-validation-agent-bench/",
     "collection": "posts",
     "date": "2026-04-20T00:00:00-04:00",
-    "excerpt": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG1 is a four-letter word.” No one likes IT compliance.\n\n\n  \n    \n      Security Technical Implementation Guides (STIGs",
-    "content": "While thinking through securing AI agents, the adage kept coming to mind that I still hear often: “STIG1 is a four-letter word.” No one likes IT compliance.\n\nAgentBench is a few letters longer, but that is not the point.\n\nAgentBench is a framework for validating AI agent behavior against defined security and safety controls.\n\nSecurity review for AI agents rarely exists in one place. It is scattered across screenshots, spreadsheets, and partial test results, which makes it hard to answer simple questions about what was actually tested and what evidence supports the outcome. This problem tends to surface at the worst moment, when a system is ready for production and someone has to decide whether the risk is acceptable. Those decisions are only as strong as the evidence behind them.\n\nI built AgentBench to pull that work into one place, where control validation, results, and supporting evidence can be reviewed together.\n\nControl Framework\n\nWhat controls does AgentBench apply in practice?\n\n"
+    "excerpt": "Executive Summary",
+    "content": "Executive Summary\n\nSecurity reviews for AI agents often leave evidence scattered across screenshots, spreadsheets, and test results. I built AgentBench to bring control validation into one place so a team can see what was tested, how the agent responded, and what remains outside the assessment. It draws on frameworks including NIST AI RMF, AIUC-1, and the OWASP LLM Top 10, while focusing on controls that can be exercised directly.\n\nThe distinction between governance, validation, and enforcement matters. Governance sets expectations. AgentBench tests behavior against those expectations, including attempts to cross data or authorization boundaries. Runtime controls constrain what the agent can do in production. Each has a different job, and a favorable test result does not replace the others.\n\nScope changes what a result means. A retrieval-augmented agent, for example, has different risks from a code-generation or autonomous agent, and sensitive leakage tests may belong only in controlle"
   },
 
   
@@ -77,8 +77,8 @@
     "url": "/blog/spycraft-2-1-bitcoin-transaction-graph-analysis/",
     "collection": "posts",
     "date": "2026-04-02T00:00:00-04:00",
-    "excerpt": "I read Tracers in the Dark1 while working on VADER (and later wrote about that in Spycraft 2.0), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug ",
-    "content": "I read Tracers in the Dark1 while working on VADER (and later wrote about that in Spycraft 2.0), and I kept coming back to the same question: what actually sits underneath those Bitcoin indicators. Eventually I just dug in.\n\nAt first it was just collecting blockchain indicators tied to malware, wallet IDs, transaction IDs, to identify the full scope of dead drop resolvoers, but this is where things started to shift. Instead of treating those indicators like static artifacts, I started wondering what they look like as a network, not just a list, but something with structure.\n\nFor context, the VADER collection surfaced 273 dead drops across 7 web applications, with Pastebin dominating at 68 percent, and blockchain explorers making up another 25 percent, including 23 transaction IDs and 14 wallet IDs.\n\nScope and Data\n\nThis run starts from that slice, 14 wallets and 23 transactions, which after enrichment and a single round of expansion grew to 41 wallets. The resulting graph contains 993 "
+    "excerpt": "Executive Summary",
+    "content": "Executive Summary\n\nThe VADER collection included Bitcoin wallet and transaction identifiers associated with dead drop resolvers. I wanted to see what those indicators looked like as a network rather than a list. Starting with 14 wallets and 23 transactions, I enriched the data and expanded it one hop. The resulting graph contained 993 nodes, 1,579 edges, and 41 wallets.\n\nA small number of hubs carried much of the observed activity, while many surrounding wallets appeared less often. The expanded graph also produced 540 related-wallet links. Some decoded values repeated across transactions, and the ten seed wallets with decoded activity had enough timestamp context to examine recurrence from mid-2017 through early 2021. These patterns give an investigator places to look for continuity and change.\n\nThe graph is still a partial view. A hub, a repeated value, or a short cycle does not establish who controls a wallet or prove that transactions carry coordinated signals. I see the results as"
   },
 
   
@@ -97,7 +97,7 @@
     "collection": "posts",
     "date": "2026-03-02T00:00:00-05:00",
     "excerpt": "Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look ",
-    "content": "Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?\n\nExecutive Summary\n\nI ran a reproducible pipeline over 120,000 malware samples (November 2024 to October 2025) and found that persistence is both highly concentrated and surprisingly stable:\n\n\n  Ten normalized clusters account for 89.4% of observed activity.\n  79.8% of samples map to ATT&amp;CK techniques, with stable behavior profiles month-over-month.\n  Evasion is common but not rapidly escalating: sandbox evasion appears in 49.9% of enriched samples, and process injection in 37.1%.\n\n\nWhat stood out to me is that persistence in commodity malware is less about constant novelty and more about durable operating models, especially loaders, mobile grayware, and service-style delivery ecosystems.\n\nThat gives a clearer way to read malware trend claims and a"
+    "content": "Threat data is noisy, and headline trend charts often hide what is actually sticking around. I wanted to answer a practical question: which malware activity really persisted over time, and what did that persistence look like in behavior?\n\nExecutive Summary\n\nI analyzed 120,000 samples collected from November 2024 through October 2025 to see which malware clusters persisted and whether their behavior stayed consistent. After deduplication, family-name normalization, and behavioral mapping, the data produced 861 normalized clusters. Ten accounted for 89.4% of observed samples, and the main concentration patterns remained stable as I changed detection-consensus thresholds. The major indicators also converged at around 35,000 samples.\n\nBehavioral enrichment mapped 95,780 samples, or 79.8%, to ATT&amp;CK techniques. Application-layer communication, system discovery, and obfuscation appeared consistently across the observation window. Sandbox or virtualization evasion appeared in 49.9% of enr"
   },
 
   
@@ -135,7 +135,7 @@
     "collection": "posts",
     "date": "2026-01-06T00:00:00-05:00",
     "excerpt": "CY 465\n  Spring 2026\n  Course Instructor\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: ",
-    "content": "CY 465\n  Spring 2026\n  Course Instructor\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: Spring 2026\n  Credits: 3.0\n  Role: Course Instructor\n  Location: West Point, NY\n  \n\n\nFocuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\nTraining Focus\n\n\n  Adversary modeling and threat-informed defensive strategy\n  Risk quantification supporting operational decision-making\n  Security control alignment with organizational mission\n  Executive communication of security posture and residual risk"
+    "content": "CY 465\n  Spring 2026\n  Course Instructor\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CY 465\n  Term: Spring 2026\n  Credits: 3.0\n  Role: Course Instructor\n  Location: West Point, NY\n  \n\n\nFocuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\nTeaching Focus\n\n\n  Adversary modeling and threat-informed defensive strategy\n  Risk quantification supporting operational decision-making\n  Security control alignment with organizational mission\n  Executive communication of security posture and residual risk"
   },
 
   
@@ -153,8 +153,8 @@
     "url": "/blog/case-for-proof-of-value/",
     "collection": "posts",
     "date": "2025-10-28T00:00:00-04:00",
-    "excerpt": "As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven",
-    "content": "As a newer CISO, I’m learning that failure is data too, if you’re willing to look at it that way. Proof-of-value (PoV) programs are a good example. They’re not new. Most mature security programs already use them. I haven’t led one myself yet, but I’ve seen firsthand how not having one can make onboarding harder than it needs to be.\n\nThis isn’t a “PoV 101” post. It’s more of a reflection: lessons learned, what I wish I’d done differently, and how I plan to approach vendor evaluations going forward.\n\nI’ve found that experience often teaches faster than policy. The onboarding that goes well, and the ones that don’t, both leave an impression. For me, they highlighted how critical the early phase is, not just for security, but for every team that touches the tool (or feeds it data) once it’s live.\n\n\n\nOur security team once onboarded a new product that seemed like a great fit with the right capabilities, the right integrations, the right promises. The marketing looked solid and we thought we"
+    "excerpt": "Executive Summary",
+    "content": "Executive Summary\n\nI came to proof-of-value from an onboarding experience that did not go as expected. The product looked promising, but after the contract was signed, getting it into use felt more like trial and error than a guided process. I had not led a proof-of-value myself, so this is a reflection on what I would do differently rather than a report of a completed pilot.\n\nA useful pilot should show how a product and its vendor work with the people who will operate it. That includes security analysts, enterprise engineers, and networking teams. Clear setup documentation, realistic milestones, honest discussion of coverage gaps, and peer feedback all help establish whether the organization can use the capability without relying on the vendor for every step.\n\nI find the military concepts of Initial Operational Capability and Full Operational Capability useful here. IOC is the point where a capability is installed and being used effectively, even if it still needs tuning. FOC is the m"
   },
 
   
@@ -172,8 +172,8 @@
     "url": "/blog/spycraft-2-0/",
     "collection": "posts",
     "date": "2025-10-24T00:00:00-04:00",
-    "excerpt": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a",
-    "content": "During a reverse-engineering session, we encountered something unexpected: a malware sample opened an HTTPS session not to its known command-and-control (C&amp;C) destination, but to X.com. That single anomaly prompted a deeper question: was this an isolated artifact, or evidence of a new operational pattern we call Spycraft 2.0, where adversaries conceal command instructions within legitimate web services?\n\nThis observation exposed a larger issue. Malware authors increasingly rely on the open internet not only as infrastructure but as camouflage. If attackers can turn ordinary web applications into covert C&amp;C rendezvous points, defenders must learn to detect and stop them. Our research, presented at BSidesNYC 0x05, investigates how modern malware hides in plain sight and how defenders can invert that tactic to gain early visibility.\n\n\n\nDead Drop Resolvers: The Modern Dead Drop\n\nAt the core of Spycraft 2.0 is the Dead Drop Resolver (DDR), a digital version of Cold War tradecraft. I"
+    "excerpt": "Executive Summary",
+    "content": "Executive Summary\n\nThe investigation began with a malware sample connecting to X.com rather than directly to its known command-and-control server. That traffic led us to a dead drop resolver: malware retrieves an encoded address from a legitimate web service, decodes it, and uses the result to find its operator’s infrastructure. The web service provides useful cover, and removing one dead drop does not prevent the operator from creating another.\n\nWith VADER, we looked for a way to address the decoding method instead of chasing each endpoint separately. We traced the path from a web request to a command-and-control connection, isolated the code that transforms the retrieved data, and used symbolic analysis to recover a reusable decoding recipe. In the Mudrop case, that recipe helped us find three previously unknown dead drops in WordPress posts.\n\nAcross 100,000 Windows samples collected from 2012 through 2022, we identified dead drop resolver malware spanning 110 families and found 273 "
   },
 
   
@@ -230,7 +230,7 @@
     "collection": "posts",
     "date": "2025-01-15T00:00:00-05:00",
     "excerpt": "CS 483\n  Spring 2025\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Sp",
-    "content": "CS 483\n  Spring 2025\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2025\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nDevelops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.\n\nTraining Focus\n\n\n  Memory forensics and live system analysis under operational constraints\n  Malware artifact recovery and behavioral attribution\n  Translating technical findings into actionable executive briefings\n  Incident response workflows in contested environments"
+    "content": "CS 483\n  Spring 2025\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2025\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nDevelops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.\n\nTeaching Focus\n\n\n  Memory forensics and live system analysis under operational constraints\n  Malware artifact recovery and behavioral attribution\n  Translating technical findings into actionable executive briefings\n  Incident response workflows in contested environments"
   },
 
   
@@ -249,7 +249,7 @@
     "collection": "posts",
     "date": "2024-01-15T00:00:00-05:00",
     "excerpt": "CS 483\n  Spring 2024\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Sp",
-    "content": "CS 483\n  Spring 2024\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2024\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nDevelops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.\n\nTraining Focus\n\n\n  Memory forensics and live system analysis under operational constraints\n  Malware artifact recovery and behavioral attribution\n  Translating technical findings into actionable executive briefings\n  Incident response workflows in contested environments"
+    "content": "CS 483\n  Spring 2024\n  Course Director\n  United States Military Academy\n\n\n\n  Institution: United States Military Academy\n  Department: Department of Electrical Engineering and Computer Science\n  Course: CS 483\n  Term: Spring 2024\n  Credits: 3.0\n  Role: Course Director\n  Location: West Point, NY\n  \n\n\nDevelops capability to investigate real-world cyber incidents through malware analysis, memory forensics, and insider threat scenarios, culminating in executive-level briefings.\n\nTeaching Focus\n\n\n  Memory forensics and live system analysis under operational constraints\n  Malware artifact recovery and behavioral attribution\n  Translating technical findings into actionable executive briefings\n  Incident response workflows in contested environments"
   },
 
   
@@ -268,7 +268,7 @@
     "collection": "posts",
     "date": "2023-10-01T00:00:00-04:00",
     "excerpt": "COP 630\n  Fall 2023\n  Course Instructor\n  University of Maryland Global Campus\n\n\n\n  Institution: University of Maryland Global Campus\n  Department: School of Cybersecurity and Information Technology\n  Course: COP 630\n  T",
-    "content": "COP 630\n  Fall 2023\n  Course Instructor\n  University of Maryland Global Campus\n\n\n\n  Institution: University of Maryland Global Campus\n  Department: School of Cybersecurity and Information Technology\n  Course: COP 630\n  Term: Fall 2023\n  Credits: 6\n  Role: Course Instructor\n  Location: Virtual\n  \n\n\nIntegrates legal constraints, evidence handling, and forensic workflows to support operational investigations and executive reporting within rules of engagement.\n\nTraining Focus\n\n\n  Legal and operational frameworks for digital investigations\n  Evidence preservation and chain-of-custody under operational conditions\n  Translating forensic findings into legally defensible outcomes\n  Balancing investigative agility with legal defensibility"
+    "content": "COP 630\n  Fall 2023\n  Course Instructor\n  University of Maryland Global Campus\n\n\n\n  Institution: University of Maryland Global Campus\n  Department: School of Cybersecurity and Information Technology\n  Course: COP 630\n  Term: Fall 2023\n  Credits: 6\n  Role: Course Instructor\n  Location: Virtual\n  \n\n\nIntegrates legal constraints, evidence handling, and forensic workflows to support operational investigations and executive reporting within rules of engagement.\n\nTeaching Focus\n\n\n  Legal and operational frameworks for digital investigations\n  Evidence preservation and chain-of-custody under operational conditions\n  Translating forensic findings into legally defensible outcomes\n  Balancing investigative agility with legal defensibility"
   },
 
   
@@ -363,7 +363,7 @@
     "collection": "posts",
     "date": "2022-04-01T00:00:00-04:00",
     "excerpt": "ECE 4117\n  Spring 2022\n  Guest Lecturer\n  Georgia Institute of Technology\n\n\n\n  Institution: Georgia Institute of Technology\n  Department: School of Electrical and Computer Engineering\n  Course: ECE 4117\n  Term: Spring 20",
-    "content": "ECE 4117\n  Spring 2022\n  Guest Lecturer\n  Georgia Institute of Technology\n\n\n\n  Institution: Georgia Institute of Technology\n  Department: School of Electrical and Computer Engineering\n  Course: ECE 4117\n  Term: Spring 2022\n  \n  Role: Guest Lecturer\n  Location: Atlanta, GA\n  \n\n\nExplores adversary techniques through reverse engineering, including process injection, persistence mechanisms, and artifact recovery from compromised systems.\n\nTraining Focus\n\n\n  Malware analysis under operational security constraints\n  Process injection and in-memory persistence techniques\n  Rapid artifact recovery supporting investigation timelines\n  Building detection signatures from adversary behavior patterns"
+    "content": "ECE 4117\n  Spring 2022\n  Guest Lecturer\n  Georgia Institute of Technology\n\n\n\n  Institution: Georgia Institute of Technology\n  Department: School of Electrical and Computer Engineering\n  Course: ECE 4117\n  Term: Spring 2022\n  \n  Role: Guest Lecturer\n  Location: Atlanta, GA\n  \n\n\nExplores adversary techniques through reverse engineering, including process injection, persistence mechanisms, and artifact recovery from compromised systems.\n\nTeaching Focus\n\n\n  Malware analysis under operational security constraints\n  Process injection and in-memory persistence techniques\n  Rapid artifact recovery supporting investigation timelines\n  Building detection signatures from adversary behavior patterns"
   },
 
   
@@ -494,7 +494,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-10-11T19:31:11-04:00",
+    "date": "2026-11-24T09:44:26-05:00",
     "excerpt": "",
     "content": ""
   },
@@ -513,7 +513,7 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-10-11T19:31:11-04:00",
+    "date": "2026-11-24T09:44:26-05:00",
     "excerpt": "",
     "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
   },
@@ -529,12 +529,12 @@
   
   
   {
-    "title": "Practitioner Development",
+    "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-10-11T19:31:11-04:00",
+    "date": "2026-11-24T09:44:26-05:00",
     "excerpt": "",
-    "content": "Focused on adversary-driven training, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n      \n        \n        \n        \n        \n        \n        \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n\n            \n              Taught: Spring 2026\n            \n          \n        \n      \n        \n        \n        \n        \n        \n        \n        \n  "
+    "content": "Focused on adversary-driven teaching, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n      \n        \n        \n        \n        \n        \n        \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n\n            \n              Taught: Spring 2026\n            \n          \n        \n      \n        \n        \n        \n        \n        \n        \n        \n  "
   },
 
   
@@ -552,8 +552,8 @@
     "url": "/404.html",
     "collection": "pages",
     "date": null,
-    "excerpt": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Strategy and Threats\n\tView Advisory and Leadership\n\tSee Speaki",
-    "content": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tBrowse Strategy and Threats\n\tView Advisory and Leadership\n\tSee Speaking and Briefings\n\n\n  You can also use the search icon in the top navigation to find what you need."
+    "excerpt": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tExplore Research &amp; Insights\n\tView Leadership &amp; Advisory\n\tView",
+    "content": "We could not find that page\n\n  The link may be outdated, the URL may be mistyped, or the content may have moved.\n\n  Try one of these:\n\n  \n\tGo to Home\n\tExplore Research &amp; Insights\n\tView Leadership &amp; Advisory\n\tView Speaking\n\n\n  You can also use the search icon in the top navigation to find what you need."
   },
 
   
@@ -628,8 +628,8 @@
     "url": "/about/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ide",
-    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            By treating DoW Zero Trust activities as the normalization layer, security teams can unify fragmented assessment findings into a more coherent operational model.\n            \n            Read more\n          \n        \n      \n    \n    \n      Unifying PingCastle, Microsoft Zero T"
+    "excerpt": "Chief Information Security Officer, U.S. Military Academy at West Point · Ph.D., Georgia Tech\n  Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to ",
+    "content": "Chief Information Security Officer, U.S. Military Academy at West Point · Ph.D., Georgia Tech\n  Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to guide decisions.\n  Jonathan Fuller leads cybersecurity strategy, risk, and operations for West Point's mission-critical enterprise. He pairs that executive role with peer-reviewed research on malware infrastructure and command-and-control systems, published at the field's top venues, and with standards work on securing enterprise AI agents.\n\n  \n    4 papers at USENIX Security &amp; ACM CCS\n    Founding Member AIUC-1 AI agent standard\n    Program Committee USENIX Security\n    Ph.D. Georgia Tech, ECE\n  \n  \n    Explore Research &amp; Insights\n    View Leadership &amp; Advisory\n  \n\n\n\n\nSelected Work\n\n\n  \n    \n      Research &amp; Insights\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n  "
   },
 
   
@@ -643,7 +643,7 @@
   
   
   {
-    "title": "Cybersecurity Strategy & Threat Analysis",
+    "title": "Research & Insights",
     "url": "/blog/",
     "collection": "pages",
     "date": null,
@@ -704,8 +704,8 @@
     "url": "/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Ide",
-    "content": "Selected Impact\n    \n      \n      Lead cybersecurity strategy for a 10,000-user hybrid environment\n      \n      Built detection engineering capability to expand threat coverage and reduce visibility gaps\n      \n      Identified and disrupted 100+ adversary infrastructure abuse cases across global systems\n      \n      Developed detection methods covering 100+ malware families and thousands of artifacts\n      \n      Established early-stage AI security evaluation capability for agent-based systems\n      \n    \n  \n\n\n\n\nRecent Work\n\n\n  \n    \n      Latest Strategy and Threats\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n            By treating DoW Zero Trust activities as the normalization layer, security teams can unify fragmented assessment findings into a more coherent operational model.\n            \n            Read more\n          \n        \n      \n    \n    \n      Unifying PingCastle, Microsoft Zero T"
+    "excerpt": "Chief Information Security Officer, U.S. Military Academy at West Point · Ph.D., Georgia Tech\n  Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to ",
+    "content": "Chief Information Security Officer, U.S. Military Academy at West Point · Ph.D., Georgia Tech\n  Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to guide decisions.\n  Jonathan Fuller leads cybersecurity strategy, risk, and operations for West Point's mission-critical enterprise. He pairs that executive role with peer-reviewed research on malware infrastructure and command-and-control systems, published at the field's top venues, and with standards work on securing enterprise AI agents.\n\n  \n    4 papers at USENIX Security &amp; ACM CCS\n    Founding Member AIUC-1 AI agent standard\n    Program Committee USENIX Security\n    Ph.D. Georgia Tech, ECE\n  \n  \n    Explore Research &amp; Insights\n    View Leadership &amp; Advisory\n  \n\n\n\n\nSelected Work\n\n\n  \n    \n      Research &amp; Insights\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n  \n  \n  \n    \n      \n        \n          \n            \n          \n        \n        \n          \n            \n  "
   },
 
   
@@ -723,8 +723,8 @@
     "url": "/media/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Adversary Infrastructure &amp; Malware Research\n  \n    \n      \n        Dead-Drop Resolver Research and Detection Techniques\n        \n          \n          \n            \n            \n            \n            \n            \n",
-    "content": "Adversary Infrastructure &amp; Malware Research\n  \n    \n      \n        Dead-Drop Resolver Research and Detection Techniques\n        \n          \n          \n            \n            \n            \n            \n            \n          \n            \n            \n            \n            \n            \n              \n                \n                  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n                  \n                    \n                    \n                    \n                      \n                      \n                      \n                      growkudos.com\n                       • \n                    \n                      \n                      \n                      \n                      research.gatech.edu\n                      \n                    \n                  \n                \n                \n              \n            \n          \n            \n            \n            \n            \n            \n              \n                \n          "
+    "excerpt": "Research on how attackers abuse trusted platforms, and how to stop them, picked up by security press, academic outlets, and industry.\n  \n    Articles16\n    Outlets14\n    Research projects5\n    Since2022\n  \n  Featured in\n",
+    "content": "Research on how attackers abuse trusted platforms, and how to stop them, picked up by security press, academic outlets, and industry.\n  \n    Articles16\n    Outlets14\n    Research projects5\n    Since2022\n  \n  Featured in\n  \n    The Hacker NewsCommunications of the ACMUSENIX ;login:SiliconANGLESecurity BoulevardExecutiveGovTech XploreTech Times\n  \n\n\n\n  Adversary Infrastructure &amp; Malware\n  How malware hides command-and-control inside legitimate web services, and how defenders and providers can find and take it down.\n\n  \n    \n    \n  \n    \n    \n      \n    \n    \n    \n      \n        ACM CCS · 2025\n      \n      \n        VADER Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation\n      \n      8,906 malware samples from 110 families hid their C2 addresses in dead drops on web apps like Dropbox and Pastebin. VADER found them, and 13 unknown drops, for takedown.\n\n\n      \n        \n          \n          \n          \n            \n              Kudos\n              Hiding"
   },
 
   
@@ -742,8 +742,8 @@
     "url": "/media/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Coverage\n  \n    \n      \n         \n   aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret W",
-    "content": "Coverage\n  \n    \n      \n         \n   aiuc-1.com Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   growkudos.com Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n      \n         \n   securityboulevard.com Oct 22, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   s2e.systems Oct 20, 2025\n  S2E Showcase: VADER\n\n          \n      \n         \n   Talk deeptempo.ai Oct 18, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   executivegov.com Sep 15, 2025\n  Army Operationalizes Zero Trust\n\n          \n      \n         \n   thehackernews.com Jun 23, 2025\n  Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More\n\n          \n      \n         \n   research.gatech.edu Jun 5, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n"
+    "excerpt": "Coverage\n  \n    \n      \n         \n   AIUC-1 Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   Kudos Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drop",
+    "content": "Coverage\n  \n    \n      \n         \n   AIUC-1 Feb 24, 2026\n  Whitepaper: 2026 - The End of Vibe Adoption\n\n          \n      \n         \n   Kudos Nov 24, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n      \n         \n   Security Boulevard Oct 22, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   S2E Oct 20, 2025\n  S2E Showcase: VADER\n\n          \n      \n         \n   Talk DeepTempo Oct 18, 2025\n  Dead-Drop Resolvers: Malware’s Quiet Rendezvous and Why Adaptive Defense Matters\n\n          \n      \n         \n   ExecutiveGov Sep 15, 2025\n  Army Operationalizes Zero Trust\n\n          \n      \n         \n   The Hacker News Jun 23, 2025\n  Weekly Recap: Chrome 0-Day, 7.3 Tbps DDoS, MFA Bypass Tricks, Banking Trojan and More\n\n          \n      \n         \n   Georgia Tech Research Jun 5, 2025\n  Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops\n\n          \n      \n         \n   Tech Times"
   },
 
   
@@ -776,12 +776,12 @@
   
   
   {
-    "title": "Advisory and Leadership",
+    "title": "Leadership & Advisory",
     "url": "/service/",
     "collection": "pages",
     "date": null,
-    "excerpt": "Advisory &amp; Industry Engagement\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security",
-    "content": "Advisory &amp; Industry Engagement\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.\n      \n    \n \n    \n      \n        \n          \n          \n            AIUC-1\n            Founding Consortium Member, Nov 2025-Present\n          \n        \n      \n      \n        Contributing to the development of AIUC-1, the first end-to-end certification standard for enterprise AI agents, in collaboration with security, risk, and legal leaders across industry, government, academia, and nonprofits.\n        {% assign aiuc_artifacts = site.posts | where_exp: \"item\", \"item.venue == 'AIU"
+    "excerpt": "Security leadership requires more than meeting control requirements. It means understanding how systems behave, validating defenses in practice, and using evidence to make informed risk decisions. This approach guides Jo",
+    "content": "Security leadership requires more than meeting control requirements. It means understanding how systems behave, validating defenses in practice, and using evidence to make informed risk decisions. This approach guides Jonathan’s advisory, standards, and research work.\n\n\n  Advisory &amp; Industry Engagement\n  \n    \n      \n        \n          \n          \n            Refractal\n            Founding Advisor, Apr 2026-Present\n          \n        \n      \n      \n        Advise Refractal on security strategy, adversarial risk, and control mechanisms for emerging systems, including agent-based architectures and runtime validation. Contribute to early product direction and technical validation, including development of adversarial regulation mapping and runtime classification capabilities.\n      \n    \n \n    \n      \n        \n          \n          \n            AIUC-1\n            Founding Consortium Member, Nov 2025-Present\n          \n        \n      \n      \n        Contributing to the development of AI"
   },
 
   
@@ -795,12 +795,12 @@
   
   
   {
-    "title": "Speaking and Briefings",
+    "title": "Speaking",
     "url": "/talks/",
     "collection": "pages",
     "date": null,
-    "excerpt": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n\n\n  \n    {% for talk in talks %}\n      \n        \n          {{ talk.date | date: \"%Y\" }}\n        \n      ",
-    "content": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n{% if talks and talks.size &gt; 0 %}\n\n\n  \n    {% for talk in talks %}\n      \n        \n          {{ talk.date | date: \"%Y\" }}\n        \n        {{ talk.title }}\n        {% if talk.subtitle %}\n          {{ talk.subtitle }}\n        {% endif %}\n        {{ talk.event }}{% if talk.location %} - {{ talk.location }}{% endif %}\n        {% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n        {% if talk.description %}\n          {{ talk.description }}\n        {% endif %}\n        {% if talk.resources %}\n          \n            {% for resource in talk.resources %}\n              {{ resource.label }}\n            {% endfor %}\n          \n        {% endif %}\n      \n    {% endfor %}\n  \n\n{% else %}\nNo talks have been published yet. Check back soon.\n{% endif %}"
+    "excerpt": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n\n  {{ talks.size }} talks from ACM CCS and ShmooCon to the Naval Postgraduate School, spanning research, practitioner, and invited audiences",
+    "content": "{% assign talks = site.data.talks\n      sort: “date”\n      reverse %}\n    \n  \n\n\n\n  {{ talks.size }} talks from ACM CCS and ShmooCon to the Naval Postgraduate School, spanning research, practitioner, and invited audiences.\n  LinkedIn View speaking locations\n\n\nTalk History\n\n{% if talks and talks.size &gt; 0 %}\n\n  \n    {% for talk in talks %}\n      \n        {% if talk.audience %}\n          {{ talk.audience }}\n        {% endif %}\n        {{ talk.title }}\n        {% if talk.subtitle %}\n          {{ talk.subtitle }}\n        {% endif %}\n        {{ talk.event }}{% if talk.location %}{% if talk.event %} | {% endif %}{{ talk.location }}{% endif %}{% if talk.event or talk.location %} | {% endif %}{% if talk.date %}{{ talk.date | date: \"%B %-d, %Y\" }}{% else %}TBA{% endif %}\n        {% if talk.description %}\n          {{ talk.description }}\n        {% endif %}\n        {% if talk.resources %}\n          \n            {% for resource in talk.resources %}\n              {{ resource.label }}\n            "
   },
 
   
@@ -820,6 +820,25 @@
     "date": null,
     "excerpt": "KaTeX installed using Node.js package managers comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\nnpx katex\n\n\n\n  Above us",
     "content": "KaTeX installed using Node.js package managers comes with a\nbuilt-in command-line interface (CLI) which can be used to render TeX to HTML.\nBy default, CLI will take the input from standard input.\n\nnpx katex\n\n\n\n  Above uses the npx command to run the locally installed executable\nafter npm install katex.  You can also execute with the relative path:\n./node_modules/.bin/katex\n\n\n\n  To use the CLI from local Git clone, you need to build the project first.\nSee Building from Source for more details.\n\n\nOptions"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    "title": "CLAUDE.md",
+    "url": "/CLAUDE/",
+    "collection": "pages",
+    "date": null,
+    "excerpt": "This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.\n\nOverview\n\nPersonal research/brand site for EmpiricalDefense (https://empiricaldefense.com), built with Jekyll 4 on t",
+    "content": "This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.\n\nOverview\n\nPersonal research/brand site for EmpiricalDefense (https://empiricaldefense.com), built with Jekyll 4 on the Hydejack 9 theme (jekyll-theme-hydejack gem). Most work here is content (blog posts, publications, talks) plus targeted overrides of the theme’s layouts/includes. There is no test suite; the build plus HTML Proofer is the validation.\n\nCommands\n\nRuby 3.2.3 (via rbenv, see .ruby-version), Bundler 2.2.3, gems installed locally to vendor/bundle.\n\nbundle config set --local path 'vendor/bundle'\nbundle _2.2.3_ install\n\nbundle exec jekyll serve                       # dev server at http://localhost:4000, auto-rebuilds\nJEKYLL_ENV=production bundle exec jekyll build --trace   # production build (what CI runs)\n\n# Validate output the way CI does (internal links/images/scripts only)\nhtmlproofer ./_site --disable-external \\\n  --ignore-files \"/CHANGELOG/,/licenses/,/LICENSE/,/NOTIC"
   },
 
   

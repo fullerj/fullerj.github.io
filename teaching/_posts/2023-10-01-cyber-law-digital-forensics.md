@@ -20,7 +20,7 @@ credits: 6
 
 Integrates legal constraints, evidence handling, and forensic workflows to support operational investigations and executive reporting within rules of engagement.
 
-## Training Focus
+## Teaching Focus
 
 * Legal and operational frameworks for digital investigations
 * Evidence preservation and chain-of-custody under operational conditions

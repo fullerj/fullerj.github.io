@@ -165,7 +165,12 @@ hide_description: true
                 {% endif %}
               </div>
               <div class="blog-card__body">
-                <p class="blog-card__badge">{{ card_label }}</p>
+                <div class="blog-card__meta">
+                  <p class="blog-card__badge">{{ card_label }}</p>
+                  {% if post.categories contains 'publications' and post.venue %}
+                    <p class="blog-card__venue">{{ post.venue }} {{ post.date | date: '%Y' }}</p>
+                  {% endif %}
+                </div>
                 <h3 class="blog-card__title">{{ post.title }}</h3>
                 {% if post.description %}
                   <p class="blog-card__excerpt">{{ post.description }}</p>
@@ -528,25 +533,53 @@ hide_description: true
     button.setAttribute('data-clear-initialized', 'true');
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      initTagFilter(document);
-      initLabelFilter(document);
-      initClearFilters(document);
-    }, { once: true });
-  } else {
+  // Pre-select filters from the URL so other pages can deep-link into a view,
+  // e.g. /blog/?type=publication or /blog/?focus=malware,zero-trust
+  function applyUrlFilters(root) {
+    if (!window.URLSearchParams) {
+      return;
+    }
+    var params = new URLSearchParams(window.location.search);
+    var groups = [
+      { param: 'type', selector: '.blog-label-filter__checkbox' },
+      { param: 'focus', selector: '.blog-focus-filter__checkbox' }
+    ];
+
+    groups.forEach(function (group) {
+      var raw = params.get(group.param);
+      if (!raw) {
+        return;
+      }
+      var wanted = raw.toLowerCase().split(',').map(function (value) {
+        return value.trim();
+      });
+      Array.prototype.slice.call(root.querySelectorAll(group.selector)).forEach(function (checkbox) {
+        if (wanted.indexOf(checkbox.value) !== -1 && !checkbox.checked) {
+          checkbox.checked = true;
+          checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    });
+  }
+
+  function initAll() {
     initTagFilter(document);
     initLabelFilter(document);
     initClearFilters(document);
+    applyUrlFilters(document);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll, { once: true });
+  } else {
+    initAll();
   }
 
   var pushStateEl = document.getElementById('_pushState');
   if (pushStateEl) {
     pushStateEl.addEventListener('hy-push-state-after', function () {
       initSortControl(document);
-      initTagFilter(document);
-      initLabelFilter(document);
-      initClearFilters(document);
+      initAll();
     });
   }
 })();

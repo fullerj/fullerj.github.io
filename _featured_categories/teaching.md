@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Training
+title: Teaching
 slug: teaching
 description: >
-  Development of cybersecurity practitioners through adversary-driven training, forensic investigation, and enterprise security scenarios.
+  Development of cybersecurity practitioners through adversary-driven teaching, forensic investigation, and enterprise security scenarios.
 hide_description: true
 
 ---
 
 {% assign teaching_posts = site.posts | where_exp:'post','post.categories contains "teaching"' | sort: 'date' | reverse %}
 
-<p><strong>Focused on adversary-driven training, detection engineering, and real-world incident investigation.</strong></p>
+<p><strong>Focused on adversary-driven teaching, detection engineering, and real-world incident investigation.</strong></p>
 
 <p>Programs are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.</p>
 
-<section class="teaching-group" aria-label="Training programs">
+<section class="teaching-group" aria-label="Teaching programs">
   <h2>Selected Courses</h2>
 
   {% if teaching_posts and teaching_posts.size > 0 %}

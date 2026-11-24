@@ -2,8 +2,7 @@
 layout: about
 image: /assets/img/headshot.png
 description: >
-  Chief Information Security Officer securing hybrid enterprise systems in adversarial environments.
-  I build detection-driven security programs that improve visibility, accelerate response, and reduce systemic risk across enterprise-scale infrastructure, with a focus on emerging AI system security.
+  CISO of the U.S. Military Academy at West Point and Ph.D. security researcher publishing at USENIX Security and ACM CCS on adversary infrastructure and AI system security.
 hide_description: true
 redirect_from:
   - /download/
@@ -21,8 +20,16 @@ featured_writings:
 {% endunless %}
 
 <section class="home-section home-section--intro">
-  <p>Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to guide decisions.</p>
-  <p>Jonathan Fuller is Chief Information Security Officer at the United States Military Academy at West Point. Through Empirical Defense, he shares research and practical insights on enterprise security, adversary behavior, and AI system security.</p>
+  <p class="home-hero__credentials">Chief Information Security Officer, U.S. Military Academy at West Point <span aria-hidden="true">·</span> Ph.D., Georgia Tech</p>
+  <p class="home-hero__lede">Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to guide decisions.</p>
+  <p>Jonathan Fuller leads cybersecurity strategy, risk, and operations for West Point's mission-critical enterprise. He pairs that executive role with peer-reviewed research on malware infrastructure and command-and-control systems, published at the field's top venues, and with standards work on securing enterprise AI agents.</p>
+{% assign top_tier = site.posts | where_exp: 'p', "p.venue == 'USENIX Security' or p.venue == 'ACM CCS'" %}
+  <ul class="home-proof" aria-label="Highlights">
+    <li><strong>{{ top_tier.size }}</strong> papers at USENIX Security &amp; ACM CCS</li>
+    <li><strong>Founding Member</strong> AIUC-1 AI agent standard</li>
+    <li><strong>Program Committee</strong> USENIX Security</li>
+    <li><strong>Ph.D.</strong> Georgia Tech, ECE</li>
+  </ul>
   <div class="home-hero__actions">
     <a href="{{ '/blog/' | relative_url }}">Explore Research &amp; Insights</a>
     <a href="{{ '/service/' | relative_url }}">View Leadership &amp; Advisory</a>
@@ -157,6 +164,21 @@ featured_writings:
       <h3>Leadership &amp; Advisory</h3>
 
       <div class="service-cards">
+        <details class="service-card">
+          <summary>
+            <span class="service-card__summary-main">
+              <span class="service-logo-mark" style="--service-logo: url('{{ '/assets/img/logos/usma.png' | relative_url }}');"></span>
+              <span class="service-card__summary-copy">
+                <span class="service-card__heading">U.S. Military Academy at West Point</span>
+                <span class="service-card__meta">Chief Information Security Officer</span>
+              </span>
+            </span>
+          </summary>
+          <div class="service-card__content">
+            <p>Leads cybersecurity strategy, risk, and operations for a mission-critical enterprise, with priorities in operationalizing Zero Trust, unified risk visibility, and AI system governance.</p>
+          </div>
+        </details>
+
         <details class="service-card">
           <summary>
             <span class="service-card__summary-main">
@@ -394,6 +416,10 @@ featured_writings:
     return !!target.closest('a, button, input, textarea, select, summary, label');
   }
 
+  function canHover() {
+    return !(window.matchMedia && window.matchMedia('(hover: none)').matches);
+  }
+
   function setFlipped(card, flipped) {
     card.classList.toggle('is-flipped', flipped);
     card.setAttribute('aria-expanded', flipped ? 'true' : 'false');
@@ -422,14 +448,34 @@ featured_writings:
         return;
       }
 
-      // Flip on hover (mouse) only. Clicking the card does nothing; only
-      // the "Read more" link should navigate.
+      // Flip on hover for mouse users. Links never flip the card; they navigate.
       card.addEventListener('mouseenter', function () {
+        if (!canHover()) return;
         setFlipped(card, true);
       });
 
       card.addEventListener('mouseleave', function () {
+        if (!canHover()) return;
         setFlipped(card, false);
+      });
+
+      // Keyboard: flip while focus is inside the card so "Read more" is reachable.
+      card.addEventListener('focusin', function () {
+        setFlipped(card, true);
+      });
+
+      card.addEventListener('focusout', function (event) {
+        if (!card.contains(event.relatedTarget)) {
+          setFlipped(card, false);
+        }
+      });
+
+      // Touch devices have no hover: tapping the image toggles the abstract.
+      card.addEventListener('click', function (event) {
+        if (canHover() || isInteractiveTarget(event.target)) {
+          return;
+        }
+        toggleCard(root, card);
       });
 
       // Allow Escape to close a flipped card when a keyboard user is within it.

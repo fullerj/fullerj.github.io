@@ -86,3 +86,40 @@
   }
 }
 
+
+.speaking-intro {
+  margin: 0 0 2rem;
+}
+
+.speaking-intro__summary {
+  margin: 0 0 1.5rem;
+  color: var(--ds-text-2);
+  font-size: 1.02rem;
+}
+
+.speaking-intro__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 1.1rem 0 0;
+  font-weight: 600;
+}
+
+.talk-card__audience {
+  display: inline-flex;
+  margin: 0 0 0.45rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--ds-border-1);
+  color: var(--ds-text-3);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.talk-card__audience--research {
+  color: var(--ds-accent-border-strong);
+  border-color: rgba(23, 79, 87, 0.25);
+}
