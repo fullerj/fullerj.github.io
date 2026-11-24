@@ -23,13 +23,6 @@ featured_writings:
   <p class="home-hero__credentials">Chief Information Security Officer, U.S. Military Academy at West Point <span aria-hidden="true">·</span> Ph.D., Georgia Tech</p>
   <p class="home-hero__lede">Security leadership grounded in evidence: understand how systems behave, test whether defenses work, and use the results to guide decisions.</p>
   <p>Jonathan Fuller leads cybersecurity strategy, risk, and operations for West Point's mission-critical enterprise. He pairs that executive role with peer-reviewed research on malware infrastructure and command-and-control systems, published at the field's top venues, and with standards work on securing enterprise AI agents.</p>
-{% assign top_tier = site.posts | where_exp: 'p', "p.venue == 'USENIX Security' or p.venue == 'ACM CCS'" %}
-  <ul class="home-proof" aria-label="Highlights">
-    <li><strong>{{ top_tier.size }}</strong> papers at USENIX Security &amp; ACM CCS</li>
-    <li><strong>Founding Member</strong> AIUC-1 AI agent standard</li>
-    <li><strong>Program Committee</strong> USENIX Security</li>
-    <li><strong>Ph.D.</strong> Georgia Tech, ECE</li>
-  </ul>
   <div class="home-hero__actions">
     <a href="{{ '/blog/' | relative_url }}">Explore Research &amp; Insights</a>
     <a href="{{ '/service/' | relative_url }}">View Leadership &amp; Advisory</a>
