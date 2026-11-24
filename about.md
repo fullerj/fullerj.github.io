@@ -441,7 +441,7 @@ featured_writings:
         return;
       }
 
-      // Flip on hover for mouse users. Links never flip the card; they navigate.
+      /* Flip on hover for mouse users. Links never flip the card; they navigate. */
       card.addEventListener('mouseenter', function () {
         if (!canHover()) return;
         setFlipped(card, true);
@@ -452,7 +452,7 @@ featured_writings:
         setFlipped(card, false);
       });
 
-      // Keyboard: flip while focus is inside the card so "Read more" is reachable.
+      /* Keyboard: flip while focus is inside the card so "Read more" is reachable. */
       card.addEventListener('focusin', function () {
         setFlipped(card, true);
       });
@@ -463,7 +463,7 @@ featured_writings:
         }
       });
 
-      // Touch devices have no hover: tapping the image toggles the abstract.
+      /* Touch devices have no hover: tapping the image toggles the abstract. */
       card.addEventListener('click', function (event) {
         if (canHover() || isInteractiveTarget(event.target)) {
           return;
@@ -471,7 +471,7 @@ featured_writings:
         toggleCard(root, card);
       });
 
-      // Allow Escape to close a flipped card when a keyboard user is within it.
+      /* Allow Escape to close a flipped card when a keyboard user is within it. */
       card.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
           setFlipped(card, false);
@@ -481,7 +481,8 @@ featured_writings:
       card.setAttribute('data-flip-initialized', 'true');
     });
 
-    if (!root.hasAttribute('data-flip-global-initialized')) {
+    var flagEl = root.documentElement || root;
+    if (!flagEl.hasAttribute('data-flip-global-initialized')) {
       root.addEventListener('click', function (event) {
         if (event.target.closest(CARD_SELECTOR)) {
           return;
@@ -496,7 +497,7 @@ featured_writings:
         }
       });
 
-      root.setAttribute('data-flip-global-initialized', 'true');
+      flagEl.setAttribute('data-flip-global-initialized', 'true');
     }
   }
 

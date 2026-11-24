@@ -120,7 +120,7 @@ Powered by Hydejack v9.2.1 <https://hydejack.com/>
   w._search = {
     DATA_URL: '/assets/sitedata.json?no-cache',
     STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2026-11-24T10:15:17-05:00',
+    INDEX_KEY: 'index--2026-11-24T10:47:13-05:00',
   };
   w._clapButton = true;
 }(window);</script>
@@ -920,7 +920,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         return;
       }
 
-      // Flip on hover for mouse users. Links never flip the card; they navigate.
+      /* Flip on hover for mouse users. Links never flip the card; they navigate. */
       card.addEventListener('mouseenter', function () {
         if (!canHover()) return;
         setFlipped(card, true);
@@ -931,7 +931,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         setFlipped(card, false);
       });
 
-      // Keyboard: flip while focus is inside the card so "Read more" is reachable.
+      /* Keyboard: flip while focus is inside the card so "Read more" is reachable. */
       card.addEventListener('focusin', function () {
         setFlipped(card, true);
       });
@@ -942,7 +942,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         }
       });
 
-      // Touch devices have no hover: tapping the image toggles the abstract.
+      /* Touch devices have no hover: tapping the image toggles the abstract. */
       card.addEventListener('click', function (event) {
         if (canHover() || isInteractiveTarget(event.target)) {
           return;
@@ -950,7 +950,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         toggleCard(root, card);
       });
 
-      // Allow Escape to close a flipped card when a keyboard user is within it.
+      /* Allow Escape to close a flipped card when a keyboard user is within it. */
       card.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
           setFlipped(card, false);
@@ -960,7 +960,8 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
       card.setAttribute('data-flip-initialized', 'true');
     });
 
-    if (!root.hasAttribute('data-flip-global-initialized')) {
+    var flagEl = root.documentElement || root;
+    if (!flagEl.hasAttribute('data-flip-global-initialized')) {
       root.addEventListener('click', function (event) {
         if (event.target.closest(CARD_SELECTOR)) {
           return;
@@ -975,7 +976,7 @@ html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.
         }
       });
 
-      root.setAttribute('data-flip-global-initialized', 'true');
+      flagEl.setAttribute('data-flip-global-initialized', 'true');
     }
   }
 

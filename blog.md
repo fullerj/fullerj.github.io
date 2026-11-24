@@ -533,8 +533,8 @@ hide_description: true
     button.setAttribute('data-clear-initialized', 'true');
   }
 
-  // Pre-select filters from the URL so other pages can deep-link into a view,
-  // e.g. /blog/?type=publication or /blog/?focus=malware,zero-trust
+  /* Pre-select filters from the URL so other pages can deep-link into a view,
+     e.g. /blog/?type=publication or /blog/?focus=malware,zero-trust */
   function applyUrlFilters(root) {
     if (!window.URLSearchParams) {
       return;
