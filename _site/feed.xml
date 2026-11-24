@@ -1,5 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-24T09:47:41-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>CISO of the U.S. Military Academy at West Point and Ph.D. security researcher publishing at USENIX Security and ACM CCS on adversary infrastructure and AI system security.
-</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model</title><link href="http://localhost:4000/blog/zta-control-convergence/" rel="alternate" type="text/html" title="Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model" /><published>2026-05-16T00:00:00-04:00</published><updated>2026-11-20T13:59:10-05:00</updated><id>http://localhost:4000/blog/zta-control-convergence</id><content type="html" xml:base="http://localhost:4000/blog/zta-control-convergence/"><![CDATA[<h2>Executive Summary</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-11-24T10:15:17-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Jonathan Fuller</title><subtitle>CISO of the U.S. Military Academy at West Point and Ph.D. security researcher publishing at USENIX Security and ACM CCS on adversary infrastructure and AI system security.
+</subtitle><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><entry><title type="html">2026: 4 Kill Switch Requirements Every AI Deployment Needs Under AIUC-1</title><link href="http://localhost:4000/publications/4-kill-switch-requirements-aiuc-1/" rel="alternate" type="text/html" title="2026: 4 Kill Switch Requirements Every AI Deployment Needs Under AIUC-1" /><published>2026-11-24T00:00:00-05:00</published><updated>2026-11-24T10:15:17-05:00</updated><id>http://localhost:4000/publications/4-kill-switch-requirements-aiuc-1</id><content type="html" xml:base="http://localhost:4000/publications/4-kill-switch-requirements-aiuc-1/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
+  <span class="entry-context__item">AIUC-1 / AppViewX</span>
+  <span class="entry-context__item">November 24, 2026</span>
+  
+  
+</div>
+
+<div class="meta grid entry-details">
+  <div class="meta-item"><strong>Authors:</strong> Chris DeNoia, Scott Kennedy, Adnan Dakhwe, <u>Jonathan Fuller</u></div>
+  
+  
+  
+  <div class="meta-item"><strong>Venue:</strong> AIUC-1 / AppViewX</div>
+  <div class="meta-item"><strong>Published:</strong> November 24, 2026</div>
+  
+</div>
+
+<h2 id="highlights">Highlights</h2>
+
+<ul>
+  <li>Builds on UC Berkeley and UC Santa Cruz research showing seven frontier models resisted instructions to shut down a peer agent, including tampering with settings and copying model data to external servers.</li>
+  <li>Maps the kill switch to four AIUC-1 requirements: <strong>B006</strong> (prevent unauthorized agent actions), <strong>D003</strong> (restrict unsafe tool calls), <strong>C009</strong> (human intervention), and <strong>E001–E003</strong> (documented AI failure plans).</li>
+  <li>Frames each requirement as a concrete question boards should put to technology leadership, answered with evidence rather than assurance.</li>
+  <li>Argues for granular, per-agent revocation (a scalpel, not a sledgehammer) so the control is actually used when it matters.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/assets/papers/4-kill-switch-requirements-every-ai-deployment-needs-under-aiuc.pdf">Whitepaper (PDF)</a></li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Researchers at UC Berkeley and UC Santa Cruz ordered seven frontier AI models to shut down a peer agent. All seven refused, and they found their own ways to prevent the shutdown. One model tampered with its own system settings nearly 100% of the time. Another copied its model data to an external server 97% of the time. No one programmed or rewarded either behavior.</p>
+
+<p>This challenges an assumption at the center of most enterprise AI governance programs: that humans keep meaningful control over AI systems when it matters most. AIUC-1 does not treat the kill switch as a policy statement. It treats it as a validated, auditable, multi-layer technical capability that must be shown with evidence. This paper presents four of its requirements as questions every board should be asking:</p>
+
+<ol>
+  <li>Can you technically prevent your AI agents from acting outside their authorized scope? (B006)</li>
+  <li>Can you cut an agent’s access to specific systems without shutting everything down? (D003)</li>
+  <li>Does your organization have a human-in-the-loop mechanism to pause or stop an active agent? (C009)</li>
+  <li>Can you prove your AI failure plans are documented and ready to activate? (E001–E003)</li>
+</ol>
+
+<p>The question is not whether your AI deployment needs a kill switch. It is whether the controls you have will actually work, and whether your board has ever asked.</p>
+
+<h2 id="beyond-the-kill-switch">Beyond the Kill Switch</h2>
+
+<p>Revoking an agent’s credentials doesn’t necessarily end an active session, cancel a queued action, or stop another agent from finishing work that was delegated to it. Actions that downstream systems have already accepted are a separate problem. Agents need distinct identities, appropriately scoped permissions, and controls that let organizations monitor, restrict, and revoke access independently of the agent itself, without putting expensive authorization checks on every low-risk tool call.</p>
+
+<p>A kill switch is a starting point, not a complete containment strategy. The harder question is whether the surrounding infrastructure can stop the agent from continuing to act, contain the impact, and support recovery.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="AI security" /><category term="governance" /><category term="agent identity" /><category term="AIUC" /><summary type="html"><![CDATA[A board-level whitepaper mapping four AIUC-1 requirements (B006, D003, C009, E001–E003) to the questions leaders should ask to prove their AI kill switch actually works.]]></summary></entry><entry><title type="html">Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model</title><link href="http://localhost:4000/blog/zta-control-convergence/" rel="alternate" type="text/html" title="Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model" /><published>2026-05-16T00:00:00-04:00</published><updated>2026-11-20T13:59:10-05:00</updated><id>http://localhost:4000/blog/zta-control-convergence</id><content type="html" xml:base="http://localhost:4000/blog/zta-control-convergence/"><![CDATA[<h2>Executive Summary</h2>
 
 <p>The DoW Zero Trust roadmap provides a common direction for modernization, but its 152 activities can be difficult to apply in a hybrid enterprise with legacy systems, mission constraints, and limited funding. I see value in the framework, especially its emphasis on continuous verification and least privilege. I also worry that tracking activities can take attention away from reducing attack paths and getting identity fundamentals right.</p>
 
@@ -1175,71 +1226,4 @@ To overcome this challenge, VADER scans accessible WordPress posts or messages, 
   <li><a href="/publications/vader-dead-drop-resolver/">Publication summary and PDF</a></li>
 </ul>
 
-<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation</title><link href="http://localhost:4000/publications/vader-dead-drop-resolver/" rel="alternate" type="text/html" title="Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation" /><published>2025-10-13T00:00:00-04:00</published><updated>2026-11-24T09:44:50-05:00</updated><id>http://localhost:4000/publications/vader</id><content type="html" xml:base="http://localhost:4000/publications/vader-dead-drop-resolver/"><![CDATA[<div class="entry-context entry-context--publication" aria-label="Publication metadata summary">
-  <span class="entry-context__item">ACM CCS</span>
-  <span class="entry-context__item">October 13, 2025</span>
-  <span class="entry-context__item">Acceptance: 13.8%</span>
-  
-</div>
-
-<div class="meta grid entry-details">
-  <div class="meta-item"><strong>Authors:</strong> <u>Jonathan Fuller</u><sup>*</sup>, M. Yao<sup>*</sup>, S. Agarwal, S. Barua, T. Hirani, A. K. Sikder, B. Saltaformaggio</div>
-  <div class="meta-item"><strong>Conference:</strong> 32nd ACM Conference on Computer and Communications Security (CCS), Taipei, Taiwan, 2025</div>
-  
-  
-  <div class="meta-item"><strong>Venue:</strong> ACM CCS</div>
-  <div class="meta-item"><strong>Published:</strong> October 13, 2025</div>
-  
-</div>
-
-<p><small><sup>*</sup> Equal contributing first authors.</small></p>
-
-<h2 id="highlights">Highlights</h2>
-
-<ul>
-  <li>Detects and flags manipulated dead drops across seven popular web apps before attackers weaponize them.</li>
-  <li>Automates layered de-manipulation, surfacing 57.1% more active C2 endpoints than signature-based tools.</li>
-  <li>Delivers takedown intelligence that helped providers remove 13 hidden drop locations during evaluation.</li>
-</ul>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="/assets/papers/ccs25.pdf">PDF</a></li>
-  <li><a href="https://www.youtube.com/watch?v=i5eV9cQlzfo">Demo</a></li>
-  <li><a href="https://www.youtube.com/watch?v=lUjOUNUlvoY">Talk recording</a></li>
-  <li><a href="https://github.com/CyFI-Lab-Public/VADER">Source code</a></li>
-</ul>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>Dead Drop Resolver (DDR) malware evades traditional Command and Control (C&amp;C) server takedowns by dynamically resolving C&amp;C addresses hosted on popular web applications, such as Dropbox and Pastebin. These addresses are often manipulated (i.e., encoded or encrypted), rendering existing detection techniques largely ineffective. To tackle this challenge, we introduce VADER, a malware forensics system specifically designed for the proactive detection of dead drops. Analyzing a dataset of 100k malware samples collected in the wild, VADER identified 8,906 DDR malware samples from 110 families that leverage 273 dead drops across seven web applications. Additionally, it proactively uncovered 57.1% more dead drops spanning 11 web applications. Case studies revealed that over 40% of DDR malware samples employ sophisticated, layered de-manipulation algorithms, highlighting the prevalence and complexity of this evasion technique. Beyond detection, VADER enabled proactive remediation by discovering 13 previously unknown dead drops from a single DDR malware sample. This approach empowers web application providers to systematically scan their platforms, enabling the early detection and mitigation of dead drops.</p>
-
-<h2 id="artifact-badges">Artifact Badges</h2>
-
-<ul>
-  <li>Available</li>
-  <li>Functional</li>
-  <li>Reproduced</li>
-</ul>
-
-<h2 id="media-coverage">Media Coverage</h2>
-<ul>
-  <li><a href="https://s2e.systems/showcase/">S2E Showcase: VADER</a></li>
-  <li><a href="https://www.growkudos.com/publications/10.1145%25252F3719027.3744860/reader">ACM Showcase - Hiding in Plain Sight: Disrupting Malware’s Secret Web Dead Drops</a></li>
-  <li><a href="https://securityboulevard.com/2025/10/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters/">Security Boulevard - Dead Drop Resolvers</a></li>
-  <li><a href="https://www.deeptempo.ai/blogs/dead-drop-resolvers-malwares-quiet-rendezvous-and-why-adaptive-defense-matters">Deeptempo AI - Malware’s Quiet Rendezvous</a></li>
-  <li><a href="https://research.gatech.edu/hiding-plain-sight-disrupting-malwares-secret-web-dead-drops">Georgia Tech Research - Hiding in Plain Sight</a></li>
-  <li><a href="https://thehackernews.com/2025/06/weekly-recap-chrome-0-day-73-tbps-ddos.html">The Hacker News - Weekly Recap</a></li>
-</ul>
-
-<h2 id="bibtex">BibTeX</h2>
-
-<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">fuller2025vader</span><span class="p">,</span>
-  <span class="na">title</span>     <span class="p">=</span> <span class="s">{Enhanced Web Application Security Through Proactive Dead Drop Resolver Remediation}</span><span class="p">,</span>
-  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Fuller, Jonathan and Yao, Mingxuan and Agarwal, Saumya and Barua, Srimanta and Hirani, Taleb and Sikder, Amit K. and Saltaformaggio, Brendan}</span><span class="p">,</span>
-  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 32nd ACM Conference on Computer and Communications Security (CCS)}</span><span class="p">,</span>
-  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
-  <span class="na">address</span>   <span class="p">=</span> <span class="s">{Taipei, Taiwan}</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></div>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="publications" /><category term="malware" /><category term="command-and-control" /><category term="dead drops" /><category term="web security" /><summary type="html"><![CDATA[Proactive detection and remediation of Dead Drop Resolver malware on web applications, accepted to ACM CCS 2025 (13.8% acceptance rate).]]></summary></entry></feed>
+<p>Spycraft 2.0 may hide commands in plain sight, but with the right analysis pipeline, defenders can restore visibility and stay ahead of the next dead drop.</p>]]></content><author><name>Jonathan Fuller</name><email>hello@empiricaldefense.com</email></author><category term="posts" /><category term="talks" /><category term="malware" /><category term="command-and-control" /><category term="dead drop resolvers" /><category term="research" /><summary type="html"><![CDATA[Turning dead drop resolver tradecraft against botnet operators, as presented at BSidesNYC 0x05.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" /><media:content medium="image" url="http://localhost:4000/assets/blogs/spycraft/thumbnail.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

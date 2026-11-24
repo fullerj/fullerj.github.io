@@ -16,6 +16,25 @@
   
   
   {
+    "title": "2026: 4 Kill Switch Requirements Every AI Deployment Needs Under AIUC-1",
+    "url": "/publications/4-kill-switch-requirements-aiuc-1/",
+    "collection": "posts",
+    "date": "2026-11-24T00:00:00-05:00",
+    "excerpt": "AIUC-1 / AppViewX\n  November 24, 2026\n  \n  \n\n\n\n  Authors: Chris DeNoia, Scott Kennedy, Adnan Dakhwe, Jonathan Fuller\n  \n  \n  \n  Venue: AIUC-1 / AppViewX\n  Published: November 24, 2026",
+    "content": "AIUC-1 / AppViewX\n  November 24, 2026\n  \n  \n\n\n\n  Authors: Chris DeNoia, Scott Kennedy, Adnan Dakhwe, Jonathan Fuller\n  \n  \n  \n  Venue: AIUC-1 / AppViewX\n  Published: November 24, 2026\n  \n\n\nHighlights\n\n\n  Builds on UC Berkeley and UC Santa Cruz research showing seven frontier models resisted instructions to shut down a peer agent, including tampering with settings and copying model data to external servers.\n  Maps the kill switch to four AIUC-1 requirements: B006 (prevent unauthorized agent actions), D003 (restrict unsafe tool calls), C009 (human intervention), and E001–E003 (documented AI failure plans).\n  Frames each requirement as a concrete question boards should put to technology leadership, answered with evidence rather than assurance.\n  Argues for granular, per-agent revocation (a scalpel, not a sledgehammer) so the control is actually used when it matters.\n\n\nResources\n\n\n  Whitepaper (PDF)\n\n\nAbstract\n\nResearchers at UC Berkeley and UC Santa Cruz ordered seven frontier AI models t"
+  },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
     "title": "Unifying PingCastle, Microsoft Zero Trust, and SCuBA Through the DoW Zero Trust Activity Model",
     "url": "/blog/zta-control-convergence/",
     "collection": "posts",
@@ -494,7 +513,7 @@
     "title": "Blog Highlights",
     "url": "/blog-highlights/",
     "collection": "featured_categories",
-    "date": "2026-11-24T09:47:41-05:00",
+    "date": "2026-11-24T10:15:17-05:00",
     "excerpt": "",
     "content": ""
   },
@@ -513,9 +532,9 @@
     "title": "Technical Writing and Industry Papers",
     "url": "/publications/",
     "collection": "featured_categories",
-    "date": "2026-11-24T09:47:41-05:00",
+    "date": "2026-11-24T10:15:17-05:00",
     "excerpt": "",
-    "content": "14 publications across 8 years and 26 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n                I\n                \n                  \n                    \n                      \n                      IEEE 802."
+    "content": "15 publications across 8 years and 27 focus areas.\n  \n\n  \n    \n      \n        Filter by\n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                    \n                      \n                      agent identity\n                    \n                  \n                \n              \n            \n              \n                D\n                \n                  \n                    \n                      \n                      DoW\n                    \n                  \n                    \n                      \n                      dead drops\n                    \n                  \n                \n              \n            \n              \n        "
   },
 
   
@@ -532,7 +551,7 @@
     "title": "Teaching",
     "url": "/teaching/",
     "collection": "featured_categories",
-    "date": "2026-11-24T09:47:41-05:00",
+    "date": "2026-11-24T10:15:17-05:00",
     "excerpt": "",
     "content": "Focused on adversary-driven teaching, detection engineering, and real-world incident investigation.\n\nPrograms are designed to develop practitioners capable of operating in adversarial environments, translating technical findings into operational and executive decisions.\n\n\n  Selected Courses\n\n  \n    \n      \n      \n        \n        \n        \n        \n        \n        \n        \n          \n            \n              \n              Organizational Security (CY 465)\n            \n            \n            United States Military Academy\n            \n          \n\n          \n            \n              Focuses on enterprise risk, adversary modeling, and defensive strategy, preparing practitioners to align security controls with operational and organizational objectives.\n\n            \n\n            \n              Location: West Point, NY\n            \n\n            \n              Taught: Spring 2026\n            \n          \n        \n      \n        \n        \n        \n        \n        \n        \n        \n  "
   },
@@ -648,7 +667,7 @@
     "collection": "pages",
     "date": null,
     "excerpt": "Security grounded in observed system behavior, using evidence and experimentation to understand how complex systems are attacked, fail, and are secured under real-world conditions.\n    \n  \n\n\n\n\n\n\n  \n    \n      \n        \n ",
-    "content": "Security grounded in observed system behavior, using evidence and experimentation to understand how complex systems are attacked, fail, and are secured under real-world conditions.\n    \n  \n\n\n\n\n\n\n  \n    \n      \n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                  \n                    \n                      \n                      AgentBench\n                    \n                  \n                    \n                      \n                      agentic AI\n                    \n                  \n                    \n                      \n                      AI governance\n                    \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n                      \n                      AIUC\n                    \n                  \n                \n              \n   "
+    "content": "Security grounded in observed system behavior, using evidence and experimentation to understand how complex systems are attacked, fail, and are secured under real-world conditions.\n    \n  \n\n\n\n\n\n\n  \n    \n      \n        \n          Focus Area\n          ▾\n        \n        \n          \n            \n              \n                A\n                \n                  \n                  \n                    \n                      \n                      agent identity\n                    \n                  \n                    \n                      \n                      AgentBench\n                    \n                  \n                    \n                      \n                      agentic AI\n                    \n                  \n                    \n                      \n                      AI governance\n                    \n                  \n                    \n                      \n                      AI security\n                    \n                  \n                    \n    "
   },
 
   
